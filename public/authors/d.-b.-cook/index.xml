@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D. B. Cook | Ronald Gangnon</title>
+    <link>/authors/d.-b.-cook/</link>
+      <atom:link href="/authors/d.-b.-cook/index.xml" rel="self" type="application/rss+xml" />
+    <description>D. B. Cook</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>D. B. Cook</title>
+      <link>/authors/d.-b.-cook/</link>
+    </image>
+    
+    <item>
+      <title>Characterising the gut microbiome in veterans with Gulf War Illness: a protocol for a longitudinal, prospective cohort study</title>
+      <link>/publication/pmid-31431446/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/pmid-31431446/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

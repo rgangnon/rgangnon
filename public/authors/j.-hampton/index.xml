@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. Hampton | Ronald Gangnon</title>
+    <link>/authors/j.-hampton/</link>
+      <atom:link href="/authors/j.-hampton/index.xml" rel="self" type="application/rss+xml" />
+    <description>J. Hampton</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>J. Hampton</title>
+      <link>/authors/j.-hampton/</link>
+    </image>
+    
+    <item>
+      <title>Obesity and mortality after locoregional breast cancer diagnosis</title>
+      <link>/publication/moore-2018/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/moore-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The association between post-diagnosis health behaviors and long-term quality of life in survivors of ductal carcinoma in situ: a population-based longitudinal cohort study</title>
+      <link>/publication/hart-2018/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/hart-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

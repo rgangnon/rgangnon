@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H. M. Anderson | Ronald Gangnon</title>
+    <link>/authors/h.-m.-anderson/</link>
+      <atom:link href="/authors/h.-m.-anderson/index.xml" rel="self" type="application/rss+xml" />
+    <description>H. M. Anderson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>H. M. Anderson</title>
+      <link>/authors/h.-m.-anderson/</link>
+    </image>
+    
+    <item>
+      <title>Relationships among aeroallergen sensitization, peripheral blood eosinophils, and periostin in pediatric asthma development</title>
+      <link>/publication/anderson-2017/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/anderson-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of wheezing frequency and viral etiology on childhood and adolescent asthma risk</title>
+      <link>/publication/anderson-2017b/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/anderson-2017b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

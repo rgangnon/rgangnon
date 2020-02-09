@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stacy M. Meuer | Ronald Gangnon</title>
+    <link>/authors/stacy-m.-meuer/</link>
+      <atom:link href="/authors/stacy-m.-meuer/index.xml" rel="self" type="application/rss+xml" />
+    <description>Stacy M. Meuer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Stacy M. Meuer</title>
+      <link>/authors/stacy-m.-meuer/</link>
+    </image>
+    
+    <item>
+      <title>Risk alleles in CFH and ARMS2 and the long-term natural history of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2013c/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2013c/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

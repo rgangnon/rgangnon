@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Murray K. Clayton | Ronald Gangnon</title>
+    <link>/authors/murray-k.-clayton/</link>
+      <atom:link href="/authors/murray-k.-clayton/index.xml" rel="self" type="application/rss+xml" />
+    <description>Murray K. Clayton</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2003 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Murray K. Clayton</title>
+      <link>/authors/murray-k.-clayton/</link>
+    </image>
+    
+    <item>
+      <title>A hierarchical model for spatially clustered disease rates</title>
+      <link>/publication/gangnon-2003/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2003/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A weighted average likelihood ratio test for spatial clustering of disease</title>
+      <link>/publication/gangnon-2001/</link>
+      <pubDate>Mon, 01 Oct 2001 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2001/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>F. Vang | Ronald Gangnon</title>
+    <link>/authors/f.-vang/</link>
+      <atom:link href="/authors/f.-vang/index.xml" rel="self" type="application/rss+xml" />
+    <description>F. Vang</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>F. Vang</title>
+      <link>/authors/f.-vang/</link>
+    </image>
+    
+    <item>
+      <title>Association of rhinovirus species with common cold and asthma symptoms and bacterial pathogens</title>
+      <link>/publication/bashir-2018/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/bashir-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Human rhinovirus species and season of infection determine illness severity</title>
+      <link>/publication/lee-2012/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/lee-2012/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

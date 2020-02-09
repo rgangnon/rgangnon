@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michael Y. Tsai | Ronald Gangnon</title>
+    <link>/authors/michael-y.-tsai/</link>
+      <atom:link href="/authors/michael-y.-tsai/index.xml" rel="self" type="application/rss+xml" />
+    <description>Michael Y. Tsai</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Michael Y. Tsai</title>
+      <link>/authors/michael-y.-tsai/</link>
+    </image>
+    
+    <item>
+      <title>Oxidized Low-density Lipoprotein and the Incidence of Age-related Macular Degeneration</title>
+      <link>/publication/klein-2019/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oxidized Low-Density Lipoprotein and the Incidence of Proliferative Diabetic Retinopathy and Clinically Significant Macular Edema Determined From Fundus Photographs</title>
+      <link>/publication/klein-2015b/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markers of inflammation, oxidative stress, and endothelial dysfunction and the 20-year cumulative incidence of early age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2014/</link>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2014/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

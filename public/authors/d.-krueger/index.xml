@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D. Krueger | Ronald Gangnon</title>
+    <link>/authors/d.-krueger/</link>
+      <atom:link href="/authors/d.-krueger/index.xml" rel="self" type="application/rss+xml" />
+    <description>D. Krueger</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>D. Krueger</title>
+      <link>/authors/d.-krueger/</link>
+    </image>
+    
+    <item>
+      <title>Reproducibility of jumping mechanography and traditional measures of physical and muscle function in older adults</title>
+      <link>/publication/buehring-2015/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/buehring-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Does the precision of dual-energy X-ray absorptiometry for bone mineral density differ by sex?</title>
+      <link>/publication/krueger-2014/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/krueger-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Positioner and clothing artifact can affect one-third radius bone mineral density measurement</title>
+      <link>/publication/krueger-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/krueger-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults</title>
+      <link>/publication/binkley-2011/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
+      <link>/publication/binkley-2005b/</link>
+      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence</title>
+      <link>/publication/binkley-2005/</link>
+      <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Use of the lowest vertebral body T-score to diagnose lumbar osteoporosis in men: is &#34;cherry picking&#34; appropriate?</title>
+      <link>/publication/hansen-2004b/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hansen-2004b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Are Wisconsin physicians knowledgeable about male osteoporosis?</title>
+      <link>/publication/binkley-2003/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2003/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

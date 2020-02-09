@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A. L. Steele | Ronald Gangnon</title>
+    <link>/authors/a.-l.-steele/</link>
+      <atom:link href="/authors/a.-l.-steele/index.xml" rel="self" type="application/rss+xml" />
+    <description>A. L. Steele</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2006 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>A. L. Steele</title>
+      <link>/authors/a.-l.-steele/</link>
+    </image>
+    
+    <item>
+      <title>Successful treatment of anisometropic amblyopia with spectacles alone</title>
+      <link>/publication/steele-2006/</link>
+      <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
+      <guid>/publication/steele-2006/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

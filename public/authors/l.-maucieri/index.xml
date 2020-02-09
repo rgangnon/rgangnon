@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L. Maucieri | Ronald Gangnon</title>
+    <link>/authors/l.-maucieri/</link>
+      <atom:link href="/authors/l.-maucieri/index.xml" rel="self" type="application/rss+xml" />
+    <description>L. Maucieri</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>L. Maucieri</title>
+      <link>/authors/l.-maucieri/</link>
+    </image>
+    
+    <item>
+      <title>Performance-based assessment of falls risk in older veterans with executive dysfunction</title>
+      <link>/publication/fischer-2014b/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/fischer-2014b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. S. Kahl | Ronald Gangnon</title>
+    <link>/authors/b.-s.-kahl/</link>
+      <atom:link href="/authors/b.-s.-kahl/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. S. Kahl</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>B. S. Kahl</title>
+      <link>/authors/b.-s.-kahl/</link>
+    </image>
+    
+    <item>
+      <title>Thalidomide maintenance following high-dose melphalan with autologous stem cell support in myeloma</title>
+      <link>/publication/chang-2008/</link>
+      <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/chang-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A novel preparative regimen for autologous transplant in non-Hodgkin&#39;s lymphoma: long-term experience with etoposide and thiotepa</title>
+      <link>/publication/mccoy-2004/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/mccoy-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

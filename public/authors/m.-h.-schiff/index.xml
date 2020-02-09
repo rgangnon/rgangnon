@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. H. Schiff | Ronald Gangnon</title>
+    <link>/authors/m.-h.-schiff/</link>
+      <atom:link href="/authors/m.-h.-schiff/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. H. Schiff</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jun 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. H. Schiff</title>
+      <link>/authors/m.-h.-schiff/</link>
+    </image>
+    
+    <item>
+      <title>The efficacy of switching from etanercept to infliximab in patients with rheumatoid arthritis</title>
+      <link>/publication/hansen-2004/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hansen-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

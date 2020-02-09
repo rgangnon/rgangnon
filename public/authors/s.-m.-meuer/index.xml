@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S. M. Meuer | Ronald Gangnon</title>
+    <link>/authors/s.-m.-meuer/</link>
+      <atom:link href="/authors/s.-m.-meuer/index.xml" rel="self" type="application/rss+xml" />
+    <description>S. M. Meuer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>S. M. Meuer</title>
+      <link>/authors/s.-m.-meuer/</link>
+    </image>
+    
+    <item>
+      <title>Skin Intrinsic Fluorescence and Age-Related Macular Degeneration: The Beaver Dam Eye Study</title>
+      <link>/publication/klein-2017b/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variability in Spectral-Domain Optical Coherence Tomography over 4 Weeks by Age</title>
+      <link>/publication/howard-2016/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/howard-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship of atherosclerosis to the 10-year cumulative incidence of age-related macular degeneration: the Beaver Dam studies</title>
+      <link>/publication/klein-2013/</link>
+      <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fifteen-year cumulative incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2007/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

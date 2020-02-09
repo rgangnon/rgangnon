@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E. S. O&#39;Connor | Ronald Gangnon</title>
+    <link>/authors/e.-s.-oconnor/</link>
+      <atom:link href="/authors/e.-s.-oconnor/index.xml" rel="self" type="application/rss+xml" />
+    <description>E. S. O&#39;Connor</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>E. S. O&#39;Connor</title>
+      <link>/authors/e.-s.-oconnor/</link>
+    </image>
+    
+    <item>
+      <title>Adjuvant chemotherapy for stage II colon cancer with poor prognostic features</title>
+      <link>/publication/oconnor-2011/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/oconnor-2011/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John C. O’Horo | Ronald Gangnon</title>
+    <link>/authors/john-c.-ohoro/</link>
+      <atom:link href="/authors/john-c.-ohoro/index.xml" rel="self" type="application/rss+xml" />
+    <description>John C. O’Horo</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>John C. O’Horo</title>
+      <link>/authors/john-c.-ohoro/</link>
+    </image>
+    
+    <item>
+      <title>The impact of chlorhexidine bathing on hospital-acquired bloodstream infections: a systematic review and meta-analysis</title>
+      <link>/publication/musuuza-2019/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/musuuza-2019/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

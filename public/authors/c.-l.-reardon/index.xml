@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C. L. Reardon | Ronald Gangnon</title>
+    <link>/authors/c.-l.-reardon/</link>
+      <atom:link href="/authors/c.-l.-reardon/index.xml" rel="self" type="application/rss+xml" />
+    <description>C. L. Reardon</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>C. L. Reardon</title>
+      <link>/authors/c.-l.-reardon/</link>
+    </image>
+    
+    <item>
+      <title>Effects of dog ownership in early childhood on immune development and atopic diseases</title>
+      <link>/publication/bufford-2008/</link>
+      <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/bufford-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effects of dog ownership and genotype on immune development and atopy in infancy</title>
+      <link>/publication/gern-2004/</link>
+      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/gern-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. Fujii | Ronald Gangnon</title>
+    <link>/authors/m.-fujii/</link>
+      <atom:link href="/authors/m.-fujii/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. Fujii</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. Fujii</title>
+      <link>/authors/m.-fujii/</link>
+    </image>
+    
+    <item>
+      <title>The association between post-diagnosis health behaviors and long-term quality of life in survivors of ductal carcinoma in situ: a population-based longitudinal cohort study</title>
+      <link>/publication/hart-2018/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/hart-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

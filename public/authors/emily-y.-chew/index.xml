@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emily Y. Chew | Ronald Gangnon</title>
+    <link>/authors/emily-y.-chew/</link>
+      <atom:link href="/authors/emily-y.-chew/index.xml" rel="self" type="application/rss+xml" />
+    <description>Emily Y. Chew</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Emily Y. Chew</title>
+      <link>/authors/emily-y.-chew/</link>
+    </image>
+    
+    <item>
+      <title>Long-term effects of vitamins C and E, β-carotene, and zinc on age-related macular degeneration: AREDS report no. 35</title>
+      <link>/publication/chew-2013/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/chew-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A severity scale for diabetic macular edema developed from ETDRS data</title>
+      <link>/publication/gangnon-2008/</link>
+      <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Risk factors for high-risk proliferative diabetic retinopathy and severe visual loss: Early Treatment Diabetic Retinopathy Study Report #18</title>
+      <link>/publication/davis-1998/</link>
+      <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
+      <guid>/publication/davis-1998/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

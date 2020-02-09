@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H. A. Anderson | Ronald Gangnon</title>
+    <link>/authors/h.-a.-anderson/</link>
+      <atom:link href="/authors/h.-a.-anderson/index.xml" rel="self" type="application/rss+xml" />
+    <description>H. A. Anderson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Mar 2007 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>H. A. Anderson</title>
+      <link>/authors/h.-a.-anderson/</link>
+    </image>
+    
+    <item>
+      <title>Risk of breast cancer for women living in rural areas from adult exposure to atrazine from well water in Wisconsin</title>
+      <link>/publication/mcelroy-2007/</link>
+      <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/mcelroy-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

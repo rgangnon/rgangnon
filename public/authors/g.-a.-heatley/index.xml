@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>G. A. Heatley | Ronald Gangnon</title>
+    <link>/authors/g.-a.-heatley/</link>
+      <atom:link href="/authors/g.-a.-heatley/index.xml" rel="self" type="application/rss+xml" />
+    <description>G. A. Heatley</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2002 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>G. A. Heatley</title>
+      <link>/authors/g.-a.-heatley/</link>
+    </image>
+    
+    <item>
+      <title>Comparison of the Ahmed Glaucoma Valve, the Krupin Eye Valve with Disk, and the double-plate Molteno implant</title>
+      <link>/publication/tagila-2002/</link>
+      <pubDate>Thu, 01 Aug 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/tagila-2002/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trabeculectomy with mitomycin C: intermediate-term results</title>
+      <link>/publication/perkins-1998b/</link>
+      <pubDate>Sat, 01 Aug 1998 00:00:00 +0000</pubDate>
+      <guid>/publication/perkins-1998b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

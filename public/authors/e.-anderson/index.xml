@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E. Anderson | Ronald Gangnon</title>
+    <link>/authors/e.-anderson/</link>
+      <atom:link href="/authors/e.-anderson/index.xml" rel="self" type="application/rss+xml" />
+    <description>E. Anderson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>E. Anderson</title>
+      <link>/authors/e.-anderson/</link>
+    </image>
+    
+    <item>
+      <title>Association of rhinovirus species with common cold and asthma symptoms and bacterial pathogens</title>
+      <link>/publication/bashir-2018/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/bashir-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationships among immunoglobulin levels, allergic sensitization, and viral respiratory illnesses in early childhood</title>
+      <link>/publication/possin-2010/</link>
+      <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/possin-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sex-related differences in immune development and the expression of atopy in early childhood</title>
+      <link>/publication/uekert-2006/</link>
+      <pubDate>Fri, 01 Dec 2006 00:00:00 +0000</pubDate>
+      <guid>/publication/uekert-2006/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effects of dog ownership and genotype on immune development and atopy in infancy</title>
+      <link>/publication/gern-2004/</link>
+      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/gern-2004/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Developmental cytokine response profiles and the clinical and immunologic expression of atopy during the first year of life</title>
+      <link>/publication/neaville-2003/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/publication/neaville-2003/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

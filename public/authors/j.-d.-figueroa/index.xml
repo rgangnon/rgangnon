@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. D. Figueroa | Ronald Gangnon</title>
+    <link>/authors/j.-d.-figueroa/</link>
+      <atom:link href="/authors/j.-d.-figueroa/index.xml" rel="self" type="application/rss+xml" />
+    <description>J. D. Figueroa</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>J. D. Figueroa</title>
+      <link>/authors/j.-d.-figueroa/</link>
+    </image>
+    
+    <item>
+      <title>Reproductive windows, genetic loci, and breast cancer risk</title>
+      <link>/publication/warrenandersen-2014b/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/warrenandersen-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The associations between a polygenic score, reproductive and menstrual risk factors and breast cancer risk</title>
+      <link>/publication/warrenandersen-2013/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/warrenandersen-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

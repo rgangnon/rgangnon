@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K. Litzelman | Ronald Gangnon</title>
+    <link>/authors/k.-litzelman/</link>
+      <atom:link href="/authors/k.-litzelman/index.xml" rel="self" type="application/rss+xml" />
+    <description>K. Litzelman</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>K. Litzelman</title>
+      <link>/authors/k.-litzelman/</link>
+    </image>
+    
+    <item>
+      <title>The relationship among caregiving characteristics, caregiver strain, and health-related quality of life: evidence from the Survey of the Health of Wisconsin</title>
+      <link>/publication/litzelman-2015/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association between informal caregiving and cellular aging in the survey of the health of wisconsin: the role of caregiving characteristics, stress, and strain</title>
+      <link>/publication/litzelman-2014b/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Role of global stress in the health-related quality of life of caregivers: evidence from the Survey of the Health of Wisconsin</title>
+      <link>/publication/litzelman-2014/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The association of telomere length with colorectal cancer differs by the age of cancer onset</title>
+      <link>/publication/boardman-2014b/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/boardman-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Telomere length varies by DNA extraction method: implications for epidemiologic research</title>
+      <link>/publication/cunningham-2013/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/cunningham-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correlation of chromosomal instability, telomere length and telomere maintenance in microsatellite stable rectal cancer: a molecular subclass of rectal cancer</title>
+      <link>/publication/boardman-2014/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/boardman-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Telomere length and pancreatic cancer: a case-control study</title>
+      <link>/publication/skinner-2012/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/skinner-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quality of life among parents of children with cancer or brain tumors: the impact of child characteristics and parental psychosocial factors</title>
+      <link>/publication/litzelman-2011/</link>
+      <pubDate>Sat, 01 Oct 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Healthcare-Related Financial Burden among Families in the U.S.: The Role of Childhood Activity Limitations and Income</title>
+      <link>/publication/witt-2011/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/witt-2011/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

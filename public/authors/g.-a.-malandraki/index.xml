@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>G. A. Malandraki | Ronald Gangnon</title>
+    <link>/authors/g.-a.-malandraki/</link>
+      <atom:link href="/authors/g.-a.-malandraki/index.xml" rel="self" type="application/rss+xml" />
+    <description>G. A. Malandraki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>G. A. Malandraki</title>
+      <link>/authors/g.-a.-malandraki/</link>
+    </image>
+    
+    <item>
+      <title>The effects of lingual intervention in a patient with inclusion body myositis and SjÃ¶gren&#39;s syndrome: a longitudinal case study</title>
+      <link>/publication/malandraki-2012/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/malandraki-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The utility of pitch elevation in the evaluation of oropharyngeal Dysphagia: preliminary findings</title>
+      <link>/publication/malandraki-2011/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/malandraki-2011/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. J. Baker | Ronald Gangnon</title>
+    <link>/authors/b.-j.-baker/</link>
+      <atom:link href="/authors/b.-j.-baker/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. J. Baker</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2002 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>B. J. Baker</title>
+      <link>/authors/b.-j.-baker/</link>
+    </image>
+    
+    <item>
+      <title>Anatomical outcomes of surgery for idiopathic macular hole as determined by optical coherence tomography</title>
+      <link>/publication/ip-2002/</link>
+      <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/ip-2002/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

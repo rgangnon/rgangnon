@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E. M. Lewiecki | Ronald Gangnon</title>
+    <link>/authors/e.-m.-lewiecki/</link>
+      <atom:link href="/authors/e.-m.-lewiecki/index.xml" rel="self" type="application/rss+xml" />
+    <description>E. M. Lewiecki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Feb 2005 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>E. M. Lewiecki</title>
+      <link>/authors/e.-m.-lewiecki/</link>
+    </image>
+    
+    <item>
+      <title>Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence</title>
+      <link>/publication/binkley-2005/</link>
+      <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

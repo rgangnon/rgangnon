@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. L. Fischer | Ronald Gangnon</title>
+    <link>/authors/b.-l.-fischer/</link>
+      <atom:link href="/authors/b.-l.-fischer/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. L. Fischer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>B. L. Fischer</title>
+      <link>/authors/b.-l.-fischer/</link>
+    </image>
+    
+    <item>
+      <title>Declining cognition and falls: role of risky performance of everyday mobility activities</title>
+      <link>/publication/fischer-2014/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/fischer-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance-based assessment of falls risk in older veterans with executive dysfunction</title>
+      <link>/publication/fischer-2014b/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/fischer-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Increased risk for falling associated with subtle cognitive impairment: secondary analysis of a randomized clinical trial</title>
+      <link>/publication/gleason-2009/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/gleason-2009/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

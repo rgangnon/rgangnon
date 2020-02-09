@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. Baranski | Ronald Gangnon</title>
+    <link>/authors/b.-baranski/</link>
+      <atom:link href="/authors/b.-baranski/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. Baranski</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>B. Baranski</title>
+      <link>/authors/b.-baranski/</link>
+    </image>
+    
+    <item>
+      <title>A novel preparative regimen for autologous transplant in non-Hodgkin&#39;s lymphoma: long-term experience with etoposide and thiotepa</title>
+      <link>/publication/mccoy-2004/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/mccoy-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

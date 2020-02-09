@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dennis G. Maki | Ronald Gangnon</title>
+    <link>/authors/dennis-g.-maki/</link>
+      <atom:link href="/authors/dennis-g.-maki/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dennis G. Maki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2002 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Dennis G. Maki</title>
+      <link>/authors/dennis-g.-maki/</link>
+    </image>
+    
+    <item>
+      <title>Risk of hemolytic uremic syndrome after antibiotic treatment of Escherichia coli O157:H7 enteritis: a meta-analysis</title>
+      <link>/publication/safdar-2002/</link>
+      <pubDate>Thu, 01 Aug 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/safdar-2002/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

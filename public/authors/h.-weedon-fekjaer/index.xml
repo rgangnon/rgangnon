@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H. Weedon-Fekjaer | Ronald Gangnon</title>
+    <link>/authors/h.-weedon-fekjaer/</link>
+      <atom:link href="/authors/h.-weedon-fekjaer/index.xml" rel="self" type="application/rss+xml" />
+    <description>H. Weedon-Fekjaer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>H. Weedon-Fekjaer</title>
+      <link>/authors/h.-weedon-fekjaer/</link>
+    </image>
+    
+    <item>
+      <title>Common Model Inputs Used in CISNET Collaborative Breast Cancer Modeling</title>
+      <link>/publication/mandelblatt-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/mandelblatt-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

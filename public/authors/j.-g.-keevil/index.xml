@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. G. Keevil | Ronald Gangnon</title>
+    <link>/authors/j.-g.-keevil/</link>
+      <atom:link href="/authors/j.-g.-keevil/index.xml" rel="self" type="application/rss+xml" />
+    <description>J. G. Keevil</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>J. G. Keevil</title>
+      <link>/authors/j.-g.-keevil/</link>
+    </image>
+    
+    <item>
+      <title>Trends in low-density lipoprotein cholesterol goal achievement in high risk United States adults: longitudinal findings from the 1999-2008 National Health and Nutrition Examination Surveys</title>
+      <link>/publication/tattersall-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/tattersall-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Women up, men down: the clinical impact of replacing the Framingham Risk Score with the Reynolds Risk Score in the United States population</title>
+      <link>/publication/tattersall-2012/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/tattersall-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The population effects of the global cardiovascular risk model in United States adults: findings from the National Health and Nutrition Surveys, 2005-2006</title>
+      <link>/publication/tattersall-2011/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/tattersall-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>National improvements in low-density lipoprotein cholesterol management of individuals at high coronary risk: National Health and Nutrition Examination Survey, 1999 to 2002</title>
+      <link>/publication/cullen-2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/cullen-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rationale for targeted rather than population based screening with C-reactive protein using the National Health and Nutrition Examination Survey (1999 to 2002)</title>
+      <link>/publication/guttormsen-2007/</link>
+      <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/guttormsen-2007/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Implications of cardiac risk and low-density lipoprotein cholesterol distributions in the United States for the diagnosis and treatment of dyslipidemia: data from National Health and Nutrition Examination Survey 1999 to 2002</title>
+      <link>/publication/keevil-2007/</link>
+      <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/keevil-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

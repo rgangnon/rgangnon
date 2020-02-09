@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. A. Douglas | Ronald Gangnon</title>
+    <link>/authors/j.-a.-douglas/</link>
+      <atom:link href="/authors/j.-a.-douglas/index.xml" rel="self" type="application/rss+xml" />
+    <description>J. A. Douglas</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2005 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>J. A. Douglas</title>
+      <link>/authors/j.-a.-douglas/</link>
+    </image>
+    
+    <item>
+      <title>Part-time medical practice: where is it headed?</title>
+      <link>/publication/mcmurray-2005/</link>
+      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/mcmurray-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

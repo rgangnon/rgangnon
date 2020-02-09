@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>W. M. Lee | Ronald Gangnon</title>
+    <link>/authors/w.-m.-lee/</link>
+      <atom:link href="/authors/w.-m.-lee/index.xml" rel="self" type="application/rss+xml" />
+    <description>W. M. Lee</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>W. M. Lee</title>
+      <link>/authors/w.-m.-lee/</link>
+    </image>
+    
+    <item>
+      <title>Detection of pathogenic bacteria during rhinovirus infection is associated with increased respiratory symptoms and asthma exacerbations</title>
+      <link>/publication/kloepfer-2014/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/kloepfer-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Human rhinovirus species and season of infection determine illness severity</title>
+      <link>/publication/lee-2012/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/lee-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Increased H1N1 infection rate in children with asthma</title>
+      <link>/publication/kloepfer-2012/</link>
+      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/kloepfer-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for a causal relationship between allergic sensitization and rhinovirus wheezing in early life</title>
+      <link>/publication/jackson-2012/</link>
+      <pubDate>Wed, 01 Feb 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/jackson-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wheezing rhinovirus illnesses in early life predict asthma development in high-risk children</title>
+      <link>/publication/jackson-2008/</link>
+      <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/jackson-2008/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

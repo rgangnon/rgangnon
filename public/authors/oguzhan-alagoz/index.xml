@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oguzhan Alagoz | Ronald Gangnon</title>
+    <link>/authors/oguzhan-alagoz/</link>
+      <atom:link href="/authors/oguzhan-alagoz/index.xml" rel="self" type="application/rss+xml" />
+    <description>Oguzhan Alagoz</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Oguzhan Alagoz</title>
+      <link>/authors/oguzhan-alagoz/</link>
+    </image>
+    
+    <item>
+      <title>Contribution of Breast Cancer to Overall Mortality for US Women</title>
+      <link>/publication/gangnon-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The University of Wisconsin Breast Cancer Epidemiology Simulation Model: An Update</title>
+      <link>/publication/alagoz-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/alagoz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association of Screening and Treatment With Breast Cancer Mortality by Molecular Subtype in US Women, 2000-2012</title>
+      <link>/publication/plevritis-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/plevritis-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L. P. Salazar | Ronald Gangnon</title>
+    <link>/authors/l.-p.-salazar/</link>
+      <atom:link href="/authors/l.-p.-salazar/index.xml" rel="self" type="application/rss+xml" />
+    <description>L. P. Salazar</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Dec 2010 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>L. P. Salazar</title>
+      <link>/authors/l.-p.-salazar/</link>
+    </image>
+    
+    <item>
+      <title>Early childhood weight status in relation to asthma development in high-risk children</title>
+      <link>/publication/zhang-2010/</link>
+      <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/zhang-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fractional exhaled nitric oxide measurements are most closely associated with allergic sensitization in school-age children</title>
+      <link>/publication/jackson-2009/</link>
+      <pubDate>Sun, 01 Nov 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/jackson-2009/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wheezing rhinovirus illnesses in early life predict asthma development in high-risk children</title>
+      <link>/publication/jackson-2008/</link>
+      <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/jackson-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association between CD4(&#43;)CD25(high) T cells and atopy in children</title>
+      <link>/publication/jartti-2007/</link>
+      <pubDate>Sun, 01 Jul 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/jartti-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

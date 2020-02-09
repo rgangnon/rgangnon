@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S. A. Kays | Ronald Gangnon</title>
+    <link>/authors/s.-a.-kays/</link>
+      <atom:link href="/authors/s.-a.-kays/index.xml" rel="self" type="application/rss+xml" />
+    <description>S. A. Kays</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Aug 2010 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>S. A. Kays</title>
+      <link>/authors/s.-a.-kays/</link>
+    </image>
+    
+    <item>
+      <title>Effects of dining on tongue endurance and swallowing-related outcomes</title>
+      <link>/publication/kays-2010/</link>
+      <pubDate>Sun, 01 Aug 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/kays-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effects of lingual exercise in stroke patients with dysphagia</title>
+      <link>/publication/robbins-2007/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/robbins-2007/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effects of lingual exercise on swallowing in older adults</title>
+      <link>/publication/robbins-2005/</link>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/robbins-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

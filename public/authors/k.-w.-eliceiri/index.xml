@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K. W. Eliceiri | Ronald Gangnon</title>
+    <link>/authors/k.-w.-eliceiri/</link>
+      <atom:link href="/authors/k.-w.-eliceiri/index.xml" rel="self" type="application/rss+xml" />
+    <description>K. W. Eliceiri</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>K. W. Eliceiri</title>
+      <link>/authors/k.-w.-eliceiri/</link>
+    </image>
+    
+    <item>
+      <title>Collagen Alignment as a Predictor of Recurrence after Ductal Carcinoma In Situ</title>
+      <link>/publication/conklin-2018/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/conklin-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

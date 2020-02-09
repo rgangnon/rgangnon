@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C. M. Libby | Ronald Gangnon</title>
+    <link>/authors/c.-m.-libby/</link>
+      <atom:link href="/authors/c.-m.-libby/index.xml" rel="self" type="application/rss+xml" />
+    <description>C. M. Libby</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 1998 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>C. M. Libby</title>
+      <link>/authors/c.-m.-libby/</link>
+    </image>
+    
+    <item>
+      <title>Molteno implant with mitomycin C: intermediate-term results</title>
+      <link>/publication/perkins-1998a/</link>
+      <pubDate>Wed, 01 Apr 1998 00:00:00 +0000</pubDate>
+      <guid>/publication/perkins-1998a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. C. Teodorescu | Ronald Gangnon</title>
+    <link>/authors/m.-c.-teodorescu/</link>
+      <atom:link href="/authors/m.-c.-teodorescu/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. C. Teodorescu</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. C. Teodorescu</title>
+      <link>/authors/m.-c.-teodorescu/</link>
+    </image>
+    
+    <item>
+      <title>Factors associated with systemic hypertension in asthma</title>
+      <link>/publication/ferguson-2014/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/ferguson-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sleep duration, asthma and obesity</title>
+      <link>/publication/teodorescu-2013/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/teodorescu-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asthma Control and Its Relationship with Obstructive Sleep Apnea (OSA) in Older Adults</title>
+      <link>/publication/teodorescu-2013b/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/teodorescu-2013b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association of obstructive sleep apnea risk or diagnosis with daytime asthma in adults</title>
+      <link>/publication/teodorescu-2012/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/teodorescu-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association of obstructive sleep apnea risk with asthma control in adults</title>
+      <link>/publication/teodorescu-2010/</link>
+      <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/teodorescu-2010/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

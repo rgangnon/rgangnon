@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. D. Knudtson | Ronald Gangnon</title>
+    <link>/authors/m.-d.-knudtson/</link>
+      <atom:link href="/authors/m.-d.-knudtson/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. D. Knudtson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. D. Knudtson</title>
+      <link>/authors/m.-d.-knudtson/</link>
+    </image>
+    
+    <item>
+      <title>Determinants of retinal venular diameter: the Beaver Dam Eye Study</title>
+      <link>/publication/myers-2012/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/myers-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changes in visual impairment prevalence by period of diagnosis of diabetes: the Wisconsin Epidemiologic Study of Diabetic Retinopathy</title>
+      <link>/publication/klein-2009b/</link>
+      <pubDate>Thu, 01 Oct 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2009b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Wisconsin Epidemiologic Study of Diabetic Retinopathy XXIII: the twenty-five-year incidence of macular edema in persons with type 1 diabetes</title>
+      <link>/publication/klein-2009/</link>
+      <pubDate>Sun, 01 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2009/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Wisconsin Epidemiologic Study of Diabetic Retinopathy: XXII the twenty-five-year progression of retinopathy in persons with type 1 diabetes</title>
+      <link>/publication/klein-2008c/</link>
+      <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2008c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Age-period-cohort effect on the incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2008b/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2008b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fifteen-year cumulative incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2007/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

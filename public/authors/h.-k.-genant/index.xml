@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H. K. Genant | Ronald Gangnon</title>
+    <link>/authors/h.-k.-genant/</link>
+      <atom:link href="/authors/h.-k.-genant/index.xml" rel="self" type="application/rss+xml" />
+    <description>H. K. Genant</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Dec 2005 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>H. K. Genant</title>
+      <link>/authors/h.-k.-genant/</link>
+    </image>
+    
+    <item>
+      <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
+      <link>/publication/binkley-2005b/</link>
+      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

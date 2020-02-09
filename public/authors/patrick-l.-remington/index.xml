@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patrick L. Remington | Ronald Gangnon</title>
+    <link>/authors/patrick-l.-remington/</link>
+      <atom:link href="/authors/patrick-l.-remington/index.xml" rel="self" type="application/rss+xml" />
+    <description>Patrick L. Remington</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Patrick L. Remington</title>
+      <link>/authors/patrick-l.-remington/</link>
+    </image>
+    
+    <item>
+      <title>Improving the Rank Precision of Population Health Measures for Small Areas with Longitudinal and Joint Outcome Models</title>
+      <link>/publication/athens-2015/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/athens-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using empirical Bayes methods to rank counties on population health measures</title>
+      <link>/publication/athens-2013/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/athens-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

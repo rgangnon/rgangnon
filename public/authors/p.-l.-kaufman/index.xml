@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P. L. Kaufman | Ronald Gangnon</title>
+    <link>/authors/p.-l.-kaufman/</link>
+      <atom:link href="/authors/p.-l.-kaufman/index.xml" rel="self" type="application/rss+xml" />
+    <description>P. L. Kaufman</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2002 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>P. L. Kaufman</title>
+      <link>/authors/p.-l.-kaufman/</link>
+    </image>
+    
+    <item>
+      <title>Comparison of the Ahmed Glaucoma Valve, the Krupin Eye Valve with Disk, and the double-plate Molteno implant</title>
+      <link>/publication/tagila-2002/</link>
+      <pubDate>Thu, 01 Aug 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/tagila-2002/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enthacrynic and acid effects on inner wall pores in living monkeys</title>
+      <link>/publication/ethier-1999/</link>
+      <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
+      <guid>/publication/ethier-1999/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latrunculin-A increases outflow facility in the monkey</title>
+      <link>/publication/peterson-1999/</link>
+      <pubDate>Thu, 01 Apr 1999 00:00:00 +0000</pubDate>
+      <guid>/publication/peterson-1999/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trabeculectomy with mitomycin C: intermediate-term results</title>
+      <link>/publication/perkins-1998b/</link>
+      <pubDate>Sat, 01 Aug 1998 00:00:00 +0000</pubDate>
+      <guid>/publication/perkins-1998b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Molteno implant with mitomycin C: intermediate-term results</title>
+      <link>/publication/perkins-1998a/</link>
+      <pubDate>Wed, 01 Apr 1998 00:00:00 +0000</pubDate>
+      <guid>/publication/perkins-1998a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

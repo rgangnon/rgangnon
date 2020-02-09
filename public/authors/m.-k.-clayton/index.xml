@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. K. Clayton | Ronald Gangnon</title>
+    <link>/authors/m.-k.-clayton/</link>
+      <atom:link href="/authors/m.-k.-clayton/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. K. Clayton</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Sep 2000 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. K. Clayton</title>
+      <link>/authors/m.-k.-clayton/</link>
+    </image>
+    
+    <item>
+      <title>Bayesian detection and modeling of spatial disease clustering</title>
+      <link>/publication/gangnon-2000/</link>
+      <pubDate>Fri, 01 Sep 2000 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2000/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

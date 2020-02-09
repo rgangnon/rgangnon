@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M. K. Drezner | Ronald Gangnon</title>
+    <link>/authors/m.-k.-drezner/</link>
+      <atom:link href="/authors/m.-k.-drezner/index.xml" rel="self" type="application/rss+xml" />
+    <description>M. K. Drezner</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>M. K. Drezner</title>
+      <link>/authors/m.-k.-drezner/</link>
+    </image>
+    
+    <item>
+      <title>Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults</title>
+      <link>/publication/binkley-2011/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
+      <link>/publication/binkley-2005b/</link>
+      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence</title>
+      <link>/publication/binkley-2005/</link>
+      <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Use of the lowest vertebral body T-score to diagnose lumbar osteoporosis in men: is &#34;cherry picking&#34; appropriate?</title>
+      <link>/publication/hansen-2004b/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hansen-2004b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Are Wisconsin physicians knowledgeable about male osteoporosis?</title>
+      <link>/publication/binkley-2003/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2003/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

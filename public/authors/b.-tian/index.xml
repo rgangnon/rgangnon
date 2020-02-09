@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>B. Tian | Ronald Gangnon</title>
+    <link>/authors/b.-tian/</link>
+      <atom:link href="/authors/b.-tian/index.xml" rel="self" type="application/rss+xml" />
+    <description>B. Tian</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Apr 1999 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>B. Tian</title>
+      <link>/authors/b.-tian/</link>
+    </image>
+    
+    <item>
+      <title>Latrunculin-A increases outflow facility in the monkey</title>
+      <link>/publication/peterson-1999/</link>
+      <pubDate>Thu, 01 Apr 1999 00:00:00 +0000</pubDate>
+      <guid>/publication/peterson-1999/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

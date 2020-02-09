@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mehmet Ali Ergun | Ronald Gangnon</title>
+    <link>/authors/mehmet-ali-ergun/</link>
+      <atom:link href="/authors/mehmet-ali-ergun/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mehmet Ali Ergun</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Mehmet Ali Ergun</title>
+      <link>/authors/mehmet-ali-ergun/</link>
+    </image>
+    
+    <item>
+      <title>The University of Wisconsin Breast Cancer Epidemiology Simulation Model: An Update</title>
+      <link>/publication/alagoz-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/alagoz-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

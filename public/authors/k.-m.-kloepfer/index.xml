@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K. M. Kloepfer | Ronald Gangnon</title>
+    <link>/authors/k.-m.-kloepfer/</link>
+      <atom:link href="/authors/k.-m.-kloepfer/index.xml" rel="self" type="application/rss+xml" />
+    <description>K. M. Kloepfer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>K. M. Kloepfer</title>
+      <link>/authors/k.-m.-kloepfer/</link>
+    </image>
+    
+    <item>
+      <title>Detection of pathogenic bacteria during rhinovirus infection is associated with increased respiratory symptoms and asthma exacerbations</title>
+      <link>/publication/kloepfer-2014/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/kloepfer-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Increased H1N1 infection rate in children with asthma</title>
+      <link>/publication/kloepfer-2012/</link>
+      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/kloepfer-2012/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

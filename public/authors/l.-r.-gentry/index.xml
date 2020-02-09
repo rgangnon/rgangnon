@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L. R. Gentry | Ronald Gangnon</title>
+    <link>/authors/l.-r.-gentry/</link>
+      <atom:link href="/authors/l.-r.-gentry/index.xml" rel="self" type="application/rss+xml" />
+    <description>L. R. Gentry</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2007 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>L. R. Gentry</title>
+      <link>/authors/l.-r.-gentry/</link>
+    </image>
+    
+    <item>
+      <title>The effects of lingual exercise in stroke patients with dysphagia</title>
+      <link>/publication/robbins-2007/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/robbins-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

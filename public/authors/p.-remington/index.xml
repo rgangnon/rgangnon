@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P. Remington | Ronald Gangnon</title>
+    <link>/authors/p.-remington/</link>
+      <atom:link href="/authors/p.-remington/index.xml" rel="self" type="application/rss+xml" />
+    <description>P. Remington</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jun 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>P. Remington</title>
+      <link>/authors/p.-remington/</link>
+    </image>
+    
+    <item>
+      <title>Model for end stage liver disease score predicts mortality across a broad spectrum of liver disease</title>
+      <link>/publication/said-2004/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/said-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>F. J. Nieto | Ronald Gangnon</title>
+    <link>/authors/f.-j.-nieto/</link>
+      <atom:link href="/authors/f.-j.-nieto/index.xml" rel="self" type="application/rss+xml" />
+    <description>F. J. Nieto</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>F. J. Nieto</title>
+      <link>/authors/f.-j.-nieto/</link>
+    </image>
+    
+    <item>
+      <title>The relationship among caregiving characteristics, caregiver strain, and health-related quality of life: evidence from the Survey of the Health of Wisconsin</title>
+      <link>/publication/litzelman-2015/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association between informal caregiving and cellular aging in the survey of the health of wisconsin: the role of caregiving characteristics, stress, and strain</title>
+      <link>/publication/litzelman-2014b/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Role of global stress in the health-related quality of life of caregivers: evidence from the Survey of the Health of Wisconsin</title>
+      <link>/publication/litzelman-2014/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selection bias in population-based cancer case-control studies due to incomplete sampling frame coverage</title>
+      <link>/publication/walsh-2012/</link>
+      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/walsh-2012/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
