@@ -36,5 +36,7 @@ user_groups:
 - Visitors
 ---
 
-I am a Professor in the [Department of Biostatistics and Medical Informatics](https:/biostat.wisc.edu) and the [Department of Population Health Sciences](https://pophealth.wisc.edu) in the [School of Medicine and Public Health](https://med.wisc.edu) at the [University of Wisconsin-Madison](https://wisc.edu).  I have an affiliate appointment in the Department of Statistics.
+I am a Professor in the [Department of Biostatistics and Medical Informatics](https://biostat.wisc.edu) and the [Department of Population Health Sciences](https://pophealth.wisc.edu) in the [School of Medicine and Public Health](https://med.wisc.edu) at the [University of Wisconsin-Madison](https://wisc.edu).  I have an affiliate appointment in the [Department of Statistics](https://stat.wisc.edu).
+
+I grew up in [Duluth](https://en.wikipedia.org/wiki/Duluth,_Minnesota), [Minnesota](https://en.wikipedia.org/wiki/Minnesota). I graduated from [East High School](https://en.wikipedia.org/wiki/East_High_School_(Duluth,_Minnesota)) in 1988. I earned a BA in Mathematics and Economics from the [University of Minnesota-Duluth](https://www.d.umn.edu/) in 1992, an MS in Statistics from the University of Wisconsin-Madison in 1994, and a PhD in Statistics (Biostatistics option) from the University of Wisconsin-Madison in 1998.
 
