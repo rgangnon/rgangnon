@@ -761,7 +761,11 @@
       <link>/authors/admin/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;I am a Professor in the Department of Biostatistics and Medical Informatics and the Department of Population Health Sciences in the School of Medicine and Public Health at the University of Wisconsin-Madison.  I have an affiliate appointment in the Department of Statistics.&lt;/p&gt;
+      <description>&lt;p&gt;I am a Professor in the 
+&lt;a href=&#34;https:/biostat.wisc.edu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Department of Biostatistics and Medical Informatics&lt;/a&gt; and the 
+&lt;a href=&#34;https://pophealth.wisc.edu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Department of Population Health Sciences&lt;/a&gt; in the 
+&lt;a href=&#34;https://med.wisc.edu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;School of Medicine and Public Health&lt;/a&gt; at the 
+&lt;a href=&#34;https://wisc.edu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;University of Wisconsin-Madison&lt;/a&gt;.  I have an affiliate appointment in the Department of Statistics.&lt;/p&gt;
 </description>
     </item>
     
@@ -3590,7 +3594,7 @@
     </item>
     
     <item>
-      <title>D. DaSilva</title>
+      <title>D. Dasilva</title>
       <link>/authors/d.-dasilva/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>/authors/d.-dasilva/</guid>
