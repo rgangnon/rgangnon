@@ -778,16 +778,6 @@
   </url>
   
   <url>
-    <loc>/privacy/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/terms/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/a.-berkman/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
@@ -858,6 +848,11 @@
   </url>
   
   <url>
+    <loc>/authors/brian-sprague/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/mandelblatt-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
@@ -868,7 +863,7 @@
   </url>
   
   <url>
-    <loc>/authors/dennis-g.-fryback/</loc>
+    <loc>/authors/denny-fryback/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -903,6 +898,11 @@
   </url>
   
   <url>
+    <loc>/authors/john-hampton/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/john-m.-hampton/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
@@ -923,7 +923,7 @@
   </url>
   
   <url>
-    <loc>/authors/mehmet-ali-ergun/</loc>
+    <loc>/authors/mehmet-ergun/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -969,6 +969,11 @@
   
   <url>
     <loc>/authors/sylvia-k.-plevritis/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/tasha-stout/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1063,6 +1068,11 @@
   </url>
   
   <url>
+    <loc>/authors/beth-anderson/</loc>
+    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/conklin-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
@@ -1073,17 +1083,12 @@
   </url>
   
   <url>
-    <loc>/authors/d.-j.-jackson/</loc>
-    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/d.-l.-weaver/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/e.-anderson/</loc>
+    <loc>/authors/dan-jackson/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1113,7 +1118,7 @@
   </url>
   
   <url>
-    <loc>/authors/f.-vang/</loc>
+    <loc>/authors/fue-vang/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1123,12 +1128,7 @@
   </url>
   
   <url>
-    <loc>/authors/h.-bashir/</loc>
-    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-e.-gern/</loc>
+    <loc>/authors/hiba-bashir/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1148,12 +1148,12 @@
   </url>
   
   <url>
-    <loc>/authors/k.-dittus/</loc>
+    <loc>/authors/jim-gern/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/k.-grindle/</loc>
+    <loc>/authors/k.-dittus/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1163,12 +1163,12 @@
   </url>
   
   <url>
-    <loc>/authors/kristen-malecki/</loc>
+    <loc>/authors/kris-grindle/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-salazar/</loc>
+    <loc>/authors/kristen-malecki/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1178,17 +1178,22 @@
   </url>
   
   <url>
+    <loc>/authors/lisa-salazar/</loc>
+    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/m.-a.-ergun/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/m.-d.-evans/</loc>
+    <loc>/authors/m.-w.-conklin/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/m.-w.-conklin/</loc>
+    <loc>/authors/mike-evans/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1228,22 +1233,22 @@
   </url>
   
   <url>
-    <loc>/authors/r.-f.-lemanske/</loc>
-    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/r.-vrtis/</loc>
-    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/huang-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/authors/rob-lemanske/</loc>
+    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/ron-gangnon/</loc>
+    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/rose-vrtis/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1258,12 +1263,7 @@
   </url>
   
   <url>
-    <loc>/authors/t.-kang/</loc>
-    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/t.-pappas/</loc>
+    <loc>/authors/teresa-kang/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1273,12 +1273,17 @@
   </url>
   
   <url>
-    <loc>/authors/y.-a.-bochkov/</loc>
+    <loc>/authors/tressa-pappas/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/y.-liu/</loc>
+    <lastmod>2018-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/yury-bochkov/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1488,7 +1493,7 @@
   </url>
   
   <url>
-    <loc>/authors/c.-t.-j.-holweg/</loc>
+    <loc>/authors/cecile-holweg/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1498,12 +1503,12 @@
   </url>
   
   <url>
-    <loc>/authors/h.-m.-anderson/</loc>
+    <loc>/authors/haile-anderson/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-r.-arron/</loc>
+    <loc>/authors/joseph-arron/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1523,7 +1528,7 @@
   </url>
   
   <url>
-    <loc>/authors/v.-rajamanickam/</loc>
+    <loc>/authors/victoria-rajamanickam/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1538,12 +1543,32 @@
   </url>
   
   <url>
+    <loc>/authors/d.-j.-jackson/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/rubner-2017/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/f.-j.-rubner/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/j.-e.-gern/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/m.-d.-evans/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/r.-f.-lemanske/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1573,7 +1598,22 @@
   </url>
   
   <url>
+    <loc>/authors/martin-shafer/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/polly-newcomb/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/r.-l.-kruse/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/scott-adams/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1993,6 +2033,11 @@
   </url>
   
   <url>
+    <loc>/authors/v.-rajamanickam/</loc>
+    <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
@@ -2228,12 +2273,12 @@
   </url>
   
   <url>
-    <loc>/authors/jessica-k.-athens/</loc>
+    <loc>/authors/jessica-athens/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/patrick-l.-remington/</loc>
+    <loc>/authors/pat-remington/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2384,6 +2429,11 @@
   
   <url>
     <loc>/authors/w.-m.-lee/</loc>
+    <lastmod>2014-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/y.-a.-bochkov/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2693,7 +2743,7 @@
   </url>
   
   <url>
-    <loc>/authors/bridget-b.-catlin/</loc>
+    <loc>/authors/bridget-catlin/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2773,12 +2823,7 @@
   </url>
   
   <url>
-    <loc>/authors/a.-bearden/</loc>
-    <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/c.-abad/</loc>
+    <loc>/authors/ali-bearden/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2788,22 +2833,27 @@
   </url>
   
   <url>
-    <loc>/authors/d.-g.-fryback/</loc>
+    <loc>/authors/cybele-abad/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-m.-sosman/</loc>
+    <loc>/authors/jim-sosman/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/m.-a.-rosenberg/</loc>
+    <loc>/authors/margie-rosenberg/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/n.-g.-batina/</loc>
+    <loc>/authors/nataliya-batina/</loc>
+    <lastmod>2013-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/neil-binkley/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2948,6 +2998,11 @@
   </url>
   
   <url>
+    <loc>/authors/l.-salazar/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/m.-c.-tattersall/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -2988,6 +3043,11 @@
   </url>
   
   <url>
+    <loc>/authors/t.-pappas/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/tattersall-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -3015,6 +3075,11 @@
   <url>
     <loc>/authors/m.-d.-knudtson/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/f.-vang/</loc>
+    <lastmod>2012-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -3523,12 +3588,12 @@
   </url>
   
   <url>
-    <loc>/authors/m.-a.-bellazzini/</loc>
+    <loc>/authors/marc-bellazzini/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/m.-d.-repplinger/</loc>
+    <loc>/authors/mike-repplinger/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3584,6 +3649,11 @@
   
   <url>
     <loc>/authors/c.-a.-sorkness/</loc>
+    <lastmod>2010-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/e.-anderson/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3645,6 +3715,11 @@
   <url>
     <loc>/publication/kramm-2010/</loc>
     <lastmod>2010-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/d.-g.-fryback/</loc>
+    <lastmod>2010-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -3743,12 +3818,12 @@
   </url>
   
   <url>
-    <loc>/authors/l.-p.-bjoernsen/</loc>
+    <loc>/authors/lars-bjoernsen/</loc>
     <lastmod>2009-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/p.-m.-rankin/</loc>
+    <loc>/authors/peter-rankin/</loc>
     <lastmod>2009-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4038,27 +4113,27 @@
   </url>
   
   <url>
-    <loc>/authors/amol-d.-kulkarni/</loc>
+    <loc>/authors/amol-kulkarni/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/daniel-m.-albert/</loc>
+    <loc>/authors/dan-albert/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/hans-e.-grossniklaus/</loc>
+    <loc>/authors/hans-grossniklaus/</loc>
+    <lastmod>2008-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/richard-green/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/soesiawati-darjatmoko/</loc>
-    <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/w.-richard-green/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4113,12 +4188,12 @@
   </url>
   
   <url>
-    <loc>/authors/j.-quisling/</loc>
+    <loc>/authors/jason-quisling/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/m.-kohrs/</loc>
+    <loc>/authors/mike-kohrs/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4418,12 +4493,22 @@
   </url>
   
   <url>
-    <loc>/authors/h.-k.-genant/</loc>
+    <loc>/authors/diane-krueger/</loc>
+    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/harry-genant/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/binkley-2005b/</loc>
+    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/marc-drezner/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4583,22 +4668,22 @@
   </url>
   
   <url>
-    <loc>/authors/e.-m.-lewiecki/</loc>
+    <loc>/authors/gary-kiebzak/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/g.-m.-kiebzak/</loc>
+    <loc>/authors/john-shepherd/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-a.-shepherd/</loc>
+    <loc>/authors/michael-lewiecki/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/p.-d.-miller/</loc>
+    <loc>/authors/paul-miller/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4658,37 +4743,22 @@
   </url>
   
   <url>
-    <loc>/authors/c.-m.-damico/</loc>
+    <loc>/authors/cecelia-damico/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/d.-m.-albert/</loc>
+    <loc>/authors/joel-gleiser/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/h.-e.-grossniklaus/</loc>
+    <loc>/authors/marian-fisher/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-gleiser/</loc>
-    <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-l.-zimbric/</loc>
-    <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-r.-fisher/</loc>
-    <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/w.-r.-green/</loc>
+    <loc>/authors/shelly-zimbric/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4988,7 +5058,7 @@
   </url>
   
   <url>
-    <loc>/authors/c.-lo/</loc>
+    <loc>/authors/cecelia-lo/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4998,7 +5068,12 @@
   </url>
   
   <url>
-    <loc>/authors/k.-l.-hope/</loc>
+    <loc>/authors/kirsten-hope/</loc>
+    <lastmod>2003-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/zhanhai-li/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5234,6 +5309,11 @@
   
   <url>
     <loc>/authors/colleen-d.-bindley/</loc>
+    <lastmod>1996-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/daniel-m.-albert/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
   </url>
   

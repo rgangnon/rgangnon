@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tasha Stout | Ronald Gangnon</title>
+    <link>/authors/tasha-stout/</link>
+      <atom:link href="/authors/tasha-stout/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tasha Stout</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Tasha Stout</title>
+      <link>/authors/tasha-stout/</link>
+    </image>
+    
+    <item>
+      <title>The University of Wisconsin Breast Cancer Epidemiology Simulation Model: An Update</title>
+      <link>/publication/alagoz-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/alagoz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variation in tumor natural history contributes to racial disparities in breast cancer stage at diagnosis</title>
+      <link>/publication/batina-2013/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/batina-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

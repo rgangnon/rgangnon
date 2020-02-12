@@ -2,7 +2,7 @@
 title: "Web-based media for landing zone safety instruction"
 date: 2011-01-01
 publishDate: 2020-02-08T06:30:32.760231Z
-authors: ["M. A. Bellazzini", "M. D. Repplinger", "R. E. Gangnon"]
+authors: ["Marc Bellazzini", "Mike Repplinger", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "Introduction
 

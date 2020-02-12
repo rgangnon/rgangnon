@@ -2,7 +2,7 @@
 title: "Cross-sectional study of vitamin D levels, immunologic and virologic outcomes in HIV-infected adults"
 date: 2013-04-01
 publishDate: 2020-02-08T06:30:32.736865Z
-authors: ["A. Bearden", "C. Abad", "R. Gangnon", "J. M. Sosman", "N. Binkley", "N. Safdar"]
+authors: ["Ali Bearden", "Cybele Abad", "Ronald Gangnon", "Jim Sosman", "Neil Binkley", "Nasia Safdar"]
 publication_types: ["2"]
 abstract: "CONTEXT:
 

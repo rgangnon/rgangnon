@@ -2,7 +2,7 @@
 title: "Urinary Cadmium and Mammographic Density"
 date: 2017-01-01
 publishDate: 2020-02-08T06:30:32.694495Z
-authors: ["S. V. Adams", "J. M. Hampton", "A. Trentham-Dietz", "R. E. Gangnon", "M. M. Shafer", "P. A. Newcomb"]
+authors: ["Scott Adams", "John Hampton", "Amy Trentham-Dietz", "Ronald Gangnon", "Martin Shafer", "Polly Newcomb"]
 publication_types: ["2"]
 abstract: ""
 featured: false

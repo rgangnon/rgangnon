@@ -2,7 +2,7 @@
 title: "Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence"
 date: 2005-02-01
 publishDate: 2020-02-08T06:30:32.801263Z
-authors: ["N. Binkley", "G. M. Kiebzak", "E. M. Lewiecki", "D. Krueger", "R. E. Gangnon", "P. D. Miller", "J. A. Shepherd", "M. K. Drezner"]
+authors: ["Neil Binkley", "Gary Kiebzak", "Michael Lewiecki", "Diane Krueger", "Ronald Gangnon", "Paul Miller", "John Shepherd", "Marc Drezner"]
 publication_types: ["2"]
 abstract: "In attempt to improve diagnostic agreement between manufacturers, a recent software update incorporated NHANES III data in GE Lunar densitometers. As a result, the femur neck and trochanter T-scores were lowered, and osteoporosis prevalence was increased. Use of a recalculated young-normal SD for the GE Lunar-adjusted NHANES III database improved diagnostic agreement and is recommended.
 INTRODUCTION:

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tressa Pappas | Ronald Gangnon</title>
+    <link>/authors/tressa-pappas/</link>
+      <atom:link href="/authors/tressa-pappas/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tressa Pappas</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Tressa Pappas</title>
+      <link>/authors/tressa-pappas/</link>
+    </image>
+    
+    <item>
+      <title>Association of rhinovirus species with common cold and asthma symptoms and bacterial pathogens</title>
+      <link>/publication/bashir-2018/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/bashir-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of wheezing frequency and viral etiology on childhood and adolescent asthma risk</title>
+      <link>/publication/anderson-2017b/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/anderson-2017b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

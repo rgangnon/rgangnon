@@ -2,7 +2,7 @@
 title: "Iris melanocyte numbers in Asian, African American, and Caucasian irides"
 date: 2003-01-01
 publishDate: 2020-02-08T06:30:32.807211Z
-authors: ["D. M. Albert", "W. R. Green", "M. L. Zimbric", "C. Lo", "R. E. Gangnon", "K. L. Hope", "J. Gleiser"]
+authors: ["Dan Albert", "Richard Green", "Shelly Zimbric", "Cecelia Lo", "Ronald Gangnon", "Kirsten Hope", "Joel Gleiser"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 

@@ -2,7 +2,7 @@
 title: "Ultrasound validation of maneuvers to increase internal jugular vein cross-sectional area and decrease compressibility"
 date: 2009-05-01
 publishDate: 2020-02-08T06:30:32.775013Z
-authors: ["M. A. Bellazzini", "P. M. Rankin", "R. E. Gangnon", "L. P. Bjoernsen"]
+authors: ["Marc Bellazzini", "Peter Rankin", "Ronald Gangnon", "Lars Bjoernsen"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 

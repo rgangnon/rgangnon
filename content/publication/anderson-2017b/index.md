@@ -2,7 +2,7 @@
 title: "Assessment of wheezing frequency and viral etiology on childhood and adolescent asthma risk"
 date: 2017-02-01
 publishDate: 2020-02-08T06:30:32.696362Z
-authors: ["H. M. Anderson", "R. F. Lemanske", "M. D. Evans", "R. E. Gangnon", "T. Pappas", "K. Grindle", "Y. A. Bochkov", "J. E. Gern", "D. J. Jackson"]
+authors: ["Haile Anderson", "Rob Lemanske", "Mike Evans", "Ronald Gangnon", "Tressa Pappas", "Kris Grindle", "Yury Bochkov", "Jim Gern", "Dan Jackson"]
 publication_types: ["2"]
 abstract: ""
 featured: false

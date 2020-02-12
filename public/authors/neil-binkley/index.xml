@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neil Binkley | Ronald Gangnon</title>
+    <link>/authors/neil-binkley/</link>
+      <atom:link href="/authors/neil-binkley/index.xml" rel="self" type="application/rss+xml" />
+    <description>Neil Binkley</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Neil Binkley</title>
+      <link>/authors/neil-binkley/</link>
+    </image>
+    
+    <item>
+      <title>Cross-sectional study of vitamin D levels, immunologic and virologic outcomes in HIV-infected adults</title>
+      <link>/publication/bearden-2013/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/bearden-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
+      <link>/publication/binkley-2005b/</link>
+      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence</title>
+      <link>/publication/binkley-2005/</link>
+      <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Are Wisconsin physicians knowledgeable about male osteoporosis?</title>
+      <link>/publication/binkley-2003/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2003/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

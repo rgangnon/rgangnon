@@ -2,7 +2,7 @@
 title: "A study of iridectomy histopathologic features of latanoprost- and non-latanoprost-treated patients"
 date: 2004-11-01
 publishDate: 2020-02-08T06:30:32.802698Z
-authors: ["D. M. Albert", "R. E. Gangnon", "M. L. Zimbric", "C. M. Damico", "M. R. Fisher", "J. Gleiser", "H. E. Grossniklaus", "W. R. Green"]
+authors: ["Dan Albert", "Ronald Gangnon", "Shelly Zimbric", "Cecelia Damico", "Marian Fisher", "Joel Gleiser", "Hans Grossniklaus", "Richard Green"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 

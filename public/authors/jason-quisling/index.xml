@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason Quisling | Ronald Gangnon</title>
+    <link>/authors/jason-quisling/</link>
+      <atom:link href="/authors/jason-quisling/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jason Quisling</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Jason Quisling</title>
+      <link>/authors/jason-quisling/</link>
+    </image>
+    
+    <item>
+      <title>Formal testing and utilization of streaming media to improve flight crew safety knowledge</title>
+      <link>/publication/bellazzini-2008/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/bellazzini-2008/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

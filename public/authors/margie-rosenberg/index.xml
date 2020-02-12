@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Margie Rosenberg | Ronald Gangnon</title>
+    <link>/authors/margie-rosenberg/</link>
+      <atom:link href="/authors/margie-rosenberg/index.xml" rel="self" type="application/rss+xml" />
+    <description>Margie Rosenberg</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Margie Rosenberg</title>
+      <link>/authors/margie-rosenberg/</link>
+    </image>
+    
+    <item>
+      <title>Variation in tumor natural history contributes to racial disparities in breast cancer stage at diagnosis</title>
+      <link>/publication/batina-2013/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/batina-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
