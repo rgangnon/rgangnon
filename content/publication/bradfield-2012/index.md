@@ -2,7 +2,7 @@
 title: "Outcomes of Harada-Ito surgery for acquired torsional diplopia"
 date: 2012-10-01
 publishDate: 2020-02-08T06:30:32.741734Z
-authors: ["Y. S. Bradfield", "M. C. Struck", "B. J. Kushner", "D. E. Neely", "D. A. Plager", "R. E. Gangnon"]
+authors: ["Yasmin Bradfield", "Michael Struck", "Burt Kushner", "Daniel Neely", "David Plager", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Harada-Ito surgery successfully treated torsional diplopia. Patients with ≤10° of preoperative torsion had a better outcome. Downgaze diplopia was a common reason for additional surgery."
 featured: false
-publication: "*J AAPOS*"
-url_pdf: https://www.jaapos.org/article/S1091-8531(12)00289-3/fulltext
+publication: "*Journal of American Association for Pediatric Ophthalmology and Strabismus*"
+publication_short: "*J AAPOS*"
+doi: https://doi.org/10.1016/j.jaapos.2012.06.007
 ---
 

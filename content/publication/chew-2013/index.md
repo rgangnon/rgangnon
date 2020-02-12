@@ -2,8 +2,8 @@
 title: "Long-term effects of vitamins C and E, β-carotene, and zinc on age-related macular degeneration: AREDS report no. 35"
 date: 2013-08-01
 publishDate: 2020-02-08T06:30:32.733005Z
-authors: [Emily Y. Chew, Traci E. Clemons,  Elvira Agrón, Robert D. Sperduto, 
-John Paul SanGiovanni, Natalie Kurinij,  Matthew D. Davis for the Age-Related Eye Disease
+authors: [Emily Chew, Traci Clemons,  Elvira Agrón, Robert Sperduto, 
+John Paul SanGiovanni, Natalie Kurinij, Dinny Davis, for the Age-Related Eye Disease
 Study Research Group]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
@@ -31,5 +31,6 @@ featured: false
 publication: "*Ophthalmology*"
 url_pdf: chew-2013.pdf
 doi: https://doi.org/10.1016/j.ophtha.2013.01.021
+projects: [AREDS]
 ---
 

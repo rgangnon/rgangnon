@@ -2,7 +2,7 @@
 title: "Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults"
 date: 2011-04-01
 publishDate: 2020-02-08T06:30:32.761329Z
-authors: ["N. Binkley", "D. Gemar", "J. Engelke", "R. Gangnon", "R. Ramamurthy", "D. Krueger", "M. K. Drezner"]
+authors: ["Neil Binkley", "D. Gemar", "J. Engelke", "Ronald Gangnon", "R. Ramamurthy", "Diane Krueger", "Marc Drezner"]
 publication_types: ["2"]
 abstract: "CONTEXT:
 
@@ -23,7 +23,9 @@ CONCLUSIONS:
 
 Overall, D(3) is slightly, but significantly, more effective than D(2) to increase serum 25(OH)D. One year of D(2) or D(3) dosing (1,600 IU daily or 50,000 IU monthly) does not produce toxicity, and 25(OH)D levels of less than 30 ng/ml persist in approximately 20% of individuals. Substantial between-individual response to administered vitamin D(2) or D(3) is observed."
 featured: false
-publication: "*J. Clin. Endocrinol. Metab.*"
-url_pdf: https://academic.oup.com/jcem/article/96/4/981/2720845
+publication: "*Journal of Clinical Endocrinology & Metabolism*"
+publication_short: "*J. Clin. Endocrinol. Metab.*"
+url_pdf: binkley-2011.pdf
+doi: https://doi.org/10.1210/jc.2010-0015
 ---
 

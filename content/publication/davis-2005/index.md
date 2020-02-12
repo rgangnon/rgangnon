@@ -2,7 +2,7 @@
 title: "The Age-Related Eye Disease Study severity scale for age-related macular degeneration: AREDS Report No. 17"
 date: 2005-11-01
 publishDate: 2020-02-08T06:30:32.797141Z
-authors: ["M. D. Davis", "R. E. Gangnon", "L. Y. Lee", "L. D. Hubbard", "B. E. Klein", "R. Klein", "F. L. Ferris", "S. B. Bressler", "R. C. Milton"]
+authors: ["Dinny Davis", "Ronald Gangnon", "Li-Yin Lee", "Larry Hubbard", "Barbara Klein", "Ronald Klein", "Rick Ferris", "Susan Bressler", "Roy Milton"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -16,8 +16,10 @@ A 9-step severity scale that combines a 6-step drusen area scale with a 5-step p
 CONCLUSIONS:
 
 The scale provides convenient risk categories and has acceptable reproducibility. Progression along it may prove to be useful as a surrogate for progression to advanced AMD."
-featured: false
-publication: "*Arch. Ophthalmol.*"
-url_pdf: https://jamanetwork.com/journals/jamaophthalmology/fullarticle/417341
+featured: true
+publication: "*Archives of Ophthalmology*"
+publication_short: "*Arch. Ophthalmol.*"
+doi: 10.1001/archopht.123.11.1484
+projects: [AREDS]
 ---
 

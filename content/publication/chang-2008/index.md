@@ -2,7 +2,7 @@
 title: "Thalidomide maintenance following high-dose melphalan with autologous stem cell support in myeloma"
 date: 2008-06-01
 publishDate: 2020-02-08T06:30:32.780455Z
-authors: ["J. E. Chang", "M. B. Juckett", "N. S. Callander", "B. S. Kahl", "R. E. Gangnon", "T. L. Mitchell", "W. L. Longo"]
+authors: ["Julie Chang", "Mark Juckett", "Natalie Callander", "Brad Kahl", "Ronald Gangnon", "Teri Mitchell", "Walter Longo"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 Thalidomide maintenance at a goal dose of 200 mg per day was not feasible in this population, with our data suggesting that 100 mg per day is a more reasonable maintenance dose."
 featured: false
-publication: "*Clin Lymphoma Myeloma*"
-url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S1557919011702323?via%3Dihub
+publication: "*Clinical Lymphoma & Myeloma*"
+publication_short: "*Clin Lymphoma Myeloma*"
+doi: https://doi.org/10.3816/CLM.2008.n.018
 ---
 

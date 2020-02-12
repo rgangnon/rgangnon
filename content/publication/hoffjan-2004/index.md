@@ -2,7 +2,7 @@
 title: "Genetic variation in immunoregulatory pathways and atopic phenotypes in infancy"
 date: 2004-03-01
 publishDate: 2020-02-08T06:30:32.806517Z
-authors: ["S. Hoffjan", "I. Ostrovnaja", "D. Nicolae", "D. L. Newman", "R. Nicolae", "R. Gangnon", "L. Steiner", "K. Walker", "R. Reynolds", "D. Greene", "D. Mirel", "J. E. Gern", "R. F. Lemanske", "C. Ober"]
+authors: ["Sabine Hoffjan", "Irina Ostrovnaja", "Dan Nicolae", "Dina Newman", "Raluca Nicolae", "Ronald Gangnon", "Lori Steiner", "Karen Walker", "Rebecca Reynolds", "Deborah Greene", "Daniel Mirel", "Jim Gern", "Rob Lemanske", "Carole Ober"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 These data suggest that variations in genes involved in immune regulation are associated with biologic and clinical phenotypes in the first year of life that might increase the risk for the subsequent development of childhood asthma."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(03)02486-2/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: hoffjan-2004.pdf
+doi: https://doi.org/10.1016/j.jaci.2003.10.044
+projects: [COAST]
 ---
 

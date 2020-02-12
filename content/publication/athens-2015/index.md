@@ -20,5 +20,6 @@ featured: true
 publication: "*PLoS ONE*"
 url_pdf: athens-2015.pdf
 doi: 10.1371/journal.pone.0130027
+projects: [Rankings]
 ---
 

@@ -5,12 +5,20 @@
     <link>/authors/marc-drezner/</link>
       <atom:link href="/authors/marc-drezner/index.xml" rel="self" type="application/rss+xml" />
     <description>Marc Drezner</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Dec 2005 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Marc Drezner</title>
       <link>/authors/marc-drezner/</link>
     </image>
+    
+    <item>
+      <title>Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults</title>
+      <link>/publication/binkley-2011/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2011/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
@@ -25,6 +33,14 @@
       <link>/publication/binkley-2005/</link>
       <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
       <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Use of the lowest vertebral body T-score to diagnose lumbar osteoporosis in men: is &#34;cherry picking&#34; appropriate?</title>
+      <link>/publication/hansen-2004b/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hansen-2004b/</guid>
       <description></description>
     </item>
     

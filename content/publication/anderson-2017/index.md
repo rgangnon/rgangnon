@@ -22,5 +22,6 @@ Serum periostin levels are significantly higher in children than in adults, like
 featured: false
 publication: "*J. Allergy Clin. Immunol.*"
 url_pdf: https://www.jacionline.org/article/S0091-6749(16)30597-8/fulltext
+projects: [COAST]
 ---
 

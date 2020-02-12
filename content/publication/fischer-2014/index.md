@@ -2,7 +2,7 @@
 title: "Declining cognition and falls: role of risky performance of everyday mobility activities"
 date: 2014-03-01
 publishDate: 2020-02-08T06:30:32.725934Z
-authors: ["B. L. Fischer", "C. E. Gleason", "R. E. Gangnon", "J. Janczewski", "T. Shea", "J. E. Mahoney"]
+authors: ["Barbara Fischer", "Carey Gleason", "Ronald Gangnon", "Jodi Janczewski", "Terry Shea", "Jane Mahoney"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -26,7 +26,10 @@ CONCLUSIONS:
 
 Engagement in mobility ADL and IADL tasks in a risky manner emerged as a link between declining cognition and increased number of falls, suggesting a mechanism through which the rate of falls may increase. Specifically, declining cognition is associated with performance of mobility activities in an unsafe manner, thereby increasing the risk for falls."
 featured: false
-publication: "*Phys Ther*"
-url_pdf: https://academic.oup.com/ptj/article/94/3/355/2735533
+publication: "*Physical Therapy*"
+publication_short: "*Phys Ther*"
+url_pdf: fischer-2014.pdf
+doi: https://doi.org/10.2522/ptj.20130195
+projects: [Kenosha]
 ---
 

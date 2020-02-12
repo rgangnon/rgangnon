@@ -2,7 +2,7 @@
 title: "Bidirectional interactions between viral respiratory illnesses and cytokine responses in the first year of life"
 date: 2006-01-01
 publishDate: 2020-02-08T06:30:32.795569Z
-authors: ["J. E. Gern", "G. D. Brooks", "P. Meyer", "A. Chang", "K. Shen", "M. D. Evans", "C. Tisler", "D. Dasilva", "K. A. Roberg", "L. D. Mikus", "L. A. Rosenthal", "C. J. Kirk", "P. A. Shult", "A. Bhattacharya", "Z. Li", "R. Gangnon", "R. F. Lemanske"]
+authors: ["Jim Gern", "Daniel Brooks", "Patricia Meyer", "Andy Chang", "Kunling Shen", "Mike Evans", "Chris Tisler", "Douglas Dasilva", "Kathy Roberg", "Lance Mikus", "Louis Rosenthal", "Carole Kirk", "Peter Shult", "Abhik Bhattacharya", "Zhanhai Li", "Ronald Gangnon", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 In children with a family history of allergies and/or asthma, mononuclear cell phytohemagglutinin-induced IL-13 and virus-induced IFN-gamma responses at birth are indicative of the risk for wheezing in the first year of life."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(05)02137-8/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: gern-2006.pdf
+doi: https://doi.org/10.1016/j.jaci.2005.10.002
+projects: [COAST]
 ---
 

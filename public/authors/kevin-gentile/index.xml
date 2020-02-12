@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kevin Gentile | Ronald Gangnon</title>
+    <link>/authors/kevin-gentile/</link>
+      <atom:link href="/authors/kevin-gentile/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kevin Gentile</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jul 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Kevin Gentile</title>
+      <link>/authors/kevin-gentile/</link>
+    </image>
+    
+    <item>
+      <title>Cytokine response patterns, exposure to viruses, and respiratory infections in the first year of life</title>
+      <link>/publication/copenhaver-2004/</link>
+      <pubDate>Thu, 01 Jul 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/copenhaver-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

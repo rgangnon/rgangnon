@@ -2,7 +2,7 @@
 title: "Innate immune responses to rhinovirus are reduced by the high-affinity IgE receptor in allergic asthmatic children"
 date: 2012-08-01
 publishDate: 2020-02-08T06:30:32.746021Z
-authors: ["S. R. Durrani", "D. J. Montville", "A. S. Pratt", "S. Sahu", "M. K. DeVries", "V. Rajamanickam", "R. E. Gangnon", "M. A. Gill", "J. E. Gern", "R. F. Lemanske", "D. J. Jackson"]
+authors: ["Sandy Durrani", "Daniel Montville", "Allison Pratt", "Sanjutka Sahu", "Mark DeVries", "Victoria Rajamanickam", "Ronald Gangnon", "Michelle Gill", "Jim Gern", "Rob Lemanske", "Dan Jackson"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Allergic asthmatic children have impaired innate immune responses to HRV that correlate with increased FcεRI expression on pDCs and are reduced by FcεRI cross-linking. These effects likely increase susceptibility to HRV-induced wheezing and asthma exacerbations."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(12)00861-5/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: durrani-2012.pdf
+doi: https://doi.org/10.1016/j.jaci.2012.05.023
+projects: [COAST]
 ---
 

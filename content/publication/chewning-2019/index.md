@@ -2,7 +2,7 @@
 title: "Disseminating Tai Chi in the Community: Promoting Home Practice and Improving Balance"
 date: 2019-02-01
 publishDate: 2020-02-08T06:30:32.678139Z
-authors: [Betty Chewning, Kristine M Hallisy,  Jane E Mahoney,  Dale Wilson,  Nisaratana Sangasubana,  Ronald Gangnon]
+authors: [Betty Chewning, Kristine Hallisy,  Jane Mahoney,  Dale Wilson,  Nisaratana Sangasubana,  Ronald Gangnon]
 publication_types: ["2"]
 abstract: "BACKGROUND AND OBJECTIVES:
 

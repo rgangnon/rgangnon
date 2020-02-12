@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mike Ip | Ronald Gangnon</title>
+    <link>/authors/mike-ip/</link>
+      <atom:link href="/authors/mike-ip/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mike Ip</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Aug 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Mike Ip</title>
+      <link>/authors/mike-ip/</link>
+    </image>
+    
+    <item>
+      <title>Intravitreal triamcinolone for the treatment of macular edema associated with central retinal vein occlusion</title>
+      <link>/publication/ip-2004/</link>
+      <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/ip-2004/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anatomical outcomes of surgery for idiopathic macular hole as determined by optical coherence tomography</title>
+      <link>/publication/ip-2002/</link>
+      <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/ip-2002/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

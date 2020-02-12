@@ -2,7 +2,7 @@
 title: "National improvements in low-density lipoprotein cholesterol management of individuals at high coronary risk: National Health and Nutrition Examination Survey, 1999 to 2002"
 date: 2008-08-01
 publishDate: 2020-02-08T06:30:32.779912Z
-authors: ["M. W. Cullen", "J. H. Stein", "R. Gangnon", "P. E. McBride", "J. G. Keevil"]
+authors: ["Michael Cullen", "Jim Stein", "Ronald Gangnon", "Pat McBride", "Jon Keevil"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 The sharp increase in high-risk US residents at the goal and the drop in the untreated percentage of those above treatment threshold illustrate national improvements in the management of LDL-C for those at high coronary risk. High-risk subjects without CHD displayed less significant improvements, suggesting an opportunity for better recognition and management of these individuals."
 featured: false
-publication: "*Am. Heart J.*"
-url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S0002870308001646?via%3Dihub 
+publication: "*American Heart Journal*"
+publication_short: "*Am. Heart J.*"
+doi: https://doi.org/10.1016/j.ahj.2008.03.004
 ---
 

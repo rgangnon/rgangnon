@@ -2,7 +2,7 @@
 title: "Effect of interhospital transfer on resource utilization and outcomes at a tertiary care referral center"
 date: 2007-06-01
 publishDate: 2020-02-08T06:30:32.787602Z
-authors: ["E. Golestanian", "J. E. Scruggs", "R. E. Gangnon", "R. P. Mak", "K. E. Wood"]
+authors: ["Ellie Golestanian", "Jesse Scruggs", "Ronald Gangnon", "Rosa Mak", "Ken Wood"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -29,7 +29,8 @@ CONCLUSIONS:
 
 Patients transferred to a tertiary care ICU are generally more severely ill and consume more resources. However, they have similar adjusted mortality outcomes when compared with directly admitted patients. The difference in resource consumption is mainly attributable to the group of patients in the lowest predicted risk bracket."
 featured: false
-publication: "*Crit. Care Med.*"
-url_pdf: https://insights.ovid.com/crossref?an=00003246-200706000-00003
+publication: "*Critical Care Medicine*"
+publication_short: "*Crit. Care Med.*"
+doi: 10.1097/01.CCM.0000265741.16192.D9
 ---
 

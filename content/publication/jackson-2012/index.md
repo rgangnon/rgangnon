@@ -2,7 +2,7 @@
 title: "Evidence for a causal relationship between allergic sensitization and rhinovirus wheezing in early life"
 date: 2012-02-01
 publishDate: 2020-02-08T06:30:32.752496Z
-authors: ["D. J. Jackson", "M. D. Evans", "R. E. Gangnon", "C. J. Tisler", "T. E. Pappas", "W. M. Lee", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Tressa Pappas", "Wai-Ming Lee", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "RATIONALE:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Prospective, repeated characterization of a birth cohort demonstrated that allergic sensitization precedes HRV wheezing and that the converse is not true. This sequential relationship and the plausible mechanisms by which allergic sensitization can lead to more severe HRV-induced lower respiratory illnesses support a causal role for allergic sensitization in this developmental pathway. Therefore, therapeutics aimed at preventing allergic sensitization may modify virus-induced wheezing and the development of asthma."
 featured: false
-publication: "*Am. J. Respir. Crit. Care Med.*"
-url_pdf: https://www.atsjournals.org/doi/full/10.1164/rccm.201104-0660OC?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+publication: "*American Journal of Respiratory & Critical Care Medicine*"
+publication_short: "*Am. J. Respir. Crit. Care Med.*"
+url_pdf: jackson-2012.pdf
+doi: https://doi.org/10.1164/rccm.201104-0660OC
+projects: [COAST]
 ---
 

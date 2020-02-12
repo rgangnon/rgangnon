@@ -12,5 +12,6 @@ publication: "*Medical Decision Making*"
 publication_short: "*Med Decis Making*"
 url_pdf: alagoz-2018.pdf
 doi: 10.1177/0272989X17711927
+projects: [CISNET]
 ---
 

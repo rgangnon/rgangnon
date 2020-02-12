@@ -2,7 +2,7 @@
 title: "Factors associated with systemic hypertension in asthma"
 date: 2014-10-01
 publishDate: 2020-02-08T06:30:32.717060Z
-authors: ["S. Ferguson", "M. C. Teodorescu", "R. E. Gangnon", "A. G. Peterson", "F. B. Consens", "R. D. Chervin", "M. Teodorescu"]
+authors: ["Susan Ferguson", "Mihai Teodorescu", "Ronald Gangnon", "Andrea Peterson", "Flavia Consens", "Ronald Chervin", "Michaela Teodorescu"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -18,6 +18,6 @@ CONCLUSIONS:
 In this young population, worse lower airways obstruction and OSA were associated with HTN. In contrast, lower ICS doses attenuated likelihood for HTN. Adequate control of airway inflammation at appropriate ICS doses, and screening for OSA may reduce the burden of HTN in asthma."
 featured: false
 publication: "*Lung*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs00408-014-9600-y
+url_pdf: ferguson-2014.pdf
 ---
 

@@ -2,7 +2,7 @@
 title: "Trends in Health-Related Quality of Life After a Diagnosis of Ductal Carcinoma In Situ"
 date: 2016-04-01
 publishDate: 2020-02-08T06:30:32.700387Z
-authors: ["V. Hart", "B. L. Sprague", "S. G. Lakoski", "J. M. Hampton", "P. A. Newcomb", "R. E. Gangnon", "A. Trentham-Dietz"]
+authors: ["Vicki Hart", "Brian Sprague", "Susan Lakoski", "John Hampton", "Polly Newcomb", "Ronald Gangnon", "Amy Trentham-Dietz"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 QoL after a DCIS diagnosis was generally comparable to that of women of similar age without a personal history of DCIS. Our findings suggest that DCIS survivors, and particularly those diagnosed at a younger age, may benefit from support for mental QoL."
 featured: false
-publication: "*J. Clin. Oncol.*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4872345/
+publication: "*Journal of Clinical Oncology*"
+publication_short: "*J. Clin. Oncol.*"
+url_pdf: hart-2016.pdf
+doi: 10.1200/JCO.2015.62.7281
 ---
 

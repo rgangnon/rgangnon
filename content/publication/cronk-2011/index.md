@@ -2,7 +2,7 @@
 title: "Modeling geographic risk of complex congenital heart defects in Eastern Wisconsin"
 date: 2011-07-01
 publishDate: 2020-02-08T06:30:32.757347Z
-authors: ["Christine E. Cronk", "Ronald Gangnon", "Stacy Cossette", "Jane A. McElroy", "Andrew N. Pelech"]
+authors: ["Chris Cronk", "Ronald Gangnon", "Stacy Cossette", "Jane McElroy", "Andrew Pelech"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

@@ -2,8 +2,8 @@
 title: "The contribution of mammography screening to breast cancer incidence trends in the United States: an updated age-period-cohort model"
 date: 2015-06-01
 publishDate: 2020-02-08T06:30:32.709057Z
-authors: [Ronald E. Gangnon, Brian L. Sprague, Natasha K. Stout, Oguz Alagoz,
-Harald Weedon-Fekjær, Theodore R. Holford, Amy Trentham-Dietz]
+authors: [Ronald Gangnon, Brian Sprague, Tasha Stout, Oguzhan Alagoz,
+Harald Weedon-Fekjær, Ted Holford, Amy Trentham-Dietz]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -25,5 +25,6 @@ publication: "*Cancer Epidemiology, Biomarkers & Prevention*"
 publication_short: "*Cancer Epidemiol. Biomarkers Prev.*"
 url_pdf: gangnon-2015b.pdf
 doi: 10.1158/1055-9965.EPI-14-1286
+projects: [CISNET]
 ---
 

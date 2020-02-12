@@ -2,7 +2,7 @@
 title: "The association of telomere length with colorectal cancer differs by the age of cancer onset"
 date: 2014-03-01
 publishDate: 2020-02-08T06:30:32.719900Z
-authors: ["L. A. Boardman", "K. Litzelman", "S. Seo", "R. A. Johnson", "R. J. Vanderboom", "G. W. Kimmel", "J. M. Cunningham", "R. E. Gangnon", "C. D. Engelman", "D. L. Riegert-Johnson", "J. Potter", "R. Haile", "D. Buchanan", "M. A. Jenkins", "D. N. Rider", "S. N. Thibodeau", "G. M. Petersen", "H. G. Skinner"]
+authors: ["Lisa Boardman", "Kristin Litzelman", "Songwon Seo", "Ruth Johnson", "Russell Vanderboom", "Grace Kimmel", "Julie Cunningham", "Ronald Gangnon", "Corinne Engelman", "Douglas Riegert-Johnson", "John Potter", "Robert Haile", "Daniel Buchanan", "Mark Jenkins", "David Rider", "Stephen Thibodeau", "Gloria Petersen", "Hal Skinner"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Younger individuals with longer telomeres or older individuals with shorter telomeres are at higher risk for CRC. These findings indicate that the association of PBL telomere length varies according to the age of cancer onset and that CRC is likely associated with at minimum two different mechanisms of telomere dynamics."
 featured: false
-publication: "*Clin Transl Gastroenterol*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972691/
+publication: "*Clinical & Translational Gastroenterology*"
+publication_short: "*Clin Transl Gastroenterol*"
+doi: 10.1038/ctg.2014.3
 ---
 

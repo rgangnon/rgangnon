@@ -2,7 +2,7 @@
 title: "Sweep visual evoked potential testing as a predictor of recognition acuity in albinism"
 date: 2007-05-01
 publishDate: 2020-02-08T06:30:32.786978Z
-authors: ["Yasmin S. Bradfield", "Thomas D. France", "James Verhoeve", "Ronald E. Gangnon"]
+authors: ["Yasmin Bradfield", "Thomas France", "James Verhoeve", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 

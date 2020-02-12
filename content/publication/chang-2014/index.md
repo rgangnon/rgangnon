@@ -2,7 +2,7 @@
 title: "Childhood asthma clusters and response to therapy in clinical trials"
 date: 2014-02-01
 publishDate: 2020-02-08T06:30:32.728424Z
-authors: [Timothy S. Chang, Robert F. Lemanske, Jr, David T. Mauger, Anne M. Fitzpatrick, Christine A. Sorkness, Stanley J. Szefler, Ronald E. Gangnon, David Page, Daniel J. Jackson on behalf of the Childhood Asthma Research and Education (CARE) NetworkInvestigators]
+authors: ["Tim Chang", "Rob Lemanske", "David Mauger", "Anne Fitzpatrick", "Chris Sorkness", "Stanley Szefler", "Ronald Gangnon", "David Page", "Dan Jackson", on behalf of the Childhood Asthma Research and Education (CARE) NetworkInvestigators]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

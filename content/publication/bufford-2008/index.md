@@ -2,7 +2,7 @@
 title: "Effects of dog ownership in early childhood on immune development and atopic diseases"
 date: 2008-10-01
 publishDate: 2020-02-08T06:30:32.779421Z
-authors: ["J. D. Bufford", "C. L. Reardon", "Z. Li", "K. A. Roberg", "D. DaSilva", "P. A. Eggleston", "A. H. Liu", "D. Milton", "U. Alwis", "R. Gangnon", "R. F. Lemanske", "J. E. Gern"]
+authors: ["Jeremy Bufford", "Claudia Reardon", "Zhanhai Li", "Kathy Roberg", "Douglas DaSilva", "P. Eggleston", "A. Liu", "D. Milton", "U. Alwis", "Ronald Gangnon", "Rob Lemanske", "Jim Gern"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ CONCLUSIONS:
 
 Exposure to dogs in infancy, and especially around the time of birth, is associated with changes in immune development and reductions in wheezing and atopy. These findings are not explained by exposure to endotoxin, ergosterol, or muramic acid."
 featured: false
-publication: "*Clin. Exp. Allergy*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2222.2008.03018.x
+publication: "*Clinical & Experimental Allergy*"
+publication_short: "*Clin. Exp. Allergy*"
+doi:  https://doi.org/10.1111/j.1365-2222.2008.03018.x
+projects: [COAST]
 ---
 

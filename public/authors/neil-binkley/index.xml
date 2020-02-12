@@ -5,7 +5,7 @@
     <link>/authors/neil-binkley/</link>
       <atom:link href="/authors/neil-binkley/index.xml" rel="self" type="application/rss+xml" />
     <description>Neil Binkley</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Feb 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Neil Binkley</title>
@@ -13,10 +13,26 @@
     </image>
     
     <item>
+      <title>Reproducibility of jumping mechanography and traditional measures of physical and muscle function in older adults</title>
+      <link>/publication/buehring-2015/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/buehring-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cross-sectional study of vitamin D levels, immunologic and virologic outcomes in HIV-infected adults</title>
       <link>/publication/bearden-2013/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
       <guid>/publication/bearden-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults</title>
+      <link>/publication/binkley-2011/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/binkley-2011/</guid>
       <description></description>
     </item>
     
@@ -33,6 +49,14 @@
       <link>/publication/binkley-2005/</link>
       <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
       <guid>/publication/binkley-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Use of the lowest vertebral body T-score to diagnose lumbar osteoporosis in men: is &#34;cherry picking&#34; appropriate?</title>
+      <link>/publication/hansen-2004b/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hansen-2004b/</guid>
       <description></description>
     </item>
     

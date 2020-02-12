@@ -10,5 +10,6 @@ publication: "*Preventing Chronic Disease*"
 publication_short: "*Prev Chronic Dis*"
 url_pdf: athens-2013.pdf
 doi:  http://dx.doi.org/10.5888/PCD10.130028
+projects: [Rankings]
 ---
 

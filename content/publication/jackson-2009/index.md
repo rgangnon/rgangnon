@@ -2,7 +2,7 @@
 title: "Fractional exhaled nitric oxide measurements are most closely associated with allergic sensitization in school-age children"
 date: 2009-11-01
 publishDate: 2020-02-08T06:30:32.772028Z
-authors: ["D. J. Jackson", "C. M. Virnig", "R. E. Gangnon", "M. D. Evans", "K. A. Roberg", "E. L. Anderson", "R. M. Burton", "L. P. Salazar", "D. F. DaSilva", "K. M. Shanovich", "C. J. Tisler", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Dan Jackson", "Christine Virnig", "Ronald Gangnon", "Mike Evans", "Kathy Roberg", "Beth Anderson", "Ryan Burton", "Lisa Salazar", "Douglas DaSilva", "Kathleen Shanovich", "Chris Tisler", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 These findings underscore the importance of evaluating allergen sensitization status when FeNO is used as a potential biomarker in the diagnosis and/or monitoring of atopic diseases, particularly asthma."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(09)01094-X/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: jackson-2009.pdf
+doi: https://doi.org/10.1016/j.jaci.2009.07.024
+projects: [COAST]
 ---
 

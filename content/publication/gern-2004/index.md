@@ -2,7 +2,7 @@
 title: "Effects of dog ownership and genotype on immune development and atopy in infancy"
 date: 2004-02-01
 publishDate: 2020-02-08T06:30:32.807907Z
-authors: ["J. E. Gern", "C. L. Reardon", "S. Hoffjan", "D. Nicolae", "Z. Li", "K. A. Roberg", "W. A. Neaville", "K. Carlson-Dakes", "K. Adler", "R. Hamilton", "E. Anderson", "S. Gilbertson-White", "C. Tisler", "D. Dasilva", "K. Anklam", "L. D. Mikus", "L. A. Rosenthal", "C. Ober", "R. Gangnon", "R. F. Lemanske"]
+authors: ["Jim Gern", "Claudia Reardon", "Sabine Hoffjan", "Dan Nicolae", "Zhanhai Li", "Kathy Roberg", "William Neaville", "Kirstin Carlson-Dakes", "Kiva Adler", "Rebekah Hamilton", "Beth Anderson", "Stephanie Gilbertson-White", "Chris Tisler", "Douglas Dasilva", "Kelly Anklam", "Lance Mikus", "Louis Rosenthal", "Carole Ober", "Ronald Gangnon", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Having a dog in infancy is associated with higher IL-10 and IL-13 cytokine secretion profiles and reduced allergic sensitization and atopic dermatitis. These findings suggest that postnatal exposure to dogs can influence immune development in a genotype-specific fashion and thereby attenuate the development of atopy in at-risk children."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(03)02679-4/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: gern-2004.pdf
+doi: https://doi.org/10.1016/j.jaci.2003.11.017
+projects: [COAST]
 ---
 

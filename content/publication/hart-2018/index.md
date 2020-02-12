@@ -2,7 +2,7 @@
 title: "The association between post-diagnosis health behaviors and long-term quality of life in survivors of ductal carcinoma in situ: a population-based longitudinal cohort study"
 date: 2018-05-01
 publishDate: 2020-02-08T06:30:32.685731Z
-authors: ["V. Hart", "A. Trentham-Dietz", "A. Berkman", "M. Fujii", "C. Veal", "J. Hampton", "R. E. Gangnon", "P. A. Newcomb", "S. C. Gilchrist", "B. L. Sprague"]
+authors: ["Vicki Hart", "Amy Trentham-Dietz", "Amy Berkman", "Mayo Fujii", "Christopher Veal", "John Hampton", "Ronald Gangnon", "Polly Newcomb", "Susan Gilchrist", "Brian Sprague"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Our results demonstrate that maintaining healthy behaviors following DCIS treatment is associated with modest improvements in long-term QoL. These results inform interventions aimed at promoting healthy behaviors and optimizing QoL in DCIS survivors."
 featured: false
-publication: "*Qual Life Res*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs11136-018-1807-6
+publication: "*Quality of Life Research*"
+publication_short: "*Qual Life Res*"
+url_pdf: hart-2018.pdf
 ---
 

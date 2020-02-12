@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jackie Hind | Ronald Gangnon</title>
+    <link>/authors/jackie-hind/</link>
+      <atom:link href="/authors/jackie-hind/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jackie Hind</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Jackie Hind</title>
+      <link>/authors/jackie-hind/</link>
+    </image>
+    
+    <item>
+      <title>Comparison of standardized bariums with varying rheological parameters on swallowing kinematics in males</title>
+      <link>/publication/hind-2012/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/hind-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Standardized instrument for lingual pressure measurement</title>
+      <link>/publication/hewitt-2008/</link>
+      <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/hewitt-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The effects of intraoral pressure sensors on normal young and old swallowing patterns</title>
+      <link>/publication/hind-2005/</link>
+      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/hind-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

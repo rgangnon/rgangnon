@@ -5,7 +5,7 @@
     <link>/authors/v.-hart/</link>
       <atom:link href="/authors/v.-hart/index.xml" rel="self" type="application/rss+xml" />
     <description>V. Hart</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>V. Hart</title>
@@ -13,26 +13,10 @@
     </image>
     
     <item>
-      <title>The association between post-diagnosis health behaviors and long-term quality of life in survivors of ductal carcinoma in situ: a population-based longitudinal cohort study</title>
-      <link>/publication/hart-2018/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/hart-2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Health-related behaviors and mortality outcomes in women diagnosed with ductal carcinoma in situ</title>
       <link>/publication/veal-2017/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       <guid>/publication/veal-2017/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Trends in Health-Related Quality of Life After a Diagnosis of Ductal Carcinoma In Situ</title>
-      <link>/publication/hart-2016/</link>
-      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/hart-2016/</guid>
       <description></description>
     </item>
     

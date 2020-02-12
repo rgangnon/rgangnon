@@ -2,7 +2,7 @@
 title: "Wisconsin microbiome study, a cross-sectional investigation of dietary fibre, microbiome composition and antibiotic-resistant organisms: rationale and methods"
 date: 2018-03-01
 publishDate: 2020-02-08T06:30:32.682453Z
-authors: ["S. Eggers", "K. M. Malecki", "P. Peppard", "J. Mares", "D. Shirley", "S. K. Shukla", "K. Poulsen", "R. Gangnon", "M. Duster", "A. Kates", "G. Suen", "A. K. Sethi", "N. Safdar"]
+authors: ["Shoshannah Eggers", "Kristen Malecki", "Paul Peppard", "Julie Mares", "Daniel Shirley", "Sanjay Shukla", "Keith Poulsen", "Ronald Gangnon", "Megan Duster", "Ashley Kates", "Garret Suen", "Ajay Sethi", "Nasia Safdar"]
 publication_types: ["2"]
 abstract: "INTRODUCTION:
 
@@ -15,6 +15,8 @@ ETHICS AND DISSEMINATION:
 The WARRIOR project is approved by the University of Wisconsin Institutional Review Board. The main results of this study will be published in a peer-reviewed scientific journal."
 featured: false
 publication: "*BMJ Open*"
-url_pdf: https://bmjopen.bmj.com/content/8/3/e019450.long
+url_pdf: eggers-2018.pdf
+doi: http://dx.doi.org/10.1136/bmjopen-2017-019450
+projects: [WARRIOR, SHOW]
 ---
 

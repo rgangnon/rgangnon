@@ -2,7 +2,7 @@
 title: "Evaluation of the modified asthma predictive index in high-risk preschool children"
 date: 2013-03-01
 publishDate: 2020-02-08T06:30:32.726566Z
-authors: ["Timothy S. Chang", "Robert F. Lemanske Jr", "Theresa W. Guilbert", "James E. Gern", "Michael H. Coen", "Michael D. Evans", "Ronald E. Gangnon", "C. David Page", "Daniel J. Jackson"]
+authors: ["Tim Chang", "Rob Lemanske", "Theresa Guilbert", "Jim Gern", "Michael Coen", "Mike Evans", "Ronald Gangnon", "David Page", "Dan Jackson"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -24,5 +24,6 @@ publication: "*The Journal of Allergy and Clinical Immunology: In Practice*"
 publication_short: "*J Allergy Clin Immunol Pract*"
 url_pdf: chang-2013.pdf
 doi: https://doi.org/10.1016/j.jaip.2012.10.008
+projects: [COAST]
 ---
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Erik Reisdorf | Ronald Gangnon</title>
+    <link>/authors/erik-reisdorf/</link>
+      <atom:link href="/authors/erik-reisdorf/index.xml" rel="self" type="application/rss+xml" />
+    <description>Erik Reisdorf</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Erik Reisdorf</title>
+      <link>/authors/erik-reisdorf/</link>
+    </image>
+    
+    <item>
+      <title>Wheezing rhinovirus illnesses in early life predict asthma development in high-risk children</title>
+      <link>/publication/jackson-2008/</link>
+      <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/jackson-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Viral infections, cytokine dysregulation and the origins of childhood asthma and allergic diseases</title>
+      <link>/publication/friedlander-2005/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/friedlander-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

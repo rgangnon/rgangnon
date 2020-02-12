@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theru Sivakumaran | Ronald Gangnon</title>
+    <link>/authors/theru-sivakumaran/</link>
+      <atom:link href="/authors/theru-sivakumaran/index.xml" rel="self" type="application/rss+xml" />
+    <description>Theru Sivakumaran</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Theru Sivakumaran</title>
+      <link>/authors/theru-sivakumaran/</link>
+    </image>
+    
+    <item>
+      <title>Severity of age-related macular degeneration in 1 eye and the incidence and progression of age-related macular degeneration in the fellow eye: the Beaver Dam Eye Study</title>
+      <link>/publication/gangnon-2015/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Misclassification can explain most apparent regression of age-related macular degeneration: results from multistate models with misclassification</title>
+      <link>/publication/gangnon-2014/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effect of the Y402H variant in the complement factor H gene on the incidence and progression of age-related macular degeneration: results from multistate models applied to the Beaver Dam Eye Study</title>
+      <link>/publication/gangnon-2012b/</link>
+      <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2012b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

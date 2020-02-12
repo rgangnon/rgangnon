@@ -2,7 +2,7 @@
 title: "Increased risk for falling associated with subtle cognitive impairment: secondary analysis of a randomized clinical trial"
 date: 2009-01-01
 publishDate: 2020-02-08T06:30:32.774572Z
-authors: ["C. E. Gleason", "R. E. Gangnon", "B. L. Fischer", "J. E. Mahoney"]
+authors: ["Carey Gleason", "Ronald Gangnon", "Barbara Fischer", "Jane Mahoney"]
 publication_types: ["2"]
 abstract: "BACKGROUND/AIMS:
 
@@ -17,7 +17,10 @@ CONCLUSION:
 
 Minimal decrements on the MMSE were associated with elevations in rate of falls, suggesting that subtle cognitive deficits reflected in MMSE scores above a cut-off consistent with a diagnosis of dementia, can influence risk for falls."
 featured: false
-publication: "*Dement Geriatr Cogn Disord*"
-url_pdf: https://www.karger.com/Article/Abstract/228257
+publication: "*Dementia & Geriatric Cognitive Disorders*"
+publication_short: "*Dement Geriatr Cogn Disord*"
+url_pdf: gleason-2009.pdf
+doi: https://doi.org/10.1159/000228257
+projects: [Kenosha]
 ---
 

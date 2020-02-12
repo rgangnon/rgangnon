@@ -2,7 +2,7 @@
 title: "Decreased lung function after preschool wheezing rhinovirus illnesses in children at risk to develop asthma"
 date: 2011-09-01
 publishDate: 2020-02-08T06:30:32.753099Z
-authors: ["T. W. Guilbert", "A. M. Singh", "Z. Danov", "M. D. Evans", "D. J. Jackson", "R. Burton", "K. A. Roberg", "E. L. Anderson", "T. E. Pappas", "R. Gangnon", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Theresa Guilbert", "Anne Marie Singh", "Zoran Danov", "Mike Evans", "Dan Jackson", "Ryan Burton", "Kathy Roberg", "Beth Anderson", "Tressa Pappas", "Ronald Gangnon", "Jim Gern", "RobLemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 Among outpatient viral wheezing illnesses in early childhood, those caused by RV infections are the most significant predictors of decreased lung function up to age 8 years in a high-risk birth cohort. Whether low lung function is a cause and/or effect of RV wheezing illnesses is yet to be determined."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(11)01059-1/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: guilbert-2011.pdf
+doi: https://doi.org/10.1016/j.jaci.2011.06.037
+projects: [COAST]
 ---
 

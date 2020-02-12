@@ -2,7 +2,7 @@
 title: "Variability in Spectral-Domain Optical Coherence Tomography over 4 Weeks by Age"
 date: 2016-06-01
 publishDate: 2020-02-08T06:30:32.699915Z
-authors: ["K. P. Howard", "C. S. Chandler", "Y. Huang", "B. E. Klein", "K. E. Lee", "S. M. Meuer", "R. P. Danis", "L. G. Danforth", "R. E. Gangnon", "R. Klein"]
+authors: ["Kerri Howard", "Charles Chandler", "Yijun Huang", "Barbara Klein", "Kris Lee", "Stacy Meuer", "Ron Danis", "Lorraine Danforth", "Ronald Gangnon", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -18,6 +18,7 @@ CONCLUSIONS:
 Correlation between retinal thickness measures was very high (>0.95) over a period of 4 weeks with small changes likely due to variation in measurement. Increasing variability in total retinal and RPE thickness measures with age suggest that the use of more and/or higher quality images to calculate mean thickness to reduce variability may benefit the study of these measures in older persons. This may also impact sample size calculations for future studies of SD-OCT measures in older adults."
 featured: false
 publication: "*Ophthalmic Epidemiol*"
-url_pdf: https://www.tandfonline.com/doi/abs/10.3109/09286586.2015.1119285?journalCode=iope20
+publication: "*Ophthalmic Epidemiology*"
+doi: https://doi.org/10.3109/09286586.2015.1119285
 ---
 

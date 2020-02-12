@@ -2,7 +2,7 @@
 title: "Viral infections, cytokine dysregulation and the origins of childhood asthma and allergic diseases"
 date: 2005-11-01
 publishDate: 2020-02-08T06:30:32.796159Z
-authors: ["S. L. Friedlander", "D. J. Jackson", "R. E. Gangnon", "M. D. Evans", "Z. Li", "K. A. Roberg", "E. L. Anderson", "K. T. Carlson-Dakes", "K. J. Adler", "S. Gilbertson-White", "T. E. Pappas", "D. F. Dasilva", "C. J. Tisler", "L. E. Pleiss", "L. D. Mikus", "L. A. Rosenthal", "P. A. Shult", "C. J. Kirk", "E. Reisdorf", "S. Hoffjan", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Sam Friedlander", "Dan Jackson", "Ronald Gangnon", "Mike Evans", "Zhanlai Li", "Kathy Roberg", "Beth Anderson", "Kirstin Carlson-Dakes", "Kiva Adler", "Stephanie Gilbertson-White", "Tressa Pappas", "Douglas Dasilva", "Chris Tisler", "Lisa Pleiss", "Lance Mikus", "Louis Rosenthal", "Peter Shult", "Carol Kirk", "Erik Reisdorf", "Sabine Hoffjan", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 Associations between clinical wheezing, viral identification, specific cytokine responses and genetic variation provide insight into the immunopathogenesis of childhood asthma and allergic diseases."
 featured: false
-publication: "*Pediatr. Infect. Dis. J.*"
-url_pdf: https://insights.ovid.com/crossref?an=00006454-200511001-00004
+publication: "*Pediatric Infectious Disease Journal*"
+publication_short: "*Pediatr. Infect. Dis. J.*"
+doi: 10.1097/01.inf.0000187273.47390.01
+projects: [COAST]
 ---
 

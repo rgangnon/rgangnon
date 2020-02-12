@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sabine Hoffjan | Ronald Gangnon</title>
+    <link>/authors/sabine-hoffjan/</link>
+      <atom:link href="/authors/sabine-hoffjan/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sabine Hoffjan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2005 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Sabine Hoffjan</title>
+      <link>/authors/sabine-hoffjan/</link>
+    </image>
+    
+    <item>
+      <title>Viral infections, cytokine dysregulation and the origins of childhood asthma and allergic diseases</title>
+      <link>/publication/friedlander-2005/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/friedlander-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gene-environment interaction effects on the development of immune responses in the 1st year of life</title>
+      <link>/publication/hoffjan-2005/</link>
+      <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/hoffjan-2005/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Genetic variation in immunoregulatory pathways and atopic phenotypes in infancy</title>
+      <link>/publication/hoffjan-2004/</link>
+      <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/hoffjan-2004/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effects of dog ownership and genotype on immune development and atopy in infancy</title>
+      <link>/publication/gern-2004/</link>
+      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/gern-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

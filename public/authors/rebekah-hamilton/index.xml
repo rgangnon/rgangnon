@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rebekah Hamilton | Ronald Gangnon</title>
+    <link>/authors/rebekah-hamilton/</link>
+      <atom:link href="/authors/rebekah-hamilton/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rebekah Hamilton</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Feb 2004 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Rebekah Hamilton</title>
+      <link>/authors/rebekah-hamilton/</link>
+    </image>
+    
+    <item>
+      <title>Effects of dog ownership and genotype on immune development and atopy in infancy</title>
+      <link>/publication/gern-2004/</link>
+      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/gern-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

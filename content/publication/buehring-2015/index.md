@@ -2,7 +2,7 @@
 title: "Reproducibility of jumping mechanography and traditional measures of physical and muscle function in older adults"
 date: 2015-02-01
 publishDate: 2020-02-08T06:30:32.711222Z
-authors: ["B. Buehring", "D. Krueger", "E. Fidler", "R. Gangnon", "B. Heiderscheit", "N. Binkley"]
+authors: ["Bjoern Buehring", "Diane Krueger", "E. Fidler", "Ronald Gangnon", "Bryan Heiderscheit", "Neil Binkley"]
 publication_types: ["2"]
 abstract: "SUMMARY:
 
@@ -20,7 +20,9 @@ CONCLUSION:
 
 In older adults, JM has excellent retest reliability, is stable over time, and can be performed safely. JM retest reliability was comparable to grip strength and possibly better than SPPB and gait speed. JM is a promising tool for muscle function assessment in older adults. Comparison of this approach with traditional assessment tools in longitudinal interventional studies is needed."
 featured: false
-publication: "*Osteoporos Int*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs00198-014-2983-z
+publication: "*Osteoporos International*"
+publication_short: "*Osteoporos Int*"
+url_pdf: buehring-2015.pdf
+doi: 10.1007/s00198-014-2983-z
 ---
 

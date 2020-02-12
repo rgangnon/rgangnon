@@ -2,7 +2,7 @@
 title: "Automatic Identification of Physical Activity Type and Duration by Wearable Activity Trackers: A Validation Study"
 date: 2019-05-01
 publishDate: 2020-02-08T06:30:32.675971Z
-authors: [Diana  Dorn, Jessica  Gorzelitz,  Ronald  Gangnon,  David  Bell,  Kelli  Koltyn,  Lisa Cadmus-Bertram]
+authors: [Diana Dorn, Jessica Gorzelitz,  Ronald Gangnon,  David Bell,  Kelli Koltyn,  Lisa Cadmus-Bertram]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

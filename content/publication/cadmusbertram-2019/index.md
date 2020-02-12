@@ -2,7 +2,7 @@
 title: "Building a physical activity intervention into clinical care for breast and colorectal cancer survivors in Wisconsin: a randomized controlled pilot trial"
 date: 2019-08-01
 publishDate: 2020-02-08T06:30:32.674537Z
-authors: [Lisa Cadmus-Bertram, Amye J. Tevaarwerk, Mary E. Sesto, Ronald Gangnon, Brittany Van Remortel, Preshita Date]
+authors: [Lisa Cadmus-Bertram, Amye Tevaarwerk, Mary Sesto, Ronald Gangnon, Brittany Van Remortel, Preshita Date]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

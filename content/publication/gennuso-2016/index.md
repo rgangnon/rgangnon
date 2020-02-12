@@ -2,7 +2,7 @@
 title: "Patterns of sedentary behavior and physical function in older adults"
 date: 2016-10-01
 publishDate: 2020-02-08T06:30:32.706220Z
-authors: ["K. P. Gennuso", "K. M. Thraen-Borowski", "R. E. Gangnon", "L. H. Colbert"]
+authors: ["Keith Gennuso", "Keith Thraen-Borowski", "Ronald Gangnon", "Lisa Colbert"]
 publication_types: ["2"]
 abstract: "BACKGROUND/AIMS:
 
@@ -17,7 +17,9 @@ DISCUSSION/CONCLUSIONS:
 
 This study provides further evidence for the association between SB and physical function and describes where older adults are spending their sedentary time. This information can be used in the design of future intervention to reduce sedentary time and improve function in older adults."
 featured: false
-publication: "*Aging Clin Exp Res*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs40520-015-0386-4
+publication: "*Aging Clinical & Experimental Research*"
+publication_short: "*Aging Clin Exp Res*"
+url_pdf: gennuso-2016.pdf
+doi: 10.1007/s40520-015-0386-4
 ---
 

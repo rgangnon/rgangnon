@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Irina Ostrovnaya | Ronald Gangnon</title>
+    <link>/authors/irina-ostrovnaya/</link>
+      <atom:link href="/authors/irina-ostrovnaya/index.xml" rel="self" type="application/rss+xml" />
+    <description>Irina Ostrovnaya</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2005 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Irina Ostrovnaya</title>
+      <link>/authors/irina-ostrovnaya/</link>
+    </image>
+    
+    <item>
+      <title>Gene-environment interaction effects on the development of immune responses in the 1st year of life</title>
+      <link>/publication/hoffjan-2005/</link>
+      <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/hoffjan-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

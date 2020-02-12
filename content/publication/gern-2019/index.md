@@ -2,8 +2,8 @@
 title: "Development of a Rhinovirus Inoculum Using a Reverse Genetics Approach"
 date: 2019-06-01
 publishDate: 2020-02-08T06:30:32.679827Z
-authors: [James E. Gern, Wai Ming Lee, Cheri A. Swenson, Kazuyuki Nakagome, Iris Lee, Michele Wolff, Kristine Grindle, Steven Sigelman,
-Stephen B. Liggett, Alkis Togias, Michael Evans, Loren Denlinger, Ronald Gangnon, Yury A. Bochkov, Gina Crisafi]
+authors: [Jim Gern, Wai-Ming Lee, Cheri Swenson, Kazuyuki Nakagome, Iris Lee, Michele Wolff, Kristine Grindle, Steven Sigelman,
+Stephen Liggett, Alkis Togias, Mike Evans, Loren Denlinger, Ronald Gangnon, Yury Bochkov, Gina Crisafi]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

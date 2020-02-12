@@ -2,7 +2,7 @@
 title: "Enthacrynic and acid effects on inner wall pores in living monkeys"
 date: 1999-06-01
 publishDate: 2020-02-08T06:30:32.813845Z
-authors: ["C. R. Ethier", "M. A. Croft", "F. M. Coloma", "R. E. Gangnon", "W. Ladd", "P. L. Kaufman"]
+authors: ["Ross Ethier", "Mary Ann Croft", "Fides Coloma", "Ronald Gangnon", "Bill Ladd", "Paul Kaufman"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Our data are most consistent with a scenario in which ECA promotes formation of large intercellular pores in the inner wall of Schlemm's canal, which are then masked by platelet aggregates. Masking of intercellular pores, combined with fixation-induced alteration of inner wall pore density, greatly complicates attempts to relate facility to inner wall structure and suggests that in vivo pore density is smaller than in fixed tissue. Additionally, facility-influencing effects of ECA on the juxtacanalicular tissue cannot be excluded."
 featured: false
-publication: "*Invest. Ophthalmol. Vis. Sci.*"
-url_pdf: https://iovs.arvojournals.org/article.aspx?articleid=2181360
+publication: "*Investigative Ophthalmology & Visual Science*"
+publication_short: "*Invest. Ophthalmol. Vis. Sci.*"
+url_pdf: ethier-1999.pdf
 ---
 

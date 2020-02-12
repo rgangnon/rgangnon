@@ -2,7 +2,7 @@
 title: "Ranking composite Cancer Burden Indices for geographic regions: point and interval estimates"
 date: 2018-02-01
 publishDate: 2020-02-08T06:30:32.686185Z
-authors: [Bin Huang, Elizabeth Pollock, Li Zhu, Jessica P. Athens, Ron Gangnon, Eric J. Feuer, Thomas C. Tucker]
+authors: [Bin Huang, Elizabeth Pollock, Li Zhu, Jessica Athens, Ronald Gangnon, Rocky Feuer, Thomas Tucker]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -21,5 +21,6 @@ publication: "*Cancer Causes & Control*"
 publication_short: "*Cancer Causes Control*"
 url_pdf: huang-2018.pdf
 doi: https://doi.org/10.1007/s10552-018-1000-9
+projects: [Rankings]
 ---
 

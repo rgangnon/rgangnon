@@ -2,11 +2,13 @@
 title: "An evaluation of high-dose vitamin D for rheumatoid arthritis"
 date: 2014-03-01
 publishDate: 2020-02-08T06:30:32.721310Z
-authors: ["K. E. Hansen", "C. M. Bartels", "R. E. Gangnon", "A. N. Jones", "J. Gogineni"]
+authors: ["Karen Hansen", "Christie Bartels", "Ronald Gangnon", "Andrea Jones", "Jyothi Gogineni"]
 publication_types: ["2"]
 abstract: ""
 featured: false
-publication: "*J Clin Rheumatol*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4089514/
+publication: "*Journal of Clinical Rheumatology*"
+publication_short: "*J Clin Rheumatol*"
+url_pdf: hansen-2014.pdf
+doi: 10.1097/RHU.0000000000000072
 ---
 

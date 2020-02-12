@@ -8,5 +8,6 @@ abstract: "Black women tend to be diagnosed with breast cancer at a more advance
 featured: false
 publication: "*Breast Cancer Res. Treat.*"
 url_pdf: https://link.springer.com/article/10.1007%2Fs10549-013-2435-z
+projects: [CISNET]
 ---
 

@@ -61,14 +61,6 @@
     </item>
     
     <item>
-      <title>Eric J Feuer</title>
-      <link>/authors/eric-j-feuer/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/eric-j-feuer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>James M. Sosman</title>
       <link>/authors/james-m.-sosman/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
@@ -109,10 +101,10 @@
     </item>
     
     <item>
-      <title>Patricia I Jewett</title>
-      <link>/authors/patricia-i-jewett/</link>
+      <title>Patricia Jewett</title>
+      <link>/authors/patricia-jewett/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/patricia-i-jewett/</guid>
+      <guid>/authors/patricia-jewett/</guid>
       <description></description>
     </item>
     
@@ -125,6 +117,14 @@
     </item>
     
     <item>
+      <title>Rocky Feuer</title>
+      <link>/authors/rocky-feuer/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/rocky-feuer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ron E. Gangnon</title>
       <link>/authors/ron-e.-gangnon/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
@@ -133,18 +133,18 @@
     </item>
     
     <item>
-      <title>Ronald E Gangnon</title>
-      <link>/authors/ronald-e-gangnon/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/ronald-e-gangnon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ronald E. Gangnon</title>
       <link>/authors/ronald-e.-gangnon/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/authors/ronald-e.-gangnon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ronald Gangnon</title>
+      <link>/authors/ronald-gangnon/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/ronald-gangnon/</guid>
       <description></description>
     </item>
     
@@ -165,10 +165,10 @@
     </item>
     
     <item>
-      <title>Amye J. Tevaarwerk</title>
-      <link>/authors/amye-j.-tevaarwerk/</link>
+      <title>Amye Tevaarwerk</title>
+      <link>/authors/amye-tevaarwerk/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/amye-j.-tevaarwerk/</guid>
+      <guid>/authors/amye-tevaarwerk/</guid>
       <description></description>
     </item>
     
@@ -325,10 +325,10 @@
     </item>
     
     <item>
-      <title>Mary E. Sesto</title>
-      <link>/authors/mary-e.-sesto/</link>
+      <title>Mary Sesto</title>
+      <link>/authors/mary-sesto/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/mary-e.-sesto/</guid>
+      <guid>/authors/mary-sesto/</guid>
       <description></description>
     </item>
     
@@ -369,14 +369,6 @@
       <link>/authors/rachel-l.-miller/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/authors/rachel-l.-miller/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ronald Gangnon</title>
-      <link>/authors/ronald-gangnon/</link>
-      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/ronald-gangnon/</guid>
       <description></description>
     </item>
     
@@ -501,10 +493,10 @@
     </item>
     
     <item>
-      <title>Cheri A. Swenson</title>
-      <link>/authors/cheri-a.-swenson/</link>
+      <title>Cheri Swenson</title>
+      <link>/authors/cheri-swenson/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/cheri-a.-swenson/</guid>
+      <guid>/authors/cheri-swenson/</guid>
       <description></description>
     </item>
     
@@ -525,10 +517,10 @@
     </item>
     
     <item>
-      <title>James E. Gern</title>
-      <link>/authors/james-e.-gern/</link>
+      <title>Jim Gern</title>
+      <link>/authors/jim-gern/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/james-e.-gern/</guid>
+      <guid>/authors/jim-gern/</guid>
       <description></description>
     </item>
     
@@ -557,14 +549,6 @@
     </item>
     
     <item>
-      <title>Michael Evans</title>
-      <link>/authors/michael-evans/</link>
-      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/michael-evans/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Michele Wolff</title>
       <link>/authors/michele-wolff/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
@@ -573,10 +557,18 @@
     </item>
     
     <item>
-      <title>Stephen B. Liggett</title>
-      <link>/authors/stephen-b.-liggett/</link>
+      <title>Mike Evans</title>
+      <link>/authors/mike-evans/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/stephen-b.-liggett/</guid>
+      <guid>/authors/mike-evans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stephen Liggett</title>
+      <link>/authors/stephen-liggett/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/stephen-liggett/</guid>
       <description></description>
     </item>
     
@@ -589,7 +581,7 @@
     </item>
     
     <item>
-      <title>Wai Ming Lee</title>
+      <title>Wai-Ming Lee</title>
       <link>/authors/wai-ming-lee/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/authors/wai-ming-lee/</guid>
@@ -597,10 +589,10 @@
     </item>
     
     <item>
-      <title>Yury A. Bochkov</title>
-      <link>/authors/yury-a.-bochkov/</link>
+      <title>Yury Bochkov</title>
+      <link>/authors/yury-bochkov/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/yury-a.-bochkov/</guid>
+      <guid>/authors/yury-bochkov/</guid>
       <description></description>
     </item>
     
@@ -621,7 +613,7 @@
     </item>
     
     <item>
-      <title>David  Bell</title>
+      <title>David Bell</title>
       <link>/authors/david-bell/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>/authors/david-bell/</guid>
@@ -637,7 +629,7 @@
     </item>
     
     <item>
-      <title>Diana  Dorn</title>
+      <title>Diana Dorn</title>
       <link>/authors/diana-dorn/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>/authors/diana-dorn/</guid>
@@ -661,7 +653,7 @@
     </item>
     
     <item>
-      <title>Jessica  Gorzelitz</title>
+      <title>Jessica Gorzelitz</title>
       <link>/authors/jessica-gorzelitz/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>/authors/jessica-gorzelitz/</guid>
@@ -701,7 +693,7 @@
     </item>
     
     <item>
-      <title>Kelli  Koltyn</title>
+      <title>Kelli Koltyn</title>
       <link>/authors/kelli-koltyn/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       <guid>/authors/kelli-koltyn/</guid>
@@ -792,18 +784,18 @@
     </item>
     
     <item>
-      <title>Jane E Mahoney</title>
-      <link>/authors/jane-e-mahoney/</link>
+      <title>Jane Mahoney</title>
+      <link>/authors/jane-mahoney/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/jane-e-mahoney/</guid>
+      <guid>/authors/jane-mahoney/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Kristine M Hallisy</title>
-      <link>/authors/kristine-m-hallisy/</link>
+      <title>Kristine Hallisy</title>
+      <link>/authors/kristine-hallisy/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/kristine-m-hallisy/</guid>
+      <guid>/authors/kristine-hallisy/</guid>
       <description></description>
     </item>
     
@@ -1016,58 +1008,74 @@
     </item>
     
     <item>
-      <title>A. Berkman</title>
-      <link>/authors/a.-berkman/</link>
+      <title>Amy Berkman</title>
+      <link>/authors/amy-berkman/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-berkman/</guid>
+      <guid>/authors/amy-berkman/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>B. L. Sprague</title>
-      <link>/authors/b.-l.-sprague/</link>
+      <title>Amy Trentham-Dietz</title>
+      <link>/authors/amy-trentham-dietz/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-l.-sprague/</guid>
+      <guid>/authors/amy-trentham-dietz/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. Veal</title>
-      <link>/authors/c.-veal/</link>
+      <title>Brian Sprague</title>
+      <link>/authors/brian-sprague/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-veal/</guid>
+      <guid>/authors/brian-sprague/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. Fujii</title>
-      <link>/authors/m.-fujii/</link>
+      <title>Christopher Veal</title>
+      <link>/authors/christopher-veal/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-fujii/</guid>
+      <guid>/authors/christopher-veal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>P. A. Newcomb</title>
-      <link>/authors/p.-a.-newcomb/</link>
+      <title>John Hampton</title>
+      <link>/authors/john-hampton/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-a.-newcomb/</guid>
+      <guid>/authors/john-hampton/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. C. Gilchrist</title>
-      <link>/authors/s.-c.-gilchrist/</link>
+      <title>Mayo Fujii</title>
+      <link>/authors/mayo-fujii/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-c.-gilchrist/</guid>
+      <guid>/authors/mayo-fujii/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>V. Hart</title>
-      <link>/authors/v.-hart/</link>
+      <title>Polly Newcomb</title>
+      <link>/authors/polly-newcomb/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/v.-hart/</guid>
+      <guid>/authors/polly-newcomb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Susan Gilchrist</title>
+      <link>/authors/susan-gilchrist/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/susan-gilchrist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vicki Hart</title>
+      <link>/authors/vicki-hart/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/vicki-hart/</guid>
       <description></description>
     </item>
     
@@ -1096,26 +1104,10 @@
     </item>
     
     <item>
-      <title>Amy Trentham-Dietz</title>
-      <link>/authors/amy-trentham-dietz/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/amy-trentham-dietz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Brian L. Sprague</title>
       <link>/authors/brian-l.-sprague/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       <guid>/authors/brian-l.-sprague/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Brian Sprague</title>
-      <link>/authors/brian-sprague/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/brian-sprague/</guid>
       <description></description>
     </item>
     
@@ -1176,22 +1168,6 @@
     </item>
     
     <item>
-      <title>John Hampton</title>
-      <link>/authors/john-hampton/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/john-hampton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>John M. Hampton</title>
-      <link>/authors/john-m.-hampton/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/john-m.-hampton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kathleen A. Cronin</title>
       <link>/authors/kathleen-a.-cronin/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
@@ -1248,18 +1224,18 @@
     </item>
     
     <item>
-      <title>Natasha K. Stout</title>
-      <link>/authors/natasha-k.-stout/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/natasha-k.-stout/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Oguzhan Alagoz</title>
       <link>/authors/oguzhan-alagoz/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       <guid>/authors/oguzhan-alagoz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>P. A. Newcomb</title>
+      <link>/authors/p.-a.-newcomb/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/p.-a.-newcomb/</guid>
       <description></description>
     </item>
     
@@ -1304,106 +1280,74 @@
     </item>
     
     <item>
-      <title>A. K. Sethi</title>
-      <link>/authors/a.-k.-sethi/</link>
+      <title>Ajay Sethi</title>
+      <link>/authors/ajay-sethi/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-k.-sethi/</guid>
+      <guid>/authors/ajay-sethi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A. Kates</title>
-      <link>/authors/a.-kates/</link>
+      <title>Ashley Kates</title>
+      <link>/authors/ashley-kates/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-kates/</guid>
+      <guid>/authors/ashley-kates/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Shirley</title>
-      <link>/authors/d.-shirley/</link>
+      <title>Daniel Shirley</title>
+      <link>/authors/daniel-shirley/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-shirley/</guid>
+      <guid>/authors/daniel-shirley/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. Suen</title>
-      <link>/authors/g.-suen/</link>
+      <title>Julie Mares</title>
+      <link>/authors/julie-mares/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-suen/</guid>
+      <guid>/authors/julie-mares/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Mares</title>
-      <link>/authors/j.-mares/</link>
+      <title>Keith Poulsen</title>
+      <link>/authors/keith-poulsen/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-mares/</guid>
+      <guid>/authors/keith-poulsen/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. M. Malecki</title>
-      <link>/authors/k.-m.-malecki/</link>
+      <title>Kristen Malecki</title>
+      <link>/authors/kristen-malecki/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-m.-malecki/</guid>
+      <guid>/authors/kristen-malecki/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Poulsen</title>
-      <link>/authors/k.-poulsen/</link>
+      <title>Megan Duster</title>
+      <link>/authors/megan-duster/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-poulsen/</guid>
+      <guid>/authors/megan-duster/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. Duster</title>
-      <link>/authors/m.-duster/</link>
+      <title>Sanjay Shukla</title>
+      <link>/authors/sanjay-shukla/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-duster/</guid>
+      <guid>/authors/sanjay-shukla/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>N. Safdar</title>
-      <link>/authors/n.-safdar/</link>
+      <title>Shoshannah Eggers</title>
+      <link>/authors/shoshannah-eggers/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/n.-safdar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>P. Peppard</title>
-      <link>/authors/p.-peppard/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-peppard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S. Eggers</title>
-      <link>/authors/s.-eggers/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-eggers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S. K. Shukla</title>
-      <link>/authors/s.-k.-shukla/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-k.-shukla/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A. Friedl</title>
-      <link>/authors/a.-friedl/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-friedl/</guid>
+      <guid>/authors/shoshannah-eggers/</guid>
       <description></description>
     </item>
     
@@ -1412,6 +1356,22 @@
       <link>/authors/a.-n.-a.-tosteson/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/authors/a.-n.-a.-tosteson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andreas Friedl</title>
+      <link>/authors/andreas-friedl/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/andreas-friedl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>B. L. Sprague</title>
+      <link>/authors/b.-l.-sprague/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/b.-l.-sprague/</guid>
       <description></description>
     </item>
     
@@ -1472,14 +1432,6 @@
     </item>
     
     <item>
-      <title>Eric J. Feuer</title>
-      <link>/authors/eric-j.-feuer/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/eric-j.-feuer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Fue Vang</title>
       <link>/authors/fue-vang/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
@@ -1496,14 +1448,6 @@
     </item>
     
     <item>
-      <title>J. S. Bredfeldt</title>
-      <link>/authors/j.-s.-bredfeldt/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-s.-bredfeldt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>James LaGro</title>
       <link>/authors/james-lagro/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
@@ -1512,18 +1456,26 @@
     </item>
     
     <item>
-      <title>Jessica P. Athens</title>
-      <link>/authors/jessica-p.-athens/</link>
+      <title>Jeremy Bredfeldt</title>
+      <link>/authors/jeremy-bredfeldt/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/jessica-p.-athens/</guid>
+      <guid>/authors/jeremy-bredfeldt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jim Gern</title>
-      <link>/authors/jim-gern/</link>
+      <title>Jessica Athens</title>
+      <link>/authors/jessica-athens/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/jim-gern/</guid>
+      <guid>/authors/jessica-athens/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>John M. Hampton</title>
+      <link>/authors/john-m.-hampton/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/john-m.-hampton/</guid>
       <description></description>
     </item>
     
@@ -1536,10 +1488,10 @@
     </item>
     
     <item>
-      <title>K. W. Eliceiri</title>
-      <link>/authors/k.-w.-eliceiri/</link>
+      <title>Kevin Eliceiri</title>
+      <link>/authors/kevin-eliceiri/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-w.-eliceiri/</guid>
+      <guid>/authors/kevin-eliceiri/</guid>
       <description></description>
     </item>
     
@@ -1552,26 +1504,18 @@
     </item>
     
     <item>
-      <title>Kristen Malecki</title>
-      <link>/authors/kristen-malecki/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/kristen-malecki/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>L. Van Gemert</title>
-      <link>/authors/l.-van-gemert/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-van-gemert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lisa Salazar</title>
       <link>/authors/lisa-salazar/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/authors/lisa-salazar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lisa Van Gemert</title>
+      <link>/authors/lisa-van-gemert/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/lisa-van-gemert/</guid>
       <description></description>
     </item>
     
@@ -1584,18 +1528,10 @@
     </item>
     
     <item>
-      <title>M. W. Conklin</title>
-      <link>/authors/m.-w.-conklin/</link>
+      <title>Matt Conklin</title>
+      <link>/authors/matt-conklin/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-w.-conklin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mike Evans</title>
-      <link>/authors/mike-evans/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/mike-evans/</guid>
+      <guid>/authors/matt-conklin/</guid>
       <description></description>
     </item>
     
@@ -1608,10 +1544,10 @@
     </item>
     
     <item>
-      <title>N. Surachaicharn</title>
-      <link>/authors/n.-surachaicharn/</link>
+      <title>Nuntida Surachaicharn</title>
+      <link>/authors/nuntida-surachaicharn/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/n.-surachaicharn/</guid>
+      <guid>/authors/nuntida-surachaicharn/</guid>
       <description></description>
     </item>
     
@@ -1620,14 +1556,6 @@
       <link>/authors/o.-alagoz/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/authors/o.-alagoz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>P. J. Keely</title>
-      <link>/authors/p.-j.-keely/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-j.-keely/</guid>
       <description></description>
     </item>
     
@@ -1648,6 +1576,14 @@
     </item>
     
     <item>
+      <title>Patty Keely</title>
+      <link>/authors/patty-keely/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/patty-keely/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Polly A. Newcomb</title>
       <link>/authors/polly-a.-newcomb/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
@@ -1660,14 +1596,6 @@
       <link>/authors/rob-lemanske/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/authors/rob-lemanske/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ron Gangnon</title>
-      <link>/authors/ron-gangnon/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/ron-gangnon/</guid>
       <description></description>
     </item>
     
@@ -1704,10 +1632,10 @@
     </item>
     
     <item>
-      <title>Thomas C. Tucker</title>
-      <link>/authors/thomas-c.-tucker/</link>
+      <title>Thomas Tucker</title>
+      <link>/authors/thomas-tucker/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/thomas-c.-tucker/</guid>
+      <guid>/authors/thomas-tucker/</guid>
       <description></description>
     </item>
     
@@ -1720,18 +1648,10 @@
     </item>
     
     <item>
-      <title>Y. Liu</title>
-      <link>/authors/y.-liu/</link>
+      <title>Yuming Liu</title>
+      <link>/authors/yuming-liu/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/y.-liu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yury Bochkov</title>
-      <link>/authors/yury-bochkov/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/yury-bochkov/</guid>
+      <guid>/authors/yuming-liu/</guid>
       <description></description>
     </item>
     
@@ -1800,6 +1720,14 @@
     </item>
     
     <item>
+      <title>Natasha K. Stout</title>
+      <link>/authors/natasha-k.-stout/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/natasha-k.-stout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nicolien T. van Ravesteyn</title>
       <link>/authors/nicolien-t.-van-ravesteyn/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
@@ -1856,34 +1784,26 @@
     </item>
     
     <item>
-      <title>E. J. Wirkus</title>
-      <link>/authors/e.-j.-wirkus/</link>
+      <title>Emily Wirkus</title>
+      <link>/authors/emily-wirkus/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/authors/e.-j.-wirkus/</guid>
+      <guid>/authors/emily-wirkus/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Gorzelitz-Liebhauser</title>
-      <link>/authors/j.-gorzelitz-liebhauser/</link>
+      <title>Jessica Gorzelitz-Liebhauser</title>
+      <link>/authors/jessica-gorzelitz-liebhauser/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-gorzelitz-liebhauser/</guid>
+      <guid>/authors/jessica-gorzelitz-liebhauser/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. M. Thraen-Borowski</title>
-      <link>/authors/k.-m.-thraen-borowski/</link>
+      <title>Keith Thraen-Borowski</title>
+      <link>/authors/keith-thraen-borowski/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-m.-thraen-borowski/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>L. Cadmus-Bertram</title>
-      <link>/authors/l.-cadmus-bertram/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-cadmus-bertram/</guid>
+      <guid>/authors/keith-thraen-borowski/</guid>
       <description></description>
     </item>
     
@@ -1980,6 +1900,14 @@
       <link>/authors/s.-t.-higgins/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       <guid>/authors/s.-t.-higgins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>V. Hart</title>
+      <link>/authors/v.-hart/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/v.-hart/</guid>
       <description></description>
     </item>
     
@@ -2136,14 +2064,6 @@
     </item>
     
     <item>
-      <title>Polly Newcomb</title>
-      <link>/authors/polly-newcomb/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/authors/polly-newcomb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R. L. Kruse</title>
       <link>/authors/r.-l.-kruse/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -2240,18 +2160,18 @@
     </item>
     
     <item>
-      <title>K. P. Gennuso</title>
-      <link>/authors/k.-p.-gennuso/</link>
+      <title>Keith Gennuso</title>
+      <link>/authors/keith-gennuso/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-p.-gennuso/</guid>
+      <guid>/authors/keith-gennuso/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L. H. Colbert</title>
-      <link>/authors/l.-h.-colbert/</link>
+      <title>Lisa Colbert</title>
+      <link>/authors/lisa-colbert/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-h.-colbert/</guid>
+      <guid>/authors/lisa-colbert/</guid>
       <description></description>
     </item>
     
@@ -2272,50 +2192,66 @@
     </item>
     
     <item>
-      <title>B. E. Klein</title>
-      <link>/authors/b.-e.-klein/</link>
+      <title>Barbara Klein</title>
+      <link>/authors/barbara-klein/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-e.-klein/</guid>
+      <guid>/authors/barbara-klein/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. S. Chandler</title>
-      <link>/authors/c.-s.-chandler/</link>
+      <title>Charles Chandler</title>
+      <link>/authors/charles-chandler/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-s.-chandler/</guid>
+      <guid>/authors/charles-chandler/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. P. Howard</title>
-      <link>/authors/k.-p.-howard/</link>
+      <title>Kerri Howard</title>
+      <link>/authors/kerri-howard/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-p.-howard/</guid>
+      <guid>/authors/kerri-howard/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L. G. Danforth</title>
-      <link>/authors/l.-g.-danforth/</link>
+      <title>Kris Lee</title>
+      <link>/authors/kris-lee/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-g.-danforth/</guid>
+      <guid>/authors/kris-lee/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. P. Danis</title>
-      <link>/authors/r.-p.-danis/</link>
+      <title>Lorraine Danforth</title>
+      <link>/authors/lorraine-danforth/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-p.-danis/</guid>
+      <guid>/authors/lorraine-danforth/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Y. Huang</title>
-      <link>/authors/y.-huang/</link>
+      <title>Ron Danis</title>
+      <link>/authors/ron-danis/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/authors/y.-huang/</guid>
+      <guid>/authors/ron-danis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stacy Meuer</title>
+      <link>/authors/stacy-meuer/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/stacy-meuer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yijun Huang</title>
+      <link>/authors/yijun-huang/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/yijun-huang/</guid>
       <description></description>
     </item>
     
@@ -2324,6 +2260,14 @@
       <link>/authors/jiale-xu/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
       <guid>/authors/jiale-xu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Susan Lakoski</title>
+      <link>/authors/susan-lakoski/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/susan-lakoski/</guid>
       <description></description>
     </item>
     
@@ -2436,6 +2380,14 @@
       <link>/authors/n.-rusche/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       <guid>/authors/n.-rusche/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>N. Safdar</title>
+      <link>/authors/n.-safdar/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/n.-safdar/</guid>
       <description></description>
     </item>
     
@@ -2568,10 +2520,10 @@
     </item>
     
     <item>
-      <title>A. T. Coleman</title>
-      <link>/authors/a.-t.-coleman/</link>
+      <title>Amaziah Coleman</title>
+      <link>/authors/amaziah-coleman/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-t.-coleman/</guid>
+      <guid>/authors/amaziah-coleman/</guid>
       <description></description>
     </item>
     
@@ -2728,14 +2680,6 @@
     </item>
     
     <item>
-      <title>Oguz Alagoz</title>
-      <link>/authors/oguz-alagoz/</link>
-      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/oguz-alagoz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>P. L. Remington</title>
       <link>/authors/p.-l.-remington/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
@@ -2744,10 +2688,10 @@
     </item>
     
     <item>
-      <title>Theodore R. Holford</title>
-      <link>/authors/theodore-r.-holford/</link>
+      <title>Ted Holford</title>
+      <link>/authors/ted-holford/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/theodore-r.-holford/</guid>
+      <guid>/authors/ted-holford/</guid>
       <description></description>
     </item>
     
@@ -2756,6 +2700,14 @@
       <link>/authors/w.-p.-witt/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
       <guid>/authors/w.-p.-witt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>B. E. Klein</title>
+      <link>/authors/b.-e.-klein/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>/authors/b.-e.-klein/</guid>
       <description></description>
     </item>
     
@@ -2792,50 +2744,58 @@
     </item>
     
     <item>
-      <title>B. Buehring</title>
-      <link>/authors/b.-buehring/</link>
+      <title>Bill Buckingham</title>
+      <link>/authors/bill-buckingham/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-buehring/</guid>
+      <guid>/authors/bill-buckingham/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>B. Heiderscheit</title>
-      <link>/authors/b.-heiderscheit/</link>
+      <title>Bjoern Buehring</title>
+      <link>/authors/bjoern-buehring/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-heiderscheit/</guid>
+      <guid>/authors/bjoern-buehring/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Brian G. Arndt</title>
-      <link>/authors/brian-g.-arndt/</link>
+      <title>Brian Arndt</title>
+      <link>/authors/brian-arndt/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/brian-g.-arndt/</guid>
+      <guid>/authors/brian-arndt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. David Page</title>
-      <link>/authors/c.-david-page/</link>
+      <title>Bryan Heiderscheit</title>
+      <link>/authors/bryan-heiderscheit/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-david-page/</guid>
+      <guid>/authors/bryan-heiderscheit/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Carrie D. Tomasallo</title>
-      <link>/authors/carrie-d.-tomasallo/</link>
+      <title>Carrie Tomasallo</title>
+      <link>/authors/carrie-tomasallo/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/carrie-d.-tomasallo/</guid>
+      <guid>/authors/carrie-tomasallo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Krueger</title>
-      <link>/authors/d.-krueger/</link>
+      <title>David Page</title>
+      <link>/authors/david-page/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-krueger/</guid>
+      <guid>/authors/david-page/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diane Krueger</title>
+      <link>/authors/diane-krueger/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>/authors/diane-krueger/</guid>
       <description></description>
     </item>
     
@@ -2848,66 +2808,58 @@
     </item>
     
     <item>
-      <title>Kelly J. Cowan</title>
-      <link>/authors/kelly-j.-cowan/</link>
+      <title>Kelly Cowan</title>
+      <link>/authors/kelly-cowan/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/kelly-j.-cowan/</guid>
+      <guid>/authors/kelly-cowan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lawrence P. Hanrahan</title>
-      <link>/authors/lawrence-p.-hanrahan/</link>
+      <title>Larry Hanrahan</title>
+      <link>/authors/larry-hanrahan/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/lawrence-p.-hanrahan/</guid>
+      <guid>/authors/larry-hanrahan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>N. Binkley</title>
-      <link>/authors/n.-binkley/</link>
+      <title>Neil Binkley</title>
+      <link>/authors/neil-binkley/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/n.-binkley/</guid>
+      <guid>/authors/neil-binkley/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sudha K. Iyengar</title>
-      <link>/authors/sudha-k.-iyengar/</link>
+      <title>Sudha Iyengar</title>
+      <link>/authors/sudha-iyengar/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/sudha-k.-iyengar/</guid>
+      <guid>/authors/sudha-iyengar/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theresa W. Guilbert</title>
-      <link>/authors/theresa-w.-guilbert/</link>
+      <title>Theresa Guilbert</title>
+      <link>/authors/theresa-guilbert/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/theresa-w.-guilbert/</guid>
+      <guid>/authors/theresa-guilbert/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theru A. Sivakumaran</title>
-      <link>/authors/theru-a.-sivakumaran/</link>
+      <title>Theru Sivakumaran</title>
+      <link>/authors/theru-sivakumaran/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/theru-a.-sivakumaran/</guid>
+      <guid>/authors/theru-sivakumaran/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Timothy S. Chang</title>
-      <link>/authors/timothy-s.-chang/</link>
+      <title>Tim Chang</title>
+      <link>/authors/tim-chang/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/timothy-s.-chang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>William R. Buckingham</title>
-      <link>/authors/william-r.-buckingham/</link>
-      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/william-r.-buckingham/</guid>
+      <guid>/authors/tim-chang/</guid>
       <description></description>
     </item>
     
@@ -2936,10 +2888,10 @@
     </item>
     
     <item>
-      <title>Jessica Athens</title>
-      <link>/authors/jessica-athens/</link>
+      <title>M. Duster</title>
+      <link>/authors/m.-duster/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/jessica-athens/</guid>
+      <guid>/authors/m.-duster/</guid>
       <description></description>
     </item>
     
@@ -2976,42 +2928,34 @@
     </item>
     
     <item>
-      <title>A. G. Peterson</title>
-      <link>/authors/a.-g.-peterson/</link>
+      <title>Andrea Peterson</title>
+      <link>/authors/andrea-peterson/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-g.-peterson/</guid>
+      <guid>/authors/andrea-peterson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>F. B. Consens</title>
-      <link>/authors/f.-b.-consens/</link>
+      <title>Flavia Consens</title>
+      <link>/authors/flavia-consens/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/f.-b.-consens/</guid>
+      <guid>/authors/flavia-consens/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. C. Teodorescu</title>
-      <link>/authors/m.-c.-teodorescu/</link>
+      <title>Michaela Teodorescu</title>
+      <link>/authors/michaela-teodorescu/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-c.-teodorescu/</guid>
+      <guid>/authors/michaela-teodorescu/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. Teodorescu</title>
-      <link>/authors/m.-teodorescu/</link>
+      <title>Mihai Teodorescu</title>
+      <link>/authors/mihai-teodorescu/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-teodorescu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R. D. Chervin</title>
-      <link>/authors/r.-d.-chervin/</link>
-      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-d.-chervin/</guid>
+      <guid>/authors/mihai-teodorescu/</guid>
       <description></description>
     </item>
     
@@ -3024,10 +2968,18 @@
     </item>
     
     <item>
-      <title>S. Ferguson</title>
-      <link>/authors/s.-ferguson/</link>
+      <title>Ronald Chervin</title>
+      <link>/authors/ronald-chervin/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-ferguson/</guid>
+      <guid>/authors/ronald-chervin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Susan Ferguson</title>
+      <link>/authors/susan-ferguson/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/susan-ferguson/</guid>
       <description></description>
     </item>
     
@@ -3120,258 +3072,258 @@
     </item>
     
     <item>
-      <title>A. N. Jones</title>
-      <link>/authors/a.-n.-jones/</link>
-      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-n.-jones/</guid>
+      <title>Sudha K. Iyengar</title>
+      <link>/authors/sudha-k.-iyengar/</link>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/sudha-k.-iyengar/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>B. L. Fischer</title>
-      <link>/authors/b.-l.-fischer/</link>
-      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-l.-fischer/</guid>
+      <title>Theru A. Sivakumaran</title>
+      <link>/authors/theru-a.-sivakumaran/</link>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/theru-a.-sivakumaran/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. E. Gleason</title>
-      <link>/authors/c.-e.-gleason/</link>
+      <title>Andrea Jones</title>
+      <link>/authors/andrea-jones/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-e.-gleason/</guid>
+      <guid>/authors/andrea-jones/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. M. Bartels</title>
-      <link>/authors/c.-m.-bartels/</link>
+      <title>Barbara Fischer</title>
+      <link>/authors/barbara-fischer/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-m.-bartels/</guid>
+      <guid>/authors/barbara-fischer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Buchanan</title>
-      <link>/authors/d.-buchanan/</link>
+      <title>Carey Gleason</title>
+      <link>/authors/carey-gleason/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-buchanan/</guid>
+      <guid>/authors/carey-gleason/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. L. Riegert-Johnson</title>
-      <link>/authors/d.-l.-riegert-johnson/</link>
+      <title>Christie Bartels</title>
+      <link>/authors/christie-bartels/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-l.-riegert-johnson/</guid>
+      <guid>/authors/christie-bartels/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. N. Rider</title>
-      <link>/authors/d.-n.-rider/</link>
+      <title>Corinne Engelman</title>
+      <link>/authors/corinne-engelman/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-n.-rider/</guid>
+      <guid>/authors/corinne-engelman/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. M. Petersen</title>
-      <link>/authors/g.-m.-petersen/</link>
+      <title>Daniel Buchanan</title>
+      <link>/authors/daniel-buchanan/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-m.-petersen/</guid>
+      <guid>/authors/daniel-buchanan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. W. Kimmel</title>
-      <link>/authors/g.-w.-kimmel/</link>
+      <title>David Rider</title>
+      <link>/authors/david-rider/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-w.-kimmel/</guid>
+      <guid>/authors/david-rider/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. E. Mahoney</title>
-      <link>/authors/j.-e.-mahoney/</link>
+      <title>Douglas Riegert-Johnson</title>
+      <link>/authors/douglas-riegert-johnson/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-e.-mahoney/</guid>
+      <guid>/authors/douglas-riegert-johnson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Gogineni</title>
-      <link>/authors/j.-gogineni/</link>
+      <title>Gloria Petersen</title>
+      <link>/authors/gloria-petersen/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-gogineni/</guid>
+      <guid>/authors/gloria-petersen/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Janczewski</title>
-      <link>/authors/j.-janczewski/</link>
+      <title>Grace Kimmel</title>
+      <link>/authors/grace-kimmel/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-janczewski/</guid>
+      <guid>/authors/grace-kimmel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. M. Cunningham</title>
-      <link>/authors/j.-m.-cunningham/</link>
+      <title>Hal Skinner</title>
+      <link>/authors/hal-skinner/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-m.-cunningham/</guid>
+      <guid>/authors/hal-skinner/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Potter</title>
-      <link>/authors/j.-potter/</link>
+      <title>Jodi Janczewski</title>
+      <link>/authors/jodi-janczewski/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-potter/</guid>
+      <guid>/authors/jodi-janczewski/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. E. Hansen</title>
-      <link>/authors/k.-e.-hansen/</link>
+      <title>John Potter</title>
+      <link>/authors/john-potter/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-e.-hansen/</guid>
+      <guid>/authors/john-potter/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L. A. Boardman</title>
-      <link>/authors/l.-a.-boardman/</link>
+      <title>Julie Cunningham</title>
+      <link>/authors/julie-cunningham/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-a.-boardman/</guid>
+      <guid>/authors/julie-cunningham/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. A. Jenkins</title>
-      <link>/authors/m.-a.-jenkins/</link>
+      <title>Jyothi Gogineni</title>
+      <link>/authors/jyothi-gogineni/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-a.-jenkins/</guid>
+      <guid>/authors/jyothi-gogineni/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. A. Johnson</title>
-      <link>/authors/r.-a.-johnson/</link>
+      <title>Karen Hansen</title>
+      <link>/authors/karen-hansen/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-a.-johnson/</guid>
+      <guid>/authors/karen-hansen/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. Haile</title>
-      <link>/authors/r.-haile/</link>
+      <title>Kristin Litzelman</title>
+      <link>/authors/kristin-litzelman/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-haile/</guid>
+      <guid>/authors/kristin-litzelman/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. J. Vanderboom</title>
-      <link>/authors/r.-j.-vanderboom/</link>
+      <title>Lisa Boardman</title>
+      <link>/authors/lisa-boardman/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-j.-vanderboom/</guid>
+      <guid>/authors/lisa-boardman/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. N. Thibodeau</title>
-      <link>/authors/s.-n.-thibodeau/</link>
+      <title>Mark Jenkins</title>
+      <link>/authors/mark-jenkins/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-n.-thibodeau/</guid>
+      <guid>/authors/mark-jenkins/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. Seo</title>
-      <link>/authors/s.-seo/</link>
+      <title>Robert Haile</title>
+      <link>/authors/robert-haile/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-seo/</guid>
+      <guid>/authors/robert-haile/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>T. Shea</title>
-      <link>/authors/t.-shea/</link>
+      <title>Russell Vanderboom</title>
+      <link>/authors/russell-vanderboom/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/t.-shea/</guid>
+      <guid>/authors/russell-vanderboom/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Anne M. Fitzpatrick</title>
-      <link>/authors/anne-m.-fitzpatrick/</link>
+      <title>Ruth Johnson</title>
+      <link>/authors/ruth-johnson/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/ruth-johnson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Songwon Seo</title>
+      <link>/authors/songwon-seo/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/songwon-seo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stephen Thibodeau</title>
+      <link>/authors/stephen-thibodeau/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/stephen-thibodeau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terry Shea</title>
+      <link>/authors/terry-shea/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/terry-shea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anne Fitzpatrick</title>
+      <link>/authors/anne-fitzpatrick/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/anne-m.-fitzpatrick/</guid>
+      <guid>/authors/anne-fitzpatrick/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Christine A. Sorkness</title>
-      <link>/authors/christine-a.-sorkness/</link>
+      <title>Chris Sorkness</title>
+      <link>/authors/chris-sorkness/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/christine-a.-sorkness/</guid>
+      <guid>/authors/chris-sorkness/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Daniel J. Jackson on behalf of the Childhood Asthma Research and Education (CARE) NetworkInvestigators</title>
-      <link>/authors/daniel-j.-jackson-on-behalf-of-the-childhood-asthma-research-and-education-care-networkinvestigators/</link>
+      <title>David Mauger</title>
+      <link>/authors/david-mauger/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/daniel-j.-jackson-on-behalf-of-the-childhood-asthma-research-and-education-care-networkinvestigators/</guid>
+      <guid>/authors/david-mauger/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>David Page</title>
-      <link>/authors/david-page/</link>
+      <title>on behalf of the Childhood Asthma Research and Education (CARE) NetworkInvestigators</title>
+      <link>/authors/on-behalf-of-the-childhood-asthma-research-and-education-care-networkinvestigators/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/david-page/</guid>
+      <guid>/authors/on-behalf-of-the-childhood-asthma-research-and-education-care-networkinvestigators/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>David T. Mauger</title>
-      <link>/authors/david-t.-mauger/</link>
+      <title>Stanley Szefler</title>
+      <link>/authors/stanley-szefler/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/david-t.-mauger/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jr</title>
-      <link>/authors/jr/</link>
-      <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/jr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Robert F. Lemanske</title>
-      <link>/authors/robert-f.-lemanske/</link>
-      <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-f.-lemanske/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stanley J. Szefler</title>
-      <link>/authors/stanley-j.-szefler/</link>
-      <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/stanley-j.-szefler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A. J. Kind</title>
-      <link>/authors/a.-j.-kind/</link>
-      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-j.-kind/</guid>
+      <guid>/authors/stanley-szefler/</guid>
       <description></description>
     </item>
     
@@ -3384,34 +3336,42 @@
     </item>
     
     <item>
-      <title>C. Barcellos</title>
-      <link>/authors/c.-barcellos/</link>
+      <title>Amy Kind</title>
+      <link>/authors/amy-kind/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-barcellos/</guid>
+      <guid>/authors/amy-kind/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. Gunter-Hunt</title>
-      <link>/authors/g.-gunter-hunt/</link>
+      <title>Christovam Barcellos</title>
+      <link>/authors/christovam-barcellos/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-gunter-hunt/</guid>
+      <guid>/authors/christovam-barcellos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. P. Asner</title>
-      <link>/authors/g.-p.-asner/</link>
+      <title>D. Krueger</title>
+      <link>/authors/d.-krueger/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-p.-asner/</guid>
+      <guid>/authors/d.-krueger/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. A. Patz</title>
-      <link>/authors/j.-a.-patz/</link>
+      <title>Gail Gunter-Hunt</title>
+      <link>/authors/gail-gunter-hunt/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-a.-patz/</guid>
+      <guid>/authors/gail-gunter-hunt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gregory Asner</title>
+      <link>/authors/gregory-asner/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/gregory-asner/</guid>
       <description></description>
     </item>
     
@@ -3424,18 +3384,34 @@
     </item>
     
     <item>
-      <title>L. Maucieri</title>
-      <link>/authors/l.-maucieri/</link>
+      <title>Jonathan Patz</title>
+      <link>/authors/jonathan-patz/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-maucieri/</guid>
+      <guid>/authors/jonathan-patz/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. B. Hahn</title>
-      <link>/authors/m.-b.-hahn/</link>
+      <title>Lawrence Maucieri</title>
+      <link>/authors/lawrence-maucieri/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-b.-hahn/</guid>
+      <guid>/authors/lawrence-maucieri/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Micah Hahn</title>
+      <link>/authors/micah-hahn/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/micah-hahn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>N. Binkley</title>
+      <link>/authors/n.-binkley/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>/authors/n.-binkley/</guid>
       <description></description>
     </item>
     
@@ -3448,18 +3424,18 @@
     </item>
     
     <item>
-      <title>T. C. Swader</title>
-      <link>/authors/t.-c.-swader/</link>
+      <title>Teresa Swader</title>
+      <link>/authors/teresa-swader/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/t.-c.-swader/</guid>
+      <guid>/authors/teresa-swader/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>W. T. Hoyt</title>
-      <link>/authors/w.-t.-hoyt/</link>
+      <title>William Hoyt</title>
+      <link>/authors/william-hoyt/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/authors/w.-t.-hoyt/</guid>
+      <guid>/authors/william-hoyt/</guid>
       <description></description>
     </item>
     
@@ -3472,26 +3448,42 @@
     </item>
     
     <item>
-      <title>D. D. Buchanan</title>
-      <link>/authors/d.-d.-buchanan/</link>
+      <title>F. B. Consens</title>
+      <link>/authors/f.-b.-consens/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-d.-buchanan/</guid>
+      <guid>/authors/f.-b.-consens/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. A. Baron</title>
-      <link>/authors/j.-a.-baron/</link>
+      <title>John Baron</title>
+      <link>/authors/john-baron/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-a.-baron/</guid>
+      <guid>/authors/john-baron/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. D. Potter</title>
-      <link>/authors/j.-d.-potter/</link>
+      <title>M. C. Teodorescu</title>
+      <link>/authors/m.-c.-teodorescu/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-d.-potter/</guid>
+      <guid>/authors/m.-c.-teodorescu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>M. Teodorescu</title>
+      <link>/authors/m.-teodorescu/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/m.-teodorescu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R. D. Chervin</title>
+      <link>/authors/r.-d.-chervin/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/r.-d.-chervin/</guid>
       <description></description>
     </item>
     
@@ -3504,10 +3496,18 @@
     </item>
     
     <item>
-      <title>C. E. Matthews</title>
-      <link>/authors/c.-e.-matthews/</link>
+      <title>C. Matthews</title>
+      <link>/authors/c.-matthews/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-e.-matthews/</guid>
+      <guid>/authors/c.-matthews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dinny Davis</title>
+      <link>/authors/dinny-davis/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/dinny-davis/</guid>
       <description></description>
     </item>
     
@@ -3520,10 +3520,18 @@
     </item>
     
     <item>
-      <title>Emily Y. Chew</title>
-      <link>/authors/emily-y.-chew/</link>
+      <title>Emily Chew</title>
+      <link>/authors/emily-chew/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/emily-y.-chew/</guid>
+      <guid>/authors/emily-chew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>for the Age-Related Eye Disease Study Research Group</title>
+      <link>/authors/for-the-age-related-eye-disease-study-research-group/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/for-the-age-related-eye-disease-study-research-group/</guid>
       <description></description>
     </item>
     
@@ -3536,14 +3544,6 @@
     </item>
     
     <item>
-      <title>Matthew D. Davis for the Age-Related Eye Disease Study Research Group</title>
-      <link>/authors/matthew-d.-davis-for-the-age-related-eye-disease-study-research-group/</link>
-      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/matthew-d.-davis-for-the-age-related-eye-disease-study-research-group/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Natalie Kurinij</title>
       <link>/authors/natalie-kurinij/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
@@ -3552,18 +3552,18 @@
     </item>
     
     <item>
-      <title>Robert D. Sperduto</title>
-      <link>/authors/robert-d.-sperduto/</link>
+      <title>Robert Sperduto</title>
+      <link>/authors/robert-sperduto/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-d.-sperduto/</guid>
+      <guid>/authors/robert-sperduto/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Traci E. Clemons</title>
-      <link>/authors/traci-e.-clemons/</link>
+      <title>Traci Clemons</title>
+      <link>/authors/traci-clemons/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/traci-e.-clemons/</guid>
+      <guid>/authors/traci-clemons/</guid>
       <description></description>
     </item>
     
@@ -3616,34 +3616,10 @@
     </item>
     
     <item>
-      <title>Neil Binkley</title>
-      <link>/authors/neil-binkley/</link>
-      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/neil-binkley/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Daniel J. Jackson</title>
-      <link>/authors/daniel-j.-jackson/</link>
+      <title>Michael Coen</title>
+      <link>/authors/michael-coen/</link>
       <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/daniel-j.-jackson/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Michael H. Coen</title>
-      <link>/authors/michael-h.-coen/</link>
-      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/michael-h.-coen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Robert F. Lemanske Jr</title>
-      <link>/authors/robert-f.-lemanske-jr/</link>
-      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-f.-lemanske-jr/</guid>
+      <guid>/authors/michael-coen/</guid>
       <description></description>
     </item>
     
@@ -3736,26 +3712,10 @@
     </item>
     
     <item>
-      <title>K. A. Hafner</title>
-      <link>/authors/k.-a.-hafner/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-a.-hafner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>K. A. Roberg</title>
       <link>/authors/k.-a.-roberg/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>/authors/k.-a.-roberg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>K. B. Viker</title>
-      <link>/authors/k.-b.-viker/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-b.-viker/</guid>
       <description></description>
     </item>
     
@@ -3772,6 +3732,22 @@
       <link>/authors/k.-n.-karmali/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>/authors/k.-n.-karmali/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kari Hafner</title>
+      <link>/authors/kari-hafner/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/kari-hafner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kimberly Viker</title>
+      <link>/authors/kimberly-viker/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/kimberly-viker/</guid>
       <description></description>
     </item>
     
@@ -3816,18 +3792,10 @@
     </item>
     
     <item>
-      <title>R. B. Jenkins</title>
-      <link>/authors/r.-b.-jenkins/</link>
+      <title>Robert Jenkins</title>
+      <link>/authors/robert-jenkins/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-b.-jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>T. C. Smyrk</title>
-      <link>/authors/t.-c.-smyrk/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/authors/t.-c.-smyrk/</guid>
+      <guid>/authors/robert-jenkins/</guid>
       <description></description>
     </item>
     
@@ -3844,6 +3812,14 @@
       <link>/authors/t.-pappas/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>/authors/t.-pappas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thomas Smyrk</title>
+      <link>/authors/thomas-smyrk/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/thomas-smyrk/</guid>
       <description></description>
     </item>
     
@@ -3880,6 +3856,30 @@
     </item>
     
     <item>
+      <title>G. M. Petersen</title>
+      <link>/authors/g.-m.-petersen/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/g.-m.-petersen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>L. A. Boardman</title>
+      <link>/authors/l.-a.-boardman/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/l.-a.-boardman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R. A. Johnson</title>
+      <link>/authors/r.-a.-johnson/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/r.-a.-johnson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>S. T. Chari</title>
       <link>/authors/s.-t.-chari/</link>
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
@@ -3888,26 +3888,10 @@
     </item>
     
     <item>
-      <title>B. J. Kushner</title>
-      <link>/authors/b.-j.-kushner/</link>
+      <title>Burt Kushner</title>
+      <link>/authors/burt-kushner/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-j.-kushner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>D. A. Plager</title>
-      <link>/authors/d.-a.-plager/</link>
-      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-a.-plager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>D. E. Neely</title>
-      <link>/authors/d.-e.-neely/</link>
-      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-e.-neely/</guid>
+      <guid>/authors/burt-kushner/</guid>
       <description></description>
     </item>
     
@@ -3920,18 +3904,34 @@
     </item>
     
     <item>
-      <title>M. C. Struck</title>
-      <link>/authors/m.-c.-struck/</link>
+      <title>Daniel Neely</title>
+      <link>/authors/daniel-neely/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-c.-struck/</guid>
+      <guid>/authors/daniel-neely/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Y. S. Bradfield</title>
-      <link>/authors/y.-s.-bradfield/</link>
+      <title>David Plager</title>
+      <link>/authors/david-plager/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/y.-s.-bradfield/</guid>
+      <guid>/authors/david-plager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michael Struck</title>
+      <link>/authors/michael-struck/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/michael-struck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yasmin Bradfield</title>
+      <link>/authors/yasmin-bradfield/</link>
+      <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/yasmin-bradfield/</guid>
       <description></description>
     </item>
     
@@ -3952,18 +3952,18 @@
     </item>
     
     <item>
-      <title>A. Kaufman</title>
-      <link>/authors/a.-kaufman/</link>
+      <title>A. G. Peterson</title>
+      <link>/authors/a.-g.-peterson/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-kaufman/</guid>
+      <guid>/authors/a.-g.-peterson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A. S. Pratt</title>
-      <link>/authors/a.-s.-pratt/</link>
+      <title>A. Kaufman</title>
+      <link>/authors/a.-kaufman/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-s.-pratt/</guid>
+      <guid>/authors/a.-kaufman/</guid>
       <description></description>
     </item>
     
@@ -3976,10 +3976,10 @@
     </item>
     
     <item>
-      <title>D. J. Montville</title>
-      <link>/authors/d.-j.-montville/</link>
+      <title>Allison Pratt</title>
+      <link>/authors/allison-pratt/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-j.-montville/</guid>
+      <guid>/authors/allison-pratt/</guid>
       <description></description>
     </item>
     
@@ -3988,6 +3988,14 @@
       <link>/authors/d.-m.-manthei/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       <guid>/authors/d.-m.-manthei/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Daniel Montville</title>
+      <link>/authors/daniel-montville/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/daniel-montville/</guid>
       <description></description>
     </item>
     
@@ -4008,18 +4016,10 @@
     </item>
     
     <item>
-      <title>M. A. Gill</title>
-      <link>/authors/m.-a.-gill/</link>
+      <title>Mark DeVries</title>
+      <link>/authors/mark-devries/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-a.-gill/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>M. K. DeVries</title>
-      <link>/authors/m.-k.-devries/</link>
-      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-k.-devries/</guid>
+      <guid>/authors/mark-devries/</guid>
       <description></description>
     </item>
     
@@ -4028,6 +4028,14 @@
       <link>/authors/michael-d.-knudtson/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       <guid>/authors/michael-d.-knudtson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michelle Gill</title>
+      <link>/authors/michelle-gill/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/michelle-gill/</guid>
       <description></description>
     </item>
     
@@ -4048,18 +4056,18 @@
     </item>
     
     <item>
-      <title>S. R. Durrani</title>
-      <link>/authors/s.-r.-durrani/</link>
+      <title>Sandy Durrani</title>
+      <link>/authors/sandy-durrani/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-r.-durrani/</guid>
+      <guid>/authors/sandy-durrani/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. Sahu</title>
-      <link>/authors/s.-sahu/</link>
+      <title>Sanjutka Sahu</title>
+      <link>/authors/sanjutka-sahu/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-sahu/</guid>
+      <guid>/authors/sanjutka-sahu/</guid>
       <description></description>
     </item>
     
@@ -4096,10 +4104,18 @@
     </item>
     
     <item>
-      <title>A. Taylor</title>
-      <link>/authors/a.-taylor/</link>
+      <title>Chris Tisler</title>
+      <link>/authors/chris-tisler/</link>
+      <pubDate>Wed, 01 Feb 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/chris-tisler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andrew Taylor</title>
+      <link>/authors/andrew-taylor/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-taylor/</guid>
+      <guid>/authors/andrew-taylor/</guid>
       <description></description>
     </item>
     
@@ -4112,18 +4128,18 @@
     </item>
     
     <item>
-      <title>E. Divyak</title>
-      <link>/authors/e.-divyak/</link>
-      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/e.-divyak/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>E. J. Aiello Bowles</title>
       <link>/authors/e.-j.-aiello-bowles/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
       <guid>/authors/e.-j.-aiello-bowles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elizabeth Divyak</title>
+      <link>/authors/elizabeth-divyak/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/elizabeth-divyak/</guid>
       <description></description>
     </item>
     
@@ -4144,10 +4160,34 @@
     </item>
     
     <item>
-      <title>M. Hartman</title>
-      <link>/authors/m.-hartman/</link>
+      <title>Jackie Hind</title>
+      <link>/authors/jackie-hind/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-hartman/</guid>
+      <guid>/authors/jackie-hind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jill Zielinski</title>
+      <link>/authors/jill-zielinski/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/jill-zielinski/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JoAnne Robbins</title>
+      <link>/authors/joanne-robbins/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/joanne-robbins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michael Hartman</title>
+      <link>/authors/michael-hartman/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/michael-hartman/</guid>
       <description></description>
     </item>
     
@@ -4200,6 +4240,14 @@
     </item>
     
     <item>
+      <title>Anne Marie Singh</title>
+      <link>/authors/anne-marie-singh/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
+      <guid>/authors/anne-marie-singh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>C. P. Heise</title>
       <link>/authors/c.-p.-heise/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
@@ -4212,14 +4260,6 @@
       <link>/authors/d.-y.-greenblatt/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
       <guid>/authors/d.-y.-greenblatt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>E. L. Anderson</title>
-      <link>/authors/e.-l.-anderson/</link>
-      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/e.-l.-anderson/</guid>
       <description></description>
     </item>
     
@@ -4240,6 +4280,14 @@
     </item>
     
     <item>
+      <title>Kathy Roberg</title>
+      <link>/authors/kathy-roberg/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
+      <guid>/authors/kathy-roberg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>N. K. LoConte</title>
       <link>/authors/n.-k.-loconte/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
@@ -4248,26 +4296,18 @@
     </item>
     
     <item>
-      <title>R. Burton</title>
-      <link>/authors/r.-burton/</link>
+      <title>RobLemanske</title>
+      <link>/authors/roblemanske/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-burton/</guid>
+      <guid>/authors/roblemanske/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>T. W. Guilbert</title>
-      <link>/authors/t.-w.-guilbert/</link>
+      <title>Ryan Burton</title>
+      <link>/authors/ryan-burton/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/t.-w.-guilbert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Z. Danov</title>
-      <link>/authors/z.-danov/</link>
-      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/z.-danov/</guid>
+      <guid>/authors/ryan-burton/</guid>
       <description></description>
     </item>
     
@@ -4280,26 +4320,34 @@
     </item>
     
     <item>
-      <title>Andrew N. Pelech</title>
-      <link>/authors/andrew-n.-pelech/</link>
-      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/andrew-n.-pelech/</guid>
+      <title>Zoran Danov</title>
+      <link>/authors/zoran-danov/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
+      <guid>/authors/zoran-danov/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Christine E. Cronk</title>
-      <link>/authors/christine-e.-cronk/</link>
+      <title>Andrew Pelech</title>
+      <link>/authors/andrew-pelech/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/christine-e.-cronk/</guid>
+      <guid>/authors/andrew-pelech/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jane A. McElroy</title>
-      <link>/authors/jane-a.-mcelroy/</link>
+      <title>Chris Cronk</title>
+      <link>/authors/chris-cronk/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/jane-a.-mcelroy/</guid>
+      <guid>/authors/chris-cronk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jane McElroy</title>
+      <link>/authors/jane-mcelroy/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
+      <guid>/authors/jane-mcelroy/</guid>
       <description></description>
     </item>
     
@@ -4352,10 +4400,10 @@
     </item>
     
     <item>
-      <title>M. K. Drezner</title>
-      <link>/authors/m.-k.-drezner/</link>
+      <title>Marc Drezner</title>
+      <link>/authors/marc-drezner/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-k.-drezner/</guid>
+      <guid>/authors/marc-drezner/</guid>
       <description></description>
     </item>
     
@@ -4448,10 +4496,18 @@
     </item>
     
     <item>
-      <title>D. F. DaSilva</title>
+      <title>D. F. Dasilva</title>
       <link>/authors/d.-f.-dasilva/</link>
       <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
       <guid>/authors/d.-f.-dasilva/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>E. L. Anderson</title>
+      <link>/authors/e.-l.-anderson/</link>
+      <pubDate>Wed, 01 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>/authors/e.-l.-anderson/</guid>
       <description></description>
     </item>
     
@@ -4544,10 +4600,26 @@
     </item>
     
     <item>
+      <title>J. A. Patz</title>
+      <link>/authors/j.-a.-patz/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      <guid>/authors/j.-a.-patz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>S. H. Olson</title>
       <link>/authors/s.-h.-olson/</link>
       <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
       <guid>/authors/s.-h.-olson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A. N. Jones</title>
+      <link>/authors/a.-n.-jones/</link>
+      <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>/authors/a.-n.-jones/</guid>
       <description></description>
     </item>
     
@@ -4560,6 +4632,14 @@
     </item>
     
     <item>
+      <title>K. E. Hansen</title>
+      <link>/authors/k.-e.-hansen/</link>
+      <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>/authors/k.-e.-hansen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>M. Linzer</title>
       <link>/authors/m.-linzer/</link>
       <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
@@ -4568,50 +4648,50 @@
     </item>
     
     <item>
-      <title>D. G. Fryback</title>
-      <link>/authors/d.-g.-fryback/</link>
+      <title>Dave Vanness</title>
+      <link>/authors/dave-vanness/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-g.-fryback/</guid>
+      <guid>/authors/dave-vanness/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Vanness</title>
-      <link>/authors/d.-vanness/</link>
+      <title>Janel Hanmer</title>
+      <link>/authors/janel-hanmer/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-vanness/</guid>
+      <guid>/authors/janel-hanmer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Hanmer</title>
-      <link>/authors/j.-hanmer/</link>
+      <title>Mari Palta</title>
+      <link>/authors/mari-palta/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-hanmer/</guid>
+      <guid>/authors/mari-palta/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. M. Virnig</title>
-      <link>/authors/c.-m.-virnig/</link>
+      <title>Christine Virnig</title>
+      <link>/authors/christine-virnig/</link>
       <pubDate>Sun, 01 Nov 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-m.-virnig/</guid>
+      <guid>/authors/christine-virnig/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. M. Shanovich</title>
-      <link>/authors/k.-m.-shanovich/</link>
+      <title>Douglas DaSilva</title>
+      <link>/authors/douglas-dasilva/</link>
       <pubDate>Sun, 01 Nov 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-m.-shanovich/</guid>
+      <guid>/authors/douglas-dasilva/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. M. Burton</title>
-      <link>/authors/r.-m.-burton/</link>
+      <title>Kathleen Shanovich</title>
+      <link>/authors/kathleen-shanovich/</link>
       <pubDate>Sun, 01 Nov 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-m.-burton/</guid>
+      <guid>/authors/kathleen-shanovich/</guid>
       <description></description>
     </item>
     
@@ -4696,26 +4776,50 @@
     </item>
     
     <item>
-      <title>J. Bolek-Berquist</title>
-      <link>/authors/j.-bolek-berquist/</link>
+      <title>Dessa Gemar</title>
+      <link>/authors/dessa-gemar/</link>
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-bolek-berquist/</guid>
+      <guid>/authors/dessa-gemar/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. E. Elliott</title>
-      <link>/authors/m.-e.-elliott/</link>
+      <title>Jean Engelke</title>
+      <link>/authors/jean-engelke/</link>
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-e.-elliott/</guid>
+      <guid>/authors/jean-engelke/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. J. Lawrence</title>
-      <link>/authors/s.-j.-lawrence/</link>
+      <title>Jiliane Bolek-Berquist</title>
+      <link>/authors/jiliane-bolek-berquist/</link>
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-j.-lawrence/</guid>
+      <guid>/authors/jiliane-bolek-berquist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mary Elliott</title>
+      <link>/authors/mary-elliott/</link>
+      <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>/authors/mary-elliott/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Susan Lawrence</title>
+      <link>/authors/susan-lawrence/</link>
+      <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>/authors/susan-lawrence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A. Taylor</title>
+      <link>/authors/a.-taylor/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>/authors/a.-taylor/</guid>
       <description></description>
     </item>
     
@@ -4760,58 +4864,58 @@
     </item>
     
     <item>
-      <title>Frederick L. Ferris III</title>
-      <link>/authors/frederick-l.-ferris-iii/</link>
+      <title>and the Early Treatment Diabetic Retinopathy Study Research Group</title>
+      <link>/authors/and-the-early-treatment-diabetic-retinopathy-study-research-group/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/frederick-l.-ferris-iii/</guid>
+      <guid>/authors/and-the-early-treatment-diabetic-retinopathy-study-research-group/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Larry D. Hubbard</title>
-      <link>/authors/larry-d.-hubbard/</link>
+      <title>Larry Hubbard</title>
+      <link>/authors/larry-hubbard/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/larry-d.-hubbard/</guid>
+      <guid>/authors/larry-hubbard/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lloyd M. Aiello</title>
-      <link>/authors/lloyd-m.-aiello/</link>
+      <title>Lloyd Aiello</title>
+      <link>/authors/lloyd-aiello/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/lloyd-m.-aiello/</guid>
+      <guid>/authors/lloyd-aiello/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Marian R. Fisher and the Early Treatment Diabetic Retinopathy Study Research Group</title>
-      <link>/authors/marian-r.-fisher-and-the-early-treatment-diabetic-retinopathy-study-research-group/</link>
+      <title>Marian Fisher</title>
+      <link>/authors/marian-fisher/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/marian-r.-fisher-and-the-early-treatment-diabetic-retinopathy-study-research-group/</guid>
+      <guid>/authors/marian-fisher/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Matthew D. Davis</title>
-      <link>/authors/matthew-d.-davis/</link>
+      <title>Rick Ferris</title>
+      <link>/authors/rick-ferris/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/matthew-d.-davis/</guid>
+      <guid>/authors/rick-ferris/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A. H. Liu</title>
-      <link>/authors/a.-h.-liu/</link>
+      <title>A. Liu</title>
+      <link>/authors/a.-liu/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-h.-liu/</guid>
+      <guid>/authors/a.-liu/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. L. Reardon</title>
-      <link>/authors/c.-l.-reardon/</link>
+      <title>Claudia Reardon</title>
+      <link>/authors/claudia-reardon/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-l.-reardon/</guid>
+      <guid>/authors/claudia-reardon/</guid>
       <description></description>
     </item>
     
@@ -4824,50 +4928,50 @@
     </item>
     
     <item>
-      <title>E. Reisdorf</title>
-      <link>/authors/e.-reisdorf/</link>
+      <title>Erik Reisdorf</title>
+      <link>/authors/erik-reisdorf/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/e.-reisdorf/</guid>
+      <guid>/authors/erik-reisdorf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. D. Bufford</title>
-      <link>/authors/j.-d.-bufford/</link>
+      <title>Jeremy Bufford</title>
+      <link>/authors/jeremy-bufford/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-d.-bufford/</guid>
+      <guid>/authors/jeremy-bufford/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. T. Carlson-Dakes</title>
-      <link>/authors/k.-t.-carlson-dakes/</link>
+      <title>Kirstin Carlson-Dakes</title>
+      <link>/authors/kirstin-carlson-dakes/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-t.-carlson-dakes/</guid>
+      <guid>/authors/kirstin-carlson-dakes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. C. Printz</title>
-      <link>/authors/m.-c.-printz/</link>
+      <title>Magnolia Printz</title>
+      <link>/authors/magnolia-printz/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-c.-printz/</guid>
+      <guid>/authors/magnolia-printz/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>P. A. Eggleston</title>
-      <link>/authors/p.-a.-eggleston/</link>
+      <title>P. Eggleston</title>
+      <link>/authors/p.-eggleston/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-a.-eggleston/</guid>
+      <guid>/authors/p.-eggleston/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>P. A. Shult</title>
-      <link>/authors/p.-a.-shult/</link>
+      <title>Peter Shult</title>
+      <link>/authors/peter-shult/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-a.-shult/</guid>
+      <guid>/authors/peter-shult/</guid>
       <description></description>
     </item>
     
@@ -4880,10 +4984,10 @@
     </item>
     
     <item>
-      <title>Z. Li</title>
-      <link>/authors/z.-li/</link>
+      <title>Zhanhai Li</title>
+      <link>/authors/zhanhai-li/</link>
       <pubDate>Wed, 01 Oct 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/z.-li/</guid>
+      <guid>/authors/zhanhai-li/</guid>
       <description></description>
     </item>
     
@@ -4912,6 +5016,22 @@
     </item>
     
     <item>
+      <title>Jim Stein</title>
+      <link>/authors/jim-stein/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>/authors/jim-stein/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jon Keevil</title>
+      <link>/authors/jon-keevil/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>/authors/jon-keevil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>M. I. Traver</title>
       <link>/authors/m.-i.-traver/</link>
       <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
@@ -4920,10 +5040,18 @@
     </item>
     
     <item>
-      <title>P. E. McBride</title>
-      <link>/authors/p.-e.-mcbride/</link>
+      <title>Michael Cullen</title>
+      <link>/authors/michael-cullen/</link>
       <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-e.-mcbride/</guid>
+      <guid>/authors/michael-cullen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pat McBride</title>
+      <link>/authors/pat-mcbride/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>/authors/pat-mcbride/</guid>
       <description></description>
     </item>
     
@@ -4936,50 +5064,50 @@
     </item>
     
     <item>
-      <title>B. S. Kahl</title>
-      <link>/authors/b.-s.-kahl/</link>
+      <title>Brad Kahl</title>
+      <link>/authors/brad-kahl/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-s.-kahl/</guid>
+      <guid>/authors/brad-kahl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. E. Chang</title>
-      <link>/authors/j.-e.-chang/</link>
+      <title>Julie Chang</title>
+      <link>/authors/julie-chang/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-e.-chang/</guid>
+      <guid>/authors/julie-chang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. B. Juckett</title>
-      <link>/authors/m.-b.-juckett/</link>
+      <title>Mark Juckett</title>
+      <link>/authors/mark-juckett/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-b.-juckett/</guid>
+      <guid>/authors/mark-juckett/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>N. S. Callander</title>
-      <link>/authors/n.-s.-callander/</link>
+      <title>Natalie Callander</title>
+      <link>/authors/natalie-callander/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/n.-s.-callander/</guid>
+      <guid>/authors/natalie-callander/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>T. L. Mitchell</title>
-      <link>/authors/t.-l.-mitchell/</link>
+      <title>Teri Mitchell</title>
+      <link>/authors/teri-mitchell/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/t.-l.-mitchell/</guid>
+      <guid>/authors/teri-mitchell/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>W. L. Longo</title>
-      <link>/authors/w.-l.-longo/</link>
+      <title>Walter Longo</title>
+      <link>/authors/walter-longo/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/w.-l.-longo/</guid>
+      <guid>/authors/walter-longo/</guid>
       <description></description>
     </item>
     
@@ -5024,34 +5152,50 @@
     </item>
     
     <item>
-      <title>A. Hewitt</title>
-      <link>/authors/a.-hewitt/</link>
+      <title>Angela Hewitt</title>
+      <link>/authors/angela-hewitt/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-hewitt/</guid>
+      <guid>/authors/angela-hewitt/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. Doyle</title>
-      <link>/authors/j.-doyle/</link>
+      <title>John Doyle</title>
+      <link>/authors/john-doyle/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-doyle/</guid>
+      <guid>/authors/john-doyle/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. Nicosia</title>
-      <link>/authors/m.-nicosia/</link>
+      <title>Mark Nicosia</title>
+      <link>/authors/mark-nicosia/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-nicosia/</guid>
+      <guid>/authors/mark-nicosia/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>W. Tompkins</title>
-      <link>/authors/w.-tompkins/</link>
+      <title>Stephanie Kays</title>
+      <link>/authors/stephanie-kays/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/w.-tompkins/</guid>
+      <guid>/authors/stephanie-kays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Willis Tompkins</title>
+      <link>/authors/willis-tompkins/</link>
+      <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>/authors/willis-tompkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K. T. Carlson-Dakes</title>
+      <link>/authors/k.-t.-carlson-dakes/</link>
+      <pubDate>Fri, 01 Feb 2008 00:00:00 +0000</pubDate>
+      <guid>/authors/k.-t.-carlson-dakes/</guid>
       <description></description>
     </item>
     
@@ -5088,10 +5232,10 @@
     </item>
     
     <item>
-      <title>B. N. Guttormsen</title>
-      <link>/authors/b.-n.-guttormsen/</link>
+      <title>Brian Guttormsen</title>
+      <link>/authors/brian-guttormsen/</link>
       <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/b.-n.-guttormsen/</guid>
+      <guid>/authors/brian-guttormsen/</guid>
       <description></description>
     </item>
     
@@ -5152,34 +5296,34 @@
     </item>
     
     <item>
-      <title>E. Golestanian</title>
-      <link>/authors/e.-golestanian/</link>
+      <title>Ellie Golestanian</title>
+      <link>/authors/ellie-golestanian/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/e.-golestanian/</guid>
+      <guid>/authors/ellie-golestanian/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>J. E. Scruggs</title>
-      <link>/authors/j.-e.-scruggs/</link>
+      <title>Jesse Scruggs</title>
+      <link>/authors/jesse-scruggs/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-e.-scruggs/</guid>
+      <guid>/authors/jesse-scruggs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. E. Wood</title>
-      <link>/authors/k.-e.-wood/</link>
+      <title>Ken Wood</title>
+      <link>/authors/ken-wood/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-e.-wood/</guid>
+      <guid>/authors/ken-wood/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. P. Mak</title>
-      <link>/authors/r.-p.-mak/</link>
+      <title>Rosa Mak</title>
+      <link>/authors/rosa-mak/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-p.-mak/</guid>
+      <guid>/authors/rosa-mak/</guid>
       <description></description>
     </item>
     
@@ -5192,18 +5336,10 @@
     </item>
     
     <item>
-      <title>Thomas D. France</title>
-      <link>/authors/thomas-d.-france/</link>
+      <title>Thomas France</title>
+      <link>/authors/thomas-france/</link>
       <pubDate>Tue, 01 May 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/thomas-d.-france/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yasmin S. Bradfield</title>
-      <link>/authors/yasmin-s.-bradfield/</link>
-      <pubDate>Tue, 01 May 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/yasmin-s.-bradfield/</guid>
+      <guid>/authors/thomas-france/</guid>
       <description></description>
     </item>
     
@@ -5212,6 +5348,14 @@
       <link>/authors/a.-schwalbe/</link>
       <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
       <guid>/authors/a.-schwalbe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J. E. Mahoney</title>
+      <link>/authors/j.-e.-mahoney/</link>
+      <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
+      <guid>/authors/j.-e.-mahoney/</guid>
       <description></description>
     </item>
     
@@ -5260,6 +5404,14 @@
       <link>/authors/j.-v.-brook/</link>
       <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
       <guid>/authors/j.-v.-brook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>P. E. McBride</title>
+      <link>/authors/p.-e.-mcbride/</link>
+      <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
+      <guid>/authors/p.-e.-mcbride/</guid>
       <description></description>
     </item>
     
@@ -5328,6 +5480,14 @@
     </item>
     
     <item>
+      <title>Z. Li</title>
+      <link>/authors/z.-li/</link>
+      <pubDate>Fri, 01 Dec 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/z.-li/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>M. Traver</title>
       <link>/authors/m.-traver/</link>
       <pubDate>Mon, 01 May 2006 00:00:00 +0000</pubDate>
@@ -5344,6 +5504,22 @@
     </item>
     
     <item>
+      <title>B. J. Kushner</title>
+      <link>/authors/b.-j.-kushner/</link>
+      <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/b.-j.-kushner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>M. C. Struck</title>
+      <link>/authors/m.-c.-struck/</link>
+      <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/m.-c.-struck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>T. D. France</title>
       <link>/authors/t.-d.-france/</link>
       <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
@@ -5352,42 +5528,50 @@
     </item>
     
     <item>
-      <title>A. Bhattacharya</title>
-      <link>/authors/a.-bhattacharya/</link>
-      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-bhattacharya/</guid>
+      <title>Y. S. Bradfield</title>
+      <link>/authors/y.-s.-bradfield/</link>
+      <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/y.-s.-bradfield/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A. Chang</title>
-      <link>/authors/a.-chang/</link>
+      <title>Abhik Bhattacharya</title>
+      <link>/authors/abhik-bhattacharya/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/a.-chang/</guid>
+      <guid>/authors/abhik-bhattacharya/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. J. Kirk</title>
-      <link>/authors/c.-j.-kirk/</link>
+      <title>Andy Chang</title>
+      <link>/authors/andy-chang/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-j.-kirk/</guid>
+      <guid>/authors/andy-chang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>G. D. Brooks</title>
-      <link>/authors/g.-d.-brooks/</link>
+      <title>Carole Kirk</title>
+      <link>/authors/carole-kirk/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/g.-d.-brooks/</guid>
+      <guid>/authors/carole-kirk/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Shen</title>
-      <link>/authors/k.-shen/</link>
+      <title>Daniel Brooks</title>
+      <link>/authors/daniel-brooks/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-shen/</guid>
+      <guid>/authors/daniel-brooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kunling Shen</title>
+      <link>/authors/kunling-shen/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/kunling-shen/</guid>
       <description></description>
     </item>
     
@@ -5400,14 +5584,6 @@
     </item>
     
     <item>
-      <title>L. D. Mikus</title>
-      <link>/authors/l.-d.-mikus/</link>
-      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-d.-mikus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>L. Hariharan</title>
       <link>/authors/l.-hariharan/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
@@ -5416,18 +5592,26 @@
     </item>
     
     <item>
-      <title>P. Meyer</title>
-      <link>/authors/p.-meyer/</link>
+      <title>Lance Mikus</title>
+      <link>/authors/lance-mikus/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-meyer/</guid>
+      <guid>/authors/lance-mikus/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Diane Krueger</title>
-      <link>/authors/diane-krueger/</link>
-      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/diane-krueger/</guid>
+      <title>Louis Rosenthal</title>
+      <link>/authors/louis-rosenthal/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/louis-rosenthal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patricia Meyer</title>
+      <link>/authors/patricia-meyer/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>/authors/patricia-meyer/</guid>
       <description></description>
     </item>
     
@@ -5440,98 +5624,122 @@
     </item>
     
     <item>
-      <title>Marc Drezner</title>
-      <link>/authors/marc-drezner/</link>
-      <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/marc-drezner/</guid>
+      <title>Carol Kirk</title>
+      <link>/authors/carol-kirk/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/carol-kirk/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>F. L. Ferris</title>
-      <link>/authors/f.-l.-ferris/</link>
+      <title>Kiva Adler</title>
+      <link>/authors/kiva-adler/</link>
       <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/f.-l.-ferris/</guid>
+      <guid>/authors/kiva-adler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Li-Yin Lee</title>
+      <link>/authors/li-yin-lee/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/li-yin-lee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lisa Pleiss</title>
+      <link>/authors/lisa-pleiss/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/lisa-pleiss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Roy Milton</title>
+      <link>/authors/roy-milton/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/roy-milton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sabine Hoffjan</title>
+      <link>/authors/sabine-hoffjan/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/sabine-hoffjan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sam Friedlander</title>
+      <link>/authors/sam-friedlander/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/sam-friedlander/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stephanie Gilbertson-White</title>
+      <link>/authors/stephanie-gilbertson-white/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/stephanie-gilbertson-white/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Susan Bressler</title>
+      <link>/authors/susan-bressler/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/susan-bressler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zhanlai Li</title>
+      <link>/authors/zhanlai-li/</link>
+      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/zhanlai-li/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C. J. Kirk</title>
+      <link>/authors/c.-j.-kirk/</link>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/c.-j.-kirk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>E. Reisdorf</title>
+      <link>/authors/e.-reisdorf/</link>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/e.-reisdorf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>K. J. Adler</title>
       <link>/authors/k.-j.-adler/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
       <guid>/authors/k.-j.-adler/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L. D. Hubbard</title>
-      <link>/authors/l.-d.-hubbard/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-d.-hubbard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>L. E. Pleiss</title>
-      <link>/authors/l.-e.-pleiss/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-e.-pleiss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>L. Y. Lee</title>
-      <link>/authors/l.-y.-lee/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-y.-lee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>M. D. Davis</title>
-      <link>/authors/m.-d.-davis/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-d.-davis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R. C. Milton</title>
-      <link>/authors/r.-c.-milton/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-c.-milton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S. B. Bressler</title>
-      <link>/authors/s.-b.-bressler/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-b.-bressler/</guid>
+      <title>P. A. Shult</title>
+      <link>/authors/p.-a.-shult/</link>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
+      <guid>/authors/p.-a.-shult/</guid>
       <description></description>
     </item>
     
     <item>
       <title>S. Gilbertson-White</title>
       <link>/authors/s.-gilbertson-white/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Sep 2005 00:00:00 +0000</pubDate>
       <guid>/authors/s.-gilbertson-white/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S. Hoffjan</title>
-      <link>/authors/s.-hoffjan/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-hoffjan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S. L. Friedlander</title>
-      <link>/authors/s.-l.-friedlander/</link>
-      <pubDate>Tue, 01 Nov 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-l.-friedlander/</guid>
       <description></description>
     </item>
     
@@ -5576,66 +5784,58 @@
     </item>
     
     <item>
-      <title>D. B. Mirel</title>
-      <link>/authors/d.-b.-mirel/</link>
+      <title>Carole Ober</title>
+      <link>/authors/carole-ober/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-b.-mirel/</guid>
+      <guid>/authors/carole-ober/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Nicolae</title>
-      <link>/authors/d.-nicolae/</link>
+      <title>Dan Nicolae</title>
+      <link>/authors/dan-nicolae/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-nicolae/</guid>
+      <guid>/authors/dan-nicolae/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>F. D. Martinez</title>
-      <link>/authors/f.-d.-martinez/</link>
+      <title>Daniel Mirel</title>
+      <link>/authors/daniel-mirel/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/f.-d.-martinez/</guid>
+      <guid>/authors/daniel-mirel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>I. Ostrovnaya</title>
-      <link>/authors/i.-ostrovnaya/</link>
+      <title>Fernando Martinez</title>
+      <link>/authors/fernando-martinez/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/i.-ostrovnaya/</guid>
+      <guid>/authors/fernando-martinez/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Walker</title>
-      <link>/authors/k.-walker/</link>
+      <title>Irina Ostrovnaya</title>
+      <link>/authors/irina-ostrovnaya/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-walker/</guid>
+      <guid>/authors/irina-ostrovnaya/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>L. Steiner</title>
-      <link>/authors/l.-steiner/</link>
+      <title>Karen Walker</title>
+      <link>/authors/karen-walker/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/l.-steiner/</guid>
+      <guid>/authors/karen-walker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. Evans</title>
-      <link>/authors/m.-evans/</link>
+      <title>Lori Steiner</title>
+      <link>/authors/lori-steiner/</link>
       <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-evans/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>P. Shult</title>
-      <link>/authors/p.-shult/</link>
-      <pubDate>Fri, 01 Apr 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/p.-shult/</guid>
+      <guid>/authors/lori-steiner/</guid>
       <description></description>
     </item>
     
@@ -5696,14 +5896,6 @@
     </item>
     
     <item>
-      <title>M. A. Nicosia</title>
-      <link>/authors/m.-a.-nicosia/</link>
-      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-a.-nicosia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>P. J. Heiligers</title>
       <link>/authors/p.-j.-heiligers/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
@@ -5744,14 +5936,6 @@
     </item>
     
     <item>
-      <title>Marian Fisher</title>
-      <link>/authors/marian-fisher/</link>
-      <pubDate>Mon, 01 Nov 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/marian-fisher/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Shelly Zimbric</title>
       <link>/authors/shelly-zimbric/</link>
       <pubDate>Mon, 01 Nov 2004 00:00:00 +0000</pubDate>
@@ -5768,74 +5952,74 @@
     </item>
     
     <item>
-      <title>Barbara A. Blodi</title>
-      <link>/authors/barbara-a.-blodi/</link>
+      <title>Barbara Blodi</title>
+      <link>/authors/barbara-blodi/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/barbara-a.-blodi/</guid>
+      <guid>/authors/barbara-blodi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Carmen A. Puliafito</title>
-      <link>/authors/carmen-a.-puliafito/</link>
+      <title>Carmen Puliafito</title>
+      <link>/authors/carmen-puliafito/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/carmen-a.-puliafito/</guid>
+      <guid>/authors/carmen-puliafito/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ingrid U. Scott</title>
-      <link>/authors/ingrid-u.-scott/</link>
+      <title>Ingrid Scott</title>
+      <link>/authors/ingrid-scott/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/ingrid-u.-scott/</guid>
+      <guid>/authors/ingrid-scott/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Justin L. Gottlieb</title>
-      <link>/authors/justin-l.-gottlieb/</link>
+      <title>Justin Gottlieb</title>
+      <link>/authors/justin-gottlieb/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/justin-l.-gottlieb/</guid>
+      <guid>/authors/justin-gottlieb/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Michael M. Altaweel</title>
-      <link>/authors/michael-m.-altaweel/</link>
+      <title>Mike Altaweel</title>
+      <link>/authors/mike-altaweel/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/michael-m.-altaweel/</guid>
+      <guid>/authors/mike-altaweel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Michael S. Ip</title>
-      <link>/authors/michael-s.-ip/</link>
+      <title>Mike Ip</title>
+      <link>/authors/mike-ip/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/michael-s.-ip/</guid>
+      <guid>/authors/mike-ip/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C. C. Copenhaver</title>
-      <link>/authors/c.-c.-copenhaver/</link>
+      <title>Chris Copenhaver</title>
+      <link>/authors/chris-copenhaver/</link>
       <pubDate>Thu, 01 Jul 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-c.-copenhaver/</guid>
+      <guid>/authors/chris-copenhaver/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>H. J. Hiemke</title>
-      <link>/authors/h.-j.-hiemke/</link>
+      <title>Heide Hiemke</title>
+      <link>/authors/heide-hiemke/</link>
       <pubDate>Thu, 01 Jul 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/h.-j.-hiemke/</guid>
+      <guid>/authors/heide-hiemke/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Gentile</title>
-      <link>/authors/k.-gentile/</link>
+      <title>Kevin Gentile</title>
+      <link>/authors/kevin-gentile/</link>
       <pubDate>Thu, 01 Jul 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-gentile/</guid>
+      <guid>/authors/kevin-gentile/</guid>
       <description></description>
     </item>
     
@@ -5856,18 +6040,18 @@
     </item>
     
     <item>
-      <title>D. A. Cooley</title>
-      <link>/authors/d.-a.-cooley/</link>
-      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-a.-cooley/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>D. Brown</title>
       <link>/authors/d.-brown/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
       <guid>/authors/d.-brown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David Cooley</title>
+      <link>/authors/david-cooley/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/david-cooley/</guid>
       <description></description>
     </item>
     
@@ -5888,22 +6072,6 @@
     </item>
     
     <item>
-      <title>J. J. Cush</title>
-      <link>/authors/j.-j.-cush/</link>
-      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-j.-cush/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>J. P. Hildebrand</title>
-      <link>/authors/j.-p.-hildebrand/</link>
-      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/j.-p.-hildebrand/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>J. Williams</title>
       <link>/authors/j.-williams/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
@@ -5912,10 +6080,18 @@
     </item>
     
     <item>
-      <title>M. C. Genovese</title>
-      <link>/authors/m.-c.-genovese/</link>
+      <title>John Cush</title>
+      <link>/authors/john-cush/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-c.-genovese/</guid>
+      <guid>/authors/john-cush/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Julie Hildebrand</title>
+      <link>/authors/julie-hildebrand/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/julie-hildebrand/</guid>
       <description></description>
     </item>
     
@@ -5924,14 +6100,6 @@
       <link>/authors/m.-fleming/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
       <guid>/authors/m.-fleming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>M. H. Schiff</title>
-      <link>/authors/m.-h.-schiff/</link>
-      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-h.-schiff/</guid>
       <description></description>
     </item>
     
@@ -5952,6 +6120,22 @@
     </item>
     
     <item>
+      <title>Mark Genovese</title>
+      <link>/authors/mark-genovese/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/mark-genovese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michael Schiff</title>
+      <link>/authors/michael-schiff/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/michael-schiff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>P. K. Kokotailo</title>
       <link>/authors/p.-k.-kokotailo/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
@@ -5968,106 +6152,82 @@
     </item>
     
     <item>
-      <title>S. B. Cohen</title>
-      <link>/authors/s.-b.-cohen/</link>
+      <title>Stanley Cohen</title>
+      <link>/authors/stanley-cohen/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-b.-cohen/</guid>
+      <guid>/authors/stanley-cohen/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>S. Patel</title>
-      <link>/authors/s.-patel/</link>
+      <title>Supan Patel</title>
+      <link>/authors/supan-patel/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/s.-patel/</guid>
+      <guid>/authors/supan-patel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Greene</title>
-      <link>/authors/d.-greene/</link>
+      <title>Deborah Greene</title>
+      <link>/authors/deborah-greene/</link>
       <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-greene/</guid>
+      <guid>/authors/deborah-greene/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. L. Newman</title>
-      <link>/authors/d.-l.-newman/</link>
+      <title>Dina Newman</title>
+      <link>/authors/dina-newman/</link>
       <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-l.-newman/</guid>
+      <guid>/authors/dina-newman/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>D. Mirel</title>
-      <link>/authors/d.-mirel/</link>
+      <title>Irina Ostrovnaja</title>
+      <link>/authors/irina-ostrovnaja/</link>
       <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/d.-mirel/</guid>
+      <guid>/authors/irina-ostrovnaja/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>I. Ostrovnaja</title>
-      <link>/authors/i.-ostrovnaja/</link>
+      <title>Raluca Nicolae</title>
+      <link>/authors/raluca-nicolae/</link>
       <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/i.-ostrovnaja/</guid>
+      <guid>/authors/raluca-nicolae/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. Nicolae</title>
-      <link>/authors/r.-nicolae/</link>
+      <title>Rebecca Reynolds</title>
+      <link>/authors/rebecca-reynolds/</link>
       <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-nicolae/</guid>
+      <guid>/authors/rebecca-reynolds/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R. Reynolds</title>
-      <link>/authors/r.-reynolds/</link>
-      <pubDate>Mon, 01 Mar 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-reynolds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>K. Adler</title>
-      <link>/authors/k.-adler/</link>
+      <title>Kelly Anklam</title>
+      <link>/authors/kelly-anklam/</link>
       <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-adler/</guid>
+      <guid>/authors/kelly-anklam/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Anklam</title>
-      <link>/authors/k.-anklam/</link>
+      <title>Rebekah Hamilton</title>
+      <link>/authors/rebekah-hamilton/</link>
       <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-anklam/</guid>
+      <guid>/authors/rebekah-hamilton/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>K. Carlson-Dakes</title>
-      <link>/authors/k.-carlson-dakes/</link>
+      <title>William Neaville</title>
+      <link>/authors/william-neaville/</link>
       <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/k.-carlson-dakes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R. Hamilton</title>
-      <link>/authors/r.-hamilton/</link>
-      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/r.-hamilton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>W. A. Neaville</title>
-      <link>/authors/w.-a.-neaville/</link>
-      <pubDate>Sun, 01 Feb 2004 00:00:00 +0000</pubDate>
-      <guid>/authors/w.-a.-neaville/</guid>
+      <guid>/authors/william-neaville/</guid>
       <description></description>
     </item>
     
@@ -6084,6 +6244,14 @@
       <link>/authors/b.-baranski/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
       <guid>/authors/b.-baranski/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>B. S. Kahl</title>
+      <link>/authors/b.-s.-kahl/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/b.-s.-kahl/</guid>
       <description></description>
     </item>
     
@@ -6112,10 +6280,34 @@
     </item>
     
     <item>
+      <title>N Vallarta-Ast</title>
+      <link>/authors/n-vallarta-ast/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/n-vallarta-ast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>T. Mitchell</title>
       <link>/authors/t.-mitchell/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
       <guid>/authors/t.-mitchell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>W. L. Longo</title>
+      <link>/authors/w.-l.-longo/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>/authors/w.-l.-longo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A. Bhattacharya</title>
+      <link>/authors/a.-bhattacharya/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/a.-bhattacharya/</guid>
       <description></description>
     </item>
     
@@ -6128,10 +6320,50 @@
     </item>
     
     <item>
-      <title>Murray K. Clayton</title>
-      <link>/authors/murray-k.-clayton/</link>
+      <title>K. Adler</title>
+      <link>/authors/k.-adler/</link>
       <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
-      <guid>/authors/murray-k.-clayton/</guid>
+      <guid>/authors/k.-adler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K. Anklam</title>
+      <link>/authors/k.-anklam/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/k.-anklam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>L. D. Mikus</title>
+      <link>/authors/l.-d.-mikus/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/l.-d.-mikus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Murray Clayton</title>
+      <link>/authors/murray-clayton/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/murray-clayton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R. Hamilton</title>
+      <link>/authors/r.-hamilton/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/r.-hamilton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>W. A. Neaville</title>
+      <link>/authors/w.-a.-neaville/</link>
+      <pubDate>Wed, 01 Oct 2003 00:00:00 +0000</pubDate>
+      <guid>/authors/w.-a.-neaville/</guid>
       <description></description>
     </item>
     
@@ -6148,14 +6380,6 @@
       <link>/authors/kirsten-hope/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
       <guid>/authors/kirsten-hope/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Zhanhai Li</title>
-      <link>/authors/zhanhai-li/</link>
-      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>/authors/zhanhai-li/</guid>
       <description></description>
     </item>
     
@@ -6208,18 +6432,18 @@
     </item>
     
     <item>
-      <title>Brad J. Baker</title>
-      <link>/authors/brad-j.-baker/</link>
+      <title>Brad Baker</title>
+      <link>/authors/brad-baker/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>/authors/brad-j.-baker/</guid>
+      <guid>/authors/brad-baker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Caroline R. Baumal</title>
-      <link>/authors/caroline-r.-baumal/</link>
+      <title>Caroline  Baumal</title>
+      <link>/authors/caroline-baumal/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>/authors/caroline-r.-baumal/</guid>
+      <guid>/authors/caroline-baumal/</guid>
       <description></description>
     </item>
     
@@ -6232,50 +6456,50 @@
     </item>
     
     <item>
-      <title>Jay S. Duker</title>
-      <link>/authors/jay-s.-duker/</link>
+      <title>Jay Duker</title>
+      <link>/authors/jay-duker/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>/authors/jay-s.-duker/</guid>
+      <guid>/authors/jay-duker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. K. Clayton</title>
-      <link>/authors/m.-k.-clayton/</link>
-      <pubDate>Fri, 01 Sep 2000 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-k.-clayton/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C. R. Ethier</title>
-      <link>/authors/c.-r.-ethier/</link>
+      <title>Bill Ladd</title>
+      <link>/authors/bill-ladd/</link>
       <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
-      <guid>/authors/c.-r.-ethier/</guid>
+      <guid>/authors/bill-ladd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>F. M. Coloma</title>
-      <link>/authors/f.-m.-coloma/</link>
+      <title>Fides Coloma</title>
+      <link>/authors/fides-coloma/</link>
       <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
-      <guid>/authors/f.-m.-coloma/</guid>
+      <guid>/authors/fides-coloma/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>M. A. Croft</title>
-      <link>/authors/m.-a.-croft/</link>
+      <title>Mary Ann Croft</title>
+      <link>/authors/mary-ann-croft/</link>
       <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
-      <guid>/authors/m.-a.-croft/</guid>
+      <guid>/authors/mary-ann-croft/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>W. Ladd</title>
-      <link>/authors/w.-ladd/</link>
+      <title>Paul Kaufman</title>
+      <link>/authors/paul-kaufman/</link>
       <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
-      <guid>/authors/w.-ladd/</guid>
+      <guid>/authors/paul-kaufman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ross Ethier</title>
+      <link>/authors/ross-ethier/</link>
+      <pubDate>Tue, 01 Jun 1999 00:00:00 +0000</pubDate>
+      <guid>/authors/ross-ethier/</guid>
       <description></description>
     </item>
     
@@ -6352,6 +6576,14 @@
     </item>
     
     <item>
+      <title>W. Ladd</title>
+      <link>/authors/w.-ladd/</link>
+      <pubDate>Mon, 01 Mar 1999 00:00:00 +0000</pubDate>
+      <guid>/authors/w.-ladd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gregg A. Heatley</title>
       <link>/authors/gregg-a.-heatley/</link>
       <pubDate>Tue, 01 Dec 1998 00:00:00 +0000</pubDate>
@@ -6376,6 +6608,14 @@
     </item>
     
     <item>
+      <title>Ron Gangnon</title>
+      <link>/authors/ron-gangnon/</link>
+      <pubDate>Tue, 01 Dec 1998 00:00:00 +0000</pubDate>
+      <guid>/authors/ron-gangnon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Todd W. Perkins</title>
       <link>/authors/todd-w.-perkins/</link>
       <pubDate>Tue, 01 Dec 1998 00:00:00 +0000</pubDate>
@@ -6392,6 +6632,14 @@
     </item>
     
     <item>
+      <title>for the Early Treatment Diabetic Retinopathy Study Research Group</title>
+      <link>/authors/for-the-early-treatment-diabetic-retinopathy-study-research-group/</link>
+      <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
+      <guid>/authors/for-the-early-treatment-diabetic-retinopathy-study-research-group/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Franca Barton</title>
       <link>/authors/franca-barton/</link>
       <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
@@ -6400,58 +6648,26 @@
     </item>
     
     <item>
-      <title>Frederick L Ferris III</title>
-      <link>/authors/frederick-l-ferris-iii/</link>
+      <title>Genell Knatterud</title>
+      <link>/authors/genell-knatterud/</link>
       <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
-      <guid>/authors/frederick-l-ferris-iii/</guid>
+      <guid>/authors/genell-knatterud/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Genell L Knatterud for the Early Treatment Diabetic Retinopathy Study Research Group</title>
-      <link>/authors/genell-l-knatterud-for-the-early-treatment-diabetic-retinopathy-study-research-group/</link>
-      <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
-      <guid>/authors/genell-l-knatterud-for-the-early-treatment-diabetic-retinopathy-study-research-group/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Marian R. Fisher</title>
-      <link>/authors/marian-r.-fisher/</link>
-      <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
-      <guid>/authors/marian-r.-fisher/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bill Ladd</title>
-      <link>/authors/bill-ladd/</link>
+      <title>Colleen Bindley</title>
+      <link>/authors/colleen-bindley/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/authors/bill-ladd/</guid>
+      <guid>/authors/colleen-bindley/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Colleen D. Bindley</title>
-      <link>/authors/colleen-d.-bindley/</link>
+      <title>Pascal Imesch</title>
+      <link>/authors/pascal-imesch/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/authors/colleen-d.-bindley/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Daniel M. Albert</title>
-      <link>/authors/daniel-m.-albert/</link>
-      <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/authors/daniel-m.-albert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pascal D. Imesch</title>
-      <link>/authors/pascal-d.-imesch/</link>
-      <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/authors/pascal-d.-imesch/</guid>
+      <guid>/authors/pascal-imesch/</guid>
       <description></description>
     </item>
     

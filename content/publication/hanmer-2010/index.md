@@ -2,7 +2,7 @@
 title: "Three methods tested to model SF-6D health utilities for health states involving comorbidity/co-occurring conditions"
 date: 2010-03-01
 publishDate: 2020-02-08T06:30:32.769027Z
-authors: ["J. Hanmer", "D. Vanness", "R. Gangnon", "M. Palta", "D. G. Fryback"]
+authors: ["Janel Hanmer", "Dave Vanness", "Ronald Gangnon", "Mari Palta", "Denny Fryback"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 All tested models are imperfect in these Medicare data, but the multiplicative model performed best."
 featured: false
-publication: "*J Clin Epidemiol*"
-url_pdf: https://www.jclinepi.com/article/S0895-4356(09)00220-0/fulltext
+publication: "*Journal of Clinical Epidemiology*"
+publication_short: "*J Clin Epidemiol*"
+doi: https://doi.org/10.1016/j.jclinepi.2009.06.013
 ---
 

@@ -2,7 +2,7 @@
 title: "Melanocytes and Iris Color: Electron Microscopic Findings"
 date: 1996-04-01
 publishDate: 2020-02-08T06:30:32.811979Z
-authors: [Pascal D. Imesch,Colleen D. Bindley, Zarir Khademian, Bill Ladd, Ronald Gangnon, Daniel M. Albert]
+authors: [Pascal Imesch,Colleen Bindley, Zarir Khademian, Bill Ladd, Ronald Gangnon, Dan Albert]
 publication_types: ["2"]
 abstract: "Objective:  To quantitatively associate iris color with melanocyte pigment content.
 

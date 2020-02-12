@@ -2,7 +2,7 @@
 title: "Misclassification can explain most apparent regression of age-related macular degeneration: results from multistate models with misclassification"
 date: 2014-03-01
 publishDate: 2020-02-08T06:30:32.721951Z
-authors: ["Ronald E. Gangnon", "Kristine E. Lee", "Barbara E. K. Klein", "Sudha K. Iyengar", "Theru A. Sivakumaran", "Ronald Klein"]
+authors: ["Ronald Gangnon", "Kris Lee", "Barbara Klein", "Sudha Iyengar", "Theru Sivakumaran", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -21,5 +21,6 @@ publication: "*Investigatic Ophthalmology & Visual Science*"
 publication_short: "*Invest. Ophthalmol. Vis. Sci.*"
 url_pdf: gangnon-2014.pdf
 doi: https://doi.org/10.1167/iovs.13-12375
+projects: [BDES]
 ---
 

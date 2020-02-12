@@ -2,7 +2,7 @@
 title: "A severity scale for diabetic macular edema developed from ETDRS data"
 date: 2008-11-01
 publishDate: 2020-02-08T06:30:32.781701Z
-authors: ["Ronald E. Gangnon", "Matthew D. Davis", "Larry D. Hubbard", "Lloyd M. Aiello", "Emily Y. Chew", "Frederick L. Ferris III", Marian R. Fisher and the Early Treatment Diabetic Retinopathy Study Research Group]
+authors: ["Ronald Gangnon", "Dinny Davis", "Larry Hubbard", "Lloyd Aiello", "Emily Chew", "Rick Ferris", Marian Fisher, and the Early Treatment Diabetic Retinopathy Study Research Group]
 publication_types: ["2"]
 abstract: "PURPOSE:
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Susan Lakoski | Ronald Gangnon</title>
+    <link>/authors/susan-lakoski/</link>
+      <atom:link href="/authors/susan-lakoski/index.xml" rel="self" type="application/rss+xml" />
+    <description>Susan Lakoski</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Susan Lakoski</title>
+      <link>/authors/susan-lakoski/</link>
+    </image>
+    
+    <item>
+      <title>Trends in Health-Related Quality of Life After a Diagnosis of Ductal Carcinoma In Situ</title>
+      <link>/publication/hart-2016/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/hart-2016/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

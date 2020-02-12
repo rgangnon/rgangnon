@@ -2,7 +2,7 @@
 title: "Wheezing rhinovirus illnesses in early life predict asthma development in high-risk children"
 date: 2008-10-01
 publishDate: 2020-02-08T06:30:32.781045Z
-authors: ["D. J. Jackson", "R. E. Gangnon", "M. D. Evans", "K. A. Roberg", "E. L. Anderson", "T. E. Pappas", "M. C. Printz", "W. M. Lee", "P. A. Shult", "E. Reisdorf", "K. T. Carlson-Dakes", "L. P. Salazar", "D. F. DaSilva", "C. J. Tisler", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Dan Jackson", "Ronald Gangnon", "Mike Evans", "Kathy Roberg", "Beth Anderson", "Tressa Pappas", "Magnolia Printz", "Wai-Ming Lee", "Peter Shult", "Erik Reisdorf", "Kirstin Carlson-Dakes", "Lisa Salazar", "Douglas DaSilva", "Chris Tisler", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "RATIONALE:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Among outpatient viral wheezing illnesses in infancy and early childhood, those caused by RV infections are the most significant predictors of the subsequent development of asthma at age 6 years in a high-risk birth cohort."
 featured: false
-publication: "*Am. J. Respir. Crit. Care Med.*"
-url_pdf: https://www.atsjournals.org/doi/full/10.1164/rccm.200802-309OC?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+publication: "*American Journal of Respiratory & Critical Care Medicine*"
+publication_short: "*Am. J. Respir. Crit. Care Med.*"
+doi: https://doi.org/10.1164/rccm.200802-309OC 
+url_pdf: jackson-2008.pdf
+projects: [COAST]
 ---
 

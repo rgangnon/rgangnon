@@ -2,7 +2,7 @@
 title: "Severity of age-related macular degeneration in 1 eye and the incidence and progression of age-related macular degeneration in the fellow eye: the Beaver Dam Eye Study"
 date: 2015-02-01
 publishDate: 2020-02-08T06:30:32.713075Z
-authors: ["Ronald E. Gangnon", "Kristine E. Lee", "Barbara E. K. Klein", "Sudha K. Iyengar", "Theru A. Sivakumaran", "Ronald Klein"]
+authors: ["Ronald Gangnon", "Kris Lee", "Barbara Klein", "Sudha Iyengar", "Theru Sivakumaran", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "IMPORTANCE:
 
@@ -28,5 +28,6 @@ publication_short: "*JAMA Ophthalmol*"
 publication: "*JAMA Ophthalmology*"
 url_pdf: gangnon-2015.pdf
 doi: 10.1001/jamaophthalmol.2014.4252
+projects: [BDES]
 ---
 

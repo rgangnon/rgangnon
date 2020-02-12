@@ -2,7 +2,7 @@
 title: "Contribution of Breast Cancer to Overall Mortality for US Women"
 date: 2018-04-01
 publishDate: 2020-02-08T06:30:32.683398Z
-authors: ["Ronald E. Gangnon", "Natasha K. Stout", "Oguzhan Alagoz", "John M. Hampton", "Brian L. Sprague", "Amy Trentham-Dietz"]
+authors: ["Ronald Gangnon", "Tasha Stout", "Oguzhan Alagoz", "John Hampton", "Brian Sprague", "Amy Trentham-Dietz"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -21,5 +21,6 @@ publication: "*Medical Decision Making*"
 publication_short: "*Med Decis Making*"
 url_pdf: gangnon-2018.pdf
 doi: 10.1177/0272989X17717981
+projects: [CISNET]
 ---
 

@@ -2,7 +2,7 @@
 title: "Dose-response relationships between sedentary behaviour and the metabolic syndrome and its components"
 date: 2015-03-01
 publishDate: 2020-02-08T06:30:32.711838Z
-authors: ["K. P. Gennuso", "R. E. Gangnon", "K. M. Thraen-Borowski", "L. H. Colbert"]
+authors: ["Keith Gennuso", "Ronald Gangnon", "Keith Thraen-Borowski", "Lisa Colbert"]
 publication_types: ["2"]
 abstract: "AIMS/HYPOTHESIS:
 
@@ -18,6 +18,7 @@ CONCLUSIONS/INTERPRETATION:
 There appears to be no SB threshold at which the risk of the metabolic syndrome is elevated. Therefore, an effort should be made to maintain low levels of total time spent in SB and so lessen the risk of the metabolic syndrome."
 featured: false
 publication: "*Diabetologia*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs00125-014-3453-z
+url_pdf: gennuso-2015.pdf
+doi: 10.1007/s00125-014-3453-z
 ---
 

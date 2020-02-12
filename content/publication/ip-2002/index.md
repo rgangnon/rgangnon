@@ -2,7 +2,7 @@
 title: "Anatomical outcomes of surgery for idiopathic macular hole as determined by optical coherence tomography"
 date: 2002-01-01
 publishDate: 2020-02-08T06:30:32.811979Z
-authors: ["Michael S. Ip", "Brad J. Baker", "Jay S. Duker", "Elias Reichel", "Caroline R. Baumal", "Ronald Gangnon", "Carmen A. Puliafito"]
+authors: ["Mike Ip", "Brad Baker", "Jay Duker", "Elias Reichel", "Caroline  Baumal", "Ronald Gangnon", "Carmen Puliafito"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 

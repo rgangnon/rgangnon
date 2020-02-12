@@ -7,6 +7,7 @@ publication_types: ["2"]
 abstract: ""
 featured: false
 publication: "*Epidemiology*"
-url_pdf: https://journals.lww.com/epidem/fulltext/2017/01000/Urinary_Cadmium_and_Mammographic_Density.29.aspx
+url_pdf: adams-2017.pdf
+doi: 0.1097/EDE.0000000000000575
 ---
 

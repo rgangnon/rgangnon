@@ -2,7 +2,7 @@
 title: "Correlation of chromosomal instability, telomere length and telomere maintenance in microsatellite stable rectal cancer: a molecular subclass of rectal cancer"
 date: 2013-01-01
 publishDate: 2020-02-08T06:30:32.725369Z
-authors: ["L. A. Boardman", "R. A. Johnson", "K. B. Viker", "K. A. Hafner", "R. B. Jenkins", "D. L. Riegert-Johnson", "T. C. Smyrk", "K. Litzelman", "S. Seo", "R. E. Gangnon", "C. D. Engelman", "D. N. Rider", "R. J. Vanderboom", "S. N. Thibodeau", "G. M. Petersen", "H. G. Skinner"]
+authors: ["Lisa Boardman", "Ruth Johnson", "Kimberly Viker", "Kari Hafner", "Robert Jenkins", "Douglas Riegert-Johnson", "Thomas Smyrk", "Kristin Litzelman", "Songwon Seo", "Ronald Gangnon", "Corinne Engelman", "David Rider", "Russell Vanderboom", "Stephen Thibodeau", "Gloria Petersen", "Hal Skinner"]
 publication_types: ["2"]
 abstract: "INTRODUCTION:
 
@@ -18,6 +18,7 @@ CONCLUSIONS:
 MSS rectal cancer appears to represent a heterogeneous group of tumors that may be categorized both on the basis of CIN status and telomere maintenance mechanism. MSS CIN- rectal cancers appear to have longer telomeres than those of MSS CIN+ rectal cancers and to utilize ALT rather than activation of telomerase."
 featured: false
 publication: "*PLoS ONE*"
-url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0080015
+url_pdf: boardman-2014.pdf
+doi: https://doi.org/10.1371/journal.pone.0080015
 ---
 

@@ -2,7 +2,7 @@
 title: "Use of a questionnaire to assess vitamin D status in young adults"
 date: 2009-02-01
 publishDate: 2020-02-08T06:30:32.778913Z
-authors: ["J. Bolek-Berquist", "M. E. Elliott", "R. E. Gangnon", "D. Gemar", "J. Engelke", "S. J. Lawrence", "K. E. Hansen"]
+authors: ["Jiliane Bolek-Berquist", "Mary Elliott", "Ronald Gangnon", "Dessa Gemar", "Jean Engelke", "Susan Lawrence", "Karen Hansen"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -20,7 +20,9 @@ CONCLUSIONS:
 
 The questionnaire is moderately useful to identify young adults likely to be vitamin D-deficient. Additional revisions of the questionnaire may improve its ability to predict vitamin D deficiency."
 featured: false
-publication: "*Public Health Nutr*"
-url_pdf: https://www.cambridge.org/core/journals/public-health-nutrition/article/use-of-a-questionnaire-to-assess-vitamin-d-status-in-young-adults/24DF7972F726D0F1704CCEF99D9144C7
+publication: "*Public Health Nutrition*"
+publication_short: "*Public Health Nutr*"
+url_pdf: bolek-berquist-2009.pdf
+doi: 10.1017/S136898000800356X
 ---
 

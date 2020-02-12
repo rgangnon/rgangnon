@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michael Cullen | Ronald Gangnon</title>
+    <link>/authors/michael-cullen/</link>
+      <atom:link href="/authors/michael-cullen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Michael Cullen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Aug 2008 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Michael Cullen</title>
+      <link>/authors/michael-cullen/</link>
+    </image>
+    
+    <item>
+      <title>National improvements in low-density lipoprotein cholesterol management of individuals at high coronary risk: National Health and Nutrition Examination Survey, 1999 to 2002</title>
+      <link>/publication/cullen-2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/cullen-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rationale for targeted rather than population based screening with C-reactive protein using the National Health and Nutrition Examination Survey (1999 to 2002)</title>
+      <link>/publication/guttormsen-2007/</link>
+      <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/guttormsen-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

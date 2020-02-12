@@ -2,7 +2,7 @@
 title: "Ocular complications after organ and bone marrow transplantation in children"
 date: 2005-10-01
 publishDate: 2020-02-08T06:30:32.797705Z
-authors: ["Y. S. Bradfield", "B. J. Kushner", "R. E. Gangnon"]
+authors: ["Yasmin Bradfield", "Burt Kushner", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 Transplantation surgery in children produces a significant risk of ocular impairment. The 1-year complication rate was 16.0%. Eye surgery may be required within the first few years after transplantation. Although most patients maintained a final visual acuity of 20/40 or better, one patient became bilaterally legally blind."
 featured: false
-publication: "*J AAPOS*"
-url_pdf: https://www.jaapos.org/article/S1091-8531(05)00167-9/fulltext
+publication: "*Journal of American Association for Pediatric Ophthalmology and Strabismus*"
+publication_short: "*J AAPOS*"
+doi: https://doi.org/10.1016/j.jaapos.2005.06.002
 ---
 

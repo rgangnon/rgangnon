@@ -2,8 +2,8 @@
 title: "Risk factors for high-risk proliferative diabetic retinopathy and severe visual loss: Early Treatment Diabetic Retinopathy Study Report #18"
 date: 1998-02-01
 publishDate: 2020-02-08T06:30:32.817684Z
-authors: [Matthew D. Davis, Marian R. Fisher, Ronald E. Gangnon, Franca Barton,
-Lloyd M. Aiello, Emily Y. Chew, Frederick L Ferris III, Genell L Knatterud
+authors: [Dinny Davis, Marian Fisher, Ronald Gangnon, Franca Barton,
+Lloyd Aiello, Emily Chew, Rick Ferris, Genell Knatterud,
 for the Early Treatment Diabetic Retinopathy Study Research Group]
 publication_types: ["2"]
 abstract: "PURPOSE:
@@ -21,6 +21,7 @@ These analyses supported the view that the retinopathy-inhibiting effect of bett
 featured: false
 publication: "*Investigative Ophthalmology and Visual Science*"
 publication_short: "*Invest. Ophthalmol. Vis. Sci.*"
-url_pdf: davis-1998
+url_pdf: davis-1998.pdf
+projects: [ETDRS]
 ---
 

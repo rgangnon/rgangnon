@@ -2,7 +2,7 @@
 title: "Effect of the Y402H variant in the complement factor H gene on the incidence and progression of age-related macular degeneration: results from multistate models applied to the Beaver Dam Eye Study"
 date: 2012-09-01
 publishDate: 2020-02-08T06:30:32.743002Z
-authors: ["Ronald E. Gangnon", "Kristine E. Lee", "Barbara E. K. Klein", "Sudha K. Iyengar", "Theru A. Sivakumaran", "Ronald Klein"]
+authors: ["Ronald Gangnon", "Kris Lee", "Barbara Klein", "Sudha Iyengar", "Theru Sivakumaran", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -21,5 +21,6 @@ publication: "*Archives of Ophthalmology*"
 publication_short: "*Arch. Ophthalmol.*"
 url_pdf: gangnon-2012b.pdf
 doi: 10.1001/archophthalmol.2012.693
+projects: [BDES]
 ---
 

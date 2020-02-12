@@ -2,7 +2,7 @@
 title: "Telomere length varies by DNA extraction method: implications for epidemiologic research"
 date: 2013-11-01
 publishDate: 2020-02-08T06:30:32.729842Z
-authors: ["J. M. Cunningham", "R. A. Johnson", "K. Litzelman", "H. G. Skinner", "S. Seo", "C. D. Engelman", "R. J. Vanderboom", "G. W. Kimmel", "R. E. Gangnon", "D. L. Riegert-Johnson", "J. A. Baron", "J. D. Potter", "R. Haile", "D. D. Buchanan", "M. A. Jenkins", "D. N. Rider", "S. N. Thibodeau", "G. M. Petersen", "L. A. Boardman"]
+authors: ["Julie Cunningham", "Ruth Johnson", "Kristin Litzelman", "Hal Skinner", "Songwon Seo", "Corinne Engelman", "Russell Vanderboom", "Grace Kimmel", "Ronald Gangnon", "Douglas Riegert-Johnson", "John Baron", "John Potter", "Robert Haile", "Daniel Buchanan", "Mark Jenkins", "David Rider", "Stephen Thibodeau", "Gloria Petersen", "Lisa Boardman"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ IMPACT:
 
 Differences in DNA extraction method may contribute to the discrepancies between studies seeking to find an association between the risk of cancer or other diseases and RTL."
 featured: false
-publication: "*Cancer Epidemiol. Biomarkers Prev.*"
-url_pdf: https://cebp.aacrjournals.org/content/22/11/2047.long
+publication: "*Cancer Epidemiology, Biomarkers & Prevention*"
+publication_short: "*Cancer Epidemiol. Biomarkers Prev.*"
+url_pdf: cunningham-2013.pdf
+doi: 10.1158/1055-9965.EPI-13-0409
 ---
 

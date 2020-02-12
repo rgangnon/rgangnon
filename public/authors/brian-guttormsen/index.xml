@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brian Guttormsen | Ronald Gangnon</title>
+    <link>/authors/brian-guttormsen/</link>
+      <atom:link href="/authors/brian-guttormsen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Brian Guttormsen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Oct 2007 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Brian Guttormsen</title>
+      <link>/authors/brian-guttormsen/</link>
+    </image>
+    
+    <item>
+      <title>Rationale for targeted rather than population based screening with C-reactive protein using the National Health and Nutrition Examination Survey (1999 to 2002)</title>
+      <link>/publication/guttormsen-2007/</link>
+      <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/guttormsen-2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

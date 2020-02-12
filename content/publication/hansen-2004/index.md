@@ -2,7 +2,7 @@
 title: "The efficacy of switching from etanercept to infliximab in patients with rheumatoid arthritis"
 date: 2004-06-01
 publishDate: 2020-02-08T06:30:32.804761Z
-authors: ["K. E. Hansen", "J. P. Hildebrand", "M. C. Genovese", "J. J. Cush", "S. Patel", "D. A. Cooley", "S. B. Cohen", "R. E. Gangnon", "M. H. Schiff"]
+authors: ["Karen Hansen", "Julie Hildebrand", "Mark Genovese", "John Cush", "Supan Patel", "David Cooley", "Stanley Cohen", "Ronald Gangnon", "Michael Schiff"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 In this retrospective study, previous lack of efficacy with etanercept did not predict lack of efficacy with infliximab. Indeed, the degree of clinical improvement was similar in both groups, although switchers were receiving a higher dose of infliximab at the time of chart review. Our findings suggest that clinical response may differ between anti-TNF agents, and lack of response to one agent may not predict a lack of response to another."
 featured: false
-publication: "*J. Rheumatol.*"
-url_pdf: http://www.jrheum.org/content/31/6/1098.long
+publication: "*Journal of Rheumatology*"
+publication_short: "*J. Rheumatol.*"
+url_pdf: hansen-2004.pdf
+doi: 
 ---
 

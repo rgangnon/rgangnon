@@ -2,7 +2,7 @@
 title: "Intravitreal triamcinolone for the treatment of macular edema associated with central retinal vein occlusion"
 date: 2004-08-01
 publishDate: 2020-02-08T06:30:32.803376Z
-authors: ["Michael S. Ip", "Justin L. Gottlieb", "Alon Kahana", "Ingrid U. Scott", "Michael M. Altaweel", "Barbara A. Blodi", "Ronald E. Gangnon", "Carmen A. Puliafito"]
+authors: ["Mike Ip", "Justin Gottlieb", "Alon Kahana", "Ingrid Scott", "Mike Altaweel", "Barbara Blodi", "Ronald Gangnon", "Carmen Puliafito"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
