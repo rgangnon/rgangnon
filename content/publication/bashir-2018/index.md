@@ -2,7 +2,7 @@
 title: "Association of rhinovirus species with common cold and asthma symptoms and bacterial pathogens"
 date: 2018-02-01
 publishDate: 2020-02-08T06:30:32.689287Z
-authors: ["H. Bashir", "K. Grindle", "R. Vrtis", "F. Vang", "T. Kang", "L. Salazar", "E. Anderson", "T. Pappas", "R. Gangnon", "M. D. Evans", "D. J. Jackson", "R. F. Lemanske", "Y. A. Bochkov", "J. E. Gern"]
+authors: ["Hiba Bashir", "Kris Grindle", "Rose Vrtis", "Fue Vang", "Teresa Kang", "Lisa Salazar", "Beth Anderson", "Tressa Pappas", "Ronald Gangnon", "Mike Evans", "Dan Jackson", "Rob Lemanske", "Yury Bochkov", "Jim Gern"]
 publication_types: ["2"]
 abstract: ""
 featured: false

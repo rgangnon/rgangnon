@@ -2,7 +2,7 @@
 title: "Relationships among aeroallergen sensitization, peripheral blood eosinophils, and periostin in pediatric asthma development"
 date: 2017-03-01
 publishDate: 2020-02-08T06:30:32.697543Z
-authors: ["H. M. Anderson", "R. F. Lemanske", "J. R. Arron", "C. T. J. Holweg", "V. Rajamanickam", "R. E. Gangnon", "J. E. Gern", "D. J. Jackson"]
+authors: ["Haile Anderson", "Rob Lemanske", "Joseph Arron", "Cecile Holweg", "Victoria Rajamanickam", "Ronald Gangnon", "Jim Gern", "Dan Jackson"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

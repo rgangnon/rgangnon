@@ -2,7 +2,7 @@
 title: "Improving the Rank Precision of Population Health Measures for Small Areas with Longitudinal and Joint Outcome Models"
 date: 2015-01-01
 publishDate: 2020-02-08T06:30:32.705733Z
-authors: ["Jessica K. Athens", "Patrick L. Remington", "Ronald E. Gangnon"]
+authors: ["Jessica Athens", "Pat Remington", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 

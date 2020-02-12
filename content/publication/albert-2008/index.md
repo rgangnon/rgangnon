@@ -2,7 +2,7 @@
 title: "A study of histopathological features of latanoprost-treated irides with or without darkening compared with non-latanoprost-treated irides"
 date: 2008-05-01
 publishDate: 2020-02-08T06:30:32.782821Z
-authors: ["Daniel M. Albert", "Ronald E. Gangnon", "Hans E. Grossniklaus", "W. Richard Green", "Soesiawati Darjatmoko", "Amol D. Kulkarni"]
+authors: ["Dan Albert", "Ronald Gangnon", "Hans Grossniklaus", "Richard Green", "Soesiawati Darjatmoko", "Amol Kulkarni"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
