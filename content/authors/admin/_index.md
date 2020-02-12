@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include spatial epidemiology, age-period-cohort models and ranking.
+bio: 
 education:
   courses:
   - course: PhD in Statistics (Biostatistics option)
@@ -36,4 +36,5 @@ user_groups:
 - Visitors
 ---
 
-I am a Professor in the Department of Biostatistics and Medical Informatics and the Department of Population Health Sciences in the School of Medicine and Public Health at the University of Wisconsin-Madison.  I have an affiliate appointment in the Department of Statistics.
+I am a Professor in the [Department of Biostatistics and Medical Informatics](https:/biostat.wisc.edu) and the [Department of Population Health Sciences](https://pophealth.wisc.edu) in the [School of Medicine and Public Health](https://med.wisc.edu) at the [University of Wisconsin-Madison](https://wisc.edu).  I have an affiliate appointment in the Department of Statistics.
+
