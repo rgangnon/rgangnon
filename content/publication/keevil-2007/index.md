@@ -2,7 +2,7 @@
 title: "Implications of cardiac risk and low-density lipoprotein cholesterol distributions in the United States for the diagnosis and treatment of dyslipidemia: data from National Health and Nutrition Examination Survey 1999 to 2002"
 date: 2007-03-01
 publishDate: 2020-02-08T06:30:32.789621Z
-authors: ["J. G. Keevil", "M. W. Cullen", "R. Gangnon", "P. E. McBride", "J. H. Stein"]
+authors: ["Jon Keevil", "Michael Cullen", "Ronald Gangnon", "Pat McBride", "Jim Stein"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -15,6 +15,7 @@ CONCLUSIONS:
 Most adult US residents are at lower 10-year CHD risk and meet risk-adjusted LDL-C goals. However, large portions of the high-risk population are undertreated. The commonly described population at intermediate risk is small. A novel method of identifying patients who might benefit from additional testing to determine their treatment strategy is provided."
 featured: false
 publication: "*Circulation*"
-url_pdf: https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.106.645473?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+url_pdf: keevil-2007.pdf
+doi: https://doi.org/10.1161/CIRCULATIONAHA.106.645473
 ---
 

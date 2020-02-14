@@ -2,7 +2,7 @@
 title: "Trends of postmenopausal estrogen plus progestin prevalence in the United States between 1970 and 2010"
 date: 2014-10-01
 publishDate: 2020-02-08T06:30:32.714986Z
-authors: ["Patricia I. Jewett", "Ronald E. Gangnon", "Amy Trentham-Dietz", "Brian L. Sprague"]
+authors: ["Patricia Jewett", "Ronald Gangnon", "Amy Trentham-Dietz", "Brian Sprague"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 

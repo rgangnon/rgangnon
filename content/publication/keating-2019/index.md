@@ -2,7 +2,7 @@
 title: "Characterising the gut microbiome in veterans with Gulf War Illness: a protocol for a longitudinal, prospective cohort study"
 date: 2019-08-01
 publishDate: 2020-02-08T06:30:32.672785Z
-authors: [Julie A Keating, Catherine Shaughnessy, Kelsey Baubie, Ashley E Kates, Nathan Putman-Buehler, Lauren Watson, Nadia Dominguez, Kal Watson, Dane B Cook, David Rabago, Garret Suen, Ronald Gangnon, Nasia Safdar]
+authors: [Julie Keating, Catherine Shaughnessy, Kelsey Baubie, Ashley Kates, Nathan Putman-Buehler, Lauren Watson, Nadia Dominguez, Kal Watson, Dane Cook, David Rabago, Garret Suen, Ronald Gangnon, Nasia Safdar]
 publication_types: ["2"]
 abstract: "INTRODUCTION:
 

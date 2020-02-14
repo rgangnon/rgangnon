@@ -2,7 +2,7 @@
 title: "Changes in visual impairment prevalence by period of diagnosis of diabetes: the Wisconsin Epidemiologic Study of Diabetic Retinopathy"
 date: 2009-10-01
 publishDate: 2020-02-08T06:30:32.773980Z
-authors: ["R. Klein", "K. E. Lee", "M. D. Knudtson", "R. E. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Kris Lee", "Mike Knudtson", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 More recently diagnosed T1DM was associated with a lower prevalence of VI. This is likely because of the diminishing incidence of proliferative diabetic retinopathy (PDR) and clinically significant macular edema (CSME) resulting from better glycemic control and more timely interventions with photocoagulation for CSME and PDR in those with more recently diagnosed T1DM."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(09)00275-9/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2009.03.012
+projects: [BDES]
 ---
 

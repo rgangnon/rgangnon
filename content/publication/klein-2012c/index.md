@@ -2,7 +2,7 @@
 title: "Long-term use of aspirin and age-related macular degeneration"
 date: 2012-12-01
 publishDate: 2020-02-08T06:30:32.740365Z
-authors: ["Barbara E. K. Klein", "Kerri P. Howard", "Ronald E. Gangnon", "Jennifer O. Dreyer", "Kristine E. Lee", "Ronald Klein"]
+authors: ["Barbara Klein", "Kerri Howard", "Ronald Gangnon", "Jennifer Dreyer", "Kris Lee", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "CONTEXT:
 
@@ -26,5 +26,6 @@ featured: false
 publication: "*JAMA*"
 url_pdf: klein-2012c.pdf
 doi: 10.1001/jama.2012.65406
+projects: [BDES]
 ---
 

@@ -2,7 +2,7 @@
 title: "Risk alleles in CFH and ARMS2 and the long-term natural history of age-related macular degeneration: the Beaver Dam Eye Study"
 date: 2013-03-01
 publishDate: 2020-02-08T06:30:32.734881Z
-authors: ["Ronald Klein", "Chelsea E. Myers", "Stacy M. Meuer", "Ronald E. Gangnon", "Theru A. Sivakumaran", "Sudha K. Iyengar", "Kristine E. Lee", "Barbara E. K. Klein"]
+authors: ["Ronald Klein", "Chelsea Myers", "Stacy Meuer", "Ronald Gangnon", "Theru Sivakumaran", "Sudha Iyengar", "Kris Lee", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -21,5 +21,6 @@ publication: "*JAMA Ophthalmology*"
 publication_short: "*JAMA Ophthalmol*"
 url_pdf: klein-2013c.pdf
 doi: 10.1001/jamaophthalmol.2013.713
+projects: [BDES]
 ---
 

@@ -5,7 +5,7 @@
     <link>/authors/jackie-hind/</link>
       <atom:link href="/authors/jackie-hind/index.xml" rel="self" type="application/rss+xml" />
     <description>Jackie Hind</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jackie Hind</title>
@@ -13,10 +13,34 @@
     </image>
     
     <item>
+      <title>Case study: application of isometric progressive resistance oropharyngeal therapy using the Madison Oral Strengthening Therapeutic device</title>
+      <link>/publication/juan-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/juan-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Comparison of standardized bariums with varying rheological parameters on swallowing kinematics in males</title>
       <link>/publication/hind-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
       <guid>/publication/hind-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effects of dining on tongue endurance and swallowing-related outcomes</title>
+      <link>/publication/kays-2010/</link>
+      <pubDate>Sun, 01 Aug 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/kays-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Esophageal clearance patterns in normal older adults as documented with videofluoroscopic esophagram</title>
+      <link>/publication/jou-2009/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/jou-2009/</guid>
       <description></description>
     </item>
     

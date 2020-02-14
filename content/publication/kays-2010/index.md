@@ -2,7 +2,7 @@
 title: "Effects of dining on tongue endurance and swallowing-related outcomes"
 date: 2010-08-01
 publishDate: 2020-02-08T06:30:32.763511Z
-authors: ["S. A. Kays", "J. A. Hind", "R. E. Gangnon", "J. Robbins"]
+authors: ["Stephanie Kays", "Jackie Hind", "Ronald Gangnon", "JoAnne Robbins"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Young and old adults demonstrated reduced tongue strength and endurance after dining, but younger subjects showed greater declines in anterior tongue endurance, whereas older adults exhibited signs of swallowing difficulty."
 featured: false
-publication: "*J. Speech Lang. Hear. Res.*"
-url_pdf: https://pubs.asha.org/doi/abs/10.1044/1092-4388%282009/09-0048%29?rfr_dat=cr_pub%3Dpubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org
+publication: "*Journal of Speech, Language & Hearing Research*"
+publication_short: "*J. Speech Lang. Hear. Res.*"
+doi: https://doi.org/10.1044/1092-4388(2009/09-0048
 ---
 

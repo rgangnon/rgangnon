@@ -2,7 +2,7 @@
 title: "The relationship of atherosclerosis to the 10-year cumulative incidence of age-related macular degeneration: the Beaver Dam studies"
 date: 2013-05-01
 publishDate: 2020-02-08T06:30:32.738451Z
-authors: ["R. Klein", "K. J. Cruickshanks", "C. E. Myers", "T. A. Sivakumaran", "S. K. Iyengar", "S. M. Meuer", "C. R. Schubert", "R. E. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Karen Cruickshanks", "Chelsea Myers", "Theru Sivakumaran", "Sugha Iyengar", "Stacy Meuer", "Carla Schubert", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 In these population-based data, carotid artery IMT and carotid plaques had a weak relationship to the incidence of late AMD that was independent of systemic and genetic risk factors. Angina, MI, and stroke were not related to AMD. It is unclear whether the carotid IMT is a risk indicator of processes affecting Bruch's membrane and the retinal pigment epithelium, or a measure of atherosclerosis affecting susceptibility to AMD."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(12)01069-X/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2012.11.003
+projects: [BDES]
 ---
 

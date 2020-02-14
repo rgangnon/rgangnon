@@ -2,7 +2,7 @@
 title: "The Relationship of Retinal Vessel Geometric Characteristics to the Incidence and Progression of Diabetic Retinopathy"
 date: 2018-11-01
 publishDate: 2020-02-08T06:30:32.681947Z
-authors: ["R. Klein", "K. E. Lee", "L. Danforth", "M. Y. Tsai", "R. E. Gangnon", "S. E. Meuer", "T. Y. Wong", "C. Y. Cheung", "B. E. K. Klein"]
+authors: ["Ronald Klein", "Kris Lee", "Lorraine Danforth", "Michael Tsai", "Ronald Gangnon", "Stacy Meuer", "Tien Wong", "Carol Cheung", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 Retinal vessel geometric characteristics of the retinal venules were associated with progression of DR; however, most of the RVGCs measured from digitized fundus photographs added little to the assessment of risk of incidence and progression of DR when other risk factors were considered in T1DM and T2DM."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(18)30530-X/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2018.04.023
+projects: [WESDR]
 ---
 

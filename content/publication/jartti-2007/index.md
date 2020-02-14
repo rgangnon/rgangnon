@@ -2,7 +2,7 @@
 title: "Association between CD4(+)CD25(high) T cells and atopy in children"
 date: 2007-07-01
 publishDate: 2020-02-08T06:30:32.788270Z
-authors: ["T. Jartti", "K. A. Burmeister", "C. M. Seroogy", "M. L. Jennens-Clough", "C. J. Tisler", "L. P. Salazar", "D. F. Dasilva", "M. D. Evans", "R. F. Vrtis", "P. K. Wallace", "B. Ruiz-Perez", "R. E. Gangnon", "R. F. Lemanske", "J. E. Gern"]
+authors: ["Tuomas Jartti", "Kristjan Burmeister", "Chris Seroogy", "Martin Jennens-Clough", "Chris Tisler", "Lisa Salazar", "Douglas Dasilva", "Mike Evans", "Rose Vrtis", "Paul Wallace", "Begona Ruiz-Perez", "Ronald Gangnon", "Rob Lemanske", "Jim Gern"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -23,7 +23,9 @@ CLINICAL IMPLICATIONS:
 
 Seasonal increases in CD4CD25(high) expression in children with allergy may represent systemic immune activation caused by pollen exposures."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(07)00565-9/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: jartti-2007.pdf
+doi:  https://doi.org/10.1016/j.jaci.2007.03.008
 ---
 

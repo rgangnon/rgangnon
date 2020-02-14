@@ -2,7 +2,7 @@
 title: "The Wisconsin Epidemiologic Study of Diabetic Retinopathy XXIII: the twenty-five-year incidence of macular edema in persons with type 1 diabetes"
 date: 2009-03-01
 publishDate: 2020-02-08T06:30:32.776164Z
-authors: ["R. Klein", "M. D. Knudtson", "K. E. Lee", "R. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Mike Knudtson", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,8 @@ CONCLUSIONS:
 These data show that relatively high 25-year cumulative rates of incidence of ME were related to glycemia and blood pressure. The lower risk of incident ME in the last period of the study may reflect recent improvement in care."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(08)01073-7/fulltext
+doi:  https://doi.org/10.1016/j.ophtha.2008.10.016
+projects: [WESDR]
+
 ---
 

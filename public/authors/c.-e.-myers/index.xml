@@ -5,7 +5,7 @@
     <link>/authors/c.-e.-myers/</link>
       <atom:link href="/authors/c.-e.-myers/index.xml" rel="self" type="application/rss+xml" />
     <description>C. E. Myers</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>C. E. Myers</title>
@@ -13,26 +13,10 @@
     </image>
     
     <item>
-      <title>Small Drusen and Age-Related Macular Degeneration: The Beaver Dam Eye Study</title>
-      <link>/publication/klein-2015/</link>
-      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2015/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Cigarette smoking and the natural history of age-related macular degeneration: the Beaver Dam Eye Study</title>
       <link>/publication/myers-2014/</link>
       <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
       <guid>/publication/myers-2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The relationship of atherosclerosis to the 10-year cumulative incidence of age-related macular degeneration: the Beaver Dam studies</title>
-      <link>/publication/klein-2013/</link>
-      <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2013/</guid>
       <description></description>
     </item>
     

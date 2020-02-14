@@ -2,7 +2,7 @@
 title: "Case study: application of isometric progressive resistance oropharyngeal therapy using the Madison Oral Strengthening Therapeutic device"
 date: 2013-01-01
 publishDate: 2020-02-08T06:30:32.729169Z
-authors: ["J. Juan", "J. Hind", "C. Jones", "T. McCulloch", "R. Gangnon", "J. Robbins"]
+authors: ["Junerose Juan", "Jackie Hind", "Corinne Jones", "Tim McCulloch", "Ronald Gangnon", "JoAnne Robbins"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 I-PRO therapy, facilitated by the MOST device combined with instrumental UES dilatation, improved swallow safety, increased oropharyngeal intake, and facilitated UES opening while enriching QOL."
 featured: false
-publication: "*Top Stroke Rehabil*"
-url_pdf: https://www.tandfonline.com/doi/abs/10.1310/tsr2005-450
+publication: "*Topics in Stroke Rehabilitation*"
+publication_short: "*Top Stroke Rehabil*"
+doi: https://doi.org/10.1310/tsr2005-450
 ---
 

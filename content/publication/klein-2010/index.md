@@ -2,7 +2,7 @@
 title: "The 25-year incidence of visual impairment in type 1 diabetes mellitus the wisconsin epidemiologic study of diabetic retinopathy"
 date: 2010-01-01
 publishDate: 2020-02-08T06:30:32.769640Z
-authors: ["R. Klein", "K. E. Lee", "R. E. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 These data show that the 25-year cumulative incidence of VI is related to modifiable risk factors and, therefore, that VI may be reduced by better glycemic and blood pressure control and avoidance of smoking."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(09)00697-6/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2009.06.051
+projects: [WESDR]
 ---
 

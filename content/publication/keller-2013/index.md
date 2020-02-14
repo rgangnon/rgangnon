@@ -2,7 +2,7 @@
 title: "Favorable ratings of providers' communication behaviors among U.S. women with depression: a population-based study applying the behavioral model of health services use"
 date: 2013-01-01
 publishDate: 2020-02-08T06:30:32.730572Z
-authors: ["A. O. Keller", "R. Gangnon", "W. P. Witt"]
+authors: ["Abiola Keller", "Ronald Gangnon", "Whitney Witt"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,8 @@ IMPLICATIONS FOR PRACTICE AND/OR POLICY:
 
 Ensuring that women with depression have reliable access to a continuous source of care and expanding the availability of nonemergent, after-hours care may be instrumental for improving patient-provider communication in this population."
 featured: false
-publication: "*Womens Health Issues*"
-url_pdf: https://www.whijournal.com/article/S1049-3867(13)00057-1/fulltext
+publication: "*Women's Health Issues*"
+publication_short: "*Womens Health Issues*"
+doi: https://doi.org/10.1016/j.whi.2013.07.002
 ---
 

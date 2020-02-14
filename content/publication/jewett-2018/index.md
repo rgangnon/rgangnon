@@ -2,7 +2,7 @@
 title: "Geographic access to mammography facilities and frequency of mammography screening"
 date: 2018-02-01
 publishDate: 2020-02-08T06:30:32.685091Z
-authors: [Patricia I. Jewett, Ronald E. Gangnon, Elena Elkin, John M. Hampton, Elizabeth A. Jacobs, Kristen Malecki, James LaGro, Polly A. Newcomb, Amy Trentham-Dietz]
+authors: [Patricia Jewett, Ronald Gangnon, Elena Elkin, John Hampton, Elizabeth Jacobs, Kristen Malecki, James LaGro, Polly Newcomb, Amy Trentham-Dietz]
 publication_types: ["2"]
 abstract: "PURPOSE:
 

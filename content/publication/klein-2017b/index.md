@@ -2,7 +2,7 @@
 title: "Skin Intrinsic Fluorescence and Age-Related Macular Degeneration: The Beaver Dam Eye Study"
 date: 2017-12-01
 publishDate: 2020-02-08T06:30:32.687319Z
-authors: ["R. Klein", "K. E. Lee", "J. D. Maynard", "S. M. Meuer", "R. E. Gangnon", "B. E. K. Klein"]
+authors: ["Ronald Klein", "Kris Lee", "John Maynard", "Stacy Meuer", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "Purpose:
 
@@ -17,7 +17,10 @@ Conclusions:
 
 There was a suggestive relationship of two SIF measures, SIF01 and SIF03, using different correction factors from the excitation centered at 375 nm, with the prevalence of geographic atrophy in the BDES. Longitudinal follow-up is indicated to assess a temporal relationship."
 featured: false
-publication: "*Invest. Ophthalmol. Vis. Sci.*"
-url_pdf: https://iovs.arvojournals.org/article.aspx?articleid=2666785
+publication: "*Investigative Ophthalmology & Visual Science*"
+publication_short: "*Invest. Ophthalmol. Vis. Sci.*"
+url_pdf: klein-2017b.pdf
+doi: https://doi.org/10.1167/iovs.17-22382
+projects: [BDES]
 ---
 

@@ -2,7 +2,7 @@
 title: "Changes in visual acuity in a population over a 15-year period: the Beaver Dam Eye Study"
 date: 2006-10-01
 publishDate: 2020-02-08T06:30:32.792073Z
-authors: ["R. Klein", "B. E. Klein", "K. E. Lee", "K. J. Cruickshanks", "R. E. Gangnon"]
+authors: ["Ronald Klein", "Barbara Klein", "Kris Lee", "Karen Cruickshanks", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -20,7 +20,9 @@ CONCLUSIONS:
 
 These data provide population-based estimates of the cumulative 15-year incidence of loss of vision over a wide spectrum of ages. In people 75 years of age or older the cumulative incidence of visual impairment accounting for the competing risk of death is 25%, of which 4% is severe, indicating a public health problem of considerable proportions as the US population in this age is expected to increase by 55% from 18 million in the year 2005 to 28 million by the year 2025."
 featured: false
-publication: "*Am. J. Ophthalmol.*"
-url_pdf: https://www.ajo.com/article/S0002-9394(06)00675-1/fulltext
+publication: "*American Journal of Ophthalmology*"
+publication_short: "*Am. J. Ophthalmol.*"
+doi: https://doi.org/10.1016/j.ajo.2006.06.015
+projects: [BDES]
 ---
 

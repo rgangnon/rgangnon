@@ -2,7 +2,7 @@
 title: "The Wisconsin Epidemiologic Study of Diabetic Retinopathy: XXII the twenty-five-year progression of retinopathy in persons with type 1 diabetes"
 date: 2008-11-01
 publishDate: 2020-02-08T06:30:32.777221Z
-authors: ["R. Klein", "M. D. Knudtson", "K. E. Lee", "R. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Mike Knudtson", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 These data show relatively high 25-year cumulative rates of progression of DR and incidence of PDR. The lower risk of prevalent PDR in more recently diagnosed persons possibly reflects improvement in care over the period of the study."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(08)00817-8/fulltext
+doi:  https://doi.org/10.1016/j.ophtha.2008.08.023
+projects: [WESDR]
 ---
 

@@ -5,7 +5,7 @@
     <link>/authors/barbara-klein/</link>
       <atom:link href="/authors/barbara-klein/index.xml" rel="self" type="application/rss+xml" />
     <description>Barbara Klein</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Barbara Klein</title>
@@ -13,10 +13,58 @@
     </image>
     
     <item>
+      <title>Oxidized Low-density Lipoprotein and the Incidence of Age-related Macular Degeneration</title>
+      <link>/publication/klein-2019/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Relationship of Retinal Vessel Geometric Characteristics to the Incidence and Progression of Diabetic Retinopathy</title>
+      <link>/publication/klein-2018/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Skin Intrinsic Fluorescence and Age-Related Macular Degeneration: The Beaver Dam Eye Study</title>
+      <link>/publication/klein-2017b/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Relationship of Serum Soluble Receptor for Advanced Glycation End Products (sRAGE) and Carboxymethyl Lysine (CML) to the Incidence of Diabetic Nephropathy in Persons With Type 1 Diabetes</title>
+      <link>/publication/klein-2017/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Variability in Spectral-Domain Optical Coherence Tomography over 4 Weeks by Age</title>
       <link>/publication/howard-2016/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
       <guid>/publication/howard-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oxidized Low-Density Lipoprotein and the Incidence of Proliferative Diabetic Retinopathy and Clinically Significant Macular Edema Determined From Fundus Photographs</title>
+      <link>/publication/klein-2015b/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Small Drusen and Age-Related Macular Degeneration: The Beaver Dam Eye Study</title>
+      <link>/publication/klein-2015/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2015/</guid>
       <description></description>
     </item>
     
@@ -29,6 +77,22 @@
     </item>
     
     <item>
+      <title>Relation of smoking, drinking, and physical activity to changes in vision over a 20-year period: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2014b/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2014b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markers of inflammation, oxidative stress, and endothelial dysfunction and the 20-year cumulative incidence of early age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2014/</link>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Misclassification can explain most apparent regression of age-related macular degeneration: results from multistate models with misclassification</title>
       <link>/publication/gangnon-2014/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
@@ -37,10 +101,122 @@
     </item>
     
     <item>
+      <title>Incidence of visual impairment over a 20-year period: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2013b/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2013b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship of atherosclerosis to the 10-year cumulative incidence of age-related macular degeneration: the Beaver Dam studies</title>
+      <link>/publication/klein-2013/</link>
+      <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Risk alleles in CFH and ARMS2 and the long-term natural history of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2013c/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2013c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Long-term use of aspirin and age-related macular degeneration</title>
+      <link>/publication/klein-2012c/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2012c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Effect of the Y402H variant in the complement factor H gene on the incidence and progression of age-related macular degeneration: results from multistate models applied to the Beaver Dam Eye Study</title>
       <link>/publication/gangnon-2012b/</link>
       <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
       <guid>/publication/gangnon-2012b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relationship of blood pressure and other factors to serial retinal arteriolar diameter measurements over time: the beaver dam eye study</title>
+      <link>/publication/klein-2012b/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2012b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changes in retinal vessel diameter and incidence and progression of diabetic retinopathy</title>
+      <link>/publication/klein-2012/</link>
+      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The 25-year incidence of visual impairment in type 1 diabetes mellitus the wisconsin epidemiologic study of diabetic retinopathy</title>
+      <link>/publication/klein-2010/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changes in visual impairment prevalence by period of diagnosis of diabetes: the Wisconsin Epidemiologic Study of Diabetic Retinopathy</title>
+      <link>/publication/klein-2009b/</link>
+      <pubDate>Thu, 01 Oct 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2009b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Wisconsin Epidemiologic Study of Diabetic Retinopathy XXIII: the twenty-five-year incidence of macular edema in persons with type 1 diabetes</title>
+      <link>/publication/klein-2009/</link>
+      <pubDate>Sun, 01 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2009/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Wisconsin Epidemiologic Study of Diabetic Retinopathy: XXII the twenty-five-year progression of retinopathy in persons with type 1 diabetes</title>
+      <link>/publication/klein-2008c/</link>
+      <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2008c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Age-period-cohort effect on the incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2008b/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2008b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Incidence of age-related cataract over a 15-year interval the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2008/</link>
+      <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fifteen-year cumulative incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2007/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2007/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Changes in visual acuity in a population over a 15-year period: the Beaver Dam Eye Study</title>
+      <link>/publication/klein-2006/</link>
+      <pubDate>Sun, 01 Oct 2006 00:00:00 +0000</pubDate>
+      <guid>/publication/klein-2006/</guid>
       <description></description>
     </item>
     

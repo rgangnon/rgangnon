@@ -2,7 +2,7 @@
 title: "Fifteen-year cumulative incidence of age-related macular degeneration: the Beaver Dam Eye Study"
 date: 2007-02-01
 publishDate: 2020-02-08T06:30:32.790272Z
-authors: ["R. Klein", "B. E. Klein", "M. D. Knudtson", "S. M. Meuer", "M. Swift", "R. E. Gangnon"]
+authors: ["Ronald Klein", "Barbara Klein", "Mike Knudtson", "Stacy Meuer", "Maria Swift", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 We document the long-term incidence of signs of AMD and a continuum from small hard drusen to late AMD in older persons in the population. The 15-year cumulative incidence of late AMD in people > or = 75 years of age (8%) indicates a public health problem of significant proportions because the United States population this age is expected to increase by 54% between 2005 and 2025."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(06)01478-3/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2006.10.040
+projects: [BDES]
 ---
 

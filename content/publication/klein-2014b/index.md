@@ -2,7 +2,7 @@
 title: "Relation of smoking, drinking, and physical activity to changes in vision over a 20-year period: the Beaver Dam Eye Study"
 date: 2014-06-01
 publishDate: 2020-02-08T06:30:32.720502Z
-authors: ["R. Klein", "K. E. Lee", "R. E. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 Three modifiable behaviors-smoking, drinking alcohol, and physical activity-were associated with changes in vision. Further evidence that changes in these behaviors will result in less loss of vision is needed because of the expected increase in the burden of VI due to the aging of the population."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(14)00011-6/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2014.01.003
+projects: [BDES]
 ---
 

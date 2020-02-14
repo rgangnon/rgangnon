@@ -2,7 +2,7 @@
 title: "Changes in retinal vessel diameter and incidence and progression of diabetic retinopathy"
 date: 2012-06-01
 publishDate: 2020-02-08T06:30:32.750769Z
-authors: ["Ronald Klein", "Chelsea E. Myers", "Kristine E. Lee", "Ronald Gangnon", "Barbara E. K. Klein"]
+authors: ["Ronald Klein", "Chelsea Myers", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -21,5 +21,6 @@ publication: "*Archives of Ophthalmology*"
 publication_short: "*Arch. Ophthalmol.*"
 url_pdf: klein-2012.pdf
 doi: 10.1001/archophthalmol.2011.2560
+projects: [WESDR]
 ---
 

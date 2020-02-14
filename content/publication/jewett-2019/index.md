@@ -10,5 +10,6 @@ publication: "*Statistical Methods in Medical Research*"
 publication_short: "*Stat Methods Med Res*"
 url_pdf: jewett-2019.pdf
 doi: https://doi.org/10.1177/0962280218790104
+projects: [Ranking]
 ---
 

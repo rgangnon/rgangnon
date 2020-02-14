@@ -2,7 +2,7 @@
 title: "Incidence of age-related cataract over a 15-year interval the Beaver Dam Eye Study"
 date: 2008-03-01
 publishDate: 2020-02-08T06:30:32.783887Z
-authors: ["B. E. Klein", "R. Klein", "K. E. Lee", "R. E. Gangnon"]
+authors: ["Barbara Klein", "Ronald Klein", "Kris Lee", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 Age-adjusted incidence of all cataract types increased with increasing age, although the age effect was not linear for all 3 types. More recent birth cohorts are relatively protected relative to persons born earlier. Further follow-up is needed to verify the trends we report here and to determine whether cohort effects on 10-year incidence are significant."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(07)01274-2/fulltext 
+doi: https://doi.org/10.1016/j.ophtha.2007.11.024
+projects: [BDES]
 ---
 

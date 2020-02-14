@@ -2,8 +2,8 @@
 title: "Oxidized Low-density Lipoprotein and the Incidence of Age-related Macular Degeneration"
 date: 2019-05-01
 publishDate: 2020-02-08T06:30:32.679268Z
-authors: [Ronald Klein, Kristine E. Lee, Michael Y. Tsai, Karen J. Cruickshanks, 
-Ronald E. Gangnon, Barbara E.K. Klein]
+authors: [Ronald Klein, Kris Lee, Michael Tsai, Karen Cruickshanks, 
+Ronald Gangnon, Barbara Klein]
 publication_types: ["2"]
 abstract: "PURPOSE:
 

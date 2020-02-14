@@ -2,7 +2,7 @@
 title: "Oxidized Low-Density Lipoprotein and the Incidence of Proliferative Diabetic Retinopathy and Clinically Significant Macular Edema Determined From Fundus Photographs"
 date: 2015-09-01
 publishDate: 2020-02-08T06:30:32.705104Z
-authors: ["Ronald Klein", "Chelsea E. Myers", "Kristine E. Lee", "Andrew D. Paterson", "Karen J. Cruickshanks", "Michael Y. Tsai", "Ronald E. Gangnon", "Barbara E. K. Klein"]
+authors: ["Ronald Klein", "Chelsea Myers", "Kris Lee", "Andrew Paterson", "Karen Cruickshanks", "Michael Tsai", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "IMPORTANCE:
 
@@ -27,5 +27,6 @@ publication: "*JAMA Ophthalmoogy*"
 publication_short: "*JAMA Ophthalmol*"
 url_pdf: klein-2015b.pdf
 doi: 10.1001/jamaophthalmol.2015.2239
+projects: [WESDR]
 ---
 

@@ -2,7 +2,7 @@
 title: "Age-period-cohort effect on the incidence of age-related macular degeneration: the Beaver Dam Eye Study"
 date: 2008-09-01
 publishDate: 2020-02-08T06:30:32.778298Z
-authors: ["R. Klein", "M. D. Knudtson", "K. E. Lee", "R. E. Gangnon", "B. E. Klein"]
+authors: ["Ronald Klein", "Mike Knudtson", "Kris Lee", "Ronald Gangnon", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 Lower incidence of early AMD in more recent birth cohorts is likely the result of unmeasured risk factors for early AMD. Further study of possible unmeasured risk factors that may have caused this cohort effect may help to identify new modifiable risk factors for AMD. Diminishing incidence of early AMD in later birth cohorts would be expected to result in lower long-term estimates of future incidence of AMD than do current estimates that do not take this effect into account."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(08)00093-6/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2008.01.026
+projects: [BDES]
 ---
 

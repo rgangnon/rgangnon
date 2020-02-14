@@ -2,7 +2,7 @@
 title: "Relationship of blood pressure and other factors to serial retinal arteriolar diameter measurements over time: the beaver dam eye study"
 date: 2012-08-01
 publishDate: 2020-02-08T06:30:32.744957Z
-authors: ["Ronald Klein", "Chelsea E. Myers", "Michael D. Knudtson", "Kristine E. Lee", "Ronald Gangnon", "Tien Y. Wong", "Barbara E. K. Klein"]
+authors: ["Ronald Klein", "Chelsea Myers", "Mike Knudtson", "Kris Lee", "Ronald Gangnon", "Tien Wong", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -21,5 +21,6 @@ publication: "*Archives of Ophthalmology*"
 publication_short: "*Arch. Ophthalmol.*"
 url_pdf: klein-2012b.pdf
 doi: 10.1001/archophthalmol.2012.560
+projects: [BDES]
 ---
 
