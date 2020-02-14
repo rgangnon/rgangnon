@@ -2,7 +2,7 @@
 title: "Molteno implant with mitomycin C: intermediate-term results"
 date: 1998-04-01
 publishDate: 2020-02-08T06:30:32.817112Z
-authors: ["T. W. Perkins", "R. Gangnon", "W. Ladd", "P. L. Kaufman", "C. M. Libby"]
+authors: ["Todd Perkins", "Ronald Gangnon", "Bill Ladd", "Paul Kaufman", "C Libby"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -18,5 +18,6 @@ CONCLUSION:
 Intraoperative MMC offers an increased likelihood of a two- to three-year period of medication-free IOP control in patients undergoing double-plate Molteno implants, compared to similar patients receiving 5-FU or no adjunctive antimetabolite therapy."
 featured: false
 publication: "*J. Glaucoma*"
+publication_short: "*J. Glaucoma*"
 ---
 

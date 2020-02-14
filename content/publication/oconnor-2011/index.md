@@ -2,7 +2,7 @@
 title: "Adjuvant chemotherapy for stage II colon cancer with poor prognostic features"
 date: 2011-09-01
 publishDate: 2020-02-08T06:30:32.756102Z
-authors: ["E. S. O'Connor", "D. Y. Greenblatt", "N. K. LoConte", "R. E. Gangnon", "J. I. Liou", "C. P. Heise", "M. A. Smith"]
+authors: ["Erin O'Connor", "David Greenblatt", "Noelle LoConte", "Ronald Gangnon", "Jinn-Ing Liou", "Charles Heise", "Maureen Smith"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 Among Medicare patients identified with stage II colon cancer, either with or without poor prognostic features, adjuvant chemotherapy did not substantially improve overall survival. This lack of benefit must be considered in treatment decisions for similar older adults with colon cancer."
 featured: false
-publication: "*J. Clin. Oncol.*"
-url_pdf: https://ascopubs.org/doi/full/10.1200/JCO.2010.34.3426?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+publication: "*Journal of Clinical Oncology*"
+publication_short: "*J. Clin. Oncol.*"
+url_pdf: oconnor-2011.pdf
+doi: 10.1200/JCO.2010.34.3426
 ---
 

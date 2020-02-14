@@ -2,7 +2,7 @@
 title: "Trabeculectomy with mitomycin C: intermediate-term results"
 date: 1998-08-01
 publishDate: 2020-02-08T06:30:32.816451Z
-authors: ["T. W. Perkins", "R. Gangnon", "W. Ladd", "P. L. Kaufman", "G. A. Heatley"]
+authors: ["Todd Perkins", "Ronald Gangnon", "Bill Ladd", "Paul Kaufman", "Greg Heatley"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,6 +17,7 @@ CONCLUSIONS:
 
 At the 3-year follow-up evaluation, trabeculectomy with MMC provided an approximately 50% chance of maintaining IOPs less than 21 mmHg and a more than 20% IOP reduction without concomitant use of glaucoma medication, which increased to 70% with the addition of medication. This procedure was associated with an approximately 30% risk of substantial visual loss (approximately 15% nonreversible) and a 15% chance of reoperation for complications."
 featured: false
-publication: "*J. Glaucoma*"
+publication: "*Journal of Glaucoma*"
+publication_short: "*J. Glaucoma*"
 ---
 

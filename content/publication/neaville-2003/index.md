@@ -2,7 +2,7 @@
 title: "Developmental cytokine response profiles and the clinical and immunologic expression of atopy during the first year of life"
 date: 2003-10-01
 publishDate: 2020-02-08T06:30:32.809106Z
-authors: ["W. A. Neaville", "C. Tisler", "A. Bhattacharya", "K. Anklam", "S. Gilbertson-White", "R. Hamilton", "K. Adler", "D. F. Dasilva", "K. A. Roberg", "K. T. Carlson-Dakes", "E. Anderson", "D. Yoshihara", "R. Gangnon", "L. D. Mikus", "L. A. Rosenthal", "J. E. Gern", "R. F. Lemanske"]
+authors: ["William Neaville", "Chris Tisler", "Abhik Bhattacharya", "Kelly Anklam", "Stephanie Gilbertson-White", "Rebekah Hamilton", "Kiva Adler", "Douglas Dasilva", "Kathy Roberg", "Kirstin Carlson-Dakes", "Beth Anderson", "Debbie Yoshihara", "Ronald Gangnon", "Lance Mikus", "Louis Rosenthal", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 These findings demonstrate that cytokine responses change markedly during the first year of life and provide further evidence of a close relationship between TH2 skewing of immune responses and the incidence of atopic manifestations in children."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://linkinghub.elsevier.com/retrieve/pii/S0091674903018682
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: neaville-2003.pdf
+doi: https://doi.org/10.1016/S0091-6749(03)01868-2
+projects: [COAST]
 ---
 
