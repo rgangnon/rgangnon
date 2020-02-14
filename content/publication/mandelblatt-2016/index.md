@@ -2,7 +2,7 @@
 title: "Collaborative Modeling of the Benefits and Harms Associated With Different U.S. Breast Cancer Screening Strategies"
 date: 2016-02-01
 publishDate: 2020-02-08T06:30:32.701644Z
-authors: ["J. S. Mandelblatt", "N. K. Stout", "C. B. Schechter", "J. J. van den Broek", "D. L. Miglioretti", "M. Krapcho", "A. Trentham-Dietz", "D. Munoz", "S. J. Lee", "D. A. Berry", "N. T. van Ravesteyn", "O. Alagoz", "K. Kerlikowske", "A. N. Tosteson", "A. M. Near", "A. Hoeffken", "Y. Chang", "E. A. Heijnsdijk", "G. Chisholm", "X. Huang", "H. Huang", "M. A. Ergun", "R. Gangnon", "B. L. Sprague", "S. Plevritis", "E. Feuer", "H. J. de Koning", "K. A. Cronin"]
+authors: ["Jeanne Mandelblatt", "Tasha Stout", "Clyde Schechter", "Jeroen van den Broek", "Diana Miglioretti", "Martin Krapcho", "Amy Trentham-Dietz", "Diego Munoz", "Sandra Lee", "Don Berry", "Nicolien van Ravesteyn", "Oguzhan Alagoz", "Karla Kerlikowske", "Anna Tosteson", "Aimee Near", "Amanda Hoeffken", "Yaojen Chang", "Eveline Heijnsdijk", "Gary Chisholm", "Xuelin Huang", "Hui Huang", "Mehmet Ergun", "Ronald Gangnon", "Brian Sprague", "Sylvia Plevritis", "Rocky Feuer", "Harry de Koning", "Kathy Cronin"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -35,7 +35,9 @@ CONCLUSION:
 
 Biennial screening for breast cancer is efficient for average-risk populations. Decisions about starting ages and intervals will depend on population characteristics and the decision makers' weight given to the harms and benefits of screening."
 featured: false
-publication: "*Ann. Intern. Med.*"
-url_pdf: https://annals.org/aim/fullarticle/2480763/collaborative-modeling-benefits-harms-associated-different-u-s-breast-cancer
+publication: "*Annals of Internal Medicine*"
+publication_short: "*Ann. Intern. Med.*"
+doi: 10.7326/M15-1536
+projects: [CISNET]
 ---
 

@@ -2,7 +2,7 @@
 title: "Validity of the alcohol use disorders identification test in college students"
 date: 2004-06-01
 publishDate: 2020-02-08T06:30:32.803994Z
-authors: ["P. K. Kokotailo", "J. Egan", "R. Gangnon", "D. Brown", "M. Mundt", "M. Fleming"]
+authors: ["Pat Kokotailo", "Judith Egan", "Ronald Gangnon", "David Brown", "Marlon Mundt", "Mike Fleming"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 The AUDIT has reasonable psychometric properties in sample of college students using student health services. This study supports the use of the AUDIT in this population."
 featured: false
-publication: "*Alcohol. Clin. Exp. Res.*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1097/01.ALC.0000128239.87611.F5?sid=nlm%3Apubmed
+publication: "*Alcoholism Clinical & Experimental Research*"
+publication_short: "*Alcohol. Clin. Exp. Res.*"
+doi:  https://doi.org/10.1097/01.ALC.0000128239.87611.F5
 ---
 

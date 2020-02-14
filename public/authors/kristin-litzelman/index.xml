@@ -5,12 +5,28 @@
     <link>/authors/kristin-litzelman/</link>
       <atom:link href="/authors/kristin-litzelman/index.xml" rel="self" type="application/rss+xml" />
     <description>Kristin Litzelman</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Kristin Litzelman</title>
       <link>/authors/kristin-litzelman/</link>
     </image>
+    
+    <item>
+      <title>The relationship among caregiving characteristics, caregiver strain, and health-related quality of life: evidence from the Survey of the Health of Wisconsin</title>
+      <link>/publication/litzelman-2015/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Association between informal caregiving and cellular aging in the survey of the health of wisconsin: the role of caregiving characteristics, stress, and strain</title>
+      <link>/publication/litzelman-2014b/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2014b/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>The association of telomere length with colorectal cancer differs by the age of cancer onset</title>
@@ -33,6 +49,14 @@
       <link>/publication/boardman-2014/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       <guid>/publication/boardman-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quality of life among parents of children with cancer or brain tumors: the impact of child characteristics and parental psychosocial factors</title>
+      <link>/publication/litzelman-2011/</link>
+      <pubDate>Sat, 01 Oct 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/litzelman-2011/</guid>
       <description></description>
     </item>
     

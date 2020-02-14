@@ -2,7 +2,7 @@
 title: "Genetic associations with viral respiratory illnesses and asthma control in children"
 date: 2016-01-01
 publishDate: 2020-02-08T06:30:32.703464Z
-authors: ["D. A. Loisel", "G. Du", "T. S. Ahluwalia", "C. J. Tisler", "M. D. Evans", "R. A. Myers", "R. E. Gangnon", "E. Kreiner-M?ller", "K. B?nnelykke", "H. Bisgaard", "D. J. Jackson", "R. F. Lemanske", "D. L. Nicolae", "J. E. Gern", "C. Ober"]
+authors: ["Dagan Loisel", "G Du", "T Ahluwalia", "Chris Tisler", "Mike Evans", "R Myers", "Ronald Gangnon", " E Kreiner‐Møller", "K Bønnelykke", "Hans Bisgaard", "Dan Jackson", "Rob Lemanske", "Dan Nicolae", "Jim Gern", "Carole Ober"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ CONCLUSIONS:
 
 We identified genetic factors contributing to individual differences in childhood viral respiratory illnesses and virus-induced exacerbations of asthma. Defining mechanisms of these associations may provide insight into the pathogenesis of viral respiratory infections and virus-induced exacerbations of asthma."
 featured: false
-publication: "*Clin. Exp. Allergy*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/cea.12642
+publication: "*Clinical & Experimental Allergy*"
+publication_short: "*Clin. Exp. Allergy*"
+doi: https://doi.org/10.1111/cea.12642
+projects: [COAST]
 ---
 

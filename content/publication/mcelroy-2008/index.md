@@ -2,7 +2,7 @@
 title: "Urinary lead exposure and breast cancer risk in a population-based case-control study"
 date: 2008-09-01
 publishDate: 2020-02-08T06:30:32.777782Z
-authors: ["J. A. McElroy", "M. M. Shafer", "R. E. Gangnon", "L. A. Crouch", "P. A. Newcomb"]
+authors: ["Jane McElroy", "Martin Shafer", "Ronald Gangnon", "Luis Crouch", "Polly Newcomb"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 Our population-based case-control study suggests that lead exposure, as determined by specific gravity-adjusted urinary lead concentrations, is not associated with a significant increased risk for breast cancer."
 featured: false
-publication: "*Cancer Epidemiol. Biomarkers Prev.*"
-url_pdf: https://cebp.aacrjournals.org/content/17/9/2311.long
+publication: "*Cancer Epidemiology, Biomarkers & Prevention*"
+publication_short: "*Cancer Epidemiol. Biomarkers Prev.*"
+url_pdf: mcelroy-2008.pdf
+doi: 10.1158/1055-9965.EPI-08-0263
 ---
 

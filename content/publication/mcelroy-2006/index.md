@@ -2,7 +2,7 @@
 title: "Identifying geographic disparities in the early detection of breast cancer using a geographic information system"
 date: 2006-01-01
 publishDate: 2020-02-08T06:30:32.796688Z
-authors: ["J. A. McElroy", "P. L. Remington", "R. E. Gangnon", "L. Hariharan", "L. D. Andersen"]
+authors: ["Jane McElroy", "Pat Remington", "Ronald Gangnon", "Larry Hariharan", "Leann Andersen"]
 publication_types: ["2"]
 abstract: "INTRODUCTION:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 The percentage of breast cancer cases diagnosed in situ increased in the state and in all areas of Dane County from 1981 through 2000. Visual display of the geographic differences in the early detection of breast cancer demonstrates the diffusion of mammography use across the county over the 20-year period."
 featured: false
-publication: "*Prev Chronic Dis*"
-url_pdf: https://www.cdc.gov/pcd/issues/2006/jan/05_0065.htm
+publication: "*Preventing Chronic Disease*"
+publication_short: "*Prev Chronic Dis*"
+url_pdf: mcelroy-2006.pdf
 ---
 

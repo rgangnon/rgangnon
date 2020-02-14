@@ -2,7 +2,7 @@
 title: "Factors affecting employment at initiation of dialysis"
 date: 2011-03-01
 publishDate: 2020-02-08T06:30:32.759613Z
-authors: ["R. J. Muehrer", "D. Schatell", "B. Witten", "R. Gangnon", "B. N. Becker", "R. M. Hofmann"]
+authors: ["Rebecca Muehrer", "Dori Schatell", "Beth Witten", "Ronald Gangnon", "Bryan Becker", "Michael Hofmann"]
 publication_types: ["2"]
 abstract: "BACKGROUND AND OBJECTIVES:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 The rate of unemployment in working-age patients with chronic kidney disease and ESRD is high compared with that of the general population. Treating anemia with erythropoietin before kidney failure and educating patients about work-friendly home dialysis options might improve job retention."
 featured: false
-publication: "*Clin J Am Soc Nephrol*"
-url_pdf: https://cjasn.asnjournals.org/content/6/3/489.long
+publication: "*Clinical Journal of the American Society of Nephrology*"
+publication_short: "*Clin J Am Soc Nephrol*"
+url_pdf: muehrer-2011.pdf
+doi: https://doi.org/10.2215/CJN.02550310 
 ---
 

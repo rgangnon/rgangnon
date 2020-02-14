@@ -2,7 +2,7 @@
 title: "Common Model Inputs Used in CISNET Collaborative Breast Cancer Modeling"
 date: 2018-04-01
 publishDate: 2020-02-08T06:30:32.683911Z
-authors: [Jeanne S. Mandelblatt, Aimee M. Near, Diana L. Miglioretti,Diego Munoz, Brian L. Sprague, Amy Trentham-Dietz,Ronald Gangnon, Allison W. Kurian, Harald Weedon-Fekjaer,Kathleen A. Cronin, Sylvia K. Plevritis]
+authors: [Jeanne Mandelblatt, Aimee Near, Diana Miglioretti,Diego Munoz, Brian Sprague, Amy Trentham-Dietz,Ronald Gangnon, Allison Kurian, Harald Weedon-Fekjaer,Kathy Cronin, Sylvia Plevritis]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,5 +18,6 @@ publication: "*Medical Decision Making*"
 publication_short: "*Med Decis Making*"
 url_pdf: mandelblatt-2018.pdf
 doi: 10.1177/0272989X17700624
+projects: [CISNET]
 ---
 

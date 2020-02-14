@@ -2,7 +2,7 @@
 title: "Increased H1N1 infection rate in children with asthma"
 date: 2012-06-01
 publishDate: 2020-02-08T06:30:32.750070Z
-authors: ["K. M. Kloepfer", "J. P. Olenec", "W. M. Lee", "G. Liu", "R. F. Vrtis", "K. A. Roberg", "M. D. Evans", "R. E. Gangnon", "R. F. Lemanske", "J. E. Gern"]
+authors: ["Kirsten Kloepfer", "Jaime Olenec", "Wai-Ming Lee", "Guiyan Liu", "Rose Vrtis", "Kathy Roberg", "Mike Evans", "Ronald Gangnon", "Rob Lemanske", "Jim Gern"]
 publication_types: ["2"]
 abstract: "RATIONALE:
 
@@ -21,6 +21,8 @@ CONCLUSIONS:
 During peak 2009 H1N1 flu season, children with asthma were infected almost twice as often with H1N1 compared with other respiratory viruses. H1N1 infection also caused increased severity of cold symptoms compared with other viral infections. Given the increased susceptibility of children with asthma to infection, these findings reinforce the need for yearly influenza vaccination to prevent infection, and raise new questions about the mechanism for enhanced susceptibility to influenza infection in asthma."
 featured: false
 publication: "*Am. J. Respir. Crit. Care Med.*"
-url_pdf: https://www.atsjournals.org/doi/full/10.1164/rccm.201109-1635OC?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+url_pdf: kloepfer-2012.pdf
+doi: https://doi.org/10.1164/rccm.201109-1635OC 
+projects: [Rhinogen, COAST]
 ---
 

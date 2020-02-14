@@ -2,7 +2,7 @@
 title: "The impact of chlorhexidine bathing on hospital-acquired bloodstream infections: a systematic review and meta-analysis"
 date: 2019-05-01
 publishDate: 2020-02-08T06:30:32.676499Z
-authors: [Jackson S. Musuuza, Pramod K. Guru, John C. O’Horo, Connie M. Bongiorno, Marc A. Korobkin,Ronald E. Gangnon, Nasia Safdar]
+authors: [Jackson Musuuza, Pramod Guru, John O’Horo, Connie Bongiorno, Marc Korobkin,Ronald Gangnon, Nasia Safdar]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

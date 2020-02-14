@@ -2,7 +2,7 @@
 title: "The relationship among caregiving characteristics, caregiver strain, and health-related quality of life: evidence from the Survey of the Health of Wisconsin"
 date: 2015-06-01
 publishDate: 2020-02-08T06:30:32.712450Z
-authors: ["K. Litzelman", "H. G. Skinner", "R. E. Gangnon", "F. J. Nieto", "K. Malecki", "W. P. Witt"]
+authors: ["Kristin Litzelman", "Hal Skinner", "Ronald Gangnon", "Javier Nieto", "Kristen Malecki", "Whitney Witt"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 The findings suggest a chains-of-risk model in which caregiving may increase strain, which may in turn adversely influence mental HRQoL. Using this perspective to refine interventions may improve our ability to support caregivers on practice and policy levels."
 featured: false
-publication: "*Qual Life Res*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs11136-014-0874-6
+publication: "*Quality of Life Research*"
+publication_short: "*Qual Life Res*"
+doi: https://doi.org/10.1007/s11136-014-0874-6
+projects: [SHOW]
 ---
 

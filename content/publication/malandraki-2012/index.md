@@ -2,7 +2,7 @@
 title: "The effects of lingual intervention in a patient with inclusion body myositis and SjÃ¶gren's syndrome: a longitudinal case study"
 date: 2012-08-01
 publishDate: 2020-02-08T06:30:32.749529Z
-authors: ["G. A. Malandraki", "A. Kaufman", "J. Hind", "S. Ennis", "R. Gangnon", "A. Waclawik", "J. Robbins"]
+authors: ["Georgia Malandraki", "A Kaufman", "Jackie Hind", "S Ennis", "Ronald Gangnon", "A Waclawik", "JoAnne Robbins"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -29,7 +29,9 @@ CONCLUSIONS:
 
 We conclude that, in this patient, lingual strengthening slowed the progression of disease-related lingual strength loss and extended functional swallowing performance. Thus, this type of intervention may hold promise as an effective swallowing treatment option for patients with neurodegenerative inflammatory diseases such as inclusion body myositis and Sjögren's syndrome."
 featured: false
-publication: "*Arch Phys Med Rehabil*"
-url_pdf: https://www.archives-pmr.org/article/S0003-9993(12)00104-9/fulltext
+publication: "*Archives of Physical Medicine & Rehabilitation*"
+publication_short: "*Arch Phys Med Rehabil*"
+doi: https://doi.org/10.1016/j.apmr.2012.02.010
+projects: [Dysphagia]
 ---
 

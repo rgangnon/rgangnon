@@ -2,7 +2,7 @@
 title: "The utility of pitch elevation in the evaluation of oropharyngeal Dysphagia: preliminary findings"
 date: 2011-11-01
 publishDate: 2020-02-08T06:30:32.755147Z
-authors: ["G. A. Malandraki", "J. A. Hind", "R. Gangnon", "J. A. Logemann", "J. Robbins"]
+authors: ["Georgia Malandraki", "Jackie Hind", "Ronald Gangnon", "Jeri Logemann", "JoAnne Robbins"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,10 @@ CONCLUSIONS:
 
 Findings indicate that reduced pitch elevation can be indicative of reduced airway protection and swallowing impairment in some dysphagia patients and may be a useful supplement to dysphagia screening and diagnosis. Further investigation is warranted to determine the optimal utility of this procedure for different diagnostic categories of patients."
 featured: false
-publication: "*Am J Speech Lang Pathol*"
-url_pdf: https://pubs.asha.org/doi/abs/10.1044/1058-0360%282011/10-0097%29?rfr_dat=cr_pub%3Dpubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org
+publication: "*American Journal of Speech-Language Pathology*"
+publication_short: "*Am J Speech Lang Pathol*"
+url_pdf: malandranki-2012.pdf
+doi: https://doi.org/10.1044/1058-0360(2011/10-0097
+projects: [Dysphagia]
 ---
 

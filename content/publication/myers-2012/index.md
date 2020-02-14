@@ -2,7 +2,7 @@
 title: "Determinants of retinal venular diameter: the Beaver Dam Eye Study"
 date: 2012-12-01
 publishDate: 2020-02-08T06:30:32.744362Z
-authors: ["C. E. Myers", "R. Klein", "M. D. Knudtson", "K. E. Lee", "R. Gangnon", "T. Y. Wong", "B. E. Klein"]
+authors: ["Chelsea Myers", "Ronald Klein", "Mike Knudtson", "Kris Lee", "Ronald Gangnon", "Tien Wong", "Barbara Klein"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 These data show that retinal venular diameter tends to narrow with age; concurrent venular diameter is independently associated with sex, blood pressure, serum HDL cholesterol, WBC count, and history of current cigarette smoking; and change in CRVE is independently associated with a history of CVD and presence of CKD. The different independent effects of these interrelated factors on CRVE highlight the complex relationship between CRVE and systemic diseases and conditions and the difficulty in determining specific causes of change in CRVE over time."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(12)00598-2/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2012.06.038
+projects: [BDES]
 ---
 

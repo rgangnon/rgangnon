@@ -2,7 +2,7 @@
 title: "IFNG genotype and sex interact to influence the risk of childhood asthma"
 date: 2011-09-01
 publishDate: 2020-02-08T06:30:32.755597Z
-authors: ["D. A. Loisel", "Z. Tan", "C. J. Tisler", "M. D. Evans", "R. E. Gangnon", "D. J. Jackson", "J. E. Gern", "R. F. Lemanske", "C. Ober"]
+authors: ["Dagan Loisel", "Zheng Tan", "Chris Tisler", "Mike Evans", "Ronald Gangnon", "Dan Jackson", "Jim Gern", "Rob Lemanske", "Carole Ober"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -21,6 +21,8 @@ CONCLUSIONS:
 These results provide insight into the genetic basis of sex differences in asthma and highlight the potential importance of interactions among sex, genotype, and environmental factors in asthma pathogenesis."
 featured: false
 publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(11)00987-0/fulltext
+url_pdf: loisel-2011.pdf
+doi: https://doi.org/10.1016/j.jaci.2011.06.016
+projects: [COAST]
 ---
 

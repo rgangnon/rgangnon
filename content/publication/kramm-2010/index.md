@@ -2,7 +2,7 @@
 title: "The effect of physician workload on an educational intervention to increase vitamin D screening"
 date: 2010-06-01
 publishDate: 2020-02-08T06:30:32.764102Z
-authors: ["H. Kramm", "R. Gangnon", "A. N. Jones", "M. Linzer", "K. E. Hansen"]
+authors: ["Heather Kramm", "Ronald Gangnon", "Andrea Jones", "Mark Linzer", "Karen Hansen"]
 publication_types: ["2"]
 abstract: "RATIONALE, AIMS AND OBJECTIVE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Physicians with low vitamin D testing rates were receptive to a personal intervention involving measurement of their own vitamin D levels. High workload appeared to attenuate this effect. These novel but preliminary observations require confirmation in future studies."
 featured: false
-publication: "*WMJ*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2915451/
+publication: "*Wisconsin Medical Journal*"
+publication_short: "*WMJ*"
+url_pdf: kramm-2010.pdf
 ---
 

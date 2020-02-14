@@ -2,7 +2,7 @@
 title: "Kenosha County falls prevention study: a randomized, controlled trial of an intermediate-intensity, community-based multifactorial falls intervention"
 date: 2007-04-01
 publishDate: 2020-02-08T06:30:32.789007Z
-authors: ["J. E. Mahoney", "T. A. Shea", "R. Przybelski", "L. Jaros", "R. Gangnon", "S. Cech", "A. Schwalbe"]
+authors: ["Jane Mahoney", "Terry Shea", "Robert Przybelski", "LaVerne Jaros", "Ronald Gangnon", "Sandy Cech", "Alice Schwalbe"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -29,7 +29,8 @@ CONCLUSION:
 
 This multifactorial intervention did not decrease falls in at-risk community-living adults but did decrease nursing home utilization. There was evidence of efficacy in the subgroup who had an MMSE score of 27 or less and lived with a caregiver, but validation is required."
 featured: false
-publication: "*J Am Geriatr Soc*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1532-5415.2007.01144.x
+publication: "*Journal of the American Geriatrics Society*"
+publication_short: "*J Am Geriatr Soc*"
+doi:  https://doi.org/10.1111/j.1532-5415.2007.01144.x
 ---
 

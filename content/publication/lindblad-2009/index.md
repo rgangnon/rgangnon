@@ -20,5 +20,6 @@ featured: false
 publication_short: "*Arch. Ophthalmol.*"
 publication: "*Archives of Ophthalmology*"
 doi: 10.1001/archophthalmol.2009.198
+projects: [AREDS]
 ---
 

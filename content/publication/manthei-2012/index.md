@@ -2,7 +2,7 @@
 title: "Protection from asthma in a high-risk birth cohort by attenuated P2X(7) function"
 date: 2012-08-01
 publishDate: 2020-02-08T06:30:32.746612Z
-authors: ["D. M. Manthei", "D. J. Jackson", "M. D. Evans", "R. E. Gangnon", "C. J. Tisler", "J. E. Gern", "R. F. Lemanske", "L. C. Denlinger"]
+authors: ["David Manthei", "Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Jim Gern", "Rob Lemanske", "Loren Denlinger"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 P2X(7) functional capacity is associated with asthma risk or disease severity, and these relationships appear to be age related."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(12)00906-2/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: manthei-2012.pdf
+doi: https://doi.org/10.1016/j.jaci.2012.05.040
+projects: [COAST]
 ---
 

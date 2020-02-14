@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mark Linzer | Ronald Gangnon</title>
+    <link>/authors/mark-linzer/</link>
+      <atom:link href="/authors/mark-linzer/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mark Linzer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jun 2010 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Mark Linzer</title>
+      <link>/authors/mark-linzer/</link>
+    </image>
+    
+    <item>
+      <title>The effect of physician workload on an educational intervention to increase vitamin D screening</title>
+      <link>/publication/kramm-2010/</link>
+      <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/kramm-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Part-time medical practice: where is it headed?</title>
+      <link>/publication/mcmurray-2005/</link>
+      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
+      <guid>/publication/mcmurray-2005/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

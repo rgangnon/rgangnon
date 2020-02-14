@@ -2,7 +2,7 @@
 title: "Human rhinovirus species and season of infection determine illness severity"
 date: 2012-11-01
 publishDate: 2020-02-08T06:30:32.743657Z
-authors: ["W. M. Lee", "R. F. Lemanske", "M. D. Evans", "F. Vang", "T. Pappas", "R. Gangnon", "D. J. Jackson", "J. E. Gern"]
+authors: ["Wai-Ming Lee", "Rob Lemanske", "Mike Evans", "Fue Vang", "Tressa Pappas", "Ronald Gangnon", "Dan Jackson", "Jim Gern"]
 publication_types: ["2"]
 abstract: "RATIONALE:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Factors related to HRV species and type, season, and host susceptibility determine the risk of more severe HRV illness in infancy. These findings suggest that anti-HRV strategies should focus on HRV-A and -C species and identify the need for additional studies to determine mechanisms for seasonal increases of HRV severity, independent of viral prevalence, in cold weather months."
 featured: false
-publication: "*Am. J. Respir. Crit. Care Med.*"
-url_pdf: https://www.atsjournals.org/doi/full/10.1164/rccm.201202-0330OC?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed
+publication: "*American Journal of Respiratory & Critical Care Medicine*"
+publication_short: "*Am. J. Respir. Crit. Care Med.*"
+url_pdf: lee-2012.pdf
+doi: https://doi.org/10.1164/rccm.201202-0330OC 
+projects: [COAST]
 ---
 

@@ -2,7 +2,7 @@
 title: "Detection of pathogenic bacteria during rhinovirus infection is associated with increased respiratory symptoms and asthma exacerbations"
 date: 2014-05-01
 publishDate: 2020-02-08T06:30:32.719167Z
-authors: ["K. M. Kloepfer", "W. M. Lee", "T. E. Pappas", "T. J. Kang", "R. F. Vrtis", "M. D. Evans", "R. E. Gangnon", "Y. A. Bochkov", "D. J. Jackson", "R. F. Lemanske", "J. E. Gern"]
+authors: ["Kirsten Kloepfer", "Wai-Ming Lee", "Tressa Pappas", "Theresa Kang", "Rose Vrtis", "Mike Evans", "Ronald Gangnon", "Yury Bochkov", "Dan Jackson", "Rob Lemanske", "Jim Gern"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 Rhinovirus infection enhances detection of specific bacterial pathogens in children with and without asthma. Furthermore, these findings suggest that M catarrhalis and S pneumoniae contribute to the severity of respiratory tract illnesses, including asthma exacerbations."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(14)00295-4/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: kloepfer-2014.pdf
+doi: https://doi.org/10.1016/j.jaci.2014.02.030
+projects: [Rhinogen, COAST]
 ---
 

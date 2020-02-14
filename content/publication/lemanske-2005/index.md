@@ -2,7 +2,7 @@
 title: "Rhinovirus illnesses during infancy predict subsequent childhood wheezing"
 date: 2005-09-01
 publishDate: 2020-02-08T06:30:32.798352Z
-authors: ["R. F. Lemanske", "D. J. Jackson", "R. E. Gangnon", "M. D. Evans", "Z. Li", "P. A. Shult", "C. J. Kirk", "E. Reisdorf", "K. A. Roberg", "E. L. Anderson", "K. T. Carlson-Dakes", "K. J. Adler", "S. Gilbertson-White", "T. E. Pappas", "D. F. Dasilva", "C. J. Tisler", "J. E. Gern"]
+authors: ["Rob Lemanske", "Dan Jackson", "Ronald Gangnon", "Mike Evans", "Zhanhai Li", "Peter Shult", "Carol Kirk", "Erik Reisdorf", "Kathy Roberg", "Beth Anderson", "Kirstin Carlson-Dakes", "Kiva Adler", "Stephanie Gilbertson-White", "Tressa Pappas", "Douglas Dasilva", "Chris Tisler", "Jim Gern"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSION:
 
 In this population of children at increased risk of developing allergies and asthma, the most significant risk factor for the development of preschool childhood wheezing is the occurrence of symptomatic rhinovirus illnesses during infancy that are clinically and prognostically informative based on their seasonal nature."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(05)01524-1/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: lemanske-2005.pdf
+projects: [COAST]
+doi: https://doi.org/10.1016/j.jaci.2005.06.024
 ---
 

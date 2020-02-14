@@ -2,7 +2,7 @@
 title: "Obesity and mortality after locoregional breast cancer diagnosis"
 date: 2018-12-01
 publishDate: 2020-02-08T06:30:32.680520Z
-authors: ["A. H. Moore", "A. Trentham-Dietz", "M. Burns", "R. E. Gangnon", "C. C. Greenberg", "D. J. Vanness", "J. Hampton", "X. C. Wu", "R. T. Anderson", "J. Lipscomb", "G. G. Kimmick", "R. Cress", "J. F. Wilson", "S. A. Sabatino", "S. T. Fleming"]
+authors: ["Hollis Moore", "Amy Trentham-Dietz", "Marguerite Burns", "Ronald Gangnon", "Caprice Greenberg", "Dave Vanness", "John Hampton", "Xiao-Cheng Wu", "Roger Anderson", "Joseph Lipscomb", "Gretchen Kimmick", "Rosemary Cress", "Frank Wilson", "Susan Sabatino", "Steven Fleming"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Contrary to our hypothesis, greater BMI was not associated with higher overall mortality. Among older women, BMI was inversely related to overall mortality, with a null association among younger women. Higher BMI was associated with breast cancer mortality among women with Stage I disease, but not among women with more advanced disease."
 featured: false
-publication: "*Breast Cancer Res. Treat.*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs10549-018-4932-6
+publication: "*Breast Cancer Research & Treatment*"
+publication_short: "*Breast Cancer Res. Treat.*"
+doi: https://doi.org/10.1007/s10549-018-4932-6
 ---
 

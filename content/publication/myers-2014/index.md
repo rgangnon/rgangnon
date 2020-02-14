@@ -2,7 +2,7 @@
 title: "Cigarette smoking and the natural history of age-related macular degeneration: the Beaver Dam Eye Study"
 date: 2014-10-01
 publishDate: 2020-02-08T06:30:32.715756Z
-authors: ["C. E. Myers", "B. E. Klein", "R. Gangnon", "T. A. Sivakumaran", "S. K. Iyengar", "R. Klein"]
+authors: ["Chelsea Myers", "Barbara Klein", "Ronald Gangnon", "Theru Sivakumaran", "Sudha Iyengar", "Ronald Klein"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -27,6 +27,7 @@ CONCLUSIONS:
 Current smoking and a greater number of pack-years smoked increase the risk of the progression of AMD. This has important health care implications because smoking is a modifiable behavior."
 featured: false
 publication: "*Ophthalmology*"
-url_pdf: https://www.aaojournal.org/article/S0161-6420(14)00394-7/fulltext
+doi: https://doi.org/10.1016/j.ophtha.2014.04.040
+showprojects: [BDES]
 ---
 

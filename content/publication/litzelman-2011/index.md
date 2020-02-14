@@ -2,7 +2,7 @@
 title: "Quality of life among parents of children with cancer or brain tumors: the impact of child characteristics and parental psychosocial factors"
 date: 2011-10-01
 publishDate: 2020-02-08T06:30:32.762067Z
-authors: ["K. Litzelman", "K. Catrine", "R. Gangnon", "W. P. Witt"]
+authors: ["Kristin Litzelman", "Kris Catrine", "Ronald Gangnon", "Whitney Witt"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 While child clinical characteristics appear to be related to poor parental QOL, this relationship was mediated by caregiver burden and stress. Interventions to reduce burden and stress may mitigate the deleterious effects of caregiving. Systematic screening of parents' mental and physical health may facilitate interventions and improve the health and well-being of parents and children."
 featured: false
-publication: "*Qual Life Res*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs11136-011-9854-2
+publication: "*Quality of Life Research*"
+publication_short: "*Qual Life Res*"
+doi: https://doi.org/10.1007/s11136-011-9854-2
 ---
 

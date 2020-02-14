@@ -5,7 +5,7 @@
     <link>/authors/martin-shafer/</link>
       <atom:link href="/authors/martin-shafer/index.xml" rel="self" type="application/rss+xml" />
     <description>Martin Shafer</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Martin Shafer</title>
@@ -13,10 +13,26 @@
     </image>
     
     <item>
+      <title>Urinary Magnesium and Other Elements in Relation to Mammographic Breast Density, a Measure of Breast Cancer Risk</title>
+      <link>/publication/morapinzon-2018/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/morapinzon-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Urinary Cadmium and Mammographic Density</title>
       <link>/publication/adams-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       <guid>/publication/adams-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Urinary lead exposure and breast cancer risk in a population-based case-control study</title>
+      <link>/publication/mcelroy-2008/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
+      <guid>/publication/mcelroy-2008/</guid>
       <description></description>
     </item>
     
