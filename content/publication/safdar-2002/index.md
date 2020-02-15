@@ -2,7 +2,7 @@
 title: "Risk of hemolytic uremic syndrome after antibiotic treatment of Escherichia coli O157:H7 enteritis: a meta-analysis"
 date: 2002-08-01
 publishDate: 2020-02-08T06:30:32.810821Z
-authors: ["Nasia Safdar", "Adnan Said", "Ronald E. Gangnon", "Dennis G. Maki"]
+authors: ["Nasia Safdar", "Adnan Said", "Ronald Gangnon", "Dennis Maki"]
 publication_types: ["2"]
 abstract: "Context The use of antibiotics for treatment of Escherichia coli O157:H7 infection has become controversial since a recent small study found that it may increase the risk of hemolytic uremic syndrome (HUS). However, other larger studies have reported a protective effect or no association.
 

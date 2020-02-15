@@ -2,7 +2,7 @@
 title: "Association of Screening and Treatment With Breast Cancer Mortality by Molecular Subtype in US Women, 2000-2012"
 date: 2018-01-01
 publishDate: 2020-02-08T06:30:32.686653Z
-authors: ["Sylvia K. Plevritis", "Diego Munoz", "Allison W. Kurian", "Natasha K. Stout", "Oguzhan Alagoz", "Aimee M. Near", "Sandra J. Lee", "Jereon J. van den Broek", "Xuelin Huang", "Clyde B. Schechter", "Brian L. Sprague", "Juhee Song", "Harry J. de Koning", "Amy Trentham-Dietz", "Nicolien T. van Ravesteyn", "Ronald Gangnon", "Young Chandler", "Yisheng Li", "Cong Xu", "Mehmet A. Ergun", "Hui Huang", "Donald A. Berry", "Jeanne S. Mandelblatt"]
+authors: ["Sylvia Plevritis", "Diego Munoz", "Allison Kurian", "Tasha Stout", "Oguzhan Alagoz", "Aimee Near", "Sandra Lee", "Jereon van den Broek", "Xuelin Huang", "Clyde Schechter", "Brian Sprague", "Juhee Song", "Harry de Koning", "Amy Trentham-Dietz", "Nicolien van Ravesteyn", "Ronald Gangnon", "Young Chandler", "Yisheng Li", "Cong Xu", "Mehmet Ergun", "Hui Huang", "Don Berry", "Jeanne Mandelblatt"]
 publication_types: ["2"]
 abstract: "Importance:
 

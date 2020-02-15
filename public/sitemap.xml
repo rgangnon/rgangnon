@@ -48,7 +48,7 @@
   </url>
   
   <url>
-    <loc>/authors/amy-a.-schultz/</loc>
+    <loc>/authors/amy-schultz/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,7 +88,7 @@
   </url>
   
   <url>
-    <loc>/authors/kristen-m.c.-malecki/</loc>
+    <loc>/authors/kristen-malecki/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,17 +138,17 @@
   </url>
   
   <url>
-    <loc>/authors/ron-e.-gangnon/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/ronald-e.-gangnon/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/ronald-gangnon/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/ronqld-gangnon/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -333,17 +333,17 @@
   </url>
   
   <url>
-    <loc>/authors/brent-f.-olson/</loc>
+    <loc>/authors/brent-olson/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/casper-g.-bendixsen-and-james-e.-gern-on-behalf-of-the-entire-wisc-study-team/</loc>
+    <loc>/authors/casper-bendixsen/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/christine-m.-seroogy/</loc>
+    <loc>/authors/christ-seroogy/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -353,7 +353,7 @@
   </url>
   
   <url>
-    <loc>/authors/jeffrey-j.-vanwormer/</loc>
+    <loc>/authors/jeffrey-vanwormer/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -363,17 +363,27 @@
   </url>
   
   <url>
-    <loc>/authors/kathrine-l.-barnes/</loc>
+    <loc>/authors/jim-gern/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/matthew-c.-keifer/</loc>
+    <loc>/authors/kathrine-barnes/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/michael-d.-evans/</loc>
+    <loc>/authors/matthew-keifer/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/mike-evans/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/on-behalf-of-the-entire-wisc-study-team/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -418,11 +428,6 @@
   </url>
   
   <url>
-    <loc>/authors/jim-gern/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/kazuyuki-nakagome/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -439,11 +444,6 @@
   
   <url>
     <loc>/authors/michele-wolff/</loc>
-    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/mike-evans/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -518,12 +518,12 @@
   </url>
   
   <url>
-    <loc>/authors/jonathan-a.-patz/</loc>
+    <loc>/authors/jonathan-patz/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/jorge-e.-osorio/</loc>
+    <loc>/authors/jorge-osorio/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -748,6 +748,16 @@
   </url>
   
   <url>
+    <loc>/privacy/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/terms/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/amy-berkman/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
@@ -793,17 +803,17 @@
   </url>
   
   <url>
-    <loc>/authors/a.-kind/</loc>
-    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/aimee-near/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/allison-kurian/</loc>
+    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/amy-kind/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -873,12 +883,12 @@
   </url>
   
   <url>
-    <loc>/authors/n.-m.-rogus-pulia/</loc>
+    <loc>/authors/nadine-connor/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/n.-p.-connor/</loc>
+    <loc>/authors/nicole-rogus-pulia/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -888,12 +898,7 @@
   </url>
   
   <url>
-    <loc>/authors/r.-gangnon/</loc>
-    <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/s.-asthana/</loc>
+    <loc>/authors/sanjay-asthana/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -939,11 +944,6 @@
   
   <url>
     <loc>/authors/keith-poulsen/</loc>
-    <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/kristen-malecki/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1183,27 +1183,12 @@
   </url>
   
   <url>
-    <loc>/authors/aimee-m.-near/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/allison-w.-kurian/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/plevritis-2018/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/brian-l.-sprague/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/clyde-b.-schechter/</loc>
+    <loc>/authors/clyde-schechter/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1213,12 +1198,12 @@
   </url>
   
   <url>
-    <loc>/authors/donald-a.-berry/</loc>
+    <loc>/authors/don-berry/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/harry-j.-de-koning/</loc>
+    <loc>/authors/harry-de-koning/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1228,12 +1213,7 @@
   </url>
   
   <url>
-    <loc>/authors/jeanne-s.-mandelblatt/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/jereon-j.-van-den-broek/</loc>
+    <loc>/authors/jereon-van-den-broek/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1243,27 +1223,12 @@
   </url>
   
   <url>
-    <loc>/authors/mehmet-a.-ergun/</loc>
+    <loc>/authors/nicolien-van-ravesteyn/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/natasha-k.-stout/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/nicolien-t.-van-ravesteyn/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/sandra-j.-lee/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/sylvia-k.-plevritis/</loc>
+    <loc>/authors/sandra-lee/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1458,12 +1423,7 @@
   </url>
   
   <url>
-    <loc>/authors/c.-j.-tisler/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/d.-j.-jackson/</loc>
+    <loc>/authors/chris-tisler/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1473,27 +1433,7 @@
   </url>
   
   <url>
-    <loc>/authors/f.-j.-rubner/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-e.-gern/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-d.-evans/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/r.-f.-lemanske/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/t.-e.-pappas/</loc>
+    <loc>/authors/frederick-rubner/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1598,17 +1538,32 @@
   </url>
   
   <url>
+    <loc>/authors/don-weaver/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/shiyanbola-2016/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/o.-o.-shiyanbola/</loc>
+    <loc>/authors/kim-dittus/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/s.-herschorn/</loc>
+    <loc>/authors/sally-herschorn/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/ted-james/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/wale-shiyanbola/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1768,17 +1723,7 @@
   </url>
   
   <url>
-    <loc>/authors/clyde-schechter/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/mandelblatt-2016/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/don-berry/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1798,27 +1743,22 @@
   </url>
   
   <url>
-    <loc>/authors/harry-de-koning/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-a.-hind/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-robbins/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-zielinski/</loc>
+    <loc>/authors/jackie-hind/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/jeroen-van-den-broek/</loc>
+    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/jill-zielinski/</loc>
+    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/joanne-robbins/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1833,27 +1773,7 @@
   </url>
   
   <url>
-    <loc>/authors/n.-rogus-pulia/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/n.-rusche/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/n.-safdar/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/nicolien-van-ravesteyn/</loc>
-    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/sandra-lee/</loc>
+    <loc>/authors/nicole-rusche/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1869,11 +1789,6 @@
   
   <url>
     <loc>/authors/carole-ober/</loc>
-    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/chris-tisler/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1918,12 +1833,7 @@
   </url>
   
   <url>
-    <loc>/authors/a.-wald/</loc>
-    <lastmod>2015-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/b.-chewning/</loc>
+    <loc>/authors/arnold-wald/</loc>
     <lastmod>2015-11-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1933,7 +1843,7 @@
   </url>
   
   <url>
-    <loc>/authors/s.-m.-schussler-fiorenza-rose/</loc>
+    <loc>/authors/miryam-schussler-fiorenza-rose/</loc>
     <lastmod>2015-11-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1953,17 +1863,12 @@
   </url>
   
   <url>
-    <loc>/authors/j.-hind/</loc>
+    <loc>/authors/kelsey-banaszynski/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/k.-banaszynski/</loc>
-    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/k.-churness/</loc>
+    <loc>/authors/kim-churness/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1994,6 +1899,26 @@
   
   <url>
     <loc>/authors/a.-y.-okupa/</loc>
+    <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/d.-j.-jackson/</loc>
+    <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/j.-e.-gern/</loc>
+    <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/m.-d.-evans/</loc>
+    <lastmod>2015-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/r.-f.-lemanske/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2208,27 +2133,17 @@
   </url>
   
   <url>
-    <loc>/authors/a.-sethi/</loc>
+    <loc>/authors/danielle-schulte/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/d.-g.-maki/</loc>
-    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/d.-m.-schulte/</loc>
+    <loc>/authors/dennis-maki/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/athens-2015/</loc>
-    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-duster/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2264,6 +2179,11 @@
   
   <url>
     <loc>/authors/l.-e.-wisk/</loc>
+    <lastmod>2014-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/r.-gangnon/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2593,11 +2513,6 @@
   </url>
   
   <url>
-    <loc>/authors/amy-kind/</loc>
-    <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/christovam-barcellos/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -2624,11 +2539,6 @@
   
   <url>
     <loc>/authors/j.-libber/</loc>
-    <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/jonathan-patz/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2848,6 +2758,11 @@
   </url>
   
   <url>
+    <loc>/authors/c.-j.-tisler/</loc>
+    <lastmod>2013-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/d.-j.-stoltz/</loc>
     <lastmod>2013-02-01T00:00:00+00:00</lastmod>
   </url>
@@ -2858,7 +2773,7 @@
   </url>
   
   <url>
-    <loc>/authors/a.-m.-singh/</loc>
+    <loc>/authors/anne-marie-singh/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2868,17 +2783,12 @@
   </url>
   
   <url>
-    <loc>/authors/c.-m.-seroogy/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/c.-tisler/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/juan-2013/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/chris-seroogy/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2893,7 +2803,7 @@
   </url>
   
   <url>
-    <loc>/authors/d.-dasilva/</loc>
+    <loc>/authors/douglas-dasilva/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2928,27 +2838,7 @@
   </url>
   
   <url>
-    <loc>/authors/jackie-hind/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/joanne-robbins/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/junerose-juan/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/k.-a.-roberg/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/k.-burmeister/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2963,12 +2853,17 @@
   </url>
   
   <url>
+    <loc>/authors/kathy-roberg/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/kimberly-viker/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-salazar/</loc>
+    <loc>/authors/kris-burmeister/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -2993,7 +2888,7 @@
   </url>
   
   <url>
-    <loc>/authors/p.-dahlberg/</loc>
+    <loc>/authors/paul-dahlberg/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3004,11 +2899,6 @@
   
   <url>
     <loc>/authors/robert-jenkins/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/t.-pappas/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3248,17 +3138,12 @@
   </url>
   
   <url>
-    <loc>/authors/kathy-roberg/</loc>
-    <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/walsh-2012/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/a.-l.-obrian/</loc>
+    <loc>/authors/amy-obrian/</loc>
     <lastmod>2012-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3309,11 +3194,6 @@
   
   <url>
     <loc>/authors/g.-s.-sisney/</loc>
-    <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/jill-zielinski/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3393,17 +3273,12 @@
   </url>
   
   <url>
-    <loc>/authors/anne-marie-singh/</loc>
+    <loc>/authors/charles-heise/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/c.-p.-heise/</loc>
-    <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/d.-y.-greenblatt/</loc>
+    <loc>/authors/david-greenblatt/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3413,7 +3288,7 @@
   </url>
   
   <url>
-    <loc>/authors/e.-s.-oconnor/</loc>
+    <loc>/authors/erin-oconnor/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3423,12 +3298,17 @@
   </url>
   
   <url>
-    <loc>/authors/j.-i.-liou/</loc>
+    <loc>/authors/jinn-ing-liou/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/n.-k.-loconte/</loc>
+    <loc>/authors/maureen-smith/</loc>
+    <lastmod>2011-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/noelle-loconte/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3613,7 +3493,17 @@
   </url>
   
   <url>
+    <loc>/authors/k.-a.-roberg/</loc>
+    <lastmod>2010-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/l.-p.-salazar/</loc>
+    <lastmod>2010-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/t.-e.-pappas/</loc>
     <lastmod>2010-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3643,22 +3533,17 @@
   </url>
   
   <url>
-    <loc>/authors/e.-anderson/</loc>
-    <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-e.-possin/</loc>
-    <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/s.-morgan/</loc>
+    <loc>/authors/micahel-possin/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/s.-v.-hall/</loc>
+    <lastmod>2010-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/stephanie-morgan/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3683,17 +3568,12 @@
   </url>
   
   <url>
-    <loc>/authors/g.-a.-silveira/</loc>
+    <loc>/authors/guilherme-silveira/</loc>
     <lastmod>2010-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-a.-patz/</loc>
-    <lastmod>2010-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/s.-h.-olson/</loc>
+    <loc>/authors/sarah-olson/</loc>
     <lastmod>2010-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3749,11 +3629,6 @@
   
   <url>
     <loc>/authors/christine-virnig/</loc>
-    <lastmod>2009-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/douglas-dasilva/</loc>
     <lastmod>2009-11-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3823,22 +3698,22 @@
   </url>
   
   <url>
-    <loc>/authors/e.-elguero/</loc>
+    <loc>/authors/eric-elguero/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-a.-foley/</loc>
+    <loc>/authors/jean-francois-guegan/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-f.-gugan/</loc>
+    <loc>/authors/jonathan-foley/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-durieux/</loc>
+    <loc>/authors/laurent-durieux/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4058,12 +3933,12 @@
   </url>
   
   <url>
-    <loc>/authors/m.-i.-traver/</loc>
+    <loc>/authors/michael-cullen/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/michael-cullen/</loc>
+    <loc>/authors/myrna-traver/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4078,7 +3953,7 @@
   </url>
   
   <url>
-    <loc>/authors/r.-f.-schilling/</loc>
+    <loc>/authors/robert-schilling/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4258,11 +4133,6 @@
   </url>
   
   <url>
-    <loc>/authors/chris-seroogy/</loc>
-    <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/kristjan-burmeister/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
   </url>
@@ -4368,22 +4238,12 @@
   </url>
   
   <url>
-    <loc>/authors/a.-j.-taylor/</loc>
-    <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/a.-l.-hewitt/</loc>
-    <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/klein-2007/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-r.-gentry/</loc>
+    <loc>/authors/lindell-gentry/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4393,17 +4253,27 @@
   </url>
   
   <url>
-    <loc>/authors/s.-a.-kays/</loc>
-    <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/robbins-2007/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/authors/c.-tisler/</loc>
+    <lastmod>2006-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/d.-b.-allen/</loc>
+    <lastmod>2006-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/d.-dasilva/</loc>
+    <lastmod>2006-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/e.-anderson/</loc>
     <lastmod>2006-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4439,11 +4309,6 @@
   
   <url>
     <loc>/publication/schilling-2006/</loc>
-    <lastmod>2006-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/m.-traver/</loc>
     <lastmod>2006-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4623,7 +4488,7 @@
   </url>
   
   <url>
-    <loc>/authors/s.-m.-theis/</loc>
+    <loc>/authors/shannon-theis/</loc>
     <lastmod>2005-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4633,12 +4498,12 @@
   </url>
   
   <url>
-    <loc>/authors/d.-andes/</loc>
+    <loc>/authors/david-andes/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-d.-pirsch/</loc>
+    <loc>/authors/j-pirsch/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4648,12 +4513,12 @@
   </url>
   
   <url>
-    <loc>/authors/v.-knasinski/</loc>
+    <loc>/authors/v-knasinski/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/w.-r.-slattery/</loc>
+    <loc>/authors/w-slattery/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4833,12 +4698,12 @@
   </url>
   
   <url>
-    <loc>/authors/a.-musat/</loc>
+    <loc>/authors/adnan-said/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/a.-said/</loc>
+    <loc>/authors/alexandru-musat/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4853,17 +4718,17 @@
   </url>
   
   <url>
-    <loc>/authors/j.-holden/</loc>
-    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/j.-williams/</loc>
+    <loc>/authors/jeremy-holden/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/john-cush/</loc>
+    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/john-williams/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4878,17 +4743,17 @@
   </url>
   
   <url>
-    <loc>/authors/m.-r.-lucey/</loc>
-    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/mark-genovese/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/marlon-mundt/</loc>
+    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/michael-lucey/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4904,11 +4769,6 @@
   
   <url>
     <loc>/publication/said-2004/</loc>
-    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/p.-remington/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5028,12 +4888,7 @@
   </url>
   
   <url>
-    <loc>/authors/a.-bhattacharya/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/d.-yoshihara/</loc>
+    <loc>/authors/debbie-yoshihara/</loc>
     <lastmod>2003-10-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5043,37 +4898,7 @@
   </url>
   
   <url>
-    <loc>/authors/k.-adler/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/k.-anklam/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/l.-d.-mikus/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/murray-clayton/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/r.-hamilton/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/s.-gilbertson-white/</loc>
-    <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/w.-a.-neaville/</loc>
     <lastmod>2003-10-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5098,22 +4923,12 @@
   </url>
   
   <url>
-    <loc>/authors/adnan-said/</loc>
-    <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/tagila-2002/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/d.-p.-taglia/</loc>
-    <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/dennis-g.-maki/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5203,27 +5018,27 @@
   </url>
   
   <url>
-    <loc>/authors/a.-d.-bershadsky/</loc>
+    <loc>/authors/alexander-bershadsky/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/b.-geiger/</loc>
+    <loc>/authors/baohe-tian/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/b.-tian/</loc>
+    <loc>/authors/benjamin-geiger/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/i.-spector/</loc>
+    <loc>/authors/ilan-spector/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/j.-a.-peterson/</loc>
+    <loc>/authors/jennifer-peterson/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5233,17 +5048,17 @@
   </url>
   
   <url>
-    <loc>/authors/t.-volberg/</loc>
+    <loc>/authors/tova-volberg/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-pratt/</loc>
+    <loc>/authors/l-pratt/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/l.-waschbusch/</loc>
+    <loc>/authors/l-waschbusch/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5253,12 +5068,7 @@
   </url>
   
   <url>
-    <loc>/authors/s.-k.-hendricks/</loc>
-    <lastmod>1999-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/w.-ladd/</loc>
+    <loc>/authors/s-hendricks/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5293,12 +5103,22 @@
   </url>
   
   <url>
+    <loc>/authors/greg-heatley/</loc>
+    <lastmod>1998-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/todd-perkins/</loc>
+    <lastmod>1998-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/perkins-1998b/</loc>
     <lastmod>1998-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/c.-m.-libby/</loc>
+    <loc>/authors/c-libby/</loc>
     <lastmod>1998-04-01T00:00:00+00:00</lastmod>
   </url>
   

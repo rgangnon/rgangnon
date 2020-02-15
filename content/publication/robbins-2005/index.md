@@ -2,7 +2,7 @@
 title: "The effects of lingual exercise on swallowing in older adults"
 date: 2005-09-01
 publishDate: 2020-02-08T06:30:32.798891Z
-authors: ["J. Robbins", "R. E. Gangnon", "S. M. Theis", "S. A. Kays", "A. L. Hewitt", "J. A. Hind"]
+authors: ["JoAnne Robbins", "Ronald Gangnon", "Shannon Theis", "Stephanie Kays", "Angela Hewitt", "Jackie Hind"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -29,7 +29,8 @@ CONCLUSION:
 
 The findings indicate that lingual resistance exercise is promising not only for preventing dysphagia due to sarcopenia, but also as a treatment strategy for patients with lingual weakness and swallowing disability due to frailty or other age-related conditions. The potential effect of lingual exercise on reducing dysphagia-related comorbidities (pneumonia, malnutrition, and dehydration) and healthcare costs while improving quality of life is encouraging."
 featured: false
-publication: "*J Am Geriatr Soc*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1532-5415.2005.53467.x
+publication: "*Journal of the American Geriatrics Society*"
+publication_short: "*J Am Geriatr Soc*"
+doi:  https://doi.org/10.1111/j.1532-5415.2005.53467.x
 ---
 

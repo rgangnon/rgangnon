@@ -5,7 +5,7 @@
     <link>/authors/jonathan-patz/</link>
       <atom:link href="/authors/jonathan-patz/index.xml" rel="self" type="application/rss+xml" />
     <description>Jonathan Patz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jonathan Patz</title>
@@ -13,10 +13,34 @@
     </image>
     
     <item>
+      <title>Seasonal patterns of dengue fever in rural Ecuador: 2009-2016</title>
+      <link>/publication/sippy-2019/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/sippy-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Influence of deforestation, logging, and fire on malaria in the Brazilian Amazon</title>
       <link>/publication/hahn-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       <guid>/publication/hahn-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deforestation and malaria in MÃ¢ncio Lima County, Brazil</title>
+      <link>/publication/olson-2010/</link>
+      <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/olson-2010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Links between climate, malaria, and wetlands in the Amazon Basin</title>
+      <link>/publication/olson-2009/</link>
+      <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
+      <guid>/publication/olson-2009/</guid>
       <description></description>
     </item>
     

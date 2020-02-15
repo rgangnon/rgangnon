@@ -2,7 +2,7 @@
 title: "Delayed adverse vascular events after splenectomy in hereditary spherocytosis"
 date: 2008-08-01
 publishDate: 2020-02-08T06:30:32.782271Z
-authors: ["R. F. Schilling", "R. E. Gangnon", "M. I. Traver"]
+authors: ["Robert Schilling", "Ronald Gangnon", "Myrna Traver"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ CONCLUSION:
 
 There is a significant, long-lasting, increased risk of adverse arterial and venous thromboembolic events after splenectomy performed for hereditary spherocytosis. A review of the literature indicates that this is also true when splenectomy is performed for several other indications."
 featured: false
-publication: "*J. Thromb. Haemost.*"
-url_pdf: https://onlinelibrary.wiley.com/doi/full/10.1111/j.1538-7836.2008.03024.x
+publication: "*Journal of Thrombosis and Haemostasis*"
+publication_short: "*J. Thromb. Haemost.*"
+url_pdf: schilling-2008.pdf
+doi:  https://doi.org/10.1111/j.1538-7836.2008.03024.x
 ---
 

@@ -2,7 +2,7 @@
 title: "Risk factors for Candida colonization and Co-colonization with multi-drug resistant organisms at admission"
 date: 2015-01-01
 publishDate: 2020-02-08T06:30:32.702362Z
-authors: ["D. M. Schulte", "A. Sethi", "R. Gangnon", "M. Duster", "D. G. Maki", "N. Safdar"]
+authors: ["Danielle Schulte", "Ajay Sethi", "Ronald Gangnon", "Megan Duster", "Dennis Maki", "Nasia Safdar"]
 publication_types: ["2"]
 abstract: "NTRODUCTION:
 
@@ -17,7 +17,9 @@ DISCUSSION:
 
 Antibiotic use was associated with an increased risk of colonization by Candida species alone and in conjunction with other multidrug-resistant organisms (MDROs). Antibiotic stewardship may be an important intervention for preventing colonization and subsequent infection by Candida and other MDROs."
 featured: false
-publication: "*Antimicrob Resist Infect Control*"
-url_pdf: https://aricjournal.biomedcentral.com/articles/10.1186/s13756-015-0089-9
+publication: "*Antimicrobial Resistance & Infection Control*"
+publication_short: "*Antimicrob Resist Infect Control*"
+url_pdf: schulte-2015.pdf
+doi: 10.1186/s13756-015-0089-9
 ---
 

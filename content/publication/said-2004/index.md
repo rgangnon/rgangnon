@@ -2,7 +2,7 @@
 title: "Model for end stage liver disease score predicts mortality across a broad spectrum of liver disease"
 date: 2004-06-01
 publishDate: 2020-02-08T06:30:32.805331Z
-authors: ["A. Said", "J. Williams", "J. Holden", "P. Remington", "R. Gangnon", "A. Musat", "M. R. Lucey"]
+authors: ["Adnan Said", "John Williams", "Jeremy Holden", "Pat Remington", "Ronald Gangnon", "Alexandru Musat", "Michael Lucey"]
 publication_types: ["2"]
 abstract: "BACKGROUND/AIMS:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 The MELD score is a valid prognostic score for intermediate term mortality in a heterogeneous population with chronic liver disease although the CTP score is equivalent in predicting survival. Inclusion of hepatic encephalopathy adds additional prognostic value to the MELD score."
 featured: false
-publication: "*J. Hepatol.*"
-url_pdf: https://www.journal-of-hepatology.eu/article/S0168-8278(04)00064-9/fulltext
+publication: "*Journal of Hepatology*"
+publication_short: "*J. Hepatol.*"
+doi: https://doi.org/10.1016/j.jhep.2004.02.010
 ---
 

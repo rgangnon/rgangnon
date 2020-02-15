@@ -2,7 +2,7 @@
 title: "Emerging trends in surgical and adjuvant radiation therapies among women diagnosed with ductal carcinoma in situ"
 date: 2016-09-01
 publishDate: 2020-02-08T06:30:32.699301Z
-authors: ["O. O. Shiyanbola", "B. L. Sprague", "J. M. Hampton", "K. Dittus", "T. A. James", "S. Herschorn", "R. E. Gangnon", "D. L. Weaver", "A. Trentham-Dietz"]
+authors: ["Wale Shiyanbola", "Brian Sprague", "John Hampton", "Kim Dittus", "Ted James", "Sally Herschorn", "Ronald Gangnon", "Don Weaver", "Amy Trentham-Dietz"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,6 +18,7 @@ CONCLUSIONS:
 Recent trends demonstrate a plateau in radiation therapy administration after BCS along with increasing utilization of mastectomy, reconstruction, and contralateral risk-reducing mastectomy. There are substantial differences in treatment utilization according to ancestry/ethnicity and geographical region. Further studies examining patient-physician decision making surrounding DCIS treatment are warranted."
 featured: false
 publication: "*Cancer*"
-url_pdf: https://acsjournals.onlinelibrary.wiley.com/doi/full/10.1002/cncr.30105
+url_pdf: shiyanbola-2016.pdf
+doi: 10.1002/cncr.30105
 ---
 

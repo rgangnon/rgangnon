@@ -2,7 +2,7 @@
 title: "Increasing Discussion Rates of Incontinence in Primary Care: A Randomized Controlled Trial"
 date: 2015-11-01
 publishDate: 2020-02-08T06:30:32.702929Z
-authors: ["S. M. Schussler-Fiorenza Rose", "R. E. Gangnon", "B. Chewning", "A. Wald"]
+authors: ["Miryam Schussler-Fiorenza Rose", "Ronald Gangnon", "Betty Chewning", "Arnold Wald"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 Use of the ePAQ-PF prior to clinic visits increases discussion of UI and FI, particularly clinician-initiated discussion. These findings suggest that such instruments may increase the detection and treatment of this often 'silent' affliction."
 featured: false
-publication: "*J Womens Health (Larchmt)*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4649726/
+publication: "*Journal of Women's Health*"
+publication_short: "*J Womens Health (Larchmt)*"
+url_pdf: schusslerfiorenza-2015.pdf
+doi: https://doi.org/10.1089/jwh.2015.5230
 ---
 

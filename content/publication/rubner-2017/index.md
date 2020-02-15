@@ -2,7 +2,7 @@
 title: "Early life rhinovirus wheezing, allergic sensitization, and asthma risk at adolescence"
 date: 2017-02-01
 publishDate: 2020-02-08T06:30:32.698164Z
-authors: ["F. J. Rubner", "D. J. Jackson", "M. D. Evans", "R. E. Gangnon", "C. J. Tisler", "T. E. Pappas", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Frederick Rubner", "Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Tressa Pappas", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ CONCLUSIONS:
 
 In a high-risk birth cohort, the persistence of asthma at age 13 years was most strongly associated with outpatient wheezing illnesses with RV and aeroallergen sensitization in early life."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(16)30276-7/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: rubner-2017.pdf
+doi: http://dx.doi.org/10.1016/j.jaci.2016.03.049
 ---
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amy O&#39;Brian | Ronald Gangnon</title>
+    <link>/authors/amy-obrian/</link>
+      <atom:link href="/authors/amy-obrian/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amy O&#39;Brian</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Amy O&#39;Brian</title>
+      <link>/authors/amy-obrian/</link>
+    </image>
+    
+    <item>
+      <title>Recurrent severe exacerbations in early life and reduced lung function at school age</title>
+      <link>/publication/obrian-2012/</link>
+      <pubDate>Sun, 01 Apr 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/obrian-2012/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

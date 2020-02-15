@@ -2,7 +2,7 @@
 title: "The effects of lingual exercise in stroke patients with dysphagia"
 date: 2007-02-01
 publishDate: 2020-02-08T06:30:32.790853Z
-authors: ["J. Robbins", "S. A. Kays", "R. E. Gangnon", "J. A. Hind", "A. L. Hewitt", "L. R. Gentry", "A. J. Taylor"]
+authors: ["JoAnne Robbins", "Stephanie Kays", "Ronald Gangnon", "Jackie Hind", "Angela Hewitt", "Lindell Gentry", "Andrew Taylor"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -29,7 +29,9 @@ CONCLUSIONS:
 
 The findings indicate that lingual exercise enables acute and chronic dysphagic stroke patients to increase lingual strength with associated improvements in swallowing pressures, airway protection, and lingual volume."
 featured: false
-publication: "*Arch Phys Med Rehabil*"
-url_pdf: https://www.archives-pmr.org/article/S0003-9993(06)01457-2/fulltext
+publication: "*Archives of Physical Medicine & Rehabilitation*"
+publication_short: "*Arch Phys Med Rehabil*"
+url_pdf: robbins-2007.pdf
+doi: https://doi.org/10.1016/j.apmr.2006.11.002
 ---
 

@@ -2,7 +2,7 @@
 title: "Multiple vs. single betamethasone therapy. Neonatal and maternal effects"
 date: 1999-03-01
 publishDate: 2020-02-08T06:30:32.814500Z
-authors: ["L. Pratt", "L. Waschbusch", "W. Ladd", "R. Gangnon", "S. K. Hendricks"]
+authors: ["L Pratt", "L Waschbusch", "Bill Ladd", "Ronald Gangnon", "S Hendricks"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -17,6 +17,7 @@ CONCLUSION:
 
 Repeated use of betamethasone is associated with a significant decrease in oxygen use in the preterm neonate. No significant maternal or neonatal complications were found. A prospective, randomized trial is necessary."
 featured: false
-publication: "*J Reprod Med*"
+publication: "*Journal of Reproductive Medicine*"
+publication_short: "*J Reprod Med*"
 ---
 

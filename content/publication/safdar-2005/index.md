@@ -2,7 +2,7 @@
 title: "Predictors and outcomes of candiduria in renal transplant recipients"
 date: 2005-05-01
 publishDate: 2020-02-08T06:30:32.799530Z
-authors: ["N. Safdar", "W. R. Slattery", "V. Knasinski", "R. E. Gangnon", "Z. Li", "J. D. Pirsch", "D. Andes"]
+authors: ["Nasia Safdar", "W Slattery", "V Knasinski", "Ronald Gangnon", "Zhanhai Li", "J Pirsch", "David Andes"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 Candiduria occurs commonly in renal transplant recipients. Risk factors for candiduria in such persons are similar to those in hospitalized patients who have not received a transplant. Candiduria is associated with reduced survival rates among persons who have undergone renal transplantation; this is likely a marker for severity of illness. Treatment of asymptomatic candiduria in renal transplant recipients does not appear to result in improved outcome."
 featured: false
-publication: "*Clin. Infect. Dis.*"
-url_pdf: https://academic.oup.com/cid/article/40/10/1413/307693
+publication: "*Clinical Infectious Disease*"
+publication_short: "*Clin. Infect. Dis.*"
+url_pdf: safdar-2005.pdf
+doi: https://doi.org/10.1086/429620
 ---
 

@@ -2,11 +2,14 @@
 title: "Expression patterns of atopic eczema and respiratory illnesses in a high-risk birth cohort"
 date: 2010-02-01
 publishDate: 2020-02-08T06:30:32.767719Z
-authors: ["A. M. Singh", "M. D. Evans", "R. Gangnon", "K. A. Roberg", "C. Tisler", "D. DaSilva", "T. Pappas", "L. Salazar", "E. L. Anderson", "J. E. Gern", "R. F. Lemanske", "C. M. Seroogy"]
+authors: ["Anne Marie Singh", "Mike Evans", "Ronald Gangnon", "Kathy Roberg", "Chris Tisler", "Douglas DaSilva", "Tressa Pappas", "Lisa Salazar", "Beth Anderson", "Jim Gern", "Rob Lemanske", "Chris Seroogy"]
 publication_types: ["2"]
 abstract: ""
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(09)01747-3/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: singh-2010.pdf
+doi: https://doi.org/10.1016/j.jaci.2009.11.026
+projects: [COAST]
 ---
 

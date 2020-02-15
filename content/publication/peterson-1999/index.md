@@ -2,7 +2,7 @@
 title: "Latrunculin-A increases outflow facility in the monkey"
 date: 1999-04-01
 publishDate: 2020-02-08T06:30:32.815127Z
-authors: ["J. A. Peterson", "B. Tian", "A. D. Bershadsky", "T. Volberg", "R. E. Gangnon", "I. Spector", "B. Geiger", "P. L. Kaufman"]
+authors: ["Jennifer Peterson", "Baohe Tian", "Alexander Bershadsky", "Tova Volberg", "Ronald Gangnon", "Ilan Spector", "Benjamin Geiger", "Paul Kaufman"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Pharmacological disorganization of the actin cytoskeleton in the trabecular meshwork by specific actin inhibitors like LAT-A may be a useful antiglaucoma strategy."
 featured: false
-publication: "*Invest. Ophthalmol. Vis. Sci.*"
-url_pdf: https://iovs.arvojournals.org/article.aspx?articleid=2162035
+publication: "*Investigative Ophthalmology & Visual Science*"
+publication_short: "*Invest. Ophthalmol. Vis. Sci.*"
+url_pdf: peterson-1999.pdf
 ---
 

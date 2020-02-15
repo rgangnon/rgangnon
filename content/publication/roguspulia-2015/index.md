@@ -2,7 +2,7 @@
 title: "Comparison of Maximal Lingual Pressure Generation During Isometric Gross and Fine Sensorimotor Tasks in Healthy Adults"
 date: 2015-10-01
 publishDate: 2020-02-08T06:30:32.706849Z
-authors: ["N. Rogus-Pulia", "K. Churness", "J. Hind", "R. Gangnon", "K. Banaszynski", "J. Robbins"]
+authors: ["Nicole Rogus-Pulia", "Kim Churness", "Jackie Hind", "Ronald Gangnon", "Kelsey Banaszynski", "JoAnne Robbins"]
 publication_types: ["2"]
 abstract: "OBJECTIVES:
 
@@ -29,7 +29,8 @@ CONCLUSIONS:
 
 Age-related decline in tongue strength is greater at the anterior and posterior tongue. Results indicate a simpler gross sensorimotor task may be more beneficial for targeting timing as a biomechanical parameter during therapy, and the fine sensorimotor task may be more beneficial for targeting strength."
 featured: false
-publication: "*Arch Phys Med Rehabil*"
-url_pdf: https://www.archives-pmr.org/article/S0003-9993(15)00402-5/fulltext
+publication: "*Archives of Physical Medicine & Rehabilitation*"
+publication_short: "*Arch Phys Med Rehabil*"
+doi: https://doi.org/10.1016/j.apmr.2015.04.024
 ---
 
