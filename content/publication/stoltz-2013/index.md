@@ -2,7 +2,7 @@
 title: "Specific patterns of allergic sensitization in early childhood and asthma & rhinitis risk"
 date: 2013-02-01
 publishDate: 2020-02-08T06:30:32.739627Z
-authors: ["D. J. Stoltz", "D. J. Jackson", "M. D. Evans", "R. E. Gangnon", "C. J. Tisler", "J. E. Gern", "R. F. Lemanske"]
+authors: ["D Stoltz", "Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,8 @@ CONCLUSIONS AND CLINICAL RELEVANCE:
 
 Analysing specific patterns of an individual's allergic sensitization profile reveals additional relevant associations with asthma and rhinitis risk as opposed to the information gained from characterizing an individual as 'atopic' by the presence of any demonstrable sensitization alone. Furthermore, protective mechanisms of dog exposure with regards to asthma risk appear to be unrelated to the prevention of sensitization."
 featured: false
-publication: "*Clin. Exp. Allergy*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/cea.12050
+publication: "*Clinical & Experimental Allergy*"
+publication_short: "*Clin. Exp. Allergy*"
+doi:  https://doi.org/10.1111/cea.12050
 ---
 

@@ -2,7 +2,7 @@
 title: "Telomere length and pancreatic cancer: a case-control study"
 date: 2012-11-01
 publishDate: 2020-02-08T06:30:32.741104Z
-authors: ["H. G. Skinner", "R. E. Gangnon", "K. Litzelman", "R. A. Johnson", "S. T. Chari", "G. M. Petersen", "L. A. Boardman"]
+authors: ["Hal Skinner", "Ronald Gangnon", "Kristin Litzelman", "Ruth Johnson", "Suresh Chari", "Gloria Petersen", "Lisa Boardman"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ IMPACT:
 
 Although the temporality of this relationship is unknown, telomere length may be useful as either a marker of pancreatic cancer risk or of the presence of undetected pancreatic cancer. If telomere shortening precedes cancer incidence, interventions to preserve telomere length may be an effective strategy to prevent pancreatic cancer."
 featured: false
-publication: "*Cancer Epidemiol. Biomarkers Prev.*"
-url_pdf: https://cebp.aacrjournals.org/content/21/11/2095.long
+publication: "*Cancer Epidemiology, Biomarkers & Prevention*"
+publication_short: "*Cancer Epidemiol. Biomarkers Prev.*"
+url_pdf: skinner-2012.pdf
+doi: 10.1158/1055-9965.EPI-12-0671
 ---
 

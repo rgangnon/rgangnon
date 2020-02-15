@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linda Titus | Ronald Gangnon</title>
+    <link>/authors/linda-titus/</link>
+      <atom:link href="/authors/linda-titus/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linda Titus</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Linda Titus</title>
+      <link>/authors/linda-titus/</link>
+    </image>
+    
+    <item>
+      <title>Variation in Breast Cancer-Risk Factor Associations by Method of Detection: Results From a Series of Case-Control Studies</title>
+      <link>/publication/sprague-2015/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/sprague-2015/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lauren Weeth-Feinstein | Ronald Gangnon</title>
+    <link>/authors/lauren-weeth-feinstein/</link>
+      <atom:link href="/authors/lauren-weeth-feinstein/index.xml" rel="self" type="application/rss+xml" />
+    <description>Lauren Weeth-Feinstein</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Lauren Weeth-Feinstein</title>
+      <link>/authors/lauren-weeth-feinstein/</link>
+    </image>
+    
+    <item>
+      <title>Insurance Coverage for CT Colonography Screening: Impact on Overall Colorectal Cancer Screening Rates</title>
+      <link>/publication/smith-2017/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/smith-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,12 +5,20 @@
     <link>/authors/pat-remington/</link>
       <atom:link href="/authors/pat-remington/index.xml" rel="self" type="application/rss+xml" />
     <description>Pat Remington</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Pat Remington</title>
       <link>/authors/pat-remington/</link>
     </image>
+    
+    <item>
+      <title>Variation in Breast Cancer-Risk Factor Associations by Method of Detection: Results From a Series of Case-Control Studies</title>
+      <link>/publication/sprague-2015/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/sprague-2015/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Improving the Rank Precision of Population Health Measures for Small Areas with Longitudinal and Joint Outcome Models</title>
@@ -25,6 +33,22 @@
       <link>/publication/athens-2013/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
       <guid>/publication/athens-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Socioeconomic status and survival after an invasive breast cancer diagnosis</title>
+      <link>/publication/sprague-2011b/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/sprague-2011b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trends in kidney transplantation rates and disparities</title>
+      <link>/publication/stolzmann-2007/</link>
+      <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
+      <guid>/publication/stolzmann-2007/</guid>
       <description></description>
     </item>
     

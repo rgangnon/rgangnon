@@ -2,7 +2,7 @@
 title: "Trends in kidney transplantation rates and disparities"
 date: 2007-08-01
 publishDate: 2020-02-08T06:30:32.785861Z
-authors: ["K. L. Stolzmann", "L. E. Bautista", "R. E. Gangnon", "J. A. McElroy", "B. N. Becker", "P. L. Remington"]
+authors: ["Kelly Stolzmann", "Leonelo Bautista", "Ronald Gangnon", "Jane McElroy", "Bryan Becker", "Pat Remington"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -18,6 +18,7 @@ CONCLUSION:
 These results demonstrate a growing disparity in transplantation rates by demographic characteristics and a consistent disparity in transplantation by socioeconomic characteristics. Future studies should focus on identifying specific barriers to transplantation among different subpopulations in order to target effective interventions."
 featured: false
 publication: "*J Natl Med Assoc*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2574300/
+url_pdf: stolzmann-2007.pdf
+doi: 
 ---
 

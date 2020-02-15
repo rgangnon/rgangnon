@@ -2,7 +2,7 @@
 title: "Socioeconomic status and survival after an invasive breast cancer diagnosis"
 date: 2011-04-01
 publishDate: 2020-02-08T06:30:32.758988Z
-authors: ["B. L. Sprague", "A. Trentham-Dietz", "R. E. Gangnon", "R. Ramchandani", "J. M. Hampton", "S. A. Robert", "P. L. Remington", "P. A. Newcomb"]
+authors: [Brian Sprague, Amy Trentham-Dietz, Ronald Gangnon, Ritesh Ramchandani, John Hampton, Stephanie Robert, Pat Remington, Polly Newcomb]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,6 +18,7 @@ CONCLUSIONS:
 The current results indicated that screening and early detection explain some of the disparity according to SES, but further research will be needed to understand the additional ways in which individual-level and community-level education are associated with survival."
 featured: false
 publication: "*Cancer*"
-url_pdf: https://acsjournals.onlinelibrary.wiley.com/doi/full/10.1002/cncr.25589
+url_pdf: sprague-2011b.pdf
+doi: 10.1002/cncr.25589
 ---
 

@@ -2,7 +2,7 @@
 title: "The influence of processing factors and non-atopy-related maternal and neonate characteristics on yield and cytokine responses of cord blood mononuclear cells"
 date: 2008-02-01
 publishDate: 2020-02-08T06:30:32.784552Z
-authors: ["K. T. Sullivan Dillie", "C. J. Tisler", "D. F. Dasilva", "T. E. Pappas", "K. A. Roberg", "K. T. Carlson-Dakes", "M. D. Evans", "L. A. Rosenthal", "R. E. Gangnon", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Kat Sullivan Dillie", "Chris Tisler", "Douglas Dasilva", "Tressa Pappas", "Kathy Roberg", "Kirstin Carlson-Dakes", "Mike Evans", "Louis Rosenthal", "Ronald Gangnon", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "RATIONALE:
 
@@ -17,7 +17,9 @@ CONCLUSIONS:
 
 These data suggest that season of collection, and to a lesser extent clotting in samples, affect cord blood mononuclear cell yield and cytokine responses. Careful documentation and analysis of processing and environmental variables are important in understanding biological relationships with cytokine responses, and also lead to greater comparability among studies using these techniques."
 featured: false
-publication: "*Clin. Exp. Allergy*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2222.2007.02891.x
+publication: "*Clinical & Experimental Allergy*"
+publication_short: "*Clin. Exp. Allergy*"
+doi:  https://doi.org/10.1111/j.1365-2222.2007.02891.x
+projects: [COAST]
 ---
 

@@ -2,7 +2,7 @@
 title: "Successful treatment of anisometropic amblyopia with spectacles alone"
 date: 2006-02-01
 publishDate: 2020-02-08T06:30:32.794510Z
-authors: ["A. L. Steele", "Y. S. Bradfield", "B. J. Kushner", "T. D. France", "M. C. Struck", "R. E. Gangnon"]
+authors: ["Anna Steele", "Yasmin Bradfield", "Burt Kushner", "Thomas France", "Michael Struck", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,6 +18,6 @@ CONCLUSIONS:
 Treatment of anisometropic amblyopia with spectacles alone can be a successful option. Patients treated with spectacles alone may experience a lower amblyopia recurrence rate than those treated with occlusion therapy."
 featured: false
 publication: "*J AAPOS*"
-url_pdf: https://www.jaapos.org/article/S1091-8531(05)00233-8/fulltext
+doi: https://doi.org/10.1016/j.jaapos.2005.08.003
 ---
 

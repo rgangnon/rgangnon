@@ -2,7 +2,8 @@
 title: "Prevalence of mammographically dense breasts in the United States"
 date: 2014-10-01
 publishDate: 2020-02-08T06:30:32.714477Z
-authors: ["B. L. Sprague", "R. E. Gangnon", "V. Burt", "A. Trentham-Dietz", "J. M. Hampton", "R. D. Wellman", "K. Kerlikowske", "D. L. Miglioretti"]
+authors: [Brian Sprague, Ronald Gangnon, Veronica Burt, Amy Trentham-Dietz, John Hampton,
+Robert Wellman, Karla Kerlikowske, Diana Miglioretti]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +18,9 @@ CONCLUSION:
 
 The prevalence of dense breasts among US women of common breast cancer screening ages exceeds 25 million. Policymakers and healthcare providers should consider this large prevalence when debating breast density notification legislation and designing strategies to ensure that women who are notified have opportunities to evaluate breast cancer risk and discuss and pursue supplemental screening options if deemed appropriate."
 featured: false
-publication: "*J. Natl. Cancer Inst.*"
-url_pdf: https://academic.oup.com/jnci/article/106/10/dju255/929309
+publication: "*Journal of the National Cancer Institute*"
+publication_short: "*J. Natl. Cancer Inst.*"
+url_pdf: sprague-2014.pdf
+doi: 10.1093/jnci/dju255
 ---
 

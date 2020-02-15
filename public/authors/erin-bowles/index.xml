@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Erin Bowles | Ronald Gangnon</title>
+    <link>/authors/erin-bowles/</link>
+      <atom:link href="/authors/erin-bowles/index.xml" rel="self" type="application/rss+xml" />
+    <description>Erin Bowles</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Feb 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Erin Bowles</title>
+      <link>/authors/erin-bowles/</link>
+    </image>
+    
+    <item>
+      <title>Circulating sex hormones and mammographic breast density among postmenopausal women</title>
+      <link>/publication/sprague-2011/</link>
+      <pubDate>Tue, 01 Feb 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/sprague-2011/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
