@@ -2,7 +2,7 @@
 title: "Comparison of the Ahmed Glaucoma Valve, the Krupin Eye Valve with Disk, and the double-plate Molteno implant"
 date: 2002-08-01
 publishDate: 2020-02-08T06:30:32.811336Z
-authors: ["D. P. Taglia", "T. W. Perkins", "R. Gangnon", "G. A. Heatley", "P. L. Kaufman"]
+authors: ["Daniel Taglia", "Todd Perkins", "Ronald Gangnon", "Gregg Heatley", "Paul Kaufman"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -17,7 +17,7 @@ CONCLUSIONS:
 
 This nonrandomized study suggests that the Molteno implant with mitomycin C is more likely to result in intraocular pressures in the lower teens than the Ahmed Glaucoma Valve with mitomycin C. The findings suggest that the Ahmed implant is less likely to create problems leading to reoperations or visual acuity loss than the Molteno or Krupin implants."
 featured: false
-publication: "*J. Glaucoma*"
-url_pdf: https://insights.ovid.com/crossref?an=00061198-200208000-00012
+publication: "*Journal of Glaucoma*"
+publication_short: "*J. Glaucoma*"
 ---
 

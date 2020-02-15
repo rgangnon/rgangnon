@@ -2,7 +2,7 @@
 title: "Development of a novel, objective measure of health care-related financial burden for U.S. families with children"
 date: 2014-12-01
 publishDate: 2020-02-08T06:30:32.713811Z
-authors: ["L. E. Wisk", "R. Gangnon", "D. J. Vanness", "A. A. Galbraith", "J. Mullahy", "W. P. Witt"]
+authors: ["Lauren Wisk", "Ronald Gangnon", "Dave Vanness", "Alison Galbraith", "John Mullahy", "Whitney Witt"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -20,7 +20,8 @@ CONCLUSION:
 
 The newly developed measure of financial burden establishes thresholds based on different combinations of family income and OOPC that can be applied in future studies of health care utilization and expenditures and in policy development and evaluation."
 featured: false
-publication: "*Health Serv Res*"
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12248
+publication: "*Health Services Research*"
+publication_short: "*Health Serv Res*"
+doi: https://doi.org/10.1111/1475-6773.12248
 ---
 

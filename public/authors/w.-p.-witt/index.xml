@@ -5,7 +5,7 @@
     <link>/authors/w.-p.-witt/</link>
       <atom:link href="/authors/w.-p.-witt/index.xml" rel="self" type="application/rss+xml" />
     <description>W. P. Witt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Dec 2014 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>W. P. Witt</title>
@@ -13,26 +13,10 @@
     </image>
     
     <item>
-      <title>Development of a novel, objective measure of health care-related financial burden for U.S. families with children</title>
-      <link>/publication/wisk-2014/</link>
-      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/wisk-2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Role of global stress in the health-related quality of life of caregivers: evidence from the Survey of the Health of Wisconsin</title>
       <link>/publication/litzelman-2014/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
       <guid>/publication/litzelman-2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Healthcare-Related Financial Burden among Families in the U.S.: The Role of Childhood Activity Limitations and Income</title>
-      <link>/publication/witt-2011/</link>
-      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/witt-2011/</guid>
       <description></description>
     </item>
     

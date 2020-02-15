@@ -2,7 +2,7 @@
 title: "Association of obstructive sleep apnea risk or diagnosis with daytime asthma in adults"
 date: 2012-08-01
 publishDate: 2020-02-08T06:30:32.747126Z
-authors: ["M. Teodorescu", "D. A. Polomis", "M. C. Teodorescu", "R. E. Gangnon", "A. G. Peterson", "F. B. Consens", "R. D. Chervin", "N. N. Jarjour"]
+authors: ["Mihaela Teodorescu", "David Polomis", "Mihai Teodorescu", "Ronald Gangnon", "Andrea Peterson", "Flavia Consens", "Ron Chervin", "Nizar Jarjour"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Questionnaire-defined OSA risk and historical diagnosis were each associated with persistent daytime asthma symptoms, to an extent that matched or exceeded associations with nighttime asthma symptoms. Unrecognized OSA may be a reason for persistent asthma symptoms during the day as well as the night."
 featured: false
-publication: "*J Asthma*"
-url_pdf: https://www.tandfonline.com/doi/abs/10.3109/02770903.2012.689408?journalCode=ijas20
+publication: "*Journal of Asthma*"
+publication_short: "*J Asthma*"
+doi: https://doi.org/10.3109/02770903.2012.689408
 ---
 

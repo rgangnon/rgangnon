@@ -2,7 +2,7 @@
 title: "Breast cancer susceptibility loci in association with age at menarche, age at natural menopause and the reproductive lifespan"
 date: 2014-02-01
 publishDate: 2020-02-08T06:30:32.723628Z
-authors: ["S. Warren Andersen", "A. Trentham-Dietz", "R. E. Gangnon", "J. M. Hampton", "H. G. Skinner", "C. D. Engelman", "B. E. Klein", "L. J. Titus", "K. M. Egan", "P. A. Newcomb"]
+authors: ["Shaneda Warren Andersen", "Amy Trentham-Dietz", "Ronald Gangnon", "John Hampton", "Hal Skinner", "Corinne Engelman", "Barbara Klein", "Linda Titus", "Kathleen Egan", "Polly Newcomb"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 The evaluated variants and reproductive experiences may work through separate pathways to influence breast cancer risk."
 featured: false
-publication: "*Cancer Epidemiol*"
-url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S1877782113001872?via%3Dihub
+publication: "*Cancer Epidemiology*"
+publication_short: "*Cancer Epidemiol*"
+doi: https://doi.org/10.1016/j.canep.2013.12.001
 ---
 

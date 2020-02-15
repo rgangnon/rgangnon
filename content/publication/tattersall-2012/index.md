@@ -2,7 +2,7 @@
 title: "Women up, men down: the clinical impact of replacing the Framingham Risk Score with the Reynolds Risk Score in the United States population"
 date: 2012-01-01
 publishDate: 2020-02-08T06:30:32.742333Z
-authors: ["M. C. Tattersall", "R. E. Gangnon", "K. N. Karmali", "J. G. Keevil"]
+authors: ["Matt Tattersall", "Ronald Gangnon", "Kunal Karmali", "Jon Keevil"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,6 +18,7 @@ CONCLUSION:
 In the U.S. population the RRS assigns a new risk category for one in six women and four of nine men. In general, women increase while men decrease risk. In conclusion, adopting the RRS for the 53.6 million eligible U.S. adults would result in intensification of clinical management in 1.6 M additional women and 2.10 M fewer men."
 featured: false
 publication: "*PLoS ONE*"
-url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044347
+url_pdf: tattersall-2012.pdf
+doi:  https://doi.org/10.1371/journal.pone.0044347
 ---
 

@@ -2,7 +2,7 @@
 title: "Environmental exposures during windows of susceptibility for breast cancer: a framework for prevention research"
 date: 2019-08-01
 publishDate: 2020-02-08T06:30:32.673555Z
-authors: [Mary Beth Terry, Karin B. Michels, Julia Green Brody, Celia Byrne, Shiuan Chen, D. Joseph Jerry, Kristen M. C. Malecki, Mary Beth Martin, Rachel L. Miller, Susan L. Neuhausen, Kami Silk, Amy Trentham-Dietz on behalf of Breast Cancer and the Environment Research Program (BCERP)]
+authors: [Mary Beth Terry, Karin Michels, Julia Brody, Celia Byrne, Shiuan Chen, Joe Jerry, Kristen Malecki, Mary Beth Martin, Rachel Miller, Susan Neuhausen, Kami Silk, Amy Trentham-Dietz, on behalf of Breast Cancer and the Environment Research Program (BCERP)]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -18,5 +18,6 @@ publication: "*Breast Cancer Research*"
 publication_short: "*Breast Cancer Res.*"
 url_pdf: terry-2019.pdf
 doi: https://doi.org/10.1186/s13058-019-1168-2
+projects: [BCERP]
 ---
 

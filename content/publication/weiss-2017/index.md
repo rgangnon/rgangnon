@@ -2,7 +2,7 @@
 title: "Predictors of primary care provider adoption of CT colonography for colorectal cancer screening"
 date: 2017-04-01
 publishDate: 2020-02-08T06:30:32.695795Z
-authors: ["J. M. Weiss", "D. H. Kim", "M. A. Smith", "A. Potvien", "J. R. Schumacher", "R. E. Gangnon", "B. D. Pooler", "P. R. Pfau", "P. J. Pickhardt"]
+authors: ["Jen Weiss", "David Kim", "Maureen Smith", "Aaron Potvien", "Jessica Schumacher", "Ronald Gangnon", "Dustin Pooler", "Patrick Pfau", "Perry Pickhardt"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 Significant variation in PCP adoption of CTC exists. PCP perceptions of CTC and specialty practice were related to CTC adoption. Strategies to increase PCP adoption of CTC for CRC screening should include emphasis on the effectiveness and advantages of CTC."
 featured: false
+publication: "*Abdominal Radiology*"
 publication: "*Abdom Radiol (NY)*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs00261-016-0971-9
+url_pdf: weiss-2017.pdf
+doi: 10.1007/s00261-016-0971-9
 ---
 

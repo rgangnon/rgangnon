@@ -2,7 +2,7 @@
 title: "Reproductive windows, genetic loci, and breast cancer risk"
 date: 2014-05-01
 publishDate: 2020-02-08T06:30:32.717646Z
-authors: ["S. Warren Andersen", "A. Trentham-Dietz", "R. E. Gangnon", "J. M. Hampton", "J. D. Figueroa", "H. G. Skinner", "C. D. Engelman", "B. E. Klein", "L. J. Titus", "K. M. Egan", "P. A. Newcomb"]
+authors: ["Shaneda Warren Andersen", "Amy Trentham-Dietz", "Ronald Gangnon", "John Hampton", "Jonine Figueroa", "Hal Skinner", "Corinne Engelman", "Barbara Klein", "Linda Titus", "Kathleen Egan", "Polly Newcomb"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,8 @@ CONCLUSIONS:
 
 Our results suggest that the reproductive windows are associated with breast cancer risk and that associations may vary by genetic variants."
 featured: false
-publication: "*Ann Epidemiol*"
-url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S1047279714000696?via%3Dihub
+publication: "*Annals of Epidemiology*"
+publication_short: "*Ann Epidemiol*"
+doi: https://doi.org/10.1016/j.annepidem.2014.02.007
 ---
 

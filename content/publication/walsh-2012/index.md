@@ -2,7 +2,7 @@
 title: "Selection bias in population-based cancer case-control studies due to incomplete sampling frame coverage"
 date: 2012-06-01
 publishDate: 2020-02-08T06:30:32.748884Z
-authors: ["M. C. Walsh", "A. Trentham-Dietz", "R. E. Gangnon", "F. J. Nieto", "P. A. Newcomb", "M. Palta"]
+authors: ["Matt Walsh", "Amy Trentham-Dietz", "Ronald Gangnon", "Javier Nieto", "Polly Newcomb", "Mari Palta"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ IMPACT:
 
 SPRs can be used to predict the direction of bias when cases and controls stem from different sampling frames in population-based case-control studies."
 featured: false
-publication: "*Cancer Epidemiol. Biomarkers Prev.*"
-url_pdf: https://cebp.aacrjournals.org/content/21/6/881.long
+publication: "*Cancer Epidemiology, Biomarkers & Prevention*"
+publication_short: "*Cancer Epidemiol. Biomarkers Prev.*"
+url_pdf: walsh-2012.pdf
+doi: 10.1158/1055-9965.EPI-11-1066
 ---
 

@@ -2,7 +2,7 @@
 title: "Comparative effectiveness of incorporating a hypothetical DCIS prognostic marker into breast cancer screening"
 date: 2018-02-01
 publishDate: 2020-02-08T06:30:32.687941Z
-authors: ["A. Trentham-Dietz", "M. A. Ergun", "O. Alagoz", "N. K. Stout", "R. E. Gangnon", "J. M. Hampton", "K. Dittus", "T. A. James", "P. M. Vacek", "S. D. Herschorn", "E. S. Burnside", "A. N. A. Tosteson", "D. L. Weaver", "B. L. Sprague"]
+authors: ["Amy Trentham-Dietz", "Mehmet Ergun", "Oguzhan Alagoz", "Tasha Stout", "Ronald Gangnon", "John Hampton", "Kim Dittus", "Ted James", "Pamela Vacek", "Sally Herschorn", "Beth Burnside", "Anna Tosteson", "Don Weaver", "Brian Sprague"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -17,7 +17,9 @@ CONCLUSION:
 
 A prognostic test that identifies non-progressive DCIS would substantially reduce treatment costs but result in only modest improvements in quality of life when averaged over all DCIS cases."
 featured: false
-publication: "*Breast Cancer Res. Treat.*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs10549-017-4582-0
+publication: "*Breast Cancer Research & Treatment*"
+publication_short: "*Breast Cancer Res. Treat.*"
+url_pdf: trenthamdietz-2018.pdf
+doi: https://doi.org/10.1007/s10549-017-4582-0
 ---
 

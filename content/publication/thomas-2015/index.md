@@ -2,7 +2,7 @@
 title: "Sex-related differences in pulmonary physiologic outcome measures in a high-risk birth cohort"
 date: 2015-08-01
 publishDate: 2020-02-08T06:30:32.709743Z
-authors: ["A. O. Thomas", "D. J. Jackson", "M. D. Evans", "V. Rajamanickam", "R. E. Gangnon", "S. B. Fain", "R. L. Sorkness", "A. Y. Okupa", "A. Thomas", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Amy Thomas", "Dan Jackson", "Mike Evans", "Victoria Rajamanickam", "Ronald Gangnon", "Sean Fain", "Ron Sorkness", "Adesua Okupa", "Alex Thomas", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,10 @@ CONCLUSIONS:
 
 Lower airflow values are present by spirometry for prepubertal boys than for age-matched girls; however, greater (3)He ventilation defects were noted in girls. This could represent a greater degree of subclinical air trapping in prepubertal girls because residual volumes are not detected on standard spirometric readings. No differences were noted between the 2 sexes with airway hyperresponsiveness (mannitol provocation testing) or inflammation (Feno). Prospective peripubertal follow-up will determine whether these differences persist or change with the de novo expression and remission of asthma based on sex and age."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(15)00008-1/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: thomas-2015.pdf
+doi: https://doi.org/10.1016/j.jaci.2014.12.1927
+projects: [COAST]
 ---
 

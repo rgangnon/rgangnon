@@ -5,12 +5,20 @@
     <link>/authors/todd-perkins/</link>
       <atom:link href="/authors/todd-perkins/index.xml" rel="self" type="application/rss+xml" />
     <description>Todd Perkins</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Aug 1998 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2002 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Todd Perkins</title>
       <link>/authors/todd-perkins/</link>
     </image>
+    
+    <item>
+      <title>Comparison of the Ahmed Glaucoma Valve, the Krupin Eye Valve with Disk, and the double-plate Molteno implant</title>
+      <link>/publication/tagila-2002/</link>
+      <pubDate>Thu, 01 Aug 2002 00:00:00 +0000</pubDate>
+      <guid>/publication/tagila-2002/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Trabeculectomy with mitomycin C: intermediate-term results</title>

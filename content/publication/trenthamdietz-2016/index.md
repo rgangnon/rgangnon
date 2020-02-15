@@ -2,7 +2,7 @@
 title: "Tailoring Breast Cancer Screening Intervals by Breast Density and Risk for Women Aged 50 Years or Older: Collaborative Modeling of Screening Outcomes"
 date: 2016-11-01
 publishDate: 2020-02-08T06:30:32.696897Z
-authors: ["A. Trentham-Dietz", "K. Kerlikowske", "N. K. Stout", "D. L. Miglioretti", "C. B. Schechter", "M. A. Ergun", "J. J. van den Broek", "O. Alagoz", "B. L. Sprague", "N. T. van Ravesteyn", "A. M. Near", "R. E. Gangnon", "J. M. Hampton", "Y. Chandler", "H. J. de Koning", "J. S. Mandelblatt", "A. N. Tosteson"]
+authors: ["Amy Trentham-Dietz", "Karla Kerlikowske", "Tasha Stout", "Diana Miglioretti", "Clyde Schechter", "Mehmet Ergun", "Jereon van den Broek", "Oguzhan Alagoz", "Brian Sprague", "Nicolien van Ravesteyn", "Aimee Near", "Ronald Gangnon", "John Hampton", "Young Chandler", "Harry de Koning", "Jeanne Mandelblatt", "Anna Tosteson"]
 publication_types: ["2"]
 abstract: "Background:
 
@@ -35,7 +35,8 @@ Conclusion:
 
 Average-risk women with low breast density undergoing triennial screening and higher-risk women with high breast density receiving annual screening will maintain a similar or better balance of benefits and harms than average-risk women receiving biennial screening."
 featured: false
-publication: "*Ann. Intern. Med.*"
-url_pdf: https://annals.org/aim/article-abstract/2545959/tailoring-breast-cancer-screening-intervals-breast-density-risk-women-aged
+publication: "*Annals of Internal Medicine*"
+publication_short: "*Ann. Intern. Med.*"
+doi: 10.7326/M16-0476
 ---
 

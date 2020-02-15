@@ -2,7 +2,7 @@
 title: "Association of obstructive sleep apnea risk with asthma control in adults"
 date: 2010-09-01
 publishDate: 2020-02-08T06:30:32.765979Z
-authors: ["M. Teodorescu", "D. A. Polomis", "S. V. Hall", "M. C. Teodorescu", "R. E. Gangnon", "A. G. Peterson", "A. Xie", "C. A. Sorkness", "N. N. Jarjour"]
+authors: ["Mihaela Teodorescu", "David Polomis", "Stephanie Hall", "Mihai Teodorescu", "Ronald Gangnon", "Andrea Peterson", "Ailiang Xie", "Chris Sorkness", "Nizar Jarjour"]
 publication_types: ["2"]
 abstract: "Unrecognized obstructive sleep apnea (OSA) may lead to poor asthma control despite optimal therapy. Our objective was to evaluate the relationship between OSA risk and asthma control in adults.
 METHODS:
@@ -16,6 +16,6 @@ CONCLUSIONS:
 High OSA risk is significantly associated with not-well-controlled asthma independent of known asthma aggravators and regardless of the ACQ version used. Patients who have difficulty achieving adequate asthma control should be screened for OSA."
 featured: false
 publication: "*Chest*"
-url_pdf: https://journal.chestnet.org/article/S0012-3692(10)60466-7/fulltext
+doi: https://doi.org/10.1378/chest.09-3066
 ---
 

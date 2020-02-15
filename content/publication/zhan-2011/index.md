@@ -2,7 +2,7 @@
 title: "Modifiable determinants of hearing impairment in adults"
 date: 2011-10-01
 publishDate: 2020-02-08T06:30:32.753865Z
-authors: ["W. Zhan", "K. J. Cruickshanks", "B. E. Klein", "R. Klein", "G. H. Huang", "J. S. Pankow", "R. E. Gangnon", "T. S. Tweed"]
+authors: ["Weihai Zhan", "Karen Cruickshanks", "Barbara Klein", "Ron Klein", "Guan-Hua Huang", "James Pankow", "Ronald Gangnon", "Theodore Tweed"]
 publication_types: ["2"]
 abstract: "OBJECTIVE:
 
@@ -17,7 +17,8 @@ CONCLUSION:
 
 These data provide strong evidence that environmental, lifestyle, or other modifiable factors contribute to the etiology of hearing impairment and add support to the idea that hearing impairment in adults may be prevented or delayed."
 featured: false
-publication: "*Prev Med*"
-url_pdf: https://www.sciencedirect.com/science/article/pii/S009174351100301X?via%3Dihub
+publication: "*Preventive Medicine*"
+publication_short: "*Prev Med*"
+doi: https://doi.org/10.1016/j.ypmed.2011.08.012
 ---
 

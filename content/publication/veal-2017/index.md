@@ -2,7 +2,7 @@
 title: "Health-related behaviors and mortality outcomes in women diagnosed with ductal carcinoma in situ"
 date: 2017-06-01
 publishDate: 2020-02-08T06:30:32.693674Z
-authors: ["C. T. Veal", "V. Hart", "S. G. Lakoski", "J. M. Hampton", "R. E. Gangnon", "P. A. Newcomb", "S. T. Higgins", "A. Trentham-Dietz", "B. L. Sprague"]
+authors: ["Christopher Veal", "Vicki Hart", "Susan Lakoski", "John Hampton", "Ronald Gangnon", "Polly Newcomb", "Stephen Higgins", "Amy Trentham-Dietz", "Brian Sprague"]
 publication_types: ["2"]
 abstract: "PURPOSE:
 
@@ -20,7 +20,9 @@ IMPLICATIONS FOR CANCER SURVIVORS:
 
 Women diagnosed with DCIS should be aware that their health-related behaviors are associated with mortality outcomes."
 featured: false
-publication: "*J Cancer Surviv*"
-url_pdf: https://link.springer.com/article/10.1007%2Fs11764-016-0590-z
+publication: "*Journal of Cancer Survivorship*"
+publication_short: "*J Cancer Surviv*"
+url_pdf: veal-2017.pdf
+doi: 10.1007/s11764-016-0590-z
 ---
 

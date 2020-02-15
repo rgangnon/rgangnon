@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Effect of Patient Navigation on Transitions of HIV Care After Release from Prison: A Retrospective Cohort Study"
-authors: [Ryan P. Westergaard, Karli R. Hochstatter, Paige N. Andrews, Danielle Kahn, Casey L. Schumann, Alec E. Winzenried, Ajay K. Sethi, Ronald E. Gangnon, James M. Sosman]
+authors: [Ryan Westergaard, Karli Hochstatter, Paige Andrews, Danielle Kahn, Casey Schumann, Alec Winzenried, Ajay Sethi, Ronald Gangnon, Jim Sosman]
 date: 2019-09-01
 doi: "https://doi.org/10.1007/s10461-019-02437-4"
 

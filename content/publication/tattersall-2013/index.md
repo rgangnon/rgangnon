@@ -2,7 +2,7 @@
 title: "Trends in low-density lipoprotein cholesterol goal achievement in high risk United States adults: longitudinal findings from the 1999-2008 National Health and Nutrition Examination Surveys"
 date: 2013-01-01
 publishDate: 2020-02-08T06:30:32.734358Z
-authors: ["M. C. Tattersall", "R. E. Gangnon", "K. N. Karmali", "M. W. Cullen", "J. H. Stein", "J. G. Keevil"]
+authors: ["Matt Tattersall", "Ronald Gangnon", "Kunal Karmali", "Michael Cullen", "Jim Stein", "Jon Keevil"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -21,6 +21,7 @@ CONCLUSION:
 The proportions of the U.S. high-risk population achieving LDL-C <100 mg/dL and <70 mg/dL increased over the last decade. With 65% of the CHD subpopulation achieving an LDL-C <100 mg/dL in the most recent survey, U.S. LDL-C goal achievement exceeds previous reports and approximates rates achieved in highly selected patient cohorts"
 featured: false
 publication: "*PLoS ONE*"
-url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059309
+url_pdf: tattersall-2013.pdf
+doi:  https://doi.org/10.1371/journal.pone.0059309
 ---
 

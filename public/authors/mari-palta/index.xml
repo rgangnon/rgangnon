@@ -5,12 +5,28 @@
     <link>/authors/mari-palta/</link>
       <atom:link href="/authors/mari-palta/index.xml" rel="self" type="application/rss+xml" />
     <description>Mari Palta</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Mar 2010 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Sep 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Mari Palta</title>
       <link>/authors/mari-palta/</link>
     </image>
+    
+    <item>
+      <title>Using propensity scores to reduce case-control selection bias</title>
+      <link>/publication/walsh-2012b/</link>
+      <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/walsh-2012b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selection bias in population-based cancer case-control studies due to incomplete sampling frame coverage</title>
+      <link>/publication/walsh-2012/</link>
+      <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/walsh-2012/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Three methods tested to model SF-6D health utilities for health states involving comorbidity/co-occurring conditions</title>

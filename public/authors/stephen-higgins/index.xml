@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stephen Higgins | Ronald Gangnon</title>
+    <link>/authors/stephen-higgins/</link>
+      <atom:link href="/authors/stephen-higgins/index.xml" rel="self" type="application/rss+xml" />
+    <description>Stephen Higgins</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Stephen Higgins</title>
+      <link>/authors/stephen-higgins/</link>
+    </image>
+    
+    <item>
+      <title>Health-related behaviors and mortality outcomes in women diagnosed with ductal carcinoma in situ</title>
+      <link>/publication/veal-2017/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/veal-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

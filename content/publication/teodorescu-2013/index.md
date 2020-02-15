@@ -2,7 +2,7 @@
 title: "Sleep duration, asthma and obesity"
 date: 2013-11-01
 publishDate: 2020-02-08T06:30:32.731214Z
-authors: ["M. Teodorescu", "D. A. Polomis", "R. E. Gangnon", "F. B. Consens", "R. D. Chervin", "M. C. Teodorescu"]
+authors: ["Mihaela Teodorescu", "David Polomis", "Ronald Gangnon", "Flavia Consens", "Ron Chervin", "Mihai Teodorescu"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,8 @@ CONCLUSIONS:
 
 Obesity in asthmatics is associated with shorter and very long sleep duration, worse asthma severity, psychopathology and high-dose inhaled corticosteroids. Although this cross-sectional study cannot prove causality, we speculate that further investigation of sleep may provide new opportunities to reduce the rising prevalence of obesity among asthmatics."
 featured: false
-publication: "*J Asthma*"
-url_pdf: https://www.tandfonline.com/doi/abs/10.3109/02770903.2013.831871?journalCode=ijas20
+publication: "*Journal of Asthma*"
+publication_short: "*J Asthma*"
+doi: https://doi.org/10.3109/02770903.2013.831871
 ---
 

@@ -2,7 +2,7 @@
 title: "Early childhood weight status in relation to asthma development in high-risk children"
 date: 2010-12-01
 publishDate: 2020-02-08T06:30:32.762737Z
-authors: ["Z. Zhang", "H. J. Lai", "K. A. Roberg", "R. E. Gangnon", "M. D. Evans", "E. L. Anderson", "T. E. Pappas", "D. F. Dasilva", "C. J. Tisler", "L. P. Salazar", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Zhumin Zhang", "HuiChuan Lai", "Kathy Roberg", "Ronald Gangnon", "Mike Evans", "Beth Anderson", "Tressa Pappas", "Douglas Dasilva", "Chris Tisler", "Lisa Salazar", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,9 @@ CONCLUSION:
 
 In children genetically at high risk of asthma, being overweight at age 1 year was associated with a decreased risk of asthma and better lung function at ages 6 and 8 years. However, being overweight beyond infancy did not have any protective effect and even could confer a higher risk for asthma."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(10)01420-X/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: zhang-2010.pdf
+doi: https://doi.org/10.1016/j.jaci.2010.09.011
 ---
 

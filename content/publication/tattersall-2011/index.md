@@ -2,7 +2,7 @@
 title: "The population effects of the global cardiovascular risk model in United States adults: findings from the National Health and Nutrition Surveys, 2005-2006"
 date: 2011-01-01
 publishDate: 2020-02-08T06:30:32.757896Z
-authors: ["M. C. Tattersall", "K. N. Karmali", "R. E. Gangnon", "J. G. Keevil"]
+authors: ["Matt Tattersall", "Kunal Karmali", "Ronald Gangnon", "Jon Keevil"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -20,7 +20,8 @@ CONCLUSIONS:
 
 FRS-CVD end points are more comprehensive, yet the population implications of such a change may be profound. The use of a FRS-CVD risk model significantly increases the intermediate and high-risk groups, thus increasing the number of individuals eligible for novel risk assessment tools such as high-sensitivity C-reactive protein, coronary calcium scoring, and more frequent use of pharmacotherapy."
 featured: false
-publication: "*J Clin Lipidol*"
-url_pdf: https://www.lipidjournal.com/article/S1933-2874(11)00072-9/fulltext
+publication: "*Journal of Clinical Lipidology*"
+publication_short: "*J Clin Lipidol*"
+doi: https://doi.org/10.1016/j.jacl.2011.02.007
 ---
 

@@ -2,7 +2,7 @@
 title: "Asthma Control and Its Relationship with Obstructive Sleep Apnea (OSA) in Older Adults"
 date: 2013-01-01
 publishDate: 2020-02-08T06:30:32.724836Z
-authors: ["M. Teodorescu", "D. A. Polomis", "R. E. Gangnon", "J. E. Fedie", "F. B. Consens", "R. D. Chervin", "M. C. Teodorescu"]
+authors: ["Mihaela Teodorescu", "David Polomis", "Ronald Gangnon", "Jessica Fedie", "Flavia Consens", "Ron Chervin", "Mihai Teodorescu"]
 publication_types: ["2"]
 abstract: "BACKGROUND/OBJECTIVES:
 
@@ -26,7 +26,9 @@ CONCLUSION:
 
 Diagnosed OSA increases the risk for worse asthma control in older patients, while CPAP therapy may have greater impact on asthma outcomes. Unrecognized OSA may be a reason for poor asthma control, particularly among older patients."
 featured: false
-publication: "*Sleep Disord*"
-url_pdf: https://www.hindawi.com/journals/sd/2013/251567/
+publication: "*Sleep Disorders*"
+publication_short: "*Sleep Disord*"
+url_pdf: teodorescu-2013b.pdf
+doi: http://dx.doi.org/10.1155/2013/251567
 ---
 

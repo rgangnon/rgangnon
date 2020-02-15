@@ -2,7 +2,7 @@
 title: "Sex-related differences in immune development and the expression of atopy in early childhood"
 date: 2006-12-01
 publishDate: 2020-02-08T06:30:32.791492Z
-authors: ["S. J. Uekert", "G. Akan", "M. D. Evans", "Z. Li", "K. Roberg", "C. Tisler", "D. Dasilva", "E. Anderson", "R. Gangnon", "D. B. Allen", "J. E. Gern", "R. F. Lemanske"]
+authors: ["Sara Uekert", "Gloria Akan", "Mike Evans", "Zhanhai Li", "Kathy Roberg", "Chris Tisler", "Douglas Dasilva", "Beth Anderson", "Ronald Gangnon", "David Allen", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 
@@ -23,7 +23,9 @@ CLINICAL IMPLICATIONS:
 
 The differential expression of atopic diseases between boys and girls in early childhood is accompanied by sex-specific differences in immune response profiles."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
-url_pdf: https://www.jacionline.org/article/S0091-6749(06)01909-9/fulltext
+publication: "*Journal of Allergy & Clinical Immunology*"
+publication_short: "*J. Allergy Clin. Immunol.*"
+url_pdf: uekert-2006.pdf
+doi: https://doi.org/10.1016/j.jaci.2006.09.008
 ---
 
