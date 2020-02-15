@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michael Kosorok | Ronald Gangnon</title>
+    <link>/authors/michael-kosorok/</link>
+      <atom:link href="/authors/michael-kosorok/index.xml" rel="self" type="application/rss+xml" />
+    <description>Michael Kosorok</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2006 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Michael Kosorok</title>
+      <link>/authors/michael-kosorok/</link>
+    </image>
+    
+    <item>
+      <title>Resolving the tail instability in weighted log-rank statistics for clustered survival data</title>
+      <link>/publication/kosorok-2006/</link>
+      <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
+      <guid>/publication/kosorok-2006/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sample Size Formula for Clustered Survival Data Using Weighted Log-rank Statistics</title>
+      <link>/publication/gangnon-2004/</link>
+      <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
+      <guid>/publication/gangnon-2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jonathan Meiman | Ronald Gangnon</title>
+    <link>/authors/jonathan-meiman/</link>
+      <atom:link href="/authors/jonathan-meiman/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jonathan Meiman</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Jonathan Meiman</title>
+      <link>/authors/jonathan-meiman/</link>
+    </image>
+    
+    <item>
+      <title>School sessions are correlated with seasonal outbreaks of medically attended respiratory infections: electronic health record time series analysis, Wisconsin 2004-2011</title>
+      <link>/publication/temte-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/temte-2019/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

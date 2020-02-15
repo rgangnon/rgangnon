@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jingjing Liang | Ronald Gangnon</title>
+    <link>/authors/jingjing-liang/</link>
+      <atom:link href="/authors/jingjing-liang/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jingjing Liang</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Jingjing Liang</title>
+      <link>/authors/jingjing-liang/</link>
+    </image>
+    
+    <item>
+      <title>Uncertainty of a detected spatial cluster in 1D:quantification and visualization</title>
+      <link>/publication/lee-2017b/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/lee-2017b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

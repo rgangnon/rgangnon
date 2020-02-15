@@ -628,17 +628,12 @@
   </url>
   
   <url>
-    <loc>/authors/jonathan-g.-meiman/</loc>
+    <loc>/authors/jonathan-meiman/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/jonathan-l.-temte/</loc>
-    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/ronald-e.-gangnon/</loc>
+    <loc>/authors/jonathan-temte/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1253,6 +1248,21 @@
   </url>
   
   <url>
+    <loc>/authors/jingjing-liang/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/jun-zhu/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/junho-lee/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/k.-horak/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -1274,6 +1284,11 @@
   
   <url>
     <loc>/publication/klein-2017/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/lee-2017b/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -1338,17 +1353,12 @@
   </url>
   
   <url>
-    <loc>/authors/jun-zhu/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/junho-lee/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/anderson-2017/</loc>
+    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/ronald-e.-gangnon/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3998,6 +4008,16 @@
   </url>
   
   <url>
+    <loc>/authors/michael-kosorok/</loc>
+    <lastmod>2006-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/kosorok-2006/</loc>
+    <lastmod>2006-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/steele-2006/</loc>
     <lastmod>2006-02-01T00:00:00+00:00</lastmod>
   </url>
@@ -4424,6 +4444,11 @@
   
   <url>
     <loc>/authors/pat-kokotailo/</loc>
+    <lastmod>2004-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/gangnon-2004/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
   </url>
   
