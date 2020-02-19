@@ -2,12 +2,7 @@
 title: Beaver Dam Eye Study (BDES)
 summary: 
 tags:
-- opthalmology
-- age-related macular degeneration
-- cataract
-- epidemiology
-- genetics
-date: "2016-04-27T00:00:00Z"
+date: "1987-09-15"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -27,4 +22,3 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: 
 ---
-

@@ -1488,42 +1488,7 @@
   </url>
   
   <url>
-    <loc>/tags/age-related-macular-degeneration/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/allergy/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/asthma/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/bdes/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/birth-cohort/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/breast-cancer/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/cataract/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/coast/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -1534,21 +1499,6 @@
   
   <url>
     <loc>/project/rankings/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/epidemiology/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/genetics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/opthalmology/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -4773,6 +4723,11 @@
   </url>
   
   <url>
+    <loc>/project/coast/</loc>
+    <lastmod>1998-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/greg-heatley/</loc>
     <lastmod>1998-08-01T00:00:00+00:00</lastmod>
   </url>
@@ -4830,6 +4785,11 @@
   <url>
     <loc>/authors/zarir-khademian/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/bdes/</loc>
+    <lastmod>1987-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>

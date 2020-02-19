@@ -2,12 +2,7 @@
 title: Childhood Origins of ASThma (COAST)
 summary: 
 tags:
-- asthma
-- allergy
-- birth cohort
-- epidemiology
-- genetics
-date: "2016-04-27T00:00:00Z"
+date: "1998-11-01"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -27,4 +22,4 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: 
 ---
-
+The Childhood Origins of ASThma (COAST) study was funded by the National Heart Lung and Blood Institute (National Institutes of Health, Bethesda, MD) in September 1998 and launched in November of that same year. A cohort of children (n = 287) at increased risk of developing asthma (at least one parent with allergies and/or asthma) were enrolled at birth. 

@@ -13,22 +13,6 @@
     </image>
     
     <item>
-      <title>Beaver Dam Eye Study (BDES)</title>
-      <link>/project/bdes/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/bdes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Childhood Origins of ASThma (COAST)</title>
-      <link>/project/coast/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/coast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>CISNET</title>
       <link>/project/cisnet/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
@@ -41,6 +25,23 @@
       <link>/project/rankings/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/project/rankings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Childhood Origins of ASThma (COAST)</title>
+      <link>/project/coast/</link>
+      <pubDate>Sun, 01 Nov 1998 00:00:00 +0000</pubDate>
+      <guid>/project/coast/</guid>
+      <description>&lt;p&gt;The Childhood Origins of ASThma (COAST) study was funded by the National Heart Lung and Blood Institute (National Institutes of Health, Bethesda, MD) in September 1998 and launched in November of that same year. A cohort of children (n = 287) at increased risk of developing asthma (at least one parent with allergies and/or asthma) were enrolled at birth.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Beaver Dam Eye Study (BDES)</title>
+      <link>/project/bdes/</link>
+      <pubDate>Tue, 15 Sep 1987 00:00:00 +0000</pubDate>
+      <guid>/project/bdes/</guid>
       <description></description>
     </item>
     
