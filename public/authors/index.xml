@@ -5,12 +5,148 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title>Carmen Valdez</title>
+      <link>/authors/carmen-valdez/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/carmen-valdez/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Christian Schmidt</title>
+      <link>/authors/christian-schmidt/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/christian-schmidt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deb Ehrenthal</title>
+      <link>/authors/deb-ehrenthal/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/deb-ehrenthal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elizabeth Jacobs</title>
+      <link>/authors/elizabeth-jacobs/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/elizabeth-jacobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jane Mahoney</title>
+      <link>/authors/jane-mahoney/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/jane-mahoney/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jill Renken</title>
+      <link>/authors/jill-renken/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/jill-renken/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kevin Wagner</title>
+      <link>/authors/kevin-wagner/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kevin-wagner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kristen Malecki</title>
+      <link>/authors/kristen-malecki/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kristen-malecki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LaVerne Jaros</title>
+      <link>/authors/laverne-jaros/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/laverne-jaros/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lindy Clemson</title>
+      <link>/authors/lindy-clemson/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/lindy-clemson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mariah Curtis</title>
+      <link>/authors/mariah-curtis/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/mariah-curtis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marty Kanarek</title>
+      <link>/authors/marty-kanarek/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/marty-kanarek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Natalie Guerrero</title>
+      <link>/authors/natalie-guerrero/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/natalie-guerrero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ronald Gangnon</title>
+      <link>/authors/ronald-gangnon/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/ronald-gangnon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sandy Cech</title>
+      <link>/authors/sandy-cech/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/sandy-cech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shoshannah Eggers</title>
+      <link>/authors/shoshannah-eggers/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/shoshannah-eggers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traci Snedden</title>
+      <link>/authors/traci-snedden/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/traci-snedden/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ajay Sethi</title>
@@ -77,14 +213,6 @@
     </item>
     
     <item>
-      <title>Kristen Malecki</title>
-      <link>/authors/kristen-malecki/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/kristen-malecki/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Li Zhu</title>
       <link>/authors/li-zhu/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
@@ -121,14 +249,6 @@
       <link>/authors/rocky-feuer/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/authors/rocky-feuer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ronald Gangnon</title>
-      <link>/authors/ronald-gangnon/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/ronald-gangnon/</guid>
       <description></description>
     </item>
     
@@ -785,14 +905,6 @@
     </item>
     
     <item>
-      <title>Jane Mahoney</title>
-      <link>/authors/jane-mahoney/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/jane-mahoney/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kristine Hallisy</title>
       <link>/authors/kristine-hallisy/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
@@ -1225,14 +1337,6 @@
     </item>
     
     <item>
-      <title>Shoshannah Eggers</title>
-      <link>/authors/shoshannah-eggers/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/shoshannah-eggers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Andreas Friedl</title>
       <link>/authors/andreas-friedl/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
@@ -1277,14 +1381,6 @@
       <link>/authors/elena-elkin/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
       <guid>/authors/elena-elkin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elizabeth Jacobs</title>
-      <link>/authors/elizabeth-jacobs/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/elizabeth-jacobs/</guid>
       <description></description>
     </item>
     
@@ -4145,14 +4241,6 @@
     </item>
     
     <item>
-      <title>Marty Kanarek</title>
-      <link>/authors/marty-kanarek/</link>
-      <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
-      <guid>/authors/marty-kanarek/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Myrna Traver</title>
       <link>/authors/myrna-traver/</link>
       <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
@@ -4449,26 +4537,10 @@
     </item>
     
     <item>
-      <title>LaVerne Jaros</title>
-      <link>/authors/laverne-jaros/</link>
-      <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/laverne-jaros/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Robert Przybelski</title>
       <link>/authors/robert-przybelski/</link>
       <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
       <guid>/authors/robert-przybelski/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sandy Cech</title>
-      <link>/authors/sandy-cech/</link>
-      <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
-      <guid>/authors/sandy-cech/</guid>
       <description></description>
     </item>
     
