@@ -27,10 +27,13 @@ role: Professor of Biostatistics
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: 'mailto:ronald@biostat.wisc.edu'
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=7UCD0b0AAAAJ
+- icon: linkedin-in
+  icon_pack: fab
+  link: https://www.linkedin.com/in/ronald-gangnon-5b20bb88/
 superuser: true
 user_groups:
 - Researchers

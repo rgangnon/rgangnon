@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Residential proximity to concentrated animal feeding operations and allergic and respiratory disease"
-authors: [Amy Schultz, Paul Peppard, Ronqld Gangnon, Kristen Malecki]
+authors: [Amy Schultz, Paul Peppard, Ronald Gangnon, Kristen Malecki]
 date: 2019-09-01
 doi: "https://doi.org/10.1016/j.envint.2019.104911"
 
