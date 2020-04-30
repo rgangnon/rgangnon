@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Authors</title>
@@ -15,8 +15,56 @@
     <item>
       <title>Carmen Valdez</title>
       <link>/authors/carmen-valdez/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/authors/carmen-valdez/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deb Ehrenthal</title>
+      <link>/authors/deb-ehrenthal/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/deb-ehrenthal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elizabeth Jacobs</title>
+      <link>/authors/elizabeth-jacobs/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/elizabeth-jacobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kevin Wagner</title>
+      <link>/authors/kevin-wagner/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kevin-wagner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mariah Curtis</title>
+      <link>/authors/mariah-curtis/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/mariah-curtis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Natalie Guerrero</title>
+      <link>/authors/natalie-guerrero/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/natalie-guerrero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ronald Gangnon</title>
+      <link>/authors/ronald-gangnon/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/ronald-gangnon/</guid>
       <description></description>
     </item>
     
@@ -25,22 +73,6 @@
       <link>/authors/christian-schmidt/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/authors/christian-schmidt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deb Ehrenthal</title>
-      <link>/authors/deb-ehrenthal/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/deb-ehrenthal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elizabeth Jacobs</title>
-      <link>/authors/elizabeth-jacobs/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/elizabeth-jacobs/</guid>
       <description></description>
     </item>
     
@@ -57,14 +89,6 @@
       <link>/authors/jill-renken/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/authors/jill-renken/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kevin Wagner</title>
-      <link>/authors/kevin-wagner/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/kevin-wagner/</guid>
       <description></description>
     </item>
     
@@ -93,34 +117,10 @@
     </item>
     
     <item>
-      <title>Mariah Curtis</title>
-      <link>/authors/mariah-curtis/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/mariah-curtis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Marty Kanarek</title>
       <link>/authors/marty-kanarek/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/authors/marty-kanarek/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Natalie Guerrero</title>
-      <link>/authors/natalie-guerrero/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/natalie-guerrero/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ronald Gangnon</title>
-      <link>/authors/ronald-gangnon/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/ronald-gangnon/</guid>
       <description></description>
     </item>
     

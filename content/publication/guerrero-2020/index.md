@@ -1,6 +1,6 @@
 ---
 title: "Food Insecurity and Housing Instability Partially Mediate the Association Between Maternal Depression and Child Problem Behavior"
-date: 2020-02-01
+date: 2020-04-28
 publishDate: 2020-02-08T06:30:32.694495Z
 authors: ["Natalie Guerrero", "Kevin Wagner", "Ronald Gangnon", "Carmen Valdez", "Mariah Curtis", "Deb Ehrenthal", "Elizabeth Jacobs"]
 publication_types: ["2"]
@@ -8,7 +8,7 @@ abstract: "Maternal depression is a risk factor for the development of problem b
 featured: false
 publication: "*Journal of Primary Prevention*"
 publication_short: "*J Prim Prev*"
-url_pdf: 
-doi: 
+url_pdf: guerrero_2020.pdf
+doi: https://doi.org/10.1007/s10935-020-00588-y
 ---
 
