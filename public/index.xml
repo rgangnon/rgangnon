@@ -77,6 +77,14 @@
     </item>
     
     <item>
+      <title>Expression quantitative trait locus fine mapping of the 17q12–21 asthma locus in African American children: a genetic association and gene expression study</title>
+      <link>/publication/ober-2020/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/ober-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Food Insecurity and Housing Instability Partially Mediate the Association Between Maternal Depression and Child Problem Behavior</title>
       <link>/publication/guerrero-2020/</link>
       <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
@@ -319,9 +327,9 @@ Crash --&amp;gt; [*]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Do something else&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write math example&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write diagram example&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Do something else&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
 &lt;p&gt;Represent your data in tables:&lt;/p&gt;
@@ -562,6 +570,7 @@ Three
 &lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
 &lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;/aside&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
@@ -642,6 +651,24 @@ Three
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       <guid>/publication/klein-2018/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terms</title>
+      <link>/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/terms/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -943,7 +970,7 @@ Three
 &lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the 
 &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and 
 &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;❤ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
+&lt;li&gt;❤️ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
 &lt;ul&gt;
 &lt;li&gt;☕️ 
 &lt;a href=&#34;https://paypal.me/cushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

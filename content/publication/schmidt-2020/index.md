@@ -14,7 +14,7 @@ Conclusion: Nearly half of those who ride bicycles in Wisconsin report never wea
 featured: false
 publication: "*Wisconsin Medical Journal*"
 publication_short: "*WMJ*"
-url_pdf: 
+url_pdf: schmidt-2020.pdf 
 doi: 
 ---
 
