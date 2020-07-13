@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leonelo Bautista | Ronald Gangnon</title>
-    <link>/authors/leonelo-bautista/</link>
-      <atom:link href="/authors/leonelo-bautista/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/leonelo-bautista/</link>
+      <atom:link href="https://rgangnon.org/authors/leonelo-bautista/index.xml" rel="self" type="application/rss+xml" />
     <description>Leonelo Bautista</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2007 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Leonelo Bautista</title>
-      <link>/authors/leonelo-bautista/</link>
+      <link>https://rgangnon.org/authors/leonelo-bautista/</link>
     </image>
     
     <item>
       <title>Trends in kidney transplantation rates and disparities</title>
-      <link>/publication/stolzmann-2007/</link>
+      <link>https://rgangnon.org/publication/stolzmann-2007/</link>
       <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/stolzmann-2007/</guid>
+      <guid>https://rgangnon.org/publication/stolzmann-2007/</guid>
       <description></description>
     </item>
     

@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linda Titus | Ronald Gangnon</title>
-    <link>/authors/linda-titus/</link>
-      <atom:link href="/authors/linda-titus/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/linda-titus/</link>
+      <atom:link href="https://rgangnon.org/authors/linda-titus/index.xml" rel="self" type="application/rss+xml" />
     <description>Linda Titus</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Linda Titus</title>
-      <link>/authors/linda-titus/</link>
+      <link>https://rgangnon.org/authors/linda-titus/</link>
     </image>
     
     <item>
       <title>Variation in Breast Cancer-Risk Factor Associations by Method of Detection: Results From a Series of Case-Control Studies</title>
-      <link>/publication/sprague-2015/</link>
+      <link>https://rgangnon.org/publication/sprague-2015/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2015/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reproductive windows, genetic loci, and breast cancer risk</title>
-      <link>/publication/warrenandersen-2014b/</link>
+      <link>https://rgangnon.org/publication/warrenandersen-2014b/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/warrenandersen-2014b/</guid>
+      <guid>https://rgangnon.org/publication/warrenandersen-2014b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Breast cancer susceptibility loci in association with age at menarche, age at natural menopause and the reproductive lifespan</title>
-      <link>/publication/warrenandersen-2014/</link>
+      <link>https://rgangnon.org/publication/warrenandersen-2014/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/warrenandersen-2014/</guid>
+      <guid>https://rgangnon.org/publication/warrenandersen-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The associations between a polygenic score, reproductive and menstrual risk factors and breast cancer risk</title>
-      <link>/publication/warrenandersen-2013/</link>
+      <link>https://rgangnon.org/publication/warrenandersen-2013/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/warrenandersen-2013/</guid>
+      <guid>https://rgangnon.org/publication/warrenandersen-2013/</guid>
       <description></description>
     </item>
     

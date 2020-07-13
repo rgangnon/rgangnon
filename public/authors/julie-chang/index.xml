@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julie Chang | Ronald Gangnon</title>
-    <link>/authors/julie-chang/</link>
-      <atom:link href="/authors/julie-chang/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/julie-chang/</link>
+      <atom:link href="https://rgangnon.org/authors/julie-chang/index.xml" rel="self" type="application/rss+xml" />
     <description>Julie Chang</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2008 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Julie Chang</title>
-      <link>/authors/julie-chang/</link>
+      <link>https://rgangnon.org/authors/julie-chang/</link>
     </image>
     
     <item>
       <title>Thalidomide maintenance following high-dose melphalan with autologous stem cell support in myeloma</title>
-      <link>/publication/chang-2008/</link>
+      <link>https://rgangnon.org/publication/chang-2008/</link>
       <pubDate>Sun, 01 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/chang-2008/</guid>
+      <guid>https://rgangnon.org/publication/chang-2008/</guid>
       <description></description>
     </item>
     

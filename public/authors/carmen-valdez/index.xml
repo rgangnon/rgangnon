@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Carmen Valdez | Ronald Gangnon</title>
-    <link>/authors/carmen-valdez/</link>
-      <atom:link href="/authors/carmen-valdez/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/carmen-valdez/</link>
+      <atom:link href="https://rgangnon.org/authors/carmen-valdez/index.xml" rel="self" type="application/rss+xml" />
     <description>Carmen Valdez</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Carmen Valdez</title>
-      <link>/authors/carmen-valdez/</link>
+      <link>https://rgangnon.org/authors/carmen-valdez/</link>
     </image>
     
     <item>
       <title>Food Insecurity and Housing Instability Partially Mediate the Association Between Maternal Depression and Child Problem Behavior</title>
-      <link>/publication/guerrero-2020/</link>
+      <link>https://rgangnon.org/publication/guerrero-2020/</link>
       <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/guerrero-2020/</guid>
+      <guid>https://rgangnon.org/publication/guerrero-2020/</guid>
       <description></description>
     </item>
     

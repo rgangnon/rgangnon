@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rose Vrtis | Ronald Gangnon</title>
-    <link>/authors/rose-vrtis/</link>
-      <atom:link href="/authors/rose-vrtis/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/rose-vrtis/</link>
+      <atom:link href="https://rgangnon.org/authors/rose-vrtis/index.xml" rel="self" type="application/rss+xml" />
     <description>Rose Vrtis</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Rose Vrtis</title>
-      <link>/authors/rose-vrtis/</link>
+      <link>https://rgangnon.org/authors/rose-vrtis/</link>
     </image>
     
     <item>
       <title>Association of rhinovirus species with common cold and asthma symptoms and bacterial pathogens</title>
-      <link>/publication/bashir-2018/</link>
+      <link>https://rgangnon.org/publication/bashir-2018/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/bashir-2018/</guid>
+      <guid>https://rgangnon.org/publication/bashir-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Detection of pathogenic bacteria during rhinovirus infection is associated with increased respiratory symptoms and asthma exacerbations</title>
-      <link>/publication/kloepfer-2014/</link>
+      <link>https://rgangnon.org/publication/kloepfer-2014/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/kloepfer-2014/</guid>
+      <guid>https://rgangnon.org/publication/kloepfer-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Increased H1N1 infection rate in children with asthma</title>
-      <link>/publication/kloepfer-2012/</link>
+      <link>https://rgangnon.org/publication/kloepfer-2012/</link>
       <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/kloepfer-2012/</guid>
+      <guid>https://rgangnon.org/publication/kloepfer-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Association between CD4(&#43;)CD25(high) T cells and atopy in children</title>
-      <link>/publication/jartti-2007/</link>
+      <link>https://rgangnon.org/publication/jartti-2007/</link>
       <pubDate>Sun, 01 Jul 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/jartti-2007/</guid>
+      <guid>https://rgangnon.org/publication/jartti-2007/</guid>
       <description></description>
     </item>
     

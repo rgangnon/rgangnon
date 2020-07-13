@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>G Du | Ronald Gangnon</title>
-    <link>/authors/g-du/</link>
-      <atom:link href="/authors/g-du/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/g-du/</link>
+      <atom:link href="https://rgangnon.org/authors/g-du/index.xml" rel="self" type="application/rss+xml" />
     <description>G Du</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>G Du</title>
-      <link>/authors/g-du/</link>
+      <link>https://rgangnon.org/authors/g-du/</link>
     </image>
     
     <item>
       <title>Genetic associations with viral respiratory illnesses and asthma control in children</title>
-      <link>/publication/loisel-2016/</link>
+      <link>https://rgangnon.org/publication/loisel-2016/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/loisel-2016/</guid>
+      <guid>https://rgangnon.org/publication/loisel-2016/</guid>
       <description></description>
     </item>
     

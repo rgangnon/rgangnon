@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>simulation modeling | Ronald Gangnon</title>
-    <link>/tags/simulation-modeling/</link>
-      <atom:link href="/tags/simulation-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/tags/simulation-modeling/</link>
+      <atom:link href="https://rgangnon.org/tags/simulation-modeling/index.xml" rel="self" type="application/rss+xml" />
     <description>simulation modeling</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>simulation modeling</title>
-      <link>/tags/simulation-modeling/</link>
+      <link>https://rgangnon.org/tags/simulation-modeling/</link>
     </image>
     
     <item>
       <title>CISNET</title>
-      <link>/project/cisnet/</link>
+      <link>https://rgangnon.org/project/cisnet/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/cisnet/</guid>
+      <guid>https://rgangnon.org/project/cisnet/</guid>
       <description></description>
     </item>
     

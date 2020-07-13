@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gloria Akan | Ronald Gangnon</title>
-    <link>/authors/gloria-akan/</link>
-      <atom:link href="/authors/gloria-akan/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/gloria-akan/</link>
+      <atom:link href="https://rgangnon.org/authors/gloria-akan/index.xml" rel="self" type="application/rss+xml" />
     <description>Gloria Akan</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2006 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Gloria Akan</title>
-      <link>/authors/gloria-akan/</link>
+      <link>https://rgangnon.org/authors/gloria-akan/</link>
     </image>
     
     <item>
       <title>Sex-related differences in immune development and the expression of atopy in early childhood</title>
-      <link>/publication/uekert-2006/</link>
+      <link>https://rgangnon.org/publication/uekert-2006/</link>
       <pubDate>Fri, 01 Dec 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/uekert-2006/</guid>
+      <guid>https://rgangnon.org/publication/uekert-2006/</guid>
       <description></description>
     </item>
     

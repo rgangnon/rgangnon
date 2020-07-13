@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Janice Jou | Ronald Gangnon</title>
-    <link>/authors/janice-jou/</link>
-      <atom:link href="/authors/janice-jou/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/janice-jou/</link>
+      <atom:link href="https://rgangnon.org/authors/janice-jou/index.xml" rel="self" type="application/rss+xml" />
     <description>Janice Jou</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2009 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Janice Jou</title>
-      <link>/authors/janice-jou/</link>
+      <link>https://rgangnon.org/authors/janice-jou/</link>
     </image>
     
     <item>
       <title>Esophageal clearance patterns in normal older adults as documented with videofluoroscopic esophagram</title>
-      <link>/publication/jou-2009/</link>
+      <link>https://rgangnon.org/publication/jou-2009/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>/publication/jou-2009/</guid>
+      <guid>https://rgangnon.org/publication/jou-2009/</guid>
       <description></description>
     </item>
     

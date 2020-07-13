@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abiola Keller | Ronald Gangnon</title>
-    <link>/authors/abiola-keller/</link>
-      <atom:link href="/authors/abiola-keller/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/abiola-keller/</link>
+      <atom:link href="https://rgangnon.org/authors/abiola-keller/index.xml" rel="self" type="application/rss+xml" />
     <description>Abiola Keller</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Abiola Keller</title>
-      <link>/authors/abiola-keller/</link>
+      <link>https://rgangnon.org/authors/abiola-keller/</link>
     </image>
     
     <item>
       <title>The impact of patient-provider communication and language spoken on adequacy of depression treatment for U.S. women</title>
-      <link>/publication/keller-2014/</link>
+      <link>https://rgangnon.org/publication/keller-2014/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/keller-2014/</guid>
+      <guid>https://rgangnon.org/publication/keller-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Favorable ratings of providers&#39; communication behaviors among U.S. women with depression: a population-based study applying the behavioral model of health services use</title>
-      <link>/publication/keller-2013/</link>
+      <link>https://rgangnon.org/publication/keller-2013/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/keller-2013/</guid>
+      <guid>https://rgangnon.org/publication/keller-2013/</guid>
       <description></description>
     </item>
     

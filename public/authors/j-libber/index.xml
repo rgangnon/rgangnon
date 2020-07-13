@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>J Libber | Ronald Gangnon</title>
-    <link>/authors/j-libber/</link>
-      <atom:link href="/authors/j-libber/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/j-libber/</link>
+      <atom:link href="https://rgangnon.org/authors/j-libber/index.xml" rel="self" type="application/rss+xml" />
     <description>J Libber</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>J Libber</title>
-      <link>/authors/j-libber/</link>
+      <link>https://rgangnon.org/authors/j-libber/</link>
     </image>
     
     <item>
       <title>Positioner and clothing artifact can affect one-third radius bone mineral density measurement</title>
-      <link>/publication/krueger-2013/</link>
+      <link>https://rgangnon.org/publication/krueger-2013/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/krueger-2013/</guid>
+      <guid>https://rgangnon.org/publication/krueger-2013/</guid>
       <description></description>
     </item>
     

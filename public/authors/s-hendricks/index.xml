@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S Hendricks | Ronald Gangnon</title>
-    <link>/authors/s-hendricks/</link>
-      <atom:link href="/authors/s-hendricks/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/s-hendricks/</link>
+      <atom:link href="https://rgangnon.org/authors/s-hendricks/index.xml" rel="self" type="application/rss+xml" />
     <description>S Hendricks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Mar 1999 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>S Hendricks</title>
-      <link>/authors/s-hendricks/</link>
+      <link>https://rgangnon.org/authors/s-hendricks/</link>
     </image>
     
     <item>
       <title>Multiple vs. single betamethasone therapy. Neonatal and maternal effects</title>
-      <link>/publication/pratt-1999/</link>
+      <link>https://rgangnon.org/publication/pratt-1999/</link>
       <pubDate>Mon, 01 Mar 1999 00:00:00 +0000</pubDate>
-      <guid>/publication/pratt-1999/</guid>
+      <guid>https://rgangnon.org/publication/pratt-1999/</guid>
       <description></description>
     </item>
     

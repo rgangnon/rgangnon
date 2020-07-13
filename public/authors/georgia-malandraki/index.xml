@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Georgia Malandraki | Ronald Gangnon</title>
-    <link>/authors/georgia-malandraki/</link>
-      <atom:link href="/authors/georgia-malandraki/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/georgia-malandraki/</link>
+      <atom:link href="https://rgangnon.org/authors/georgia-malandraki/index.xml" rel="self" type="application/rss+xml" />
     <description>Georgia Malandraki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Georgia Malandraki</title>
-      <link>/authors/georgia-malandraki/</link>
+      <link>https://rgangnon.org/authors/georgia-malandraki/</link>
     </image>
     
     <item>
       <title>The effects of lingual intervention in a patient with inclusion body myositis and SjÃ¶gren&#39;s syndrome: a longitudinal case study</title>
-      <link>/publication/malandraki-2012/</link>
+      <link>https://rgangnon.org/publication/malandraki-2012/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/malandraki-2012/</guid>
+      <guid>https://rgangnon.org/publication/malandraki-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The utility of pitch elevation in the evaluation of oropharyngeal Dysphagia: preliminary findings</title>
-      <link>/publication/malandraki-2011/</link>
+      <link>https://rgangnon.org/publication/malandraki-2011/</link>
       <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/malandraki-2011/</guid>
+      <guid>https://rgangnon.org/publication/malandraki-2011/</guid>
       <description></description>
     </item>
     

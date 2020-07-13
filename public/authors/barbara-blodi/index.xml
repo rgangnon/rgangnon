@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Barbara Blodi | Ronald Gangnon</title>
-    <link>/authors/barbara-blodi/</link>
-      <atom:link href="/authors/barbara-blodi/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/barbara-blodi/</link>
+      <atom:link href="https://rgangnon.org/authors/barbara-blodi/index.xml" rel="self" type="application/rss+xml" />
     <description>Barbara Blodi</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Aug 2004 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Barbara Blodi</title>
-      <link>/authors/barbara-blodi/</link>
+      <link>https://rgangnon.org/authors/barbara-blodi/</link>
     </image>
     
     <item>
       <title>Intravitreal triamcinolone for the treatment of macular edema associated with central retinal vein occlusion</title>
-      <link>/publication/ip-2004/</link>
+      <link>https://rgangnon.org/publication/ip-2004/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/ip-2004/</guid>
+      <guid>https://rgangnon.org/publication/ip-2004/</guid>
       <description></description>
     </item>
     

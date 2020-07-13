@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stephanie Morgan | Ronald Gangnon</title>
-    <link>/authors/stephanie-morgan/</link>
-      <atom:link href="/authors/stephanie-morgan/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/stephanie-morgan/</link>
+      <atom:link href="https://rgangnon.org/authors/stephanie-morgan/index.xml" rel="self" type="application/rss+xml" />
     <description>Stephanie Morgan</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Sep 2010 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Stephanie Morgan</title>
-      <link>/authors/stephanie-morgan/</link>
+      <link>https://rgangnon.org/authors/stephanie-morgan/</link>
     </image>
     
     <item>
       <title>The relationships among immunoglobulin levels, allergic sensitization, and viral respiratory illnesses in early childhood</title>
-      <link>/publication/possin-2010/</link>
+      <link>https://rgangnon.org/publication/possin-2010/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/possin-2010/</guid>
+      <guid>https://rgangnon.org/publication/possin-2010/</guid>
       <description></description>
     </item>
     

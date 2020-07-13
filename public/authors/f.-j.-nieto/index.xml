@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>F. J. Nieto | Ronald Gangnon</title>
-    <link>/authors/f.-j.-nieto/</link>
-      <atom:link href="/authors/f.-j.-nieto/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/f.-j.-nieto/</link>
+      <atom:link href="https://rgangnon.org/authors/f.-j.-nieto/index.xml" rel="self" type="application/rss+xml" />
     <description>F. J. Nieto</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>F. J. Nieto</title>
-      <link>/authors/f.-j.-nieto/</link>
+      <link>https://rgangnon.org/authors/f.-j.-nieto/</link>
     </image>
     
     <item>
       <title>Role of global stress in the health-related quality of life of caregivers: evidence from the Survey of the Health of Wisconsin</title>
-      <link>/publication/litzelman-2014/</link>
+      <link>https://rgangnon.org/publication/litzelman-2014/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/litzelman-2014/</guid>
+      <guid>https://rgangnon.org/publication/litzelman-2014/</guid>
       <description></description>
     </item>
     

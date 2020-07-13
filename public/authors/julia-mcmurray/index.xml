@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julia McMurray | Ronald Gangnon</title>
-    <link>/authors/julia-mcmurray/</link>
-      <atom:link href="/authors/julia-mcmurray/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/julia-mcmurray/</link>
+      <atom:link href="https://rgangnon.org/authors/julia-mcmurray/index.xml" rel="self" type="application/rss+xml" />
     <description>Julia McMurray</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2005 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Julia McMurray</title>
-      <link>/authors/julia-mcmurray/</link>
+      <link>https://rgangnon.org/authors/julia-mcmurray/</link>
     </image>
     
     <item>
       <title>Part-time medical practice: where is it headed?</title>
-      <link>/publication/mcmurray-2005/</link>
+      <link>https://rgangnon.org/publication/mcmurray-2005/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>/publication/mcmurray-2005/</guid>
+      <guid>https://rgangnon.org/publication/mcmurray-2005/</guid>
       <description></description>
     </item>
     

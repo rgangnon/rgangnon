@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dave Vanness | Ronald Gangnon</title>
-    <link>/authors/dave-vanness/</link>
-      <atom:link href="/authors/dave-vanness/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/dave-vanness/</link>
+      <atom:link href="https://rgangnon.org/authors/dave-vanness/index.xml" rel="self" type="application/rss+xml" />
     <description>Dave Vanness</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Dave Vanness</title>
-      <link>/authors/dave-vanness/</link>
+      <link>https://rgangnon.org/authors/dave-vanness/</link>
     </image>
     
     <item>
       <title>Obesity and mortality after locoregional breast cancer diagnosis</title>
-      <link>/publication/moore-2018/</link>
+      <link>https://rgangnon.org/publication/moore-2018/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/moore-2018/</guid>
+      <guid>https://rgangnon.org/publication/moore-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development of a novel, objective measure of health care-related financial burden for U.S. families with children</title>
-      <link>/publication/wisk-2014/</link>
+      <link>https://rgangnon.org/publication/wisk-2014/</link>
       <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/wisk-2014/</guid>
+      <guid>https://rgangnon.org/publication/wisk-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Three methods tested to model SF-6D health utilities for health states involving comorbidity/co-occurring conditions</title>
-      <link>/publication/hanmer-2010/</link>
+      <link>https://rgangnon.org/publication/hanmer-2010/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/hanmer-2010/</guid>
+      <guid>https://rgangnon.org/publication/hanmer-2010/</guid>
       <description></description>
     </item>
     

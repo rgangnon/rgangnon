@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>David Kim | Ronald Gangnon</title>
-    <link>/authors/david-kim/</link>
-      <atom:link href="/authors/david-kim/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/david-kim/</link>
+      <atom:link href="https://rgangnon.org/authors/david-kim/index.xml" rel="self" type="application/rss+xml" />
     <description>David Kim</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Sep 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>David Kim</title>
-      <link>/authors/david-kim/</link>
+      <link>https://rgangnon.org/authors/david-kim/</link>
     </image>
     
     <item>
       <title>Insurance Coverage for CT Colonography Screening: Impact on Overall Colorectal Cancer Screening Rates</title>
-      <link>/publication/smith-2017/</link>
+      <link>https://rgangnon.org/publication/smith-2017/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/smith-2017/</guid>
+      <guid>https://rgangnon.org/publication/smith-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Predictors of primary care provider adoption of CT colonography for colorectal cancer screening</title>
-      <link>/publication/weiss-2017/</link>
+      <link>https://rgangnon.org/publication/weiss-2017/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/weiss-2017/</guid>
+      <guid>https://rgangnon.org/publication/weiss-2017/</guid>
       <description></description>
     </item>
     

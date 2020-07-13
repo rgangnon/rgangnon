@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sarah Olson | Ronald Gangnon</title>
-    <link>/authors/sarah-olson/</link>
-      <atom:link href="/authors/sarah-olson/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/sarah-olson/</link>
+      <atom:link href="https://rgangnon.org/authors/sarah-olson/index.xml" rel="self" type="application/rss+xml" />
     <description>Sarah Olson</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jul 2010 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Sarah Olson</title>
-      <link>/authors/sarah-olson/</link>
+      <link>https://rgangnon.org/authors/sarah-olson/</link>
     </image>
     
     <item>
       <title>Deforestation and malaria in MÃ¢ncio Lima County, Brazil</title>
-      <link>/publication/olson-2010/</link>
+      <link>https://rgangnon.org/publication/olson-2010/</link>
       <pubDate>Thu, 01 Jul 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/olson-2010/</guid>
+      <guid>https://rgangnon.org/publication/olson-2010/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Links between climate, malaria, and wetlands in the Amazon Basin</title>
-      <link>/publication/olson-2009/</link>
+      <link>https://rgangnon.org/publication/olson-2009/</link>
       <pubDate>Wed, 01 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>/publication/olson-2009/</guid>
+      <guid>https://rgangnon.org/publication/olson-2009/</guid>
       <description></description>
     </item>
     

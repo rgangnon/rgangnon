@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nizar Jarjour | Ronald Gangnon</title>
-    <link>/authors/nizar-jarjour/</link>
-      <atom:link href="/authors/nizar-jarjour/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/nizar-jarjour/</link>
+      <atom:link href="https://rgangnon.org/authors/nizar-jarjour/index.xml" rel="self" type="application/rss+xml" />
     <description>Nizar Jarjour</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Nizar Jarjour</title>
-      <link>/authors/nizar-jarjour/</link>
+      <link>https://rgangnon.org/authors/nizar-jarjour/</link>
     </image>
     
     <item>
       <title>Association of obstructive sleep apnea risk or diagnosis with daytime asthma in adults</title>
-      <link>/publication/teodorescu-2012/</link>
+      <link>https://rgangnon.org/publication/teodorescu-2012/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/teodorescu-2012/</guid>
+      <guid>https://rgangnon.org/publication/teodorescu-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Association of obstructive sleep apnea risk with asthma control in adults</title>
-      <link>/publication/teodorescu-2010/</link>
+      <link>https://rgangnon.org/publication/teodorescu-2010/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/teodorescu-2010/</guid>
+      <guid>https://rgangnon.org/publication/teodorescu-2010/</guid>
       <description></description>
     </item>
     

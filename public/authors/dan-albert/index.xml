@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dan Albert | Ronald Gangnon</title>
-    <link>/authors/dan-albert/</link>
-      <atom:link href="/authors/dan-albert/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/dan-albert/</link>
+      <atom:link href="https://rgangnon.org/authors/dan-albert/index.xml" rel="self" type="application/rss+xml" />
     <description>Dan Albert</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2008 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Dan Albert</title>
-      <link>/authors/dan-albert/</link>
+      <link>https://rgangnon.org/authors/dan-albert/</link>
     </image>
     
     <item>
       <title>A study of histopathological features of latanoprost-treated irides with or without darkening compared with non-latanoprost-treated irides</title>
-      <link>/publication/albert-2008/</link>
+      <link>https://rgangnon.org/publication/albert-2008/</link>
       <pubDate>Thu, 01 May 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2008/</guid>
+      <guid>https://rgangnon.org/publication/albert-2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A study of iridectomy histopathologic features of latanoprost- and non-latanoprost-treated patients</title>
-      <link>/publication/albert-2004/</link>
+      <link>https://rgangnon.org/publication/albert-2004/</link>
       <pubDate>Mon, 01 Nov 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2004/</guid>
+      <guid>https://rgangnon.org/publication/albert-2004/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Iris melanocyte numbers in Asian, African American, and Caucasian irides</title>
-      <link>/publication/albert-2003/</link>
+      <link>https://rgangnon.org/publication/albert-2003/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2003/</guid>
+      <guid>https://rgangnon.org/publication/albert-2003/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Melanocytes and Iris Color: Electron Microscopic Findings</title>
-      <link>/publication/imesch-1996/</link>
+      <link>https://rgangnon.org/publication/imesch-1996/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/publication/imesch-1996/</guid>
+      <guid>https://rgangnon.org/publication/imesch-1996/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Christie Bartels | Ronald Gangnon</title>
-    <link>/authors/christie-bartels/</link>
-      <atom:link href="/authors/christie-bartels/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/christie-bartels/</link>
+      <atom:link href="https://rgangnon.org/authors/christie-bartels/index.xml" rel="self" type="application/rss+xml" />
     <description>Christie Bartels</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Mar 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Christie Bartels</title>
-      <link>/authors/christie-bartels/</link>
+      <link>https://rgangnon.org/authors/christie-bartels/</link>
     </image>
     
     <item>
       <title>An evaluation of high-dose vitamin D for rheumatoid arthritis</title>
-      <link>/publication/hansen-2014/</link>
+      <link>https://rgangnon.org/publication/hansen-2014/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/hansen-2014/</guid>
+      <guid>https://rgangnon.org/publication/hansen-2014/</guid>
       <description></description>
     </item>
     

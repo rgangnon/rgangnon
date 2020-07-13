@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Carmen Puliafito | Ronald Gangnon</title>
-    <link>/authors/carmen-puliafito/</link>
-      <atom:link href="/authors/carmen-puliafito/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/carmen-puliafito/</link>
+      <atom:link href="https://rgangnon.org/authors/carmen-puliafito/index.xml" rel="self" type="application/rss+xml" />
     <description>Carmen Puliafito</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Aug 2004 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Carmen Puliafito</title>
-      <link>/authors/carmen-puliafito/</link>
+      <link>https://rgangnon.org/authors/carmen-puliafito/</link>
     </image>
     
     <item>
       <title>Intravitreal triamcinolone for the treatment of macular edema associated with central retinal vein occlusion</title>
-      <link>/publication/ip-2004/</link>
+      <link>https://rgangnon.org/publication/ip-2004/</link>
       <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/ip-2004/</guid>
+      <guid>https://rgangnon.org/publication/ip-2004/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Anatomical outcomes of surgery for idiopathic macular hole as determined by optical coherence tomography</title>
-      <link>/publication/ip-2002/</link>
+      <link>https://rgangnon.org/publication/ip-2002/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>/publication/ip-2002/</guid>
+      <guid>https://rgangnon.org/publication/ip-2002/</guid>
       <description></description>
     </item>
     

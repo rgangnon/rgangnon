@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Daniel Taglia | Ronald Gangnon</title>
-    <link>/authors/daniel-taglia/</link>
-      <atom:link href="/authors/daniel-taglia/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/daniel-taglia/</link>
+      <atom:link href="https://rgangnon.org/authors/daniel-taglia/index.xml" rel="self" type="application/rss+xml" />
     <description>Daniel Taglia</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2002 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Daniel Taglia</title>
-      <link>/authors/daniel-taglia/</link>
+      <link>https://rgangnon.org/authors/daniel-taglia/</link>
     </image>
     
     <item>
       <title>Comparison of the Ahmed Glaucoma Valve, the Krupin Eye Valve with Disk, and the double-plate Molteno implant</title>
-      <link>/publication/tagila-2002/</link>
+      <link>https://rgangnon.org/publication/tagila-2002/</link>
       <pubDate>Thu, 01 Aug 2002 00:00:00 +0000</pubDate>
-      <guid>/publication/tagila-2002/</guid>
+      <guid>https://rgangnon.org/publication/tagila-2002/</guid>
       <description></description>
     </item>
     

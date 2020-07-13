@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Christopher Veal | Ronald Gangnon</title>
-    <link>/authors/christopher-veal/</link>
-      <atom:link href="/authors/christopher-veal/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/christopher-veal/</link>
+      <atom:link href="https://rgangnon.org/authors/christopher-veal/index.xml" rel="self" type="application/rss+xml" />
     <description>Christopher Veal</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Christopher Veal</title>
-      <link>/authors/christopher-veal/</link>
+      <link>https://rgangnon.org/authors/christopher-veal/</link>
     </image>
     
     <item>
       <title>The association between post-diagnosis health behaviors and long-term quality of life in survivors of ductal carcinoma in situ: a population-based longitudinal cohort study</title>
-      <link>/publication/hart-2018/</link>
+      <link>https://rgangnon.org/publication/hart-2018/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/hart-2018/</guid>
+      <guid>https://rgangnon.org/publication/hart-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Health-related behaviors and mortality outcomes in women diagnosed with ductal carcinoma in situ</title>
-      <link>/publication/veal-2017/</link>
+      <link>https://rgangnon.org/publication/veal-2017/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/veal-2017/</guid>
+      <guid>https://rgangnon.org/publication/veal-2017/</guid>
       <description></description>
     </item>
     

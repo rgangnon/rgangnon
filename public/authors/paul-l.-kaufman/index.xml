@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Paul L. Kaufman | Ronald Gangnon</title>
-    <link>/authors/paul-l.-kaufman/</link>
-      <atom:link href="/authors/paul-l.-kaufman/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/paul-l.-kaufman/</link>
+      <atom:link href="https://rgangnon.org/authors/paul-l.-kaufman/index.xml" rel="self" type="application/rss+xml" />
     <description>Paul L. Kaufman</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 1998 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Paul L. Kaufman</title>
-      <link>/authors/paul-l.-kaufman/</link>
+      <link>https://rgangnon.org/authors/paul-l.-kaufman/</link>
     </image>
     
     <item>
       <title>The rarity of clinically significant rise in intraocular pressure after laser peripheral iridotomy with apraclonidine</title>
-      <link>/publication/lewis-1998/</link>
+      <link>https://rgangnon.org/publication/lewis-1998/</link>
       <pubDate>Tue, 01 Dec 1998 00:00:00 +0000</pubDate>
-      <guid>/publication/lewis-1998/</guid>
+      <guid>https://rgangnon.org/publication/lewis-1998/</guid>
       <description></description>
     </item>
     

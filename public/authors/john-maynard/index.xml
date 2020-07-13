@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Maynard | Ronald Gangnon</title>
-    <link>/authors/john-maynard/</link>
-      <atom:link href="/authors/john-maynard/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/john-maynard/</link>
+      <atom:link href="https://rgangnon.org/authors/john-maynard/index.xml" rel="self" type="application/rss+xml" />
     <description>John Maynard</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>John Maynard</title>
-      <link>/authors/john-maynard/</link>
+      <link>https://rgangnon.org/authors/john-maynard/</link>
     </image>
     
     <item>
       <title>Skin Intrinsic Fluorescence and Age-Related Macular Degeneration: The Beaver Dam Eye Study</title>
-      <link>/publication/klein-2017b/</link>
+      <link>https://rgangnon.org/publication/klein-2017b/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2017b/</guid>
+      <guid>https://rgangnon.org/publication/klein-2017b/</guid>
       <description></description>
     </item>
     

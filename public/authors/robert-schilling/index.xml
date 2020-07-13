@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Robert Schilling | Ronald Gangnon</title>
-    <link>/authors/robert-schilling/</link>
-      <atom:link href="/authors/robert-schilling/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/robert-schilling/</link>
+      <atom:link href="https://rgangnon.org/authors/robert-schilling/index.xml" rel="self" type="application/rss+xml" />
     <description>Robert Schilling</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Aug 2008 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Robert Schilling</title>
-      <link>/authors/robert-schilling/</link>
+      <link>https://rgangnon.org/authors/robert-schilling/</link>
     </image>
     
     <item>
       <title>Delayed adverse vascular events after splenectomy in hereditary spherocytosis</title>
-      <link>/publication/schilling-2008/</link>
+      <link>https://rgangnon.org/publication/schilling-2008/</link>
       <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/schilling-2008/</guid>
+      <guid>https://rgangnon.org/publication/schilling-2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Arteriosclerotic events are less frequent in persons with chronic anemia: evidence from families with hereditary spherocytosis</title>
-      <link>/publication/schilling-2006/</link>
+      <link>https://rgangnon.org/publication/schilling-2006/</link>
       <pubDate>Mon, 01 May 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/schilling-2006/</guid>
+      <guid>https://rgangnon.org/publication/schilling-2006/</guid>
       <description></description>
     </item>
     

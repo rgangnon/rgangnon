@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Karen Hansen | Ronald Gangnon</title>
-    <link>/authors/karen-hansen/</link>
-      <atom:link href="/authors/karen-hansen/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/karen-hansen/</link>
+      <atom:link href="https://rgangnon.org/authors/karen-hansen/index.xml" rel="self" type="application/rss+xml" />
     <description>Karen Hansen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Mar 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Karen Hansen</title>
-      <link>/authors/karen-hansen/</link>
+      <link>https://rgangnon.org/authors/karen-hansen/</link>
     </image>
     
     <item>
       <title>An evaluation of high-dose vitamin D for rheumatoid arthritis</title>
-      <link>/publication/hansen-2014/</link>
+      <link>https://rgangnon.org/publication/hansen-2014/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/hansen-2014/</guid>
+      <guid>https://rgangnon.org/publication/hansen-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The effect of physician workload on an educational intervention to increase vitamin D screening</title>
-      <link>/publication/kramm-2010/</link>
+      <link>https://rgangnon.org/publication/kramm-2010/</link>
       <pubDate>Tue, 01 Jun 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/kramm-2010/</guid>
+      <guid>https://rgangnon.org/publication/kramm-2010/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Use of a questionnaire to assess vitamin D status in young adults</title>
-      <link>/publication/bolekberquist-2009/</link>
+      <link>https://rgangnon.org/publication/bolekberquist-2009/</link>
       <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>/publication/bolekberquist-2009/</guid>
+      <guid>https://rgangnon.org/publication/bolekberquist-2009/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The efficacy of switching from etanercept to infliximab in patients with rheumatoid arthritis</title>
-      <link>/publication/hansen-2004/</link>
+      <link>https://rgangnon.org/publication/hansen-2004/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/hansen-2004/</guid>
+      <guid>https://rgangnon.org/publication/hansen-2004/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Use of the lowest vertebral body T-score to diagnose lumbar osteoporosis in men: is &#34;cherry picking&#34; appropriate?</title>
-      <link>/publication/hansen-2004b/</link>
+      <link>https://rgangnon.org/publication/hansen-2004b/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/hansen-2004b/</guid>
+      <guid>https://rgangnon.org/publication/hansen-2004b/</guid>
       <description></description>
     </item>
     

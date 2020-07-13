@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jennifer Dreyer | Ronald Gangnon</title>
-    <link>/authors/jennifer-dreyer/</link>
-      <atom:link href="/authors/jennifer-dreyer/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/jennifer-dreyer/</link>
+      <atom:link href="https://rgangnon.org/authors/jennifer-dreyer/index.xml" rel="self" type="application/rss+xml" />
     <description>Jennifer Dreyer</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jennifer Dreyer</title>
-      <link>/authors/jennifer-dreyer/</link>
+      <link>https://rgangnon.org/authors/jennifer-dreyer/</link>
     </image>
     
     <item>
       <title>Long-term use of aspirin and age-related macular degeneration</title>
-      <link>/publication/klein-2012c/</link>
+      <link>https://rgangnon.org/publication/klein-2012c/</link>
       <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2012c/</guid>
+      <guid>https://rgangnon.org/publication/klein-2012c/</guid>
       <description></description>
     </item>
     

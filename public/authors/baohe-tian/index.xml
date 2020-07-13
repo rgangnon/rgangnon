@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Baohe Tian | Ronald Gangnon</title>
-    <link>/authors/baohe-tian/</link>
-      <atom:link href="/authors/baohe-tian/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/baohe-tian/</link>
+      <atom:link href="https://rgangnon.org/authors/baohe-tian/index.xml" rel="self" type="application/rss+xml" />
     <description>Baohe Tian</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Apr 1999 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Baohe Tian</title>
-      <link>/authors/baohe-tian/</link>
+      <link>https://rgangnon.org/authors/baohe-tian/</link>
     </image>
     
     <item>
       <title>Latrunculin-A increases outflow facility in the monkey</title>
-      <link>/publication/peterson-1999/</link>
+      <link>https://rgangnon.org/publication/peterson-1999/</link>
       <pubDate>Thu, 01 Apr 1999 00:00:00 +0000</pubDate>
-      <guid>/publication/peterson-1999/</guid>
+      <guid>https://rgangnon.org/publication/peterson-1999/</guid>
       <description></description>
     </item>
     

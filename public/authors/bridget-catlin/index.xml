@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bridget Catlin | Ronald Gangnon</title>
-    <link>/authors/bridget-catlin/</link>
-      <atom:link href="/authors/bridget-catlin/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/bridget-catlin/</link>
+      <atom:link href="https://rgangnon.org/authors/bridget-catlin/index.xml" rel="self" type="application/rss+xml" />
     <description>Bridget Catlin</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Bridget Catlin</title>
-      <link>/authors/bridget-catlin/</link>
+      <link>https://rgangnon.org/authors/bridget-catlin/</link>
     </image>
     
     <item>
       <title>Using empirical Bayes methods to rank counties on population health measures</title>
-      <link>/publication/athens-2013/</link>
+      <link>https://rgangnon.org/publication/athens-2013/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/athens-2013/</guid>
+      <guid>https://rgangnon.org/publication/athens-2013/</guid>
       <description></description>
     </item>
     

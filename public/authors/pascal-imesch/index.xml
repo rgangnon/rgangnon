@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pascal Imesch | Ronald Gangnon</title>
-    <link>/authors/pascal-imesch/</link>
-      <atom:link href="/authors/pascal-imesch/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/pascal-imesch/</link>
+      <atom:link href="https://rgangnon.org/authors/pascal-imesch/index.xml" rel="self" type="application/rss+xml" />
     <description>Pascal Imesch</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 1996 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Pascal Imesch</title>
-      <link>/authors/pascal-imesch/</link>
+      <link>https://rgangnon.org/authors/pascal-imesch/</link>
     </image>
     
     <item>
       <title>Melanocytes and Iris Color: Electron Microscopic Findings</title>
-      <link>/publication/imesch-1996/</link>
+      <link>https://rgangnon.org/publication/imesch-1996/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>/publication/imesch-1996/</guid>
+      <guid>https://rgangnon.org/publication/imesch-1996/</guid>
       <description></description>
     </item>
     

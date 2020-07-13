@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alice McCoy | Ronald Gangnon</title>
-    <link>/authors/alice-mccoy/</link>
-      <atom:link href="/authors/alice-mccoy/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/alice-mccoy/</link>
+      <atom:link href="https://rgangnon.org/authors/alice-mccoy/index.xml" rel="self" type="application/rss+xml" />
     <description>Alice McCoy</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2004 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Alice McCoy</title>
-      <link>/authors/alice-mccoy/</link>
+      <link>https://rgangnon.org/authors/alice-mccoy/</link>
     </image>
     
     <item>
       <title>A novel preparative regimen for autologous transplant in non-Hodgkin&#39;s lymphoma: long-term experience with etoposide and thiotepa</title>
-      <link>/publication/mccoy-2004/</link>
+      <link>https://rgangnon.org/publication/mccoy-2004/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/mccoy-2004/</guid>
+      <guid>https://rgangnon.org/publication/mccoy-2004/</guid>
       <description></description>
     </item>
     

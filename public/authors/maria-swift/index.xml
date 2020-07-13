@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maria Swift | Ronald Gangnon</title>
-    <link>/authors/maria-swift/</link>
-      <atom:link href="/authors/maria-swift/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/maria-swift/</link>
+      <atom:link href="https://rgangnon.org/authors/maria-swift/index.xml" rel="self" type="application/rss+xml" />
     <description>Maria Swift</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2007 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Maria Swift</title>
-      <link>/authors/maria-swift/</link>
+      <link>https://rgangnon.org/authors/maria-swift/</link>
     </image>
     
     <item>
       <title>Fifteen-year cumulative incidence of age-related macular degeneration: the Beaver Dam Eye Study</title>
-      <link>/publication/klein-2007/</link>
+      <link>https://rgangnon.org/publication/klein-2007/</link>
       <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2007/</guid>
+      <guid>https://rgangnon.org/publication/klein-2007/</guid>
       <description></description>
     </item>
     

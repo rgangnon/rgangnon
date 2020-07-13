@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Richard Green | Ronald Gangnon</title>
-    <link>/authors/richard-green/</link>
-      <atom:link href="/authors/richard-green/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/richard-green/</link>
+      <atom:link href="https://rgangnon.org/authors/richard-green/index.xml" rel="self" type="application/rss+xml" />
     <description>Richard Green</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2008 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Richard Green</title>
-      <link>/authors/richard-green/</link>
+      <link>https://rgangnon.org/authors/richard-green/</link>
     </image>
     
     <item>
       <title>A study of histopathological features of latanoprost-treated irides with or without darkening compared with non-latanoprost-treated irides</title>
-      <link>/publication/albert-2008/</link>
+      <link>https://rgangnon.org/publication/albert-2008/</link>
       <pubDate>Thu, 01 May 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2008/</guid>
+      <guid>https://rgangnon.org/publication/albert-2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A study of iridectomy histopathologic features of latanoprost- and non-latanoprost-treated patients</title>
-      <link>/publication/albert-2004/</link>
+      <link>https://rgangnon.org/publication/albert-2004/</link>
       <pubDate>Mon, 01 Nov 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2004/</guid>
+      <guid>https://rgangnon.org/publication/albert-2004/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Iris melanocyte numbers in Asian, African American, and Caucasian irides</title>
-      <link>/publication/albert-2003/</link>
+      <link>https://rgangnon.org/publication/albert-2003/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2003/</guid>
+      <guid>https://rgangnon.org/publication/albert-2003/</guid>
       <description></description>
     </item>
     

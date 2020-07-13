@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>D Stoltz | Ronald Gangnon</title>
-    <link>/authors/d-stoltz/</link>
-      <atom:link href="/authors/d-stoltz/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/d-stoltz/</link>
+      <atom:link href="https://rgangnon.org/authors/d-stoltz/index.xml" rel="self" type="application/rss+xml" />
     <description>D Stoltz</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Feb 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>D Stoltz</title>
-      <link>/authors/d-stoltz/</link>
+      <link>https://rgangnon.org/authors/d-stoltz/</link>
     </image>
     
     <item>
       <title>Specific patterns of allergic sensitization in early childhood and asthma &amp; rhinitis risk</title>
-      <link>/publication/stoltz-2013/</link>
+      <link>https://rgangnon.org/publication/stoltz-2013/</link>
       <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/stoltz-2013/</guid>
+      <guid>https://rgangnon.org/publication/stoltz-2013/</guid>
       <description></description>
     </item>
     

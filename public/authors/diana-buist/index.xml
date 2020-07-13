@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diana Buist | Ronald Gangnon</title>
-    <link>/authors/diana-buist/</link>
-      <atom:link href="/authors/diana-buist/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/diana-buist/</link>
+      <atom:link href="https://rgangnon.org/authors/diana-buist/index.xml" rel="self" type="application/rss+xml" />
     <description>Diana Buist</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Diana Buist</title>
-      <link>/authors/diana-buist/</link>
+      <link>https://rgangnon.org/authors/diana-buist/</link>
     </image>
     
     <item>
       <title>The vitamin D pathway and mammographic breast density among postmenopausal women</title>
-      <link>/publication/sprague-2012/</link>
+      <link>https://rgangnon.org/publication/sprague-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2012/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Circulating sex hormones and mammographic breast density among postmenopausal women</title>
-      <link>/publication/sprague-2011/</link>
+      <link>https://rgangnon.org/publication/sprague-2011/</link>
       <pubDate>Tue, 01 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2011/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2011/</guid>
       <description></description>
     </item>
     

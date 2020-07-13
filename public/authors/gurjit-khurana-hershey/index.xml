@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gurjit Khurana Hershey | Ronald Gangnon</title>
-    <link>/authors/gurjit-khurana-hershey/</link>
-      <atom:link href="/authors/gurjit-khurana-hershey/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/gurjit-khurana-hershey/</link>
+      <atom:link href="https://rgangnon.org/authors/gurjit-khurana-hershey/index.xml" rel="self" type="application/rss+xml" />
     <description>Gurjit Khurana Hershey</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Gurjit Khurana Hershey</title>
-      <link>/authors/gurjit-khurana-hershey/</link>
+      <link>https://rgangnon.org/authors/gurjit-khurana-hershey/</link>
     </image>
     
     <item>
       <title>Expression quantitative trait locus fine mapping of the 17q12–21 asthma locus in African American children: a genetic association and gene expression study</title>
-      <link>/publication/ober-2020/</link>
+      <link>https://rgangnon.org/publication/ober-2020/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/ober-2020/</guid>
+      <guid>https://rgangnon.org/publication/ober-2020/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>J. Engelke | Ronald Gangnon</title>
-    <link>/authors/j.-engelke/</link>
-      <atom:link href="/authors/j.-engelke/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/j.-engelke/</link>
+      <atom:link href="https://rgangnon.org/authors/j.-engelke/index.xml" rel="self" type="application/rss+xml" />
     <description>J. Engelke</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>J. Engelke</title>
-      <link>/authors/j.-engelke/</link>
+      <link>https://rgangnon.org/authors/j.-engelke/</link>
     </image>
     
     <item>
       <title>Evaluation of ergocalciferol or cholecalciferol dosing, 1,600 IU daily or 50,000 IU monthly in older adults</title>
-      <link>/publication/binkley-2011/</link>
+      <link>https://rgangnon.org/publication/binkley-2011/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/binkley-2011/</guid>
+      <guid>https://rgangnon.org/publication/binkley-2011/</guid>
       <description></description>
     </item>
     

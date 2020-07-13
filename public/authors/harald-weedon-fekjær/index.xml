@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Harald Weedon-Fekjær | Ronald Gangnon</title>
-    <link>/authors/harald-weedon-fekj%C3%A6r/</link>
-      <atom:link href="/authors/harald-weedon-fekj%C3%A6r/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/harald-weedon-fekj%C3%A6r/</link>
+      <atom:link href="https://rgangnon.org/authors/harald-weedon-fekj%C3%A6r/index.xml" rel="self" type="application/rss+xml" />
     <description>Harald Weedon-Fekjær</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Harald Weedon-Fekjær</title>
-      <link>/authors/harald-weedon-fekj%C3%A6r/</link>
+      <link>https://rgangnon.org/authors/harald-weedon-fekj%C3%A6r/</link>
     </image>
     
     <item>
       <title>The contribution of mammography screening to breast cancer incidence trends in the United States: an updated age-period-cohort model</title>
-      <link>/publication/gangnon-2015b/</link>
+      <link>https://rgangnon.org/publication/gangnon-2015b/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/gangnon-2015b/</guid>
+      <guid>https://rgangnon.org/publication/gangnon-2015b/</guid>
       <description></description>
     </item>
     

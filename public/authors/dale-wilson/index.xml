@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dale Wilson | Ronald Gangnon</title>
-    <link>/authors/dale-wilson/</link>
-      <atom:link href="/authors/dale-wilson/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/dale-wilson/</link>
+      <atom:link href="https://rgangnon.org/authors/dale-wilson/index.xml" rel="self" type="application/rss+xml" />
     <description>Dale Wilson</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Dale Wilson</title>
-      <link>/authors/dale-wilson/</link>
+      <link>https://rgangnon.org/authors/dale-wilson/</link>
     </image>
     
     <item>
       <title>Disseminating Tai Chi in the Community: Promoting Home Practice and Improving Balance</title>
-      <link>/publication/chewning-2019/</link>
+      <link>https://rgangnon.org/publication/chewning-2019/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/chewning-2019/</guid>
+      <guid>https://rgangnon.org/publication/chewning-2019/</guid>
       <description></description>
     </item>
     

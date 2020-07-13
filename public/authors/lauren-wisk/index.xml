@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lauren Wisk | Ronald Gangnon</title>
-    <link>/authors/lauren-wisk/</link>
-      <atom:link href="/authors/lauren-wisk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/lauren-wisk/</link>
+      <atom:link href="https://rgangnon.org/authors/lauren-wisk/index.xml" rel="self" type="application/rss+xml" />
     <description>Lauren Wisk</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Dec 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Lauren Wisk</title>
-      <link>/authors/lauren-wisk/</link>
+      <link>https://rgangnon.org/authors/lauren-wisk/</link>
     </image>
     
     <item>
       <title>Development of a novel, objective measure of health care-related financial burden for U.S. families with children</title>
-      <link>/publication/wisk-2014/</link>
+      <link>https://rgangnon.org/publication/wisk-2014/</link>
       <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/wisk-2014/</guid>
+      <guid>https://rgangnon.org/publication/wisk-2014/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Healthcare-Related Financial Burden among Families in the U.S.: The Role of Childhood Activity Limitations and Income</title>
-      <link>/publication/witt-2011/</link>
+      <link>https://rgangnon.org/publication/witt-2011/</link>
       <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/witt-2011/</guid>
+      <guid>https://rgangnon.org/publication/witt-2011/</guid>
       <description></description>
     </item>
     

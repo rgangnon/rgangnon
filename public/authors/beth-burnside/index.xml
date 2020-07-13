@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beth Burnside | Ronald Gangnon</title>
-    <link>/authors/beth-burnside/</link>
-      <atom:link href="/authors/beth-burnside/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/beth-burnside/</link>
+      <atom:link href="https://rgangnon.org/authors/beth-burnside/index.xml" rel="self" type="application/rss+xml" />
     <description>Beth Burnside</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Beth Burnside</title>
-      <link>/authors/beth-burnside/</link>
+      <link>https://rgangnon.org/authors/beth-burnside/</link>
     </image>
     
     <item>
       <title>Urinary Magnesium and Other Elements in Relation to Mammographic Breast Density, a Measure of Breast Cancer Risk</title>
-      <link>/publication/morapinzon-2018/</link>
+      <link>https://rgangnon.org/publication/morapinzon-2018/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/morapinzon-2018/</guid>
+      <guid>https://rgangnon.org/publication/morapinzon-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparative effectiveness of incorporating a hypothetical DCIS prognostic marker into breast cancer screening</title>
-      <link>/publication/trenthamdietz-2018/</link>
+      <link>https://rgangnon.org/publication/trenthamdietz-2018/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/trenthamdietz-2018/</guid>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The vitamin D pathway and mammographic breast density among postmenopausal women</title>
-      <link>/publication/sprague-2012/</link>
+      <link>https://rgangnon.org/publication/sprague-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2012/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Circulating sex hormones and mammographic breast density among postmenopausal women</title>
-      <link>/publication/sprague-2011/</link>
+      <link>https://rgangnon.org/publication/sprague-2011/</link>
       <pubDate>Tue, 01 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2011/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2011/</guid>
       <description></description>
     </item>
     

@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mari Palta | Ronald Gangnon</title>
-    <link>/authors/mari-palta/</link>
-      <atom:link href="/authors/mari-palta/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/mari-palta/</link>
+      <atom:link href="https://rgangnon.org/authors/mari-palta/index.xml" rel="self" type="application/rss+xml" />
     <description>Mari Palta</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Sep 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Mari Palta</title>
-      <link>/authors/mari-palta/</link>
+      <link>https://rgangnon.org/authors/mari-palta/</link>
     </image>
     
     <item>
       <title>Using propensity scores to reduce case-control selection bias</title>
-      <link>/publication/walsh-2012b/</link>
+      <link>https://rgangnon.org/publication/walsh-2012b/</link>
       <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/walsh-2012b/</guid>
+      <guid>https://rgangnon.org/publication/walsh-2012b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Selection bias in population-based cancer case-control studies due to incomplete sampling frame coverage</title>
-      <link>/publication/walsh-2012/</link>
+      <link>https://rgangnon.org/publication/walsh-2012/</link>
       <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/walsh-2012/</guid>
+      <guid>https://rgangnon.org/publication/walsh-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Three methods tested to model SF-6D health utilities for health states involving comorbidity/co-occurring conditions</title>
-      <link>/publication/hanmer-2010/</link>
+      <link>https://rgangnon.org/publication/hanmer-2010/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/hanmer-2010/</guid>
+      <guid>https://rgangnon.org/publication/hanmer-2010/</guid>
       <description></description>
     </item>
     

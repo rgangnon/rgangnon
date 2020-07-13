@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kami Silk | Ronald Gangnon</title>
-    <link>/authors/kami-silk/</link>
-      <atom:link href="/authors/kami-silk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/kami-silk/</link>
+      <atom:link href="https://rgangnon.org/authors/kami-silk/index.xml" rel="self" type="application/rss+xml" />
     <description>Kami Silk</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Kami Silk</title>
-      <link>/authors/kami-silk/</link>
+      <link>https://rgangnon.org/authors/kami-silk/</link>
     </image>
     
     <item>
       <title>Environmental exposures during windows of susceptibility for breast cancer: a framework for prevention research</title>
-      <link>/publication/terry-2019/</link>
+      <link>https://rgangnon.org/publication/terry-2019/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/terry-2019/</guid>
+      <guid>https://rgangnon.org/publication/terry-2019/</guid>
       <description></description>
     </item>
     

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matt Walsh | Ronald Gangnon</title>
-    <link>/authors/matt-walsh/</link>
-      <atom:link href="/authors/matt-walsh/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/matt-walsh/</link>
+      <atom:link href="https://rgangnon.org/authors/matt-walsh/index.xml" rel="self" type="application/rss+xml" />
     <description>Matt Walsh</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Sep 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Matt Walsh</title>
-      <link>/authors/matt-walsh/</link>
+      <link>https://rgangnon.org/authors/matt-walsh/</link>
     </image>
     
     <item>
       <title>Using propensity scores to reduce case-control selection bias</title>
-      <link>/publication/walsh-2012b/</link>
+      <link>https://rgangnon.org/publication/walsh-2012b/</link>
       <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/walsh-2012b/</guid>
+      <guid>https://rgangnon.org/publication/walsh-2012b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Selection bias in population-based cancer case-control studies due to incomplete sampling frame coverage</title>
-      <link>/publication/walsh-2012/</link>
+      <link>https://rgangnon.org/publication/walsh-2012/</link>
       <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/walsh-2012/</guid>
+      <guid>https://rgangnon.org/publication/walsh-2012/</guid>
       <description></description>
     </item>
     

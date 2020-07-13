@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jane McElroy | Ronald Gangnon</title>
-    <link>/authors/jane-mcelroy/</link>
-      <atom:link href="/authors/jane-mcelroy/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/jane-mcelroy/</link>
+      <atom:link href="https://rgangnon.org/authors/jane-mcelroy/index.xml" rel="self" type="application/rss+xml" />
     <description>Jane McElroy</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jane McElroy</title>
-      <link>/authors/jane-mcelroy/</link>
+      <link>https://rgangnon.org/authors/jane-mcelroy/</link>
     </image>
     
     <item>
       <title>Cadmium exposure and endometrial cancer risk: A large midwestern U.S. population-based case-control study</title>
-      <link>/publication/mcelroy-2017/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2017/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modeling geographic risk of complex congenital heart defects in Eastern Wisconsin</title>
-      <link>/publication/cronk-2011/</link>
+      <link>https://rgangnon.org/publication/cronk-2011/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/cronk-2011/</guid>
+      <guid>https://rgangnon.org/publication/cronk-2011/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nitrogen-nitrate exposure from drinking water and colorectal cancer risk for rural women in Wisconsin, USA</title>
-      <link>/publication/mcelroy-2008b/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2008b/</link>
       <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2008b/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2008b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Urinary lead exposure and breast cancer risk in a population-based case-control study</title>
-      <link>/publication/mcelroy-2008/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2008/</link>
       <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2008/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Trends in kidney transplantation rates and disparities</title>
-      <link>/publication/stolzmann-2007/</link>
+      <link>https://rgangnon.org/publication/stolzmann-2007/</link>
       <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/stolzmann-2007/</guid>
+      <guid>https://rgangnon.org/publication/stolzmann-2007/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Risk of breast cancer for women living in rural areas from adult exposure to atrazine from well water in Wisconsin</title>
-      <link>/publication/mcelroy-2007/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2007/</link>
       <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2007/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2007/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Identifying geographic disparities in the early detection of breast cancer using a geographic information system</title>
-      <link>/publication/mcelroy-2006/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2006/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2006/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2006/</guid>
       <description></description>
     </item>
     

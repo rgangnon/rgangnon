@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Junho Lee | Ronald Gangnon</title>
-    <link>/authors/junho-lee/</link>
-      <atom:link href="/authors/junho-lee/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/junho-lee/</link>
+      <atom:link href="https://rgangnon.org/authors/junho-lee/index.xml" rel="self" type="application/rss+xml" />
     <description>Junho Lee</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Sep 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Junho Lee</title>
-      <link>/authors/junho-lee/</link>
+      <link>https://rgangnon.org/authors/junho-lee/</link>
     </image>
     
     <item>
       <title>Uncertainty of a detected spatial cluster in 1D:quantification and visualization</title>
-      <link>/publication/lee-2017b/</link>
+      <link>https://rgangnon.org/publication/lee-2017b/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/lee-2017b/</guid>
+      <guid>https://rgangnon.org/publication/lee-2017b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cluster detection of spatial regression coefficients</title>
-      <link>/publication/lee-2017/</link>
+      <link>https://rgangnon.org/publication/lee-2017/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/lee-2017/</guid>
+      <guid>https://rgangnon.org/publication/lee-2017/</guid>
       <description></description>
     </item>
     

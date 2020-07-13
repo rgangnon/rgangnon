@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leann Andersen | Ronald Gangnon</title>
-    <link>/authors/leann-andersen/</link>
-      <atom:link href="/authors/leann-andersen/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/leann-andersen/</link>
+      <atom:link href="https://rgangnon.org/authors/leann-andersen/index.xml" rel="self" type="application/rss+xml" />
     <description>Leann Andersen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2006 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Leann Andersen</title>
-      <link>/authors/leann-andersen/</link>
+      <link>https://rgangnon.org/authors/leann-andersen/</link>
     </image>
     
     <item>
       <title>Identifying geographic disparities in the early detection of breast cancer using a geographic information system</title>
-      <link>/publication/mcelroy-2006/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2006/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2006/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2006/</guid>
       <description></description>
     </item>
     

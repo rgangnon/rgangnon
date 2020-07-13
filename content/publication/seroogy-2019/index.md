@@ -2,8 +2,8 @@
 title: "Respiratory health, allergies, and the farm environment: design, methods and enrollment in the observational Wisconsin Infant Study Cohort (WISC): a research proposal"
 date: 2019-07-01
 publishDate: 2020-02-08T06:30:32.674080Z
-authors: [Christ Seroogy, Jeffrey VanWormer, Brent Olson, Mike Evans, Tara Johnson,
-Deanna Cole, Kathrine Barnes, Tamara Kronenwetter Koepel, Amy Dresen, Jennifer Meece,
+authors: [Chris Seroogy, Jeffrey VanWormer, Brent Olson, Mike Evans, Tara Johnson,
+Deanna Cole, Kate Barnes, Tamara Kronenwetter Koepel, Amy Dresen, Jennifer Meece,
 Ronald Gangnon, Matthew Keifer, Casper Bendixsen, Jim Gern, on behalf of the Entire
 WISC Study Team]
 publication_types: ["2"]

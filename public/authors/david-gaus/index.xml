@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>David Gaus | Ronald Gangnon</title>
-    <link>/authors/david-gaus/</link>
-      <atom:link href="/authors/david-gaus/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/david-gaus/</link>
+      <atom:link href="https://rgangnon.org/authors/david-gaus/index.xml" rel="self" type="application/rss+xml" />
     <description>David Gaus</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>David Gaus</title>
-      <link>/authors/david-gaus/</link>
+      <link>https://rgangnon.org/authors/david-gaus/</link>
     </image>
     
     <item>
       <title>Seasonal patterns of dengue fever in rural Ecuador: 2009-2016</title>
-      <link>/publication/sippy-2019/</link>
+      <link>https://rgangnon.org/publication/sippy-2019/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/sippy-2019/</guid>
+      <guid>https://rgangnon.org/publication/sippy-2019/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Shepherd | Ronald Gangnon</title>
-    <link>/authors/john-shepherd/</link>
-      <atom:link href="/authors/john-shepherd/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/john-shepherd/</link>
+      <atom:link href="https://rgangnon.org/authors/john-shepherd/index.xml" rel="self" type="application/rss+xml" />
     <description>John Shepherd</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Feb 2005 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>John Shepherd</title>
-      <link>/authors/john-shepherd/</link>
+      <link>https://rgangnon.org/authors/john-shepherd/</link>
     </image>
     
     <item>
       <title>Recalculation of the NHANES database SD improves T-score agreement and reduces osteoporosis prevalence</title>
-      <link>/publication/binkley-2005/</link>
+      <link>https://rgangnon.org/publication/binkley-2005/</link>
       <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
-      <guid>/publication/binkley-2005/</guid>
+      <guid>https://rgangnon.org/publication/binkley-2005/</guid>
       <description></description>
     </item>
     

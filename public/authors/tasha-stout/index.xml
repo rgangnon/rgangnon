@@ -2,77 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tasha Stout | Ronald Gangnon</title>
-    <link>/authors/tasha-stout/</link>
-      <atom:link href="/authors/tasha-stout/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/tasha-stout/</link>
+      <atom:link href="https://rgangnon.org/authors/tasha-stout/index.xml" rel="self" type="application/rss+xml" />
     <description>Tasha Stout</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Tasha Stout</title>
-      <link>/authors/tasha-stout/</link>
+      <link>https://rgangnon.org/authors/tasha-stout/</link>
     </image>
     
     <item>
       <title>Contribution of Breast Cancer to Overall Mortality for US Women</title>
-      <link>/publication/gangnon-2018/</link>
+      <link>https://rgangnon.org/publication/gangnon-2018/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/gangnon-2018/</guid>
+      <guid>https://rgangnon.org/publication/gangnon-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The University of Wisconsin Breast Cancer Epidemiology Simulation Model: An Update</title>
-      <link>/publication/alagoz-2018/</link>
+      <link>https://rgangnon.org/publication/alagoz-2018/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/alagoz-2018/</guid>
+      <guid>https://rgangnon.org/publication/alagoz-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparative effectiveness of incorporating a hypothetical DCIS prognostic marker into breast cancer screening</title>
-      <link>/publication/trenthamdietz-2018/</link>
+      <link>https://rgangnon.org/publication/trenthamdietz-2018/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/trenthamdietz-2018/</guid>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Association of Screening and Treatment With Breast Cancer Mortality by Molecular Subtype in US Women, 2000-2012</title>
-      <link>/publication/plevritis-2018/</link>
+      <link>https://rgangnon.org/publication/plevritis-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/plevritis-2018/</guid>
+      <guid>https://rgangnon.org/publication/plevritis-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tailoring Breast Cancer Screening Intervals by Breast Density and Risk for Women Aged 50 Years or Older: Collaborative Modeling of Screening Outcomes</title>
-      <link>/publication/trenthamdietz-2016/</link>
+      <link>https://rgangnon.org/publication/trenthamdietz-2016/</link>
       <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/trenthamdietz-2016/</guid>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2016/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Collaborative Modeling of the Benefits and Harms Associated With Different U.S. Breast Cancer Screening Strategies</title>
-      <link>/publication/mandelblatt-2016/</link>
+      <link>https://rgangnon.org/publication/mandelblatt-2016/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/mandelblatt-2016/</guid>
+      <guid>https://rgangnon.org/publication/mandelblatt-2016/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The contribution of mammography screening to breast cancer incidence trends in the United States: an updated age-period-cohort model</title>
-      <link>/publication/gangnon-2015b/</link>
+      <link>https://rgangnon.org/publication/gangnon-2015b/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/gangnon-2015b/</guid>
+      <guid>https://rgangnon.org/publication/gangnon-2015b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Variation in tumor natural history contributes to racial disparities in breast cancer stage at diagnosis</title>
-      <link>/publication/batina-2013/</link>
+      <link>https://rgangnon.org/publication/batina-2013/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/batina-2013/</guid>
+      <guid>https://rgangnon.org/publication/batina-2013/</guid>
       <description></description>
     </item>
     

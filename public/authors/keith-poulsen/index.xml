@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Keith Poulsen | Ronald Gangnon</title>
-    <link>/authors/keith-poulsen/</link>
-      <atom:link href="/authors/keith-poulsen/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/keith-poulsen/</link>
+      <atom:link href="https://rgangnon.org/authors/keith-poulsen/index.xml" rel="self" type="application/rss+xml" />
     <description>Keith Poulsen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Keith Poulsen</title>
-      <link>/authors/keith-poulsen/</link>
+      <link>https://rgangnon.org/authors/keith-poulsen/</link>
     </image>
     
     <item>
       <title>Wisconsin microbiome study, a cross-sectional investigation of dietary fibre, microbiome composition and antibiotic-resistant organisms: rationale and methods</title>
-      <link>/publication/eggers-2018/</link>
+      <link>https://rgangnon.org/publication/eggers-2018/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/eggers-2018/</guid>
+      <guid>https://rgangnon.org/publication/eggers-2018/</guid>
       <description></description>
     </item>
     

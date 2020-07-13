@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Allison Pratt | Ronald Gangnon</title>
-    <link>/authors/allison-pratt/</link>
-      <atom:link href="/authors/allison-pratt/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/allison-pratt/</link>
+      <atom:link href="https://rgangnon.org/authors/allison-pratt/index.xml" rel="self" type="application/rss+xml" />
     <description>Allison Pratt</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Allison Pratt</title>
-      <link>/authors/allison-pratt/</link>
+      <link>https://rgangnon.org/authors/allison-pratt/</link>
     </image>
     
     <item>
       <title>Innate immune responses to rhinovirus are reduced by the high-affinity IgE receptor in allergic asthmatic children</title>
-      <link>/publication/durrani-2012/</link>
+      <link>https://rgangnon.org/publication/durrani-2012/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/durrani-2012/</guid>
+      <guid>https://rgangnon.org/publication/durrani-2012/</guid>
       <description></description>
     </item>
     

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kerri Howard | Ronald Gangnon</title>
-    <link>/authors/kerri-howard/</link>
-      <atom:link href="/authors/kerri-howard/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/kerri-howard/</link>
+      <atom:link href="https://rgangnon.org/authors/kerri-howard/index.xml" rel="self" type="application/rss+xml" />
     <description>Kerri Howard</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jun 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Kerri Howard</title>
-      <link>/authors/kerri-howard/</link>
+      <link>https://rgangnon.org/authors/kerri-howard/</link>
     </image>
     
     <item>
       <title>Variability in Spectral-Domain Optical Coherence Tomography over 4 Weeks by Age</title>
-      <link>/publication/howard-2016/</link>
+      <link>https://rgangnon.org/publication/howard-2016/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/howard-2016/</guid>
+      <guid>https://rgangnon.org/publication/howard-2016/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Long-term use of aspirin and age-related macular degeneration</title>
-      <link>/publication/klein-2012c/</link>
+      <link>https://rgangnon.org/publication/klein-2012c/</link>
       <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2012c/</guid>
+      <guid>https://rgangnon.org/publication/klein-2012c/</guid>
       <description></description>
     </item>
     

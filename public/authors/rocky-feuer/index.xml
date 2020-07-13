@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rocky Feuer | Ronald Gangnon</title>
-    <link>/authors/rocky-feuer/</link>
-      <atom:link href="/authors/rocky-feuer/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/rocky-feuer/</link>
+      <atom:link href="https://rgangnon.org/authors/rocky-feuer/index.xml" rel="self" type="application/rss+xml" />
     <description>Rocky Feuer</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Rocky Feuer</title>
-      <link>/authors/rocky-feuer/</link>
+      <link>https://rgangnon.org/authors/rocky-feuer/</link>
     </image>
     
     <item>
       <title>Optimal Bayesian point estimates and credible intervals for ranking with application to county health indices</title>
-      <link>/publication/jewett-2019/</link>
+      <link>https://rgangnon.org/publication/jewett-2019/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/jewett-2019/</guid>
+      <guid>https://rgangnon.org/publication/jewett-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ranking composite Cancer Burden Indices for geographic regions: point and interval estimates</title>
-      <link>/publication/huang-2018/</link>
+      <link>https://rgangnon.org/publication/huang-2018/</link>
       <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/huang-2018/</guid>
+      <guid>https://rgangnon.org/publication/huang-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Collaborative Modeling of the Benefits and Harms Associated With Different U.S. Breast Cancer Screening Strategies</title>
-      <link>/publication/mandelblatt-2016/</link>
+      <link>https://rgangnon.org/publication/mandelblatt-2016/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/mandelblatt-2016/</guid>
+      <guid>https://rgangnon.org/publication/mandelblatt-2016/</guid>
       <description></description>
     </item>
     

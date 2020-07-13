@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ritesh Ramchandani | Ronald Gangnon</title>
-    <link>/authors/ritesh-ramchandani/</link>
-      <atom:link href="/authors/ritesh-ramchandani/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/ritesh-ramchandani/</link>
+      <atom:link href="https://rgangnon.org/authors/ritesh-ramchandani/index.xml" rel="self" type="application/rss+xml" />
     <description>Ritesh Ramchandani</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Apr 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ritesh Ramchandani</title>
-      <link>/authors/ritesh-ramchandani/</link>
+      <link>https://rgangnon.org/authors/ritesh-ramchandani/</link>
     </image>
     
     <item>
       <title>Socioeconomic status and survival after an invasive breast cancer diagnosis</title>
-      <link>/publication/sprague-2011b/</link>
+      <link>https://rgangnon.org/publication/sprague-2011b/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2011b/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2011b/</guid>
       <description></description>
     </item>
     

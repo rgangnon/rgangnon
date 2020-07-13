@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lisa Cadmus-Bertram | Ronald Gangnon</title>
-    <link>/authors/lisa-cadmus-bertram/</link>
-      <atom:link href="/authors/lisa-cadmus-bertram/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/lisa-cadmus-bertram/</link>
+      <atom:link href="https://rgangnon.org/authors/lisa-cadmus-bertram/index.xml" rel="self" type="application/rss+xml" />
     <description>Lisa Cadmus-Bertram</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Lisa Cadmus-Bertram</title>
-      <link>/authors/lisa-cadmus-bertram/</link>
+      <link>https://rgangnon.org/authors/lisa-cadmus-bertram/</link>
     </image>
     
     <item>
       <title>Building a physical activity intervention into clinical care for breast and colorectal cancer survivors in Wisconsin: a randomized controlled pilot trial</title>
-      <link>/publication/cadmusbertram-2019/</link>
+      <link>https://rgangnon.org/publication/cadmusbertram-2019/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/cadmusbertram-2019/</guid>
+      <guid>https://rgangnon.org/publication/cadmusbertram-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Automatic Identification of Physical Activity Type and Duration by Wearable Activity Trackers: A Validation Study</title>
-      <link>/publication/dorn-2019/</link>
+      <link>https://rgangnon.org/publication/dorn-2019/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/dorn-2019/</guid>
+      <guid>https://rgangnon.org/publication/dorn-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Accuracy of Heart Rate Monitoring by Some Wrist-Worn Activity Trackers</title>
-      <link>/publication/cadmusbertram-2017b/</link>
+      <link>https://rgangnon.org/publication/cadmusbertram-2017b/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/cadmusbertram-2017b/</guid>
+      <guid>https://rgangnon.org/publication/cadmusbertram-2017b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Accuracy of Heart Rate Monitoring by Some Wrist-Worn Activity Trackers</title>
-      <link>/publication/cadmusbertram-2017/</link>
+      <link>https://rgangnon.org/publication/cadmusbertram-2017/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/cadmusbertram-2017/</guid>
+      <guid>https://rgangnon.org/publication/cadmusbertram-2017/</guid>
       <description></description>
     </item>
     

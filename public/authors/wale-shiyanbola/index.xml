@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wale Shiyanbola | Ronald Gangnon</title>
-    <link>/authors/wale-shiyanbola/</link>
-      <atom:link href="/authors/wale-shiyanbola/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/wale-shiyanbola/</link>
+      <atom:link href="https://rgangnon.org/authors/wale-shiyanbola/index.xml" rel="self" type="application/rss+xml" />
     <description>Wale Shiyanbola</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Wale Shiyanbola</title>
-      <link>/authors/wale-shiyanbola/</link>
+      <link>https://rgangnon.org/authors/wale-shiyanbola/</link>
     </image>
     
     <item>
       <title>Emerging trends in surgical and adjuvant radiation therapies among women diagnosed with ductal carcinoma in situ</title>
-      <link>/publication/shiyanbola-2016/</link>
+      <link>https://rgangnon.org/publication/shiyanbola-2016/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/shiyanbola-2016/</guid>
+      <guid>https://rgangnon.org/publication/shiyanbola-2016/</guid>
       <description></description>
     </item>
     

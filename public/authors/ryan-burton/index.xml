@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ryan Burton | Ronald Gangnon</title>
-    <link>/authors/ryan-burton/</link>
-      <atom:link href="/authors/ryan-burton/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/ryan-burton/</link>
+      <atom:link href="https://rgangnon.org/authors/ryan-burton/index.xml" rel="self" type="application/rss+xml" />
     <description>Ryan Burton</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ryan Burton</title>
-      <link>/authors/ryan-burton/</link>
+      <link>https://rgangnon.org/authors/ryan-burton/</link>
     </image>
     
     <item>
       <title>Decreased lung function after preschool wheezing rhinovirus illnesses in children at risk to develop asthma</title>
-      <link>/publication/guilbert-2011/</link>
+      <link>https://rgangnon.org/publication/guilbert-2011/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/guilbert-2011/</guid>
+      <guid>https://rgangnon.org/publication/guilbert-2011/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fractional exhaled nitric oxide measurements are most closely associated with allergic sensitization in school-age children</title>
-      <link>/publication/jackson-2009/</link>
+      <link>https://rgangnon.org/publication/jackson-2009/</link>
       <pubDate>Sun, 01 Nov 2009 00:00:00 +0000</pubDate>
-      <guid>/publication/jackson-2009/</guid>
+      <guid>https://rgangnon.org/publication/jackson-2009/</guid>
       <description></description>
     </item>
     

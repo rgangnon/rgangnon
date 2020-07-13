@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Theodore Tweed | Ronald Gangnon</title>
-    <link>/authors/theodore-tweed/</link>
-      <atom:link href="/authors/theodore-tweed/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/theodore-tweed/</link>
+      <atom:link href="https://rgangnon.org/authors/theodore-tweed/index.xml" rel="self" type="application/rss+xml" />
     <description>Theodore Tweed</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Theodore Tweed</title>
-      <link>/authors/theodore-tweed/</link>
+      <link>https://rgangnon.org/authors/theodore-tweed/</link>
     </image>
     
     <item>
       <title>Modifiable determinants of hearing impairment in adults</title>
-      <link>/publication/zhan-2011/</link>
+      <link>https://rgangnon.org/publication/zhan-2011/</link>
       <pubDate>Sat, 01 Oct 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/zhan-2011/</guid>
+      <guid>https://rgangnon.org/publication/zhan-2011/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Generational differences in the prevalence of hearing impairment in older adults</title>
-      <link>/publication/zhan-2010/</link>
+      <link>https://rgangnon.org/publication/zhan-2010/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/zhan-2010/</guid>
+      <guid>https://rgangnon.org/publication/zhan-2010/</guid>
       <description></description>
     </item>
     

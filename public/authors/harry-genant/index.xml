@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Harry Genant | Ronald Gangnon</title>
-    <link>/authors/harry-genant/</link>
-      <atom:link href="/authors/harry-genant/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/harry-genant/</link>
+      <atom:link href="https://rgangnon.org/authors/harry-genant/index.xml" rel="self" type="application/rss+xml" />
     <description>Harry Genant</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Dec 2005 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Harry Genant</title>
-      <link>/authors/harry-genant/</link>
+      <link>https://rgangnon.org/authors/harry-genant/</link>
     </image>
     
     <item>
       <title>Lateral vertebral assessment: a valuable technique to detect clinically significant vertebral fractures</title>
-      <link>/publication/binkley-2005b/</link>
+      <link>https://rgangnon.org/publication/binkley-2005b/</link>
       <pubDate>Thu, 01 Dec 2005 00:00:00 +0000</pubDate>
-      <guid>/publication/binkley-2005b/</guid>
+      <guid>https://rgangnon.org/publication/binkley-2005b/</guid>
       <description></description>
     </item>
     

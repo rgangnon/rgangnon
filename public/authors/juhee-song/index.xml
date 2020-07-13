@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juhee Song | Ronald Gangnon</title>
-    <link>/authors/juhee-song/</link>
-      <atom:link href="/authors/juhee-song/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/juhee-song/</link>
+      <atom:link href="https://rgangnon.org/authors/juhee-song/index.xml" rel="self" type="application/rss+xml" />
     <description>Juhee Song</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Juhee Song</title>
-      <link>/authors/juhee-song/</link>
+      <link>https://rgangnon.org/authors/juhee-song/</link>
     </image>
     
     <item>
       <title>Association of Screening and Treatment With Breast Cancer Mortality by Molecular Subtype in US Women, 2000-2012</title>
-      <link>/publication/plevritis-2018/</link>
+      <link>https://rgangnon.org/publication/plevritis-2018/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/plevritis-2018/</guid>
+      <guid>https://rgangnon.org/publication/plevritis-2018/</guid>
       <description></description>
     </item>
     

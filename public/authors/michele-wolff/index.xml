@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Michele Wolff | Ronald Gangnon</title>
-    <link>/authors/michele-wolff/</link>
-      <atom:link href="/authors/michele-wolff/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/michele-wolff/</link>
+      <atom:link href="https://rgangnon.org/authors/michele-wolff/index.xml" rel="self" type="application/rss+xml" />
     <description>Michele Wolff</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Michele Wolff</title>
-      <link>/authors/michele-wolff/</link>
+      <link>https://rgangnon.org/authors/michele-wolff/</link>
     </image>
     
     <item>
       <title>Development of a Rhinovirus Inoculum Using a Reverse Genetics Approach</title>
-      <link>/publication/gern-2019/</link>
+      <link>https://rgangnon.org/publication/gern-2019/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/gern-2019/</guid>
+      <guid>https://rgangnon.org/publication/gern-2019/</guid>
       <description></description>
     </item>
     

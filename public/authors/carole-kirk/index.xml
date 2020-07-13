@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Carole Kirk | Ronald Gangnon</title>
-    <link>/authors/carole-kirk/</link>
-      <atom:link href="/authors/carole-kirk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/carole-kirk/</link>
+      <atom:link href="https://rgangnon.org/authors/carole-kirk/index.xml" rel="self" type="application/rss+xml" />
     <description>Carole Kirk</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2006 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Carole Kirk</title>
-      <link>/authors/carole-kirk/</link>
+      <link>https://rgangnon.org/authors/carole-kirk/</link>
     </image>
     
     <item>
       <title>Bidirectional interactions between viral respiratory illnesses and cytokine responses in the first year of life</title>
-      <link>/publication/gern-2006/</link>
+      <link>https://rgangnon.org/publication/gern-2006/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/gern-2006/</guid>
+      <guid>https://rgangnon.org/publication/gern-2006/</guid>
       <description></description>
     </item>
     

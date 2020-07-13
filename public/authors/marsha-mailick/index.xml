@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marsha Mailick | Ronald Gangnon</title>
-    <link>/authors/marsha-mailick/</link>
-      <atom:link href="/authors/marsha-mailick/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/marsha-mailick/</link>
+      <atom:link href="https://rgangnon.org/authors/marsha-mailick/index.xml" rel="self" type="application/rss+xml" />
     <description>Marsha Mailick</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jun 2014 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Marsha Mailick</title>
-      <link>/authors/marsha-mailick/</link>
+      <link>https://rgangnon.org/authors/marsha-mailick/</link>
     </image>
     
     <item>
       <title>Association between informal caregiving and cellular aging in the survey of the health of wisconsin: the role of caregiving characteristics, stress, and strain</title>
-      <link>/publication/litzelman-2014b/</link>
+      <link>https://rgangnon.org/publication/litzelman-2014b/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
-      <guid>/publication/litzelman-2014b/</guid>
+      <guid>https://rgangnon.org/publication/litzelman-2014b/</guid>
       <description></description>
     </item>
     

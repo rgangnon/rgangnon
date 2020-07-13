@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Robert Przybelski | Ronald Gangnon</title>
-    <link>/authors/robert-przybelski/</link>
-      <atom:link href="/authors/robert-przybelski/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/robert-przybelski/</link>
+      <atom:link href="https://rgangnon.org/authors/robert-przybelski/index.xml" rel="self" type="application/rss+xml" />
     <description>Robert Przybelski</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2007 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Robert Przybelski</title>
-      <link>/authors/robert-przybelski/</link>
+      <link>https://rgangnon.org/authors/robert-przybelski/</link>
     </image>
     
     <item>
       <title>Kenosha County falls prevention study: a randomized, controlled trial of an intermediate-intensity, community-based multifactorial falls intervention</title>
-      <link>/publication/mahoney-2007/</link>
+      <link>https://rgangnon.org/publication/mahoney-2007/</link>
       <pubDate>Sun, 01 Apr 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/mahoney-2007/</guid>
+      <guid>https://rgangnon.org/publication/mahoney-2007/</guid>
       <description></description>
     </item>
     

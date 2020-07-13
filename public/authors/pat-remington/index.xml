@@ -2,77 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pat Remington | Ronald Gangnon</title>
-    <link>/authors/pat-remington/</link>
-      <atom:link href="/authors/pat-remington/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/pat-remington/</link>
+      <atom:link href="https://rgangnon.org/authors/pat-remington/index.xml" rel="self" type="application/rss+xml" />
     <description>Pat Remington</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Pat Remington</title>
-      <link>/authors/pat-remington/</link>
+      <link>https://rgangnon.org/authors/pat-remington/</link>
     </image>
     
     <item>
       <title>Variation in Breast Cancer-Risk Factor Associations by Method of Detection: Results From a Series of Case-Control Studies</title>
-      <link>/publication/sprague-2015/</link>
+      <link>https://rgangnon.org/publication/sprague-2015/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2015/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Improving the Rank Precision of Population Health Measures for Small Areas with Longitudinal and Joint Outcome Models</title>
-      <link>/publication/athens-2015/</link>
+      <link>https://rgangnon.org/publication/athens-2015/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/athens-2015/</guid>
+      <guid>https://rgangnon.org/publication/athens-2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Using empirical Bayes methods to rank counties on population health measures</title>
-      <link>/publication/athens-2013/</link>
+      <link>https://rgangnon.org/publication/athens-2013/</link>
       <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/athens-2013/</guid>
+      <guid>https://rgangnon.org/publication/athens-2013/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Socioeconomic status and survival after an invasive breast cancer diagnosis</title>
-      <link>/publication/sprague-2011b/</link>
+      <link>https://rgangnon.org/publication/sprague-2011b/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/sprague-2011b/</guid>
+      <guid>https://rgangnon.org/publication/sprague-2011b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Trends in kidney transplantation rates and disparities</title>
-      <link>/publication/stolzmann-2007/</link>
+      <link>https://rgangnon.org/publication/stolzmann-2007/</link>
       <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/stolzmann-2007/</guid>
+      <guid>https://rgangnon.org/publication/stolzmann-2007/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Risk of breast cancer for women living in rural areas from adult exposure to atrazine from well water in Wisconsin</title>
-      <link>/publication/mcelroy-2007/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2007/</link>
       <pubDate>Thu, 01 Mar 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2007/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2007/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Identifying geographic disparities in the early detection of breast cancer using a geographic information system</title>
-      <link>/publication/mcelroy-2006/</link>
+      <link>https://rgangnon.org/publication/mcelroy-2006/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/mcelroy-2006/</guid>
+      <guid>https://rgangnon.org/publication/mcelroy-2006/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Model for end stage liver disease score predicts mortality across a broad spectrum of liver disease</title>
-      <link>/publication/said-2004/</link>
+      <link>https://rgangnon.org/publication/said-2004/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/said-2004/</guid>
+      <guid>https://rgangnon.org/publication/said-2004/</guid>
       <description></description>
     </item>
     

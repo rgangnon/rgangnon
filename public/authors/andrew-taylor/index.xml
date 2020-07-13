@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Andrew Taylor | Ronald Gangnon</title>
-    <link>/authors/andrew-taylor/</link>
-      <atom:link href="/authors/andrew-taylor/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/andrew-taylor/</link>
+      <atom:link href="https://rgangnon.org/authors/andrew-taylor/index.xml" rel="self" type="application/rss+xml" />
     <description>Andrew Taylor</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Andrew Taylor</title>
-      <link>/authors/andrew-taylor/</link>
+      <link>https://rgangnon.org/authors/andrew-taylor/</link>
     </image>
     
     <item>
       <title>Comparison of standardized bariums with varying rheological parameters on swallowing kinematics in males</title>
-      <link>/publication/hind-2012/</link>
+      <link>https://rgangnon.org/publication/hind-2012/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/hind-2012/</guid>
+      <guid>https://rgangnon.org/publication/hind-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Esophageal clearance patterns in normal older adults as documented with videofluoroscopic esophagram</title>
-      <link>/publication/jou-2009/</link>
+      <link>https://rgangnon.org/publication/jou-2009/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>/publication/jou-2009/</guid>
+      <guid>https://rgangnon.org/publication/jou-2009/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The effects of lingual exercise in stroke patients with dysphagia</title>
-      <link>/publication/robbins-2007/</link>
+      <link>https://rgangnon.org/publication/robbins-2007/</link>
       <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/robbins-2007/</guid>
+      <guid>https://rgangnon.org/publication/robbins-2007/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Suresh Chari | Ronald Gangnon</title>
-    <link>/authors/suresh-chari/</link>
-      <atom:link href="/authors/suresh-chari/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/suresh-chari/</link>
+      <atom:link href="https://rgangnon.org/authors/suresh-chari/index.xml" rel="self" type="application/rss+xml" />
     <description>Suresh Chari</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Nov 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Suresh Chari</title>
-      <link>/authors/suresh-chari/</link>
+      <link>https://rgangnon.org/authors/suresh-chari/</link>
     </image>
     
     <item>
       <title>Telomere length and pancreatic cancer: a case-control study</title>
-      <link>/publication/skinner-2012/</link>
+      <link>https://rgangnon.org/publication/skinner-2012/</link>
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/skinner-2012/</guid>
+      <guid>https://rgangnon.org/publication/skinner-2012/</guid>
       <description></description>
     </item>
     

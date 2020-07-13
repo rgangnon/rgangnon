@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sugha Iyengar | Ronald Gangnon</title>
-    <link>/authors/sugha-iyengar/</link>
-      <atom:link href="/authors/sugha-iyengar/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/sugha-iyengar/</link>
+      <atom:link href="https://rgangnon.org/authors/sugha-iyengar/index.xml" rel="self" type="application/rss+xml" />
     <description>Sugha Iyengar</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Sugha Iyengar</title>
-      <link>/authors/sugha-iyengar/</link>
+      <link>https://rgangnon.org/authors/sugha-iyengar/</link>
     </image>
     
     <item>
       <title>The relationship of atherosclerosis to the 10-year cumulative incidence of age-related macular degeneration: the Beaver Dam studies</title>
-      <link>/publication/klein-2013/</link>
+      <link>https://rgangnon.org/publication/klein-2013/</link>
       <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/klein-2013/</guid>
+      <guid>https://rgangnon.org/publication/klein-2013/</guid>
       <description></description>
     </item>
     

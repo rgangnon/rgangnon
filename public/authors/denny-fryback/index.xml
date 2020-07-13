@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Denny Fryback | Ronald Gangnon</title>
-    <link>/authors/denny-fryback/</link>
-      <atom:link href="/authors/denny-fryback/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/denny-fryback/</link>
+      <atom:link href="https://rgangnon.org/authors/denny-fryback/index.xml" rel="self" type="application/rss+xml" />
     <description>Denny Fryback</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Denny Fryback</title>
-      <link>/authors/denny-fryback/</link>
+      <link>https://rgangnon.org/authors/denny-fryback/</link>
     </image>
     
     <item>
       <title>The University of Wisconsin Breast Cancer Epidemiology Simulation Model: An Update</title>
-      <link>/publication/alagoz-2018/</link>
+      <link>https://rgangnon.org/publication/alagoz-2018/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/alagoz-2018/</guid>
+      <guid>https://rgangnon.org/publication/alagoz-2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Variation in tumor natural history contributes to racial disparities in breast cancer stage at diagnosis</title>
-      <link>/publication/batina-2013/</link>
+      <link>https://rgangnon.org/publication/batina-2013/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/batina-2013/</guid>
+      <guid>https://rgangnon.org/publication/batina-2013/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Three methods tested to model SF-6D health utilities for health states involving comorbidity/co-occurring conditions</title>
-      <link>/publication/hanmer-2010/</link>
+      <link>https://rgangnon.org/publication/hanmer-2010/</link>
       <pubDate>Mon, 01 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>/publication/hanmer-2010/</guid>
+      <guid>https://rgangnon.org/publication/hanmer-2010/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anna Steele | Ronald Gangnon</title>
-    <link>/authors/anna-steele/</link>
-      <atom:link href="/authors/anna-steele/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/anna-steele/</link>
+      <atom:link href="https://rgangnon.org/authors/anna-steele/index.xml" rel="self" type="application/rss+xml" />
     <description>Anna Steele</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2006 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Anna Steele</title>
-      <link>/authors/anna-steele/</link>
+      <link>https://rgangnon.org/authors/anna-steele/</link>
     </image>
     
     <item>
       <title>Successful treatment of anisometropic amblyopia with spectacles alone</title>
-      <link>/publication/steele-2006/</link>
+      <link>https://rgangnon.org/publication/steele-2006/</link>
       <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/steele-2006/</guid>
+      <guid>https://rgangnon.org/publication/steele-2006/</guid>
       <description></description>
     </item>
     

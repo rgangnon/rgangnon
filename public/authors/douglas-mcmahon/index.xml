@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Douglas McMahon | Ronald Gangnon</title>
-    <link>/authors/douglas-mcmahon/</link>
-      <atom:link href="/authors/douglas-mcmahon/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/douglas-mcmahon/</link>
+      <atom:link href="https://rgangnon.org/authors/douglas-mcmahon/index.xml" rel="self" type="application/rss+xml" />
     <description>Douglas McMahon</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Oct 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Douglas McMahon</title>
-      <link>/authors/douglas-mcmahon/</link>
+      <link>https://rgangnon.org/authors/douglas-mcmahon/</link>
     </image>
     
     <item>
       <title>Do asthma symptoms lag behind cold symptoms in a viral illness?</title>
-      <link>/publication/mcmahon-2012/</link>
+      <link>https://rgangnon.org/publication/mcmahon-2012/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/mcmahon-2012/</guid>
+      <guid>https://rgangnon.org/publication/mcmahon-2012/</guid>
       <description></description>
     </item>
     

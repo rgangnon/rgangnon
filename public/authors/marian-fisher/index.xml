@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marian Fisher | Ronald Gangnon</title>
-    <link>/authors/marian-fisher/</link>
-      <atom:link href="/authors/marian-fisher/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/marian-fisher/</link>
+      <atom:link href="https://rgangnon.org/authors/marian-fisher/index.xml" rel="self" type="application/rss+xml" />
     <description>Marian Fisher</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Nov 2008 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Marian Fisher</title>
-      <link>/authors/marian-fisher/</link>
+      <link>https://rgangnon.org/authors/marian-fisher/</link>
     </image>
     
     <item>
       <title>A severity scale for diabetic macular edema developed from ETDRS data</title>
-      <link>/publication/gangnon-2008/</link>
+      <link>https://rgangnon.org/publication/gangnon-2008/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>/publication/gangnon-2008/</guid>
+      <guid>https://rgangnon.org/publication/gangnon-2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A study of iridectomy histopathologic features of latanoprost- and non-latanoprost-treated patients</title>
-      <link>/publication/albert-2004/</link>
+      <link>https://rgangnon.org/publication/albert-2004/</link>
       <pubDate>Mon, 01 Nov 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/albert-2004/</guid>
+      <guid>https://rgangnon.org/publication/albert-2004/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Risk factors for high-risk proliferative diabetic retinopathy and severe visual loss: Early Treatment Diabetic Retinopathy Study Report #18</title>
-      <link>/publication/davis-1998/</link>
+      <link>https://rgangnon.org/publication/davis-1998/</link>
       <pubDate>Sun, 01 Feb 1998 00:00:00 +0000</pubDate>
-      <guid>/publication/davis-1998/</guid>
+      <guid>https://rgangnon.org/publication/davis-1998/</guid>
       <description></description>
     </item>
     

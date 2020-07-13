@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dori Schatell | Ronald Gangnon</title>
-    <link>/authors/dori-schatell/</link>
-      <atom:link href="/authors/dori-schatell/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/dori-schatell/</link>
+      <atom:link href="https://rgangnon.org/authors/dori-schatell/index.xml" rel="self" type="application/rss+xml" />
     <description>Dori Schatell</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Mar 2011 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Dori Schatell</title>
-      <link>/authors/dori-schatell/</link>
+      <link>https://rgangnon.org/authors/dori-schatell/</link>
     </image>
     
     <item>
       <title>Factors affecting employment at initiation of dialysis</title>
-      <link>/publication/muehrer-2011/</link>
+      <link>https://rgangnon.org/publication/muehrer-2011/</link>
       <pubDate>Tue, 01 Mar 2011 00:00:00 +0000</pubDate>
-      <guid>/publication/muehrer-2011/</guid>
+      <guid>https://rgangnon.org/publication/muehrer-2011/</guid>
       <description></description>
     </item>
     

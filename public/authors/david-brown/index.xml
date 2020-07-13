@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>David Brown | Ronald Gangnon</title>
-    <link>/authors/david-brown/</link>
-      <atom:link href="/authors/david-brown/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/david-brown/</link>
+      <atom:link href="https://rgangnon.org/authors/david-brown/index.xml" rel="self" type="application/rss+xml" />
     <description>David Brown</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jun 2004 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>David Brown</title>
-      <link>/authors/david-brown/</link>
+      <link>https://rgangnon.org/authors/david-brown/</link>
     </image>
     
     <item>
       <title>Validity of the alcohol use disorders identification test in college students</title>
-      <link>/publication/kokotailo-2004/</link>
+      <link>https://rgangnon.org/publication/kokotailo-2004/</link>
       <pubDate>Tue, 01 Jun 2004 00:00:00 +0000</pubDate>
-      <guid>/publication/kokotailo-2004/</guid>
+      <guid>https://rgangnon.org/publication/kokotailo-2004/</guid>
       <description></description>
     </item>
     

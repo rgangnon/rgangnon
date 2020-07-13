@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lauren Watson | Ronald Gangnon</title>
-    <link>/authors/lauren-watson/</link>
-      <atom:link href="/authors/lauren-watson/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/lauren-watson/</link>
+      <atom:link href="https://rgangnon.org/authors/lauren-watson/index.xml" rel="self" type="application/rss+xml" />
     <description>Lauren Watson</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Lauren Watson</title>
-      <link>/authors/lauren-watson/</link>
+      <link>https://rgangnon.org/authors/lauren-watson/</link>
     </image>
     
     <item>
       <title>Characterising the gut microbiome in veterans with Gulf War Illness: a protocol for a longitudinal, prospective cohort study</title>
-      <link>/publication/keating-2019/</link>
+      <link>https://rgangnon.org/publication/keating-2019/</link>
       <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/keating-2019/</guid>
+      <guid>https://rgangnon.org/publication/keating-2019/</guid>
       <description></description>
     </item>
     

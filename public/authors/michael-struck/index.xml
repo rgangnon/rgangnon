@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Michael Struck | Ronald Gangnon</title>
-    <link>/authors/michael-struck/</link>
-      <atom:link href="/authors/michael-struck/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/michael-struck/</link>
+      <atom:link href="https://rgangnon.org/authors/michael-struck/index.xml" rel="self" type="application/rss+xml" />
     <description>Michael Struck</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Oct 2012 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Michael Struck</title>
-      <link>/authors/michael-struck/</link>
+      <link>https://rgangnon.org/authors/michael-struck/</link>
     </image>
     
     <item>
       <title>Outcomes of Harada-Ito surgery for acquired torsional diplopia</title>
-      <link>/publication/bradfield-2012/</link>
+      <link>https://rgangnon.org/publication/bradfield-2012/</link>
       <pubDate>Mon, 01 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/bradfield-2012/</guid>
+      <guid>https://rgangnon.org/publication/bradfield-2012/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Successful treatment of anisometropic amblyopia with spectacles alone</title>
-      <link>/publication/steele-2006/</link>
+      <link>https://rgangnon.org/publication/steele-2006/</link>
       <pubDate>Wed, 01 Feb 2006 00:00:00 +0000</pubDate>
-      <guid>/publication/steele-2006/</guid>
+      <guid>https://rgangnon.org/publication/steele-2006/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kelly Stolzmann | Ronald Gangnon</title>
-    <link>/authors/kelly-stolzmann/</link>
-      <atom:link href="/authors/kelly-stolzmann/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/kelly-stolzmann/</link>
+      <atom:link href="https://rgangnon.org/authors/kelly-stolzmann/index.xml" rel="self" type="application/rss+xml" />
     <description>Kelly Stolzmann</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Aug 2007 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Kelly Stolzmann</title>
-      <link>/authors/kelly-stolzmann/</link>
+      <link>https://rgangnon.org/authors/kelly-stolzmann/</link>
     </image>
     
     <item>
       <title>Trends in kidney transplantation rates and disparities</title>
-      <link>/publication/stolzmann-2007/</link>
+      <link>https://rgangnon.org/publication/stolzmann-2007/</link>
       <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
-      <guid>/publication/stolzmann-2007/</guid>
+      <guid>https://rgangnon.org/publication/stolzmann-2007/</guid>
       <description></description>
     </item>
     

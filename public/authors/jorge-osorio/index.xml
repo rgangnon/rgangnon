@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jorge Osorio | Ronald Gangnon</title>
-    <link>/authors/jorge-osorio/</link>
-      <atom:link href="/authors/jorge-osorio/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/jorge-osorio/</link>
+      <atom:link href="https://rgangnon.org/authors/jorge-osorio/index.xml" rel="self" type="application/rss+xml" />
     <description>Jorge Osorio</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jorge Osorio</title>
-      <link>/authors/jorge-osorio/</link>
+      <link>https://rgangnon.org/authors/jorge-osorio/</link>
     </image>
     
     <item>
       <title>Seasonal patterns of dengue fever in rural Ecuador: 2009-2016</title>
-      <link>/publication/sippy-2019/</link>
+      <link>https://rgangnon.org/publication/sippy-2019/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/sippy-2019/</guid>
+      <guid>https://rgangnon.org/publication/sippy-2019/</guid>
       <description></description>
     </item>
     

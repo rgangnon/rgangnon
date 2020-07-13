@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jessica Fedie | Ronald Gangnon</title>
-    <link>/authors/jessica-fedie/</link>
-      <atom:link href="/authors/jessica-fedie/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://rgangnon.org/authors/jessica-fedie/</link>
+      <atom:link href="https://rgangnon.org/authors/jessica-fedie/index.xml" rel="self" type="application/rss+xml" />
     <description>Jessica Fedie</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jessica Fedie</title>
-      <link>/authors/jessica-fedie/</link>
+      <link>https://rgangnon.org/authors/jessica-fedie/</link>
     </image>
     
     <item>
       <title>Asthma Control and Its Relationship with Obstructive Sleep Apnea (OSA) in Older Adults</title>
-      <link>/publication/teodorescu-2013b/</link>
+      <link>https://rgangnon.org/publication/teodorescu-2013b/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/teodorescu-2013b/</guid>
+      <guid>https://rgangnon.org/publication/teodorescu-2013b/</guid>
       <description></description>
     </item>
     
