@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/jessica-gorzelitz/</link>
       <atom:link href="https://rgangnon.org/authors/jessica-gorzelitz/index.xml" rel="self" type="application/rss+xml" />
     <description>Jessica Gorzelitz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jessica Gorzelitz</title>
       <link>https://rgangnon.org/authors/jessica-gorzelitz/</link>
     </image>
+    
+    <item>
+      <title>Accuracy of Wearable Trackers for Measuring Moderate- to Vigorous-Intensity Physical Activity: A Systematic Review and Meta-Analysis</title>
+      <link>https://rgangnon.org/publication/gorzelitz-2020/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/gorzelitz-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Automatic Identification of Physical Activity Type and Duration by Wearable Activity Trackers: A Validation Study</title>

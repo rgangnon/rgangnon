@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Somya Rastogi | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/somya-rastogi/</link>
+      <atom:link href="https://rgangnon.org/authors/somya-rastogi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Somya Rastogi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Somya Rastogi</title>
+      <link>https://rgangnon.org/authors/somya-rastogi/</link>
+    </image>
+    
+    <item>
+      <title>Effect of a Technology-Supported Physical Activity Intervention on Health-Related Quality of Life and Sleep in Cancer Survivors: A Randomized, Controlled Trial</title>
+      <link>https://rgangnon.org/publication/rastogi-2020/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/rastogi-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
