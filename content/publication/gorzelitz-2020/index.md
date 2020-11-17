@@ -1,7 +1,7 @@
 ---
 title: "Accuracy of Wearable Trackers for Measuring Moderate- to Vigorous-Intensity Physical Activity: A Systematic Review and Meta-Analysis"
 date: 2020-10-01
-publishDate: 2020-10-01
+publishDate: 2020-11-17
 authors: ["Jessica Gorzelitz", "Chloe Farber", "Ronald Gangnon", "Lisa Cadmus-Bertram"]
 publication_types: ["2"]
 abstract: "Background: The evidence base regarding validity of wearable fitness trackers for assessment and/or modification of physical
@@ -22,5 +22,6 @@ featured: false
 publication: "*Journal for the Measurement of Physical Behaviour*"
 publication_short: "*J Meas Phys Behav*"
 doi: 10.1123/jmpb.2019-0072
+url_pdf: gorzelitz-2020.pdf
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Outcomes Associated with the Scale-up of the Stepping On Falls Prevention Program: A Case Study in Redesigning for Intervention"
-date: 2020-02-01
+date: 2020-02-04
 publishDate: 2020-02-08T06:30:32.789007Z
 authors: ["Jane Mahoney", "Ronald Gangnon", "Lindy Clemson", "LaVerne Jaros", "Sandy Cech", "Jill Renken"]
 publication_types: ["2"]
@@ -11,6 +11,7 @@ Conclusions:  Effectiveness can be maintained with widespread dissemination of a
 featured: false
 publication: "*Journal of Clinical and Translational Research*"
 publication_short: "*J Clin Transl Res*"
-doi:
+doi: 10.1017/cts.2020.17
+url_pdf: mahoney-2020.pdf
 ---
 

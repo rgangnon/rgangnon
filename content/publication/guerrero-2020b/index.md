@@ -1,5 +1,5 @@
 ---
-title: "The Association Between Exposure to Maternal Depression at Age Three and Future Child Problem Behavior"
+title: "The Association Between Exposure to Maternal Depression During Year 2 of a Child's Life and Future Child Problem Behavior"
 date: 2020-11-05
 publishDate: 2020-11-05
 authors: ["Natalie Guerrero", "Ronald Gangnon", "Mariah Curtis", "Carmen Valdez", "Deb Ehrenthal", "Elizabeth Jacobs"]
@@ -26,7 +26,7 @@ child problem behavior."
 featured: false
 publication: "*Maternal and Child Health Journal*"
 publication_short: "*Matern Child Healt J*"
-url_pdf: 
-doi: 
+url_pdf: guerrero-2020b.pdf
+doi: 10.1007/s10995-020-03040-z
 ---
 
