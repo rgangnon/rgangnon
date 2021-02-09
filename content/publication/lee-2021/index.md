@@ -1,7 +1,7 @@
 ---
 title: "Clustered Spatio-Temporal Varying Coefficient Regression Model"
 date: 2021-
-publishDate: 2020-01-30
+publishDate: 2021-01-30
 authors: ["Junho Lee", "Maria Kamenetsky","Ronald Gangnon", "Jun Zhu"]
 publication_types: ["2"]
 abstract: "In regression analysis for spatio-temporal data, identifying clusters of spatial units over time in a regression coefficient could provide insight into the
