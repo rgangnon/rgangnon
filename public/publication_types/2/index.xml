@@ -5,7 +5,7 @@
     <link>https://rgangnon.org/publication_types/2/</link>
       <atom:link href="https://rgangnon.org/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 05 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>2</title>
@@ -13,18 +13,26 @@
     </image>
     
     <item>
-      <title>The Association Between Exposure to Maternal Depression During Year 2 of a Child&#39;s Life and Future Child Problem Behavior</title>
-      <link>https://rgangnon.org/publication/guerrero-2020b/</link>
-      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://rgangnon.org/publication/guerrero-2020b/</guid>
+      <title>Association of Macular Thickness with Age and Age-Related Macular Degeneration in the Carotenoids in Age-Related Eye Disease Study 2 (CAREDS2), An Ancillary Study of the Women’s Health Initiative</title>
+      <link>https://rgangnon.org/publication/etheridge-2020/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/etheridge-2020/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Clustered Spatio-Temporal Varying Coefficient Regression Model</title>
-      <link>https://rgangnon.org/publication/lee-2020/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://rgangnon.org/publication/lee-2020/</guid>
+      <title>Enhanced Neutralizing Antibody Responses to Rhinovirus C and Age-Dependent Patterns of Infection</title>
+      <link>https://rgangnon.org/publication/choi-2020/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/choi-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Association Between Exposure to Maternal Depression During Year 2 of a Child&#39;s Life and Future Child Problem Behavior</title>
+      <link>https://rgangnon.org/publication/guerrero-2020b/</link>
+      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/guerrero-2020b/</guid>
       <description></description>
     </item>
     
@@ -89,6 +97,14 @@
       <link>https://rgangnon.org/publication/schmidt-2020/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://rgangnon.org/publication/schmidt-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clustered Spatio-Temporal Varying Coefficient Regression Model</title>
+      <link>https://rgangnon.org/publication/lee-2021/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/lee-2021/</guid>
       <description></description>
     </item>
     

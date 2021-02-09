@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robert Wallace | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/robert-wallace/</link>
+      <atom:link href="https://rgangnon.org/authors/robert-wallace/index.xml" rel="self" type="application/rss+xml" />
+    <description>Robert Wallace</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Robert Wallace</title>
+      <link>https://rgangnon.org/authors/robert-wallace/</link>
+    </image>
+    
+    <item>
+      <title>Association of Macular Thickness with Age and Age-Related Macular Degeneration in the Carotenoids in Age-Related Eye Disease Study 2 (CAREDS2), An Ancillary Study of the Women’s Health Initiative</title>
+      <link>https://rgangnon.org/publication/etheridge-2020/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/etheridge-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
