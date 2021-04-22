@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iris Borowsky | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/iris-borowsky/</link>
+      <atom:link href="https://rgangnon.org/authors/iris-borowsky/index.xml" rel="self" type="application/rss+xml" />
+    <description>Iris Borowsky</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Iris Borowsky</title>
+      <link>https://rgangnon.org/authors/iris-borowsky/</link>
+    </image>
+    
+    <item>
+      <title>Weapon-Carrying Among Boys in US Schools by Race/Ethnicity: 1993-2019</title>
+      <link>https://rgangnon.org/publication/jewett-2021/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/jewett-2021/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

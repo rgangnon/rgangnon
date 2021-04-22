@@ -11,7 +11,7 @@ Conclusions: In contrast to many early-adopting states, in this later-adopting s
 featured: false
 publication: "*Women's Health Issues*"
 publication_short: "*Women Health Iss*"
-url_pdf: 
-doi: 
+url_pdf: kramer-2021.pdf
+doi: 10.1016/j.whi.2021.02.009
 ---
 
