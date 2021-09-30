@@ -1,7 +1,7 @@
 ---
 title: "Developmental patterns in the nasopharyngeal microbiome during infancy are
 associated with asthma risk"
-date: 2020-10-08
+date: 2021-05-01
 publishDate: 2020-10-08
 authors: ["Howard Tang", "Anna Lang", "Shu Mei Teo", "Louise Judd", "Ronald Gangnon", "Mike Evans", "Kris Lee",
 "Rose Vrtis", "Patrick Holt", "Rob Lemanske", "Dan Jackson", "Kathryn Holt", "Jim Gern"]
@@ -34,7 +34,7 @@ associated with the subsequent risk of developing persistent childhood asthma. "
 featured: false
 publication: "*Journal of Allergy and Clinical Immunology*"
 publication_short: "*J Allergy Clin Immunol*"
-pdf: tang-2020.pdf
+pdf: tang-2021.pdf
 doi: 10.1016/j.jaci.2020.10.009
 ---
 
