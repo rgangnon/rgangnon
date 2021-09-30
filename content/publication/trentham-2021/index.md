@@ -1,6 +1,6 @@
 ---
 title: "Recent Changes in the Patterns of Breast Cancer as a Proportion of All Deaths by Race and Ethnicity"
-date: 2021-04-22
+date: 2021-11-01
 publishDate: 2021-09-30
 authors: ["Amy Trentham-Dietz", "Christina Chapman","Jennifer Bird", "Ronald Gangnon"]
 publication_types: ["2"]
