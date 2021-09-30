@@ -1,7 +1,7 @@
 ---
 title: "Recent Changes in the Patterns of Breast Cancer as a Proportion of All Deaths by Race and Ethnicity"
 date: 2021-04-22
-publishDate: 2021-04-22
+publishDate: 2021-11-01
 authors: ["Amy Trentham-Dietz", "Christina Chapman","Jennifer Bird", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "Background: Recent reports suggest that racial differences in breast cancer incidence rates have decreased. We examined whether these findings apply to breast cancer mortality while considering age, period, and cohort influences on both absolute and relative measures of breast cancer mortality. 
@@ -11,7 +11,7 @@ Conclusions: Breast cancer mortality disparities are now greater on both relativ
 featured: true
 publication: "*Epidemiology*"
 publication_short: "*Epidemiology*"
-url_pdf: 
+url_pdf: trentham-2021.pdf
 doi: 10.1097/EDE.0000000000001394
 ---
 
