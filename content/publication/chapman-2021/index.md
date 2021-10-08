@@ -1,7 +1,7 @@
 ---
 title: "Identifying Equitable Screening Mammography Strategies for Black Women in the United States"
-date: 2021-09-01
-publishDate: 2021-09-01
+date: 2021-10-19
+publishDate: 2021-10-19
 authors: ["Christina Chapman","Clyde Schechter", "Christopher Cadham", "Amy Trentham-Dietz", "Ronald Gangnon", "Reshma Jagsi", "Jeanne Mandelblatt"]
 publication_types: ["2"]
 abstract: "Background: Screening mammography guidelines do not
