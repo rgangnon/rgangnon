@@ -11,7 +11,7 @@ Discussion:  ORCHARDS uses a community-based design to detect and evaluate influ
 featured: false
 publication: "*Influenza and Other Respiratory Viruses*"
 publication_short: "*Influenza Other Resp.*"
-url_pdf: 
-doi:  
+url_pdf: temte-2021.pdf
+doi: 10.1111/irv.12920 
 ---
 
