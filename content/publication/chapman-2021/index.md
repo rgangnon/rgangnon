@@ -49,6 +49,6 @@ featured: false
 publication: "*Annals of Internal Medicine*"
 publication_short: "*Ann Intern Med*"
 url_pdf: 
-doi: 
+doi: https://doi.org/10.7326/M20-6506
 ---
 
