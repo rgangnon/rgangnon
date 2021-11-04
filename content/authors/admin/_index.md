@@ -48,5 +48,5 @@ I was a research scientist in the [Statistical Data Analysis Center(SDAC)](https
 
 I am an applied biostatistician focusing on problems in clinical and epidemiologic research. Current methodologic areas of interest include (1) multi-state models for incidence, progression and regression of ocular (and other) diseases, (2) small area estimation problems, particularly ranking, (3) spatial and spatio-temporal modeling, particularly cluster detection and high-dimensional variable selection and (4) age-period-cohort modeling.
 
-
+Outside of the office, I'm an avid cyclist. You can check out my recent rides on [Strava](https://www.strava.com/athletes/30109438).  I'm also a big movie fan. You'll definitely see me at the [Wisconsin Film Festival](https://wifilmfest.org/), one of my favorite events every year, and you can see what I've been watching on [Letterboxd](https://letterboxd.com/rgangnon/).  
 

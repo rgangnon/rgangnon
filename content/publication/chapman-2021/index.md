@@ -48,7 +48,7 @@ White women screened biennially from ages 50 to 74 years."
 featured: false
 publication: "*Annals of Internal Medicine*"
 publication_short: "*Ann Intern Med*"
-url_pdf: 
+url_pdf: chapman-2021.pdf
 doi: https://doi.org/10.7326/M20-6506
 ---
 
