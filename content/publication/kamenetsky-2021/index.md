@@ -18,7 +18,7 @@ data from three prefectures in Japan."
 featured: true
 publication: "*Spatial and Spatio-temporal Epidemiology*"
 publication_short: "*Spat Spatiotemporal Epidemiol*"
-url_pdf: 
-doi: 
+url_pdf: kamenetsky-2021.pdf
+doi: 10.1016/j.sste.2021.100462
 ---
 
