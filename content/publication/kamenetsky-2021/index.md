@@ -1,7 +1,7 @@
 ---
 title: "Regularized spatial and spatio-temporal cluster detection"
-date: 2021-10-18
-publishDate: 2021-10-18
+date: 2021-11-12
+publishDate: 2021-11-12
 authors: ["Maria Kamenetsky", "Junho Lee", "Jun Zhu", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "Spatial and spatio-temporal cluster detection are important tools in public health and
