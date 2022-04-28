@@ -1,6 +1,6 @@
 ---
 title: "Association of Macular Thickness with Age and Age-Related Macular Degeneration in the Carotenoids in Age-Related Eye Disease Study 2 (CAREDS2), An Ancillary Study of the Women’s Health Initiative"
-date: 2020-12-30
+date: 2021-02-09
 publishDate: 2021-02-09
 authors: ["Tyler Etheridge", "Zhe Liu", "Marine Nalbandyan", "Spencer Cleland", "Barbara Blodi", "Julie Mares","Steven Bailey","Robert Wallace","Karen Gehrs","Lesley Tinker","Ron Gangnon","Amitha Domalpally","for the CARES2 Research Study Group"]
 publication_types: ["2"]
@@ -11,7 +11,7 @@ Conclusions: In this cohort of older women, a decrease in peripheral macular thi
 featured: false
 publication: "*Translational Vision Science and Ophthalmology*"
 short_publication: "*Tranl Vis Sci Ophthal"
-url_pdf: 
-doi: 
+url_pdf: etheridge-2021.pdf
+doi: 10.1167/tvst.10.2.39
 ---
 
