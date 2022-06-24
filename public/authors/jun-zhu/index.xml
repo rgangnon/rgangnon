@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/jun-zhu/</link>
       <atom:link href="https://rgangnon.org/authors/jun-zhu/index.xml" rel="self" type="application/rss+xml" />
     <description>Jun Zhu</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Jun Zhu</title>
       <link>https://rgangnon.org/authors/jun-zhu/</link>
     </image>
+    
+    <item>
+      <title>A flexible method for identifying spatial clusters of breast cancer using individual-level data</title>
+      <link>https://rgangnon.org/publication/kamenetsky-2022b/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/kamenetsky-2022b/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Regularized spatial and spatio-temporal cluster detection</title>
