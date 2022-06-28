@@ -24,6 +24,6 @@ featured: true
 publication: "*Annals of Epidemiology*"
 publication_short: "*Ann Epidemiol*"
 url_pdf: 
-doi: 
+doi: 10.1016/j.annepidem.2022.06.006
 ---
 
