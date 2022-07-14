@@ -1,7 +1,7 @@
 ---
 title: "A flexible method for identifying spatial clusters of breast cancer using individual-level data"
 date: 2022-06-10
-publishDate: 2022-06-10
+publishDate: 2022-09-01
 authors: ["Maria Kamenetsky", "Amy Trentham-Dietz", "Polly Newcomb", "Jun Zhu", "Ronald Gangnon"]
 publication_types: ["2"]
 abstract: "Prior research has shown that cancer risk varies by geography, but scan statistic
@@ -20,7 +20,7 @@ discern gradients of spatial odds across Wisconsin."
 featured: true
 publication: "*Annals of Epidemiology*"
 publication_short: "*Ann Epidemiol*"
-url_pdf: 
+url_pdf: kamenetsky-2022b.pdf
 doi: 10.1016/j.annepidem.2022.06.006
 ---
 
