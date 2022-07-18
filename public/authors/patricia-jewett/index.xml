@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/patricia-jewett/</link>
       <atom:link href="https://rgangnon.org/authors/patricia-jewett/index.xml" rel="self" type="application/rss+xml" />
     <description>Patricia Jewett</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Patricia Jewett</title>
       <link>https://rgangnon.org/authors/patricia-jewett/</link>
     </image>
+    
+    <item>
+      <title>US Mass public shootings since Columbine: victims per incident by race and ethnicity of the perpetrator</title>
+      <link>https://rgangnon.org/publication/jewett-2022/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/jewett-2022/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Forgoing physician visits due to cost: regional clustering among cancer survivors by age, sex, and race/ethnicity</title>
