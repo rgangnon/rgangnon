@@ -17,7 +17,7 @@ reliable logistical support and technology tools with planned process evaluation
 on the science.
 Summary By drawing on the Science of Team Science, coordinating centers can accelerate research progress and increase
 the impact of cancer epidemiology consortia."
-featured: true
+featured: false
 publication: "*Current Epidemiology Reports*"
 publication_short: "*Cur Epidemiol Rep*"
 url_pdf: trenthamdietz-2022.pdf
