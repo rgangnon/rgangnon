@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courtney DeBlois | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/courtney-deblois/</link>
+      <atom:link href="https://rgangnon.org/authors/courtney-deblois/index.xml" rel="self" type="application/rss+xml" />
+    <description>Courtney DeBlois</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Courtney DeBlois</title>
+      <link>https://rgangnon.org/authors/courtney-deblois/</link>
+    </image>
+    
+    <item>
+      <title>Examining the Association between the Gastrointestinal Microbiome and Gulf War Illness: A Prospective Cohort Study</title>
+      <link>https://rgangnon.org/publication/keating-2022/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/keating-2022/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
