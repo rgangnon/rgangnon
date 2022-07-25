@@ -8,5 +8,6 @@ abstract: "Many current statistical methods for disease clustering studies are b
 featured: true
 publication: "*Biometrics*"
 doi: https://doi.org/10.1111/j.0006-341X.2000.00922.x
+pdf: gangnon-2000.pdf
 ---
 

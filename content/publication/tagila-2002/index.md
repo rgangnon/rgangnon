@@ -19,5 +19,7 @@ This nonrandomized study suggests that the Molteno implant with mitomycin C is m
 featured: false
 publication: "*Journal of Glaucoma*"
 publication_short: "*J. Glaucoma*"
+pdf: taglia-2002.pdf
+doi: 10.1097/00061198-200208000-00012
 ---
 

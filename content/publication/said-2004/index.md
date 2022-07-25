@@ -20,5 +20,6 @@ featured: false
 publication: "*Journal of Hepatology*"
 publication_short: "*J. Hepatol.*"
 doi: https://doi.org/10.1016/j.jhep.2004.02.010
+pdf: said-2004.pdf
 ---
 

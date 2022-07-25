@@ -9,5 +9,6 @@ featured: false
 publication: "*Bone Marrow Transplantation.*"
 publication_short: "*Bone Marrow Transplant.*"
 url_pdf: mccoy-2004.pdf
+doi: 10.1038/sj.bmt.1704312
 ---
 

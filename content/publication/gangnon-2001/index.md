@@ -9,6 +9,6 @@ featured: true
 publication: "*Statistics in Medicine*"
 publication_short: "*Stat Med*"
 url_pdf: gangnon-2001.pdf
-doi: 10.1002/sim.1570
+doi: 10.1002/sim.917
 ---
 
