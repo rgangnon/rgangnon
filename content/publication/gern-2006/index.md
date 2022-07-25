@@ -21,7 +21,7 @@ CONCLUSION:
 In children with a family history of allergies and/or asthma, mononuclear cell phytohemagglutinin-induced IL-13 and virus-induced IFN-gamma responses at birth are indicative of the risk for wheezing in the first year of life."
 featured: false
 publication: "*Journal of Allergy & Clinical Immunology*"
-publication_short: "*J. Allergy Clin. Immunol.*"
+publication_short: "*J. Allergy Clin. Immunol*"
 url_pdf: gern-2006.pdf
 doi: https://doi.org/10.1016/j.jaci.2005.10.002
 projects: [COAST]

@@ -2,7 +2,7 @@
 title: "Specific patterns of allergic sensitization in early childhood and asthma & rhinitis risk"
 date: 2013-02-01
 publishDate: 2020-02-08T06:30:32.739627Z
-authors: ["D Stoltz", "Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Jim Gern", "Rob Lemanske"]
+authors: ["Dan Stoltz", "Dan Jackson", "Mike Evans", "Ronald Gangnon", "Chris Tisler", "Jim Gern", "Rob Lemanske"]
 publication_types: ["2"]
 abstract: "BACKGROUND:
 

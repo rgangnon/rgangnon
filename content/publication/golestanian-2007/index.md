@@ -32,5 +32,6 @@ featured: false
 publication: "*Critical Care Medicine*"
 publication_short: "*Crit. Care Med.*"
 doi: 10.1097/01.CCM.0000265741.16192.D9
+pdf: golestanian-2007.pdf
 ---
 

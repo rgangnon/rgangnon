@@ -8,5 +8,6 @@ abstract: "In this note, we consider weighted log-rank statistics applied to clu
 featured: true
 publication: "*Statistics & Probability Letters*"
 doi: https://doi.org/10.1016/j.spl.2005.08.026
+pdf: kosorok-2006.pdf
 ---
 

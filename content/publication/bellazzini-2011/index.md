@@ -18,6 +18,7 @@ Conclusion
 Web-based media is an effective means of teaching landing zone safety to first responders with minimal knowledge decay."
 featured: false
 publication: "*Air Med. J.*"
-url_pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4139117/
+url_pdf: bellazzini-2011.pdf
+doi: 10.1016/j.amj.2010.10.010
 ---
 

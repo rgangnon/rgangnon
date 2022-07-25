@@ -20,5 +20,6 @@ featured: false
 publication: "*Journal of American Association for Pediatric Ophthalmology and Strabismus*"
 publication_short: "*J AAPOS*"
 doi: https://doi.org/10.1016/j.jaapos.2005.06.002
+pdf: bradfield-2005.pdf
 ---
 

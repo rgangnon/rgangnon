@@ -20,6 +20,7 @@ featured: false
 publication: "*Clinical & Experimental Allergy*"
 publication_short: "*Clin. Exp. Allergy*"
 doi:  https://doi.org/10.1111/j.1365-2222.2007.02891.x
+pdf: sullivandillie-2008.pdf
 projects: [COAST]
 ---
 

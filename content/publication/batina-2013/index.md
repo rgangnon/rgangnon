@@ -9,5 +9,6 @@ featured: false
 publication: "*Breast Cancer Res. Treat.*"
 url_pdf: https://link.springer.com/article/10.1007%2Fs10549-013-2435-z
 projects: [CISNET]
+doi: 10.1007/s10549-013-2435-z
 ---
 

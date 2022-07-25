@@ -9,5 +9,6 @@ featured: false
 publication: "*Journal of Rehabilitation Research & Development*"
 publication_short: "*J Rehabil Res Dev*"
 url_pdf: hind-2012.pdf
+doi: 10.1682/jrrd.2011.09.0180
 ---
 

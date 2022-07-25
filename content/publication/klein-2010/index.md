@@ -27,6 +27,7 @@ CONCLUSIONS:
 These data show that the 25-year cumulative incidence of VI is related to modifiable risk factors and, therefore, that VI may be reduced by better glycemic and blood pressure control and avoidance of smoking."
 featured: false
 publication: "*Ophthalmology*"
+pdf: klein-2010.pdf
 doi: https://doi.org/10.1016/j.ophtha.2009.06.051
 projects: [WESDR]
 ---

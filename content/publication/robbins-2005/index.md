@@ -32,5 +32,6 @@ featured: false
 publication: "*Journal of the American Geriatrics Society*"
 publication_short: "*J Am Geriatr Soc*"
 doi:  https://doi.org/10.1111/j.1532-5415.2005.53467.x
+pdf: robbins-2005.pdf
 ---
 

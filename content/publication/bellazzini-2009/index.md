@@ -19,5 +19,6 @@ All maneuvers with the exception of hepatic pressure led to a statistically sign
 featured: false
 publication: "*Am J Emerg Med*"
 url_pdf: https://www.ajemjournal.com/article/S0735-6757(08)00247-7/fulltext
+doi: https://doi.org/10.1016/j.ajem.2008.03.034
 ---
 

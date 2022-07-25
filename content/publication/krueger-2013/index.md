@@ -9,5 +9,6 @@ featured: false
 publication: "*Journal of Clinical Densitometry*"
 publication_short: "*J Clin Densitom*"
 url_pdf: krueger-2013.pdf
+doi: 10.1016/j.jocd.2012.02.007
 ---
 

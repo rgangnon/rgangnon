@@ -8,6 +8,6 @@ abstract: "Disease-related atrophy of the tongue muscles can lead to diminished 
 featured: false
 publication: "*Dysphagia*"
 url_pdf: hewitt-2008.pdf
-doi:
+doi: 10.1007/s00455-007-9089-0
 ---
 

@@ -8,5 +8,6 @@ abstract: "We present a simple sample‐size formula for weighted log‐rank sta
 featured: true
 publication: "*Biometrika*"
 doi: https://doi.org/10.1093/biomet/91.2.263
+pdf: gangnon-2004.pdf
 ---
 

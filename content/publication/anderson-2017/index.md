@@ -20,7 +20,7 @@ CONCLUSIONS:
 
 Serum periostin levels are significantly higher in children than in adults, likely due to bone turnover, which impairs clinical utility in children. Early life aeroallergen sensitization and elevated blood eosinophils are robust predictors of asthma development. Children with evidence of activation of multiple pathways of type 2 inflammation in early life are at greatest risk for asthma development."
 featured: false
-publication: "*J. Allergy Clin. Immunol.*"
+publication_short: "*J Allergy Clin Immunol*"
 url_pdf: https://www.jacionline.org/article/S0091-6749(16)30597-8/fulltext
 projects: [COAST]
 ---

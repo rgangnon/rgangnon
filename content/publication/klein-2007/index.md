@@ -28,6 +28,7 @@ We document the long-term incidence of signs of AMD and a continuum from small h
 featured: false
 publication: "*Ophthalmology*"
 doi: https://doi.org/10.1016/j.ophtha.2006.10.040
+pdf: klein-2007.pdf
 projects: [BDES]
 ---
 

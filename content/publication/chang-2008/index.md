@@ -20,5 +20,6 @@ featured: false
 publication: "*Clinical Lymphoma & Myeloma*"
 publication_short: "*Clin Lymphoma Myeloma*"
 doi: https://doi.org/10.3816/CLM.2008.n.018
+pdf: chang-2008.pdf
 ---
 

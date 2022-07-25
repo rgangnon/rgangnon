@@ -8,6 +8,7 @@ abstract: "In this study, we hypothesized that use of the lowest T-score among f
 featured: false
 publication: "*Journal of Clinical Densitometry*"
 publication_short: "*J Clin Densitom*"
-url_pdf: 
+pdf: hansen-2004b.pdf
+doi: https://doi.org/10.1385/JCD:7:4:376
 ---
 

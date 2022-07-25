@@ -18,7 +18,9 @@ CONCLUSION:
 
 The GE NHANES III software update leads to lower FN and TR T-scores than obtained with Hol or prior GE software. Recalculation of the young-normal SD reduces this difference and is recommended. Clinicians are advised to avoid using the TR for diagnosis or, at a minimum, use caution when making treatment decisions based solely on T-score at this site."
 featured: false
-publication: "*J. Bone Miner. Res.*"
-url_pdf: https://asbmr.onlinelibrary.wiley.com/doi/full/10.1359/JBMR.041115
+publication: "*Journal of Bone and Mineral Research*"
+publication_short: "*J Bone Miner Res*"
+doi: 10.1359/JBMR.041115
+pdf: binkley-2005.pdf
 ---
 

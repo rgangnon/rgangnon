@@ -9,5 +9,6 @@ featured: false
 publication: "*Journal of Allergy & Clinical Immunology*"
 publication_short: "*J Allergy Clin Immunol.*"
 url_pdf: mcmahon-2012.pdf
+doi: 10.1016/j.jaci.2012.05.020
 ---
 

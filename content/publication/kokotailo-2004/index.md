@@ -20,5 +20,6 @@ featured: false
 publication: "*Alcoholism Clinical & Experimental Research*"
 publication_short: "*Alcohol. Clin. Exp. Res.*"
 doi:  https://doi.org/10.1097/01.ALC.0000128239.87611.F5
+pdf: kokotailo-2004.odf
 ---
 

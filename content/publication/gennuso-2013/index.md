@@ -7,5 +7,6 @@ publication_types: ["2"]
 abstract: ""
 featured: false
 publication: "*Med Sci Sports Exerc*"
+doi: 10.1249/MSS.0b013e318288a1e5
 ---
 

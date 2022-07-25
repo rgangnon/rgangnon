@@ -20,6 +20,7 @@ featured: true
 publication: "*Archives of Ophthalmology*"
 publication_short: "*Arch. Ophthalmol.*"
 doi: 10.1001/archopht.123.11.1484
+pdf: davis-2005.pdf
 projects: [AREDS]
 ---
 

@@ -9,5 +9,6 @@ featured: false
 publication: "*American Journal of Cardiology*"
 publication_short: "*Am. J. Cardiol.*"
 doi: https://doi.org/10.1016/j.amjcard.2007.05.037
+pdf: guttormsen-2007.pdf
 ---
 

@@ -5,12 +5,28 @@
     <link>https://rgangnon.org/authors/murray-clayton/</link>
       <atom:link href="https://rgangnon.org/authors/murray-clayton/index.xml" rel="self" type="application/rss+xml" />
     <description>Murray Clayton</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2003 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 23 Jan 2007 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Murray Clayton</title>
       <link>https://rgangnon.org/authors/murray-clayton/</link>
     </image>
+    
+    <item>
+      <title>Cluster detection using Bayes factors from overparameterized cluster models</title>
+      <link>https://rgangnon.org/publication/gangnon-2007/</link>
+      <pubDate>Tue, 23 Jan 2007 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/gangnon-2007/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Likelihood-based tests for localized spatial clustering of disease</title>
+      <link>https://rgangnon.org/publication/gangnon-2004b/</link>
+      <pubDate>Thu, 19 Aug 2004 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/gangnon-2004b/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A hierarchical model for spatially clustered disease rates</title>

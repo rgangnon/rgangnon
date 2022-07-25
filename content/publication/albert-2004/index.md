@@ -18,6 +18,7 @@ CONCLUSIONS:
 These findings support previous studies indicating that latanoprost-induced eye color changes are due to an increased amount of melanin within the iris stromal melanocytes. The increased numbers of freckles may be a focal manifestation of this effect."
 featured: false
 publication: "*Arch. Ophthalmol.*"
-url_pdf: https://jamanetwork.com/journals/jamaophthalmology/fullarticle/416661
+pdf: albert-2004.pdf
+doi: 10.1001/archopht.122.11.1680
 ---
 

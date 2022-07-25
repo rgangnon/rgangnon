@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michelle Steen-Adams | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/michelle-steen-adams/</link>
+      <atom:link href="https://rgangnon.org/authors/michelle-steen-adams/index.xml" rel="self" type="application/rss+xml" />
+    <description>Michelle Steen-Adams</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 07 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Michelle Steen-Adams</title>
+      <link>https://rgangnon.org/authors/michelle-steen-adams/</link>
+    </image>
+    
+    <item>
+      <title>Spatial multinomial regression models for nominal categorical data: a study of land cover in NorthernWisconsin, USA</title>
+      <link>https://rgangnon.org/publication/jin-2013/</link>
+      <pubDate>Mon, 07 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/jin-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

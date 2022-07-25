@@ -19,6 +19,6 @@ Young and old adults demonstrated reduced tongue strength and endurance after di
 featured: false
 publication: "*Journal of Speech, Language & Hearing Research*"
 publication_short: "*J. Speech Lang. Hear. Res.*"
-doi: https://doi.org/10.1044/1092-4388(2009/09-0048
+doi: https://doi.org/10.1044/1092-4388(2009/09-0048)
 ---
 

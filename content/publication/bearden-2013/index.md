@@ -29,7 +29,8 @@ CONCLUSION:
 
 Vitamin D deficiency was common in this HIV population, as seen in other HIV cohorts. A novel, U-shaped relationship between 1,25(OH)2D and viral load, with the lowest and highest 1,25(OH)2D levels seen with high viral loads, was found and deserves further study."
 featured: false
-publication: "*J. Clin. Endocrinol. Metab.*"
+publication_short: "*J Clin Endocrinol Metab*"
 url_pdf: https://academic.oup.com/jcem/article/98/4/1726/2537057
+doi: 10.1210/jc.2012-4031
 ---
 

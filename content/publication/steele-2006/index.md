@@ -19,5 +19,6 @@ Treatment of anisometropic amblyopia with spectacles alone can be a successful o
 featured: false
 publication: "*J AAPOS*"
 doi: https://doi.org/10.1016/j.jaapos.2005.08.003
+pdf: steele-2006.pdf
 ---
 

@@ -20,5 +20,6 @@ featured: false
 publication: "*Quality of Life Research*"
 publication_short: "*Qual Life Res*"
 url_pdf: hart-2018.pdf
+doi: 10.1007/s11136-018-1807-6
 ---
 

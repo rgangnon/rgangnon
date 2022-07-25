@@ -20,7 +20,7 @@ featured: false
 publication: "*American Journal of Speech-Language Pathology*"
 publication_short: "*Am J Speech Lang Pathol*"
 url_pdf: malandranki-2012.pdf
-doi: https://doi.org/10.1044/1058-0360(2011/10-0097
+doi: https://doi.org/10.1044/1058-0360(2011/10-0097)
 projects: [Dysphagia]
 ---
 
