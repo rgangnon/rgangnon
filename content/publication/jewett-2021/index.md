@@ -28,6 +28,6 @@ featured: false
 publication: "*Pediatrics*"
 publication_short: "*Pediatrics*"
 url_pdf: jewett-2021.pdf
-doi: 10.1542/peds.2020-04962
+doi: https://doi.org/10.1542/peds.2020-049623
 ---
 
