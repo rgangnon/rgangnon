@@ -25,6 +25,6 @@ featured: false
 publication: "*Journal of Cancer Survivorship*"
 publication_short: "*J Cancer Surviv*"
 url_pdf: gu-2022.pdf
-doi: 10.1007/s11764-01201-3
+doi: 10.1007/s11764-022-01201-3
 ---
 
