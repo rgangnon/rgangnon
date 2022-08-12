@@ -8,7 +8,7 @@ abstract: "White individuals in the United States (US) have historically had dis
 featured: false
 publication: "*Preventive Medicine*"
 publication_short: "*Prev Med*"
-url_pdf: 
+url_pdf: jewett-2022.pdf
 doi: 10.1016/j.ypmed.2022.107176
 ---
 
