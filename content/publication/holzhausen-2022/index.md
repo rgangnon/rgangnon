@@ -1,5 +1,5 @@
 ---
-title: "Examining the Association between the Gastrointestinal Microbiome and Gulf War Illness: A Prospective Cohort Study"
+title: "Assessing the Relationship Between Physical Activity and the Gut Microbiome in a Large, Population-Based Sample of Wisconsin Adults"
 date: 2022-10-12
 publishDate: 2022-10-12
 authors: [Elizabeth Holzhausen, Kristen Malecki, Ajay Sethi, Ronald Gangnon, Lisa Cadmus-Bertram, Courtney DeBlois, Garret Suen, Nasia Safdar, Paul Peppard]
