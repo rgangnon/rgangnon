@@ -1,7 +1,7 @@
 ---
 title: "The Oregon Child Absenteeism Due to Respiratory Disease Study (ORCHARDS): Rationale, Objectives, and Design"
 date: 2021-09-27
-publishDate: 2021-09-27
+publishDate: 2022-03-01
 authors: ["Jonathan Temte", "Shari Barlow", "Maureen Goss","Emily Temte","Cristalyne Bell", "Cecilia He", "Caroline Hamer", "Amber Schemmel", "Brad Maerz", "Lily Comp", "Mitchell Arnold","Kimberly Breunig","Sarah Clifford","Erik Reisdorf","Peter Shult", "Mary Wedig", "Thomas Haupt","Jim Conway", "Ronald Gangnon", "Ashley Fowlkes", "Amra Uzicanin"]
 publication_types: ["2"]
 abstract: "Background: Influenza viruses pose significant disease burdens through annual seasonal outbreaks and unpredictable pandemics. Existing influenza surveillance programs have relied heavily on medical facility reporting influenza. Continuously monitoring cause-specific school absenteeism may identify local activity acceleration of seasonal influenza. The Oregon Child Absenteeism Due to Respiratory Disease Study (ORCHARDS) implements daily school-based monitoring of influenza-like illness-specific student absenteeism (a-ILI) in pre-kindergarten through grade 12 schools and assesses this approach for early detection of accelerated influenza and other respiratory pathogen transmission in schools and surrounding communities.

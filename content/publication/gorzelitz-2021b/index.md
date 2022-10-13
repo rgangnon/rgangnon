@@ -3,7 +3,7 @@ title: "Improvements in strength and agility measures of functional fitness
 following a telehealth‑delivered home‑based exercise intervention
 in endometrial cancer survivors"
 date: 2021-07-28
-publishDate: 2021-07-28
+publishDate: 2022-01-01
 authors: ["Jessica Gorzelitz", "Stefanie Stoller", "Erin Costanzo", "Ronald Gangnon", "Kelli Koltyn","Amy Trentham-Dietz","Ryan Spencer", "Joanne Rash", "Lisa Cadmus-Bertram"]
 publication_types: ["2"]
 abstract: "Purpose Endometrial cancer is strongly linked to obesity and inactivity; however, increased physical activity has important
