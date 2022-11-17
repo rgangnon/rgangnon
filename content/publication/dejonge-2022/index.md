@@ -1,7 +1,7 @@
 ---
 title: "Risk of COVID-19 Illness among In-Person K-12 School Educators and Its Association with School District Prevention Policies – Wisconsin, September 2-November 24, 2021"
 date: 2022-08-16
-publishDate: 2022-08-16
+publishDate: 2022-11-16
 authors: ["Peter DeJonge", "Ian Pray", "Ronald Gangnon", "Kate McCoy", "Carrie Tomasallo", "Jon Meiman"]
 publication_types: ["2"]
 abstract: "Objectives: To assess the rate of COVID-19 among in-person K-12 educators and its association with various COVID-19 prevention policies in school districts.
