@@ -11,7 +11,7 @@ Conclusions: In Wisconsin’s K-12 school districts, during the Fall 2021 academ
 featured: false
 publication: "*American Journal of Public Health*"
 publication_short: "*Am J Public Health*"
-url_pdf: 
-doi: 
+url_pdf: dejonge-2022.pdf
+doi: 10.2105/AJPH.2022.307095
 ---
 
