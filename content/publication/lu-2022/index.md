@@ -1,7 +1,7 @@
 ---
 title: "Breast Cancer Risk for Women with Diabetes and The Impact of Metformin – A Meta-analysis"
 date: 2022-12-13
-publishDate: 2022-12-13
+publishDate: 2022-12-19
 authors: ["Yifan Lu", "Ali Hajjar", "Vincent Cryns", "Amy Trentham-Dietz", "Ronald Gangnon", "Brandy Heckman-Stoddard", "Oguz Alagoz"]
 publication_types: ["2"]
 abstract: "Background: Diabetes mellitus has been associated with increased breast cancer (BC) risk; however, the magnitude of this effect is uncertain. This study focused on BC risk for women with type 2 diabetes mellitus (T2DM). 
@@ -12,7 +12,8 @@ Impact: These two meta-analyses can inform decision-making for women with type 2
 featured: false
 publication: "*Cancer Medicine*"
 publication_short: "*Cancer Med*"
-doi: 
+doi: 10.1002/cam4.5545
+pdf: lu-2022.pdf
 projects: [CISNET]
 ---
 
