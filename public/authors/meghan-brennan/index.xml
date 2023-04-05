@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meghan Brennan | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/meghan-brennan/</link>
+      <atom:link href="https://rgangnon.org/authors/meghan-brennan/index.xml" rel="self" type="application/rss+xml" />
+    <description>Meghan Brennan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Meghan Brennan</title>
+      <link>https://rgangnon.org/authors/meghan-brennan/</link>
+    </image>
+    
+    <item>
+      <title>Association of Rurality and Identifying as Black with Receipt of Specialty Care Among Patients Hospitalized with a Diabetic Foot Ulcer: A Medicare Cohort Study</title>
+      <link>https://rgangnon.org/publication/taylor-2023/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/taylor-2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
