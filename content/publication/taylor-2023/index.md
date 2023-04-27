@@ -33,7 +33,7 @@ needed to determine causality."
 featured: false
 publication: "*BMJ Open Diabetes Research and Care*"
 publication_short: "*BMJ Open Diabetes Res Care*"
-pdf: 
-doi: 
+pdf: taylor-2023.pdf
+doi: 10.1136/bmjdrc-2022-003185
 ---
 
