@@ -21,7 +21,7 @@ them with the intervention augmentations necessary to increase MVPA and improve 
 featured: false
 publication: "*Contemporary Clinical Trials*"
 publication_short: "*Contemp Clin Trials*"
-url_pdf: 
+url_pdf: cadmusbertram-2023.pdf
 doi: 10.1016/j.cct.2023.107187
 ---
 
