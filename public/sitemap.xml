@@ -1,5830 +1,3500 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://rgangnon.org/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/courses/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/talk/example/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication_types/2/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cadmusbertram-2023/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/abby-mishory/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amye-tevaarwerk/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bonnie-spring/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christian-schmidt/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/emma-barber/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hannah-freeman/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/inhal-nahum-shani/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julia-starikovsky/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/laura-muller/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lillian-carden/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-cadmus-bertram/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-sesto/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/megan-agnew/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/melanie-wolter/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/payton-solk/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication_types/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ronald-gangnon/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ryan-spencer/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/siobhan-phillips/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sondra-naxi/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/vanessa-hodgson/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/whitney-morelli/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/william-gradisher/</loc>
     <lastmod>2023-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-kind/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/taylor-2023/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christie-bartels/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-kramer/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lindasy-taylor/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/meghan-brennan/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/w-powell/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ali-hajjar/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-trentham-dietz/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brandy-heckman-stoddard/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lu-2022/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/oguz-alagoz/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/vincent-cryns/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yifan-lu/</loc>
     <lastmod>2022-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carrie-tomasallo/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ian-pray/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jon-meiman/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kate-mccoy/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-dejonge/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/dejonge-2022/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ajay-sethi/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/holzhausen-2022/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/courtney-deblois/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elizabeth-holzhausen/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/garret-suen/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristen-malecki/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nasia-safdar/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-peppard/</loc>
     <lastmod>2022-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kamenetsky-2022b/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jun-zhu/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/maria-kamenetsky/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/polly-newcomb/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ashely-kates/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dane-cook/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-rabago/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kates-2022/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jared-godfrey/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julie-keating/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelsey-baubie/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lauren-watson/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nathan-putman-buehler/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrew-kiragu/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/eunice-areba/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/iris-borowsky/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-densley/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jillian-peterson/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/patricia-jewett/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jewett-2022/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/junho-lee/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kamenetsky-2022/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amber-schemmel/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amra-uzicanin/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/temte-2022/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cristalyne-bell/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/emily-temte/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/erik-reisdorf/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-conway/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jonathan-temte/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-wedig/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/maureen-goss/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-shult/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shari-barlow/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/thomas-haupt/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bjoern-buehring/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diane-kruger/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/taani-2022/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/muard-taani/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/neil-binkley/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anne-blaes/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christina-gu/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gu-2022/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/helen-parsons/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/himal-purani/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rachel-vogel/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robin-yabroof/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/betsy-rolland/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/claudia-vredeveld/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/trenthamdietz-2022/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jennifer-bird/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-shull/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sara-lindberg/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tena-madison/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/erin-costanzo/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jessica-gorzelitz/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-hampton/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelli-koltyn/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gorzelitz-2022/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christina-chapman/</loc>
     <lastmod>2021-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/trentham-2021/</loc>
     <lastmod>2021-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christopher-cadham/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/clyde-schechter/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chapman-2021/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeanne-mandelblatt/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/reshma-jagsi/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ashley-fowlkes/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brad-maerz/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/caroline-hamer/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cecilia-he/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kimberly-breunig/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lily-comp/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mitchell-arnold/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sarah-clifford/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/temte-2021/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gorzelitz-2021b/</loc>
     <lastmod>2021-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joanne-rash/</loc>
     <lastmod>2021-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stefanie-stoller/</loc>
     <lastmod>2021-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anna-lang/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carmen-valdez/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dan-jackson/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/deb-ehrenthal/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/tang-2021/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elizabeth-jacobs/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/howard-tang/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-gern/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kathryn-holt/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kris-lee/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/louise-judd/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mariah-curtis/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-evans/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/natalie-guerrero/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/patrick-holt/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rob-lemanske/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rose-vrtis/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shu-mei-teo/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/guerrero-2021/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/judith-kafka/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jewett-2021/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marguerite-burns/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kramer-2021/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/renee-kramer/</loc>
     <lastmod>2021-03-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amitha-domalpally/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/etheridge-2021/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/barbara-blodi/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/for-the-cares2-research-study-group/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julie-mares/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karen-gehrs/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lesley-tinker/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marine-nalbandyan/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-wallace/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ron-gangnon/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/spencer-cleland/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/steven-bailey/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tyler-etheridge/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zhe-liu/</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lee-2021/</loc>
     <lastmod>2021-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gorzelitz-2021/</loc>
     <lastmod>2021-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrew-liu/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anne-fitzpatrick/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bill-busse/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carlos-camargo/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carole-ober/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carolyn-kercsmar/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-seroogy/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-tisler/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-mauger/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ellen-wald/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/choi-2020/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gregory-demuri/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gurjit-hershey/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/haejin-kim/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ingrid-laing/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jacqueline-pongracic/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kiara-homil/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kohei-hasegawa/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kris-grindle/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/len-bacharier/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-devries/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/meyer-kattan/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/on-behalf-of-program-collaborators-for-environment-influences-on-child-health-outcomes/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pat-holt/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-gergen/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-le-souef/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-sly/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/petra-lebeau/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rebecca-gruchalla/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-wood/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robyn-cohen/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shilpa-patel/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/timothy-choi/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tina-hartert/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tressa-pappas/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tuomas-jartti/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/wanda-phipatanakul/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yury-bochkov/</loc>
     <lastmod>2020-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gorzelitz-2020/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chloe-farber/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brittany-van-remortel/</loc>
     <lastmod>2020-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/rastogi-2020/</loc>
     <lastmod>2020-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/keith-thraen-borowski/</loc>
     <lastmod>2020-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/preshita-date/</loc>
     <lastmod>2020-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/somya-rastogi/</loc>
     <lastmod>2020-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brent-olson/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/casper-bendixsen/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cheryl-steiman/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kate-barnes/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-lasarev/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/steiman-2020/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/albert-levin/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anne-wright/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brian-hallmark/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/catherine-stanhope/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/charles-washington/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-mckennan/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christine-johnson/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dan-nicolae/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dean-billheimer/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dennis-ownby/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diane-gold/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ed-zoratti/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/edward-naureckas/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/eneida-mendonca/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/environmental-influences-on-child-health-outcomes-childrens-respiratory-research-workgroup/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/ober-2020/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/fernando-martinez/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ganesa-wegienka/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/george-oconnor/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gurjit-khurana-hershey/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/katherine-naughton/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kevin-magnaye/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kyle-hogarth/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/leonard-bacharier/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-gress/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mario-rosasco/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/matthew-altman/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rachel-miller/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/steven-white/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sue-lynch/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/suzanne-havstad/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/guerrero-2020/</loc>
     <lastmod>2020-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kevin-wagner/</loc>
     <lastmod>2020-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jane-mahoney/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jill-renken/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/laverne-jaros/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lindy-clemson/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mahoney-2020/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sandy-cech/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schmidt-2020/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marty-kanarek/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shoshannah-eggers/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/traci-snedden/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alec-winzenried/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-schultz/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bin-huang/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/casey-schumann/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/danielle-kahn/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/westergaard-2019/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-sosman/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karli-hochstatter/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/li-zhu/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jewett-2019/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paige-andrews/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schultz-2019/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rocky-feuer/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ryan-westergaard/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ashley-kates/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cadmusbertram-2019/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/catherine-shaughnessy/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/celia-byrne/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/keating-2019/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/terry-2019/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joe-jerry/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julia-brody/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kal-watson/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kami-silk/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karin-michels/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-beth-martin/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-beth-terry/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nadia-dominguez/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/on-behalf-of-breast-cancer-and-the-environment-research-program-bcerp/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shiuan-chen/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-neuhausen/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/post/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-dresen/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/deanna-cole/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeffrey-vanwormer/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jennifer-meece/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/matthew-keifer/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/on-behalf-of-the-entire-wisc-study-team/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/seroogy-2019/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tamara-kronenwetter-koepel/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tara-johnson/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alkis-togias/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cheri-swenson/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gern-2019/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gina-crisafi/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/iris-lee/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kazuyuki-nakagome/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristine-grindle/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/loren-denlinger/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michele-wolff/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephen-liggett/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/steven-sigelman/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/wai-ming-lee/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/courses/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/dorn-2019/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/barbara-klein/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/connie-bongiorno/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-bell/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-gaus/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diana-dorn/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diego-herrera/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jackson-musuuza/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-ohoro/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jonathan-patz/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jorge-osorio/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karen-cruickshanks/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marc-korobkin/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-tsai/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2019/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pramod-guru/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rachel-sippy/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ronald-klein/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sippy-2019/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/musuuza-2019/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/admin/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/post/jupyter/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/betty-chewning/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dale-wilson/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chewning-2019/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristine-hallisy/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nisaratana-sangasubana/</loc>
     <lastmod>2019-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jonathan-meiman/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/temte-2019/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/caprice-greenberg/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dave-vanness/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/frank-wilson/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gretchen-kimmick/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hollis-moore/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joseph-lipscomb/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/moore-2018/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/roger-anderson/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rosemary-cress/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/steven-fleming/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-sabatino/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/xiao-cheng-wu/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carol-cheung/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lorraine-danforth/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stacy-meuer/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2018/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tien-wong/</loc>
     <lastmod>2018-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-berkman/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brian-sprague/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christopher-veal/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mayo-fujii/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-gilchrist/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hart-2018/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/vicki-hart/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/roguspulia-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/aimee-near/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/allison-kurian/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/beth-burnside/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mandelblatt-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/denny-fryback/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diana-miglioretti/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diego-munoz/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/harald-weedon-fekjaer/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kathy-cronin/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/maria-mora-pinzon/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/martin-shafer/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mehmet-ergun/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mucahit-cevik/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nadine-connor/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nicole-rogus-pulia/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/oguzhan-alagoz/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sanjay-asthana/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/scott-adams/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sylvia-plevritis/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tasha-stout/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/alagoz-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/morapinzon-2018/</loc>
     <lastmod>2018-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-shirley/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/keith-poulsen/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/megan-duster/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sanjay-shukla/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/eggers-2018/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andreas-friedl/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anna-tosteson/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bashir-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/beth-anderson/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/conklin-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/trenthamdietz-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/don-weaver/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elena-elkin/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elizabeth-pollock/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/fue-vang/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jewett-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hiba-bashir/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-lagro/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeremy-bredfeldt/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jessica-athens/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kevin-eliceiri/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kim-dittus/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-salazar/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-van-gemert/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/matt-conklin/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nuntida-surachaicharn/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pamela-vacek/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/patty-keely/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/huang-2018/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sally-herschorn/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ted-james/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/teresa-kang/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/thomas-tucker/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yuming-liu/</loc>
     <lastmod>2018-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/plevritis-2018/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cong-xu/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/don-berry/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/harry-de-koning/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hui-huang/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jereon-van-den-broek/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/juhee-song/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nicolien-van-ravesteyn/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sandra-lee/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/xuelin-huang/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yisheng-li/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/young-chandler/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-maynard/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2017b/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cadmusbertram-2017b/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/emily-wirkus/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jessica-gorzelitz-liebhauser/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/aaron-potvien/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-kim/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/smith-2017/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jennifer-weiss/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jessica-schumacher/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jingjing-liang/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/k.-horak/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lauren-weeth-feinstein/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/maureen-smith/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/perry-pickhardt/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2017/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lee-2017b/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/veal-2017/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephen-higgins/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-lakoski/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dustin-pooler/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jen-weiss/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/patrick-pfau/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/weiss-2017/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cadmusbertram-2017/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cecile-holweg/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lee-2017/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/haile-anderson/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joseph-arron/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/anderson-2017/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ronald-e.-gangnon/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/victoria-rajamanickam/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/anderson-2017b/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/rubner-2017/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/frederick-rubner/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcelroy-2017/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-robertson/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-guthrie/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jane-mcelroy/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robin-kruse/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/adams-2017/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karla-kerlikowske/</loc>
     <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/trenthamdietz-2016/</loc>
     <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/keith-gennuso/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-colbert/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gennuso-2016/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/shiyanbola-2016/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/wale-shiyanbola/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/charles-chandler/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kerri-howard/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ron-danis/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/howard-2016/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yijun-huang/</loc>
     <lastmod>2016-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jiale-xu/</loc>
     <lastmod>2016-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/xu-2016/</loc>
     <lastmod>2016-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/breast-cancer/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/project/cisnet/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/project/rankings/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/simulation-modeling/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/academic/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/post/getting-started/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/categories/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/categories/demo/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hart-2016/</loc>
     <lastmod>2016-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amanda-hoeffken/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mandelblatt-2016/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/roguspulia-2016/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/eveline-heijnsdijk/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gary-chisholm/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jackie-hind/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeroen-van-den-broek/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jill-zielinski/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joanne-robbins/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/martin-krapcho/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nicole-rusche/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yaojen-chang/</loc>
     <lastmod>2016-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/e-kreinerm%C3%B8ller/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dagan-loisel/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/g-du/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/loisel-2016/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hans-bisgaard/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/k-b%C3%B8nnelykke/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/r-myers/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/t-ahluwalia/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/arnold-wald/</loc>
     <lastmod>2015-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schusslerfiorenza-2015/</loc>
     <lastmod>2015-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/miryam-schussler-fiorenza-rose/</loc>
     <lastmod>2015-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amaziah-coleman/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/roguspulia-2015/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/coleman-2015/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelsey-banaszynski/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kim-churness/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrew-paterson/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chelsea-myers/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2015b/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/adesua-okupa/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alex-thomas/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-thomas/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ron-sorkness/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sean-fain/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/thomas-2015/</loc>
     <lastmod>2015-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/categories/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hal-skinner/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/harald-weedon-fekj%C3%A6r/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/javier-nieto/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kathleen-egan/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristin-litzelman/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/linda-titus/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pat-remington/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ted-holford/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2015b/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/litzelman-2015/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sprague-2015/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/whitney-witt/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gennuso-2015/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2015/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sudha-iyengar/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/theru-sivakumaran/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/aman-tandias/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bill-buckingham/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brian-arndt/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bryan-heiderscheit/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-page/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diane-krueger/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/e.-fidler/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelly-cowan/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/larry-hanrahan/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/buehring-2015/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2015/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chang-2015/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/theresa-guilbert/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tim-chang/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/danielle-schulte/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dennis-maki/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/athens-2015/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schulte-2015/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alison-galbraith/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/wisk-2014/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-mullahy/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lauren-wisk/</loc>
     <lastmod>2014-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrea-peterson/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/myers-2014/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/ferguson-2014/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/flavia-consens/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michaela-teodorescu/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mihai-teodorescu/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sprague-2014/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-wellman/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ronald-chervin/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-ferguson/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jewett-2014/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/veronica-burt/</loc>
     <lastmod>2014-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/litzelman-2014b/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/corinne-engelman/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/f.-j.-nieto/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/h.-g.-skinner/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/k.-litzelman/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/k.-malecki/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marsha-mailick/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/r.-e.-gangnon/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2014b/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/litzelman-2014/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/w.-p.-witt/</loc>
     <lastmod>2014-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kloepfer-2014/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jonine-figueroa/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kirsten-kloepfer/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/warrenandersen-2014b/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shaneda-warren-andersen/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/theresa-kang/</loc>
     <lastmod>2014-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2014/</loc>
     <lastmod>2014-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hansen-2014/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrea-jones/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/barbara-fischer/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carey-gleason/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-buchanan/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-rider/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/fischer-2014/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/douglas-riegert-johnson/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gloria-petersen/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/grace-kimmel/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jodi-janczewski/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-potter/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julie-cunningham/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jyothi-gogineni/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karen-hansen/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-boardman/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-jenkins/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2014/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-haile/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/russell-vanderboom/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ruth-johnson/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/songwon-seo/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephen-thibodeau/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/terry-shea/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/boardman-2014b/</loc>
     <lastmod>2014-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/warrenandersen-2014/</loc>
     <lastmod>2014-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chang-2014/</loc>
     <lastmod>2014-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-sorkness/</loc>
     <lastmod>2014-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/on-behalf-of-the-childhood-asthma-research-and-education-care-networkinvestigators/</loc>
     <lastmod>2014-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stanley-szefler/</loc>
     <lastmod>2014-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/abiola-keller/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christovam-barcellos/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/krueger-2014/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gail-gunter-hunt/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gregory-asner/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hahn-2014/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/j.-libber/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lawrence-maucieri/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/micah-hahn/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/n.-vallarta-ast/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/fischer-2014b/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/teresa-swader/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/keller-2014/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/william-hoyt/</loc>
     <lastmod>2014-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-polomis/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-baron/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mihaela-teodorescu/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ron-chervin/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/teodorescu-2013/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cunningham-2013/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bridget-catlin/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/c.-matthews/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dinny-davis/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elvira-agron/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/emily-chew/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/for-the-age-related-eye-disease-study-research-group/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-paul-sangiovanni/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chew-2013/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/natalie-kurinij/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-sperduto/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gennuso-2013/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/traci-clemons/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/athens-2013/</loc>
     <lastmod>2013-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/warrenandersen-2013/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2013b/</loc>
     <lastmod>2013-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carla-schubert/</loc>
     <lastmod>2013-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sugha-iyengar/</loc>
     <lastmod>2013-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2013/</loc>
     <lastmod>2013-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ali-bearden/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bearden-2013/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cybele-abad/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/margie-rosenberg/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nataliya-batina/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/batina-2013/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chang-2013/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-coen/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2013c/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dan-stoltz/</loc>
     <lastmod>2013-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/stoltz-2013/</loc>
     <lastmod>2013-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chongyang-jin/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michelle-steen-adams/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jin-2013/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephan-sain/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anne-marie-singh/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/teodorescu-2013b/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/juan-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/corinne-jones/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/boardman-2014/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/douglas-dasilva/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/keller-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/singh-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/j-libber/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jessica-fedie/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-stein/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jon-keevil/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/junerose-juan/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kari-hafner/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kathy-roberg/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kimberly-viker/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kris-burmeister/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kunal-karmali/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/m-checovich/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/matt-tattersall/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-cullen/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/n-vallarta-ast/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-dahlberg/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/krueger-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-jenkins/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/thomas-smyrk/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tim-mcculloch/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/tattersall-2013/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/myers-2012/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jennifer-dreyer/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2012c/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-knudtson/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lee-2012/</loc>
     <lastmod>2012-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/suresh-chari/</loc>
     <lastmod>2012-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/skinner-2012/</loc>
     <lastmod>2012-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/burt-kushner/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-neely/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-plager/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcmahon-2012/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/douglas-mcmahon/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-struck/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bradfield-2012/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/yasmin-bradfield/</loc>
     <lastmod>2012-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2012b/</loc>
     <lastmod>2012-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mari-palta/</loc>
     <lastmod>2012-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/matt-walsh/</loc>
     <lastmod>2012-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/walsh-2012b/</loc>
     <lastmod>2012-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/a-kaufman/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/a-waclawik/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/allison-pratt/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/teodorescu-2012/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-montville/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-manthei/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/georgia-malandraki/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/durrani-2012/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michelle-gill/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/nizar-jarjour/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/manthei-2012/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2012b/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/s-ennis/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sandy-durrani/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sanjutka-sahu/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/malandraki-2012/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2012/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/guiyan-liu/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kloepfer-2012/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jaime-olenec/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/walsh-2012/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amy-obrian/</loc>
     <lastmod>2012-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/obrian-2012/</loc>
     <lastmod>2012-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2012/</loc>
     <lastmod>2012-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jackson-2012/</loc>
     <lastmod>2012-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrew-taylor/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hind-2012/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/diana-buist/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elizabeth-divyak/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/erin-aiello-bowles/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/frank-stanczyk/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gale-sisney/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-hartman/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sprague-2012/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/tattersall-2012/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeri-logemann/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/malandraki-2011/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/guan-hua-huang/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-pankow/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kris-catrine/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/zhan-2011/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/litzelman-2011/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ron-klein/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/theodore-tweed/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/weihai-zhan/</loc>
     <lastmod>2011-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/oconnor-2011/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/charles-heise/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-greenblatt/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/guilbert-2011/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/erin-oconnor/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/loisel-2011/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jinn-ing-liou/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/noelle-loconte/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/roblemanske/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ryan-burton/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zheng-tan/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zoran-danov/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andrew-pelech/</loc>
     <lastmod>2011-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-cronk/</loc>
     <lastmod>2011-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cronk-2011/</loc>
     <lastmod>2011-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stacy-cossette/</loc>
     <lastmod>2011-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carissa-gottlieb/</loc>
     <lastmod>2011-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carmen-mandic/</loc>
     <lastmod>2011-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/witt-2011/</loc>
     <lastmod>2011-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-creswell/</loc>
     <lastmod>2011-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/d.-gemar/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/binkley-2011/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/j.-engelke/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marc-drezner/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/r.-ramamurthy/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ritesh-ramchandani/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sprague-2011b/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephanie-robert/</loc>
     <lastmod>2011-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/beth-witten/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bryan-becker/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dori-schatell/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/muehrer-2011/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-hofmann/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rebecca-muehrer/</loc>
     <lastmod>2011-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sprague-2011/</loc>
     <lastmod>2011-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/erin-bowles/</loc>
     <lastmod>2011-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marc-bellazzini/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-repplinger/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/tattersall-2011/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bellazzini-2011/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/zhang-2010/</loc>
     <lastmod>2010-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/huichuan-lai/</loc>
     <lastmod>2010-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zhumin-zhang/</loc>
     <lastmod>2010-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2010b/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ailiang-xie/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/teodorescu-2010/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/micahel-possin/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephanie-hall/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephanie-morgan/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/possin-2010/</loc>
     <lastmod>2010-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kays-2010/</loc>
     <lastmod>2010-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephanie-kays/</loc>
     <lastmod>2010-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/olson-2010/</loc>
     <lastmod>2010-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/guilherme-silveira/</loc>
     <lastmod>2010-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sarah-olson/</loc>
     <lastmod>2010-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/heather-kramm/</loc>
     <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-linzer/</loc>
     <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kramm-2010/</loc>
     <lastmod>2010-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/janel-hanmer/</loc>
     <lastmod>2010-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hanmer-2010/</loc>
     <lastmod>2010-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/singh-2010/</loc>
     <lastmod>2010-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/zhan-2010/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2010/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2010/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/christine-virnig/</loc>
     <lastmod>2009-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jackson-2009/</loc>
     <lastmod>2009-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kathleen-shanovich/</loc>
     <lastmod>2009-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2009b/</loc>
     <lastmod>2009-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lindblad-2009/</loc>
     <lastmod>2009-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/the-areds-research-group/</loc>
     <lastmod>2009-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kyle-minor/</loc>
     <lastmod>2009-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-bellazzini/</loc>
     <lastmod>2009-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-johnson/</loc>
     <lastmod>2009-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2009/</loc>
     <lastmod>2009-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/skinner-2009/</loc>
     <lastmod>2009-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lars-bjoernsen/</loc>
     <lastmod>2009-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/peter-rankin/</loc>
     <lastmod>2009-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bellazzini-2009/</loc>
     <lastmod>2009-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/eric-elguero/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jean-francois-guegan/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jonathan-foley/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/laurent-durieux/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/olson-2009/</loc>
     <lastmod>2009-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2009/</loc>
     <lastmod>2009-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dessa-gemar/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jean-engelke/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jiliane-bolek-berquist/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-elliott/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-lawrence/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bolekberquist-2009/</loc>
     <lastmod>2009-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elizabeth-sadowski/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/eric-gaumnitz/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jou-2009/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gleason-2009/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/janice-jou/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jason-radowsky/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2008/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/and-the-early-treatment-diabetic-retinopathy-study-research-group/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/larry-hubbard/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lloyd-aiello/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marian-fisher/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rick-ferris/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2008c/</loc>
     <lastmod>2008-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/a.-liu/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/claudia-reardon/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/d.-milton/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bufford-2008/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeremy-bufford/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kirstin-carlson-dakes/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/magnolia-printz/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/p.-eggleston/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/u.-alwis/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jackson-2008/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zhanhai-li/</loc>
     <lastmod>2008-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2008b/</loc>
     <lastmod>2008-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andy-bersch/</loc>
     <lastmod>2008-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/luis-crouch/</loc>
     <lastmod>2008-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcelroy-2008b/</loc>
     <lastmod>2008-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcelroy-2008/</loc>
     <lastmod>2008-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schilling-2008/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/myrna-traver/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/cullen-2008/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pat-mcbride/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-schilling/</loc>
     <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brad-kahl/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julie-chang/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-juckett/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/natalie-callander/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/teri-mitchell/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/chang-2008/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/walter-longo/</loc>
     <lastmod>2008-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/albert-2008/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/amol-kulkarni/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dan-albert/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/hans-grossniklaus/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/richard-green/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/soesiawati-darjatmoko/</loc>
     <lastmod>2008-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/angela-hewitt/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2008/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-doyle/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-nicosia/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hewitt-2008/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/willis-tompkins/</loc>
     <lastmod>2008-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kat-sullivan-dillie/</loc>
     <lastmod>2008-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/louis-rosenthal/</loc>
     <lastmod>2008-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/sullivandillie-2008/</loc>
     <lastmod>2008-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bellazzini-2008/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jason-quisling/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-kohrs/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brian-guttormsen/</loc>
     <lastmod>2007-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/guttormsen-2007/</loc>
     <lastmod>2007-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelly-stolzmann/</loc>
     <lastmod>2007-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/leonelo-bautista/</loc>
     <lastmod>2007-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/stolzmann-2007/</loc>
     <lastmod>2007-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/jartti-2007/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/begona-ruiz-perez/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristjan-burmeister/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/martin-jennens-clough/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-wallace/</loc>
     <lastmod>2007-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/golestanian-2007/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ellie-golestanian/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jesse-scruggs/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ken-wood/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rosa-mak/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/james-verhoeve/</loc>
     <lastmod>2007-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bradfield-2007/</loc>
     <lastmod>2007-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/thomas-france/</loc>
     <lastmod>2007-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alice-schwalbe/</loc>
     <lastmod>2007-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mahoney-2007/</loc>
     <lastmod>2007-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/robert-przybelski/</loc>
     <lastmod>2007-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/henry-anderson/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/keevil-2007/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jim-brook/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcelroy-2007/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2007/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lindell-gentry/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/maria-swift/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/robbins-2007/</loc>
     <lastmod>2007-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2007/</loc>
     <lastmod>2007-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/murray-clayton/</loc>
     <lastmod>2007-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-allen/</loc>
     <lastmod>2006-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gloria-akan/</loc>
     <lastmod>2006-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sara-uekert/</loc>
     <lastmod>2006-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/uekert-2006/</loc>
     <lastmod>2006-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/klein-2006/</loc>
     <lastmod>2006-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/schilling-2006/</loc>
     <lastmod>2006-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2006/</loc>
     <lastmod>2006-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/anna-steele/</loc>
     <lastmod>2006-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-kosorok/</loc>
     <lastmod>2006-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kosorok-2006/</loc>
     <lastmod>2006-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/steele-2006/</loc>
     <lastmod>2006-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/abhik-bhattacharya/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/andy-chang/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gern-2006/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carole-kirk/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-brooks/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcelroy-2006/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kunling-shen/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lance-mikus/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/larry-hariharan/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/leann-andersen/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/patricia-meyer/</loc>
     <lastmod>2006-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/enloe-2005/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/harry-genant/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kristine-leahy-gross/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/binkley-2005b/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-pak/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/myra-enloe/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-hughes/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/teresa-pellino/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/thelma-wells/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carol-kirk/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kiva-adler/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/li-yin-lee/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lisa-pleiss/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/roy-milton/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sabine-hoffjan/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sam-friedlander/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stephanie-gilbertson-white/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/susan-bressler/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/davis-2005/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/friedlander-2005/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zhanlai-li/</loc>
     <lastmod>2005-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/bradfield-2005/</loc>
     <lastmod>2005-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lemanske-2005/</loc>
     <lastmod>2005-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shannon-theis/</loc>
     <lastmod>2005-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/robbins-2005/</loc>
     <lastmod>2005-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-andes/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/j-pirsch/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/safdar-2005/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/v-knasinski/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/w-slattery/</loc>
     <lastmod>2005-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-mirel/</loc>
     <lastmod>2005-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hoffjan-2005/</loc>
     <lastmod>2005-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/irina-ostrovnaya/</loc>
     <lastmod>2005-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/karen-walker/</loc>
     <lastmod>2005-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/lori-steiner/</loc>
     <lastmod>2005-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gary-kiebzak/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-shepherd/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-lewiecki/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-miller/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/binkley-2005/</loc>
     <lastmod>2005-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carolyn-voss/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeff-douglas/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julia-mcmurray/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/p-heiligers/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mcmurray-2005/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/richard-shugerman/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/sheila-costa/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hind-2005/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/albert-2004/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cecelia-damico/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/joel-gleiser/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/shelly-zimbric/</loc>
     <lastmod>2004-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2004b/</loc>
     <lastmod>2004-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alon-kahana/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/carmen-puliafito/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ingrid-scott/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/ip-2004/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/justin-gottlieb/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-altaweel/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-ip/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/chris-copenhaver/</loc>
     <lastmod>2004-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/copenhaver-2004/</loc>
     <lastmod>2004-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/heide-hiemke/</loc>
     <lastmod>2004-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kevin-gentile/</loc>
     <lastmod>2004-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/adnan-said/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alexandru-musat/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-brown/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/david-cooley/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jeremy-holden/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-cush/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/john-williams/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/judith-egan/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/julie-hildebrand/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mark-genovese/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/marlon-mundt/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-lucey/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/michael-schiff/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mike-fleming/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/said-2004/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pat-kokotailo/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2004/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/stanley-cohen/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/supan-patel/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hansen-2004/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/kokotailo-2004/</loc>
     <lastmod>2004-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/deborah-greene/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/dina-newman/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hoffjan-2004/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/irina-ostrovnaja/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/raluca-nicolae/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rebecca-reynolds/</loc>
     <lastmod>2004-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gern-2004/</loc>
     <lastmod>2004-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kelly-anklam/</loc>
     <lastmod>2004-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/rebekah-hamilton/</loc>
     <lastmod>2004-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/william-neaville/</loc>
     <lastmod>2004-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/mccoy-2004/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alice-mccoy/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/b-baranski/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/e-smith/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/m-atkinson/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/t.-mitchell/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/hansen-2004b/</loc>
     <lastmod>2004-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2003/</loc>
     <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/debbie-yoshihara/</loc>
     <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/neaville-2003/</loc>
     <lastmod>2003-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/binkley-2003/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/cecelia-lo/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/albert-2003/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/kirsten-hope/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/tagila-2002/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/daniel-taglia/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gregg-heatley/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-kaufman/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/safdar-2002/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/todd-perkins/</loc>
     <lastmod>2002-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bill-king/</loc>
     <lastmod>2002-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2002/</loc>
     <lastmod>2002-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/ip-2002/</loc>
     <lastmod>2002-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/brad-baker/</loc>
     <lastmod>2002-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/caroline-baumal/</loc>
     <lastmod>2002-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/elias-reichel/</loc>
     <lastmod>2002-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jay-duker/</loc>
     <lastmod>2002-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2001/</loc>
     <lastmod>2001-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/gangnon-2000/</loc>
     <lastmod>2000-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/bill-ladd/</loc>
     <lastmod>1999-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/ethier-1999/</loc>
     <lastmod>1999-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/fides-coloma/</loc>
     <lastmod>1999-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/mary-ann-croft/</loc>
     <lastmod>1999-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ross-ethier/</loc>
     <lastmod>1999-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/alexander-bershadsky/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/baohe-tian/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/benjamin-geiger/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/ilan-spector/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/jennifer-peterson/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/peterson-1999/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/tova-volberg/</loc>
     <lastmod>1999-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/l-pratt/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/l-waschbusch/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/pratt-1999/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/s-hendricks/</loc>
     <lastmod>1999-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/gregg-a.-heatley/</loc>
     <lastmod>1998-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/paul-l.-kaufman/</loc>
     <lastmod>1998-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/richard-lewis/</loc>
     <lastmod>1998-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/lewis-1998/</loc>
     <lastmod>1998-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/todd-w.-perkins/</loc>
     <lastmod>1998-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/project/coast/</loc>
     <lastmod>1998-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/greg-heatley/</loc>
     <lastmod>1998-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/perkins-1998b/</loc>
     <lastmod>1998-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/c-libby/</loc>
     <lastmod>1998-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/perkins-1998a/</loc>
     <lastmod>1998-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/for-the-early-treatment-diabetic-retinopathy-study-research-group/</loc>
     <lastmod>1998-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/franca-barton/</loc>
     <lastmod>1998-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/genell-knatterud/</loc>
     <lastmod>1998-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/davis-1998/</loc>
     <lastmod>1998-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/colleen-bindley/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/publication/imesch-1996/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/pascal-imesch/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/authors/zarir-khademian/</loc>
     <lastmod>1996-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://rgangnon.org/project/bdes/</loc>
     <lastmod>1987-09-15T00:00:00+00:00</lastmod>
   </url>
-  
 </urlset>
