@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carrie Henning-Smith | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/carrie-henning-smith/</link>
+      <atom:link href="https://rgangnon.org/authors/carrie-henning-smith/index.xml" rel="self" type="application/rss+xml" />
+    <description>Carrie Henning-Smith</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 27 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Carrie Henning-Smith</title>
+      <link>https://rgangnon.org/authors/carrie-henning-smith/</link>
+    </image>
+    
+    <item>
+      <title>Racial arrest disparities in the United States by rural-urban location and region</title>
+      <link>https://rgangnon.org/publication/jewett-2023/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/jewett-2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
