@@ -1,5 +1,5 @@
 ---
-title: "Racial arrest disparities in the United States by rural-urban location and region"
+title: "Using Adaptive Behavior Scores to Convey Level of Functioning in Children with Autism Spectrum Disorder: Evidence from the Study to Explore Early Development"
 date: 2023-07-20
 publishDate: 2023-07-20
 authors: ["Sarah Furnier", "Susan Weismer", "Eric Rubenstein", "Ronald Gangnon", "Steven Rosenberg", "Cy Nadler", "Lisa Wiggins",  "Maureen Durkin"]
