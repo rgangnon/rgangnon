@@ -1,7 +1,7 @@
 ---
 title: "Feasibility and Acceptability of Home-Based Strength Training in Endometrial Cancer Survivors"
 date: 2021-01-08
-publishDate: 2021-01-08
+publishDate: 2023-02-01
 authors: ["Jessica Gorzelitz", "Erin Costanzo", "Ronald Gangnon", "Kelli Koltyn","Amy Trentham-Dietz","Ryan Spencer", "Joanne Rash", "Lisa Cadmus-Bertram"]
 publication_types: ["2"]
 abstract: "Purpose Physical activity is important for healthy cancer survivorship, yet many endometrial cancer survivors do not participate
@@ -25,6 +25,6 @@ featured: false
 publication: "*Journal of Cancer Survivorship*"
 publication_short: "*J Cancer Surviv*"
 doi: 10.1007/s11764-021-00990-3
-url_pdf: gorzelitz-2021.pdf
+url_pdf: gorzelitz-2023.pdf
 ---
 
