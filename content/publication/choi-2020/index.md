@@ -4,12 +4,12 @@ date: 2020-12-24
 publishDate: 2021-02-09
 authors: ["Timothy Choi", "Mark Devries", "Len Bacharier", 
 "Bill Busse","Carlos Camargo", "Robyn Cohen", "Gregory Demuri",
-"Mike Evans", "Anne Fitzpatrick","Peter Gergen", "Kris Grindle",
+"Mike Evans", "Anne Fitzpatrick","Peter Gergens", "Kris Grindle",
 "Rebecca Gruchalla", "Tina Hartert","Kohei Hasegawa",
-"Gurjit Hershey","Pat Holt","Kiara Homil","Tuomas Jartti","Meyer Kattan",
+"Gurjit Khurana Hershey","Pat Holt","Kiara Homil","Tuomas Jartti","Meyer Kattan",
 "Carolyn Kercsmar","Haejin Kim","Ingrid Laing","Petra LeBeau",
 "Kris Lee","Peter Le Souëf","Andrew Liu","David Mauger","Carole Ober",
-"Tressa Pappas","Shilpa Patel","WAnda Phipatanakul","Jacqueline Pongracic",
+"Tressa Pappas","Shilpa Patel","Wanda Phipatanakul","Jacqueline Pongracic",
 "Chris Seroogy","Peter Sly","Chris Tisler","Ellen Wald","Robert Wood",
 "Ron Gangnon","Dan Jackson","Rob Lemanske","Jim Gern","Yury Bochkov",
 "on behalf of program collaborators for Environment Influences on Child Health Outcomes"]

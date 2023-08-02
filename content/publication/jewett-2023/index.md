@@ -1,7 +1,7 @@
 ---
-title: "Racial arrest disparities in the United States by rural-urban location and region"
+title: "Racial arrest disparities in the USA by rural-urban location and region"
 date: 2023-06-27
-publishDate: 2023-06-27
+publishDate: 2023-07-31
 authors: ["Patricia Jewett", "Ronald Gangnon", "Anna Hing", "Carrie Henning-Smith", "Tongtan Chantarat",  "Eunice Areba", "Iris Borowsky"]
 publication_types: ["2"]
 abstract: "Background: Urban racial arrest disparities are well known. Emerging evidence suggests that rural policing shares similar patterns as urban policing in the US, but without receiving the same public scrutiny, raising the risk of biased rural policing going unnoticed. 
@@ -14,7 +14,7 @@ Conclusions: Rural areas and small towns are potential hotspots of racial arrest
 featured: false
 publication: "*Journal of Racial and Ethnic Health Disparities*"
 publication_short: "*J Racial Ethn Health Disparities*"
-url_pdf: 
-doi: 
+url_pdf: https://rdcu.be/didTC
+doi: 10.1007/s40615-023-01703-5
 ---
 

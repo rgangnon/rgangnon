@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/bill-busse/</link>
       <atom:link href="https://rgangnon.org/authors/bill-busse/index.xml" rel="self" type="application/rss+xml" />
     <description>Bill Busse</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Aug 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Bill Busse</title>
       <link>https://rgangnon.org/authors/bill-busse/</link>
     </image>
+    
+    <item>
+      <title>Rhinoviruses A and C Elicit Long-Lasting Antibody Responses with Limited Cross-Neutralization</title>
+      <link>https://rgangnon.org/publication/bochkov-2023/</link>
+      <pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/bochkov-2023/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Enhanced Neutralizing Antibody Responses to Rhinovirus C and Age-Dependent Patterns of Infection</title>
