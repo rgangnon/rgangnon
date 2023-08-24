@@ -1,7 +1,7 @@
 ---
 title: "Using Adaptive Behavior Scores to Convey Level of Functioning in Children with Autism Spectrum Disorder: Evidence from the Study to Explore Early Development"
 date: 2023-07-20
-publishDate: 2023-07-20
+publishDate: 2023-08-23
 authors: ["Sarah Furnier", "Susan Weismer", "Eric Rubenstein", "Ronald Gangnon", "Steven Rosenberg", "Cy Nadler", "Lisa Wiggins",  "Maureen Durkin"]
 publication_types: ["2"]
 abstract: "We examined relationships between measures of adaptive behavior (AB), cognitive ability, and autism
