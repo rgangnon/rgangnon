@@ -22,6 +22,6 @@ featured: false
 publication: "*Autism*"
 publication_short: "*Autism*"
 url_pdf: 
-doi: 
+doi: 10.1177/13623613231193194
 ---
 
