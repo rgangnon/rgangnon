@@ -1,7 +1,7 @@
 ---
 title: "Rhinoviruses A and C Elicit Long-Lasting Antibody Responses with Limited Cross-Neutralization"
 date: 2023-08-01
-publishDate: 2023-08-01
+publishDate: 2023-08-28
 authors: ["Yury Bochkov","Mark Devries", "Kaitlin Tetreault", "Ron Gangnon", "Sujin Lee",
 "Len Bacharier",  
 "Bill Busse","Carlos Camargo", "Robyn Cohen", "Ramani De", "Gregory Demuri", 
@@ -22,8 +22,8 @@ Conclusions: These results indicate that both RV-A and RV-C nAb responses have o
 featured: false
 publication: "*Journal of Medical Virology*"
 publication_short: "*J Med Virol*"
-url_pdf: 
-doi: 
+url_pdf: bochkov-2023.pdf
+doi: 10.1002/jmv.29058 
 projects: [COAST, CREW, WISC, ECHO]
 ---
 
