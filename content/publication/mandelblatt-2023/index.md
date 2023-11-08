@@ -1,7 +1,7 @@
 ---
 title: "Population Simulation Modeling of Inequities in US Breast Cancer Mortality "
-date: 2023-08-02
-publishDate: 2023-10-01
+date: 2023-11-08
+publishDate: 2023-11-08
 authors: [Jeanne Mandelblatt, Clyde Schechter, Tasha Stout, Hui Huang, Sarah Stein, Christina Chapman, Jinani Jayasekera, Amy Trentham-Dietz, Ronald Gangnon, John Hampton, Linn Abraham, Ellen O'Meara, Vanessa Sheppard, Sandra Lee]
 publication_types: ["2"]
 abstract: "Background: Self-identified African American or Black women (“Black women”) have persistently higher breast cancer mortality than women from other self-reported racial/ethnic groups. These mortality differences are partially explained by the effects of systemic racism on cancer risk and carecontrol processes. We quantify the relative contributions of tumor factors, screening and treatment  these cancer control processes on cancer mortality disparities.
@@ -12,8 +12,8 @@ Conclusion:  Our model results suggest that policies that decrease the effects o
 featured: false
 publication: "*JNCI Monographs*"
 publication_short: "*JNCI Monographs*"
-url_pdf: 
-doi: 
+url_pdf: mandelblatt-2023.pdf
+doi: 10.1093/jncimonographs/lgad023
 projects: [CISNET]
 ---
 

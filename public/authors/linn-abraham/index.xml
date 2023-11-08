@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linn Abraham | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/linn-abraham/</link>
+      <atom:link href="https://rgangnon.org/authors/linn-abraham/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linn Abraham</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Linn Abraham</title>
+      <link>https://rgangnon.org/authors/linn-abraham/</link>
+    </image>
+    
+    <item>
+      <title>Population Simulation Modeling of Inequities in US Breast Cancer Mortality </title>
+      <link>https://rgangnon.org/publication/mandelblatt-2023/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/mandelblatt-2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
