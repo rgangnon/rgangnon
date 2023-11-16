@@ -1,5 +1,5 @@
 ---
-title: "Population Simulation Modeling of Inequities in US Breast Cancer Mortality "
+title: "Population Simulation Modeling of Disparities in US Breast Cancer Mortality "
 date: 2023-11-08
 publishDate: 2023-11-08
 authors: [Jeanne Mandelblatt, Clyde Schechter, Tasha Stout, Hui Huang, Sarah Stein, Christina Chapman, Jinani Jayasekera, Amy Trentham-Dietz, Ronald Gangnon, John Hampton, Linn Abraham, Ellen O'Meara, Vanessa Sheppard, Sandra Lee]

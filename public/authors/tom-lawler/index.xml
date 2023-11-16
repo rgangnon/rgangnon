@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tom Lawler | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/tom-lawler/</link>
+      <atom:link href="https://rgangnon.org/authors/tom-lawler/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tom Lawler</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Tom Lawler</title>
+      <link>https://rgangnon.org/authors/tom-lawler/</link>
+    </image>
+    
+    <item>
+      <title>Change in Alcohol Consumption During the Covid-19 Pandemic and Associations with Mental Health and Financial Hardship: Results from a Survey of Wisconsin Patients with Cancer</title>
+      <link>https://rgangnon.org/publication/lawler-2023/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/lawler-2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
