@@ -1,6 +1,6 @@
 ---
 title: "Breast Cancer Risk for Women with Diabetes and The Impact of Metformin – A Meta-analysis"
-date: 2022-12-13
+date: 2023-05-01
 publishDate: 2023-05-01
 authors: ["Yifan Lu", "Ali Hajjar", "Vincent Cryns", "Amy Trentham-Dietz", "Ronald Gangnon", "Brandy Heckman-Stoddard", "Oguz Alagoz"]
 publication_types: ["2"]
