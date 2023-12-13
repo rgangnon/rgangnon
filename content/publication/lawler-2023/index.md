@@ -14,8 +14,8 @@ Implications for cancer survivors: Clinicians working with cancer survivors shou
 featured: false
 publication: "*Journal of Cancer Survivorship*"
 publication_short: "*J Cancer Surviv*"
-url_pdf: 
-doi: 
-projects: []
+url_pdf: lawler-2023.pdf
+doi:  10.1007/s11764-023-01502-1
+projects: 
 ---
 
