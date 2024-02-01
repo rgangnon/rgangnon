@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marshalyn Yeargin-Allsopp | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/marshalyn-yeargin-allsopp/</link>
+      <atom:link href="https://rgangnon.org/authors/marshalyn-yeargin-allsopp/index.xml" rel="self" type="application/rss+xml" />
+    <description>Marshalyn Yeargin-Allsopp</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Marshalyn Yeargin-Allsopp</title>
+      <link>https://rgangnon.org/authors/marshalyn-yeargin-allsopp/</link>
+    </image>
+    
+    <item>
+      <title>Racial and ethnic disparities in the co-occurrence of intellectual disability and autism: Impact of incorporating measures of adaptive functioning</title>
+      <link>https://rgangnon.org/publication/furnier-2024/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/furnier-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

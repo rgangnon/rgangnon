@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/ronald-gangnon/</link>
       <atom:link href="https://rgangnon.org/authors/ronald-gangnon/index.xml" rel="self" type="application/rss+xml" />
     <description>Ronald Gangnon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ronald Gangnon</title>
       <link>https://rgangnon.org/authors/ronald-gangnon/</link>
     </image>
+    
+    <item>
+      <title>Racial and ethnic disparities in the co-occurrence of intellectual disability and autism: Impact of incorporating measures of adaptive functioning</title>
+      <link>https://rgangnon.org/publication/furnier-2024/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/furnier-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Population Simulation Modeling of Disparities in US Breast Cancer Mortality </title>

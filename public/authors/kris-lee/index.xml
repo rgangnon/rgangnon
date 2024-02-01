@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/kris-lee/</link>
       <atom:link href="https://rgangnon.org/authors/kris-lee/index.xml" rel="self" type="application/rss+xml" />
     <description>Kris Lee</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Kris Lee</title>
       <link>https://rgangnon.org/authors/kris-lee/</link>
     </image>
+    
+    <item>
+      <title>Farm Animal Exposure, Respiratory Illnesses, and Nasal Cell Gene Expression</title>
+      <link>https://rgangnon.org/publication/brownell-2024/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/brownell-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Developmental patterns in the nasopharyngeal microbiome during infancy are associated with asthma risk</title>

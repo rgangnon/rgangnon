@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Haslam | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/david-haslam/</link>
+      <atom:link href="https://rgangnon.org/authors/david-haslam/index.xml" rel="self" type="application/rss+xml" />
+    <description>David Haslam</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>David Haslam</title>
+      <link>https://rgangnon.org/authors/david-haslam/</link>
+    </image>
+    
+    <item>
+      <title>Farm Animal Exposure, Respiratory Illnesses, and Nasal Cell Gene Expression</title>
+      <link>https://rgangnon.org/publication/brownell-2024/</link>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/brownell-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
