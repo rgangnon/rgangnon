@@ -8,7 +8,7 @@ abstract: "Intellectual disability (ID) commonly co-occurs in children with auti
 featured: false
 publication: "*Autism Research*"
 publication_short: "*Autism Res*"
-url_pdf: 
-doi: 
+url_pdf: furnier-2024.pdf
+doi: 10.1002/aur.3107
 ---
 
