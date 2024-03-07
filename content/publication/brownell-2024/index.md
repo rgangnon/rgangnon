@@ -2,7 +2,7 @@
 title: "Farm Animal Exposure, Respiratory Illnesses, and Nasal Cell Gene Expression"
 date: 2024-01-31
 publishDate: 2024-02-05
-authors: ["Joshua Brownell", "Kris Lee", "Deborah Chasman", "Casper Bendixsen", "Kate Barnes", "Kris Grindle", "Tressa Pappas", "Yury Bochkov", "Amy Dresen", "Christine Hou", "David Haslam", "Chris Seroogy", "Irene Ong", "Jim Gern"]
+authors: ["Joshua Brownell", "Kris Lee", "Deborah Chasman", "Ronald Gangnon", "Casper Bendixsen", "Kate Barnes", "Kris Grindle", "Tressa Pappas", "Yury Bochkov", "Amy Dresen", "Christine Hou", "David Haslam", "Chris Seroogy", "Irene Ong", "Jim Gern"]
 publication_types: ["2"]
 abstract: "Background: Farm exposures in early life reduce the risks for childhood allergic diseases and asthma. There is less information about how farm exposures relate to respiratory illnesses and mucosal immune development.
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mohamed Taki | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/mohamed-taki/</link>
+      <atom:link href="https://rgangnon.org/authors/mohamed-taki/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mohamed Taki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Mohamed Taki</title>
+      <link>https://rgangnon.org/authors/mohamed-taki/</link>
+    </image>
+    
+    <item>
+      <title>Atopic Dermatitis Phenotypes Impact Expression of Atopic Diseases Despite Similar Mononuclear Cell Cytokine Responses</title>
+      <link>https://rgangnon.org/publication/taki-2024/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/taki-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
