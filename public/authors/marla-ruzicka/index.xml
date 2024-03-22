@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marla Ruzicka | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/marla-ruzicka/</link>
+      <atom:link href="https://rgangnon.org/authors/marla-ruzicka/index.xml" rel="self" type="application/rss+xml" />
+    <description>Marla Ruzicka</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 22 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Marla Ruzicka</title>
+      <link>https://rgangnon.org/authors/marla-ruzicka/</link>
+    </image>
+    
+    <item>
+      <title>&#39;There is no expiration date&#39;: a qualitative analysis using the Social Cognitive Theory to identify factors influencing physical activity among adults living with advanced cancer</title>
+      <link>https://rgangnon.org/publication/agnew-2024/</link>
+      <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/agnew-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
