@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/diego-munoz/</link>
       <atom:link href="https://rgangnon.org/authors/diego-munoz/index.xml" rel="self" type="application/rss+xml" />
     <description>Diego Munoz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Diego Munoz</title>
       <link>https://rgangnon.org/authors/diego-munoz/</link>
     </image>
+    
+    <item>
+      <title>Collaborative Modeling to Compare Different Breast Cancer Screening Strategies: A Decision Analysis for the US Preventive Services Task Force</title>
+      <link>https://rgangnon.org/publication/trenthamdietz-2024/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Common Model Inputs Used in CISNET Collaborative Breast Cancer Modeling</title>

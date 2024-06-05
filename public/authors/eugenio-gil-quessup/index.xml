@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eugenio Gil Quessup | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/eugenio-gil-quessup/</link>
+      <atom:link href="https://rgangnon.org/authors/eugenio-gil-quessup/index.xml" rel="self" type="application/rss+xml" />
+    <description>Eugenio Gil Quessup</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Eugenio Gil Quessup</title>
+      <link>https://rgangnon.org/authors/eugenio-gil-quessup/</link>
+    </image>
+    
+    <item>
+      <title>Collaborative Modeling to Compare Different Breast Cancer Screening Strategies: A Decision Analysis for the US Preventive Services Task Force</title>
+      <link>https://rgangnon.org/publication/trenthamdietz-2024/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

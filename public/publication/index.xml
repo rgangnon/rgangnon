@@ -5,12 +5,36 @@
     <link>https://rgangnon.org/publication/</link>
       <atom:link href="https://rgangnon.org/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 03 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Publications</title>
       <link>https://rgangnon.org/publication/</link>
     </image>
+    
+    <item>
+      <title>Social and Environmental Characteristics Associated With Older Drivers’ Use of Non-driving Transportation Modes</title>
+      <link>https://rgangnon.org/publication/hansmann-2024b/</link>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/hansmann-2024b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collaborative Modeling to Compare Different Breast Cancer Screening Strategies: A Decision Analysis for the US Preventive Services Task Force</title>
+      <link>https://rgangnon.org/publication/trenthamdietz-2024/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asthma and cardiovascular disease: embracing disease heterogeneity is required</title>
+      <link>https://rgangnon.org/publication/tattersall-2024/</link>
+      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/tattersall-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>COVID-19 Pandemic Impacts on Behavioral and Emotional Health of Young Children with Autism</title>
