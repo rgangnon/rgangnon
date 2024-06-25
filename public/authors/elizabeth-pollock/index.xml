@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/elizabeth-pollock/</link>
       <atom:link href="https://rgangnon.org/authors/elizabeth-pollock/index.xml" rel="self" type="application/rss+xml" />
     <description>Elizabeth Pollock</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Elizabeth Pollock</title>
       <link>https://rgangnon.org/authors/elizabeth-pollock/</link>
     </image>
+    
+    <item>
+      <title>Cluster Analysis Methods to Support Population Health Improvement among U.S. Counties</title>
+      <link>https://rgangnon.org/publication/pollock-2024/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/pollock-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ranking composite Cancer Burden Indices for geographic regions: point and interval estimates</title>

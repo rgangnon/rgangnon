@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/keith-gennuso/</link>
       <atom:link href="https://rgangnon.org/authors/keith-gennuso/index.xml" rel="self" type="application/rss+xml" />
     <description>Keith Gennuso</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Keith Gennuso</title>
       <link>https://rgangnon.org/authors/keith-gennuso/</link>
     </image>
+    
+    <item>
+      <title>Cluster Analysis Methods to Support Population Health Improvement among U.S. Counties</title>
+      <link>https://rgangnon.org/publication/pollock-2024/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/pollock-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Patterns of sedentary behavior and physical function in older adults</title>

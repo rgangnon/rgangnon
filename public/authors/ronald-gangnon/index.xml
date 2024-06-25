@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/ronald-gangnon/</link>
       <atom:link href="https://rgangnon.org/authors/ronald-gangnon/index.xml" rel="self" type="application/rss+xml" />
     <description>Ronald Gangnon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ronald Gangnon</title>
       <link>https://rgangnon.org/authors/ronald-gangnon/</link>
     </image>
+    
+    <item>
+      <title>Cluster Analysis Methods to Support Population Health Improvement among U.S. Counties</title>
+      <link>https://rgangnon.org/publication/pollock-2024/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/pollock-2024/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Social and Environmental Characteristics Associated With Older Drivers’ Use of Non-driving Transportation Modes</title>
@@ -41,6 +49,14 @@
       <link>https://rgangnon.org/publication/pokoski-2024/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://rgangnon.org/publication/pokoski-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Role of Neighborhood in Individual and Disparity-Level Factors and Birth Weight in Dane County, Wisconsin</title>
+      <link>https://rgangnon.org/publication/kamenetsky-2024/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/kamenetsky-2024/</guid>
       <description></description>
     </item>
     
