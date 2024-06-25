@@ -12,7 +12,7 @@ Participants: 3,082 counties that were ranked in the 2022 CHR
 Main Outcome Measure: Data-informed health groups
 Results: Cluster analysis identified 30 health groupings among counties nationwide, with cluster size ranging from nine to 184 counties. On average, states had 16 identified clusters, ranging from 3 in Delaware and Hawaii to 27 in Virginia. Number of clusters per state was associated with number of counties per state and population of the state. The method helped address many of the issues that arise from providing rank estimates alone.
 Conclusions: Public health practitioners can use this information to understand uncertainty in ranks, visualize distances between county ranks, have context around which counties are not meaningfully different from one another, and compare county performance to peer counties."
-featured: false
+featured: true
 publication: "*Journal of Public Health Management and Practice*"
 url_pdf: 
 doi: 

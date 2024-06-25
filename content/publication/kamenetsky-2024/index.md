@@ -13,7 +13,7 @@ We find evidence of an association between birth weight z-score and spatial loca
 Conclusion
 We identified geographic variations in birth weight at a granular level using census block groups and a holistic measure of deprivation, which can inform targeted public health interventions.  The lack of evidence of area deprivation on birth outcomes but significant spatial trends demonstrated continued geographic disparities in our healthcare systems. 
 "
-featured: false
+featured: true
 publication: "*Wisconsin Medical Journal*"
 url_pdf: 
 doi: 
