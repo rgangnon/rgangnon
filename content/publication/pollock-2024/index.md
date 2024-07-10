@@ -1,7 +1,7 @@
 ---
 title: "Cluster Analysis Methods to Support Population Health Improvement among U.S. Counties"
 date: 2024-06-12
-publishDate: 2024-06-12
+publishDate: 2024-07-10
 authors: ["Elizabeth Pollock", "Ronald Gangnon", "Keith Gennuso", "Ronald Gangnon", "Marjory Givens"]
 publication_types: ["2"]
 abstract: "Context: Population health rankings can be a catalyst for the improvement of health by drawing attention to areas in need of relative improvement and summarizing complex information in a manner understood by almost everyone. However, ranks also have unintended consequences, such as being interpreted as “hard truths”, where variations may not be significant. There is a need to improve communication about uncertainty in ranks, with accurate interpretation. The most common solutions discussed in the literature have included modeling approaches to minimize statistical noise or borrow strength from covariates. However, the use of complex models can limit communication and implementation, especially for broad audiences.
@@ -14,7 +14,7 @@ Results: Cluster analysis identified 30 health groupings among counties nationwi
 Conclusions: Public health practitioners can use this information to understand uncertainty in ranks, visualize distances between county ranks, have context around which counties are not meaningfully different from one another, and compare county performance to peer counties."
 featured: true
 publication: "*Journal of Public Health Management and Practice*"
-url_pdf: 
-doi: 
+url_pdf: pollock-2024.pdf
+doi: 10.1097/PHH.0000000000002034
 ---
 
