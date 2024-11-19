@@ -2,7 +2,7 @@
 title: "Association of Rurality and Identifying as Black with Receipt of Specialty Care Among Patients Hospitalized with a Diabetic Foot Ulcer: A Medicare Cohort Study"
 date: 2023-04-01
 publishDate: 2023-04-01
-authors: ["Lindasy Taylor", "Ronald Gangnon", "W Powell", "James Kramer", "Amy Kind", "Christie Bartels", "Meghan Brennan"]
+authors: ["Lindsay Taylor", "Ronald Gangnon", "W Powell", "James Kramer", "Amy Kind", "Christie Bartels", "Meghan Brennan"]
 publication_types: ["2"]
 abstract: "Introduction: Rural patients with diabetic foot ulcers, especially those identifying as Black, face
 increased risk of major amputation. Specialty care can reduce this risk. However, care
