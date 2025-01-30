@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jukrin Moon | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/jukrin-moon/</link>
+      <atom:link href="https://rgangnon.org/authors/jukrin-moon/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jukrin Moon</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Jukrin Moon</title>
+      <link>https://rgangnon.org/authors/jukrin-moon/</link>
+    </image>
+    
+    <item>
+      <title>Older Adult Misuse of Over-the-Counter Medications: Effectiveness of a Novel Pharmacy-Based Intervention to Improve Patient Safety</title>
+      <link>https://rgangnon.org/publication/gilson-2025/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/gilson-2025/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
