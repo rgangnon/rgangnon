@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Megan Elderbrook | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/megan-elderbrook/</link>
+      <atom:link href="https://rgangnon.org/authors/megan-elderbrook/index.xml" rel="self" type="application/rss+xml" />
+    <description>Megan Elderbrook</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Megan Elderbrook</title>
+      <link>https://rgangnon.org/authors/megan-elderbrook/</link>
+    </image>
+    
+    <item>
+      <title>A Retrospective, Time-Stratified, Case-Crossover Study of the Effect of PM2.5 on Asthma Exacerbations in Wisconsin&#39;s Rural Counties</title>
+      <link>https://rgangnon.org/publication/elderbrook-2025/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/elderbrook-2025/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

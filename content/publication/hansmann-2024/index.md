@@ -17,7 +17,7 @@ Discussion
 These findings suggest that getting rides from others plays an important role in the transition to non-driving for older adults. Future research should examine whether other aspects of social networks (e.g., type, quality, closer proximity) might also be key modifiable coping factors for older adults transitioning to non-driving."
 featured: false
 publication: "*J Gerontol B Psychol Soc Sci*"
-url_pdf: 
+url_pdf: hansmann-2024.pdf
 doi: 10.1093/geronb/gbae054
 ---
 
