@@ -11,7 +11,7 @@ Discussion: The quality of care received during the birth hospitalization may sh
 "
 featured: false
 publication: "*Birth*"
-url_pdf: 
-doi: 
+url_pdf: weeks-2025b.pdf
+doi: 10.1111/birt.12910
 ---
 
