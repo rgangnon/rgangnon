@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/ronald-gangnon/</link>
       <atom:link href="https://rgangnon.org/authors/ronald-gangnon/index.xml" rel="self" type="application/rss+xml" />
     <description>Ronald Gangnon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ronald Gangnon</title>
       <link>https://rgangnon.org/authors/ronald-gangnon/</link>
     </image>
+    
+    <item>
+      <title>Walking, public transit, and transitions to non-driving among US Medicare enrollees</title>
+      <link>https://rgangnon.org/publication/hansmann-2025/</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/hansmann-2025/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Lower Neighborhood-level Socioeconomic Status is Associated with Lower Colorectal Cancer Screening Uptake in the Southern Community Cohort Study</title>
@@ -37,7 +45,7 @@
     </item>
     
     <item>
-      <title>Prevalence of Motor Milestone Delays in Autistic Children: A Population-based Cross-sectional Study</title>
+      <title>Prevalence of Motor Milestone Delays in Autistic Children</title>
       <link>https://rgangnon.org/publication/pokoski-2025/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://rgangnon.org/publication/pokoski-2025/</guid>

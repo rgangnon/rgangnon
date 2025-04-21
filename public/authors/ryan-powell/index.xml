@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan Powell | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/ryan-powell/</link>
+      <atom:link href="https://rgangnon.org/authors/ryan-powell/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ryan Powell</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Ryan Powell</title>
+      <link>https://rgangnon.org/authors/ryan-powell/</link>
+    </image>
+    
+    <item>
+      <title>Walking, public transit, and transitions to non-driving among US Medicare enrollees</title>
+      <link>https://rgangnon.org/publication/hansmann-2025/</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/hansmann-2025/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
