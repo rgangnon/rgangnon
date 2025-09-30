@@ -5,12 +5,20 @@
     <link>https://rgangnon.org/authors/maria-kamenetsky/</link>
       <atom:link href="https://rgangnon.org/authors/maria-kamenetsky/index.xml" rel="self" type="application/rss+xml" />
     <description>Maria Kamenetsky</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Maria Kamenetsky</title>
       <link>https://rgangnon.org/authors/maria-kamenetsky/</link>
     </image>
+    
+    <item>
+      <title>Spatial and spatio-temporal cluster detection via stacking</title>
+      <link>https://rgangnon.org/publication/kamenetsky-2025/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/kamenetsky-2025/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>The Role of Neighborhood in Individual and Disparity-Level Factors and Birth Weight in Dane County, Wisconsin</title>
