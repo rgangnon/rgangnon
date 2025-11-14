@@ -1,0 +1,1400 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Multinomial Data
+
+We now consider regression models for the analysis of *multinomial* outcomes, e.g. categorical variables with {\em more than two} response categories. Multinomial data may be either *nominal* (purely qualitative) or *ordinal* data (ordered categories). We will consider several different generalizations of regression models for binary outcomes to multinomial data.
+
+Consider a random variable $Y_i$ that may take one of several (mutually exclusive and exhaustive) discrete values. For convenience, we will denote the $J$ possible values as $1, 2, \ldots, J$. Denote the probability that the response for subject $i$ is category $j$ by 
+$$ p_{ij} = P(Y_i = j) $$ 
+The response categories are assumed to be mutually exclusive and exhaustive, so, for each subject $i$, 
+$$ \sum_{j=1}^J{p_{ij}} = 1 $$
+There are only $J-1$ independent parameters, since, if we know $J-1$ of the probabilities, e.g. $p_{i1}, p_{i2}, \ldots, p_{i,J-1}$, then we also know 
+$$ p_{iJ} = 1 - \sum\limits_{j=1}^{J-1}{p_{ij}} $$
+
+For *grouped* data, it is more convenient to represent the multinomial outcomes using $J$ random variables, e.g. the counts of the number of responses in each category. Let $n_i$ denote the number of observations in group $i$, and let $Y_{ij}$ denote the number of responses from group $i$ that fall into category $j$. Note that $\sum\limits_{j=1}^J{Y_{ij}} = n_i$.  The counts in all of the response categories add up to the number of subjects in each group. For *individual* data, $n_i = 1$ and $Y_{ij}$ becomes an indicator (or dummy) variable that takes the value 1 if the response for subject $i$ is category $j$ and 0 otherwise. By definition, exactly one of the $J$ indicator variables will be 1, the others will all be 0.
+
+The probability distribution of the counts $Y_{i1}, Y_{i2}, \ldots, Y_{iJ}$ given the total $n_i$ is the *multinomial distribution*
+$$ P(Y_{i1} = y_{i1}, Y_{i2} = y_{i2}, \ldots, Y_{iJ} = y_{iJ}) = {{n_i}\choose{y_{i1}, y_{i2}, \ldots, y_{iJ}}} p_{i1}^{y_{i1}} p_{i2}^{y_{i2}} \ldots p_{iJ}^{y_{iJ}} $$
+The special case with $J=2$ is equivalent to the binomial distribution. Each of the individual counts also follows a binomial distribution
+$$ Y_{ij} \sim \mbox{Binomial}(n_i, p_{ij}) $$
+It follows that 
+$$ E(Y_{ij}) = n_i p_{ij} \\
+\mbox{Var}(Y_{ij}) = n_i p_{ij} (1-p_{ij}) $$
+The counts in the different categories are negatively correlated with each other
+$$ \mbox{Cov}(Y_{ij}, Y_{ij^\star}) = - n_i p_{ij} p_{ij^\star} $$
+
+# The Multinomial Logit Model
+
+We now consider models for the probabilities $p_{ij}$ in terms of covariates $x_{i1}, x_{i2}, \ldots, x_{ik}$ for subject or group $i$. 
+
+The simplest approach is to select one of the response categories as a *baseline* (or *reference*) category and write down a linear regression model for the log-odds for all other categories relative to the baseline as a function of the predictors. For convenience, we will assume that the last category $J$ is the reference category.
+$$ \eta_{ij} = \log\left(\frac{p_{ij}}{p_{iJ}}\right) = \beta_{0j} + \beta_{1j} x_{i1} + \beta_{2j} x_{i2} + \ldots + \beta_{kj} x_{ik} $$
+The $J-1$ multinomial logit regression equations contrast each of the categories $1, 2 \ldots, J-1$ with the reference category $J$. For $J=2$, the multinomial logit model reduces to the usual logistic regression model. Note that we need only $J-1$ equations to describe the regression model for a variable with $J$ response categories. It does not matter which category is used as the reference category.
+$$ \begin{eqnarray*}
+\log\left(\frac{p_{i1}}{p_{i2}}\right) & = & \log\left(\frac{p_{i1}}{p_{iJ}}\right) - \log\left(\frac{p_{i2}}{p_{iJ}}\right) \\
+& = & \beta_{01} + \beta_{11} x_{i1} +  \ldots + \beta_{k1} x_{ik} - (\beta_{02} + \beta_{12} x_{i1} +  \ldots + \beta_{k2} x_{ik}) \\
+& = & (\beta_{01}-\beta_{02}) + (\beta_{11}-\beta_{12}) x_{i1} +  \ldots + (\beta_{k1}-\beta_{k2}) x_{ik} 
+\end{eqnarray*}
+$$
+The multinomial logit model may also be written in terms of the original probabilities $p_{ij}$ rather than the log-odds. 
+$$ p_{ij} = \frac{e^{\eta_{ij}}}{\sum_{j=1}^J{e^{\eta_{ij}}}} $$
+Note that $\eta_{iJ} = 0$ in the above equation and that $p_{ij}$ depends on all of the $\eta_{i1}, \eta_{i2}, \ldots, \eta_{iJ}$, not just $\eta_{ij}$. 
+
+The $k \times (J-1)$ parameters of the multinomial logit model can be estimated by maximum likelihood. Estimates of the standard errors of the estimators can be found from the inverse of the Fisher information matrix. Hypothesis tests can be performed using (partial) likelihood ratio, Wald or score testing procedures. Confidence intervals for parameters can be calculated using the likelihood ratio or Wald procedures. Linear combinations of regression coefficients from the multinomial logit model are log odds ratios for two categories for subjects with one combination of covariates relative to another.  Typically, sensible linear combinations of the regression coefficients (and the associated confidence intervals) are exponentiated to facilitate interpretation as (conditional) odds ratios.
+
+# Example: Wheezing Patterns and Pet Ownership: The Childhood Origins of ASThma (COAST) Study
+
+The Childhood Origins of ASThma (COAST) study is a prospective birth cohort studying the contributions of age, patterns of cytokine secretion and viral infections to the development of childhood asthma. A cohort of 287 children, who were at increased risk of developing asthma (at least parent with allergies and/or asthma), were enrolled at birth. The dataset is available as a [SAS dataset](https://uwmadison.box.com/s/5yhr9dt3bl5e40kd0lk7un65b2e7x9p4) and as a [comma-delimited file](https://uwmadison.box.com/s/h4sr69u413g83duxrenqe6ayuzg43x4v).  The SAS dataset is also available in the shared library for the course in SAS OnDemand for Academics. If you are using SAS OnDemand for Academics, you should not need to access the dataset using these links.
+
+For the current analysis, we will examine the relationship between the presence of cats and/or dogs in the home at birth and subsequent wheezing patterns. For the current analysis, subjects fall into four distinct wheezing patterns: (1) never wheezers (no wheezing in the first 3 years of life and no wheezing in the second 3 years of life), (2) transient wheezers (wheezing in the first 3 years of life and no wheezing in the second 3 years of life), (3) late onset wheezers (no wheezing in the first 3 years of life and wheezing in the second 3 years of life) and (4) persistent wheezers (wheezing in the first 3 years of life and wheezing in the second 3 years of life).
+
+
+```{r coast, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+OPTIONS NODATE NONUMBER;
+
+*LIBNAME COAST "~/my_shared_file_links/u48718377/COAST";
+LIBNAME COAST "../../../BMI552_Datasets/COAST";
+
+TITLE1; TITLE2; 
+ODS NOPROCTITLE;
+
+DATA COAST;
+  SET COAST.COAST;
+    
+  KEEP Id Whz_Pat Dog Cat;
+  WHERE Whz_Pat NE . AND Dog NE . AND Cat NE .;
+RUN;
+
+PROC PRINT DATA=COAST (OBS=10);
+RUN;
+
+PROC FREQ DATA=COAST;
+  ODS SELECT OneWayFreqs;
+  TABLES Dog Cat Whz_Pat;
+RUN;
+TITLE;
+```
+
+# Additive Model for Wheezing Pattern by Dog and Cat Ownership
+
+The multinomial logit model for wheezing pattern ($y_i$) as an additive function of dog ownership ($d_i$) and cat ownership ($c_i$) is given by
+
+$$ y_i \sim \mbox{Multinomial}(1, p_i) \\
+p_i = (p_{1i}, p_{2i}, p_{3i}, p_{4i}) \\
+\log\left(\frac{p_{2i}}{p_{1i}}\right) = \beta_0^{21} + \beta_1^{21} d_i + \beta_2^{21} c_i \\
+\log\left(\frac{p_{3i}}{p_{1i}}\right) = \beta_0^{31} + \beta_1^{31} d_i + \beta_2^{31} c_i \\
+\log\left(\frac{p_{4i}}{p_{1i}}\right) = \beta_0^{41} + \beta_1^{41} d_i + \beta_2^{41} c_i
+$$
+
+Explicitly, the model is written in terms of the conditional odds of each category relative to the reference category.  Implicitly, the above equations also specify the conditional odds for any one category relative to any other category (not just the reference category) as additive functions of dog ownership and cat ownership. So, if the model is correctly specified, the following relationships also hold
+
+$$
+\log\left(\frac{p_{3i}}{p_{2i}}\right) = \beta_0^{32} + \beta_1^{32} d_i + \beta_2^{32} c_i \\
+\log\left(\frac{p_{4i}}{p_{2i}}\right) = \beta_0^{42} + \beta_1^{42} d_i + \beta_2^{42} c_i \\
+\log\left(\frac{p_{4i}}{p_{3i}}\right) = \beta_0^{43} + \beta_1^{43} d_i + \beta_2^{43} c_i
+$$
+
+The coefficients of the last three equations are functions of the coefficients of the first three equations:
+
+$$
+\log\left(\frac{p_{3i}}{p_{2i}}\right) = (\beta_0^{31}-\beta_0^{21}) + (\beta_1^{31}-\beta_1^{21}) d_i + (\beta_2^{31}-\beta_2^{21}) c_i \\
+\log\left(\frac{p_{4i}}{p_{2i}}\right) = (\beta_0^{41}-\beta_0^{21}) + (\beta_1^{41}-\beta_1^{21}) d_i + (\beta_2^{41}-\beta_2^{21}) c_i \\
+\log\left(\frac{p_{4i}}{p_{3i}}\right) = (\beta_0^{41}-\beta_0^{31}) + (\beta_1^{41}-\beta_1^{31}) d_i + (\beta_2^{41}-\beta_2^{31}) c_i
+$$
+
+As a general rule, understanding the effect of a covariate on the multinomial outcome requires the examination of all of the conditional odds ratios associated with the comparison of interest, not just the comparisons with the reference category.  Unfortunately, ESTIMATE statements in SAS do not allow for expressions involving coefficients from different constituent equations of the multinomial logit model. In practice, to obtain all the necessary estimates, we will need to fit the regression model multiple times using different reference categories for the multinomial outcome.  Note that changing the reference category does not substantively change the model and will not affect the answer to any meaningful question, e.g. tests for interactions or tests for overall effect.
+
+The following SAS code fits the multinomial regression model four times, using each possible reference category for the multinomial outcome using PROC LOGISTIC and stores the model fits. The CATEGORY=JOINT option is required to get the correct estimates for the multinomial model.
+
+```{r additive1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog Cat / LINK=GLOGIT;
+
+    STORE MultinomialAdditiveRef0;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="1") = Dog Cat / LINK=GLOGIT;
+
+    STORE MultinomialAdditiveRef1;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="2") = Dog Cat / LINK=GLOGIT;
+
+    STORE MultinomialAdditiveRef2;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="3") = Dog Cat / LINK=GLOGIT;
+
+    STORE MultinomialAdditiveRef3;
+RUN;
+```
+
+## Estimated Odds Ratios
+
+Interval estimates of the odds ratios representing the main effects of dog ownership at birth and cat ownership at birth can be obtained using ESTIMATE statements in PROC PLM. The CATEGORY=JOINT option is required with the multinomial model.
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+PROC PLM RESTORE=MultinomialAdditiveRef0;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialAdditiveRef1;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialAdditiveRef2;
+    ODS OUTPUT Estimates=E2;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialAdditiveRef3;
+    ODS OUTPUT Estimates=E3;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+ODS SELECT ALL;
+
+DATA E0;
+    LENGTH Response $30;
+    SET E0;
+
+    IF Whz_Pat = 1 THEN Response = "Transient v Never";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Never";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Never";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E1;
+    LENGTH Response $30;
+    SET E1;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Transient";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Transient";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Transient";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E2;
+    LENGTH Response $30;
+    SET E2;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Late Onset";
+    IF Whz_Pat = 1 THEN Response = "Transient v Late Onset";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Late Onset";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E3;
+    LENGTH Response $30;
+    SET E3;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Persistent";
+    IF Whz_Pat = 1 THEN Response = "Transient v Persistent";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Persistent";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E;
+    SET E0 E1 E2 E3;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label;
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Response LowerExp ExpEstimate UpperExp;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratios for Wheezing Pattern";
+    BY Label;
+RUN;
+```
+
+The conditional odds ratios for dog ownership (adjusted for cat ownership) are (0.23,1.15) for transient vs. never, (0.33,4.24) for late onset vs. never, (0.29,1.09) for persistent vs. never, (0.58,9.08) for late onset vs. transient, (0.46,2.53) for persistent vs. transient and (0.12,1.74) for persistent vs. late onset.
+
+The conditional odds ratios for cat ownership (adjusted for dog ownership) are (0.42,2.10) for transient vs. never, (0.15,2.91) for late onset vs. never, (0.47,2.38) for persistent vs. never, (0.15,3.36) for late onset vs. transient, (0.43,2.27) for persistent vs. transient and (0.31,6.36) for persistent vs. late onset.
+
+## Estimated Probabilities of Wheezing Patterns
+
+Interval estimates of the probabilities of the wheezing patterns for all combinations of dog ownership at birth and cat ownership at birth can be obtained using ESTIMATE statements with the ILINK option in PROC PLM. The CATEGORY=JOINT option is required with the multinomial model.
+
+```{r inference2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC PLM RESTORE=MultinomialAdditiveRef0;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialAdditiveRef1;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+DATA E0;
+    LENGTH Response $30;
+    SET E0;
+
+    IF Whz_Pat = 1 THEN Response = "1 - Transient";
+    IF Whz_Pat = 2 THEN Response = "2 - Late Onset";
+    IF Whz_Pat = 3 THEN Response = "3 - Persistent";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E1;
+    LENGTH Response $30;
+    SET E1;
+
+    IF Whz_Pat = 0 THEN Response = "0 - Never";
+    IF Whz_Pat = 2 THEN Response = "2 - Late Onset";
+    IF Whz_Pat = 3 THEN Response = "3 - Persistent";
+
+    IF Whz_Pat = 0;
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E2;
+    SET E0 E1;
+RUN;
+
+PROC SORT DATA=E2 OUT=E;
+    BY Label Response;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label Response LowerMu Mu UpperMu;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+    BY Label;
+    TITLE "Probability of Wheezing Pattern";
+RUN;
+```
+
+For children with no cats or dogs in the home at birth, $(28\%,46\%)$ will be never wheezers, $(14\%,30\%)$ will be transient wheezers, $(0.7\%,8.4\%$ will be late onset wheezers, and $(28\%,46\%)$ will be persistent wheezers
+
+For children with only cats in the home at birth, $(26\%,52\%)$ will be never wheezers, $(11\%,33\%)$ will be transient wheezers, $(0.0\%,7.5\%$ will be late onset wheezers, and $(23\%,49\%)$ will be persistent wheezers
+
+For children with only dogs in the home at birth, $(37\%,62\%)$ will be never wheezers, $(0.7\%,24\%)$ will be transient wheezers, $(0.7\%,14\%$ will be late onset wheezers, and $(17\%,39\%)$ will be persistent wheezers
+
+For children with both cats and dogs in the home at birth, $(37\%,68\%)$ will be never wheezers, $(5\%,26\%)$ will be transient wheezers, $(0.0\%,12\%$ will be late onset wheezers, and $(14\%,40\%)$ will be persistent wheezers
+
+The probability estimates are the same regardless of which level of the outcome variable is used as the reference category
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=MultinomialAdditiveRef2;
+    ODS OUTPUT Estimates=E2;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialAdditiveRef3;
+    ODS OUTPUT Estimates=E3;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+DATA E2;
+    LENGTH Response $30;
+    SET E2;
+
+    IF Whz_Pat = 0 THEN Response = "0 - Never";
+    IF Whz_Pat = 1 THEN Response = "1 - Transient";
+    IF Whz_Pat = 3 THEN Response = "3 - Persistent";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E3;
+    LENGTH Response $30;
+    SET E3;
+
+    IF Whz_Pat = 0 THEN Response = "0 - Never";
+    IF Whz_Pat = 1 THEN Response = "1 - Transient";
+    IF Whz_Pat = 2 THEN Response = "2 - Late Onset";
+
+    IF Whz_Pat = 2;
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E;
+    SET E2 E3;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label Response;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label Response LowerMu Mu UpperMu;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+    BY Label;
+    TITLE "Probability of Wheezing Pattern";
+RUN;
+```
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) the main effect of dog and (2) the main effect of cat can be calculated in the usual way.
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=Full;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=DogOnly;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=CatOnly;
+RUN;
+
+DATA Full;
+    SET Full;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full DF=DF_Full;
+RUN;
+
+DATA DogOnly;
+    LENGTH Model $30 Test $30;
+    SET DogOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Dog Only";
+    Test = "Cat Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA CatOnly;
+    LENGTH Model $30 Test $30;
+    SET CatOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Cat Only";
+    Test = "Dog Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+    LENGTH Model $30 Test $30;
+
+    IF _N_ = 1 THEN SET Full;
+    SET DogOnly CatOnly;
+
+    Chisq = Chisq_Full-Chisq;
+    DF = DF_Full - DF;
+    ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is no evidence $(s \approx 0.1)$ of an effect of cat ownership on wheezing patterns.  (Remember that the absence of evidence for an effect is not the same as evidence of the absence of an effect.) There is weak evidence $(s \approx 3)$ of an effect of dog ownership on wheezing patterns.
+
+The likelihood ratio test results are identical regardless of which category of the outcome variable is used as the reference category.
+
+```{r inference5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="3") = Dog Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=Full;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="3") = Dog / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=DogOnly;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="3") = Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=CatOnly;
+RUN;
+
+DATA Full;
+    SET Full;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full DF=DF_Full;
+RUN;
+
+DATA DogOnly;
+    LENGTH Model $30 Test $30;
+    SET DogOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Dog Only";
+    Test = "Cat Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA CatOnly;
+    LENGTH Model $30 Test $30;
+    SET CatOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Cat Only";
+    Test = "Dog Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+    LENGTH Model $30 Test $30;
+
+    IF _N_ = 1 THEN SET Full;
+    SET DogOnly CatOnly;
+
+    Chisq = Chisq_Full-Chisq;
+    DF = DF_Full - DF;
+    ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+
+
+# Interaction Model for Wheezing Pattern by Dog and Cat Ownership
+
+The multinomial logit model for wheezing pattern ($y_i$) as an additive function of dog ownership ($d_i$) and cat ownership ($c_i$) is given by
+
+$$ y_i \sim \mbox{Multinomial}(1, p_i) \\
+p_i = (p_{1i}, p_{2i}, p_{3i}, p_{4i}) \\
+\log\left(\frac{p_{2i}}{p_{1i}}\right) = \beta_0^{21} + \beta_1^{21} d_i + \beta_2^{21} c_i +\beta_3^{21} d_i \times c_i \\
+\log\left(\frac{p_{3i}}{p_{1i}}\right) = \beta_0^{31} + \beta_1^{31} d_i + \beta_2^{31} c_i +\beta_3^{31} d_i \times c_i \\
+\log\left(\frac{p_{4i}}{p_{1i}}\right) = \beta_0^{41} + \beta_1^{41} d_i + \beta_2^{41} c_i +\beta_3^{41} d_i \times c_i \\
+$$
+
+The following SAS code fits the multinomial regression model four times, using each possible reference category for the multinomial outcome using PROC LOGISTIC and stores the model fits. The CATEGORY=JOINT option is required to get the correct estimates for the multinomial model.
+
+```{r interaction1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog Cat Dog*Cat / LINK=GLOGIT;
+
+    STORE MultinomialInteractionRef0;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="1") = Dog Cat Dog*Cat / LINK=GLOGIT;
+
+    STORE MultinomialInteractionRef1;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="2") = Dog Cat Dog*Cat / LINK=GLOGIT;
+
+    STORE MultinomialInteractionRef2;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="3") = Dog Cat Dog*Cat / LINK=GLOGIT;
+
+    STORE MultinomialInteractionRef3;
+RUN;
+```
+
+## Estimated Odds Ratios
+
+Interval estimates of the odds ratios representing the simple effects of dog ownership at birth and cat ownership at birth can be obtained using ESTIMATE statements in PROC PLM. The CATEGORY=JOINT option is required with the multinomial model.
+
+```{r inference6, engine="sashtml5", engine.path=saspath}
+PROC PLM RESTORE=MultinomialInteractionRef0;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "Dog v No Dog, No Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Dog v No Dog, Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, No Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 1 2] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 2 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialInteractionRef1;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "Dog v No Dog, No Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Dog v No Dog, Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, No Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 1 2] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 2 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialInteractionRef2;
+    ODS OUTPUT Estimates=E2;
+    ESTIMATE "Dog v No Dog, No Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Dog v No Dog, Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, No Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 1 2] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 2 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialInteractionRef3;
+    ODS OUTPUT Estimates=E3;
+    ESTIMATE "Dog v No Dog, No Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Dog v No Dog, Cat" Dog [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, No Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 1 2] [-1, 1 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "Cat v No Cat, Dog" Cat [1, 2] [-1, 1]
+        Dog*Cat [1, 2 2] [-1, 2 1] / CL EXP ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+DATA E0;
+    LENGTH Response $30;
+    SET E0;
+
+    IF Whz_Pat = 1 THEN Response = "Transient v Never";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Never";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Never";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E1;
+    LENGTH Response $30;
+    SET E1;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Transient";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Transient";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Transient";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E2;
+    LENGTH Response $30;
+    SET E2;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Late Onset";
+    IF Whz_Pat = 1 THEN Response = "Transient v Late Onset";
+    IF Whz_Pat = 3 THEN Response = "Persistent v Late Onset";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E3;
+    LENGTH Response $30;
+    SET E3;
+
+    IF Whz_Pat = 0 THEN Response = "Never v Persistent";
+    IF Whz_Pat = 1 THEN Response = "Transient v Persistent";
+    IF Whz_Pat = 2 THEN Response = "Late Onset v Persistent";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E;
+    SET E0 E1 E2 E3;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Response LowerExp ExpEstimate UpperExp;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratios for Wheezing Pattern";
+    FORMAT LowerExp 6.2 ExpEstimate 6.2 UpperExp 6.2;
+    BY Label;
+RUN;
+TITLE;
+```
+
+## Estimated Probabilities of Wheezing Patterns
+
+Interval estimates of the probabilities of the wheezing patterns for all combinations of dog ownership at birth and cat ownership at birth can be obtained using ESTIMATE statements with the ILINK option in PROC PLM. The CATEGORY=JOINT option is required with the multinomial model.
+
+```{r inference7, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=MultinomialInteractionRef0;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1
+        Dog [1, 1] Cat [1, 1]
+        Dog*Cat [1, 1 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1
+        Dog [1, 2] Cat [1, 1]
+        Dog*Cat [1, 2 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1
+        Dog [1, 1] Cat [1, 2]
+        Dog*Cat [1, 1 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1
+        Dog [1, 2] Cat [1, 2]
+        Dog*Cat [1, 2 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+PROC PLM RESTORE=MultinomialInteractionRef1;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "1 - No Dog, No Cat" Intercept 1
+        Dog [1, 1] Cat [1, 1]
+        Dog*Cat [1, 1 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "2 - Dog, No Cat" Intercept 1
+        Dog [1, 2] Cat [1, 1]
+        Dog*Cat [1, 2 1] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "3 - Cat, No Dog" Intercept 1
+        Dog [1, 1] Cat [1, 2]
+        Dog*Cat [1, 1 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+    ESTIMATE "4 - Dog, Cat" Intercept 1
+        Dog [1, 2] Cat [1, 2]
+        Dog*Cat [1, 2 2] / CL ILINK ALPHA=0.03125 CATEGORY=JOINT;
+RUN;
+
+DATA E0;
+    LENGTH Response $30;
+    SET E0;
+
+    IF Whz_Pat = 1 THEN Response = "1 - Transient";
+    IF Whz_Pat = 2 THEN Response = "2 - Late Onset";
+    IF Whz_Pat = 3 THEN Response = "3 - Persistent";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E1;
+    LENGTH Response $30;
+    SET E1;
+
+    IF Whz_Pat = 0 THEN Response = "0 - Never";
+    IF Whz_Pat = 2 THEN Response = "2 - Late Onset";
+    IF Whz_Pat = 3 THEN Response = "3 - Persistent";
+
+    IF Whz_Pat = 0;
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E;
+    SET E0 E1;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label Response;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Response LowerMu Mu UpperMu;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+    BY Label;
+    TITLE "Probability of Wheezing Pattern";
+RUN;
+TITLE;
+*/
+```
+
+For children with no cats or dogs in the home at birth, $(29\%,48\%)$ will be never wheezers, $(13\%,29\%)$ will be transient wheezers, $(0.2\%,8.1\%$ will be late onset wheezers, and $(27\%,46\%)$ will be persistent wheezers
+
+For children with only cats in the home at birth, $(20\%,50\%)$ will be never wheezers, $(12\%,38\%)$ will be transient wheezers, $(0.0\%,10\%$ will be late onset wheezers, and $(20\%,50\%)$ will be persistent wheezers
+
+For children with only dogs in the home at birth, $(33\%,60\%)$ will be never wheezers, $(7.3\%,28\%)$ will be transient wheezers, $(0.6\%,16\%$ will be late onset wheezers, and $(15\%,40\%)$ will be persistent wheezers
+
+For children with both cats and dogs in the home at birth, $(39\%,78\%)$ will be never wheezers, $(0.0\%,22\%)$ will be transient wheezers, $(0.0\%,11\%$ will be late onset wheezers, and $(9.7\%,45\%)$ will be persistent wheezers
+
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) interaction between dog and cat in their effects on the (conditional) log odds between two (or more) of the wheezing patterns, (2) the overall effect of dog and (2) the overall effect of cat can be calculated in the usual way.
+
+```{r inference8, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog Cat Dog*Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=Full;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=Additive;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Dog / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=DogOnly;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz_Pat(REF="0") = Cat / LINK=GLOGIT;
+
+    ODS OUTPUT GlobalTests=CatOnly;
+RUN;
+
+DATA Full;
+    SET Full;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full DF=DF_Full;
+RUN;
+
+DATA Additive;
+    LENGTH Model $30 Test $30;
+    SET Additive;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Additive";
+    Test = "Dog*Cat Interaction";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA DogOnly;
+    LENGTH Model $30 Test $30;
+    SET DogOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Dog Only";
+    Test = "Cat Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA CatOnly;
+    LENGTH Model $30 Test $30;
+    SET CatOnly;
+
+    WHERE Test="Likelihood Ratio";
+
+    Model = "Cat Only";
+    Test = "Dog Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+    LENGTH Model $30 Test $30;
+
+    IF _N_ = 1 THEN SET Full;
+    SET Additive DogOnly CatOnly;
+
+    Chisq = Chisq_Full-Chisq;
+    DF = DF_Full - DF;
+    ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is no evidence $(s \approx 0.8)$ for an interaction between dog ownership and cat ownership in their effects on wheezing patterns. There is no evidence $(s \approx 0.2)$ for an effect of cat ownership on wheezing patterns. There is very weak evidence $(s \approx 2)$ for an effect of dog ownership on wheezing patterns.
+
+# The Hierarchical Logit Model
+
+The multinomial logit model is only one of many possible approaches for modeling multinomial response data. An alternative strategy defines a hierarchy of nested comparisons between two subsets of responses, using ordinary logistic regression model for each comparison.  The hierarchical or nested approach is very attractive if you assume that subjects make decisions (or events occur) in a sequential fashion. That is, a subject might first decide between category 1 and category $2+3$ and, if category $2+3$ is chosen, then decide between category 2 and category 3.
+
+For example, for $J=3$, one could use one of the following schemes for constructing two independent logistic regression models.
+
+Scheme A:
+$$ \eta_{1,23} = \log\left(\frac{p_{1}}{p_{2}+p_{3}}\right) = \beta_{01} + \beta_{11} x_{1} + \beta_{21} x_{2} + \ldots + \beta_{k1} x_{k} \\
+ \eta_{2,3} = \log\left(\frac{p_{2}}{p_{3}}\right) = \beta_{02} + \beta_{12} x_{1} + \beta_{22} x_{2} + \ldots + \beta_{k2} x_{k} $$
+Scheme B:
+$$ \eta_{2,13} = \log\left(\frac{p_{i2}}{p_{1}+p_{3}}\right) = \beta_{01} + \beta_{11} x_{1} + \beta_{21} x_{2} + \ldots + \beta_{k1} x_{k} \\
+ \eta_{1,3} = \log\left(\frac{p_{1}}{p_{3}}\right) = \beta_{02} + \beta_{12} x_{1} + \beta_{22} x_{2} + \ldots + \beta_{k2} x_{k} $$
+Scheme C:
+$$ \eta_{3,12} = \log\left(\frac{p_{3}}{p_{1}+p_{2}}\right) = \beta_{01} + \beta_{11} x_{1} + \beta_{21} x_{2} + \ldots + \beta_{k1} x_{k} \\
+\eta_{1,2} = \log\left(\frac{p_{1}}{p_{2}}\right) = \beta_{02} + \beta_{12} x_{2} + \beta_{22} x_{2} + \ldots + \beta_{k2} x_{k} $$
+
+The multinomial probabilities of being in each category under these models are as follows.
+Under Scheme A,
+$$
+p_1 =  \frac{e^{\eta_{1,23}}}{1+e^{\eta_{1,23}}} \\
+p_2  =  \frac{1}{1+e^{\eta_{1,23}}} \cdot \frac{e^{\eta_{2,3}}}{1+e^{\eta_{2,3}}} \\
+p_3 =  \frac{1}{1+e^{\eta_{1,23}}} \cdot \frac{1}{1+e^{\eta_{2,3}}}
+$$
+Under Scheme B,
+$$
+p_1  =  \frac{1}{1+e^{\eta_{2,13}}} \cdot \frac{e^{\eta_{1,3}}}{1+e^{\eta_{1,3}}}  \\
+p_2  =   \frac{e^{\eta_{2,13}}}{1+e^{\eta_{2,13}}}  \\
+p_3  =  \frac{1}{1+e^{\eta_{2,13}}} \cdot \frac{1}{1+e^{\eta_{1,3}}}
+$$
+Under Scheme C,
+$$
+p_1  =  \frac{1}{1+e^{\eta_{3,12}}} \cdot \frac{e^{\eta_{1,2}}}{1+e^{\eta_{1,2}}}  \\
+p_2  =  \frac{1}{1+e^{\eta_{3,12}}} \cdot \frac{1}{1+e^{\eta_{1,2}}}  \\
+p_3  =   \frac{e^{\eta_{3,12}}}{1+e^{\eta_{3,12}}}
+$$
+Note that the multinomial probabilities for each of these schemes are fundamentally different from each other and from the multinomial logit model.
+
+An important practical feature of the hierarchical logit model is that the multinomial likelihood factors out into a product of binomial likelihoods, which may then be maximized separately. In general, one fits the hierarchical logit model by fitting $J-1$ separate ordinary logistic regression models. For example, with $J=4$, there are two fundamental hierarchical logit models.  The first model is
+
+$\{1, 2\}$ versus $\{3, 4\}$, $\{1\}$ versus $\{2\}$, and $\{3\}$ versus $\{4\}$.
+
+The second model is
+
+$\{1\}$ versus $\{2, 3, 4\}$, $\{2\}$ versus $\{3, 4\}$, and $\{3\}$ versus $\{4\}$.
+
+The latter type of model, where one considers the odds of response $Y = j$ relative to responses $Y> j$, is known as a *continuation ratio model* and may be appropriate for ordinal responses.
+
+# Wheezing Patterns and Pet Ownership Revisited
+
+We now consider a hierarchical logit model for wheezing pattern as an additive function of dog ownership ($d_i$) and cat ownership ($c_i$) as an alternative to the previous multinomial logit model. The four wheezing patterns are derived from two indicator variables, one for wheezing in the first 3 years of life $\mbox{whz}_i^{3}$ and one for wheezing between age 3 years and age 6 years $\mbox{whz}_i^{6}$: (1) never wheezers ($\mbox{whz}_i^{3}=0, \mbox{whz}_i^{6}=0$), (2) transient wheezers ($\mbox{whz}_i^{3}=1, \mbox{whz}_i^{6}=0$), (3) late onset wheezers ($\mbox{whz}_i^{3}=0, \mbox{whz}_i^{6}=1$) and (4) persistent wheezers ($\mbox{whz}_i^{3}=1, \mbox{whz}_i^{6}=1$).
+
+An logical approach given the temporality of the outcomes is to develop models for (1) the wheezing outcome at age 3 years, (2) the wheezing outcome at age 6 years for non-wheezers at age 3 years, and (3) the wheezing outcome at age 6 years for wheezers at age 3 years.
+
+$$ \mbox{whz}_i^{3} \sim \mbox{Bernoulli}(p_i^{3}) \\
+\mbox{logit}(p_i^{3}) = \beta_0^{3} + \beta_1^{3} d_i + \beta_2^{3} c_i \\
+$$
+$$
+(\mbox{whz}_i^{6} \mid \mbox{whz}_i^{3}=0) \sim \mbox{Bernoulli}(p_i^{6|0}) \\
+\mbox{logit}(p_i^{6|0}) = \beta_0^{6|0} + \beta_1^{6|0} d_i + \beta_2^{6|0} c_i \\
+$$
+$$
+(\mbox{whz}_i^{6} \mid \mbox{whz}_i^{3}=1) \sim \mbox{Bernoulli}(p_i^{6|1}) \\
+\mbox{logit}(p_i^{6|1}) = \beta_0^{6|1} + \beta_1^{6|1} d_i + \beta_2^{6|1} c_i \\
+$$
+
+The following SAS code uses PROC LOGISTIC to fit the three component logistic regression models comprising the hierarchical model for wheezing pattern as an additive function of dog ownership and cat ownership.
+
+```{r hierarchical1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+DATA COAST;
+  SET COAST;
+
+  IF Whz_Pat = 0 THEN DO;
+    Whz3 = 0;
+    Whz6 = 0;
+    END; 
+  ELSE IF Whz_Pat = 1 THEN DO;
+    Whz3 = 1;
+    Whz6 = 0;
+    END;
+  ELSE IF Whz_Pat = 2 THEN DO;
+    Whz3 = 0;
+    Whz6 = 1;
+    END;
+  ELSE IF Whz_Pat = 3 THEN DO;
+    Whz3 = 1;
+    Whz6 = 1;
+    END;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz3(REF="0") = Dog Cat;
+
+    STORE HierarchicalWhz3;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog Cat;
+
+    WHERE Whz3 = 0;
+    STORE HierarchicalWhz6NoWhz3;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog Cat;
+
+    WHERE Whz3 = 1;
+    STORE HierarchicalWhz6Whz3;
+RUN;
+```
+
+## Estimated Odds Ratios
+
+Interval estimates of the odds ratios representing the main effects of dog ownership at birth and cat ownership at birth within the three component logistic regression models can be easily obtained using ESTIMATE statements in PROC PLM. 
+
+```{r inference9, engine="sashtml5", engine.path=saspath}
+PROC PLM RESTORE=HierarchicalWhz3;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HierarchicalWhz6NoWhz3;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HierarchicalWhz6Whz3;
+    ODS OUTPUT Estimates=E2;
+    ESTIMATE "Dog v No Dog" Dog [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Cat v No Cat" Cat [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E0;
+    LENGTH Response $50;
+    SET E0;
+
+    Response = "Wheeze at Age 3";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E1;
+    LENGTH Response $50;
+    SET E1;
+
+    Response = "Wheeze at Age 6 | No Wheeze at Age 3";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E2;
+    LENGTH Response $50;
+    SET E2;
+
+    Response = "Wheeze at Age 6 | Wheeze at Age 3";
+
+    KEEP Label Response LowerExp ExpEstimate UpperExp;
+RUN;
+
+DATA E;
+    SET E0 E1 E2;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Response LowerExp ExpEstimate UpperExp;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratios for Wheezing";
+    BY Label;
+RUN;
+TITLE;
+```
+The presence of a dog in the home at birth lowers the odds (risk) of wheezing at age 3 years; the odds ratio is $(0.30,0.95)$.
+
+The direction and magnitude of the effect of a cat in the home at birth on the odds (risk) of wheezing at 3 years is unclear; the odds ratio is $(0.53,1.75)$.
+
+The magnitude and direction of effects of pets in the home at birth on wheezing at 6 years is unclear in non-wheezers at age 3 years; the odds ratio is $(0.33,4.33)$ for dogs and $(0.15,2.89)$ for cats). It is also unclear for wheezers at age 3; the odds ratio is $(0.46,2.53)$ for dogs and $(0.43,2.27)$ for cats.
+
+## Estimated Probabilities of Wheezing
+
+Interval estimates of the estimated (conditional) probabilities from the three component logistic regression models are easily obtained using ESTIMATE statements in the usual way.
+
+Point estimates of the probabilities of the wheezing patterns for specific covariate combinations can be easily obtained from the estimated (conditional) probabilities from the individual models using standard probability calculations. It is more challenging to find confidence intervals, and the bootstrap is typically the best option.
+
+```{r inference10, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=HierarchicalWhz3;
+    ODS OUTPUT Estimates=E0;
+    ESTIMATE "(1) No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(2) Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(3) Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(4) Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HierarchicalWhz6NoWhz3;
+    ODS OUTPUT Estimates=E1;
+    ESTIMATE "(1) No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(2) Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(3) Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(4) Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HierarchicalWhz6Whz3;
+    ODS OUTPUT Estimates=E2;
+    ESTIMATE "(1) No Dog, No Cat" Intercept 1 Dog [1, 1] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(2) Dog, No Cat" Intercept 1 Dog [1, 2] Cat [1, 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(3) Cat, No Dog" Intercept 1 Dog [1, 1] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "(4) Dog, Cat" Intercept 1 Dog [1, 2] Cat [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+
+DATA E0;
+    LENGTH Response $50;
+    SET E0;
+
+    Response = "Wheeze at Age 3";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E1;
+    LENGTH Response $50;
+    SET E1;
+
+    Response = "Wheeze at Age 6 | No Wheeze at Age 3";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E2;
+    LENGTH Response $50;
+    SET E2;
+
+    Response = "Wheeze at Age 6 | Wheeze at Age 3";
+
+    KEEP Label Response LowerMu Mu UpperMu;
+RUN;
+
+DATA E;
+    SET E0 E1 E2;
+RUN;
+
+PROC SORT DATA=E OUT=E;
+    BY Label;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Response LowerMu Mu UpperMu;
+    LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+    BY Label;
+    TITLE "Probability of Wheezing";
+RUN;
+TITLE;
+```
+
+For children with no dogs or cats in the home at birth, $(49\%,60\%)$ will wheeze before age 3, $(5\%,24\%)$ will wheeze between ages 3 and 6 if they didn't wheeze before age 3, and $(50\%,73\%)$ will wheeze between ages 3 and 6 if they did wheeze before age 3.
+
+For children with only dogs in the home at birth, $(32\%,55\%)$ will wheeze before age 3, $(2\%,26\%)$ will wheeze between ages 3 and 6 if they didn't wheeze before age 3, and $(44\%,77\%)$ will wheeze between ages 3 and 6 if they did wheeze before age 3.
+
+For children with only cats in the home at birth, $(44\%,70\%) will wheeze before age 3, $(2\%,26\%)$ will wheeze between ages 3 and 6 if they didn't wheeze before age 3, and $(44\%,78\%)$ will wheeze between ages 3 and 6 if they did wheeze before age 3.
+
+For children with dogs and cats in the home at birth, $(28\%,57\%)$ will wheeze before age 3, $(2\%,29\%)$ will wheeze between ages 3 and 6 if they didn't wheeze before age 3, and $(41\%,82\%)$ will wheeze between ages 3 and 6 if they did wheeze before age 3.
+
+## Hypothesis Tests
+
+Likelihood ratio tests for overall effects of dog ($H_0: \beta_1^3 = 0, \beta_1^{6|0} = 0, \beta_1^{6|1} = 0$) and cat ($H_0: \beta_2^3 = 0, \beta_2^{6|0} = 0, \beta_2^{6|1} = 0$) can be found by summing the likelihood ratio test statistics from the three component logistic regression models.
+
+```{r inference11, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz3(REF="0") = Dog Cat;
+
+    ODS OUTPUT GlobalTests=Full0;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog Cat;
+
+    WHERE Whz3 = 0;
+    ODS OUTPUT GlobalTests=Full1;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog Cat;
+
+    WHERE Whz3 = 1;
+    ODS OUTPUT GlobalTests=Full2;
+RUN;
+
+DATA Full0;
+    SET Full0;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full0 DF=DF_Full0;
+RUN;
+
+DATA Full1;
+    SET Full1;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full1 DF=DF_Full1;
+RUN;
+
+DATA Full2;
+    SET Full2;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq_Full2 DF=DF_Full2;
+RUN;
+
+DATA Full;
+    MERGE Full0 Full1 Full2;
+
+    ChiSq_Full = ChiSq_Full0 + ChiSq_Full1 + ChiSq_Full2;
+    DF_Full = DF_Full0 + DF_Full1 + DF_Full2;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz3(REF="0") = Dog;
+
+    ODS OUTPUT GlobalTests=DogOnly0;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog;
+
+    WHERE Whz3 = 0;
+    ODS OUTPUT GlobalTests=DogOnly1;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Dog;
+
+    WHERE Whz3 = 1;
+    ODS OUTPUT GlobalTests=DogOnly2;
+RUN;
+
+DATA DogOnly0;
+    SET DogOnly0;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq0 DF=DF0;
+RUN;
+
+DATA DogOnly1;
+    SET DogOnly1;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq1 DF=DF1;
+RUN;
+
+DATA DogOnly2;
+    SET DogOnly2;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq2 DF=DF2;
+RUN;
+
+DATA DogOnly;
+    LENGTH Model $30 Test $30;
+    MERGE DogOnly0 DogOnly1 DogOnly2;
+
+    ChiSq = ChiSq0 + ChiSq1 + ChiSq2;
+    DF = DF0 + DF1 + DF2;
+    Model = "Dog Only";
+    Test = "Cat Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz3(REF="0") = Cat;
+
+    ODS OUTPUT GlobalTests=CatOnly0;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Cat;
+
+    WHERE Whz3 = 0;
+    ODS OUTPUT GlobalTests=CatOnly1;
+RUN;
+
+PROC LOGISTIC DATA=COAST;
+    CLASS Dog Cat;
+    MODEL Whz6(REF="0") = Cat;
+
+    WHERE Whz3 = 1;
+    ODS OUTPUT GlobalTests=CatOnly2;
+RUN;
+
+DATA CatOnly0;
+    SET CatOnly0;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq0 DF=DF0;
+RUN;
+
+DATA CatOnly1;
+    SET CatOnly1;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq1 DF=DF1;
+RUN;
+
+DATA CatOnly2;
+    SET CatOnly2;
+
+    WHERE Test="Likelihood Ratio";
+    RENAME ChiSq=ChiSq2 DF=DF2;
+RUN;
+
+DATA CatOnly;
+    LENGTH Model $30 Test $30;
+    MERGE CatOnly0 CatOnly1 CatOnly2;
+
+    ChiSq = ChiSq0 + ChiSq1 + ChiSq2;
+    DF = DF0 + DF1 + DF2;
+    Model = "Cat Only";
+    Test = "Dog Overall";
+
+    KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+    LENGTH Model $30 Test $30;
+
+    IF _N_ = 1 THEN SET Full;
+    SET DogOnly CatOnly;
+
+    Chisq = Chisq_Full-Chisq;
+    DF = DF_Full - DF;
+    ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+
+The likelihood ratio test statistic for the overall effect of dog is $5.80=5.66+0.10+0.04$ on 3 df, and the likelihood ratio test statistic for the overall effect of cat is $0.42=0.01+0.42+0.00$ on 3 df.
+
+Overall, there is weak evidence $(s \approx 3)$ of an effect of dog ownership at birth on subsequent wheezing and no evidence $(s \approx 0.1)$ of an effect of cat ownership at birth on subsequent wheezing.

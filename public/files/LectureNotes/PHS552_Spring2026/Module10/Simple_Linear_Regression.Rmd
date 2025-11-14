@@ -1,0 +1,338 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Simple Linear Regression
+
+With a quantitative (or ordinal) predictor, the simplest possible relationship between the mean function $\mu(x)$ and the predictor $x$ is a *simple linear regression*
+$$\mu(x) = \beta_0 + \beta_1 x$$
+The parameters of the simple linear regression model are easily interpretable.  The intercept $\beta_0 = \mu(0)$ is the mean value of the outcome when the predictor $x=0$. The slope $\beta_1$ is the difference in mean outcomes between populations differing by one unit in $x$, e.g. $\beta_1 = \mu(x+1) - \mu(x)$ for all $x$. The *assumption* of a linear relationship allows us to express the difference in means between many groups using a single quantity. If the assumption is true, estimation of mean differences using the simple linear regression model will be *efficient* as we can pool information from all values of $x$ rather than computing separate differences for each pair of groups. If the difference in means for a (one-unit) change in the predictor is not constant, it will likely be better to fit a more flexible model structure, e.g. a natural cubic spline, instead of a simple linear regression.
+
+We often write the model as $y_i = \beta_0 + \beta_1 x_i + \epsilon_i$, expressing the individual outcome as the mean for the appropriate population $\beta_0 + \beta_1 x_i$ plus the error $\epsilon_i$. In addition to the *linearity (correst structural model) assumption*, we typically make three assumptions about the errors: *independence*, *constant variance* and *normality*.
+
+## Estimates
+
+For simple linear regression, it is possible to derive explicit (and relatively simple) formulas for the parameter estimates.  The least squares estimate of the slope $\beta_1$ is 
+$$\hat{\beta}_1 = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sum{(x_i-\bar{x})^2}} = \frac{s_{xy}}{s_x^2}$$
+where $s_{xy} = \frac{1}{n-1} \sum{(x_i-\bar{x})(y_i-\bar{y})}$ is the *sample covariance* between the predictor $x$ and the outcome $y$ and $s_x^2 = \frac{1}{n-1} \sum{(x_i-\bar{x})^2}$ is the *sample variance* of the predictor $x$. Note that, even though the variance of the predictor enters into the formula, there are **no assumptions** about the distributional form of the predictor variable.  
+
+The estimator $\hat{\beta}_1$ is an unbiased estimator of the slope.  Furthermore, if the errors are independent and have constant variance, it is the most efficient unbiased estimator of the slope.  If these assumptions do not hold, it is still an unbiased estimator, but it may be possible to find a better estimator by accounting for correlation and/or nonconstant variance. If, in addition, the errors are normally distributed, it is the maximum likelihood estimator of slope.
+
+The least squares estimate of the regression intercept $\beta_0$ is $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$; the least squares regression line must pass through the point $(\bar{x},\bar{y})$.
+
+The estimated error variance is 
+$$\hat{\sigma}^2 = \frac{\sum{(y_i - \hat{y}_i)^2}}{n-2} = \frac{\sum{\left\{y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)\right\}^2}}{n-2}$$
+Dividing by the degrees of freedom $n-2$ instead of the sample size $n$ results in an unbiased estimator of the error variance. 
+
+## Standard Errors
+
+The standard error of the estimated regression slope is 
+$$\mbox{se}(\hat{\beta}_1) = \sqrt{\frac{\sigma^2}{\sum{(x_i-\bar{x})^2}}} = \sqrt{\frac{\sigma^2}{(n-1) s_x^2}}$$
+The latter expression emphasizes that the standard error of the estimated regression slope depends on three factors, the variance around the regression line $\sigma^2$ (smaller is better), the variance of the predictor $s_x^2$ (larger is better) and the sample size $n$ (larger is better).
+
+The standard error of the estimated regression intercept (estimated mean outcome when $x=0$) is
+$$\mbox{se}(\hat{\beta}_0) = \sigma \sqrt{\frac{1}{n} + \frac{\bar{x}^2}{\sum{(x_i - \bar{x})^2}}}$$
+More generally, the standard error of the estimated mean outcome for $x=x_0$ is
+$$\mbox{se}\{\hat{\mu}(x_0)\} = \mbox{se}(\hat{\beta}_0 + \hat{\beta}_1 x_0) = \sigma \sqrt{\frac{1}{n} + \frac{(x_0-\bar{x})^2}{\sum{(x_i - \bar{x})^2}}}$$
+The standard error of the estimated mean outcome is smallest when $x_0 = \bar{x}$ (in the center of the observed data) and is largest in the tails.
+
+Estimated standard errors replace the error variance $\sigma^2$ with its estimate $\hat{\sigma}^2$.
+
+## Interval Estimates
+
+A $1-\alpha$ confidence interval for $\hat{\beta}_1$, the difference in means for a one unit difference in the predictor variable $x$, is given by
+$$\hat{\beta}_1 \pm t_{n-2}^{(1-\alpha/2)}~\hat{\mbox{se}}(\hat{\beta}_1)$$
+where $t_{n-2}^{(1-\alpha/2)}$ is the $(1-\alpha/2)$ quantile of a $t$-distribution with $n-2$ degrees of freedom ($n-2$ is the degrees of freedom for $\hat{\sigma}^2$). For large samples, we can use the corresponding normal quantile, $z_{(1-\alpha/2)}$ in place of the $t$ quantile. 
+
+For the commonly used $95\%$ confidence level, the interval is given by
+$$\hat{\beta}_1 \pm 1.96~\hat{\mbox{se}}(\hat{\beta}_1)$$
+A confidence interval for the difference in means for a $\delta$ unit difference in the predictor variable $x$, which is equal to $\beta_1 \delta$, can be found by multiplying the endpoints of the confidence interval for $\beta_1$ by $\delta$.  This is an example of the general rule that, if $(l,u)$ is a confidence interval for $\theta$, then $\{f(l),f(u)\}$ is a confidence interval for $f(\theta)$.
+
+# Example
+
+For illustration , we will develop a linear regression model for total cholesterol as a function of age for young adults (ages 20-39). We denote the total cholesterol level for subject $i$ by $y_i$ and the age for subject $i$ by $x_i$. Our regression model is $y_i = \beta_0 + \beta_1 x_i + \epsilon_i$, where $\epsilon_i \sim N(0,\sigma^2)$.  We can use PROC GLMSELECT to find estimates of $\beta_0, \beta_1$ and $\sigma$.
+
+```{r slr1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+
+  IF 20 <= Age <= 39;
+  IF TotChol NE .;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=F;
+  MODEL TotChol = Age;
+    
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+    
+  STORE SLR;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r diagnostics, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Resid / LINEATTRS=(COLOR="Red");  
+RUN;
+
+DATA Fitted;
+  SET Fitted;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=pred Y=sqrt_abs_resid; 
+  REG X=Pred Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="green");
+RUN;
+
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The residual plots do not reveal serious concerns about the model assumptions.  There are no serious issues with the linearity (correct structural model) assumption (the mean of the residuals appears to be consistently zero across the entire range of the fitted values) or the constant variance assumption (the spread of the residuals appears consistent across the entire range of the fitted values). 
+
+The normal scores plot shows strong evidence of (right) skewness, but, given the relatively large sample size, non-normality is not a serious concern. 
+
+One can formally test the adequacy of the linearity assumption by fitting a model with a nonlinear effect for age and performing the appropriate test for linearity within the expanded model. 
+
+```{r quadratic, engine="sashtml5", engine.path=saspath}
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT ParameterEstimates;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+RUN;
+```
+
+A formal test of the linearity assumption using the quadratic regression model yields $p=0.21$.
+
+```{r slr2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SLR;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope x 5" Age 5 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+PROC PRINT DATA=F NOOBS SPLIT="*";
+  VAR Label1 nValue1;
+  WHERE Label1 = "Root MSE";
+  LABEL Label1 = "*"
+        nValue1 = "*";
+RUN;
+
+DATA Score;
+  DO Age = 20 TO 39 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SLR;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+```
+
+The estimated regression intercept is fundamentally uninterpretable; it is literally the mean total cholesterol for a newborn baby (age 0). The estimated regression slope is $(0.028,0.041)$ mmol/L per year, e.g. for an increase in age of 1 year (more precisely, for two population of individuals that differ by 1 year of age), mean total cholesterol increases by $(0.028,0.041)$ mmol/L. For a more clinically relevant difference of 5 years, mean total cholesterol increases by $(0.138,0.205)$ mmol/L.
+
+The estimated residual standard deviation is 0.907 mmol/L.
+
+## Centering and Scaling for Interpretability
+
+Interpretability of the simple linear regression model can often be improved by centering and scaling the predictor variable.  Centering sets the zero point at a plausible value within the range of the predictor variable $x$.  Scaling sets the default (one unit) change in the predictor variable $x$ to a clinically meaningful amount.  If the original units of $x$ are too small, the regression slope will be very small, even if the effect for clinically meaningful changes in $x$ is quite substantial.  Alternatively, if the units of $x$ are too large (possibly even much greater than the observed range of $x$), the regression slope will potentially greatly overstate the relative impact of $x$ on the mean outcome.
+
+The centered and scaled version of the simple linear regression model is
+$$\mu(x) = \gamma_0 + \gamma_1 \left(\frac{x-x_0}{\delta}\right) $$
+In terms of the parameters of our original model, $\gamma_0 = \beta_0 + \beta_1 x_0$ and $\gamma_1 = \beta_1 \delta$.  
+
+Centering and scaling does not affect the fitted values $\hat{y}_i$, the residuals $r_i$, and the estimated error variance $\hat{\sigma}^2$. It does not change the results in any substantive way.  It simply facilitates direct interpretation of the regression coefficients; we can accomplish the same things with the original model using ESTIMATE statements in PROC PLM.
+
+```{r slr3, engine="sashtml5", engine.path=saspath}
+DATA Analysis2;
+  SET Analysis;
+    
+  Age_CS = (Age-30)/5;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis2;
+  ODS OUTPUT FitStatistics=F2;
+  MODEL TotChol = Age_CS;
+    
+  STORE SLR2;
+RUN;
+ODS EXCLUDE NONE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SLR2;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age_CS 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+PROC PRINT DATA=F2 NOOBS SPLIT="*";
+  VAR Label1 nValue1;
+  WHERE Label1 = "Root MSE";
+  LABEL Label1 = "*"
+        nValue1 = "*";
+RUN;
+
+DATA Score;
+  DO Age = 20 TO 39 BY 1;
+    Age_CS = (Age-30)/5;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SLR2;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET Analysis2 Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+```
+
+The mean total cholesterol for age 30 years is $(4.775,4.852)$ mmol/L. For a 5 year increase in age, the mean total cholesterol increased by $(0.138,0.205)$ mmol/L.
+
+# The Coefficient of Determination $(R^2)$
+
+Ignoring all possible predictors, the best prediction of the response $y$ is the sample average or the responses $\bar{y}$.  The *(corrected) total sum of squares* $\mbox{SYY} = \sum{(y_i-\bar{y})^2}$ is the observed total variation in the response, ignoring any and all predictors; the corrected total sum of squares is the numerator of the sample variance of $y$, $s_y^2 = \frac{\sum{(y_i-\bar{y})^2}}{n-1}$. 
+
+When we include a predictor, the *unexplained* variation in the response is given by the sum of the squared deviations from the fitted line, the *residual sum of squares* $\mbox{RSS} = \sum{(y_i - \hat{y_i})^2}$; the residual sum of squares is the numerator of the estimator of the error variance $\hat{\sigma}^2 = \frac{\sum{(y_i-\hat{y}_i)^2}}{n-2}$. 
+
+The difference between the total sum of squares and the residual sum of squares is the *sum of squares due to regression*, $\mbox{SS}_{reg} = \mbox{SYY} - \mbox{RSS}$, the amount of variation in $y$ *explained* by the predictor $x$. In general, $\mbox{SS}_{reg} = \sum{(\hat{y}_i - \bar{y})^2}$; for the simple linear regression model, $\mbox{SS}_{reg} = \hat{\beta}_1^2 (n-1) s_x^2$.  Of particular note, $\mbox{SS}_{reg}$ depends on both the regression slope parameter and the variance of the predictor variable. 
+
+The *coefficient of determination* $(R^2)$ is defined as
+$$R^2 = \frac{\mbox{SS}_{reg}}{\mbox{SYY}} = 1 - \frac{\mbox{RSS}}{\mbox{SYY}}$$
+
+$R^2$ is interpreted as the fraction of the total variation in $y$ that is *explained* by the predictor $x$. However, the sum of squares due to regression depends on both the intrinsic relationship between $y$ and $x$ (of interest and not under our control) and the variation in the predictor $x$ (often manipulated by the experimenter).  
+
+If the variation in the predictor $x$ does not reflect the variation in $x$ in some population of interest, $R^2$ has no external or generalizable meaning.  For a random sample from a population, the variance of $x$ in the sample will reflect its variance in the population of interest, and $R^2$ will have a generalizable meaning.  For other types of studies (almost everything we actually do), $R^2$ has no external or generalizable meaning.  
+
+Most statistical software will also present the adjusted $R^2$
+$$R_{adj}^2 = 1 - \frac{\mbox{RSS}/(n-2)}{\mbox{SYY}/(n-1)}$$
+The adjusted $R^2$ replaces sums of squares with mean squares.  It accounts for degrees of freedom, which can be particularly important in models with many parameters.  If you must use an $R^2$-type measure, you should use the adjusted $R^2$.
+
+
+
+```{r rsq, engine="sashtml5", engine.path=saspath}
+PROC PRINT DATA=F NOOBS SPLIT="*";
+  VAR Label1 nValue1;
+  WHERE Label1 = "R-Square" OR Label1 = "Adj R-Sq";
+  LABEL Label1 = "*"
+        nValue1 = "*";
+RUN;
+```
+
+The $R^2$ for the regression of total cholesterol on age is 4.56%; the adjusted $R^2$ is 4.52%.
+
+# Correlation Coefficients
+
+Regression coefficients are measures of association that have units.  It takes subject matter knowledge to interpret regression coefficients and determine clinical significance.  The determination of clinical significance can be made easier by rescaling $x$ and/or $y$ so that one unit change reflects a clinically relevant difference. In the absence of relevant subject matter knowledge, rescaling $x$ and/or $y$ to *standard deviation units* may be helpful. However, standard deviation units are meaningful only if the standard deviation is estimated for a well-defined population, which is not true in most settings.
+
+When both $x$ and $y$ are expressed in standard deviation units (*standardized*), the regression coeffcient becomes the unitless *correlation coefficient*.  The correlation coefficient is universal because it uses the population standard deviation as a generic unit rather than units specific to the variables of interest.  However, it is a relative measure of association that depends on the particular population under study.  Even if the underlying biological relationship between two variable is identical in two populations, the correlations will differ if the standard deviations of either variable differ between the two populations.
+
+Formally, if $y_i = \beta_0 + \beta_1 x_i + \epsilon_i$, then 
+$$\frac{y_i - \mu_y}{\sigma_y} = \rho \frac{x_i - \mu_x}{\sigma_x} + \epsilon_i^\star$$
+Here, $\rho = \beta_1 \frac{\sigma_x}{\sigma_y}$ is the population correlation coefficient.  Note $\sigma_y$ is the marginal standard deviation of $y$, not the error standard deviation $\sigma$. The correlation is not just a function of $\beta_1$; it is also a function of $\sigma_x$.  So, the correlation will be higher if the variance of $x$ is increased. A larger variance of $x$ implies that $x$ has a greater potential impact on the outcome.  In the extreme case, if there is no variation in $x$ in a population, $x$ trivially has no influence on $y$ in the population.  Correlation reflects not just the strength of the biological relationship between $x$ and $y$, e.g. $\beta_1$, but also how variable the characteristic $x$ is in the population of interest.
+
+The natural estimator of the population correlation coefficient $\rho$ is the *sample (or Pearson) correlation coefficient*
+$$r = \hat{\beta}_1 \frac{s_x}{s_y} = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sqrt{\sum{(x_i-\bar{x})^2}} \sqrt{\sum{(y_i-\bar{y})^2}}} = \frac{s_{xy}}{s_x s_y}$$
+It can be shown that $r^2 = R^2$, where $R^2$ is the coefficient of determination. $r$ is sometimes called the *linear correlation coefficient*.  
+
+The correlation coefficient only quantifies the linear portion of the relationship between the two variables.  One can easily construct situations where $y$ strongly depends on $x$, but the correlation coefficient is very low or even zero. With appropriate subject matter knowledge, the regression coefficient is typically a better and more generalizable measure of association than the correlation coefficient.
+
+In population-based studies, the correlation coefficient has some distinct advantages. It is unitless and can potentially be given a universally applicable interpretation. The most commonly used guidelines for interpreting $\rho$ given by Cohen in his 1988 textbook *Statistical Power Analysis for the Behavioral Sciences*:
+$|\rho| < 0.1$ is *trivial*, $0.1 < |\rho| < 0.3$ is *small*, $0.3 < |\rho| < 0.5$ is *medium*, $0.5 < |\rho| < 0.7|$ is *large*, $0.7 < |\rho| < 0.9$ is *very large* and $|\rho| > 0.9$ is *nearly perfect*. 
+
+The interpretation of $\rho$ still depends on context and purposes.  A correlation of 0.9 is very low is one is verifying a physical law using high quality instruments. A correlation of 0.1 or 0.2 is quite large in many population science and social science settings due to the greater contribution of other factors.  It is also important to remember that *large* and *small* are not synonyms for *good* and *bad*.  A correlation near 1 indicates that the variables are effectively equivalent.  Most often, this indicates a *trivial* result rather than an important result.
+
+Confidence intervals for the correlation coefficient are typically obtained using Fisher's $r$-to-$Z$ transformation.
+$$z(r) = \frac{1}{2} \log{\frac{1+r}{1-r}}$$. For large sample sizes, the sampling distribution of $z(r)$ is approximately normal with mean $z(\rho)$ and variance $\frac{1}{n-3}$. A $1-\alpha$ confidence interval for $z(\rho)$ is given by $z(r) \pm z_{\alpha/2} \frac{1}{\sqrt{n-3}}$. The confidence interval for $\rho$ can be found by applying inverse transformation $$\rho = \frac{e^{2z}-1}{e^{2z}+1}$$ to the confidence interval for $z(\rho)$.
+
+
+```{r correlation, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC CORR DATA=Analysis FISHER(BIASADJ=NO ALPHA=0.03125);
+  VAR TotChol Age;
+  ODS OUTPUT FisherPearsonCorr=C;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=C LABEL NOOBS;
+  VAR Lcl Corr Ucl;
+  LABEL Corr='Correlation' 
+        LCL='Lower CL' 
+        UCL='Upper CL';
+  FORMAT Lcl 6.3 Corr 6.3 Ucl 6.3;
+RUN;
+```
+

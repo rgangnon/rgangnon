@@ -1,0 +1,1231 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Linear Models for Quantitative Outcomes
+
+Suppose we want to model a quantitative response variable $Y$ in terms of a single quantitative predictor $x$.  One very general form for the model would be:
+
+$$Y = \mu(x) + \epsilon$$
+
+where $\mu$ is the *mean function* and $\epsilon$ is the $error$, the difference between the observed response $Y$ and the mean response $\mu(x)$. The mean function $\mu(x) = E(Y|x)$ is the mean of the distribution of the responses for the population with predictor value $x$. 
+
+## Example: Quadratic Regression Model
+
+For illustration, we will assume that the function $\mu$ is a quadratic function of $x$. So,
+
+$$\mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2$$
+
+and
+
+$$Y = \beta_0 + \beta_1 x + \beta_2 x^2 + \epsilon$$
+
+The coefficients of the quadratic polynomial $\beta_0, \beta_1, \beta_2$ are unknown parameters to be estimated. The parameter $\beta_0$ is directly interpretable as the mean value of the response when $x=0$. The other parameters $\beta_1$ and $\beta_2$ are not readily interpretable.
+
+Somewhat confusingly, the quadratic regression model above is an example of a linear model. In a linear model, the unknown parameters, not the known predictors, must enter the formula linearly.
+
+## Assumptions
+
+We make three important (and one less important) assumptions about the errors.  First, we assume that $E(\epsilon|x) = 0$.  Second, we assume that the errors are *independent*. Third, we assume that the *variance function* $\mbox{Var}(Y|x)$ is constant; the unknown constant variance $\sigma^2$ is an additional parameter of our regression model. Errors are often assumed to be normally distributed, but, for most purposes, the normality assumption is not necessary.
+
+To estimate the unknown parameters of the quadratic regression model, we observed $y$ and $x$ for $N$ subjects.  The dataset could be presented in tabular form as follows.
+
+$$
+\begin{matrix}
+   y_1 & x_1 \\
+   y_2 & x_2 \\
+   \vdots & \vdots \\
+   y_N & x_N \\
+\end{matrix}
+$$
+
+We can write the quadratic regression model as
+$$y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \epsilon_i  \hspace{3em} i = 1, 2, \ldots, N$$
+
+## Matrix Representation of the Linear Model
+
+It will be more convenient to write the model in matrix/vector representation.  The regression equation is then written as
+
+$$
+\begin{pmatrix}
+    y_1 \\ 
+    y_2 \\
+    \vdots \\
+    y_N \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+    1 & x_1 & x_1^2 \\
+    1 & x_2 & x_2^2 \\
+    \vdots & \vdots & \vdots \\
+    1& x_N & x_N^2 \\
+\end{pmatrix}
+\begin{pmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix}
++
+\begin{pmatrix}
+    \epsilon_1 \\ 
+    \epsilon_2 \\
+    \vdots \\
+    \epsilon_N \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \beta_0 +\beta_1 x_1 + \beta_2 x_1^2 \\
+    \beta_0 +\beta_1 x_2 + \beta_2 x_2^2 \\
+    \vdots \\
+    \beta_0 +\beta_1 x_N + \beta_2 x_N^2 \\
+\end{pmatrix}
++
+\begin{pmatrix}
+    \epsilon_1 \\ 
+    \epsilon_2 \\
+    \vdots \\
+    \epsilon_N \\
+\end{pmatrix}
+$$
+
+or, more compactly, as 
+
+$$y = X \beta + \epsilon$$
+where 
+
+$$
+y=\begin{pmatrix}
+y_1 \\
+y_2 \\ 
+\vdots \\
+y_n \\
+\end{pmatrix}
+\hspace{3em}
+X=\begin{pmatrix}
+    1 & x_1 & x_1^2 \\
+    1 & x_2 & x_2^2 \\
+    \vdots & \vdots & \vdots \\
+    1& x_N & x_N^2 \\
+\end{pmatrix}
+\hspace{3em}
+\beta=\begin{pmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix}
+\hspace{3em}
+\epsilon=\begin{pmatrix}
+    \epsilon_1 \\ 
+    \epsilon_2 \\
+    \vdots \\
+    \epsilon_N \\
+\end{pmatrix}
+$$
+
+# Least Squares Estimation of Regression Coefficients
+
+Many methods have been suggested for obtaining estimates of the parameters of a model. The method discussed here is called *ordinary least squares (OLS)*, in which parameter estimates are chosen to minimize a quantity called the *residual sum of squares*. Ordinary least squares (OLS) estimation is equivalent to maximum likelihood estimation (MLE) if the errors are normally distributed.  
+
+*Parameters* are unknown quantities that characterize a model. *Estimates* are computable functions of data and are therefore *statistics*. In our quadratic regression model, the parameters are $\beta_0, \beta_1, \beta_2$ and $\sigma^2$. Estimates of these parameters are denoted by $\hat{\beta}_1, \hat{\beta}_2, \hat{\beta}_3$ and $\hat{\sigma}^2$. The *fitted value* for observation $i$ is denoted by $\hat{y}_i = \hat{\mu}(x_i) = \hat{\beta}_0 + \hat{\beta}_1 x_i + \hat{\beta}_2 x_i^2$. The *residual* for observation $i$ is denoted by $r_i = \hat{\epsilon}_i = y_i - \hat{y}_i = y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i + \hat{\beta}_2 x_i^2)$.
+
+Estimates of the coefficients of the quadratic regression model $\beta_0, \beta_1, \beta_2$ are typically motivated in terms of minimizing the differences between the observed outcomes $y_i$ and the corresponding regression fits $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i + \hat{\beta}_2 x_i^2$. Under the ordinary least squares criterion, the quality of an estimate is the sum (or average) of the squared deviations (or errors), the *residual sum of squares*,
+
+$$\mbox{RSS}(\hat{\beta}_0,\hat{\beta}_1,\hat{\beta}_2) = \sum\limits_{i=1}^N{\left\{y_i - \left(\hat{\beta}_0 + \hat{\beta}_1 x_i + \hat{\beta}_2 x_i^2\right)\right\}^2} = (y-X \hat{\beta})^T(y-X \hat{\beta})$$
+
+The ordinary least squares estimate of $\beta$ is the choice of $\hat{\beta}$ that minimizes the residual sum of squares. The least squares estimate is given by 
+
+$$\hat{\beta} = (X^T X)^{-1} X^T y$$
+
+## Example: Total Cholesterol as a Function of Age
+
+To illustrate the use of linear models with a quantitative outcome variable, we will investigate the relationship between serum total cholesterol (mmol/L) and age (years) for the US adult (ages 20-79) population using the NHANES dataset. For illustration, we will use a quadratic regression model; in practice, we would substitute a natural cubic spline for the quadratic polynomial.
+
+Many procedures in SAS can fit linear models for quantitative outcomes.  We will use PROC GLMSELECT, which includes the EFFECT statement.  Other commonly used procedures for linear models for quantitative outcomes are PROC REG, PROC GLM and PROC GENMOD.
+
+```{r estimate1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS OUTPUT ANOVA=A FitStatistics=F;
+    
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+    
+  STORE QuadraticModel;
+RUN;
+
+PROC PLM RESTORE=QuadraticModel;
+  ODS SELECT ParameterEstimates;
+  SHOW Parameters;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+The least squares estimates of the regression coefficients are $$\hat{\beta}_0 = 3.1126, \hat{\beta}_1 = 0.08122, \hat{\beta}_2 = -0.00075$$ The estimated mean serum total cholesterol as a function of $x$ (age) is $$\hat{E}(Y|x) = 3.1126 + 0.08122 x - 0.00075 x^2$$ This estimate is only valid for ages within the range of the observed data. Applying this estimate outside of the range of the observed data is called *extrapolation*. 
+
+```{r estimate2, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 80 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+*  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+*  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+```
+
+## Estimating the Variance
+
+Since the variance $\sigma^2$ is essentially the average of $\epsilon_i^2$, we should expect that its estimator could be obtained by averaging the squared residuals $r_i^2 = \hat{\epsilon}_i^2$. The maximum likelihood estimator of $\sigma^2$ can be obtained by dividing the residual sum of squares $\mbox{RSS} = \sum_{i=1}^N{r_i^2}$ by the sample size $N$. This estimate is rarely used.
+
+An *unbiased* estimator of $\sigma^2$, which is obtained by dividing the residual sum of squares $\mbox{RSS} = \sum_{i=1}^N{r_i^2}$ by its *degrees of freedom (df)*, where the degrees of freedom is the number of observations minus the number of parameters in the mean function. For our quadratic regression model, the residual df is $N-3$, so the estimate of $\sigma^2$ is
+
+$$\hat{\sigma}^2 = \frac{RSS}{N-3} = \frac{\sum_{i=1}^N{r_i^2}}{N-3} = \frac{\sum_{i=1}^N{(y_i-\hat{y}_i})^2}{N-3}$$
+
+This quantity is called the *residual mean square*. In general, a sum of squares divided by its degrees of freedom is called a mean square. The square root of the residual mean square $\hat{\sigma}$, the *root mean square* is also called the *standard error of the regression*. It is an estimate of the standard deviation of the error distribution; it is in the same units as the response variable.
+
+In our example, $\mbox{RSS} = 7674$, $\hat{\sigma}^2 = 1.061$ and $\hat{\sigma} = 1.030$.
+
+```{r estimate3, engine="sashtml5", engine.path=saspath}
+PROC PRINT DATA=A NOOBS LABEL;
+  WHERE Source="Error";
+  VAR DF SS MS;
+  LABEL DF="Residual df" 
+        SS="Sum of Squares"
+        MS="Mean Square Error";
+RUN;
+
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+```
+
+## Meaningful Estimates (Linear Contrasts of Parameters)
+
+The regression coefficients $\beta_0, \beta_1, \beta_2$ in the quadratic regression model are difficult to interpret and not particularly meaningful in terms of understanding the relationship between mean serum total cholesterol and age. Quantities of more direct interest are mean serum cholesterol values for specific ages and differences in mean serum cholesterol values for two specific ages.  For the quadratic regression model, the mean serum cholesterol value for 35 year olds is
+
+$$\mu(35) = \beta_0 + \beta_1 \times 35 + \beta_2 \times 35^2 = \beta_0 + 35 \beta_1 + 1225 \beta_2 = 
+\begin{pmatrix}
+    1 & 35 & 1225 \\
+\end{pmatrix}
+\begin{pmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix}$$
+
+the mean serum cholesterol for 45 year olds is 
+
+$$\mu(45) = \beta_0 + \beta_1 \times 45 + \beta_2 \times 45^2 = \beta_0 + 45 \beta_1 + 2025 \beta_2 = 
+\begin{pmatrix}
+    1 & 45 & 2025 \\
+\end{pmatrix}
+\begin{pmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix}$$
+
+and the difference in mean serum cholesterol between 45 year olds and 35 year olds is
+
+$$\mu(45) - \mu(35) = \beta_0 + 45 \beta_1 + 2025 \beta_2 - (\beta_0 + 35 \beta_1 + 1225 \beta_2) =
+10 \beta_1 + 800 \beta_2 =
+\begin{pmatrix}
+    0 & 10 & 800 \\
+\end{pmatrix}
+\begin{pmatrix}
+    \beta_0 \\
+    \beta_1 \\
+    \beta_2 \\
+\end{pmatrix}$$
+
+Estimates of these quantities can be found by replacing the parameters $\beta_0, \beta_1, \beta_2$ with the corresponding least squares estimates $\hat{\beta}_0, \hat{\beta}_1, \hat{\beta}_2$ in the above expressions. So, the estimated mean serum cholesterol value for 35 year olds is 
+$$\hat{\mu}(35) =
+3.1126 + 0.08122 (35) - 0.00075 (1225) = 5.0424
+$$
+the estimated mean serum cholesterol for 45 year olds is
+$$\hat{\mu}(45) =
+3.1126 + 0.08122 (45) - 0.00075 (2025) = 5.2585
+$$
+and the estimated difference in mean serum cholesterol between 45 year olds and 35 year olds is
+$$\hat{\mu}(45) - \hat{\mu}(35) =
+3.1126 (0) + 0.08122 (10) - 0.00075 (800) = 0.2160
+$$
+
+
+```{r estimate4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  ESTIMATE "Age 35" Intercept 1 AgePoly [1, 35];
+  ESTIMATE "Age 45" Intercept 1 AgePoly [1, 45];
+  ESTIMATE "Age 55" Intercept 1 AgePoly [1, 55];
+  ESTIMATE "Age 65" Intercept 1 AgePoly [1, 65];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Total Cholesterol by Age";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  ESTIMATE "Age 45 vs. 35" AgePoly[1, 45] [-1, 35];
+  ESTIMATE "Age 55 vs. 45" AgePoly[1, 55] [-1, 45];
+  ESTIMATE "Age 65 vs. 55" AgePoly[1, 65] [-1, 55];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Difference in Mean Total Cholesterol between Ages";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+```
+
+The estimated mean serum cholesterol levels are 5.04 mmol/L for 35 year olds, 5.26 mmol/L for 45 year olds (0.22 mmol/L greater than 35 year olds), 5.33 mmol/L for 55 year olds (0.07 mmol/L greater than 45 year olds) and 5.24 mmol/L for 65 year olds (0.08 mmol/L less than 55 year olds).  
+
+## Centering and Scaling the Predictor Variable (Changing Units)
+
+The intercept $\beta_0$ in the quadratic regression model is the mean of the outcome with $x=0$. If 0 is not a plausible value of $x$ (or not in the range of the observed values of $x$), $\beta_0$ does not represent a meaningful quantity and cannot be usefully interpreted. Interpretability can be improved by *centering* $x$ to set the 0 point at a reasonable value within the range of $x$.  Often, the sample mean $\bar{x}$ is used as a default centering point.
+
+If we center $x$ at $x_0$, we can write the mean function of the quadratic regression model as $$\mu(x) = \gamma_0 + \gamma_1 (x-x_0) + \gamma_2 (x-x_0)^2$$ instead of $\mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2$. After rearranging the terms in the centered model,
+
+$$
+\begin{eqnarray*}
+\mu(x) & = & \gamma_0 + \gamma_1 (x-x_0) + \gamma_2 (x-x_0)^2 \\
+& = & \gamma_0 + \gamma_1 (x - x_0) + \gamma_2 (x^2 - 2 x x_0 + x_0^2) \\
+& = & (\gamma_0 - \gamma_1 x_0 + \gamma_2 x_0^2) + (\gamma_1 - 2 x_0 \gamma_2) x + \gamma_2 x^2 \\
+\end{eqnarray*}
+$$
+
+it follows that $$\beta_0 = \gamma_0 - \gamma_1 x_0 + \gamma_2 x_0^2, \beta_1 = \gamma_1 - 2 x_0 \gamma_2, \beta_2 = \gamma_2$$ or $$\gamma_0 = \beta_0 + \beta_1 x_0 + \beta_2 x_0^2, \gamma_1 = \beta_1 + 2 x_0 \beta_2, \gamma_2 = \beta_2$$
+
+In our example, if we center the ages at 50 years, the estimated regression coefficients are $\hat{\gamma}_0 = 5.3106, \hat{\gamma_1} = 0.006699, \hat{\gamma}_2 = -0.00075$ instead of $\hat{\beta}_0 = 3.1126, \hat{\beta}_1 = 0.08122,$ and $\hat{\beta}_2 = -0.00075$.  Centering does not change the fitted values $\hat{y}_i$, the residuals $r_i$ or the residual variance $\hat{\sigma}^2$.  It is simply a tool for facilitating our interpretation of the model (and potentially making it easier to fit the model to our data).
+
+```{r scale1, engine="sashtml5", engine.path=saspath}
+DATA Analysis;
+  SET Analysis;
+    
+  Age_C = Age-50;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age_C / DEGREE=2);
+  ODS OUTPUT ANOVA=A FitStatistics=F;
+    
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+    
+  STORE QuadraticModel_C;
+RUN;
+
+PROC PLM RESTORE=QuadraticModel_C;
+  ODS SELECT ParameterEstimates;
+  SHOW Parameters;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA Score;
+  DO Age = 20 TO 80 BY 1;
+    Age_C = Age-50;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_C;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All_C;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All_C NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+*  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+*  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+
+PROC PRINT DATA=A NOOBS LABEL;
+  WHERE Source="Error";
+  VAR DF SS MS;
+  LABEL DF="Residual df" 
+        SS="Sum of Squares"
+        MS="Mean Square Error";
+RUN;
+
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_C;
+  ESTIMATE "Age 35" Intercept 1 AgePoly [1, -15];
+  ESTIMATE "Age 45" Intercept 1 AgePoly [1, -5];
+  ESTIMATE "Age 55" Intercept 1 AgePoly [1, 5];
+  ESTIMATE "Age 65" Intercept 1 AgePoly [1, 15];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Total Cholesterol by Age";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_C;
+  ESTIMATE "Age 45 vs. 35" AgePoly[1, -5] [-1, -15];
+  ESTIMATE "Age 55 vs. 45" AgePoly[1, 5] [-1, -5];
+  ESTIMATE "Age 65 vs. 55" AgePoly[1, 15] [-1, 5];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Difference in Mean Total Cholesterol between Ages";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+```
+
+In addition to centering, it can also be helpful to rescale $x$ so that one unit of change in $x$ represents a meaningful amount of change in $x$. If the units of $x$ are sufficiently small, e.g. age of an adult male in days (or even years), the values of $x$ (and $x^2$) will be very large, the values of the coefficients will be very small, and computations will potentially be unstable. If the units of $x$ are too large, the values $x$ will be very small, the values of the coefficients will be very large, and computations will potentially be unstable.
+
+If we center $x$ at $x_0$ and rescale by $\delta$, we can write the mean function of the quadratic regression model as $$\mu(x) = \gamma_0 + \gamma_1 \left(\frac{x-x_0}{\delta}\right) + \gamma_2 \left(\frac{x-x_0}{\delta}\right)^2$$ instead of $\mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2$. With some simple algebra, we can show that $$\gamma_0 = \beta_0 + \beta_1 x_0 + \beta_2 x_0^2, \gamma_1 = (\beta_1 + 2 x_0 \beta_2) \delta, \gamma_2 = \beta_2 \delta^2$$  As before, centering and rescaling the predictor variable does not change the fitted values $\hat{y}_i$, the residuals $r_i$, or the residual variance $\hat{\sigma}^2$.  It does not alter the model (or the results) in any substantive way.  It simply facilitates use of the model.
+
+In our example, if we center age at 50 years and rescale from years to decades, the expressions for mean serum cholesterol values for specific ages and differences in mean serum cholesterol values for two specific ages are much simpler. For example, the mean serum cholesterol value for 35 year olds is
+
+$$\mu(35) = \gamma_0 + \gamma_1 \left(\frac{35-50}{10}\right) + \gamma_2 \left(\frac{35-50}{10}\right)^2 = \gamma_0 -1.5 \gamma_1 + 2.25 \gamma_2$$
+
+the mean serum cholesterol for 45 year olds is 
+
+$$\gamma_0 + \gamma_1 \left(\frac{45-50}{10}\right) + \beta_2 \left(\frac{45-50}{10}\right)^2 = \gamma_0 -0.5 \gamma_1 + 0.25 \gamma_2$$
+
+and the difference in mean serum cholesterol between 45 year olds and 35 year olds is
+
+$$\mu(45) - \mu(35) = \gamma_0 - 1.5 \gamma_1 + 2.25 \gamma_2 - (\gamma_0 - 0.5 \gamma_1 + 0.25 \gamma_2) =
+\gamma_1 + 2 \gamma_2 $$
+
+
+
+```{r scale2, engine="sashtml5", engine.path=saspath}
+DATA Analysis;
+  SET Analysis;
+    
+  Age_CS = (Age-50)/10;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age_CS / DEGREE=2);
+  ODS OUTPUT ANOVA=A FitStatistics=F;
+    
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+    
+  STORE QuadraticModel_CS;
+RUN;
+
+PROC PLM RESTORE=QuadraticModel_CS;
+  ODS SELECT ParameterEstimates;
+  SHOW Parameters;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA Score;
+  DO Age = 20 TO 80 BY 1;
+    Age_CS = (Age-50)/10;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_CS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All_CS;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All_CS NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+*  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+*  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+
+PROC PRINT DATA=A NOOBS LABEL;
+  WHERE Source="Error";
+  VAR DF SS MS;
+  LABEL DF="Residual df" 
+        SS="Sum of Squares"
+        MS="Mean Square Error";
+RUN;
+
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_CS;
+  ESTIMATE "Age 35" Intercept 1 AgePoly [1, -1.5];
+  ESTIMATE "Age 45" Intercept 1 AgePoly [1, -0.5];
+  ESTIMATE "Age 55" Intercept 1 AgePoly [1, 0.5];
+  ESTIMATE "Age 65" Intercept 1 AgePoly [1, 1.5];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Total Cholesterol by Age";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_CS;
+  ESTIMATE "Age 45 vs. 35" AgePoly[1, -0.5] [-1, -1.5];
+  ESTIMATE "Age 55 vs. 45" AgePoly[1, 0.5] [-1, -0.5];
+  ESTIMATE "Age 65 vs. 55" AgePoly[1, 1.5] [-1, 0.5];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Difference in Mean Total Cholesterol between Ages";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+```
+
+## Unit Conversion for the Outcome Variable 
+
+In the US, cholesterol results are more commonly reported in milligrams per deciliter (mg/dL) rather than millimoles per liter (mmol/L).  The appropriate conversion factor is 1 mg/dL = 38.6 mmol/L. To obtain results in the more familiar mg/dL units, we can either convert the units for individual cholesterol values in the dataset or convert the units for the reported results. 
+
+```{r scale3, engine="sashtml5", engine.path=saspath}
+DATA Analysis;
+  SET Analysis;
+  
+  TotChol_mg_dL = TotChol*38.6;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS OUTPUT ANOVA=A FitStatistics=F;
+    
+  MODEL TotChol_mg_dL = AgePoly / SELECTION=NONE;
+    
+  STORE QuadraticModel_mg_dL;
+RUN;
+
+PROC PLM RESTORE=QuadraticModel_mg_dL;
+  ODS SELECT ParameterEstimates;
+  SHOW Parameters;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA Score;
+  DO Age = 20 TO 79 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_mg_dL;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All_mg_dL;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All_mg_dL NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol_mg_dL / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+*  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+*  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+
+PROC PRINT DATA=A NOOBS LABEL;
+  WHERE Source="Error";
+  VAR DF SS MS;
+  LABEL DF="Residual df" 
+        SS="Sum of Squares"
+        MS="Mean Square Error";
+RUN;
+
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_mg_dL;
+  ESTIMATE "Age 35" Intercept 1 AgePoly [1, 35];
+  ESTIMATE "Age 45" Intercept 1 AgePoly [1, 45];
+  ESTIMATE "Age 55" Intercept 1 AgePoly [1, 55];
+  ESTIMATE "Age 65" Intercept 1 AgePoly [1, 65];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Total Cholesterol by Age";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel_mg_dL;
+  ESTIMATE "Age 45 vs. 35" AgePoly[1, 45] [-1, 35];
+  ESTIMATE "Age 55 vs. 45" AgePoly[1, 55] [-1, 45];
+  ESTIMATE "Age 65 vs. 55" AgePoly[1, 65] [-1, 55];
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Difference in Mean Total Cholesterol between Ages";
+PROC PRINT DATA=E NOOBS;
+  VAR Label Estimate;
+RUN;
+TITLE;
+```
+
+# Regression Assumptions
+
+Estimation of (and inferences from) any regression model depend on several assumptions.  These assumptions should be checked using *regression diagnostics* before using the model in earnest.  We divide the potential problems into three categories.
+
+## Assumptions about the Errors 
+
+We have assumed that the errors are *independent*, have *equal variance* and are *normally distributed*.
+
+## Assumptions about the Model 
+
+We have assumed that the structural part of the model $E(y|x) = \beta_0 + \beta_1 x + \beta_2 x^2$ is correct.
+
+## Unusual Observations (Outliers and Influential Points)
+
+Sometimes just a few observations do not fit the model.  These few observations might change the choice and fit of the model.
+
+# Checking the Error Assumptions
+
+We wish to check the independence, constant variance and normality of the errors $\epsilon_i$. The errors are not observable, but we can examine the residuals $r_i = \hat{\epsilon}_i$. The statistical properties of the residuals are not identical to the statistical properties of the errors. Even if the errors have constant variance and are uncorrelated, the residuals do not. Fortunately, in almost all cases, the impacts of this discrepancy is small, and diagnostics can be reasonably applied to the residuals in order to check the assumptions of the model.
+
+## Constant Variance
+
+It is not possible to check the assumption of constant variance by examining the residuals alone.  We need to evaluate whether the variance in the residuals is related to some other quantity. The most useful diagnostic is a plot of the residuals $r_i$ against the fitted values $\hat{y}_i$.  If all is well, you should see constant symmetrical variation (known as *homoskedasticity*) in the vertical (residual) direction.  Nonconstant variance is also called *heteroskedasticity*. It is also possible to identify problems with the structural part of the model in this plot. It is often helpful to add a *scatterplot smoother* as a *plot enhancement* to help us identify any structural problems with the model.
+
+```{r diagnostics1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+    
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+
+  STORE QuadraticModel;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=Fitted (OBS=10);
+  VAR Age TotChol Pred Resid;
+  FORMAT Pred 6.2 Resid 6.2;
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+```
+
+If we would like to examine the constant variance assumption more closely, it helps to plot $\sqrt{\lvert r_i \rvert}$ against the fitted values $\hat{y}_i$. If we have excluded the possibility of structural problems with the model in the first plot (which is evidenced by the flatness of the smooth line) and the residuals look roughly symmetric (which may be somewhat questionable here), we can effectively double the resolution of the plot by considering the absolute value of the residuals.  For truly normal errors, $\lvert r_i \rvert$ would follow a *half-normal* distribution, which is heavily skewed. The skewness can be reduced by the square root transformation.  Here, we can use a scatterplot smoother as a plot enhancement to assess non-constant variance.
+
+```{r diagnostics2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA Fitted;
+  SET Fitted;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+ LOESS X=pred Y=sqrt_abs_resid; 
+  REG X=Pred Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="green");
+RUN;
+```
+
+It is also worthwhile to plot the residuals $r_i$ against $x_i$ for potential predictors in the current model as well as those not used. The same considerations should apply to these plots. 
+
+
+```{r diagnostics3, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Age Y=Sqrt_Abs_Resid; 
+  REG X=Age Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="green");
+RUN;
+```
+
+There are four basic remedies for nonconstant variance. The first option is to use a *variance-stabilizing transformation* of the outcome variable. The second option is to find empirical weights that could be used in *weighted least squares*.  Weights that are simple functions of single predictors can sometimes be justified theoretically.  The third option is to do nothing and use *empirical corrections for misspecified variances*.  The final option is to use *generalized linear models* that account for nonconstant variance as a function of the mean. 
+
+## Normality
+
+The assumption of normal errors plays only a minor role in linear regression analysis. It is primarily needed for inference with small samples (or prediction of individual outcomes).  Furthermore, non-normality of the unobserved errors can be very difficult to diagnose in small samples by examination of residuals. 
+
+The primary graphical tool for assessing the normality assumption is a *normal scores* (or *normal probability*) plot of the residuals $r_i$. The basic idea of a normal scores plot as a tool for assessing normality is to plot the *sample order statistics* (in our case, the residuals sorted from smallest to largest) against the *expected order statistics* for a sample of the same size from the standard normal distribution (the normal scores). If the sample comes from a normal population, the values should roughly fall on a straight line. If the values do not fall on a straight line, we have evidence against normality. (The same concept can be used to assess the suitability of any distributional assumption, not just the normal distribution. The more general version of this plot is called a *quantile-quantile (Q-Q) plot*.) It is sometimes helpful to add a reference line to the normal scores. Judging whether a normal scores plot is sufficiently straight requires experience.
+
+For the NHANES data, normality is in doubt because the normal scores plot is not straight.  In particular, there are a large number of very large residuals well away from the reference line. The pattern suggests a substantial right skewness in the error distribution.  Given the large sample size, the skewness of the distribution is unlikely to bring the validity of inferences into question.
+
+```{r diagnostics4, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+There are two basic approaches to addressing non-normality. The first option is to use a *transformation* of the outcome variable.  The second option is to make a *different distributional assumption*.
+
+## Correlated Errors
+
+It is difficult, if not impossible, to check for correlated errors in generality, because there are too many possible patterns of correlation that could occur.  We do not typically have enough information to make any reasonable check. But some types of data have a structure that suggests where to look for problems. Data collected over time may have correlation in successive errors, Spatial data may have correlation in the errors of nearby measurements. Data collected in blocks may show correlated errors within those blocks. Plots of residuals against these factors (time, space, blocks) can be used to identify potential correlation.
+
+Apparent correlation can be caused by a missing covariate, which can be addressed by changing the structural part of the model. Sometimes, correlation between the errors must be directly incorporated into the model. 
+
+## Finding Unusual Observations
+
+We may find that some observations do not fit the model well. Such observations are called *outliers*.  Other observations change the fit of the model in a disproportionate manner.  Such observations are called *influential observations*. It is possible for a point to have both of these characteristics. A *leverage* point is an extreme observation (outlier) in the predictor space. It has the potential to influence the fit, but it does not necessarily do so. It is important to identify such points.  It can be very difficult to decide what to do about them.
+
+Diagnostics for unusual observations are not produced by PROC GLMSELECT. To obtain them, we will fit the quadratic regression model by manually creating the squared term and fitting the model using PROC GLM.
+
+## Leverage
+
+The *hat matrix* $H = X (X^T X)^{-1} X^T$ transforms the vector of observed responses $y$ into the vector of fitted responses $\hat{y}$.
+
+$$\begin{eqnarray*}
+\hat{y} & = & X \hat{\beta} \\
+& = & X (X^T X)^{-1} X y \\
+& = & H y \\
+\end{eqnarray*}
+$$
+The hat matrix is $N \times N$ with many special properties. The diagonal elements of the hat matrix $h_{ii}$ are called *leverages* and are useful diagnostics. The variance of the residual $r_i$ is equal to $\sigma^2 (1-h_{ii})$, so a large leverage $h_{ii}$ will make the variance of $r_i$ small.  For such a case, no matter what value of $y_i$ is observed for the *i*th case, we are nearly certain to get a residual near 0. Large values of $h_{ii}$ are due to extreme values in the predictor space. An average value for $h_{ii}$ is $\frac{p}{N}$, where $p$ is the number of parameters (coefficents including the intercept) in the regression model. A (very) rough rule of thumb is that leverages greater than $\frac{2p}{N}$ (or $\frac{3p}{N}$) may warrant further investigation.
+
+Without making assumptions about the distributions of the predictors that would often be unreasonable, we cannot say how the leverages should be distributed.  Nonetheless, we would like to identify unusually large values of the leverage. It can be helpful to plot the leverages against quantiles of a positive distribution such as the exponential, gamma or half-normal distribution. We do not expect a straight line relationship since we do not necessarily expect any distribution for quantities like leverages.  We are looking for outliers, which will be apparent as point that diverge substantially from the rest of the data.
+
+For the NHANES data, there do not appear to be any points of extreme leverage.
+
+
+```{r diagnostics5, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+DATA Analysis2;
+  SET Analysis;
+    
+  Age2 = Age**2;
+RUN;
+
+PROC GLM DATA=Analysis2;
+  MODEL TotChol = Age Age2;
+  OUTPUT OUT=Fitted P=Pred R=Resid H=Leverage RStudent=RStudent CookD=CookD;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r diagnostics6, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Leverage / EXPONENTIAL;
+  WHERE TotChol NE .;
+RUN;
+```
+
+## Outliers
+
+An outlier is a point that does not fit the current model well. We need to be aware of such exceptions. An outlier test is useful because it enables us to distinguish between truly unusual observations and residuals that are large, but not exceptional.  Outliers may or may not affect the fit substantially.
+
+To detect outliers, we exclude observation $i$ and recompute the estimates to get $\hat{\beta}_{(i)}$ and $\hat{\sigma}^2_{(i)}$, where $(i)$ denotes that the $i^{th}$ case has been excluded. We define $\hat{y}_{(i)} = x_i^T \hat{\beta}_{(i)}$, the predicted value of $y_i$ from the regression model exluding observation $i$.  If $y_i - \hat{y}_{(i)}$ is large, then observation $i$ is an outlier. To judge the size of a potential outlier, we need an appropriate scaling.  The variance of $y_i - \hat{y}_{(i)}$ is
+$$\sigma^2 \left(1+x_i^T (X_{(i)}^T X_{(i)})^{-1} x_i \right)$$
+so we define the *studentized* (sometimes called *jackknife* or *cross-validated*) residuals as
+$$t_i = \frac{y_i - \hat{y}_{(i)}}{\hat{\sigma}_{(i)} \left(1+x_i^T (X_{(i)}^T X_{(i)})^{-1} x_i \right)^{1/2}}$$
+which are distributed as $t_{N-p^\prime-1}$, where $p^\prime$ is the number of coefficients in the model excluding the intercept.
+The studentized residuals can be computed without refitting the regression model $N$ times using the following formula:
+$$t_i = s_i \left(\frac{N-p^\prime-1}{N-p^\prime-s_i^2}\right)^{1/2}$$ where 
+$$s_i = \frac{r_i}{\hat{\sigma} \sqrt{1-h_{ii}}}$$ 
+is the standardized residual.
+
+In place of a formal test for outliers, we can examine a normal scores plot of the studentized residuals (since the $t_{N-p^\prime-1}$ distribution is approximately standard normal for sufficiently large $N$). 
+
+```{r diagnostics7, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT RStudent / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+Some points to consider about outliers:
+
+1. Multiple outliers next to each other can hide each other.
+
+2. An outlier in one model may not be an outlier in another model. You will usually need to reinvestigate the question of outliers when you change the model.
+
+3. The error distribution may not be normal and so larger residuals may be expected. For example, the two potential outliers in the NHANES data may simply reflect the right skew of the underlying error distribution.
+
+4. Individual outliers are much less of a problem in larger datasets. A single point will not have much leverage to affect the fit very much. It is still worth identifying outliers as these types of observations are typically worth knowing about in most applications. For large datasets, we are more concerned with clusters of outliers. Such clusters are less likely to occur by chance and more likely to represent actual structure. Finding these clusters is not always easy.
+
+What should be done about outliers?
+
+1. Check for a data entry error first. These are relatively common. Unfortunately, the original source of data may be lost or inaccessible. If you can be sure that the point is truly a mistake and was not actually observed, the solution is simple: discard it.
+
+2. Examine the context - why did it happen? Sometimes, the discovery of an outlier may be of singular interest. Many of the most important scientific discoveries spring from noticing unexpected aberrations.
+
+3. Present the analysis results including and excluding the outlying observation. Always report the existence of outliers even if you do not include them in your final model.
+
+4. It is dangerous to exclude outliers in an automatic fashion.  Routine outlier rejection in combination with least squares is not a good method of estimation.
+
+## Influential Observations
+
+An influential observation is an observation whose removal from the dataset would cause a large change in the fit. An influential point may or may not be an outlier and may or may not have large leverage, but it will tend to have at least one of these two properties. 
+
+There are many measures of influence. As before, a subscripted $(i)$ indicates the fit without observation $i$. We might consider the change in the fit $X^T (\beta - \beta_{(i)}) = \hat{y} - \hat{y}_{(i)}$, but there will be $N$ of these vectors of length $N$ to examine. For a more compact diagnostic, we could consider the change in the coefficients $\hat{\beta} - \hat{\beta}_{(i)}$; there will be $N$ of these vectors of $p$ coefficients to examine.
+
+*Cook's distance* is a method to summarize the differences between $\hat{\beta}$ and $\hat{\beta}_{(i)}$ with a single number.  They are defined as
+$$D_i = \frac{(\hat{\beta}_{(i)} - \hat{\beta})^T (X^T X) (\hat{\beta}_{(i)} - \hat{\beta})}{p^\prime \hat{\sigma}^2}$$
+and can also be written as
+$$D_i = \frac{(\hat{y}_{(i)} - \hat{y})^T (\hat{y}_{(i)} - \hat{y})}{p^\prime \hat{\sigma}^2}$$
+A simple formula for $D_i$ is
+$$D_i = \frac{1}{p^\prime} s_i^2 \frac{h_{ii}}{1-h_{ii}}$$
+
+Cases for which $D_i$ is large have substantial influence on both the estimate of $\beta$ and the fitted values, and deletion of them may result in important changes in conclusions. Typically, cases with the largest $D_i$ or in large data sets the cases with the largest few $D_i$ will be of interest. If the largest value of $D_i$ is substanially less than 1, deletion of a cases will not change the estimate of $\beta$ by much.  To investigate the influence of a case more closely, the analyst should delete the observation(s) with the largest $D_i$ and recompute the analysis to see exactly what aspects of it have changed.
+
+```{r diagnostics8, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+    QQPLOT CookD / EXPONENTIAL;
+RUN;
+```
+## Checking the Structure of the Model
+
+Diagnostics can also be used to detect deficiencies in the structural part of the model given by $E(Y) = X \beta$. The residuals are the best clues because signs of remaining structure here indicate that something is wrong. A good diagnostic can often also suggest how the model can be improved.
+
+We have already discussed plots of the residuals $r_i$ against the fitted values $\hat{y}_i$ and the predictor variable $x_i$.  We have used these plots to check the assumptions on the error, but they can also suggest transformations of the variables which might improve the sturctural form of the model. 
+
+```{r diagnsotics9, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+```
+
+## Relative Importance of Assumptions
+
+Some assumptions are more important that others, because some violations of assumptions can lead very misleading conclusions. We can order the assumptions by importance:
+
+1. **The systematic form of the model**. If you get this seriously wrong, then predictions will be inaccurate and any explanation of the relationship between the variables may be biased in misleading ways.
+
+2. **Dependence of errors**. The presence of strong dependence means that there is less information in thee data than the sample size may suggest. Furthermore, there is a risk that you will mistakenly introduce systematic components into the model in an attempt to deal with unsuspected dependence in the errors.  Unfortunately, it is difficult to detect dependence in the errors using regression diagnostics. You will typically need to rely on untestable assumptions about independence based on contextual knowledge.
+
+3. **Nonconstant variance**. A failure to address this violation may result in inaccurate inferences.  In particular, prediction and estimation uncertainty may not be properly quantified.  Even so, excepting serious violations, the adequacy of the inferences may not be seriously compromised.
+
+4. **Normality**. This is the least important assumption. For large datasets, inferences will be quite robust to a lack of normality due to the central limit theorem.  Unless the sample size is quite small or the errors are very strongly non-normal (heavy tails or skew), this assumption is not crucial.
+
+Although it is not part of regression diagnostics, it is worth emphasizing that an even more important assumption is that the data at hand are relevant to the scientific question of interest.       
+
+# Inference
+
+We now consider how to construct *confidence intervals* and perform *hypothesis tests* in a (linear) regression model. These inferential tools are the building block for drawing conclusions using models and data.
+
+We have been working with the quadratic regression model $$y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \epsilon_i$$  We have assumed that the errors $\epsilon_i$ are *independent and identically distributed (iid)* from a normal distribution with mean 0 and variance $\sigma^2$; in matrix form, we write $\epsilon \sim N(0, \sigma^2 I)$. Since $y = X \beta + \epsilon$, we can also write $y ~ N(X \beta, \sigma^2 I)$. Since linear combinations of normally distributed variables are also normally distributed, it follows that 
+$$\hat{\beta} = (X^T X)^{-1} X^T y \sim N(\beta, \sigma^2 (X^T X)^{-1})$$
+More generally, even without the normality assumption, the above result typically holds, at least approximately, based on the central limit theorem.  Because the error variance $\sigma^2$ is unknown, the covariance matrix $V = \mbox{Cov}(\beta) = \sigma^2 (X^T X)^{-1}$ is also unknown, but we have an estimate available
+$$\hat{V} = \hat{\sigma}^2 (X^T X)^{-1}$$
+
+```{r inference1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+PROC PLM RESTORE=QuadraticModel;
+  ODS SELECT Cov;
+  SHOW Cov;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+For the NHANES data, the estimated covariance matrix of the estimates of the regression coefficients is
+$$\hat{V} = \begin{pmatrix}
+0.009418 & -0.00040 & 0.000003798 \\
+-0.00040 & 0.000018 & -0.000000175 \\
+0.000003798 & -0.000000175 & 0.000000001773 \\
+\end{pmatrix}$$
+
+## Interval Estimates for Means or Differences in Means
+
+We are typically interested in estimates of linear combinations of the regression coefficients, which represent meaningful quantities (means, differences in means, differences in differences in means, ...), rather than estimates of the regression coeffcients themselves. *Interval estimates*, which provide a range of plausible values of the parameter (consistent with the observed data), are generally preferable to point estimates. 
+
+In general, an interval estimates for a linear combination of the regression coefficients, $\mathscr{l} = a^T \beta$, can be obtained from the sampling distribution of its point estimate, $\hat{\mathscr{l}} = a^T \hat{\beta}$, which is 
+$$\hat{\mathscr{l}} \sim N(\mathscr{l}, a^T V a)$$
+The estimated standard error is 
+$$\hat{\mbox{se}}(\hat{\mathscr{l}}) = \sqrt{a^T \hat{V} a} = \hat{\sigma} \sqrt{a^T (X^T X)^{-1} a}$$ 
+
+Thus, a $1-\alpha$ confidence interval for $\mathscr{l}$ is
+$$\hat{\mathscr{l}} \pm t_{df}^{(1-\alpha/2)}~\hat{\mbox{se}}(\hat{\mathscr{l}})$$
+where $t_{d}^{(1-\alpha/2)}$ is the $(1-\alpha/2)$ quantile of a $t$-distribution with $d$ degrees of freedom ($d$ is the degrees of freedom for $\hat{\sigma}^2$). For large samples, we can use the corresponding normal quantile, $z_{(1-\alpha/2)}$ in place of the $t$ quantile. For the commonly used $95\%$ confidence level, the interval is given by
+$$\hat{\mathscr{l}} \pm 1.96~\hat{\mbox{se}}(\hat{\mathscr{l}}) \approx \hat{\mathscr{l}} \pm 2~\hat{\mbox{se}}(\hat{\mathscr{l}})$$
+
+Here are some meaningful quantities for the NHANES example that can be expressed as linear combinations of the regression coefficients.
+
+Mean | Linear Combination ($a$) 
+-- | --
+$\mu(35)$ | $\begin{pmatrix} 1 & 35 & 1225 \\  \end{pmatrix}$ 
+$\mu(45)$ | $\begin{pmatrix} 1 & 45 & 2025 \\  \end{pmatrix}$ 
+$\mu(55)$ | $\begin{pmatrix} 1 & 55 & 3025 \\  \end{pmatrix}$ 
+$\mu(65)$ | $\begin{pmatrix} 1 & 65 & 4225 \\  \end{pmatrix}$ 
+
+
+Differences in Means | Linear Combination ($a$) 
+-- | --
+$\mu(45)-\mu(35)$ | $\begin{pmatrix} 0 & 10 & 800 \\  \end{pmatrix}$ 
+$\mu(55)-\mu(45)$ | $\begin{pmatrix} 0 & 10 & 1000 \\  \end{pmatrix}$ 
+$\mu(65)-\mu(55)$ | $\begin{pmatrix} 0 & 10 & 1200 \\  \end{pmatrix}$ 
+$\mu(55)-\mu(35)$ | $\begin{pmatrix} 0 & 20 & 1800 \\  \end{pmatrix}$ 
+$\mu(65)-\mu(45)$ | $\begin{pmatrix} 0 & 20 & 2200 \\  \end{pmatrix}$ 
+$\mu(65)-\mu(35)$ | $\begin{pmatrix} 0 & 30 & 3000 \\  \end{pmatrix}$ 
+
+Differences in Differences in Means | Linear Combination ($a$) 
+-- | --
+$(\mu(55)-\mu(45))-(\mu(45)-\mu(35))$ | $\begin{pmatrix} 0 & 0 & 200 \\  \end{pmatrix}$ 
+$(\mu(65)-\mu(55))-(\mu(55)-\mu(45))$ | $\begin{pmatrix} 0 & 0 & 200 \\  \end{pmatrix}$ 
+$(\mu(65)-\mu(45))-(\mu(55)-\mu(35))$ | $\begin{pmatrix} 0 & 0 & 400 \\  \end{pmatrix}$ 
+
+In SAS, confidence intervals for linear combinations of the regression coefficients are obtained using ESTIMATE statements. When we use the EFFECT statement in PROC GLMSELECT, we can use non-positional syntax to specify these comparisons without needing to explicitly specify the coefficients of the linear combination of regression coefficients ourselves.
+
+
+```{r inference2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  ESTIMATE "Age 35" Intercept 1 AgePoly [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgePoly [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgePoly [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgePoly [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  ESTIMATE "Age 45 v 35" AgePoly [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgePoly [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgePoly [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgePoly [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgePoly [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgePoly [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+The estimated mean serum cholesterol levels are $(5.009,5.075)$ mmol/L for 35 year olds, $(5.222,5.295)$ mmol/L for 45 year olds, $(0.193,0.239)$ mmol/L greater than 35 year olds, $(5.288,5.363)$ mmol/L for 55 year olds, $(0.248,0.318)$ mmol/L greater than 35 year olds and $(0.052,0.082)$ mmol/L greater than 45 year olds, and $(5.205,5.282)$ mmol/L for 65 year olds, $(0.155,0.247)$ mmol/L greater than 35 year olds, 0.052 mmol/L lower to 0.022 mmol/L greater than 45 year olds, and $(0.057,0.107)$ mmol/L lower than 55 year olds. 
+
+Common practice is to report the point estimate with the confidence interval in parentheses, e.g. the estimated difference in mean serum cholesterol levels between 45 year olds and 35 years olds is $0.216 (0.193-0.239)$ mmol/L. In my opinion, this presentation leads to an overemphasis on the point estimate over the (more important) interval estimate.
+
+ESTIMATE statements can also produce $p$-values for two-sided hypothesis tests of the null hypothesis $H_0: \mathscr{l} = 0$ vs. $H_1: \mathscr{l} \not= 0$. In some cases, this test is meaningless and inappropriate.  For example, serum cholesterol levels are known to be (much) greater than 0 for any individual person, so it is obvious that mean serum cholesterol levels are also (much) greater than 0, making the hypothesis test irrelevant and uninformative. In other cases, the hypothesis test is potentially useful, but, in general, the confidence interval, which gives us information about a plausible range of the parameter, is more valuable than the hypothesis test.  In particular, it is very dangerous to read too much into the relative sizes of $p$-values in determining the practical importance of an estimated difference because it is tempting to view small $p$-values as indicating important (rather than just statistically significant) differences and large $p$-values as indicating unimportant (rather than just statistically insignificant) differences. It is possible that the $p$-value is quite small, indicating strong evidence of a difference, but the confidence interval only includes small, clinically unimportant differences.  It is even more common for the $p$-value to be quite large, but the confidence interval is quite wide and includes clinically important differences (in one or both directions).
+
+There are some meaningful quantities that cannot be expressed as linear combinations of the regression coefficients.  For example, in a quadratic regression model $\mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2$ with $\beta_2 < 0$, the predictor value at which maximum value of the regression function is achieved (in other words, the age with the highest mean serum cholesterol value in our example) is equal to $\frac{-\beta_1}{2 \beta_2}$, which is not a linear combination of the regression coefficients. Estimation of these types of quantities is the province of *nonlinear regression*.
+
+## Testing and Analysis of Variance
+
+Hypothesis tests are more useful for comparing the fit of different specifications of the mean function (or questions of model structure) rather than questions regarding individual parameters of interest, where confidence intervals (ranges of plausible values of the parameter) are more useful. In linear regression, these tests are called $F$-tests (based on the reference distribution for the test statistic), *analysis of variance (ANOVA)* tests (based on how the tests are commonly presented) or *likelihood-ratio* tests (based on the general statistical theory that justifies the use of these tests).
+
+In the context of a quadratic regression model $\mu_2(x) = \beta_0 + \beta_1 x + \beta_2 x^2$, there are two simplifications (special cases) of the regression model that are of scientific interest. 
+
+The first simplification is a model with only the intercept $\mu_0(x) = \beta_0$. Under this model, there is no relationship between the covariate $x$ and the response. The model including only the intercept is called a *null model*; it is the simplest model that we will realistically consider. The model is a special case of the full quadratic regression model with $\beta_1 = \beta_2 = 0$.
+
+The second simplification is a model with a linear relationship $\mu_1(x) = \beta_0 + \beta_1 x$ between $x$ and the mean response. Under this model, the difference in means for a 10-year age gap is the same for all possible pairs of ages, e.g. $$\mu(45) - \mu(35) = \mu(55) - \mu(45) = \mu(x_0 + 10) - \mu(x_0)$$ for all possible choices for $x_0$. This model is (one of) the simplest model(s) in which the covariate $x$ is related to the response.
+
+We consider a general approach for testing a simpler (null hypothesis) model against a full (alternative hypothesis) model. A necessary condition for this approach to work is that the simpler model must be a special case of the full model.  For any model, the residual sum of squares measures the amount of variation in the response that is unexplained by the predictor variable(s). If the simpler (null hypothesis) model is false, then the residual sum of squares $\mbox{RSS}_{full}$ under the full model will be considerably smaller the residual sum of squares $\mbox{RSS}_{reduced}$ under the null hypothesis (simpler or *reduced*) model. This provides the basis of a test, and we will have evidence against the null hypothesis (reduced) model if the difference $(\mbox{RSS}_{reduced} - \mbox{RSS}_{full})$ is large.
+The formula for the test statistic is
+$$\begin{eqnarray*}
+F & = & \frac{(\mbox{RSS}_{reduced} - \mbox{RSS}_{full})/(df_{reduced} - df_{full})}{\mbox{RSS}_{full}/df_{full}} \\
+& = & \frac{\mbox{SS}_{reg}/df_{reg}}{\hat{\sigma}_{full}^2} \\
+\end{eqnarray*}
+$$
+In this equation, $\mbox{SS}_{reg} = \mbox{RSS}_{reduced} - \mbox{RSS}_{full}$ is the *sum of squares for regression*, and $df_{reg} = df_{reduced} - df_{full}$ is its $df$.  Note $df_{reduced}$ is the $df$ for $\mbox{RSS}_{reduced}$ and $df_{full}$ is the $df$ for $\mbox{RSS}_{full}$. A sum of squares divided by its $df$ is a *mean square*, so the $F$-statistic is the mean square for regression divided by the mean square for error under the full model. 
+
+Under the null hypothesis that the reduced model is correct, the $F$-statistic follows an $F(df_{reg},df_{full})$ distribution, and large values of $F$ provide evidence against the null model.
+
+## Overall Test
+
+The *overall F-test* for the quadratic regression model is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: E(Y|x) & = & \beta_0 \\
+H_1: E(Y|x) & = & \beta_0 + \beta_1 x + \beta_2 x^2 \\
+\end{eqnarray*}$$
+
+Under the null model, the least squares estimate $\hat{\beta}_0 = \bar{y}$ is the sample mean response, and $\mbox{SS}_Y = \mbox{RSS}_{reduced} = \sum{(y_i - \bar{y})^2}$ with $df_{reduced} = N-1$. In this case, $\mbox{SS}_Y$ is called the *(corrected) total sum of squares*. The alternative hypothesis is just the quadratic regression model with residual sum of squares $\mbox{RSS} = \sum{\left\{y_i - \left( \hat{\beta}_0 + \hat{\beta}_1 x_i + \hat{\beta}_2 x_i^2\right)\right\}^2}$ with $N-3$ df.
+
+The overall $F$-statistic is
+$$\begin{eqnarray*}
+F & = & \frac{(\mbox{SS}_Y - \mbox{RSS})/\left\{N-1 - (N-3)\right\}}{\mbox{RSS}/(N-3)} \\
+& = & \frac{\mbox{SS}_{reg}/2}{\hat{\sigma}^2} \\
+\end{eqnarray*}
+$$
+where $\mbox{SS}_{reg} = \mbox{SS}_Y - \mbox{RSS}$ is the sum of squares for regression and $\hat{\sigma}^2$ is the estimated variance from the quadratic regression.  This statistic is compared with the $F(2,N-3)$ distribution to get $p$-values.
+
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS SELECT ANOVA;
+   
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+RUN;
+```
+
+The information required to calculate the overall $F$-test is conveniently presented in the *Analysis of Variance (ANOVA) table* in the PROC GLMSELECT output.
+
+For the NHANES data, we have $N = 7235$, $SS_Y = 8129.4$, $\mbox{RSS} = 7674.1$ and $\hat{\sigma}^2 = 1.0611$. We can compute 
+$$F = \frac{(8129.4-7674.1)/2}{1.0611} = \frac{227.6373}{1.0611} = 214.52$$
+
+When compared with the $F(2,7233)$ distribution, the $p$-value is essentially 0 (even though SAS only reports $p<.0001$). It is clear that mean cholesterol levels differ by age.
+
+## Test for Linearity
+
+The *partial F-test* for the linear regression model against the quadratic regression model is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: E(Y|x) & = & \beta_0 + \beta_1 x\\
+H_1: E(Y|x) & = & \beta_0 + \beta_1 x + \beta_2 x^2 \\
+\end{eqnarray*}$$
+
+Under the null model, the least squares estimates are $\hat{\beta}_1 = \frac{\sum{(x_i-\bar{x}) (y_i-\bar{y})}}{\sum{(x_i - \bar{x})^2}}$ and $\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$. (In the future, we will discuss this model in greater detail and derive these estimates.) The residual sum of squares from the reduced model is $\mbox{RR}_{reduced} = \sum{\left\{y_i - \left( \hat{\beta}_0 + \hat{\beta}_1 x_i \right) \right\}^2}$ with $N-2$ *df*. 
+
+The partial $F$-statistic is
+$$\begin{eqnarray*}
+F & = & \frac{(\mbox{RR}_{reduced} - \mbox{RSS})/\left\{N-2 - (N-3)\right\}}{\mbox{RSS}/(N-3)} \\
+& = & \frac{\mbox{SS}_{reg}}{\hat{\sigma}^2} \\
+\end{eqnarray*}
+$$
+
+where $\mbox{SS}_{reg} = \mbox{RR}_{reduced} - \mbox{RSS}$ is the sum of squares for regression and $\hat{\sigma}^2$ is the estimated variance from the quadratic regression.  This statistic is compared with the $F(1,N-3)$ distribution to get $p$-values.
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS SELECT ANOVA;
+   
+  MODEL TotChol = Age / SELECTION=NONE;
+RUN;
+```
+
+The additional information required to calculate the $F$-test for non-linearity is conveniently presented in the *Analysis of Variance (ANOVA) table* in the PROC GLMSELECT output.
+
+For the NHANES data, we have $N = 7235$, $RR_{reduced} = 8006.4$, $\mbox{RSS} = 7674.1$ and $\hat{\sigma}^2 = 1.0611$. We can compute 
+$$F = \frac{(8006.4-7674.1)/1}{1.0611} = \frac{332.3}{1.0611} = 313.1$$
+
+When compared with the $F(1,7233)$ distribution, the $p$-value is essentially 0, providing strong evidence against the null hypothesis. We would conclude that we have very strong evidence that the relationship between age and mean serum cholesterol is not linear.
+
+The following SAS code calculates the F test statistics, $p$-values and $s$-values for these two hypotheses.
+
+
+```{r inference5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS OUTPUT ANOVA=Full;
+   
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+RUN;
+
+DATA Full (KEEP=SS DF RENAME=(SS=SS_Full DF=DF_Full));
+  SET Full;
+  WHERE Source="Error";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS OUTPUT ANOVA=Linear;
+   
+  MODEL TotChol = Age / SELECTION=NONE;
+RUN;
+
+DATA Linear (KEEP=Test DF SS);
+  SET Linear;
+  WHERE Source="Error";
+
+  Test="Non-Linear Age";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS OUTPUT ANOVA=Null;
+   
+  MODEL TotChol = / SELECTION=NONE;
+RUN;
+
+DATA Null (KEEP=Test DF SS);
+  SET Null;
+  WHERE Source="Error";
+
+  Test="Overall Age";
+RUN;
+
+DATA FTests;
+  LENGTH Test $50;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Linear Null;
+
+  SS = SS-SS_Full;
+  DF = DF-DF_Full;
+  MS = SS/DF;
+  MS_Full = SS_Full/DF_Full;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ProbF PVALUE6.4;
+RUN;
+TITLE;
+```
+
+Note that, for the quadratic regression model, the test for linearity corresponds to a test of $H_0: \beta_2 = 0$, the regression coefficient of the quadratic term $x^2$.  An alternative test of this hypothesis would use the test statistic
+$$t = \frac{\hat{\beta}_2 - 0}{\hat{\mbox{se}}(\hat{\beta}_2)} = -17.70$$
+which would be compared to a $t$-distributon with $7233$ *df*. As before, the $p$-value is essentially 0. In fact, 
+$$F = 313.1 = (-17.70)^2 = t^2$$
+This is true, not just for this specific problem, but in general.  For any reduced model corresponding to a null hypothesis regarding a single regression coefficient, the $F$-test is equivalent to the $t$-test.  
+
+
+
+```{r inference6, engine="sashtml5", engine.path=saspath}
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+  ODS SELECT ParameterEstimates;
+   
+  MODEL TotChol = AgePoly / SELECTION=NONE;
+RUN;
+```
+
+At first glance, you might think that we could consider two additional simplifications of the model, a model with no intercept $\mu(x) = \beta_1 x + \beta_2 x^2$ or a model with no linear term $\mu(x) = \beta_0 + \beta_2 x^2$.  These simplifications violate the *hierarchy principle*, which mandates that, if a higher order term ($x^2$ in this case) is included in a model, all lower order terms ($x^0 = 1$ and $x^1 = x$) must also be included in the model. The rationale for the hierarchy principle is that any assessment of the importance of lower terms depends on the (arbitrary) choice of the centering value for the predictor $x$.  
+
+
+# Prediction
+
+*Prediction* is an alternative use of a regression model. In prediction, we have a new case, not one used to estimate the model parameters, with observed value of the predictor $x_0$. We would like to know the value $y_0$, the corresponding response, but it has not yet been observed. If we assume that the data used to estimate our model is relevant to the new case, we can use the estimated regression model to predict the new case. If our quadratic regression model is correct, $y_0 = \beta_0 + \beta_1 x_0 + \beta_2 x_0^2 + \epsilon_0$, where $\epsilon_0$ is the random error attached to the future value, presumably with mean 0 and variance $\sigma^2$. Thus, even if the regression coefficients $\beta_0, \beta_1, \beta_2$ were known exactly, predictions would never match the new observations exactly, but would instead be off by a random amount with standard deviation $\sigma$. A point prediction of $y_0$ is $\tilde{y}_0 = \hat{\beta}_0 + \hat{\beta}_1 x_0 + \hat{\beta}_2 x_0^2 = x_0 \hat{\beta}$. The prediction variance accounts for the variance of the estimated regression function $\hat{\mu}(x_0)$, $\sigma^2 x_0 (X^T X)^{-1} x_0^T$, and the variance of the random error $\epsilon_i$, $\sigma^2$.  Since the new observation is independent of the data used to fit the model, the prediction variance is 
+$$\mbox{Var}(\tilde{y}_0 | x_0) = \sigma^2 + \sigma^2 x_0 (X^T X)^{-1} x_0^T = \sigma^2 \left(1 + x_0 (X^T X)^{-1} x_0^T\right)$$
+The estimated standard error of the prediction is
+$$\mbox{se}_{pred}(\tilde{y}_0 | x_0) = \hat{\sigma} \sqrt{1 + x_0 (X^T X)^{-1} x_0^T}$$
+The prediction interval uses multipliers from the $t$ distribution with $d$ equal to the $d$ for $\hat{\sigma}^2$. So, for our quadratic regression model, the $(1-\alpha)$ prediction interval for $y_0$ is
+$$\tilde{y}_0 \pm t_{N-3}^{(1-\alpha/2)} \hat{\sigma} \sqrt{1 + x_0 (X^T X)^{-1} x_0^T}$$
+Unlike inferences about (linear combinations of) the parameters of the regression model, the accuracy of prediction intervals for individual responses requires the normality assumption; the central limit theorem does not apply.
+
+The following graphic and table display prediction intervals (lighter red, LCL-UCL) for (individual) total cholesterol by age and confidence intervals (darker red, LCLM-UCLM) for the mean total cholesterol by age.       
+
+```{r prediction1, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 80 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=QuadraticModel;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+
+PROC PRINT DATA=All NOOBS;
+  VAR Age Predicted LCL UCL LCLM UCLM;
+  WHERE Score = 1;
+RUN;
+```
+
+

@@ -1,0 +1,1087 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+## Ordinal Categorical Predictor
+
+*Ordinal* categorical variables are categorical variables with levels which can be naturally ordered. In some cases, meaningful numerical values can be assigned to the levels, and ordinal categorical variables are essentially quantitative variables. In other cases, only the ordering of the levels is known. Ordinal categorical predictor variables are typically modeled using the same methods used for nominal categorical predictor variables. However, with an ordinal predictor variable, particularly if the levels cannot be numerically scored, it is possible to model the effect of the ordinal predictor variable on the log odds (or probability) by assuming that it is monotone, e.g. the change in the log odds increases (or decreases) as the ordinal variable increases; methods for modeling monotone effects are unfortunately rarily used and beyond the scope of our course. For ordinal categorical variables that can be numerically scored, assessments of linearity of the effect, e.g. the change in the log odds between levels of the ordinal variable is consistent (after accounting for any potential differences in the spacing between levels). It is not uncommon to arbitrarily assign equally-spaced integer values $(1, 2, \ldots, k)$ to the $k$ levels of the ordinal categorical variable for assessments of linearity.
+
+To illustrate a regression model with an ordinal predictor variable, we will construct a logistic regression model for obesity as a function of categorized income (\$0-4,999, \$5,000-9,999, \$10,000-14,999, \$15,000-19.999, \$20,000-24,999, \$25,000-34,999, \$35,000-44,999, \$45,000-54,999, \$55,000-64,999, \$65,000-74,999, \$75,000-99,999, \$100,000+). In addition to treating the income as a nominal categorical variable, we will consider two methods for treating the ordinal predictor as a quantitative predictor by assigning numerical scores to the income categories: (1) equally-spaced integer values $(1,2,\ldots,12)$ or (2) mid-point values (\$2,500,\$7,500,\$12,500,\$17,500,\$22,500,\$30,000,\$40,000.\$50,000,\$60,000,\$70,000,\$87,500,?).  Note that the midpoint of the last income category $\$100,000+$ is difficult to determine due to the lack of an upper bound; it is (incorrectly) coded as $\$100,000$ in the NHANES dataset.
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the income for subject $i$ by $x_i$. The probability (prevalence) of obesity, $p_i = p(x_i)$, takes on $12$ values, $p(\mbox{\$0-4,999})$, $p(\mbox{\$5,000-9,999})$, $p(\mbox{\$10,000-14,999})$, $p(\mbox{\$15,000-19.999})$, $p(\mbox{\$20,000-24,999})$, $p(\mbox{\$25,000-34,999})$, $p(\mbox{\$35,000-44,999})$, $p(\mbox{\$45,000-54,999})$, $p(\mbox{\$55,000-64,999})$, $p(\mbox{\$65,000-74,999})$, $p(\mbox{\$75,000-99,999})$, and $p(\mbox{\$100,000+})$.
+
+Our logistic regression model is 
+$$\begin{eqnarray*}
+y_i  \sim  \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} & = & \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{\$0-4,999}) + \beta_2 \textbf{1}(x_i = \mbox{\$5,000-9,999}) + \\
+&& \beta_3 \textbf{1}(x_i = \mbox{\$10,000-14,999}) + \beta_4 \textbf{1}(x_i = \mbox{\$15,000-19.999}) + \\
+&& \beta_5 \textbf{1}(x_i = \mbox{\$20,000-24,999}) + \beta_6 \textbf{1}(x_i = \mbox{\$25,000-34,999}) + \\ 
+&& \beta_7 \textbf{1}(x_i = \mbox{\$35,000-44,999}) + \beta_8 \textbf{1}(x_i = \mbox{\$45,000-54,999}) + \\
+&& \beta_9 \textbf{1}(x_i = \mbox{\$55,000-64,999}) + \beta_{10} \textbf{1}(x_i = \mbox{\$65,000-74,999}) + \\
+&& \beta_{11} \textbf{1}(x_i = \mbox{\$75,000-99,999}) + \beta_{12} \textbf{1}(x_i = \mbox{\$100,000+}) \\
+\end{eqnarray*}$$
+
+# Logistic Regression Estimates (SAS)
+
+The following SAS code fits the logistic regression model treating household income as a nominal categorical variable (dummy variables for each income category).
+
+```{r example2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeCat;
+
+  CLASS HHIncome(REF="$100,000+") / PARAM=GLM ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+```
+
+# Estimates of Probabilties
+
+The following SAS code estimates the prevalence of obesity for each income category using non-positional syntax.
+
+```{r probs, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCat;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "$0-4,999" Intercept 1 HHIncome [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999" Intercept 1 HHIncome [1, 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999" Intercept 1 HHIncome [1, 3] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999" Intercept 1 HHIncome [1, 4] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999" Intercept 1 HHIncome [1, 5] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999" Intercept 1 HHIncome [1, 6] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999" Intercept 1 HHIncome [1, 7] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999" Intercept 1 HHIncome [1, 8] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999" Intercept 1 HHIncome [1, 9] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999" Intercept 1 HHIncome [1, 10] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999" Intercept 1 HHIncome [1, 11] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$100,000+" Intercept 1 HHIncome [1, 12] / CL ILINK ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Household Income, Categorical)";
+RUN;
+TITLE;
+```
+
+# Estimates of Odds Ratios 
+
+The following SAS code estimates the odds ratios for obesity comparing each income category to \$100,000+, using \$100,000+ as a reference category.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCat;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$0-4,999 v $100,000+" HHIncome [1, 1] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999 v $100,000+" HHIncome [1, 2] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $100,000+" HHIncome [1, 3] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $100,000+" HHIncome [1, 4] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $100,000+" HHIncome [1, 5] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $100,000+" HHIncome [1, 6] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $100,000+" HHIncome [1, 7] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $100,000+" HHIncome [1, 8] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $100,000+" HHIncome [1, 9] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $100,000+" HHIncome [1, 10] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $100,000+" HHIncome [1, 11] [-1, 12] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Reference)";
+RUN;
+TITLE;
+```
+
+The following SAS code estimates the odds ratios for obesity comparing adjacent income categories.
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCat;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncome [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncome [1, 3] [-1, 2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncome [1, 4] [-1, 3] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncome [1, 5] [-1, 4] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncome [1, 6] [-1, 5] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncome [1, 7] [-1, 6] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncome [1, 8] [-1, 7] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncome [1, 9] [-1, 8] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncome [1, 10] [-1, 9] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncome [1, 11] [-1, 10] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$100,000+ v $75,000-99,999" HHIncome [1, 12] [-1, 11] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent)";
+RUN;
+TITLE;
+```
+
+One approach to specifying a potential *linear* relationship between the household income categories and the log odds of obesity by assuming that all of the differences in log odds (log odds ratios) in the previous table are equal to each other. This concept of linearity leads to treating the ordinal predictor as a quantitative predictor with equally-spaced integer values.
+
+Another approach to specifying a potential *linear* relationship between the household income categories and the log odds of obesity recognizes the variable widths of the household income categories (\$5,000 widths for incomes below \$25,000; \$10,000 widths for incomes between \$25,000 and \$74,999; \$25,000 width for income between \$75,000 and \$99,999; and an unspecified width for incomes over \$99,999). It is sensible to scale the odds ratios between adjacent income categories to reflect similar differences in income.  The concept of linearity leads towards treating the ordinal predictor as a quantitative predictor with the midpoint values.
+
+The following SAS code estimates the odds ratios between adjacent categories scaled to the equivalent of a \$5,000 difference in income. Note that, because the last income category is unbounded, the category midpoint is not well-defined, and the estimate is left unscaled.
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCat;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncome [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncome [1, 3] [-1, 2] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncome [1, 4] [-1, 3] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncome [1, 5] [-1, 4] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncome [1, 6] [-1, 5] / CL EXP ALPHA=0.03125 DIVISOR=1.5;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncome [1, 7] [-1, 6] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncome [1, 8] [-1, 7] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncome [1, 9] [-1, 8] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncome [1, 10] [-1, 9] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncome [1, 11] [-1, 10] / CL EXP ALPHA=0.03125 DIVISOR=3.5;
+  ESTIMATE "$100,000+ v $75,000-99,999 (Unscaled)" HHIncome [1, 12] [-1, 11] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent, Scaled to $5,000)";
+RUN;
+TITLE;
+```
+
+# Treating the Ordinal Predictor as a Quantitative Predictor with Equally-Spaced Integer Values
+
+We can fit a model that is equivalent (in every meaningful sense) to the previous model by treating the ordinal predictor as a quantitative predictor with equally-spaced integer values and representing the effect of this *quantitative predictor* using any basis (polynomial, linear spline, natural cubic spline) with 11 df. This is an example of a saturated model with 12 parameters for 12 unique predictor values (or combination of predictor values).  All saturated models are fundamentally equivalent to each other.  For illustration, we fit the logistic regression model representing household income as a natural cubic spline with 11 df with knots at the coded values $1, 2, \ldots, 12$.
+
+
+```{r integer1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeCS;
+
+  EFFECT HHIncomeCS=SPLINE(HHIncome / NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=LIST(1 2 3 4 5 6 7 8 9 10 11 12));
+  MODEL Obese(Event="Yes") = HHIncomeCS / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+```
+
+## Estimates of Probabilties
+
+The following SAS code estimates the prevalence of obesity for each income category using non-positional syntax.
+
+```{r integer2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCS;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "$0-4,999" Intercept 1 HHIncomeCS [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999" Intercept 1 HHIncomeCS [1, 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999" Intercept 1 HHIncomeCS [1, 3] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999" Intercept 1 HHIncomeCS [1, 4] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999" Intercept 1 HHIncomeCS [1, 5] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999" Intercept 1 HHIncomeCS [1, 6] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999" Intercept 1 HHIncomeCS [1, 7] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999" Intercept 1 HHIncomeCS [1, 8] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999" Intercept 1 HHIncomeCS [1, 9] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999" Intercept 1 HHIncomeCS [1, 10] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999" Intercept 1 HHIncomeCS [1, 11] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$100,000+" Intercept 1 HHIncomeCS [1, 12] / CL ILINK ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Household Income, Categorical)";
+RUN;
+TITLE;
+```
+
+## Estimates of Odds Ratios 
+
+The following SAS code estimates the odds ratios for obesity comparing each income category to \$100,000+, using \$100,000+ as a reference category.
+
+```{r integer3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$0-4,999 v $100,000+" HHIncomeCS [1, 1] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999 v $100,000+" HHIncomeCS [1, 2] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $100,000+" HHIncomeCS [1, 3] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $100,000+" HHIncomeCS [1, 4] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $100,000+" HHIncomeCS [1, 5] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $100,000+" HHIncomeCS [1, 6] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $100,000+" HHIncomeCS [1, 7] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $100,000+" HHIncomeCS [1, 8] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $100,000+" HHIncomeCS [1, 9] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $100,000+" HHIncomeCS [1, 10] [-1, 12] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $100,000+" HHIncomeCS [1, 11] [-1, 12] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Reference)";
+RUN;
+TITLE;
+```
+
+The following SAS code estimates the odds ratios for obesity comparing adjacent income categories.
+
+```{r integer4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncomeCS [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncomeCS [1, 3] [-1, 2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncomeCS [1, 4] [-1, 3] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncomeCS [1, 5] [-1, 4] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncomeCS [1, 6] [-1, 5] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncomeCS [1, 7] [-1, 6] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncomeCS [1, 8] [-1, 7] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncomeCS [1, 9] [-1, 8] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncomeCS [1, 10] [-1, 9] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncomeCS [1, 11] [-1, 10] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$100,000+ v $75,000-99,999" HHIncomeCS [1, 12] [-1, 11] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent)";
+RUN;
+TITLE;
+```
+
+The following SAS code estimates the odds ratios for obesity comparing adjacent income categories scaled to a \$5,000 income difference.
+
+```{r integer5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncomeCS [1, 2] [-1, 1] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncomeCS [1, 3] [-1, 2] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncomeCS [1, 4] [-1, 3] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncomeCS [1, 5] [-1, 4] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncomeCS [1, 6] [-1, 5] / CL EXP ALPHA=0.03125 DIVISOR=1.5;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncomeCS [1, 7] [-1, 6] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncomeCS [1, 8] [-1, 7] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncomeCS [1, 9] [-1, 8] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncomeCS [1, 10] [-1, 9] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncomeCS [1, 11] [-1, 10] / CL EXP ALPHA=0.03125 DIVISOR=3.5;
+  ESTIMATE "$100,000+ v $75,000-99,999 (Unscaled)" HHIncomeCS [1, 12] [-1, 11] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent, Scaled to $5,000)";
+RUN;
+TITLE;
+```
+
+
+# Treating the Ordinal Predictor as a Quantitative Predictor with Midpoint Values
+
+We can similarly fit a model that is equivalent (in every meaningful sense) to the previous two models by treating the ordinal predictor as a quantitative predictor with (unequally spaced) midpoint values and representing the effect of this *quantitative predictor* using any basis (polynomial, linear spline, natural cubic spline) with 11 df in another version of the saturated model. For illustration, we fit the logistic regression model representing household income as a natural cubic spline with 11 df with knots at the midpoint values \$2,500,\$7,500,\$12,500,\$17,500,\$22,500,\$30,000,\$40,000.\$50,000,\$60,000,\$70,000,\$87,500, \$100,000.  
+
+
+```{r mid1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeMidCS;
+
+  EFFECT HHIncomeMidCS=SPLINE(HHIncomeMid / NATURALCUBIC BASIS=TPF(NOINT) 
+                              KNOTMETHOD=LIST(2500 7500 12500 17500 22500 30000 40000 50000 60000 70000 87500 100000));
+  MODEL Obese(Event="Yes") = HHIncomeMidCS / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+```
+
+## Estimates of Probabilties
+
+The following SAS code estimates the prevalence of obesity for each income category using non-positional syntax.
+
+```{r mid2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "$0-4,999" Intercept 1 HHIncomeMidCS [1, 2500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999" Intercept 1 HHIncomeMidCS [1, 7500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999" Intercept 1 HHIncomeMidCS [1, 12500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999" Intercept 1 HHIncomeMidCS [1, 17500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999" Intercept 1 HHIncomeMidCS [1, 22500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999" Intercept 1 HHIncomeMidCS [1, 30000] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999" Intercept 1 HHIncomeMidCS [1, 40000] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999" Intercept 1 HHIncomeMidCS [1, 50000] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999" Intercept 1 HHIncomeMidCS [1, 60000] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999" Intercept 1 HHIncomeMidCS [1, 70000] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999" Intercept 1 HHIncomeMidCS [1, 87500] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "$100,000+" Intercept 1 HHIncomeMidCS [1, 100000] / CL ILINK ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Household Income, Categorical)";
+RUN;
+TITLE;
+```
+
+## Estimates of Odds Ratios 
+
+The following SAS code estimates the odds ratios for obesity comparing each income category to \$100,000+, using \$100,000+ as a reference category.
+
+```{r mid3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$0-4,999 v $100,000+" HHIncomeMidCS [1, 2500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999 v $100,000+" HHIncomeMidCS [1, 7500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $100,000+" HHIncomeMidCS [1, 12500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $100,000+" HHIncomeMidCS [1, 17500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $100,000+" HHIncomeMidCS [1, 22500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $100,000+" HHIncomeMidCS [1, 30000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $100,000+" HHIncomeMidCS [1, 40000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $100,000+" HHIncomeMidCS [1, 50000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $100,000+" HHIncomeMidCS [1, 60000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $100,000+" HHIncomeMidCS [1, 70000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $100,000+" HHIncomeMidCS [1, 87500] [-1, 100000] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Reference)";
+RUN;
+TITLE;
+```
+
+The following SAS code estimates the odds ratios for obesity comparing adjacent income categories.
+
+```{r mid4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncomeMidCS [1, 7500] [-1, 2500] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncomeMidCS [1, 12500] [-1, 7500] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncomeMidCS [1, 17500] [-1, 12500] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncomeMidCS [1, 22500] [-1, 17500] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncomeMidCS [1, 30000] [-1, 22500] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncomeMidCS [1, 40000] [-1, 30000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncomeMidCS [1, 50000] [-1, 40000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncomeMidCS [1, 60000] [-1, 50000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncomeMidCS [1, 70000] [-1, 60000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncomeMidCS [1, 87500] [-1, 70000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$100,000+ v $75,000-99,999" HHIncomeMidCS [1, 100000] [-1, 87500] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent)";
+RUN;
+TITLE;
+```
+
+The following SAS code estimates the odds ratios for obesity comparing adjacent income categories scaled to a \$5,000 income difference.
+
+```{r mid5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncomeMidCS [1, 7500] [-1, 2500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncomeMidCS [1, 12500] [-1, 7500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncomeMidCS [1, 17500] [-1, 12500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncomeMidCS [1, 22500] [-1, 17500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncomeMidCS [1, 30000] [-1, 22500] / CL EXP ALPHA=0.03125 DIVISOR=1.5;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncomeMidCS [1, 40000] [-1, 30000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncomeMidCS [1, 50000] [-1, 40000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncomeMidCS [1, 60000] [-1, 50000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncomeMidCS [1, 70000] [-1, 60000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncomeMidCS [1, 87500] [-1, 70000] / CL EXP ALPHA=0.03125 DIVISOR=3.5;
+  ESTIMATE "$100,000+ v $75,000-99,999 (Unscaled)" HHIncomeMidCS [1, 100000] [-1, 87500] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent, Scaled to $5,000)";
+RUN;
+TITLE;
+```
+
+# Fitting the Saturated Model
+
+It doesn't matter which version of the saturated model is used.  It is typically easiest to work with the categorical version of the saturated model.  If the number of categories is small, it is not unusual to use the polynomial version of the saturated model.  Unfortunately, if the number of categories is large (as in our example), fitting the polynomial version of the saturated model can (and typically does) cause computational problems.  
+
+# Estimating the Linear Slope with Equally-Spaced (Integer) Values
+
+There are two approaches to obtaining an estimate of the linear slope (log odds ratio for a 1-category change in the ordinal predictor). One estimate can be obtained from the saturated model, and it has provides a valid estimate of a meaningful population parameter, even if the relationship is not truly linear. For our ordinal variable with twelve levels, the linear slope parameter (corresponding to a 1-category change in the ordinal variable) is 
+$$\frac{(-11) \beta_1 + (-9) \beta_2 + (-7) \beta_3 + (-5) \beta_4 + (-3) \beta_5 + (-1) \beta_6 + 1 \beta_7 + 3 \beta_8 + 5 \beta_9 + 7 \beta_{10} + 9 \beta_{11} + 11 \beta_{12}}{572}$$ 
+The following table gives the coefficients for the linear slope parameter for ordinal variables with 3-11 levels.
+
+$$
+\begin{eqnarray*}
+k=3 & ~~~~~~~~~~~ & \frac{(-1) \beta_1 + 0 \beta_2 + 1 \beta_3}{2} \\
+\\
+k=4 & ~~~~~~~~~~~ & \frac{(-3) \beta_1 + (-1) \beta_2 + 1 \beta_3 + 3 \beta_4}{20} \\
+\\
+k=5 & ~~~~~~~~~~~ & \frac{(-2) \beta_1 + (-1) \beta_2 + 0 \beta_3 + 1 \beta_4 + 2 \beta_5}{10} \\
+\\
+k=6 & ~~~~~~~~~~~ & \frac{(-5) \beta_1 + (-3) \beta_2 + (-1) \beta_3 + 1 \beta_4 + 3 \beta_5 + 5 \beta_6}{70} \\
+\\
+k=7 & ~~~~~~~~~~~ & \frac{(-3) \beta_1 + (-2) \beta_2 + (-1) \beta_3 + 0 \beta_4 + 1 \beta_5 + 2 \beta_6 + 3 \beta_7}{28} \\
+\\
+k=8 & ~~~~~~~~~~~ & \frac{(-7) \beta_1 + (-5) \beta_2 + (-3) \beta_3 + (-1) \beta_4 + 1 \beta_5 + 3 \beta_6 + 5 \beta_7 + 7 \beta_8 }{168} \\
+\\
+k=9 & ~~~~~~~~~~~ & \frac{(-4) \beta_1 + (-3) \beta_2 + (-2) \beta_3 + (-1) \beta_4 + 0 \beta_5 + 1 \beta_6 + 2 \beta_7 + 3 \beta_8 + 4 \beta_9}{60} \\
+\\
+k=10 & ~~~~~~~~~~~ & \frac{(-9) \beta_1 + (-7) \beta_2 + (-5) \beta_3 + (-3) \beta_4 + (-1) \beta_5 + 1 \beta_6 + 3 \beta_7 + 5 \beta_8 + 7 \beta_9 + 9 \beta_{10}}{330} \\
+\\
+k=11 & ~~~~~~~~~~~ & \frac{(-5) \beta_1 + (-4) \beta_2 + (-3) \beta_3 + (-2) \beta_4 + (-1) \beta_5 + 0 \beta_6 + 1 \beta_7 + 2 \beta_8 + 3 \beta_9 + 4 \beta_{10} + 5 \beta_{11}}{110} \\
+\end{eqnarray*}
+$$
+
+```{r linear1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeCat;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "Odds Ratio (per Income Category)" HHIncome [-11, 1] [-9, 2] [-7, 3] [-5, 4] [-3, 5] [-1, 6]
+                                                      [1, 7] [3, 8] [5, 9] [7, 10] [9, 11] [11, 12] 
+        / CL EXP ALPHA=0.03125 DIVISOR=572;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Linear Slope, Saturated Model)";
+RUN;
+TITLE;
+```
+
+The estimated linear slope corresponds to an odds ratio of $(0.98, 1.00)$ for a 1-category increase in income category.
+
+The Wald test of the null hypothesis that this linear slope parameter is equal to 0 is frequently, but incorrectly, called the test for (linear) trend. 
+
+An alternative estimator of the linear slope can be obtained by fitting the reduced simple logistic regression model
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \alpha_0 + \alpha_1 s(x_i)$$ 
+where $s(x_i)$ is the numerical score assigned to each poverty category.  If the relationship is truly linear, this estimator is the most efficient (minimum variance) estimator of the slope parameter.  However, if the relationship is not linear, it is not a meaningful (consistent) estimator of any population parameter.
+
+
+```{r linear2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeLinear;
+
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HHIncomeLinear;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "Odds Ratio (per Income Category)" HHIncome 1 / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Linear Slope, Linear Model)";
+RUN;
+TITLE;
+```
+
+The estimated linear slope corresponds to an odds ratio of $(0.94, 0.97)$ for a 1-category increase in income category. Note the slight difference in the two estimates of the linear slope. In practice, one should decide which estimator of the linear slope to use in advance (without looking at the data).
+
+# Testing for Non-Linearity with Equally-Spaced (Integer) Values
+
+```{r linear3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS HHIncome;
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Income Linear";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Reduced;
+  
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence that the relationship between income category and the log odds of obesity is nonlinear.  The $p$-value is $0.00005$ and the $s$-value is $14.2$.  Given the strong evidence for non-linearity, it does not make sense to discuss (or even present) estimates of the linear slope (or the so-called tests for trend).
+
+# Estimating the Linear Slope with Midpoint (Unequally Spaced) Values
+
+With unequally spaced values, while it is still possible to estimate a linear slope parameter from the saturated model, one would typically use the simple logistic regression model
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \alpha_0 + \alpha_1 s(x_i)$$ 
+where $s(x_i)$ is the numerical score assigned to each poverty category. Note that the midpoint of the last income category $\$100,000+$ is (incorrectly) coded as $\$100,000$, which may distort the linear slope estimate.  We will eventually discuss alternative approaches to addressing the coding of the last income category.
+
+```{r linear4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeMidLinear;
+
+  MODEL Obese(Event="Yes") = HHIncomeMid / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HHIncomeMidLinear;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "Odds Ratio (per $5,000)" HHIncomeMid 5000 / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Linear Slope, Linear Model)";
+RUN;
+TITLE;
+```
+
+The estimated linear slope corresponds to an odds ratio of $(0.97, 0.98)$ for a \$5,000 increase in income. 
+
+# Testing for Non-Linearity with Midpoint (Unequally Spaced) Values
+
+
+```{r linear5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  MODEL Obese(Event="Yes") = HHIncomeMid / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS HHIncome;
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Income Linear";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Reduced;
+  
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence that the relationship between income and the log odds of obesity is nonlinear.  The $p$-value is $0.00048$ and the $s$-value is $11.0$.  Given the strong evidence for non-linearity, it does not make sense to discuss (or even present) estimates of the linear slope.
+
+
+# Using a Linear Spline to Account for the Unbounded Last Income Category
+
+While the assignment of a midpoint values of \$100,000 for the \$100,000+ category is clearly wrong, it is not clear how we could identify a better midpoint value for which a linearity assumption is more plausible.  In contrast, the assignment of midpoint values to the other categories is much more defensible. (Ideally, if we had access to the right information, we might use the median or mean income within each category instead of the midpoint.)  
+
+An alternative approach is to replace the simple logistic regression model with a linear slope across all income categories with a linear spline model with a single knot at the second-to-last income category.  
+
+## Estimating the Linear Slope 
+
+```{r linear6, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeMidLS;
+
+  EFFECT HHIncomeMidLS = SPLINE(HHIncomeMid / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=LIST(87500));
+  MODEL Obese(Event="Yes") = HHIncomeMidLS / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=HHIncomeMidLS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "Odds Ratio (per $5,000) for Income < $100,000" HHIncomeMidLS [1, 5000] [-1, 0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Odds Ratio (per $5,000) for Income < $100,000" HHIncomeMidLS [1, 87500] [-1, 82500] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Linear Slope, Linear Model)";
+RUN;
+TITLE;
+```
+
+The estimated linear slope for income less than \$100,000 corresponds to an odds ratio of $(0.98, 1.00)$ for a \$5,000 increase in income. 
+
+## Testing for Non-Linearity 
+
+```{r linear7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  EFFECT HHIncomeMidLS = SPLINE(HHIncomeMid / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=LIST(87500));
+  MODEL Obese(Event="Yes") = HHIncomeMidLS / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;  
+  CLASS HHIncome;
+  MODEL Obese(Event="Yes") = HHIncome / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $40;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Income Linear for Income < $100,000";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Reduced;
+  
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is strong evidence that the relationship between income and the log odds of obesity is nonlinear.  The $p$-value is $0.013$ and the $s$-value is $6.2$.  Given the strong evidence for non-linearity, it does not make sense to discuss (or even present) estimates of the linear slope.
+
+# When to Treat an Ordinal Categorical Predictor as a Quantitative Predictor?
+
+When the number of categories is small (up to 5), there is little reason to consider any alternatives to the saturated model or the linear model (using either the equally-spaced integer values or a more informative coding).  When the number of categories is larger, it is more important and potentially very useful to identify a meaningful coding of the ordinal categories. If all (or at least most) of the categories can be assigned meaningful numeric scores, treating the ordinal variable as a quantitative variable and using the polynomial- or spline-based approaches described previously can be a very valuable in developing a more parsimonious and informative model. 
+
+# Recommended Practice
+
+In practice, given the large number of categories,we would typically recommend using a natural cubic spline with 4 df using equal knot placement (the default knot placement rules often fail due to ties) as a reasonable default for this example.  For model checking, in addition to evaluating the use of one additional df (5 v 4 in the usual case) based on BIC repeating as necessary, we can also consider comparisons with the saturated model as a "goodness of fit" test. After an adequate model is found, we recommend interacting with the model primarily using PROC PLM with the non-positional syntax. Where appropriate, you should calculate (partial) likelihood ratio tests by hand.  An example of the typical code follows.
+
+```{r practice1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  STORE HHIncomeMidCS;
+
+  EFFECT HHIncomeMidCS=SPLINE(HHIncomeMid / NATURALCUBIC BASIS=TPF(NOINT) 
+                              KNOTMETHOD=EQUAL(5));
+  MODEL Obese(Event="Yes") = HHIncomeMidCS / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r practice2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Income NCS w/ 4 df";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  EFFECT HHIncomeMidCS=SPLINE(HHIncomeMid / NATURALCUBIC BASIS=TPF(NOINT) 
+                              KNOTMETHOD=EQUAL(5));
+  MODEL Obese(Event="Yes") = HHIncomeMidCS / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Income NCS w/ 5 df";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  EFFECT HHIncomeMidCS=SPLINE(HHIncomeMid / NATURALCUBIC BASIS=TPF(NOINT) 
+                           KNOTMETHOD=EQUAL(6) DETAILS);
+  MODEL Obese(Event="Yes") = HHIncomeMidCS / LINK=LOGIT;    
+RUN;
+TITLE;
+
+TITLE "Income Categorical w/ 11 df";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  CLASS HHIncomeMid;
+  MODEL Obese(Event="Yes") = HHIncomeMid / LINK=LOGIT;    
+RUN;
+TITLE;
+```
+
+```{r calc1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    BIC_4df = 9386.823 + LOG(2592)*5;
+    BIC_5df = 9378.823 + LOG(2592)*6;
+
+    Delta_BIC = BIC_5df - BIC_4df;
+
+    KEEP BIC_4df BIC_5df Delta_BIC;   
+RUN;
+
+TITLE "BIC Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+```{r calc2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    BIC_4df = 9386.823 + LOG(2592)*5;
+    BIC_11df = 9367.823 + LOG(2592)*12;
+
+    Delta_BIC = BIC_11df - BIC_4df;
+
+    KEEP BIC_4df BIC_11df Delta_BIC;   
+RUN;
+
+TITLE "BIC Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+The 5 df model fits marginally better than the 4 df model, but, given the small difference in BIC values, it is reasonable to stay with the 4 df model.  The 4 df model is preferred over the saturated (11 df) model.
+
+If (partial) likelihood ratio tests are required, you should fit the relevant models to get the log-likelihoods and calculate the test statistics (and $p$-values) by hand.
+
+```{r practice3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Reduced Model (Intercept Only)";
+PROC LOGISTIC DATA=Ron;
+ ODS SELECT FitStatistics;
+ MODEL Obese(Event="Yes") = / LINK=LOGIT;
+RUN;
+TITLE;
+ 
+TITLE "Reduced Model (Income Linear)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  MODEL Obese(Event="Yes") = HHIncomeMid / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Full Model (Income NCS)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+  EFFECT HHIncomeMidCS=SPLINE(HHIncomeMid / NATURALCUBIC BASIS=TPF(NOINT) 
+                              KNOTMETHOD=EQUAL(5));
+  MODEL Obese(Event="Yes") = HHIncomeMidCS / LINK=LOGIT;
+RUN;
+TITLE;
+```
+ 
+ 
+```{r calc3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 9440.367;
+    Minus2LL1 = 9386.823;
+
+    df0 = 1;
+    df1 = 5;
+
+    Chisq = Minus2LL0 - Minus2LL1;
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Chisq df ProbChiSq sValue;
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+
+DATA Calculator;
+    Minus2LL0 = 9399.341;
+    Minus2LL1 = 9386.823;
+
+    df0 = 2;
+    df1 = 5;
+
+    Chisq = Minus2LL0 - Minus2LL1;
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+
+    KEEP Chisq df ProbChiSq sValue;
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+ 
+The overall likelihood ratio test statistic for any *effect* of income is $53.54 = 9440.367-9386.823$ on 4 df, the $p$-value is $6.6 \times 10^{-11} \approx 0$, and the $s$-value is $33.8$.  
+
+The (partial) likelihood ratio test statistic for non-linearity in the effect of age is $12.52 = 9399.341-9386.823$ on 3 df, the $p$-value is $0.0058$, and the $s$-value is $7.4$.  
+```{r practice4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$0-4,999 v $100,000+" HHIncomeMidCS [1, 2500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$5,000-9,999 v $100,000+" HHIncomeMidCS [1, 7500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$10,000-14,999 v $100,000+" HHIncomeMidCS [1, 12500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$15,000-19,999 v $100,000+" HHIncomeMidCS [1, 17500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$20,000-24,999 v $100,000+" HHIncomeMidCS [1, 22500] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$25,000-34,999 v $100,000+" HHIncomeMidCS [1, 30000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$35,000-44,999 v $100,000+" HHIncomeMidCS [1, 40000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$45,000-54,999 v $100,000+" HHIncomeMidCS [1, 50000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$55,000-64,999 v $100,000+" HHIncomeMidCS [1, 60000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$65,000-74,999 v $100,000+" HHIncomeMidCS [1, 70000] [-1, 100000] / CL EXP ALPHA=0.03125;
+  ESTIMATE "$75,000-99,999 v $100,000+" HHIncomeMidCS [1, 87500] [-1, 100000] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Reference)";
+RUN;
+TITLE;
+```
+
+```{r practice5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=HHIncomeMidCS;
+  ODS OUTPUT Estimates=E;
+     
+  ESTIMATE "$5,000-9,999 v $0-4,999" HHIncomeMidCS [1, 7500] [-1, 2500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$10,000-14,999 v $5,000-9,999" HHIncomeMidCS [1, 12500] [-1, 7500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$15,000-19,999 v $10,000-14,999" HHIncomeMidCS [1, 17500] [-1, 12500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$20,000-24,999 v $15,000-19,999" HHIncomeMidCS [1, 22500] [-1, 17500] / CL EXP ALPHA=0.03125 DIVISOR=1;
+  ESTIMATE "$25,000-34,999 v $20,000-24,999" HHIncomeMidCS [1, 30000] [-1, 22500] / CL EXP ALPHA=0.03125 DIVISOR=1.5;
+  ESTIMATE "$35,000-44,999 v $25,000-34,999" HHIncomeMidCS [1, 40000] [-1, 30000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$45,000-54,999 v $35,000-44,999" HHIncomeMidCS [1, 50000] [-1, 40000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$55,000-64,999 v $45,000-54,999" HHIncomeMidCS [1, 60000] [-1, 50000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$65,000-74,999 v $55,000-64,999" HHIncomeMidCS [1, 70000] [-1, 60000] / CL EXP ALPHA=0.03125 DIVISOR=2;
+  ESTIMATE "$75,000-99,999 v $65,000-74,999" HHIncomeMidCS [1, 87500] [-1, 70000] / CL EXP ALPHA=0.03125 DIVISOR=3.5;
+  ESTIMATE "$100,000+ v $75,000-99,999 (Unscaled)" HHIncomeMidCS [1, 100000] [-1, 87500] / CL EXP ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Adjacent, Scaled to $5,000)";
+RUN;
+TITLE;
+```

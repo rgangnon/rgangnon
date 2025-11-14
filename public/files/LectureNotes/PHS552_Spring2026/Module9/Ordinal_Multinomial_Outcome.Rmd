@@ -1,0 +1,1653 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+
+# The Proportional Odds Model
+
+The previous multinomial models are appropriate for the analysis of *nominal* responses. These models may be applied to *ordinal* responses as well, but the models may no explicit use of the ordering of the categories.  We now consider models designed specifically for the analysis of ordinal data.
+
+Analyses of ordinal response data focus on the *cumulative* probability of the response. Let $p_{j} = P(Y = j)$ denote the probability that the response is category $j$ for a given subject. Let $P_{j} = P(Y \geq j)$ denote the corresponding cumulative probability that the response is category $j$ *or above*.
+$$ P_{j} = p_{j} + p_{j+1} + \ldots + p_{J} $$
+The *cumulative logit model* specifies linear regression models for the logits of these cumulative probabilities:
+$$ \mbox{logit}(P_{j}) = \log\left(\frac{P_{j}}{1-P_{j}}\right) = \log\left(\frac{P(Y \geq j)}{P(Y < j)}\right) = \beta_{0j} + \beta_{1j} x_{1} + \ldots + \beta_{kj} x_k $$
+In order to *guarantee* a valid set of cumulative probabilities
+$$ 1 = P_{1} \geq P_{2} \geq \ldots \geq P_{J-1} \leq P_{J} $$
+one must require 
+$$ \beta_{02} \leq \beta_{03} \leq \ldots \leq \beta_{0J} $$ and 
+$$ \beta_{i2} = \beta_{i3} = \ldots \beta_{iJ} = \beta_i, ~ i = 1, 2, \ldots, k $$
+The cumulative logit model with these constraints is the *proportional odds* model.
+If we denote the odds of $Y_i \geq j$ by
+$$ \psi_{ij} = \frac{P_{ij}}{1-P_{ij}} = e^{\beta_{0j} + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_k x_{ik}} $$
+the odds ratio for $Y_i \geq j$ compared to $Y_i \geq j^\prime$ 
+$$ \frac{\psi_{ij}}{\psi_{ij^\prime}} = \frac{e^{\beta_{0j} + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_k x_{ik}}}{e^{\beta_{0j^\prime} + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_k x_{ik}}} = e^{\beta_{0j} - \beta_{0j^\prime}} $$
+is the same for all subjects (independent of $i$)
+
+and
+
+the odds ratio for $Y_i \geq j$ compared to $Y_i^\prime \geq j$ 
+$$ \frac{\psi_{ij}}{\psi_{i^\prime j}} = \frac{e^{\beta_{0j} + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_k x_{ik}}}{e^{\beta_{0j} + \beta_1 x_{i^\prime 1} + \beta_2 x_{i^\prime 2} + \ldots + \beta_k x_{i^\prime k}}} = e^{\beta_1 (x_{i1} - x_{i^\prime 1}) + \beta_2 (x_{i2} - x_{i^\prime 2}) + \ldots + \beta_k (x_{ik} - x_{i^\prime k})} $$
+is the same for all cutpoints (independent of $j$).
+
+The multinomial probability of being in category $j$ is found from the equation 
+$$ p_{ij} = P_{ij} - P_{i,j+1}, ~ j = 1, 2, \ldots, J $$
+The parameters of the proportional odds model are estimated via maximum likelihood.  The proportional odds assumption
+$$ \beta_{i2} = \beta_{i3} = \ldots \beta_{iJ} = \beta_i, ~ i = 1, 2, \ldots, k $$
+can be tested with a score test for the more general cumulative logit model with different odds ratios for different outcome thresholds.
+
+Other link functions can be used to model the cumulative probabilities. The *ordered probit* model uses the *probit* link, and the *proportional hazards* model uses the *complementary log-log* link. Restrictions similar to those used for the proportional odds model are applied to the parameters of these models to guarantee a consistent set of cumulative probabilities. 
+
+Each of these models can be interpreted in terms of a continuous *latent variable*. Specifically, we can view the multinomial response $Y$ as a grouping of an underlying continuous variables $Y^\star$ using cut points $\beta_{02} < \beta_{03} < \ldots < \beta_{0J}$ so that $Y = 1$ if $Y^\star \leq \beta_{02}$, $Y=2$ if $\beta_{02} < Y^\star \leq \beta_{03}$, $\ldots$, $Y=J$ if $Y^\star > \beta_{0J}$. An ordinary linear regression model for the mean of $Y^\star$ yields the proportional odds model if the error is logistic, the ordered probit model if the error is normal, and the proportional hazards model if the error is extreme value. 
+
+## Latent Variable Interpretation of Probit Regression
+
+Suppose that $Y^\star$ is an (unobserved or *latent*) continuous random variable and $Y$ is an observed binary variable based on $Y^\star$:
+$$
+\begin{eqnarray*}
+Y = 1 & \mbox{ if } & Y^\star > c \\
+Y = 0 & \mbox{ if } & Y^\star < c 
+\end{eqnarray*}
+$$
+
+The (unobserved) continuous random variable $Y^\star$ represents the *latent* continuous health status for each subject, while the *overt* (observed) random variable $Y$ is an indicator that the *latent* health status $Y^\star$ exceeds a *threshold* $c$
+
+Specifying a multiple linear regression model for $Y^\star$ with the usual assumptions
+$$ Y^\star = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k + \epsilon_i, ~\epsilon_i \sim N(0, \sigma^2) $$
+yields the *probit regression model* for $Y$
+$$ \mbox{probit}(p) = \Phi^{-1}(p) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k $$
+if $c = 0$ and $\sigma^2 = 1$
+
+Setting the threshold to 0 and the variance of $\epsilon_i$ to 1 (or another pair of equivalent restrictions) is required for unique identification (estimation) of the model. Other values could be used based on theoretical considerations regarding the *latent* variable, but the model fit (and meaningful inferences) are unaffected by the chosen restrictions.
+    
+## Interpretation of Probit Regression Coefficients
+
+The typical regression coefficient from a probit regression model $\beta_j$ is interpreted as the increase in the mean of the latent variable $Y^\star$ (in standard deviation units) associated with a 1-unit increase in the covariate $x_j$, adjusting for the other covariates in the model. In other words, the regression coefficients from the probit regression model have the same interpretation as the regression coefficients in a linear regression model.
+
+Interpretation of the coefficients in probit regression in terms of the probability of the binary outcome is not straightforward. The change in the probability is dependent on both the values of all other predictors in the model and the starting value of the predictor of interest, but the relationship between the sign of the coefficient and the probability of the outcome is clear: (1) a positive coefficient means that an increase in the predictor is associated with an increase in the probability of an event; (2) a negative coefficient means that a decrease in the predictor is associated with an decrease in the probability of an event; and (3) a zero coefficient means that the predictor is not associated with the probability
+
+# Advantages of Ordinal (Cumulative Link) Models v Multinomial Logit Models
+
+One advantage of the cumulative link models considered here is that the parameters refer to the cumulative distribution of the manifest response (or the distribution of the underlying latent variable). Therefore, the values are not heavily dependent on the actual categories (or cutpoints) used.  In particular, we would not expect the results to change much if we were to combine two adjacent categories, or if we recoded the response using fewer categories.  If the cumulative odds are indeed proportional before collapsing categories, the argument goes, they should continue to be so afterwards.
+
+In contrast, inferences based on multinomial logit models apply only to the actual categories used.  It is quite possible, for example, that odds ratios that are relatively constant across adjacent categories will no longer exhibit this property if some of the categories are combined. These considerations are particularly relevant if the categories (cutpoints) used are somewhat arbitrary.
+
+# Example: 4th Grade Math Performance in the Newborn Lung Project
+
+The Newborn Lung Project is a multicenter population-based cohort study of all infants with birth weight of 1,500 g or less (VLBW) who were born between 8/1/1988 and 6/30/1991 and admitted to one of six regional neonatal intensive care units covering a geographically defined areain the states of Wisconsin and Iowa. During initial enrollment, a total of 1024 VLBW infants were born and admitted to participating centers, and 803 survived to discharge. The 625 infants, whose parents provided recontact information, were representative of all baseline survivors on a wide range of characteristics
+
+Designated, trained neonatal nurses at the six intensive care units conducted data collection. Birth weight, gender and intraventricular hemorrhage were recorded during the initial hospitalization. Data on bronchopulmonary dysplasia (BPD), defined as use of supplemental oxygen at 36 weeks postmenstrual age, were also collected. Measures of socioeconomic status were collected by questionnaire, and a standardized socioeconomic status variable was created. At the 10 year follow-up visit, participants were given a mathematics examination graded using a 5-point scale from 1 (worst) to 5 (best).
+
+The dataset is available as a [SAS dataset](https://uwmadison.box.com/s/uq913jpngwo2r34boer8wodtmk4k9slf) and as a [comma-delimited file](https://uwmadison.box.com/s/1c8yzuipxodga8nxgqkd86asjxkqadpe).  The SAS dataset is also available in the shared library for the course in SAS OnDemand for Academics. If you are using SAS OnDemand for Academics, you should not need to access the dataset using these links.
+
+```{r math, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+*LIBNAME Math "~/my_shared_file_links/u48718377/Math";
+LIBNAME Math "../../../BMI552_Datasets/Math";
+
+TITLE1; TITLE2; 
+ODS NOPROCTITLE;
+
+DATA Math;
+  SET Math.Math;
+
+  Boy = Gender;
+
+  IF Grade NE . AND Boy NE . AND Socio NE .;
+
+  KEEP Grade Boy Socio;
+RUN;
+
+PROC PRINT DATA=Math (OBS=10);
+RUN;
+```
+
+We will explore the effects of socioeconomic status and gender on mathematics competency using proportional odds and cumulative probit ordinal regression models.  Given the relatively small effective sample size, we will use an additive model and represent the effect of socioeconomic status using a natural cubic spline with 2 df.
+
+# Proportional Odds (Ordinal Logistic) Regression
+
+The proportional odds (ordinal logistic) regression model for mathematics competency on socioeconomic status and gender is given by
+
+$$ y_i \sim \mbox{Multinomial}(1, p_i) \\
+p_i = (1-P_{2i}, P_{2i}-P_{3i}, P_{3i}-P_{4i}, P_{4i}-p_{5i}, P_{5i}) \\
+\mbox{logit}(P_{2i}) = \log\left(\frac{P_{2i}}{1-P_{2i}}\right) = \beta_{02} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i) \\
+\mbox{logit}(P_{3i}) = \log\left(\frac{P_{3i}}{1-P_{3i}}\right) = \beta_{03} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i)\\
+\mbox{logit}(P_{4i}) = \log\left(\frac{P_{4i}}{1-P_{4i}}\right) = \beta_{04} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i)\\
+\mbox{logit}(P_{5i}) = \log\left(\frac{P_{5i}}{1-P_{5i}}\right) = \beta_{05} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i)\\
+$$
+
+The following SAS code fits this model using PROC LOGISTIC.  This model can also be fit with PROC GLIMMIX by specifying the DIST=MULTINOMIAL and LINK=CUMLOGIT options in the MODEL statement. By default, SAS fits the model for $P(Y \leq j)$. We will use the DESCENDING option for Grade, the outcome variable, to obtain the model for $P(Y \geq j)$ specified above.
+
+```{r propodds1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+
+  STORE AdditivePropOdds;
+RUN;
+ODS SELECT ALL;
+```
+
+## Assessing the Validity of the Modeling Assumptions
+
+We can assess the validity of the usual assumptions of additivity and sufficient df for the splines using information criteria (AIC or BIC) in the usual way. 
+
+The effective sample size for an ordinal multinomial outcome with $k$ categories is $N - \frac{1}{N^2} \sum_{i=1}^k{n_i^3}$, where $n_i$ is the number of observations in category $i$ for $i = 1, 2, \ldots, k$ and $N$ is the total number of observations. For mathematics competency, the effective sample size is $250-1/250^2 (36^3+60^3+101^3+44^3+9^3) = 227.94 \approx 228$.
+
+```{r ess1, engine="sashtml5", engine.path=saspath}
+PROC FREQ DATA=Math;
+  ODS SELECT OneWayFreqs;
+  TABLES Grade ;
+RUN;
+```
+
+```{r check1, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF2;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF3;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(5 35 65 95) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF4;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=Interaction;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy SocioCS*Boy / LINK=LOGIT;
+RUN;
+
+DATA DF2;
+  SET DF2;
+  WHERE Test="Likelihood Ratio";
+  
+  Model = "SES 2df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF3;
+  SET DF3;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "SES 3df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF4;
+  SET DF4;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "SES 4df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA Interaction;
+  SET Interaction;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "Interaction";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA ModelComparisons;
+  LENGTH Model $20;
+
+  SET DF2 DF3 DF4 Interaction;
+    
+  KEEP Model DF AIC BIC;    
+RUN;
+
+PROC MEANS DATA=ModelComparisons MAX NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MaxIC MAX= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MaxIC;
+  SET ModelComparisons;
+    
+  AIC = AIC_Max - AIC;
+  BIC = BIC_Max - BIC;
+    
+  KEEP Model DF AIC BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (AIC/BIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model DF AIC BIC;  
+    
+  FORMAT AIC 6.1 BIC 6.1;
+RUN;
+TITLE;
+```
+
+Using BIC, our initial model is fairly decisively the best model; using AIC, the interaction model is only slightly better than our initial model.  There is little, if any, reason to question the validity of our structural model.
+
+We also need to consider the validity of the proportional odds assumption.  Normally, we would evaluate the validity of this assumption before proceeding to inference, but we will proceed with inference right now and revisit the validity of the proportional odds assumption later.
+
+## Estimated Odds Ratios
+
+Interval estimates for the odds ratios for higher mathematics compentency (at any cutpoint) comparing different socioeconomic status levels (adjusted for gender) or difference genders (adjusted for socioeconomic status) can be found using ESTIMATE statements.
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditivePropOdds;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Odds Ratios for SES Adjusted for Gender";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Label X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID TYPE=LOG LABEL="Odds Ratio";  /* specify log scale */
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+```
+
+Adjusted for gender, the odds ratios for higher mathematics competency (at any cutpoint) associated with a 1-point increase in socioeconomic status is $(0.78,2.63)$ for -1 v -2, $(0.91,2.33)$ for 0 v -1, $(1.18,2.03)$ for 1 v 0 and $(1.06,2.39)$ for 2 v 1.
+
+
+```{r inference2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditivePropOdds;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Odds Ratios for Gender Adjusted for SES";
+RUN;
+```
+
+Adjusted for socioeconomic status, the odds ratio for higher mathematics competency (at any cutpoint) is $(0.49,1.33)$ comparing boys to girls.
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) the main effect of socioeconomic status, (2) the main effect of gender and (3) linearity of the effect of socioeconomic status on the log odds can be performed in the usual way.
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy;
+
+  ODS OUTPUT GlobalTests=Full;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Socio Boy;
+
+  ODS OUTPUT GlobalTests=SocioLinear;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Boy;
+
+  ODS OUTPUT GlobalTests=GenderOnly;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS;
+
+  ODS OUTPUT GlobalTests=SocioOnly;
+RUN;
+
+DATA Full;
+  SET Full;
+
+  WHERE Test="Likelihood Ratio";
+  RENAME ChiSq=ChiSq_Full DF=DF_Full;
+RUN;
+
+DATA SocioLinear;
+  LENGTH Model $30 Test $30;
+  SET SocioLinear;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Linear SES";
+  Test = "Non-Linear SES";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA GenderOnly;
+  LENGTH Model $30 Test $30;
+  SET GenderOnly;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Gender Only";
+  Test = "Overall SES";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA SocioOnly;
+  LENGTH Model $30 Test $30;
+  SET SocioOnly;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Socio Only";
+  Test = "Overall Gender";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET SocioLinear GenderOnly SocioOnly;
+
+  Chisq = Chisq_Full-Chisq;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is strong evidence $(s \approx 10)$ of an effect of socioeconomic status on mathematics compentency, but there is no evidence $(s \approx 0.3)$ of non-linearity in the relationship between socioeconomic status and the log odds of higher mathematics competency.
+
+There is very weak evidence $(s \approx 1.5)$ of an effect of gender on mathematics competency.
+
+## Estimated (Cumulative) Probabilities
+
+Interval estimates of the probabilities of mathematics competency at or above cutpoint $X$ for any combination of socioeconomic status and gender can be obtained using ESTIMATE statements with the ILINK option in PROC PLM. The CATEGORY="$x$" option is used to specify the chosen cutpoint.
+
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditivePropOdds;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "5+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+RUN;
+ODS EXCLUDE NONE;
+
+DATA E;
+  SET E;
+
+  Response = SCAN(Label,1,",");
+  Gender = SCAN(Label,2,",");
+  Socio = SCAN(Label,3,",");
+RUN;
+
+PROC SORT DATA=E;
+  BY Gender Socio;
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Response LowerMu Mu UpperMu;
+  LABEL Response='00'x
+     LowerExp="Lower CL"
+     ExpEstimate="Estimate"
+     UpperExp="Upper CL";
+  BY Gender Socio;
+  FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+  TITLE "Probability";
+RUN;
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  PANELBY Gender Socio;
+  SCATTER Y=Response X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  ROWAXIS GRID LABEL="Grade" REVERSE;
+  COLAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA;
+RUN;
+TITLE;
+```
+
+Among girls with a socioeconomic status of -2, $(0.5\%,5.3\%)$ have mathematics competency of 5, $(4.4\%,26\%)$ have mathematics competency of 4 or 5, $(24\%,69\%)$ have mathematics competency of 3, 4 or 5, and $(54\%,90\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among girls with a socioeconomic status of +2, $(3.5\%,17\%)$ have mathematics competency of 5, $(26\%,55\%)$ have mathematics competency of 4 or 5, $(69\%,89\%)$ have mathematics competency of 3, 4 or 5, and $(89\%,97\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among boys with a socioeconomic status of -2, $(0.4\%,4.5\%)$ have mathematics competency of 5, $(3.5\%,23\%)$ have mathematics competency of 4 or 5, $(20\%,65\%)$ have mathematics competency of 3, 4 or 5, and $(48\%,87\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among boys with a socioeconomic status of +2, $(2.8\%,14\%)$ have mathematics competency of 5, $(21\%,50\%)$ have mathematics competency of 4 or 5, $(64\%,87\%)$ have mathematics competency of 3, 4 or 5, and $(86\%,96\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Point estimates of the probabilities for specific scores (4 rather than 4+) can be easily obtained from the estimated cumulative probabilities using standard probability calculations. It is more challenging to find confidence intervals, and the bootstrap is typically the best option.
+
+# Assessing the Validity of the Proportional Odds Assumption
+
+There are two approaches for assessing the validity of the proportional odds assumption.  It can be formally tested using a score test.  A global score test for non-proportionality in the effects of any (or all) of the covariates is automatically calculated by PROC LOGISTIC.
+
+
+```{r score1, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy;
+
+  ODS OUTPUT CumulativeModelTest=C;
+RUN;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Score Test for Proportional Odds Assumption";
+PROC PRINT DATA=C NOOBS;
+  VAR DF ChiSq ProbChiSq sValue;
+  LABEL DF='df'
+        ChiSq='Chi-Square'
+        ProbChiSq='p-value'
+        sValue='s-value';
+  FORMAT ChiSq 6.2 sValue 6.2;
+RUN;
+```
+
+There is weak evidence $(s \approx 3.5)$ against the proportional odds assumption.
+
+The validity of the proportional odds assumption can also be assessed informally by fitting the constituent ordinary logistic regression models and assessing the similarity (or lack of similarity) of the estimated odds ratios across the models.  If the proportional odds assumption holds, the estimated odds ratios are all noisy estimates of the same quantity.
+
+```{r consist1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA Math2;
+  SET Math;
+
+  IF Grade=1 THEN DO;
+      Grade2p = 0;
+      Grade3p = 0;
+      Grade4p = 0;
+      Grade5p = 0;
+      END;
+  ELSE IF Grade=2 THEN DO;
+      Grade2p = 1;
+      Grade3p = 0;
+      Grade4p = 0;
+      Grade5p = 0;
+      END;
+  ELSE IF Grade=3 THEN DO;
+      Grade2p = 1;
+      Grade3p = 1;
+      Grade4p = 0;
+      Grade5p = 0;
+      END;
+  ELSE IF Grade=4 THEN DO;
+      Grade2p = 1;
+      Grade3p = 1;
+      Grade4p = 1;
+      Grade5p = 0;
+      END;
+  ELSE IF Grade=5 THEN DO;
+      Grade2p = 1;
+      Grade3p = 1;
+      Grade4p = 1;
+      Grade5p = 1;
+      END;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math2;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade5p(EVENT="1") = SocioCS Boy / LINK=LOGIT;
+
+  STORE Grade5p;
+RUN;
+
+PROC LOGISTIC DATA=Math2;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade4p(EVENT="1") = SocioCS Boy / LINK=LOGIT;
+
+  STORE Grade4p;
+RUN;
+
+PROC LOGISTIC DATA=Math2;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade3p(EVENT="1") = SocioCS Boy / LINK=LOGIT;
+
+  STORE Grade3p;
+RUN;
+
+PROC LOGISTIC DATA=Math2;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade2p(EVENT="1") = SocioCS Boy / LINK=LOGIT;
+
+  STORE Grade2p;
+RUN;
+ODS SELECT ALL;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Grade5p;
+  ODS OUTPUT Estimates=E5;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E5;
+  LENGTH Response $30;
+  SET E5;
+
+  Response = "Grade 5+";
+RUN;
+
+PROC PLM RESTORE=Grade4p;
+  ODS OUTPUT Estimates=E4;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E4;
+  LENGTH Response $30;
+  SET E4;
+
+  Response = "Grade 4+";
+RUN;
+
+PROC PLM RESTORE=Grade3p;
+  ODS OUTPUT Estimates=E3;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E3;
+  LENGTH Response $30;
+  SET E3;
+
+  Response = "Grade 3+";
+RUN;
+
+PROC PLM RESTORE=Grade2p;
+  ODS OUTPUT Estimates=E2;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E2;
+  LENGTH Response $30;
+  SET E2;
+
+  Response = "Grade 2+";
+RUN;
+
+DATA E;
+  SET E5 E4 E3 E2;
+RUN;
+
+PROC SORT DATA=E;
+  BY Label Response;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Response LowerExp ExpEstimate UpperExp;
+  LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  BY Label;
+  TITLE "Odds Ratios for SES Adjusted for Gender";
+RUN;
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  PANELBY Label;
+  SCATTER Y=Response X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  COLAXIS GRID TYPE=LOG LABEL="Odds Ratio";  /* specify log scale */
+  ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA;
+RUN;
+TITLE;
+```
+The odds ratios for socioeconomic status are largely consistent regardless of the chosen cutpoint.
+
+```{r consist2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Grade5p;
+  ODS OUTPUT Estimates=E5;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E5;
+  LENGTH Response $30;
+  SET E5;
+
+  Response = "Grade 5+";
+RUN;
+
+PROC PLM RESTORE=Grade4p;
+  ODS OUTPUT Estimates=E4;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E4;
+  LENGTH Response $30;
+  SET E4;
+
+  Response = "Grade 4+";
+RUN;
+
+PROC PLM RESTORE=Grade3p;
+  ODS OUTPUT Estimates=E3;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E3;
+  LENGTH Response $30;
+  SET E3;
+
+  Response = "Grade 3+";
+RUN;
+
+PROC PLM RESTORE=Grade2p;
+  ODS OUTPUT Estimates=E2;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E2;
+  LENGTH Response $30;
+  SET E2;
+
+  Response = "Grade 2+";
+RUN;
+
+DATA E;
+  SET E5 E4 E3 E2;
+RUN;
+
+PROC SORT DATA=E;
+  BY Label Response;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Response LowerExp ExpEstimate UpperExp;
+  LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  BY Label;
+  TITLE "Odds Ratios for Gender Adjusted for SES";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Response X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID TYPE=LOG LABEL="Odds Ratio";  /* specify log scale */
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA;
+RUN;
+TITLE;
+```
+
+The odds ratios for gender are largely consistent regardless of the chosen cutpoint.
+
+The proportional odds assumption appears to be valid.
+
+# Ordinal Probit Regression
+
+The ordinal probit regression model for mathematics competency on socioeconomic status and gender is given by
+
+$$ y_i \sim \mbox{Multinomial}(1, p_i) \\
+p_i = (1-P_{2i}, P_{2i}-P_{3i}, P_{3i}-P_{4i}, P_{4i}-p_{5i}, P_{5i}) \\
+\Phi^{-1}(P_{2i}) = \beta_{02} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i) \\
+\Phi^{-1}(P_{3i}) = \beta_{03} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i) \\
+\Phi^{-1}(P_{4i}) =\beta_{04} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i) \\
+\Phi^{-1}(P_{5i}) =\beta_{05} + f_1(\mbox{SES}_i) + f_2(\mbox{gender}_i) \\
+$$
+
+The following SAS code fits the ordinal probit model using the LINK=PROBIT option in PROC LOGISTIC.  This model can also be fit with PROC GLIMMIX by specifying the DIST=MULTINOMIAL and LINK=CUMPROBIT options in the MODEL statement. By default, SAS fits the model for $P(Y \leq j)$. We will use the DESCENDING option for Grade, the outcome variable, to obtain the model for $P(Y \geq j)$ specified above.
+
+
+```{r probit1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+
+  STORE AdditiveOrdProb;
+RUN;
+ODS SELECT ALL;
+```
+
+## Assessing the Validity of the Modeling Assumptions
+
+We can assess the validity of the usual assumptions of additivity and sufficient df for the splines using information criteria (AIC or BIC) in the usual way. 
+
+```{r check2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF2;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF3;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(5 35 65 95) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=DF4;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  ODS OUTPUT GlobalTests=Interaction;
+ 
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy SocioCS*Boy / LINK=PROBIT;
+RUN;
+
+DATA DF2;
+  SET DF2;
+  WHERE Test="Likelihood Ratio";
+  
+  Model = "SES 2df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF3;
+  SET DF3;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "SES 3df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF4;
+  SET DF4;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "SES 4df";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA Interaction;
+  SET Interaction;
+  WHERE Test="Likelihood Ratio";
+    
+  Model = "Interaction";
+  AIC = ChiSq - 2*(DF+4);
+  BIC = ChiSq - LOG(228)*(DF+4);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA ModelComparisons;
+  LENGTH Model $20;
+
+  SET DF2 DF3 DF4 Interaction;
+    
+  KEEP Model DF AIC BIC;    
+RUN;
+
+PROC MEANS DATA=ModelComparisons MAX NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MaxIC MAX= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MaxIC;
+  SET ModelComparisons;
+    
+  AIC = AIC_Max - AIC;
+  BIC = BIC_Max - BIC;
+    
+  KEEP Model DF AIC BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (AIC/BIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model DF AIC BIC;  
+    
+  FORMAT AIC 6.1 BIC 6.1;
+RUN;
+TITLE;
+```
+
+Using BIC, our initial model is fairly decisively the best model; using AIC, the interaction model is only slightly better than our initial model.  There is little, if any, reason to question the validity of our structural model.
+
+The validity of the common coefficients assumption for ordinal probit regression (equivalent to the proportional odds assumption for ordinal logistic regression) can be assessed formally using a score test. A global score test for different effects of any (or all) of the covariates across cutpoints is automatically calculated by PROC LOGISTIC. 
+
+```{r score2, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+
+  ODS OUTPUT CumulativeModelTest=C;
+RUN;
+ODS SELECT ALL;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Score Test for Common Coefficients";
+PROC PRINT DATA=C NOOBS;
+  VAR DF ChiSq ProbChiSq sValue;
+  LABEL DF='df'
+        ChiSq='Chi-Square'
+        ProbChiSq='p-value'
+        sValue='s-value';
+  FORMAT ChiSq 6.2 sValue 6.2;
+RUN;
+TITLE;
+```
+
+There is weak evidence $(s \approx 3.5)$ against the common coefficients assumption.
+
+The validity of the common coefficients assumption can also be assessed informally by fitting the constituent ordinary probit regression models and assessing the similarity (or lack of similarity) of the estimated coefficients across the models.  If the common coefficients assumption holds, the estimated regression coefficients are all noisy estimates of the same quantity. 
+
+
+## Estimated Probit (Latent Mean) Differences
+
+Interval estimates for latent mean (or probit) differences in mathematics compentency (at any cutpoint) comparing different socioeconomic status levels (adjusted for gender) or difference genders (adjusted for socioeconomic status) can be found using ESTIMATE statements. (Note that there is no reason to exponentiate or otherwise transform the probit coefficients.)
+
+```{r inference5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditiveOrdProb;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x
+      Lower="Lower CL"
+      Estimate="Estimate"
+      Upper="Upper CL";
+  FORMAT Lower 6.3 Estimate 6.3 Upper 6.3;
+  TITLE "Latent Mean Difference for SES Adjusted for Gender";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Label X=Estimate / XERRORLOWER=Lower XERRORUPPER=Upper
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID LABEL="Latent Mean Difference";
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+```
+After adjustment for gender, latent mean differences in mathematics competency associated with a 1-unit difference in socioeconomic status are $(-0.14,0.57)$ for -1 v -2, $(-0.06,0.49)$ for 0 v -1, $(0.08,0.39)$ for 1 v 0, and $(0.00,0.47)$
+for 2 v 1.
+
+```{r inference6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditiveOrdProb;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Boys v Girls" Boy [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x
+        Lower="Lower CL"
+        Estimate="Estimate"
+        Upper="Upper CL";
+  FORMAT Lower 6.3 Estimate 6.3 Upper 6.3;
+  TITLE "Latent Mean Difference for Gender Adjusted for SES";
+RUN;
+```
+
+After adjustment for socioeconomic status, the latent mean difference in mathematics competency is $(-0.40,0.18)$ comapring boys to girls.
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) the main effect of socioeconomic status, (2) the main effect of gender and (3) linearity of the effect of socioeconomic status on the log odds can be performed in the usual way.
+
+```{r inference7, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=PROBIT;
+
+  ODS OUTPUT GlobalTests=Full;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Socio Boy / LINK=PROBIT;
+
+  ODS OUTPUT GlobalTests=SocioLinear;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Boy / LINK=PROBIT;
+
+  ODS OUTPUT GlobalTests=GenderOnly;
+RUN;
+
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS / LINK=PROBIT;
+
+  ODS OUTPUT GlobalTests=SocioOnly;
+RUN;
+
+DATA Full;
+  SET Full;
+
+  WHERE Test="Likelihood Ratio";
+  RENAME ChiSq=ChiSq_Full DF=DF_Full;
+RUN;
+
+DATA SocioLinear;
+  LENGTH Model $30 Test $30;
+  SET SocioLinear;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Linear SES";
+  Test = "Non-Linear SES";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA GenderOnly;
+  LENGTH Model $30 Test $30;
+  SET GenderOnly;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Gender Only";
+  Test = "Overall SES";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA SocioOnly;
+  LENGTH Model $30 Test $30;
+  SET SocioOnly;
+
+  WHERE Test="Likelihood Ratio";
+
+  Model = "Socio Only";
+  Test = "Overall Gender";
+
+  KEEP Model Test ChiSq DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET SocioLinear GenderOnly SocioOnly;
+
+  Chisq = Chisq_Full-Chisq;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is strong evidence $(s \approx 12)$ of an effect of socioeconomic status on mathematics compentency, but there is no evidence $(s \approx 0.1)$ of non-linearity in the relationship between socioeconomic status and the latent mean mathematics competency.
+
+There is very weak evidence $(s \approx 1.3)$ of an effect of gender on mathematics competency.
+
+## Estimated (Cumulative) Probabilities
+
+Interval estimates of the probabilities of mathematics competency at or above cutpoint $X$ for any combination of socioeconomic status and gender can be obtained using ESTIMATE statements with the ILINK option in PROC PLM. The CATEGORY="$x$" option is used to specify the chosen cutpoint.
+
+```{r inference8, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AdditiveOrdProb;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "5+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, 2" Intercept 1 Boy[1, 2] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, 0" Intercept 1 Boy[1, 2] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Male, -2" Intercept 1 Boy[1, 2] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, 2" Intercept 1 Boy[1, 1] SocioCS [1, 2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, 0" Intercept 1 Boy[1, 1] SocioCS [1, 0] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+
+  ESTIMATE "5+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="5";
+  ESTIMATE "4+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="4";
+  ESTIMATE "3+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="3";
+  ESTIMATE "2+, Female, -2" Intercept 1 Boy[1, 1] SocioCS [1, -2] /
+      CL ILINK ALPHA=0.03125 CATEGORY="2";
+RUN;
+ODS EXCLUDE NONE;
+
+DATA E;
+  SET E;
+
+  Response = SCAN(Label,1,",");
+  Gender = SCAN(Label,2,",");
+  Socio = SCAN(Label,3,",");
+RUN;
+
+PROC SORT DATA=E;
+  BY Gender Socio;
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Response LowerMu Mu UpperMu;
+  LABEL Response='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  BY Gender Socio;
+  FORMAT LowerMu 6.3 Mu 6.3 UpperMu 6.3;
+  TITLE "Probability";
+RUN;
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  PANELBY Gender Socio;
+  SCATTER Y=Response X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+         MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+         ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  ROWAXIS GRID LABEL="Grade" REVERSE;
+  COLAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA;
+RUN;
+TITLE;
+```
+
+Among girls with a socioeconomic status of -2, $(0.2\%,5.3\%)$ have mathematics competency of 5, $(3.5\%,26\%)$ have mathematics competency of 4 or 5, $(26\%,68\%)$ have mathematics competency of 3, 4 or 5, and $(55\%,90\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among girls with a socioeconomic status of +2, $(3.6\%,18\%)$ have mathematics competency of 5, $(24\%,52\%)$ have mathematics competency of 4 or 5, $(67\%,88\%)$ have mathematics competency of 3, 4 or 5, and $(88\%,98\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among boys with a socioeconomic status of -2, $(0.1\%,4.4\%)$ have mathematics competency of 5, $(2.6\%,23\%)$ have mathematics competency of 4 or 5, $(22\%,65\%)$ have mathematics competency of 3, 4 or 5, and $(50\%,88\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Among boys with a socioeconomic status of +2, $(2.7\%,15\%)$ have mathematics competency of 5, $(20\%,48\%)$ have mathematics competency of 4 or 5, $(62\%,86\%)$ have mathematics competency of 3, 4 or 5, and $(86\%,97\%)$ have mathematics comptency of 2, 3, 4 or 5.
+
+Point estimates of the probabilities for specific scores (4 rather than 4+) can be easily obtained from the estimated cumulative probabilities using standard probability calculations. It is more challenging to find confidence intervals, and the bootstrap is typically the best option.
+
+
+# Which Model (Proportional Odds or Ordinal Probit) Should I Use?
+
+In practice, the proportional odds model and the ordinal probit model are virtually identical. It would require a truly enormous amount of data to distinguish between them.  The reason to choose one of these models over the other is the ease of interpretation.  Use the proportional odds model when expressing the effect of covariates as odds ratios makes more sense, and use the ordinal probit model when expressing the effect of covariates as latent mean differences makes more sense.
+
+# Recommended Practice (Ordinal Logistic Regression)
+
+```{r practice1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+*LIBNAME Math "~/my_shared_file_links/u48718377/Math";
+LIBNAME Math "../../../BMI552_Datasets/Math";
+
+TITLE1; TITLE2; 
+ODS NOPROCTITLE;
+
+DATA Math;
+  SET Math.Math;
+
+  Boy = Gender;
+
+  IF Grade NE . AND Boy NE . AND Socio NE .;
+
+  KEEP Grade Boy Socio;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+
+  STORE Initial;
+RUN;
+ODS SELECT ALL;
+```
+
+For model checking, we would recommend comparisons with the model with the interaction between SES and gender and a model with additional df for SES using BIC.
+
+```{r practice2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Additive";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Interactive";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy SocioCS*Boy / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Socio +1df";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(5 35 65 95) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+```{r ess2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  ESS = 250 - 1/(250**2)*(36**3+60**3+101**3+44**3+9**3);
+RUN;
+
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+```
+
+```{r calc11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  LENGTH Model $50;
+
+  BIC_Initial = 691.457 + LOG(227.938)*7;
+
+  Model = "Initial";    
+  BIC_Model = 691.457 + LOG(227.938)*7;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial + S*G";    
+  BIC_Model = 687.104 + LOG(227.938)*9;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial + 1df for S";    
+  BIC_Model = 690.627 + LOG(227.938)*8;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  KEEP Model BIC_Model Delta_BIC;   
+RUN;
+
+TITLE "BIC Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+The proportional odds assumption can be assessed using the score test.
+
+```{r score3, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Math;
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy;
+
+  ODS OUTPUT CumulativeModelTest=C;
+RUN;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbChiSq)/LOG(2);
+  Delta_BIC = ChiSq - LOG(227.938)*DF;
+
+  KEEP DF ChiSq ProbChiSq sValue Delta_BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Score Test for Proportional Odds Assumption";
+PROC PRINT DATA=C NOOBS;
+  VAR DF ChiSq ProbChiSq sValue Delta_BIC;
+  LABEL DF='df'
+        ChiSq='Chi-Square'
+        ProbChiSq='p-value'
+        sValue='s-value'
+        Delta_BIC="~BIC";
+  FORMAT ChiSq 6.2 sValue 6.2 Delta_BIC 6.2;
+RUN;
+```
+
+Based on these results, the initial model appears to be adequate.
+
+If (partial) likelihood ratio tests required, you should fit the relevant models to get the log-likelihoods and calculate the test statistics (and $p$-values) by hand.
+
+```{r practice3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Additive";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = SocioCS Boy / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Socio Linear";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Socio Boy / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Gender Only";
+PROC LOGISTIC DATA=Math;
+  ODS SELECT FitStatistics;
+
+  CLASS Boy;
+  EFFECT SocioCS=SPLINE(Socio /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+
+  MODEL Grade(DESCENDING) = Boy / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+```{r calc13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 691.517;
+    Minus2LL1 = 691.457;
+
+    df0 = 6;
+    df1 = 7;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Non-Linearity of Socio";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+
+DATA Calculator;
+    Minus2LL0 = 705.407;
+    Minus2LL1 = 691.457;
+
+    df0 = 5;
+    df1 = 7;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Socio Overall";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+The likelihood ratio test statistic for any *effect* of socio is $13.95 = 705.402-691.457$ on 2 df, the $p$-value is $0.0009$, and the $s$-value is $10.1$.  The likelihood ratio test statistic for *non-linear effects* of socio is $0.06 = 691.519-691.457$ on 1 df, the $p$-value is $0.81$, and the $s$-value is $0.3$. 
+
+```{r practice4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Initial;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Socio -1 v -2" SocioCS [1, -1] [-1, -2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  0 v -1" SocioCS [1,  0] [-1, -1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  1 v  0" SocioCS [1,  1] [-1,  0] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Socio  2 v  1" SocioCS [1,  2] [-1,  1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Odds Ratios for SES Adjusted for Gender";
+RUN;
+TITLE;
+```

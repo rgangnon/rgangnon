@@ -1,0 +1,485 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Binary Predictor
+
+There are two major types of predictor variables, *quantitative* and *categorical*. A quantitative variable is naturally measured as a number for which meaningful arithmetic operations (addition, subtraction, $\ldots$) make sense. Any variable that is not quantitative is categorical. 
+
+Categorical variables take a value that is one of several possible categories. As naturally measured, categorical variables have no numerical meaning. An *ordinal* variable is a special type of categorical variable in which the levels can be naturally ordered. In certain situations, it can be useful to treat a quantitative variable as a categorical (or ordinal) variable, but never the reverse. 
+
+Categorical (or quantitative) predictors with two levels are often called *dichotomous* or *binary*. Binary predictors are extremely common in health research (men vs. women, active drug vs. placebo, $\ldots$). 
+
+# Logistic Regression Model
+
+For illustration, we will develop a logistic regression model for obesity as a function of gender (sex) for the US population. 
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the gender (sex) for subject $i$ by $x_i$. The probability (prevalence) of obesity, $p_i = p(x_i)$, takes on two values, $p(\mbox{male})$ and $p(\mbox{female})$. Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{female})$$
+
+In a logistic regression model, we express the relationship between the probability of the outcome and the predictor variable in terms of the *log odds (or logit)* of the outcome.  
+$$\mbox{logit}~{p_i} = \log{\frac{p_i}{1-p_i}} = \log{\mbox{odds}_i} = \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{female})$$
+where the *indicator function* $\textbf{1}(A)$ takes value 1 if $A$ is true and value 0 if $A$ is false. In this case, $\textbf{1}(x_i = \mbox{female})$, which takes value 1 if subject $i$ is a female and value 0 if subject $i$ is a male, is the *indicator (or dummy) variable* for female. 
+
+Under this model, for males, the log odds of obesity is 
+$$ \mbox{logit}\left\{p(\mbox{male})\right\} = \log{\mbox{odds}(\mbox{male})} =  \log{\left\{\frac{p(\mbox{male})}{1-p(\mbox{male})}\right\}} = \beta_0$$
+the odds of obesity is
+$$ \mbox{odds}(\mbox{male}) = \frac{p(\mbox{male})}{1-p(\mbox{male})} = e^{\beta_0}$$
+and the probability of obesity is
+$$ p(\mbox{male}) = \frac{\mbox{odds}(\mbox{male})}{1+\mbox{odds}(\mbox{male})} =\frac{e^{\beta_0}}{1+e^{\beta_0}} = \frac{1}{1+e^{-\beta_0}}$$
+For females, the log odds of obesity is 
+$$ \mbox{logit}\left\{p(\mbox{female})\right\} = \log{\mbox{odds}(\mbox{female})} =\log{\left\{\frac{p(\mbox{female})}{1-p(\mbox{female})}\right\}} = \beta_0 + \beta_1$$
+the odds of obesity are
+$$ \mbox{odds}(\mbox{female}) = \frac{p(\mbox{female})}{1-p(\mbox{female})} = e^{\beta_0+\beta_1}$$
+and the probability of obesity is
+$$ p(\mbox{female}) = \frac{\mbox{odds}(\mbox{female})}{1+\mbox{odds}(\mbox{female})} =\frac{e^{\beta_0+\beta_1}}{1+e^{\beta_0+\beta_1}} = \frac{1}{1+e^{-(\beta_0+\beta_1)}}$$
+The odds ratio $e^{\beta_1}$ is the natural measure of effect
+$$e^{\beta_1} = \mbox{OR} = \frac{\mbox{odds}(\mbox{female})}{\mbox{odds}(\mbox{male})} = \frac{\frac{p(\mbox{female})}{1-p(\mbox{female})}}{\frac{p(\mbox{male})}{1-p(\mbox{male})}}$$
+The regression coefficient for the female indicator variable $\beta_1$ is the difference in log odds (or log odds ratio) between females and males 
+$$ \beta_1 = \mbox{logit}\left\{p(\mbox{female})\right\} - \mbox{logit}\left\{p(\mbox{male})\right\} = \log{\left\{\frac{p(\mbox{female})}{1-p(\mbox{female})}\right\}} - \log{\left\{\frac{p(\mbox{male})}{1-p(\mbox{male})}\right\}} $$
+
+# Logistic Regression Estimates (Explicit Formulas)
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+ 
+PROC FREQ DATA=Ron;
+  ODS SELECT CrossTabFreqs;
+  TABLE Gender*Obese / NOPERCENT NOROW NOCOL MISSING;
+RUN;
+```
+
+The maximum likelihood estimates of regression coefficients are $\hat{\beta}_0 = -0.5726$ and $\hat{\beta}_1 = -0.0204$.  Both estimates can be easily found from the sample odds (or proportions) for the two groups. For males, the sample odds are $1281/2271 = 0.5640$ (proportion is $1281/3552 = 0.3606$); for females, the sample odds are $1311/2372 = 0.5527$ (proportion is $1311/3683 = 0.3560$). 
+
+The estimated intercept is the log odds for males $\hat{\beta}_0 = \log{0.5640} = -0.5726$, and the estimated slope is the log odds ratio for females compared to males $\hat{\beta}_1 = \log{0.5527} - \log{0.5726} = -0.0204$.
+
+Before proceeding to inference, we should evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which automatically holds for a single binary/categorical predictor) and independence (which cannot be evaluated based on the observed data).
+
+The standard error for a sample proportion $\hat{p} = \frac{y}{n}$ is given by the formula $$\mbox{SE}(\hat{p}) = \sqrt{\frac{p(1-p)}{n}}$$
+while the (approximate) standard error for the sample log odds $\log{\frac{p}{1-p}}$ is given by the formula 
+$$\mbox{SE}\left(\log{\frac{\hat{p}}{1-\hat{p}}}\right) = \sqrt{\frac{1}{np}+\frac{1}{n(1-p)}}$$
+From these formulas, one can easily find the standard errors for the regression intercept and slope (replacing the unknown proportions with their point estimates):
+$$\mbox{SE}\left(\hat{\beta}_0\right) = \sqrt{\frac{1}{1281}+\frac{1}{2271}} = 0.0349$$
+and 
+$$\mbox{SE}\left(\hat{\beta}_1\right) = \sqrt{\frac{1}{1311}+\frac{1}{2372}+\frac{1}{1281}+\frac{1}{2271}} = 0.0490$$
+
+Wald confidence intervals for the regression intercept and slope are obtained using the usual formulas
+$$\hat{\beta}_0 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_0\right)$$
+and
+$$\hat{\beta}_1 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_1\right)$$
+
+# Logistic Regression Estimates (SAS)
+
+Estimates of the regression parameters $\beta_0$ and $\beta_1$, their estimated standard errors and Wald confidence intervals can be found using PROC LOGISTIC in SAS.
+
+```{r example2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ParemeterEstimates CLParmWald;
+  CLASS Gender(REF="Male") / PARAM=REF;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=WALD ALPHA=0.03125; 
+RUN;
+```
+
+Profile likelihood confidence intervals for the regression parameters $\beta_0$ and $\beta_1$ can be obtained using the CLPARM=PL option.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT CLParmPL;
+  CLASS Gender(REF="Male") / PARAM=REF;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=PL ALPHA=0.03125; 
+RUN;
+```
+
+More generally, ESTIMATE statements can be used to obtain Wald confidence intervals (which should always be calculated on the log odds scale) for linear functions of the regression coefficients. For reporting, the confidence intervals on the log odds scale should be transformed to obtain confidence intervals for odds ratios (for comparisons) or probabilities (for specific groups).
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT Estimates;
+  CLASS Gender(REF="Male") / PARAM=REF;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT; 
+    
+  ESTIMATE "Male" Intercept 1 Gender 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender 1 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender 1 / CL EXP ALPHA=0.03125;
+RUN;
+```
+
+The 96.875\% CI for the probability of obesity for males is $(0.3435,0.3782)$, the 96.875\% CI for the estimated probability of obesity for females is $(0.3392,0.3731)$, and the 96.875\% CI for the odds ratio comparing females to males is $(0.8816,1.0890)$.
+
+# Alternative Parameterization using Male Dummy Variable
+
+So far, we have chosen to express our logistic regression function in terms of the indicator variable for female
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{female})$$
+We could just as easily expressed our logistic regression function in terms of the indicator variable for male
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \gamma_0 + \gamma_1 \textbf{1}(x_i = \mbox{male})$$
+There is no substantive difference between these two expressions for the model. In the first version, the two regression coefficients are the log odds for males ($\beta_0$) and the log odds ratio for females compared to males ($\beta_1$).  In the second version, the two regression coefficients are the log odds for females ($\gamma_0$) and the log odds ratio for males compared to females ($\gamma_1$).  It follows that $\gamma_1 = - \beta_1$, $\gamma_0 = \beta_0 + \beta_1$ and $\beta_0 = \gamma_0 + \gamma_1$. The choice of baseline category does not meaningfully alter the model in any way. Meaningful inferences from either specification of the model will be identical.
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT CLParmWald Estimates;
+  CLASS Gender(REF="Female") / PARAM=REF;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=BOTH ALPHA=0.03125; 
+    
+  ESTIMATE "Male" Intercept 1 Gender 1 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Male v Female" Gender 1 / CL EXP ALPHA=0.03125;
+RUN;
+```
+
+# Overparameterized Model
+
+It is also possible to express the logistic regression function in terms of both indicator variables
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \alpha_0 + \alpha_1 \textbf{1}(x_i = \mbox{male}) + \alpha_2 \textbf{1}(x_i = \mbox{female})$$
+This is an example of an *overparameterized* model; the model uses three parameters $\alpha_0, \alpha_1$ and $\alpha_2$ to represent two probabilities $p(\mbox{male})$ and $p(\mbox{female})$. The advantage of the overparameterized model is the symmetric treatment of the two levels of our binary predictor.  In our original formulation of the model, our representation for $\mbox{logit}\left\{p(\mbox{male})\right\} = \beta_0$ uses only one parameter, while our representation for $\mbox{logit}\left\{p(\mbox{female})\right\} = \beta_0 + \beta_1$ uses two parameters. In the overparameterized version, both representations use two parameters, $\mbox{logit}\left\{p(\mbox{male})\right\} = \alpha_0 + \alpha_1$ and $\mbox{logit}\left\{p(\mbox{female})\right\} = \alpha_0 + \alpha_2$. Estimation of the overparameterized model requires the imposition of an arbitrary identifiability constraint on the parameters. In SAS, one can use the PARAM=GLM option in the CLASS statement to use the overparameterized model.
+
+```{r example6, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ParameterEstimates CLParmWald Estimates;
+  CLASS Gender / PARAM=GLM ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=BOTH ALPHA=0.03125; 
+    
+  ESTIMATE "Male" Intercept 1 Gender 1 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender 0 1 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Male v Female" Gender 1 -1 / CL EXP ALPHA=0.03125;
+RUN;
+```
+
+# Non-Positional Syntax
+
+Traditionally, ESTIMATE statements in SAS use positional syntax to specify quantity of interest. The specification of a particular effect in positional syntax depends on the chosen parameterization. Currently, ESTIMATE statements in some SAS procedures can also use non-positional syntax.  A key advantage of non-positional syntax is that the same specification can be used for the quantity of interest regardless of the chosen parameterization. 
+
+The STORE statement in PROC LOGISTIC (and other SAS regression procedures) saves the context and results of the statistical analysis.  The contents of the stored model can be processed using PROC PLM. By saving the results of the ESTIMATE statements in a SAS dataset, we can present only the relevant pieces of the SAS output.
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender / PARAM=GLM ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT; 
+
+  STORE Overparam;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender(REF="Male") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT; 
+
+  STORE FemaleDummy;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender(REF="Female") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT; 
+
+  STORE MaleDummy;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r example8, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Overparam;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male" Intercept 1 Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Overparameterized Model)";
+RUN;
+TITLE;
+```
+
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleDummy;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male" Intercept 1 Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Female Dummy)";
+RUN;
+TITLE;
+```
+
+```{r example10, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MaleDummy;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male" Intercept 1 Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Male Dummy)";
+RUN;
+TITLE;
+```
+
+```{r example11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Overparam;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male v Female" Gender [1, 1] [-1, 2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Overparameterized Model";
+RUN;
+TITLE;
+```
+
+
+```{r example12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleDummy;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male v Female" Gender [1, 1] [-1, 2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Female Dummy)";
+RUN;
+TITLE;
+```
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MaleDummy;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male v Female" Gender [1, 1] [-1, 2] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Male Dummy)";
+RUN;
+TITLE;
+```
+
+# Recommended Practice
+
+In these lecture notes, we've illustrated many of the (equivalent) options for parameterizing and interacting with (logistic) regression models with a single binary predictor variable.  In practice, we would recommend the reference parameterization (PARAM=REF) with your choice of reference level (there is no right or wrong choice for a reference level) and interacting with the model primarily using PROC PLM with the non-positional syntax. An example of the typical code follows.
+
+
+```{r example14, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender(REF="Male") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT; 
+
+  STORE Gender;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r example15, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Gender;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+```{r example17, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Gender;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Male" Intercept 1 Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Female" Intercept 1 Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence";
+RUN;
+TITLE;
+```
+
+If profile likelihood intervals are required for the odds ratio (or prevalence), which is rare, you would obtain them directly from PROC LOGISTIC.  
+
+```{r example18, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT CLParmPL=E;
+  CLASS Gender(REF="Male") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=PL ALPHA=0.03125; 
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  WHERE Parameter="Gender";
+
+  Label = "Female v Male";
+
+  ExpEstimate= EXP(Estimate);
+  LowerExp = EXP(LowerCL);
+  UpperExp = EXP(UpperCL);
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;  
+```
+
+```{r example19, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT CLParmPL=E;
+  CLASS Gender(REF="Male") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=PL; 
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  WHERE Parameter="Intercept";
+
+  Label = "Male";
+
+  Mu = 1/(1+EXP(-Estimate));
+  LowerMu = 1/(1+EXP(-LowerCL));
+  UpperMu = 1/(1+EXP(-UpperCL));
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence";
+RUN;
+TITLE; 
+```
+
+```{r example20, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT CLParmPL=E;
+  CLASS Gender(REF="Female") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender / LINK=LOGIT CLPARM=PL; 
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  WHERE Parameter="Intercept";
+
+  Label = "Female";
+
+  Mu = 1/(1+EXP(-Estimate));
+  LowerMu = 1/(1+EXP(-LowerCL));
+  UpperMu = 1/(1+EXP(-UpperCL));
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence";
+RUN;
+TITLE; 
+```

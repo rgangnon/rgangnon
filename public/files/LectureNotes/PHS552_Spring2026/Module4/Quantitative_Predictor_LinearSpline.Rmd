@@ -1,0 +1,613 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Spline Regression
+
+A *draftman's spline* is a flexible strip of metal or rubber used to draw curves. *Spline* functions are *piecewise polynomials* used in curve fitting. *Splines* are polynomial functions within intervals of $x$ with *smooth* transitions between intervals. Splines have been widely used to approximate a wide variety of functions. Although splines can be constructed using polynomials of any degree, we will only discuss *linear splines* (degree 1) and *(natural) cubic splines* (degree 3).
+
+
+### Linear Spline Regression
+
+The simplest spline function is the *linear spline* function, a (continuous) piecewise linear function. Suppose the $x$ axis is divided into $k$ intervals with endpoints at $\eta_1 < \eta_2 < \ldots < \eta_{k-1}$ called *knots*. The *linear spline* function is given by
+$$\beta_0 + \beta_1 x + \beta_2 (x-\eta_1)_+ + \beta_3 (x-\eta_2)_+ + \ldots + \beta_{k-1} (x-\eta_{k-2})_+ + \beta_k (x-\eta_{k-1})_+$$
+where $(u)_+ = \max(0,u)$. 
+On each of the $k$ intervals, the linear spline is a straight line, but the slopes of the lines differ across intervals. The slopes (by interval) are
+$$
+\begin{eqnarray*}
+\beta_1 & ~~\mbox{if}~~ & x < \eta_1 \\
+\beta_1 + \beta_2 & ~~\mbox{if}~~ & \eta_1 < x < \eta_2 \\
+& \vdots & \\
+\beta_1 + \beta_2 + \ldots + \beta_{k-1} & ~~\mbox{if}~~ & \eta_{k-2} < x < \eta_{k-1} \\
+\beta_1 + \beta_2 + \ldots + \beta_{k-1} + \beta_{k} & ~~\mbox{if}~~ & x > \eta_{k-1} \\
+\end{eqnarray*}
+$$
+
+The number $k-1$ and locations $\eta_1, \eta_2, \ldots, \eta_{k-1}$ of the knots are assumed to be known (if not, the knot locations are unknown parameters and the model is no longer linear). The number of knots can vary based on the amount of available data for fitting the model. If possible, the knot locations should be chosen based on substantive knowledge of the application. If not, placing knots at equally-spaced quantiles (percentiles) of the (marginal) distribution of the predictor usually works fairly well. 
+
+For a linear spline regression model with $k-1$ knots (or $k$ degrees of freedom/parameters), the overall test for the covariate $x$ ($H_0: \beta_1 = \beta_2 = \ldots = \beta_k = 0$) and the partial test for linearity ($H_0: \beta_2 = \beta_3 = \ldots = \beta_k = 0$) are always interesting. If the knot locations are based on substantive knowledge, additional tests for equality of (adjacent) slopes may be of scientific interest.
+
+To illustrate a linear spline regression model, we will construct a logistic regression model for obesity as a function of age for the US adult (age 20-80) population.
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the age for subject $i$ by $x_i$. 
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 x + \beta_2 (x-35)_+ + \beta_3 (x-50)_+ + \beta_4 (x-65)_+$$
+
+The EQUAL(3) option in the EFFECT statement was used to place knots at three equally-spaced values between the minimum (20) and maximum (80) ages in the dataset.
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+
+DATA AllAges;
+  DO Age = 20 TO 80 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  CLASS Age;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;
+
+  STORE Categorical;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  EFFECT AgeLS=SPLINE(Age / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=EQUAL(3));
+  MODEL Obese(Event="Yes") = AgeLS / LINK=LOGIT;
+    
+  OUTPUT OUT=Tmp RESCHI=Residual PREDICTED=Fitted; 
+    
+  STORE LinearSpline;
+RUN;
+
+PROC PLM RESTORE=Categorical;
+    SCORE DATA=AllAges OUT=FItted1 Predicted=Categorical / ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=LinearSpline;
+    SCORE DATA=AllAges OUT=Fitted2 Predicted=LinearSpline / ALPHA=0.03125;
+RUN;
+
+DATA Fitted;
+  MERGE Fitted1 Fitted2;
+  BY Age;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+  SERIES X=Age Y=Categorical / LINEATTRS=(PATTERN=Solid) LEGENDLABEL="Age (Categorical)";
+  SERIES X=Age Y=LinearSpline / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid) LEGENDLABEL="Age (Linear Spline)";
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+# Assessing Adequacy of Modeling Assumptions
+
+Before proceeding to inference, we should evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model and independence (which cannot be evaluated based on the observed data).  Potential violations of the correct structural model assumption can be assessed formally by fitting linear splines with additional knots or informally using plots of the Pearson residuals $r_i = \frac{y_i - \hat{p}_i}{\sqrt{\hat{p}_i(1-\hat{p}_i)}}$ against the predictor variable $x_i$. In binary regression, it is essential to add a *scatterplot smoother* as a *plot enhancement* to identify any structural problems with the model.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=Age Y=Residual / DEGREE=2 JITTER; 
+  REFLINE 0 / AXIS=Y;
+RUN;
+```
+
+The lack of any clear pattern in this plot suggests that the correct structural model assumption is not violated.
+
+# Regression Coefficient Estimates (SAS)
+
+Estimates of the regression parameters and their estimated standard errors are easily obtained in SAS.  Unlike the regression coefficients of a polynomial regression model, the regression coefficients of a linear spline regression model have a clear and potential meaningful interpretation.  $\beta_1$ is the regression slope (log odds ratio) for a 1 year difference in age prior to the first knot; $\beta_2, \beta_3, \beta_4$ are the differences between adjacent regression slopes or differences in log odds ratios. 
+
+```{r coefs, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC PLM RESTORE=LinearSpline;
+  ODS SELECT ParameterEstimates;
+  SHOW Parms;
+RUN;
+```
+
+# Estimates of Probabilties
+
+Using ESTIMATE statements, one can specify desired estimates using positional syntax.  For example, the log odds for obesity at age 40 is given by $$\beta_0 + \beta_1 40 + \beta_2 (40-35)_+ + \beta_3 (40-50)_+ + \beta_4 (40-65)_+$$ or $$\beta_0 + 40 \beta_1 + 5 \beta_2 + 0 \beta_3 + 0 \beta_4$$
+the log odds for obesity at age 50 is given by $$\beta_0 + \beta_1 50 + \beta_2 (50-35)_+ + \beta_3 (50-50)_+ + \beta_4 (50-65)_+$$ or $$\beta_0 + 50 \beta_1 + 15 \beta_2 + 0 \beta_3 + 0 \beta_4$$
+and the log odds for obesity at age 60 is given by $$\beta_0 + \beta_1 60 + \beta_2 (60-35)_+ + \beta_3 (60-50)_+ + \beta_4 (60-655)_+$$ or  $$\beta_0 + 60 \beta_1 + 25 \beta_2 + 10 \beta_3 + 0 \beta_4$$
+
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC PLM RESTORE=LinearSpline;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Age 40" Intercept 1 AgeLS 40 5 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 50" Intercept 1 AgeLS 50 15 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 60" Intercept 1 AgeLS 60 25 10 0 / CL ILINK ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+Using ESTIMATE statements, one can more easily specify desired estimates using non-positional syntax. Using non-positional syntax, SAS will calculate all of the polynomial terms required to estimate the log odds for a given age automatically.
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC PLM RESTORE=LinearSpline;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Age 30" Intercept 1 AgeLS [1, 30] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 40" Intercept 1 AgeLS [1, 40] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 50" Intercept 1 AgeLS [1, 50] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 60" Intercept 1 AgeLS [1, 60] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 70" Intercept 1 AgeLS [1, 70] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 80" Intercept 1 AgeLS [1, 80] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+
+The estimated prevalence of obesity is $(0.328,0.368)$ for 30 year olds, $(0.360,0.402)$ for 40 year olds, $(0.326,0.386)$ for 50 year olds, $(0.375,0.423)$ for 60 year olds, $(0.352,0.403)$ for 70 year olds and $(0.255,0.339)$ for 80 year olds.
+
+# Estimates of Odds Ratios
+
+Using positional syntax, we can also obtain estimates for log odds ratios comparing two different ages.  For example, the log odds ratio for obesity comparing age 40 to age 50 is given by $$\beta_0 + \beta_1 40 + \beta_2 (40-35)_+ + \beta_3 (40-50)_+ + \beta_4 (40-65)_+ - \\ (\beta_0 + \beta_1 50 + \beta_2 (50-35)_+ + \beta_3 (50-50)_+ + \beta_4 (50-65)_+) = \\ 0 \beta_0 + (-10) \beta_1 + (-10) \beta_2 + 0 \beta_3 + 0  \beta_4$$
+
+```{r ors, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearSpline;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 40 v 50" Intercept 0 AgeLS -10 -10 0 0 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+Using non-positional syntax, we can also easily estimate log odds ratio for comparisons between two ages.  First, we present a series of comparisons of ages 30, 40, 60, 70 and 80 with age 50, essentially using age 50 as a common reference point. 
+
+```{r example16, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearSpline;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 30 v 50" AgeLS [1, 30] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 40 v 50" AgeLS [1, 40] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 60 v 50" AgeLS [1, 60] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 70 v 50" AgeLS [1, 70] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 80 v 50" AgeLS [1, 80] [-1, 50] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity is $(0.81,1.15)$ for 30 year olds vs. 50 year olds, $(0.97,1.28)$ for 40 year olds vs. 50 year olds, $(1.03,1.40)$ for 60 year olds vs. 50 year olds, $(0.91,1.33)$ for 70 year olds vs. 50 year olds and $(0.60,0.96)$ for 80 year olds vs. 50 year olds.
+
+Next, we present a series of comparisons between ages one decade apart (40 v. 30, 50 v. 40, 60 v. 50, 70 v. 60, 80 v. 70).  Direct comparisons of these estimates are more meaningful as they represent the *effect* of identical increases in age (10 years) from a variety of different starting points.
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearSpline;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 40 v 30" AgeLS [1, 40] [-1, 30] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 50 v 40" AgeLS [1, 50] [-1, 40] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 60 v 50" AgeLS [1, 60] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 70 v 60" AgeLS [1, 70] [-1, 60] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 80 v 70" AgeLS [1, 80] [-1, 70] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity is $(1.07,1.24)$ for 40 year olds vs. 30 year olds, $(0.78,1.04)$ for 50 year olds vs. 40 year olds, $(1.03,1.40)$ for 60 year olds vs. 50 year olds, $(0.84,0.99)$ for 70 year olds vs. 60 year olds and $(0.57,0.83)$ for 80 year olds vs. 70 year olds.
+
+# Overall Test
+
+Comparisons of the log odds of obesity at two different ages are most naturally assessed using confidence (compatibility) intervals rather than hypothesis tests, because the connection between the odds ratio and the (relative) prevalence in the two groups is relatively straightforward.  The global null hypothesis of no *effect* of age on the log odds of obesity, e.g. the log odds of obesity is the same for all ages, can be tested using a likelihood ratio test. 
+
+The *overall test* for age is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x + \beta_2 (x-35)_+ + \beta_3 (x-50)_+ + \beta_4 (x-65)_+ \\
+\end{eqnarray*}$$
+
+By default, PROC LOGISTIC in SAS calculates the overall likelihood ratio test statistic and $p$-value. (By default, it also calculates the Wald and score versions of the overall test, which should be ignored.)  Under the null hypothesis, the likelihood ratio test statistic follows a chi-squared distribution with $4$ df. (More generally, for a linear spline with $k-1$ knots, it follows a chi-square distribution with $k$ df.)
+
+```{r overall, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=G;
+  EFFECT AgeLS=SPLINE(Age / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=EQUAL(3));
+  MODEL Obese(Event="Yes") = AgeLS / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA LRTests;
+  RETAIN Test df ChiSq ProbChiSq sValue;
+  SET G;
+
+  IF Test="Likelihood Ratio";
+  
+  sValue = -LOG(ProbChiSq)/LOG(2);
+  Test="Age Overall";
+
+  KEEP Test df ChiSq ProbChiSq sValue;
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue; 
+
+  LABEL ProbChiSq="p-value"
+    sValue="s-value";
+    
+  FORMAT sValue 6.2;
+  FORMAT ProbChiSq ;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an effect of age on the prevalence (log odds) of obesity.  The $p$-value is $\approx 0$, and the $s$-value is $39.6$.
+
+# Test of Linear Effect of Age on Log Odds of Obesity
+
+Another question of potential interest is whether the odds ratio for a fixed difference in ages is the same for two different starting ages. For example, is the odds ratio for 40 year olds vs. 30 year olds (a 10 year age difference) the same as the odds ratio for 50 year olds vs. 40 year olds (also a 10 year age difference)?  While it is possible to assess this hypothesis using the confidence (compatability) interval for the difference in log odds ratios (or ratio of odds ratios), it is difficult to interpret the magnitudes of these differences in differences, so $p$-values are more useful for these types of single parameter questions. 
+
+```{r dlor, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearSpline;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 50 v 40 v Age 40 v 30" AgeLS [1, 50] [-2, 40] [1, 30] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E;
+  SET E;
+
+  sValue = -LOG(Probz)/LOG(2);
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp Probz sValue;
+  LABEL Label='00'x
+    LowerExp="Lower CL"
+    ExpEstimate="Estimate"
+    UpperExp="Upper CL"
+    Probz="p-value"
+    sValue="s-value";
+  
+  FORMAT sValue 6.2;
+  FORMAT Probz ;
+
+  TITLE "Ratio of Odds Ratios";
+RUN;
+TITLE;
+```
+
+There is strong evidence of a difference between the odds ratio for 50 v. 40 and the odds ratio for 40 v. 30.  The $p$-value is $0.00018$, and the $s$-value is $12.4$.
+
+The null hypothesis of a *linear effect* of age on the log odds of obesity, e.g the log odds ratio is the same for every difference in age of the same amount regardless of starting age, can be tested using using a likelihood ratio test. 
+
+The *test of linear effect* for age is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x_i \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x + \beta_2 (x-35)_+ + \beta_3 (x-50)_+ + \beta_4 (x-65)_+ \\
+\end{eqnarray*}$$
+
+Under the null hypothesis, the likelihood ratio test statistic follows a chi-squared distribution with $3$ df. (More generally, for a linear spline with $k-1$ knots, it follows a chi-square distribution with $k-1$ df.)
+
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  EFFECT AgeLS=SPLINE(Age / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=EQUAL(3));
+  MODEL Obese(Event="Yes") = AgeLS / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Age Linear";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Reduced;
+  
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an non-linear effect of age on the log odds of obesity.  The $p$-value is $\approx 0$, and the $s$-value is $28.2$.
+
+# Plotting the Estimated Regression Function
+
+Using the SCORE statement in PROC PLM, we can obtain the estimated log odds for obesity for each age between 20 and 80 (the age range for adults included in the NHANES dataset). Using PROC SGPLOT, we can plot the entire regression function.
+
+```{r example11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA AllAges;
+    DO Age = 20 TO 80 BY 1;
+        OUTPUT;
+    END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearSpline;
+    SCORE DATA=AllAges OUT=Fitted Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+    BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cx1b9e77 TRANSPARENCY=0.7);
+    SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cx1b9e77) TRANSPARENCY=0.9;
+    YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+# Model Selection
+
+For illustration, we will evaluate AIC and BIC for linear spline regression models with 1-6 knots placed equally spaced between the minimum and maximum ages in the dataset.
+
+```{r effN, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC FREQ DATA=Ron;
+  ODS SELECT OneWayFreqs;
+	TABLE Obese / NOPERCENT NOCUM MISSING;
+RUN;
+```
+
+Our effective sample size is $N=2592$.
+
+
+```{r example12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+%MACRO SelectLinearSplineOrder;
+  %DO k = 1 %TO 6;
+    ODS EXCLUDE ALL;
+    PROC LOGISTIC DATA=Ron;
+      ODS OUTPUT ScoreFitStat=S&k;
+      EFFECT AgeLS=SPLINE(Age / BASIS=TPF(NOINT) DEGREE=1 KNOTMETHOD=EQUAL(&k));
+      MODEL Obese(Event="Yes") = AgeLS / LINK=LOGIT;
+    
+      SCORE DATA=Ron FITSTAT;
+    
+      STORE LinearSpline&k;
+    RUN;
+    ODS EXCLUDE NONE;
+        
+    DATA S&k;
+      SET S&k;
+            
+      k = &k;
+      KEEP k LogLike;
+    RUN;
+        
+    PROC PLM RESTORE=LinearSpline&k NOINFO;
+      SCORE DATA=AllAges OUT=Fitted&k 
+        LCLM=Lower_Logit 
+        UCLM=Upper_Logit / ALPHA=0.03125;
+    RUN;        
+
+    DATA Fitted&k;
+      SET Fitted&k;
+            
+      k = &k;
+    RUN;
+ 
+
+    %IF &k = 1 %THEN %DO;
+      DATA ModelComparison;
+        SET S&k;
+      RUN;
+            
+      DATA LinearSplinelFits;
+        SET Fitted&k;
+      RUN;
+    %END;
+    %ELSE %DO;
+      PROC APPEND BASE=ModelComparison DATA=S&k FORCE;
+      RUN;
+
+      PROC APPEND BASE=LinearSplineFits DATA=Fitted&k FORCE;
+      RUN;
+    %END;
+  %END;
+%MEND SelectLinearSplineOrder;
+
+%SelectLinearSplineOrder;
+
+DATA ModelComparison;
+	SET ModelComparison;
+	
+	AIC = -2*LogLike+2*(k+1);
+  BIC = -2*LogLike+LOG(2592)*(k+1);
+RUN;
+
+PROC MEANS DATA=ModelComparison MIN NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparison;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparison;
+    
+  Delta_AIC = AIC-AIC_Min;
+  Delta_BIC = BIC-BIC_Min;
+   
+  LR_AIC = EXP(1/2*Delta_AIC);
+  LR_BIC = EXP(1/2*Delta_BIC);
+    
+  KEEP k LogLike AIC BIC Delta_AIC Delta_BIC LR_AIC LR_BIC;
+RUN;
+
+TITLE "Akaike's information criterion";
+PROC PRINT DATA=ModelComparison NOOBS;
+	VAR k LogLike AIC Delta_AIC LR_AIC;
+    
+  FORMAT LogLike AIC Delta_AIC 10.1;
+  FORMAT LR_AIC 10.2;
+RUN;
+TITLE;
+```
+
+Based on AIC, the best model is the linear spline with 6 knots, but the linear spline with 3 knots fits just as well. 
+
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Schwarz's criterion";
+PROC PRINT DATA=ModelComparison NOOBS;
+	VAR k LogLike BIC Delta_BIC LR_BIC;
+    
+  FORMAT LogLike BIC Delta_BIC 10.1;
+  FORMAT LR_BIC 10.2;
+RUN;
+TITLE;
+```
+
+Based on BIC, the best model is the linear spline with 3 knots.
+
+The estimated regression functions (log odds of obesity as a function of age) from the pre-specified and BIC-optimal linear spline with 3 knots and the AIC-optimal linear spline with 6 knots can be plotted using PROC SGPLOT.
+
+```{r example14, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC SGPLOT DATA=LinearSplineFits;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  BAND X=Age Lower=Lower_Logit Upper=Upper_Logit /
+      GROUP=k TRANSPARENCY=0.7;
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+  WHERE k = 3 OR k = 6;
+RUN;
+```
+
+Alternatively, the estimated prevalence of obesity from the pre-specified and BIC-optimal linear spline with 3 knots and the AIC-optimal linear spline with 6 knots can be plotted using PROC SGPLOT.
+
+```{r example15, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Tmp;
+  SET LInearSplineFits;
+    
+  Lower_Prob = 1/(1+EXP(-Lower_Logit));
+  Upper_Prob = 1/(1+EXP(-Upper_Logit));
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  BAND X=Age Lower=Lower_Prob Upper=Upper_Prob /
+     GROUP=k TRANSPARENCY=0.7;
+  YAXIS LABEL="Prevalence of Obesity";
+  WHERE k = 3 OR k = 6;
+RUN;
+```
+
+# Undesirable Properties of Linear Splines
+
+Although a linear spline is simple and can approximate many common relationships, it is not smooth and will not fit highly curved functions well. The estimated curve is usually very sensitive to the choice of knot locations.

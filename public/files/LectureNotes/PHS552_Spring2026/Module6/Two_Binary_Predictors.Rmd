@@ -1,0 +1,1116 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Binary (Logistic) Regression with Two Binary Predictors
+
+To this point, we have only considered binary (logistic) regression models with a single predictor variable. For a single binary predictor, we can represent its *effect* using a single dummy variable. In most settings, there will be more than one predictor variable of interest.  For now, we will consider the simplest possible situation with two predictor variables, a binary (logistic) regression model with two binary predictor variables. 
+
+To illustrate a regression model with two binary predictor variables, we will develop a logistic regression model for obesity as a function of gender and non-white race for the US population.
+
+# Cell Means Model with Two Binary Predictors
+
+It is possible to simply represent the two binary predictor variables as a single categorical predictor variable with 4 levels.  For example, the four combinations of gender and non-white race are white male (coded 00), non-white male (coded 01), white female (coded 10) and non-white female (coded 11).
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the combination of gender and race for subject $i$ by $x_i$. The probability (prevalence) of obesity, $p_i = p(x_i)$, takes on four values, $p(\mbox{white male})$, $p(\mbox{non-white male})$, $p(\mbox{white female})$, and $p(\mbox{non-white female})$.
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{white male}) + \beta_2 \textbf{1}(x_i = \mbox{non-white male}) + \\ \beta_3 \textbf{1}(x_i = \mbox{white female}) + \beta_4 \textbf{1}(x_i = \mbox{non-white female})$$
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+
+  IF VVALUE(Race) = "White" THEN NonWhite = 0;
+  ELSE IF VVALUE(Race) = "Black" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Mexican" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Hispanic" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Other" THEN NonWhite = 1;
+    
+  FORMAT NonWhite YesNoF.;
+
+  IF VVALUE(Gender) = "Male" & VVALUE(NonWhite) = "No" THEN FemaleNonWhite = "00";
+  ELSE IF VVALUE(Gender) = "Male" & VVALUE(NonWhite) = "Yes" THEN FemaleNonWhite = "01";
+  ELSE IF VVALUE(Gender) = "Female" & VVALUE(NonWhite) = "No" THEN FemaleNonWhite = "10";
+  ELSE IF VVALUE(Gender) = "Female" & VVALUE(NonWhite) = "Yes" THEN FemaleNonWhite = "11";   
+RUN;
+
+PROC FREQ DATA=Ron;
+  ODS SELECT CrossTabFreqs;
+	TABLE FemaleNonWhite*Obese / NOPERCENT NOROW NOCOL MISSING;
+RUN;
+```
+
+By default, using the coding white male=00, non-white male=01, white female=10 and non-white female=11, SAS will use non-white female (the last category) as the reference category with PARAM=GLM or PARAM=REF.
+
+## Logistic Regression Estimates (Explicit Formulas)
+
+The maximum likelihood estimates of regression coefficients are easily found from the sample odds in each group.
+
+$\hat{\beta}_0 = \log{501/710} = -0.3487$ (the sample log odds for non-white females), 
+
+$\hat{\beta}_1 = \log{863/1514} - \log{501/710} = -0.2134$ (the difference between the sample log odds for white males and the sample log odds for non-white females), 
+
+$\hat{\beta}_2 = \log{418/758} - \log{501/710} = -0.2452$ (the difference between the sample log odds for non-white males and the sample log odds for non-white females), and
+
+$\hat{\beta}_3 = \log{810/1662} - \log{501/710} = -0.3701$ (the difference between the sample log odds for white females and the sample log odds for non-white females). 
+
+## Checking the Modeling Assumptions
+
+Before proceeding to inference, we need to evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which still automatically holds for a *saturated* model, a model with one parameter for every unique combination of covariates) and independence (which cannot be evaluated based solely on the observed data).
+ 
+## Standard Errors for Regression Coefficients (Explicit Formulas)
+
+Using the formula for the (approximate) standard error for the sample log odds $\log{\frac{p}{1-p}}$ 
+$$\mbox{SE}\left(\log{\frac{\hat{p}}{1-\hat{p}}}\right) = \sqrt{\frac{1}{np}+\frac{1}{n(1-p)}}$$
+one can easily find the standard errors for the regression intercept and slopes (replacing the unknown proportions with their point estimates):
+$$\mbox{SE}\left(\hat{\beta}_0\right) = \sqrt{\frac{1}{501}+\frac{1}{710}} = 0.0583$$
+
+$$\mbox{SE}\left(\hat{\beta}_1\right) = \sqrt{\frac{1}{863}+\frac{1}{1514}+\frac{1}{501}+\frac{1}{710}} = 0.0723$$
+
+$$\mbox{SE}\left(\hat{\beta}_2\right) = \sqrt{\frac{1}{418}+\frac{1}{757}+\frac{1}{501}+\frac{1}{710}} = 0.0844$$
+
+$$\mbox{SE}\left(\hat{\beta}_3\right) = \sqrt{\frac{1}{810}+\frac{1}{1662}+\frac{1}{501}+\frac{1}{710}} = 0.0724$$
+
+## Logistic Regression Estimates (SAS)
+
+Typically, we would find these estimates using PROC LOGISTIC in SAS. Moving forward, we will exclusively use the PARAM=REF coding (explicitly dropping the dummy variable for the reference category) for two reasons: (1) the PARAM=GLM option can interact with non-positional syntax in undesirable ways and (2) the PARAM=REF option will make it substantially easier to specify the most important hypothesis tests of interest.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ParameterEstimates;
+
+  CLASS FemaleNonWhite / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = FemaleNonWhite / LINK=LOGIT;
+    
+  STORE FemaleNonWhite;
+RUN;
+```
+
+## Simple Effects 
+
+ESTIMATE statements can be used to obtain the *simple effects* of gender within each racial group.  In general, a simple effect is the comparison of two levels of one variable within one level of another variable.  Here, we can estimate the comparison (odds ratio) between females and males for whites and the comparison (odds ratio) between females and males for non-whites.
+
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleNonWhite;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Female v Male for White" FemaleNonWhite [1, 3] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male for NonWhite" FemaleNonWhite [1, 4] [-1, 2] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Odds Ratios for Gender by Race";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity comparing females to males is $(0.75,0.97)$ for whites and $(1.07,1.53)$ for non-whites.
+
+ESTIMATE statements can also be used to obtain the simple effects for race within each gender. Here, we can estimate the comparison (odds ratio) between non-whites and whites for males and the comparison (odds ratio) between non-whites and whites for females.
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleNonWhite;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "NonWhite v White for Male" FemaleNonWhite [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "NonWhite v White for Female" FemaleNonWhite [1, 4] [-1, 3] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Odds Ratios for Race by Gender";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity comparing non-whites to whites is $(0.82,1.14)$ for males and $(1.24,1.69)$ for females.
+
+## Interaction (Effect Modification)
+
+It is quite natural to ask whether the simple effect for gender within whites is equal to the simple effect for gender within non-whites. We can estimate the difference between the log odds ratio between females and males for non-whites and the log odds ratio between females and males for whites $$(\beta_4 - \beta_2) - (\beta_3 - \beta_1) = \beta_4 - \beta_3 - \beta_2 + \beta_1$$  
+
+It is also quite natural to ask whether the simple effect for race within females is equal to the simple effect for race within males. We can estimate the difference between the log odds ratio between non-whites and whites for females and the log odds ratio between non-whites and whites for males $$(\beta_4 - \beta_3) - (\beta_2 - \beta_1) = \beta_4 - \beta_3 - \beta_2 + \beta_1$$ 
+
+The type of comparison is used to identify *interaction* (or *effect modification*). Interaction means that the effect of one variable depends on the value of another variable.  For two binary predictors, interaction is present when the *interaction parameter* $\beta_4 - \beta_3 - \beta_2 + \beta_1 \not= 0$, and interaction is absent (the effects are *additive*) when the interaction parameter $\beta_4 - \beta_3 - \beta_2 + \beta_1 = 0$.  
+
+Interaction is a symmetric concept; the effect of gender depends on the level of race *if and only if* the effect of race depends on the level of gender.  Note that the comparison of gender effects within race and the comparison of race effects within gender produce the same interaction parameter.  The interaction parameter is primarily used for hypothesis testing; as a *difference in differences* (or ratio of odds ratios), it is challenging to interpret.  
+
+The following SAS code estimates the interaction parameter and performs a Wald test for interaction between gender and race.  
+
+```{r example16, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleNonWhite;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Female v Male for NonWhite v Female v Male for White" 
+          FemaleNonWhite [1, 4] [-1, 2] [-1, 3] [1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "NonWhite v White for Female v NonWhite v White for Male" 
+          FemaleNonWhite [1, 4] [-1, 3] [-1, 2] [1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Interaction Parameter (Ratio of Odds Ratios)";
+RUN;
+TITLE;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleNonWhite;
+  ODS OUTPUT Contrasts=C;
+
+  ESTIMATE "Interaction" FemaleNonWhite [1, 4] [-1, 3] [-1, 2] [1, 1] / JOINT;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+    
+  sValue = -LOG(ProbChisq)/LOG(2);
+  
+  FORMAT sValue 6.2;
+RUN;
+
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF ChiSq ProbChiSq sValue;
+  TITLE "Wald Test for Interaction";
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an interaction between race and gender in their effects on the log odds of obesity. The $p$-value is $0.0001$, and the $s$-value is $13.2$.
+
+## Overall Tests
+
+A valid overall test for effects of gender on (prevalence of) obesity is a joint test of no effect of gender within whites and no effect of gender within non-whites, e.g. $H_0: \beta_4 - \beta_2 = 0, \beta_3 - \beta_1 = 0$. 
+
+A valid overall test for effects of race on (prevalence of) obesity is a joint test of no effect of race within males and no effect of race within females, e.g. $H_0: \beta_4 - \beta_3 = 0, \beta_2 - \beta_1 = 0$.
+
+The following SAS code performs Wald tests for these two hypotheses.
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=FemaleNonWhite;
+  ODS OUTPUT Contrasts=C;
+
+  ESTIMATE "Gender" FemaleNonWhite [1, 4] [-1, 2], FemaleNonWhite [1, 3] [-1, 1] / JOINT;
+  ESTIMATE "Race" FemaleNonWhite [1, 4] [-1, 3], FemaleNonWhite [1, 2] [-1, 1] / JOINT;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+    
+  sValue = -LOG(ProbChisq)/LOG(2);
+    
+  FORMAT sValue 6.2;
+RUN;
+
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF ChiSq ProbChiSq sValue;
+  TITLE "Wald Tests for Overall Effects";
+RUN;
+TITLE;
+```
+
+There is strong evidence that gender is associated with the prevalence (log odds) of obesity.  The $p$-value is $0.0005$, and the $s$-value is $10.9$.
+
+There is also strong evidence that race is associated with the prevalence (log odds) of obesity.  The $p$-value is $<0.0001$, and the $s$-value is $19.0$.
+
+The following SAS code performs likelihood ratio tests for these two hypotheses.
+
+```{r lrtests, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS FemaleNonWhite;
+    
+  MODEL Obese(EVENT="Yes") = FemaleNonWhite / LINK=LOGIT; 
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=GenderOnly;
+  CLASS Gender;
+    
+  MODEL Obese(EVENT="Yes") = Gender  / LINK=LOGIT; 
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=NonWhiteOnly;
+  CLASS NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = NonWhite / LINK=LOGIT; 
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA GenderOnly;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET GenderOnly (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Race Overall";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA NonWhiteOnly;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET NonWhiteOnly (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Gender Overall";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA LRTests;
+  LENGTH Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET GenderOnly NonWhiteOnly;
+    
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests for Overall Effects";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+As one might expect given the large sample sizes, the likelihood ratio test results are very similar to the Wald test results.
+
+There is strong evidence that gender is associated with the prevalence (log odds) of obesity.  The $p$-value is $0.0005$, and the $s$-value is $11.0$.
+
+There is also strong evidence that race is associated with the prevalence (log odds) of obesity.  The $p$-value is $0.000002$, and the $s$-value is $18.9$.
+
+# Interaction Model with Two Binary Predictors
+
+It is more common to write the regression model with two binary predictors in terms of the indicator variable for one variable (gender), the indicator variable for the other variable (race), and the product of the two indicator variables.
+
+We denote the obesity outcome for subject $i$ by $y_i$, the gender for subject $i$ by $x_{1i}$, and the race for subject $i$ by $x_{2i}$. 
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white})$$
+
+In this formulation of the model, 
+$$\begin{eqnarray*}
+\mbox{logit}\left\{p(\mbox{white male})\right\} & = & \beta_0 \\
+\mbox{logit}\left\{p(\mbox{white female})\right\} & = & \beta_0 + \beta_1 \\
+\mbox{logit}\left\{p(\mbox{non-white male})\right\} & = & \beta_0 + \beta_2 \\
+\mbox{logit}\left\{p(\mbox{non-white female})\right\} & = & \beta_0 + \beta_1 + \beta_2 + \beta_3 \\
+\end{eqnarray*}$$
+
+The intercept $\beta_0$ is the log odds for obesity in white males, $\beta_1$ is the log odds ratio (difference in log odds) comparing white females to white males (or the simple effect of gender in whites), $\beta_2$ is the log odds ratio (difference in log odds) comparing non-white males to white males (or the simple effect of race in males), and $\beta_3$ is the interaction parameter.  The product of the indicator variable for gender and the indicator variable for race is the interaction term.
+
+## Logistic Regression Estimates (Explicit Formulas)
+
+The maximum likelihood estimates of regression coefficients are easily found from the sample odds in each group.
+
+$\hat{\beta}_0 = \log{863/1514} = -0.5621$ (the sample log odds for white males), 
+
+$\hat{\beta}_1 =  \log{810/1662} - \log{863/1514} = -0.1566$ (the difference between the sample log odds for white females and the sample log odds for white males), 
+
+$\hat{\beta}_2 = \log{418/757} - \log{863/1514} = -0.0318$ (the difference between the sample log odds for non-white males and the sample log odds for white males), and
+
+$\hat{\beta}_3 = \log{501/710} - \log{810/1662} - \log{418/757} + \log{863/1514} = 0.4019$. 
+
+## Standard Errors for Regression Coefficients (Explicit Formulas)
+
+Using the formula for the (approximate) standard error for the sample log odds $\log{\frac{p}{1-p}}$ 
+$$\mbox{SE}\left(\log{\frac{\hat{p}}{1-\hat{p}}}\right) = \sqrt{\frac{1}{np}+\frac{1}{n(1-p)}}$$
+one can easily find the standard errors for the regression intercept and slopes (replacing the unknown proportions with their point estimates):
+
+$$\mbox{SE}\left(\hat{\beta}_0\right) = \sqrt{\frac{1}{863}+\frac{1}{1514}} = 0.0427$$
+
+$$\mbox{SE}\left(\hat{\beta}_1\right) = \sqrt{\frac{1}{810}+\frac{1}{1662}+\frac{1}{863}+\frac{1}{1514}} = 0.0605$$
+
+$$\mbox{SE}\left(\hat{\beta}_2\right) = \sqrt{\frac{1}{418}+\frac{1}{757}+\frac{1}{863}+\frac{1}{1514}} = 0.0744$$
+
+$$\mbox{SE}\left(\hat{\beta}_3\right) = \sqrt{\frac{1}{501}+\frac{1}{710}+\frac{1}{810}+\frac{1}{1662}+\frac{1}{418}+\frac{1}{757}+\frac{1}{863}+\frac{1}{1514}} = 0.1038$$
+
+## Logistic Regression Estimates (SAS)
+
+Typically, we would find these estimates using PROC LOGISTIC in SAS. 
+
+```{r example8, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ParameterEstimates;
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite Gender*NonWhite / LINK=LOGIT;
+    
+  STORE GenderNonWhite;
+RUN;
+```
+
+## Simple Effects
+
+ESTIMATE statements can be used to obtain the *simple effects* of gender within each racial group (using non-positional syntax).  Because Gender precedes NonWhite in the CLASS statement, the levels of the interaction term are indexed by Gender followed by Race.  If NonWhite preceded Gender in the CLASS statement, the levels of the interaction term would be indexed by Race followed by Gender.
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=GenderNonWhite;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Female v Male for White" Gender [1, 2] [-1, 1] 
+                Gender*NonWhite [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Female v Male for NonWhite" Gender [1, 2] [-1, 1] 
+                Gender*NonWhite [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratios for Gender by Race";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity comparing females to males is $(0.75,0.97)$ for whites and $(1.06,1.53)$ for non-whites.
+
+ESTIMATE statements can be used to obtain the *simple effects* of race within each gender.
+
+
+```{r example10, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=GenderNonWhite;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "NonWhite v White for Male" NonWhite [1, 2] [-1, 1] 
+                    Gender*NonWhite [1, 1 2] [-1, 1 1] / CL EXP ALPHA=0.03125;
+    ESTIMATE "NonWhite v White for Female" NonWhite [1, 2] [-1, 1] 
+                    Gender*NonWhite [1, 2 2] [-1, 2 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratios for Race by Gender";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity comparing non-whites to whites is $(0.83,1.14)$ for males and $(1.24,1.69)$ for females.
+
+## Wald Tests (Overall and Interaction)
+
+Overall tests for (effects of) gender and race and the test for interaction (between gender and race) can be obtained using either non-positional or positional syntax.  With the PARAM=REF option, it is easier to specify the relevant contrasts using positional syntax.
+
+```{r example12, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=GenderNonWhite;
+    ODS OUTPUT Contrasts=C;
+
+    ESTIMATE "Gender" Gender 1, Gender*NonWhite 1 / JOINT;
+    ESTIMATE "Race" NonWhite 1, Gender*NonWhite 1 / JOINT;
+    ESTIMATE "Interaction" Gender*NonWhite 1 / JOINT;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+    SET C;
+    
+    sValue = -LOG(ProbChisq)/LOG(2);
+    
+    FORMAT sValue 6.2;
+RUN;
+
+PROC PRINT DATA=C NOOBS LABEL;
+    VAR Label NumDF ChiSq ProbChiSq sValue;
+    TITLE "Wald Tests";
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an interaction between race and gender in their effects on the log odds of obesity. The $p$-value is $0.0001$, and the $s$-value is $13.1$.
+
+There is strong evidence that gender is associated with the prevalence (log odds) of obesity.  The $p$-value is $0.0005$, and the $s$-value is $10.9$.
+
+There is also strong evidence that race is associated with the prevalence (log odds) of obesity.  The $p$-value is $<0.0001$, and the $s$-value is $19.0$.
+
+
+## Likelihood Ratio Tests (Overall and Interaction)
+
+Our (full) logistic regression model is 
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white})$$
+
+Three potential simplifications of our full model are of scientific interest. The first potential simplification removes the interaction term from the model, resulting in an additive model for the effects of gender and race. (We will discuss the additive model in much greater detail shortly.)
+
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+The likelihood ratio test comparing the additive model with the full model is the test for interaction between gender and race in their effects on the log odds of obesity.
+
+
+The second potential simplification removes both terms involving gender from the model, resulting in a model with a single binary predictor (race). 
+
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+The likelihood ratio test comparing the race only model with the full model is the overall test for gender.
+
+The third potential simplification removes both terms involving race from the model, resulting in a model with a single binary predictor (gender). 
+
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) $$
+The likelihood ratio test comparing the gender only model with the full model is the overall test for race.
+
+```{r lrtest2, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS Gender Race;
+    
+  MODEL Obese(EVENT="Yes") = Gender NonWhite Gender*NonWhite / LINK=LOGIT; 
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Additive;
+  CLASS Gender Race;
+    
+  MODEL Obese(EVENT="Yes") = Gender NonWhite / LINK=LOGIT; 
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=GenderOnly;
+  CLASS Gender;
+    
+  MODEL Obese(EVENT="Yes") = Gender  / LINK=LOGIT; 
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=NonWhiteOnly;
+  CLASS NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = NonWhite / LINK=LOGIT; 
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA Additive;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Additive (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Interaction";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA GenderOnly;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET GenderOnly (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Race Overall";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA NonWhiteOnly;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET NonWhiteOnly (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Gender Overall";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA LRTests;
+  LENGTH Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Additive GenderOnly NonWhiteOnly;
+    
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an interaction between race and gender in their effects on the log odds of obesity. The $p$-value is $0.0001$, and the $s$-value is $13.2$.
+
+There is strong evidence that gender is associated with the prevalence (log odds) of obesity. The $p$-value is $0.0005$, and the $s$-value is $11.0$.
+
+There is also strong evidence that race is associated with the prevalence (log odds) of obesity.  The $p$-value is $0.000002$, and the $s$-value is $18.9$.
+
+## Estimated Probabilities
+
+ESTIMATE statements can be used to obtain the prevalence of obesity for each combination of gender and race.
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=GenderNonWhite;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "White Male"  Intercept 1 Nonwhite [1, 1] Gender [1, 1] 
+                            Gender*NonWhite [1, 1 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "White Female" Intercept 1 Nonwhite [1, 1] 
+                            Gender [1, 2] Gender*NonWhite [1, 2 1] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "NonWhite Male" Intercept 1 Nonwhite [1, 2] 
+                            Gender [1, 1] Gender*NonWhite [1, 1 2] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "NonWhite Female" Intercept 1 Nonwhite [1, 2] 
+                            Gender [1, 2] Gender*NonWhite [1, 2 2]/ CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Interaction)";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity is $(0.34,0.38)$ for white males, $(0.31,0.35)$ for white females, $(0.33,0.39)$for non-white males and $(0.38,0.44)$ for non-white females.
+
+## Interaction Plot
+
+Plots of the estimated prevalence of obesity by race and gender can be obtained using PROC SGPLOT.  The first plot emphasizes the comparisons between males and females within each race, while the second plot emphasizes the comparisons between whites and non-whites within each gender.
+
+```{r interact4, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+DATA E;
+  SET E;
+
+  Gender = SCAN(Label,2," ");
+  Race = SCAN(Label,1," ");
+RUN;
+
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Race;
+  SCATTER Y=Gender X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+           
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Gender;
+  SCATTER Y=Race X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+```
+
+# Additive Model with Two Binary Predictors
+
+A potentially useful simplification of our regression model for obesity as a function of gender and race is the *additive* regression model for two binary predictors.  The additive regression model includes the indicator variable for gender and the indicator variable for race, but it does not include the interaction term. This model assumes that the effect of one predictor variable (gender or race) is the same for all values of the other predictor variable (race or gender); this is the assumption of *additivity* or *no interaction*. The adequacy of the additive model can be formally assessed using the interaction test described previously. The interpretation of the interaction test depends on the underlying scientific plausibility of effect modification.
+
+In an additive model, the *main effect* of gender is the (log) odds ratio comparing females to males of the same race (more generally, it is the effect of one variable fixing the values of all other variables in the model). By assumption, the odds ratio comparing females to males for whites is identical to the odds ratio comparing females to males for blacks, so we need not specify the racial group in which the comparison between gender is being performed. Typically, we would state that the comparison is *adjusted for* the other covariate or *for any given fixed value of* the other covariate.  The interpretation is different from the *marginal interpretation* (the odds ratio in the single predictor model), and an estimated effect from an additive model should, therefore, always be accompanied by a list of the other explanatory variable(s) in the model. 
+
+Our additive logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white})$$
+
+In this formulation of the model, 
+$$\begin{eqnarray*}
+\mbox{logit}\left\{p(\mbox{white male})\right\} & = & \beta_0 \\
+\mbox{logit}\left\{p(\mbox{white female})\right\} & = & \beta_0 + \beta_1 \\
+\mbox{logit}\left\{p(\mbox{non-white male})\right\} & = & \beta_0 + \beta_2 \\
+\mbox{logit}\left\{p(\mbox{non-white female})\right\} & = & \beta_0 + \beta_1 + \beta_2 \\
+\end{eqnarray*}$$
+
+The intercept $\beta_0$ is the log odds for obesity in white males, $\beta_1$ is the log odds ratio (difference in log odds) comparing females to males (of the same race) (or the main effect of gender), and $\beta_2$ is the log odds ratio (difference in log odds) comparing non-whites to whites (of the same gender) (or the main effect of race).
+
+## Logistic Regression Estimate (SAS)
+
+There are no simple formulas for the maximum likelihood estimates of the parameters of the additive regression model. Typically, we would find the estimates using PROC LOGISTIC.
+
+```{r additive1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ParameterEstimates;
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite / LINK=LOGIT;
+  
+  STORE Additive;
+RUN;
+```
+
+## Checking the Modeling Assumptions
+
+Before proceeding to inference, we need to evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which is equivalent to the assumption of *no interaction* or *additivity*) and independence (which cannot be evaluated based solely on the observed data).  Given the prior results for the interaction test, the correct structural model assumption does not hold, and we would not normally proceed with the additive model.  However, in this case, we will proceed with the additive model to illustrate how to work with an additive model.
+
+## Main Effects
+
+ESTIMATE statements can be used to find the main effects of race and gender.
+
+```{r additive2, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Additive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "NonWhite v White" NonWhite [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Odds Ratios (Main Effects)";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity comparing non-whites to whites adjusted for gender is $(1.06,1.33)$.  The estimated odds ratio for obesity comparing females to males adjusted for race is $(0.88,1.09)$.  
+
+## Estimated Probabilities
+
+ESTIMATE statements can be used to find the prevalence of obesity for each combination of gender and race.
+
+```{r additive3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Additive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "White Male"  Intercept 1 Nonwhite [1, 1] 
+                          Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "White Female" Intercept 1 Nonwhite [1, 1] 
+                          Gender [1, 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Male" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Female" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerMu Mu UpperMu;
+  LABEL Label='00'x
+      Mu="Estimate"
+      LowerMu="Lower CL"
+      UpperMu="Upper CL";
+  TITLE "Prevalence of Obesity (Additive)";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity (from the additive model) is $(0.33,0.37)$ for white males, $(0.32,0.36)$ for white females, $(0.36,0.41)$ for non-white males and $(0.36,0.41)$ for non-white females.
+
+
+## (Interaction) Plot
+
+Plots of the estimated prevalence of obesity by race and gender can be obtained using PROC SGPLOT.  The first plot emphasizes the comparisons between males and females within each race, while the second plot emphasizes the comparisons between whites and non-whites within each gender.
+
+```{r additive4, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+DATA E;
+  SET E;
+
+  Gender = SCAN(Label,2," ");
+  Race = SCAN(Label,1," ");
+RUN;
+
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Race;
+  SCATTER Y=Gender X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+           
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Gender;
+  SCATTER Y=Race X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+```
+
+# Recommended Practice (Initial Model: Additive)
+
+
+
+```{r practice11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+
+  IF VVALUE(Race) = "White" THEN NonWhite = 0;
+  ELSE IF VVALUE(Race) = "Black" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Mexican" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Hispanic" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Other" THEN NonWhite = 1;
+    
+  FORMAT NonWhite YesNoF.;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite / LINK=LOGIT;
+    
+  STORE Additive;
+RUN;
+ODS SELECT ALL;
+```
+
+If your initial model is additive, for model checking, we would recommend comparing with the interactive (saturated) model using BIC.
+
+```{r practice12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Additive";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Interactive";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite Gender*NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+```{r calc11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    BIC_Additive = 9429.048 + LOG(2592)*3;
+    BIC_Interactive = 9414.029 + LOG(2592)*4;
+
+    Delta_BIC = BIC_Interactive - BIC_Additive;
+
+    KEEP BIC_Additive BIC_Interactive Delta_BIC;   
+RUN;
+
+TITLE "BIC Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+Based on BIC, there is overwhelming evidence in favor of the interactive model, so, in practice, we would switch to the interactive model.  We will proceed to illustrate the appropriate steps if the additive model were adequate.
+
+If (partial) likelihood ratio tests required, you should fit the relevant models to get the log-likelihoods and calculate the test statistics (and $p$-values) by hand.
+
+```{r practice13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Additive";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "NonWhiteOnly";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+```{r calc12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 9429.215;
+    Minus2LL1 = 9429.048;
+
+    df0 = 2;
+    df1 = 3;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+The likelihood ratio test statistic for any *effect* of gender is $0.17 = 9429.215-9429.048$ on 1 df, the $p$-value is $0.68$, and the $s$-value is $0.6$.  
+
+```{r practice14, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Additive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "NonWhite v White" NonWhite [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Odds Ratios (Main Effects)";
+RUN;
+TITLE;
+```
+
+# Recommended Practice (Initial Model: Interactive)
+
+```{r practice21, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+
+  IF VVALUE(Race) = "White" THEN NonWhite = 0;
+  ELSE IF VVALUE(Race) = "Black" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Mexican" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Hispanic" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Other" THEN NonWhite = 1;
+    
+  FORMAT NonWhite YesNoF.;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite Gender*NonWhite / LINK=LOGIT;
+    
+  STORE Interactive;
+RUN;
+ODS SELECT ALL;
+```
+
+Since the model is saturated, no model checks are required. We would typically perform likelihood ratio tests for additivity and for overall effects of one (or both) predictor variables.
+
+```{r practice22, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Interactive";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite Gender*NonWhite/ LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Additive";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Gender NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "NonWhiteOnly";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  CLASS Gender(REF="Male") NonWhite(REF="No") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+```{r calc21, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 9429.048;
+    Minus2LL1 = 9414.029;
+
+    df0 = 3;
+    df1 = 4;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+```{r calc22, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 9429.215;
+    Minus2LL1 = 9414.029;
+
+    df0 = 2;
+    df1 = 4;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+
+The likelihood ratio test statistic for interaction between gender and race is $15.02 = 9429.048-9414.029$ on 1 df, the $p$-value is $0.0001$, and the $s$-value is $13.2$.
+The likelihood ratio test statistic for any *effect* of gender is $15.19 = 9429.215-9414.029$ on 2 df, the $p$-value is $0.0005$, and the $s$-value is $11.0$.  
+
+```{r practice23, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Interactive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Female v Male for Whites" Gender [1, 2] [-1, 1] Gender*NonWhite [1, 2 1] [-1, 1 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Female v Male for Non-Whites" Gender [1, 2] [-1, 1] Gender*NonWhite [1, 2 2] [-1, 1 2] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Odds Ratios (Simple Effects of Gender)";
+RUN;
+TITLE;
+```

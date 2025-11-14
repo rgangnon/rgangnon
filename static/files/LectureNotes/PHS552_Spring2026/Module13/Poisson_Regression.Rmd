@@ -1,0 +1,1361 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Poisson Distribution
+
+The *Poisson distribution* is a probability distribution for the *number of events of a specific type* that occur in a *fixed time or space* (distance, area, or volume).  A Poisson random variable can take the value of any non-negative integer $\{0, 1, 2, \ldots\}$.
+
+The number of events $Y$ occuring in time $T$ follows a Poisson distribution if the following three assumptions regarding the event process hold.
+
+1. **Rare events**: For any *very small* time interval $h$, 
+    1. The probability of observing 1 event is directly proportional to the length of the time interval, e.g. $P(1 event) \approx \lambda h$ for some constant $\lambda$.
+    1. The probability of observing no events is approximately $1 - \lambda h$.
+    1. The probability of observing 2 or more events is essentially 0.
+1. **Stationarity**: The expected number of events per unit time is the same throughout the entire time interval. 
+1. **Independence**: If an event occurs (or does not occur) in one time subinterval, it has no bearing on the probability of an event in the next time subinterval.
+
+If these assumptions hold, $Y \sim \mbox{Poisson}(\lambda T)$, and the probability of $k$ events occuring in a time period $T$ is
+$$P(Y=k) = \frac{e^{-\lambda T} (\lambda T)^k}{k!},~~k=0,1,2,\ldots $$
+The Poisson distribution has a single parameter $\lambda$ (or $\mu = \lambda T$). Note that the parameter $\lambda$ represents the *expected number of events per unit time*, while the parameter $\mu$ represents the *expected number of events over time period T*.
+It is not hard to show that $E(Y) = \mu = \lambda T$ and $\mbox{Var}(Y) = \mu = \lambda T$, so the mean and variance of a Poisson random variable are equal.
+
+There are many interesting and useful relationships between the Poisson and the binomial distributions. In particular, if $Y_1 \sim \mbox{Poi}(\mu_1)$, $Y_2 \sim \mbox{Poi}(\mu_2)$, and $Y_1$ and $Y_2$ are independent, then $Y_1 + Y_2 \sim \mbox{Poi}(\mu_1 + \mu_2)$, and the conditional distribution of $Y_1$ given $Y_1+Y_2$ is
+$$Y_1 | Y_1+Y_2 \sim \mbox{Bin}\left(Y_1+Y_2, \frac{\mu_1}{\mu_1+\mu_2}\right)$$
+
+# Poisson Approximation to the Binomial
+
+When the number of trials $N$ is *very large* and the probability of an event $p$ is *very small*, the binomial distribution $Y \sim \mbox{Bin}(N,p)$ is well approximated by the Poisson distribution $Y \sim \mbox{Poi}(Np)$. Alternatively, the Poisson distribution $Y \sim \mbox{Poi}(\mu)$ is well approximated by a binomial distribution $Y \sim \mbox{Bin}(N,\mu/N)$, where $N$ is *very large* and $\mu/N$ is *very small*.
+
+To see why the approximation works, suppose the Poisson distribution with parameter $\mu$ represents the number of events in a given interval (not necessarily short). If we divide the interval into $N$ *very short* subintervals, the probability of two or more events in a given subinterval is essentially zero, so the number of events in a given subinterval follows, to a very good approximation, a Bernoulli distribution with parameter $p=\mu/N$. Summing over all of the (independent) subintervals to obtain the number of events in the original interval then indicates that a binomial distribution with $N$ trials and event probability $p=\mu/N$ is a very good approximation to the original Poisson distribution with mean $\mu$.
+
+# Poisson Regression
+
+Each observation consists of an event count $Y_i$ (the outcome), a (known) interval of observation $T_i$ and a predictor vector $x_i$. We model $Y_i$ as a Poisson random variable with mean $\mu_i = \lambda(x_i) T_i$. We assume that $\lambda(x_i)$, the rate of events per unit time, depends on the regressors with linear predictor $\beta^T x_i$ through the log link function
+$$\log{\lambda(x_i)} = \beta^T x_i$$
+Poisson regression models are often called *log-linear models*. In practice, the linear predictor is usually specified in terms of the mean $\mu_i$ rather than the rate $\lambda_i$
+$$\log{\mu_i} = \log{\lambda(x_i)} + \log{T_i} = \beta^T x_i + \log{T_i}$$
+In this version of the model, $\log{T_i}$ is an *offset*, a predictor variable (regressor) with a known coefficient of 1.
+
+The assumptions of the Poisson regression model are:
+
+1. **Distribution** The conditional distribution of $Y_i$ given $x_i$ is a Poisson distribution with mean $\lambda(x_i) T_i$, where $T_i$ is the known interval of observation $T_i$ and $\lambda(x_i)$ is the unknown event rate. The mean of $Y_i|x_i$ is $\lambda(x_i) T_i$, and the variance of $Y_i|x_i$ is $\lambda(x_i) T_i$. 
+    * In practice, issues with these assumptions would typically be evident as an incorrect specification of the variance $$\mbox{Var}(Y_i|x_i) \not= \lambda(x_i) T_i$$ 
+    * If $\mbox{Var}(Y_i|x_i) > \lambda(x_i) T_i$, the problem is *overdispersion*; if $\mbox{Var}(Y_i|x_i) < \lambda(x_i) T_i$, the problem is *underdispersion*. Overdispersion is much more common than underdispersion. $$ $$
+
+2. **Correct model specification**
+    * **Linear predictor** The parameter $\lambda(x_i)$ depends on the covariates $x_i$ only through the linear predictor $\beta^T x_i$ for some unknown parameter vector $\beta$. 
+    * **Link function** The log link function specifies the connection between $\lambda(x_i)$ and the linear predictor $\beta^T x_i$
+$$ $$
+3. **Independence** The outcomes for two different observations $Y_i$ and $Y_j$, $i \not= j$ are *independent*.
+
+Maximum likelihood estimation is the usual method used to fit Poisson regression models. The (log-)likelihood for the Poisson regression model is given by
+$$\sum_{i=1}^n{\left[y_i \log{\hat{y}_i} - \hat{y}_i - \log{y_i!}\right]}$$
+where $\hat{y_i} = e^{\hat{\beta}^T x_i} T_i$.
+
+It is easy to fit Poisson regression models in most statistical packages, and the results will typically look very similar, if not identical, to the results from fitting a logistic regression model.  The major practical difference is the interpretation of (linear combinations of) regression coefficients. In log-linear Poisson regression, these parameters represent log rates or differences in log rates (log rate ratios). For interpretation, confidence intervals will typically need to be transformed to the correct scale (rate or rate ratio). 
+
+# Kenosha County Falls Prevention Study
+
+The Kenosha County Falls Prevention Study was a randomized, controlled trial in Kenosha County, Wisconsin between May 2002 and June 2004. Participants were solicited from senior centers, meal sites, senior apartmentbuildings, and other senior congregate sites. In addition, county caseworkers and healthcare providers could refer potentially eligible older adults. Enrollment criteria were aged 65 and older, independently living in Kenosha County,and a history of two falls in the previous year or one fall in the previous two years with injury or gait and balance problems. The intervention consisted of recommendations to the subject and their primary physician, referrals to physical therapy and other providers, 11 monthly telephone calls, and a balance exercise plan. Control subjects received a home safety assessment. The primary outcome was rate of falls per year in the community. 
+
+In a secondary analysis, we examined the relationship between rate of falls per year in the community and the baseline Mini Mental State Exam (MMSE) score, a widely-used clinic-based assessment of cognition, in the control arm of the trial (175 subjects). The variables of interest in the dataset are *totfalls*, the number of fallsin the community during follow-up, *totcomm*, the number of follow-up for falls in the community (excluding days spent in a hospital, community-based residential facility, or nursing home), *MMSE*, the Mini Mental State Exam score at baseline (scores range from 0 to 30; higher scores are better), and *age*, the age (in years) at baseline. 
+
+The dataset is available as a [SAS dataset](https://uwmadison.box.com/s/u4y25xejcp48gg4tbwnm8c0nolzlxwxj) and as a [comma-delimited file](https://uwmadison.box.com/s/lfmqejxc45z3xcde0g7h25s6fymyblcc).  The SAS dataset is also available in the shared library for the course in SAS OnDemand for Academics. If you are using SAS OnDemand for Academics, you should not need to access the dataset using these links.
+
+```{r kenosha1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME Kenosha "../../../BMI552_Datasets/Kenosha";
+*LIBNAME Kenosha "~/my_shared_file_links/u48718377/Kenosha";
+OPTIONS NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+DATA Kenosha;
+  SET Kenosha.Kenosha;
+
+  Falls = TotFalls;
+  Log_Comm_Yr = LOG(TotComm/365.25);
+  Log_Comm_Days = LOG(TotComm);
+    
+  IF TotComm > 0;
+  IF Falls NE . AND MMSE NE . AND Age NE .;
+RUN;
+
+TITLE "Kenosha County Falls Study";
+PROC PRINT DATA=Kenosha (OBS=15);
+    VAR MMSE Age Falls TotComm Log_Comm_Yr Log_Comm_Days;
+RUN;
+TITLE;
+```
+
+The Poisson regression model for the number of falls $y_i$ as a function of MMSE score $x_i$ and time in the community (in years) $T_i$ is given by either
+$$ y_i \sim \mbox{Poi}(\lambda_i T_i) \\
+\log{\lambda_i} = \beta_0 + f_1(x_i)$$
+
+or equivalently
+
+$$ y_i \sim \mbox{Poi}(\mu_i) \\
+\log{\mu_i} = \beta_0 + f_1(x_i) + \log{T_i}
+$$
+
+We will use a natural cubic spline with 3 df (4 knots) to represent the effect of MMSE on the falls rate.  Given the discreteness of the MMSE scores, instead of the usual knot placement rules, we will place knots evenly spaced between 22 (the $5^{th}$ percentile) and 30 (the $95^{th}$ percentile). 
+
+Poisson regression models can be fit with a number of different SAS procedures,  We will use PROC GLIMMIX with the DIST=POISSON and LINK=LOG options in the MODEL statement.  Note that the log function is the default link function for Poisson regression, so the LINK=LOG argument could have been omitted, but it's good practice to be explicit.  The OFFSET-Log_Comm_Yr option specifies that Log_Comm_Yr should be included in the model as an offset term, a linear term with a known coefficient of 1.  (Remember that the offset must be the *log* of the time variable, not the time variable itself.)
+
+```{r poisson1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 24.7 27.3 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  STORE MMSEOnly;
+  OUTPUT OUT=Tmp PRED=Yhat STUDENT=Resid;
+RUN;
+ODS SELECT ALL;
+```
+
+## Assessing the Validity of the Modeling Assumptions
+
+
+The adequacy of the Poisson model can be assessed, to a limited extent, using residuals. Similar to logistic regression, simply plotting the residuals against the fitted values or predictor variables is of limited utility due to the discrete nature of the response variable (counts). Annotating these residual plots with a LOESS (or PBSPLINE) curve (as we've discussed previously) is one option 
+
+```{r check1, engine="sashtml5", engine.path=saspath, error=TRUE}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+*  PBSPLINE X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+	REFLINE 0 / AXIS=Y;
+RUN; 
+```
+
+There is an apparent systematic departure from the zero line for MMSE scores below 25, although, given the sparsity of the data, it is unclear whether it represents a serious concern. We can more formally assess the validity of the usual assumptions of sufficient df for the splines using information criteria (AIC or BIC) in the usual way. 
+
+The effective sample size for Poisson data is the number of events.  For falls in the Kenosha data, the effective sample size is $315$. 
+
+```{r ess1, engine="sashtml5", engine.path=saspath}
+PROC MEANS DATA=Kenosha SUM;
+  VAR Falls;
+RUN;
+```
+
+```{r check2, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 24.7 27.3 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF3;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 24 26 28 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF4;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF5;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.3 24.7 26 27.3 28.7 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF6;
+  MERGE F O;
+RUN;
+
+DATA DF3;
+  SET DF3;
+
+  Model = "MMSE 3df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF4;
+  SET DF4;
+
+  Model = "MMSE 4df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF5;
+  SET DF5;
+
+  Model = "MMSE 5df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF6;
+  SET DF6;
+
+  Model = "MMSE 6df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA ModelComparisons;
+  LENGTH Model $20;
+
+  SET DF3 DF4 DF5 DF6;
+    
+  KEEP Model DF AIC BIC;    
+RUN;
+
+PROC MEANS DATA=ModelComparisons MIN NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparisons;
+    
+  AIC = AIC - AIC_Min;
+  BIC = BIC - BIC_Min;
+    
+  KEEP Model DF AIC BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (AIC/BIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model DF AIC BIC;  
+    
+  FORMAT AIC 6.1 BIC 6.1;
+RUN;
+TITLE;
+```
+
+Using BIC, the best model uses 5 df to represent the MMSE effect, and it is decisively better than our initial model.  So, we will update our working model.
+
+```{r poisson2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  STORE MMSEOnly;
+  OUTPUT OUT=Tmp PRED=Yhat STUDENT=Resid;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r check3, engine="sashtml5", engine.path=saspath, error=TRUE}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+*  PBSPLINE X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+	REFLINE 0 / AXIS=Y;
+RUN; 
+```
+
+The residual plot looks much improved.
+
+We also need to consider the validity of distributional (Poisson) assumption, which primarily focuses on the correct specification of the variance.  Normally, we would evaluate the validity of this assumption before proceeding to inference, but we will proceed with inference right now and revisit this question later.
+
+## Estimated Rate Ratios
+
+ESTIMATE statements can be used to obtain Wald confidence intervals for (log) rate ratios comparing populations with two different MMSE scores.
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "MMSE 27 v 30" MMSECS [1, 27] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 30" MMSECS [1, 24] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 27" MMSECS [1, 24] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 30" MMSECS [1, 21] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 27" MMSECS [1, 21] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 24" MMSECS [1, 21] [-1, 24] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Rate Ratios for MMSE Scores";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Label X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+           MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+           ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID TYPE=LOG LABEL="Rate Ratio";  /* specify log scale */
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+```
+
+The falls rate ratios associated with a 3-point drop in MMSE scores are $(0.88,1.88)$ for 27 v 30, $(1.16,3.18)$ for 24 v 27 and $(1.8,3.6)$ for 21 v 24.
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) any effect of MMSE scores on falls rate and (2) non-linearity in the effect of MMSE scores on the log falls rate can be performed in the usual way.
+
+```{r inference2, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA Full;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  MODEL Falls = MMSE / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA MMSELinear;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  MODEL Falls = / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA NoMMSE;
+  MERGE F O;
+RUN;
+
+DATA Full;
+  SET Full;
+
+  RENAME MinusTwoLogLike=MinusTwoLogLike_Full DF=DF_Full;
+RUN;
+
+DATA MMSELinear;
+  LENGTH Model $30 Test $30;
+  SET MMSELinear;
+
+  Model = "Linear MMSE";
+  Test = "Non-Linear MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA NoMMSE;
+  LENGTH Model $30 Test $30;
+  SET NoMMSE;
+
+  Model = "Null Model";
+  Test = "Overall MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET MMSELinear NoMMSE;
+
+  Chisq = MinusTwoLogLike-MinusTwoLogLike_Full;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is overwhelming evidence that MMSE is associated with falls rate $(s \approx 75)$ and that the effect of MMSE score on the log falls rate is non-linear $(s \approx 32)$.
+
+## Estimated Rates
+
+Interval estimates of the falls rates for specific MMSE scores can be obtained using ESTIMATE statements with the ILINK option.  Note that the rates are per year, because the units for time variable in the offset term is years.
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "MMSE 30" Intercept 1 MMSECS [1, 30] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 27" Intercept 1 MMSECS [1, 27] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 24" Intercept 1 MMSECS [1, 24] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 21" Intercept 1 MMSECS [1, 21] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        LowerMu="Lower CL"
+        Mu="Estimate"
+        UpperMu="Upper CL";
+    TITLE "Falls Rate (per Year) by MMSE Score";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+   SCATTER Y=Label X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+           MARKERATTRS=(SYMBOL=Plus COLOR=Blue) 
+           ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+   REFLINE 1 / AXIS=X;
+   XAXIS GRID TYPE=LOG LABEL="Falls Rate (per Year)";  /* specify log scale */
+   YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+           
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+    ODS SELECT FitPlot;
+    EFFECTPLOT FIT(X=MMSE) / CLM NOOFFSET;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+The estimated falls rates are $(1.2,1.9)$ falls per year for an MMSE score of 30, $(1.4,2.6)$ for an MMSE score of 27, $(2.6,5.4)$ for an MMSE score of 24, and $(6.8,13.0)$ for an MMSE score of 21.
+
+# Choice of Time Scale
+
+The choice of scale (days, weeks, months, years, decades) for time in the community does not substantively impact the model or the analysis. Meaningful questions (hypothesis tests and rate ratios) are unaffected by the chosen scale. Rates will only nominally change, reporting the expected number of falls per day instead of the expected number of falls per year. To illustrate, we rerun the previous analysis using time in the community in days instead of time in the community in years.
+
+```{r poisson3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Days;
+
+  STORE MMSEOnly;
+RUN;
+ODS SELECT ALL;
+```
+
+## Estimated Rate Ratios
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "MMSE 27 v 30" MMSECS [1, 27] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 30" MMSECS [1, 24] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 27" MMSECS [1, 24] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 30" MMSECS [1, 21] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 27" MMSECS [1, 21] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 24" MMSECS [1, 21] [-1, 24] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Rate Ratios for MMSE Scores";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Label X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+           MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+           ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID TYPE=LOG LABEL="Rate Ratio";  /* specify log scale */
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+```
+
+## Hypothesis Tests
+
+```{r inference5, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);
+
+  MODEL Falls = MMSECS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA Full;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  MODEL Falls = MMSE / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA MMSELinear;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  MODEL Falls = / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA NoMMSE;
+  MERGE F O;
+RUN;
+
+DATA Full;
+  SET Full;
+
+  RENAME MinusTwoLogLike=MinusTwoLogLike_Full DF=DF_Full;
+RUN;
+
+DATA MMSELinear;
+  LENGTH Model $30 Test $30;
+  SET MMSELinear;
+
+  Model = "Linear MMSE";
+  Test = "Non-Linear MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA NoMMSE;
+  LENGTH Model $30 Test $30;
+  SET NoMMSE;
+
+  Model = "Null Model";
+  Test = "Overall MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET MMSELinear NoMMSE;
+
+  Chisq = MinusTwoLogLike-MinusTwoLogLike_Full;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+## Estimated Rates
+
+```{r inference6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "MMSE 30" Intercept 1 MMSECS [1, 30] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 27" Intercept 1 MMSECS [1, 27] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 24" Intercept 1 MMSECS [1, 24] / CL ILINK ALPHA=0.03125;
+    ESTIMATE "MMSE 21" Intercept 1 MMSECS [1, 21] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        LowerMu="Lower CL"
+        Mu="Estimate"
+        UpperMu="Upper CL";
+    TITLE "Falls Rate (per Year) by MMSE Score";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+   SCATTER Y=Label X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+           MARKERATTRS=(SYMBOL=Plus COLOR=Blue) 
+           ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+   REFLINE 1 / AXIS=X;
+   XAXIS GRID TYPE=LOG LABEL="Falls Rate (per Year)";  /* specify log scale */
+   YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+           
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=MMSEOnly;
+    ODS SELECT FitPlot;
+    EFFECTPLOT FIT(X=MMSE) / CLM NOOFFSET;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+Note that the change of time scale does not change the estimated rate ratios or likelihood ratio tests. While the estimated falls rates are numerically different, they are substantially the same; the difference simply reflects the change from falls per year to falls per day.
+
+The estimated falls rates are $(0.0033,0.0053)$ falls per *day* for an MMSE score of 30, $(0.0039,0.0072)$ for an MMSE score of 27, $(0.0072,0.0147)$ for an MMSE score of 24, and $(0.019,0.036)$ for an MMSE score of 21.
+
+# Adjusting for Age
+
+We next consider an additive model for the log falls rate as a function of MMSE score and age.  We are adjusting for age as a potential confounder of the association between falls rate and MMSE score, noting that falls rates generally increase with age and cognitive function generally declines with age. 
+
+The Poisson regression model for the number of falls $y_i$ as a function of MMSE score $x_i$ and age $a_i$ and time in the community (in years) $T_i$ is given by
+$$ y_i \sim \mbox{Poi}(\lambda_i T_i) \\
+\log{\lambda_i} = \beta_0 + f_1(x_i) + f_2(a_i) $$
+
+or equivalently
+
+$$ y_i \sim \mbox{Poi}(\mu_i) \\
+\log{\mu_i} = \beta_0 + f_1(x_i) + f_2(a_i) + \log{T_i}
+$$
+
+We will continue to represent the effect of MMSE score using a natural cubic spline with 5 df.  We will represent the effect of age using a natural cubic spline with 4 df using the standard knot placement rules.  With the effective sample size of $315$, there is insufficient data to allow us to estimate interactions between age and MMSE score.
+
+```{r poisson4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  STORE Additive;
+  OUTPUT OUT=Tmp PRED=Yhat STUDENT=Resid;
+RUN;
+ODS SELECT ALL;
+```
+
+## Assessing the Validity of the Modeling Assumptions
+
+We first examine residual plots against MMSE score and age.
+
+```{r check4, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+*  PBSPLINE X=MMSE Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+	REFLINE 0 / AXIS=Y;
+RUN; 
+
+PROC SGPLOT DATA=Tmp;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+*  PBSPLINE X=Age Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);
+	REFLINE 0 / AXIS=Y;
+RUN; 
+```
+
+Both residual plots look good.
+
+We will more formally assess the df used for the age effect using information criteria.
+
+```{r check5, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF4;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF5;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(2.5 18.33 34.17 50 65.83 81.67 97.5) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA DF6;
+  MERGE F O;
+RUN;
+
+DATA DF4;
+  SET DF4;
+
+  Model = "Age 4df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF5;
+  SET DF5;
+
+  Model = "Age 5df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA DF6;
+  SET DF6;
+
+  Model = "Age 6df";
+  AIC = MinusTwoLogLike + 2*(DF+1);
+  BIC = MinusTwoLogLike + LOG(315)*(DF+1);
+
+  KEEP Model DF AIC BIC;    
+RUN;
+
+DATA ModelComparisons;
+  LENGTH Model $20;
+
+  SET DF4 DF5 DF6;
+    
+  KEEP Model DF AIC BIC;    
+RUN;
+
+PROC MEANS DATA=ModelComparisons MIN NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparisons;
+    
+  AIC = AIC - AIC_Min;
+  BIC = BIC - BIC_Min;
+    
+  KEEP Model DF AIC BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (AIC/BIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model DF AIC BIC;  
+    
+  FORMAT AIC 6.1 BIC 6.1;
+RUN;
+TITLE;
+```
+
+Using BIC, the best model uses 4 df for age, so we will stick with our original model.
+
+We will again postpone consideration of the correct specification of the variance. 
+
+## Estimated Rate Ratios
+
+ESTIMATE statements can be used to obtain Wald confidence intervals for (log) rate ratios comparing populations with two different MMSE scores and the same age.
+
+```{r inference7, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Additive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "MMSE 27 v 30" MMSECS [1, 27] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 30" MMSECS [1, 24] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 24 v 27" MMSECS [1, 24] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 30" MMSECS [1, 21] [-1, 30] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 27" MMSECS [1, 21] [-1, 27] / CL EXP ALPHA=0.03125;
+  ESTIMATE "MMSE 21 v 24" MMSECS [1, 21] [-1, 24] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+  TITLE "Rate Ratios for MMSE Scores";
+RUN;
+
+PROC SGPLOT DATA=E NOAUTOLEGEND;
+  SCATTER Y=Label X=ExpEstimate / XERRORLOWER=LowerExp XERRORUPPER=UpperExp
+           MARKERATTRS=(SYMBOL=Plus COLOR=Blue)
+           ERRORBARATTRS=(THICKNESS=2 COLOR=Blue) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  XAXIS GRID TYPE=LOG LABEL="Rate Ratio";  /* specify log scale */
+  YAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE;
+RUN;
+TITLE;
+```
+
+After adjustment for age, the falls rate ratios associated with a 3-point drop in MMSE scores are $(0.88,1.94)$ for 27 v 30, $(1.09,3.02)$ for 24 v 27 and $(1.8,3.7)$ for 21 v 24.  Adjusting for age had little effect on the estimated rate ratios.
+
+## Hypothesis Tests
+
+Likelihood ratio tests for (1) any effect of MMSE scores on falls rate and (2) non-linearity in the effect of MMSE scores on the log falls rate can be performed in the usual way.
+
+```{r inference8, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE /
+      NATURALCUBIC BASIS=TPF(NOINT)
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA Full;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSE AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA MMSELinear;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA NoMMSE;
+  MERGE F O;
+RUN;
+
+DATA Full;
+  SET Full;
+
+  RENAME MinusTwoLogLike=MinusTwoLogLike_Full DF=DF_Full;
+RUN;
+
+DATA MMSELinear;
+  LENGTH Model $30 Test $30;
+  SET MMSELinear;
+
+  Model = "Linear MMSE";
+  Test = "Non-Linear MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA NoMMSE;
+  LENGTH Model $30 Test $30;
+  SET NoMMSE;
+
+  Model = "Age Only";
+  Test = "Overall MMSE";
+
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET MMSELinear NoMMSE;
+
+  Chisq = MinusTwoLogLike-MinusTwoLogLike_Full;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+
+  KEEP Test DF ChiSq ProbChiSq sValue;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is overwhelming evidence that MMSE is associated with falls rate $(s \approx 73)$ and that the effect of MMSE score on the log falls rate is non-linear $(s \approx 30)$.
+
+# Overdispersion
+
+In the context of Poisson regression, overdispersion occurs when the average discrepancy between the observed responses $y_i$ and their predicted values $\hat{y}_i = \hat{\lambda}_i T_i$ is larger than the Poisson model predicts, $\mbox{Var}(Y_i|x_i) > E(Y_i|x_i)$. Potential causes of overdispersion are violations of the stationarity (constant event rate) and/or independence assumptions of the Poisson model for the underlying event-generating process. In practice, it is impossible to distinguish these two phenomena. Apparent overdispersion could also reflect omitted predictors and/or incorrectly specified covariate effects.
+
+When a Poisson model is adequate, the residual deviance has an approximate $\chi^2$ distribution with $n-p$ degrees of freedom, where $n$ is the number of observations and $p$ is the number of parameters in the fitted model. Since the expected value of a $\chi^2$ distribution is equal to its degrees of freedom, it follows that the residual deviance for a well-fitting model should be approximately equal to its degrees of freedom and deviance divided by its degrees of freedom should be approximately equal to 1. If the data are overdispersed, the resdiual deviance divided by its degrees of freedom will be (much) greater than 1.
+
+```{r check6, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA Pearson;
+  SET F(FIRSTOBS=7 OBS=8);
+RUN;
+ODS SELECT ALL;
+
+TITLE "Pearson's Chi Square";
+  PROC PRINT DATA=Pearson NOOBS;
+RUN;
+TITLE;
+```
+
+The Poisson model is fairly clearly inadequate. The Pearson's chi-square statistic divided by its degrees of freedom is $6.5$, which is very far from the expected value of 1. 
+
+Overdispersion can be more formally assessed using a likelihood ratio test for the dispersion parameter from a negative binomial model, an extension of the Poisson model that allows for greater than Poisson dispersion. Under the null hypothesis, the distribution of the likelihood ratio test statistic is $\frac{1}{2} \chi^2_0 + \frac{1}{2} \chi^2_1$, not $\chi^2_1$. In practice, calculate the *p*-value using the standard approach and divide it by 2
+
+```{r check7, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=POISSON LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA Poisson;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Kenosha;
+  EFFECT MMSECS=SPLINE(MMSE / 
+      NATURALCUBIC BASIS=TPF(NOINT) 
+      KNOTMETHOD=LIST(22 23.6 25.2 26.8 28.4 30) DETAILS);    
+  EFFECT AgeCS=SPLINE(Age / 
+      NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 
+      KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95) DETAILS);
+
+  MODEL Falls = MMSECS AgeCS / DIST=NEGBIN LINK=LOG OFFSET=Log_Comm_Yr;
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 KEEP=Value);
+
+  MinusTwoLogLike = INPUT(Value,BEST32.);
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET O(FIRSTOBS=2 OBS=2);
+
+  DF = INPUT(Value,BEST32.);
+  KEEP DF;
+RUN;
+
+DATA NegBin;
+  MERGE F O;
+
+  RENAME MinusTwoLogLike=MinusTwoLogLike_NegBin DF=DF_NegBin;
+RUN;
+
+DATA Poisson;
+  LENGTH Model $30 Test $30;
+  SET Poisson;
+    
+  Model = "Poisson";
+  Test = "Overdispersion";
+    
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET NegBin;
+  SET Poisson;
+    
+  Chisq = MinusTwoLogLike-MinusTwoLogLike_NegBin;
+  DF = DF_NegBin - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF))/2;
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test DF ChiSq ProbChiSq sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Test for Overdispersion";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+There is overwhelming evidence of overdispersion $(s \approx 183)$.
+
+The presence of overdispersion in the Poisson model has similar consequences to the incorrect specification of the variance function in the linear regression model. Estimated standard errors are incorrect; in an overdispersed Poisson model, they are always underestimated. Consequently, confidence/compatability intervals will be too narrow, and *p*-values will be too small. 
+
+We will consider alternative models for overdispersed count data in the next set of lecture notes.
+

@@ -1,0 +1,1322 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Weighted Least Squares
+
+The assumption that the variance function $\mbox{Var}(Y|x)$ is the same for all values of $x$ can be relaxed in a number of ways. In an important generalization, rather than assume that the variance function is constant, we can assume that 
+$$\mbox{Var}(Y|x_i) = \mbox{Var}(\epsilon_i) = \frac{\sigma^2}{w_i}$$
+where $w_1, w_2, \ldots, w_n$ are *known positive numbers*. The variance function is still characterized by only one unknown positive number $\sigma^2$, but the variance will be different for each case. This will lead to the use of *weighted least squares* (WLS) in place of OLS (ordinary least squares) to get estimates.
+
+The WLS estimator $\hat{\beta}$ is chosen to minimize the weighted residual sum of squares function 
+$$\mbox{RSS}(\beta) = \sum{w_i (y_i - x_i \beta)^2} $$
+Squared differences with relatively larger values of $w_i$ are more influential in the weighted $\mbox{RSS}$ and so observations with smaller variances $\sigma^2/w_i$ are more important.
+
+In matrix form, the weighted residual sum of squares is given by
+$$(y - X \beta)^T W (y - X \beta)$$
+where 
+$$ W = \begin{pmatrix}
+    w_1 & 0 & 0 & \ldots & 0 \\
+    0 & w_2 & 0 & \ldots & 0 \\
+    0 & 0 & w_3 & \ldots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & 0\\
+    0 & 0 & 0 & \ldots & w_N \\
+    \end{pmatrix}
+$$
+The weighted least squares estimator of $\beta$ is
+$$\hat{\beta} = (X^T W X)^{-1} X^T W y$$
+The estimated variance parameter $\hat{\sigma}^2$ is 
+$$\hat{\sigma}^2 = \frac{\mbox{RSS}(\hat{\beta})}{n-k}$$ 
+with $n-k$ df where $n$ is the sample size and $k$ is the number of regressors (including the intercept).
+The estimated variance-covariance matrix of $\hat{\beta}$ is
+$$\hat{V} = \hat{\sigma}^2 (X^T W X)^{-1}$$
+
+Confidence intervals and hypothesis tests are essentially the same for OLS (ordinary least squares) and WLS (weighted least squares), because OLS is a special case of WLS with $w_i = 1$ for all subjects.  We define the residuals for weighted least squares by
+$$r_i = \sqrt{w_i} (y_i - x_i \hat{\beta})$$
+The sum of squares of these residuals is the residual sum of squares, and the variance of these residuals does not depend on the weights.
+
+# Example: Simple Linear Regression of Blood Pressure on Age
+
+To illustrate the application of weighted least squares, we will examine the relationship between age and diastolic blood pressure in a sample of 54 adult women.  We initially consider a simple linear regression for diastolic blood pressure on age.
+
+## Ordinary Least Squares
+
+```{r ols, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+OPTIONS NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+FILENAME BloodP URL "http://users.stat.ufl.edu/~rrandles/sta4210/Rclassnotes/data/textdatasets/KutnerData/Chapter%2011%20Data%20Sets/CH11TA01.txt";
+
+DATA BloodPressure;
+  INFILE BloodP;
+
+	INPUT Age DBP;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BloodPressure;
+	MODEL DBP = Age / SELECTION=NONE;
+  OUTPUT OUT=Tmp R=Resid P=Yhat;
+  STORE OLS;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+  Abs_Resid = ABS(resid);
+	Resid_Sq = Resid**2;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r diagnostics1, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The error variance clearly increases with the mean. However, the simple structural model (linear relationship between age and mean diastolic blood pressure) seems to hold. Weighted least squares is a potentially useful approach to account for the apparent non-constant variance.  
+
+## Estimating Weights
+
+The optimal weights are inversely proportional to the variance.  In the absence of a theoretical model for the non-constant variance, we can identify empirical weights using (1) the relationship between the absolute residuals and another variable (often the predicted values from OLS) and use this as a model for the standard deviation, (2) the relationship between the squared residuals and another variable (often the predicted values from OLS) and use this as a model for the variance, or (3) use grouped data to estimate the variance (or standard deviation).
+
+```{r weights1, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+	LOESS X=Yhat Y=Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cx1b9e77 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+	LOESS X=Yhat Y=Resid_Sq / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Resid_Sq / NOMARKERS LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+```
+
+Based on the above plots, we will assume that the absolute values of the residuals are linearly related to the fitted values (mean). We will fit a least squares model to predict $\mbox{SD}_i$.
+
+
+```{r weights2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Tmp;
+	MODEL Abs_Resid = Yhat / SELECTION=NONE;
+	OUTPUT OUT=BPWgts P=SDhat;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=BPWgts (OBS=5);
+  VAR Age DBP SDhat;
+RUN;
+```
+
+## Weighted Least Squares
+
+We can now fit the weighted least squares model with $w_i = 1/\mbox{SD}_i^2$.
+
+```{r wls1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA BPWgts;
+  SET BPWgts;
+
+	Wgt = 1/SDhat**2;
+
+	KEEP Age DBP SDhat Wgt;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BPWgts;
+	MODEL DBP = Age / SELECTION=NONE;
+	WEIGHT Wgt;
+
+	OUTPUT OUT=Tmp2 P=Yhat R=Resid;
+  STORE WLS;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA Tmp;
+  SET Tmp2;
+
+  StdRes = SQRT(Wgt)*Resid;
+  Sqrt_Abs_Resid = SQRT(ABS(StdRes));
+RUN;
+```
+
+```{r diagnostics2, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=StdRes / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT StdRes / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+Plots of the Studentized residuals (appropriate for weighted least squares models) do not reveal any concerns regarding the assumptions of the simple linear regression model.
+
+## Inference
+
+```{r inference1, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Ordinary Least Squares (OLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+Using weighted least squares, the estimated intercept is $(49.99,61.15)$, and the estimated slope is $(0.42,0.77)$. Using ordinary least squares, the estimated intercept is $(47.32,65.00)$, and the estimated slope is $(0.36,0.80)$. Although the changes in the parameter estimates and standard errors seem quite modest, the impact of accounting for the non-constant variance using weighted least squares is more apparent if we examine the estimated means for various ages.
+
+
+```{r inference2, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Ordinary Least Squares (OLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+Using weighted least squares, the confidence interval for mean diastolic blood pressure is $(65.0,70.0)$ mmHg at age 20, $(76.9,81.9)$ mmHg at age 40 and $(85.8,96.9)$ at age 60.  In contrast, using ordinary least squares, the confidence interval for mean diastolic blood pressure is $(62.9,72.6)$ mmHg at age 20, $(76.9,81.8)$ mmHg at age 40 and $(85.9,96.0)$ at age 60.  Failing to account for the non-constant variance results in an interval estimate that is too wide for mean diastolic blood pressure at age 20.
+
+```{r inference3, engine="sashtml5", engine.path=saspath, error=TRUE}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BPWgts Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cxd95f02 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+TITLE;
+```
+
+```{r inference4, engine="sashtml5", engine.path=saspath, error=TRUE}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BPWgts Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Ordinary Least Squares (OLS)";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cxd95f02 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+TITLE;
+```
+
+# Iteratively Re-Weighted Least Squares
+
+Since the weights are based on the residuals, we could take an iterative approach and re-estimate the weights based on the (ordinary) residuals from the WLS model. Unless the regression coefficients changed dramatically after weighting, re-estimating the weights doesn't make much difference.
+
+## Iteration 2
+
+```{r weights3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+DATA Tmp;
+  SET Tmp;
+
+  Abs_Resid = ABS(Resid);
+  KEEP Age DBP Yhat Abs_Resid;
+RUN;
+
+PROC GLMSELECT DATA=Tmp;
+	MODEL Abs_Resid = Yhat / SELECTION=NONE;
+	OUTPUT OUT=BPWgts P=SDhat;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=BPWgts (OBS=5);
+  VAR Age DBP SDhat;
+RUN;
+```
+
+```{r wls2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA BPWgts;
+  SET BPWgts;
+
+	Wgt = 1/SDhat**2;
+
+	KEEP Age DBP SDhat Wgt;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BPWgts;
+	MODEL DBP = Age / SELECTION=NONE;
+	WEIGHT Wgt;
+
+	OUTPUT OUT=Tmp P=Yhat R=Resid;
+  STORE WLS;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r inference5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference7, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BPWgts Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cxd95f02 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+TITLE;
+```
+
+## Iteration 3
+
+```{r weights4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+DATA Tmp;
+  SET Tmp;
+
+  Abs_Resid = ABS(Resid);
+  KEEP Age DBP Yhat Abs_Resid;
+RUN;
+
+PROC GLMSELECT DATA=Tmp;
+	MODEL Abs_Resid = Yhat / SELECTION=NONE;
+	OUTPUT OUT=BPWgts P=SDhat;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=BPWgts (OBS=5);
+  VAR Age DBP SDhat;
+RUN;
+```
+
+```{r wls3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA BPWgts;
+  SET BPWgts;
+
+	Wgt = 1/SDhat**2;
+
+	KEEP Age DBP SDhat Wgt;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BPWgts;
+	MODEL DBP = Age / SELECTION=NONE;
+	WEIGHT Wgt;
+
+	OUTPUT OUT=Tmp P=Yhat R=Resid;
+  STORE WLS;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r inference8, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference9, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference10, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BPWgts Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cxd95f02 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+TITLE;
+```
+
+## Iteration 4
+
+```{r weights5, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+DATA Tmp;
+  SET Tmp;
+
+  Abs_Resid = ABS(Resid);
+  KEEP Age DBP Yhat Abs_Resid;
+RUN;
+
+PROC GLMSELECT DATA=Tmp;
+	MODEL Abs_Resid = Yhat / SELECTION=NONE;
+	OUTPUT OUT=BPWgts P=SDhat;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=BPWgts (OBS=5);
+  VAR Age DBP SDhat;
+RUN;
+```
+
+```{r wls4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA BPWgts;
+  SET BPWgts;
+
+	Wgt = 1/SDhat**2;
+
+	KEEP Age DBP SDhat Wgt;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BPWgts;
+	MODEL DBP = Age / SELECTION=NONE;
+	WEIGHT Wgt;
+
+	OUTPUT OUT=Tmp P=Yhat R=Resid;
+  STORE WLS;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r inference11, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference12, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r inference13, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WLS;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BPWgts Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Weighted Least Squares (WLS)";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cxd95f02 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+TITLE;
+```
+
+# Weighting of Group Means
+
+Another use of weighted least squares is the analysis of grouped (aggregate) data. With aggregate data, instead of observing data for individual $i$ in group $s$ $(y_{is}, x_{is})$, we only observe the group means $(\bar{y}_s, \bar{x}_s)$ along with the number of observations in the group $n_s$. Even if we do not observe the individual data, we can write down a linear regression model
+$$y_{is} = \beta_0 + \beta_1 x_{is} + \epsilon_{is}, \mbox{Var}(\epsilon_i) = \sigma^2$$
+for the (unobserved) individual data. It follows that
+$$\mbox{E}(\bar{y}_s | \bar{x}_s) = \beta_0 + \beta_1 \bar{x}_s$$
+and, assuming the outcomes are independent, the variance of the mean outcome for group $s$ is
+$$\mbox{Var}(\bar{y}_s | \bar{x}_s) = \frac{\sigma^2}{n_s}$$
+Thus, to estimate the parameters of the linear regression model for the individual outcomes, we can simply apply weighted least squares with weights $w_s = n_s$ to the aggregate data.
+
+To illustrate, we will replicate the analysis of the NHANES data on the relationship between total cholesterol and age (represented using a natural cubic spline) with aggregate age-specific data. Note that the point estimates of the regression coefficients are identical using the aggregate and individual data, but the point estimates of the error standard deviation differ substantially ($\hat{\sigma} = 1.400$ using the aggregate data, $\hat{\sigma} = 1.027$ using the individual data). The differences in the standard errors/confidence intervals/F-tests between the two models are due to the different estimates of the error standard deviation.
+
+## Weighted Least Squares with Aggregated Data
+
+```{r grouped1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+RUN;
+
+PROC MEANS DATA=Analysis NOPRINT;
+  CLASS Age;
+  VAR TotChol;
+  OUTPUT OUT=Analysis_Agg N=N MEAN=TotChol;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis_Agg;
+  ODS OUTPUT FitStatistics=F;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+  WEIGHT N;
+
+  STORE AggregatedModel;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r grouped2, engine="sashtml5", engine.path=saspath}
+TITLE "Estimated Error Variance (Individuals)";
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+```
+
+```{r grouped3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r grouped4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r grouped5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+```{r grouped6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis_Agg;
+  ODS OUTPUT ANOVA=Full;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+  WEIGHT N;
+RUN;
+
+DATA Full (KEEP=SS DF RENAME=(SS=SS_Full DF=DF_Full));
+  SET Full;
+  WHERE Source="Error";
+RUN;
+
+PROC GLMSELECT DATA=Analysis_Agg;
+  ODS OUTPUT ANOVA=Linear;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = Age / SELECTION=NONE;
+  WEIGHT N;
+RUN;
+
+DATA Linear (KEEP=Test DF SS);
+  SET Linear;
+  WHERE Source="Error";
+
+  Test="Non-Linear Age";
+RUN;
+
+PROC GLMSELECT DATA=Analysis_Agg;
+  ODS OUTPUT ANOVA=Null;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = / SELECTION=NONE;
+  WEIGHT N;
+RUN;
+
+DATA Null (KEEP=Test DF SS);
+  SET Null;
+  WHERE Source="Error";
+
+  Test="Overall Age";
+RUN;
+
+DATA FTests;
+  LENGTH Test $50;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Linear Null;
+
+  SS = SS-SS_Full;
+  DF = DF-DF_Full;
+  MS = SS/DF;
+  MS_Full = SS_Full/DF_Full;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests (ANOVA)";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ProbF PVALUE6.4;
+RUN;
+TITLE;
+```
+
+## Ordinary Least Squares with Individual Data
+
+```{r individual1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=F;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+
+  STORE IndividualModel;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r individual2, engine="sashtml5", engine.path=saspath}
+TITLE "Estimated Error Variance (Individuals)";
+PROC PRINT DATA=F NOOBS LABEL;
+  WHERE Label1="Root MSE";
+  VAR cValue1;
+  LABEL cValue1="Root Mean Square Error";
+RUN;
+```
+
+```{r individual3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=IndividualModel;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+```{r individual4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=IndividualModel;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r individual5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=IndividualModel;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+```{r individual6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT ANOVA=Full;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA Full (KEEP=SS DF RENAME=(SS=SS_Full DF=DF_Full));
+  SET Full;
+  WHERE Source="Error";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT ANOVA=Linear;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = Age / SELECTION=NONE;
+RUN;
+
+DATA Linear (KEEP=Test DF SS);
+  SET Linear;
+  WHERE Source="Error";
+
+  Test="Non-Linear Age";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT ANOVA=Null;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = / SELECTION=NONE;
+RUN;
+
+DATA Null (KEEP=Test DF SS);
+  SET Null;
+  WHERE Source="Error";
+
+  Test="Overall Age";
+RUN;
+
+DATA FTests;
+  LENGTH Test $50;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Linear Null;
+
+  SS = SS-SS_Full;
+  DF = DF-DF_Full;
+  MS = SS/DF;
+  MS_Full = SS_Full/DF_Full;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests (ANOVA)";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ProbF PVALUE6.4;
+RUN;
+TITLE;
+```
+
+# Recommended Practice
+
+We will revisit the blood pressure example to illustrate the steps that would typically be followed.  Given the relatively modest sample size (54), our initial model will represent the effect of age using a natural cubic spline with 3 df (instead of 4).
+
+```{r practice1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+OPTIONS NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+FILENAME BloodP URL "http://users.stat.ufl.edu/~rrandles/sta4210/Rclassnotes/data/textdatasets/KutnerData/Chapter%2011%20Data%20Sets/CH11TA01.txt";
+
+DATA BloodPressure;
+  INFILE BloodP;
+
+	INPUT Age DBP;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BloodPressure;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+  OUTPUT OUT=Tmp R=Resid P=Yhat;
+  STORE Initial;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+  Abs_Resid = ABS(resid);
+	Resid_Sq = Resid**2;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+We first consider the adequacy of the assumptions: (1) correct structural model, (2) independence (cannot be assessed using the data alone), (3) correct (constant) variance, and (4) normality.
+
+Assessments of correct structural model via plots and formal model comparisons:
+
+```{r practice2, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+```
+
+```{r practice3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Initial Model";
+PROC GLMSELECT DATA=BloodPressure;
+  ODS SELECT FitStatistics;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+
+TITLE "+1 df for Age";
+PROC GLMSELECT DATA=BloodPressure;
+  ODS SELECT FitStatistics;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+ODS EXCLUDE NONE;
+```
+
+There do not appear to be any concerns about the correct structural model assumption.
+
+Assessments of correct (constant) variance via plots:
+
+```{r practice4, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+```
+
+The correct (constant) variance assumption does not appear to hold.
+
+Assessments of normality via plots:
+
+```{r practice5, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The normality assumption appears to hold.
+
+Since only one of the three assumptions (correct variance) is concerning, we will proceed to address it.  If there were concerns about more than one assumption, we could freely choose which one of them to address first.
+
+Based on the plot, the (mean of the) absolute values of the residuals is roughly linearly related to the fitted values (mean). So, we will obtain the weights by fitting a linear regression of the absolute residuals as a function of the mean.
+
+```{r practice6, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Tmp;
+	MODEL Abs_Resid = Yhat / SELECTION=NONE;
+	OUTPUT OUT=BPWgts P=SDhat;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA BPWgts;
+  SET BPWgts;
+
+	Wgt = 1/SDhat**2;
+
+	KEEP Age DBP SDhat Wgt;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BPWgts;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+  WEIGHT Wgt;
+  OUTPUT OUT=Tmp R=Resid P=Yhat;
+  STORE Revised;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+
+  StdRes = SQRT(Wgt)*Resid;
+  Sqrt_Abs_Resid = SQRT(ABS(StdRes));
+RUN;
+ODS EXCLUDE NONE;
+```
+
+We again consider the adequacy of the assumptions of our revised model: (1) correct structural model, (2) independence (cannot be assessed using the data alone), (3) correct variance, and (4) normality.
+
+Assessments of correct structural model via plots and formal model comparions:
+
+```{r practice7, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Age Y=StdRes / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+```
+
+```{r practice8, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Initial Model";
+PROC GLMSELECT DATA=BPWgts;
+  ODS SELECT FitStatistics;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+  WEIGHT Wgt;
+RUN;
+TITLE;
+
+TITLE "+1 df for Age";
+PROC GLMSELECT DATA=BPWgts;
+  ODS SELECT FitStatistics;
+  EFFECT AgeCS =SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+	MODEL DBP = AgeCS / SELECTION=NONE;
+  WEIGHT Wgt;
+RUN;
+TITLE;
+ODS EXCLUDE NONE;
+```
+
+There do not appear to be any concerns about the correct structural model assumption.
+
+Assessments of correct variance via plots:
+
+```{r practice9, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+```
+
+The correct variance assumption appears to hold.
+
+Assessments of normality via plots:
+
+```{r practice10, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT StdRes / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The normality assumption appears to hold.
+
+There are no concerns about the assumptions underlying our revised model, so we can proceed to inference.
+
+We can perform tests for the overall effect of age and for non-linear effects of age in the usual way.
+
+```{r practice11, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Revised Model";
+PROC GLMSELECT DATA=BPWgts;
+  ODS SELECT ANOVA;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+    
+	MODEL DBP = AgeCS / SELECTION=NONE;
+  WEIGHTS Wgt;
+RUN;
+
+TITLE "Linear Age";
+PROC GLMSELECT DATA=BPWgts;
+  ODS SELECT ANOVA;
+
+	MODEL DBP = Age / SELECTION=NONE;
+  WEIGHTS Wgt;
+RUN;
+
+TITLE "No Age";
+PROC GLMSELECT DATA=BPWgts;
+  ODS SELECT ANOVA;
+
+	MODEL DBP = / SELECTION=NONE;
+  WEIGHTS Wgt;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r practice12, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+DATA FTests;
+  LENGTH Test $50;
+
+  SS_Full = 76.77068;
+  DF_Full = 50;
+  MS_Full = SS_Full/DF_Full;
+
+  Test = "Non-Linear Age";
+  SS_Reduced = 77.26841;
+  DF_Reduced = 52;
+  OUTPUT;
+
+  Test = "Age Overall";
+  SS_Reduced = 164.37509;
+  DF_Reduced = 53;
+  OUTPUT;
+RUN;
+
+DATA FTests;
+  SET FTests;
+
+  SS = SS_Reduced - SS_Full;
+  DF = DF_Reduced - DF_Full;
+  MS = SS/DF;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an effect of age $(p \approx 0, s = 25.4)$ and essentially no evidence of non-linearity of the age effect $(p=0.85, s=0.2)$.
+
+```{r practice13, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Revised;
+  ESTIMATE "Age 34 v 22" AgeCS [1, 34] [-1, 22] / CL ALPHA=0.03125;
+  ESTIMATE "Age 46 v 22" AgeCS [1, 46] [-1, 22] / CL ALPHA=0.03125;
+  ESTIMATE "Age 58 v 22" AgeCS [1, 58] [-1, 22] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```

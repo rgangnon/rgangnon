@@ -1,0 +1,476 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# The Bootstrap
+
+The *bootstrap* is a computationally intensive method for computing confidence intervals (or hypothesis tests) when the usual distributional assumptions (normality of the errors or asymptotic normality of the sampling distribution) needed for the usual formulas are questionable or when standard formulas are not available.
+
+# The Idea Behind Bootstrapping
+
+Inferential statistics (confidence intervals and hypothesis tests) is based on *sampling distributions*. In theory, to get the sampling distribution, we 
+(1) draw (all or infinitely many) samples from the *population* and 
+(2) compute the statistic(s) of interest for each sample (such as the mean, median, regression coefficient, etc.). The distribution of the statistic(s) is called the *sampling distribution*. In some cases, based on mathematical theory, the sampling distribution is a known distribution, either exactly (the sampling distribution of the mean is normal if observations are sampled from a normal distribution) or approximately (the sampling distribution of the mean is approximately normal if the sample size is large in most situations). 
+
+In practice, we cannot draw an arbitrary number of samples from the population; we have only one sample. The *bootstrap idea* is to draw samples from an *estimate* of the population in place of the population: (1) draw (all or infinitely many) samples from an estimate of the population and 
+(2) compute the statistic(s) of interest for each sample (such as the mean, median, regression coefficient, etc.) The distribution of the statistic(s) is called the *bootstrap distribution*.
+
+The bootstrap is based on the *plug-in principle*: if something is unknown, we substitute an estimate for it. We have routinely used this principle to find estimated standard errors for regression coefficients, replacing the parameter $\sigma$, the error variance, with its estimate $\hat{\sigma}$, the root mean square error. With the bootstrap, instead of plugging in an estimator for a single parameter, we plug in an estimate of the whole population $F$. 
+
+This raises the question of what to substitute for $F$.  Possibilities include the nonparametric, parametric and smoothed bootstrap.  The most common choice, and the only one we will discuss, is the nonparametric bootstrap, which consists of drawing samples with replacement from the data (or the *empirical distribution* $\hat{F}$ with probability $1/n$ on each observation). 
+
+The fundamental bootstrap principle is that this substitution *usually* works.  That is, we can plug in an estimate for $F$, then sample from it, and the resulting bootstrap distribution provides useful information about the sampling distribution.
+
+# Example: Confidence Interval for the Median
+
+We will first illustrate the use of the (nonparametric) bootstrap to find a confidence interval for *median* quarterly medical expenses in the Wisconsin Sleep Cohort (WSC) Study, an ongoing longitudinal study of the causes, consequences and natural history of sleep disorders.  The dataset is available as a [SAS dataset](https://uwmadison.box.com/s/5b5nq4paiwfwzgt9qq7vc83a8r5lkfq3) and as a [comma-delimited file](https://uwmadison.box.com/s/gr3b19ksqgrxhwkvqq1owhk3s7805y4k).  The SAS dataset is also available in the shared library for the course in SAS OnDemand for Academics. If you are using SAS OnDemand for Academics, you should not need to access the dataset using these links.
+
+The outcome variable, expense, is the average medical expenditure per quarter for each person in the WSC over the study duration. For the analyses presented here, subjects with no medical expenditures will be assigned a nominal expenditure of \$10. 
+
+The median expenses in our sample (the sample median) is \$91.50.
+
+```{r sample1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+OPTIONS NODATE NONUMBER;
+
+*%INCLUDE "~/my_shared_file_links/u48718377/Macros/jackboot.sas";
+%INCLUDE "../../SAS_Macros/jackboot.sas";
+
+*LIBNAME Cost "~/my_shared_file_links/u48718377/Cost";
+LIBNAME Cost "../../../BMI552_Datasets/Cost";
+TITLE1; TITLE2; ODS NOPROCTITLE;
+
+DATA Cost;
+  SET Cost.Cost;
+    
+  IF Expense = 0 THEN Expense = 10;
+RUN;
+
+TITLE "Median Expenses in Sample";
+PROC MEANS DATA=Cost NOPRINT MEDIAN;
+  VAR Expense;
+  OUTPUT OUT=Sample MEDIAN=Median;
+RUN;
+
+PROC PRINT DATA=Sample NOOBS;
+  VAR Median;
+RUN;
+TITLE;
+```
+
+To find a bootstrap confidence interval for the population median using a sample $y_1, y_2, \ldots, y_n$, we use the following steps:
+
+(1) Obtain a random sample $y_1^\star, y_2^\star, \ldots, y_n^\star$ from $\hat{G}$ by sampling with replacement from the observed values $y_1, y_2, \ldots, y_n$. In particular, the $j^{th}$ element of the sample $y_j^\star$ is equally likely to be any of the original data points $y_1, y_2, \ldots, y_n$.  Some of the $y_i$ will appear several times in the sample, while others will not appear at all.
+
+(2) Compute and save the median of the sample $y_1^\star, y_2^\star, \ldots, y_n^\star$ from step (1).
+
+(3) Repeat steps (1) and (2) $B$ times. The larger the value of $B$ (the number of bootstrap samples), the more precise the ultimate answer.
+
+(4) A simple $100(1-\alpha)$% *percentile bootstrap confidence interval* is the interval between the sample $\alpha/2$ and $1-\alpha/2$ quantiles.  A better, but more computationally intensive, option is the *bias-corrected and corrected bootstrap confidence interval (BCa)*, which should typically be used.
+
+SAS supplies [macros for basic bootstrap analyses](https://blogs.sas.com/content/iml/2018/07/23/boot-and-bootci-macros-sas.html). The macros are available in a SAS file named [jackboot.sas](https://uwmadison.box.com/s/4j6664jtf0aemrh0mn33dguihv0jzljb).   The jackboot.sas file is also available in the shared library for the course in SAS OnDemand for Academics. If you are using SAS OnDemand for Academics, you should not need to access the jackboot.sas file using these links.
+
+## %ANALYZE Macro
+
+The %BOOT macro is used to generate the bootstrap samples.  It depends on a user-defined %ANALYZE macro that performs the necessary analysis on each bootstrap sample. The %ANALYZE macro is basically the same code used for the analysis of the observed sample, replacing the input dataset with the &Data macro variable, the output dataset with the &OUT macro variable. The DROP statement is used to omit some unimportant variables from the output dataset. The NOPRINT option is used to suppress the printing of the analysis results for each bootstrap sample. (You really don't want to see the output for thousands of analyses.)  The inclusion of the &BYSTMT macro allows the %BOOT macro to use a BY statement to more efficiently implement the bootstrap analysis.
+
+```{r analyze1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+%MACRO ANALYZE(Data= , Out= );
+   PROC MEANS NOPRINT DATA=&Data;   
+      %BYSTMT;
+      VAR Expense;
+      OUTPUT OUT=&Out(DROP=_type_ _freq_) MEDIAN=Median;
+   RUN;
+%MEND;
+```
+
+## Bootstrap Distribution
+
+The following SAS code uses the %BOOT macro to generate 10,000 bootstrap samples.  The bootstrap distribution of the median is stored in the BootDist dataset.  Basic descriptive statistics about the bootstrap distribution are stored in the BootStat dataset. (The bootstrap samples themselves are stored in the BootData dataset.)
+
+```{r boot1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+TITLE 'Bootstrap Analysis of Median';
+%BOOT(DATA=Cost,       /* data set that contains the original data */
+      SAMPLES=10000,      /* number of bootstrap samples */
+      RANDOM=25012021,      /* random number seed for resampling */
+      CHART=0,           /* do not display the old PROC CHART histograms */
+      STAT=Median,     /* list of output variables to analyze (default=_NUMERIC_) */
+      ALPHA=0.03125,        /* significance level for CI (default=0.05) */
+      PRINT=0);          /* print descriptive stats (default=1)*/
+
+PROC PRINT DATA=BootStat NOOBS;  /* or use LABEL option to get labels as column headers */
+	ID Method N;
+	VAR Value Bootmean Bias Stderr Biasco ALCL AUCL;
+RUN;
+```
+
+Using the following SAS code, we can visualize the bootstrap distribution (approximate sampling distribution) of the median using a histogram. The sample median and the percentile bootstrap confidence limits are displayed as vertical lines.
+
+```{r boot2, engine="sashtml5", engine.path=saspath}
+/* OPTIONAL: Store bootstrap statistic in a macro variable */
+PROC SQL NOPRINT;
+	SELECT Value, ALCL, AUCL
+ 	INTO :Stat, :LowerCL, :UpperCL
+ 	FROM BootStat;
+QUIT;
+
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Median;
+  REFLINE &Stat / AXIS=x LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REFLINE &LowerCL &UpperCL / AXIS=x;
+RUN;
+```
+
+The standard deviation of the bootstrap distribution, $4.0$ in this case, is an estimate of the standard error of the statistic.  The standard error is not generally of interest in itself, but as a method for obtaining a confidence interval when the sampling distribution is approximately normal.  One could simply use the bootstrap as a tool for estimating the standard error and then calculate the confidence interval in the usual way. However, there are better options that use the bootstrap distribution more fully.
+
+## Percentile Boostrap CI
+
+The simplest option is the *percentile bootstrap confidence interval*, which uses the $\alpha/2$ and $1-\alpha/2$ percentiles of the bootstrap distribution to form a $(1-\alpha)\%$ confidence interval.
+
+```{r percentile1, engine="sashtml5", engine.path=saspath}
+TITLE 'Percentile-Based Confidence Interval';
+%BOOTCI(PCTL, ALPHA=0.03125, PRINT=0);    /* creates BootCI data set for Pctl CI */
+
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Confid Method;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+The percentile bootstrap confidence interval for median quarterly medical expenses is $(\$82.52,\$101.37)$.
+
+## BCa Bootstrap CI
+
+The percentile bootstrap confidence interval is the simplest option for obtaining confidence intervals from the bootstrap distribution. There are many more sophisticated ways to calculate bootstrap confidence intervals. The recommended option is the *bias-corrected and accelerated (BCa) bootstrap confidence interval*.  The derivation of the BCa interval is beyond the scope of this course, but it can easily be found using the %BOOTCI macro.
+
+```{r bca1, engine="sashtml5", engine.path=saspath}
+TITLE 'Bias-Adjusted and Corrected Bootstrap Confidence Interval';
+%BOOTCI(BCa, ALPHA=0.03125, PRINT=0);       /* creates BootCI data set for BCa CI */
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Method N;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+The BCa bootstrap confidence interval for median quarterly medical expenses is $(\$82.31,\$101.37)$.
+
+
+# Example: Regression Inference Using the Bootstrap
+
+Bootstrap methods can be applied in more complex problems like regression. In small samples without normality, standard inference methods can be misleading, and, in these cases, the bootstrap can be used for inference.
+
+The *case resampling* bootstrap is computed as follows:
+
+(1) Number the observations in the dataset from 1 to $n$. Take a random sample *with replacement* of size $n$ from the observation numbers.
+
+(2) Create a data set from the original data by repeating each row in the data set the number of times that row was selected in the random sample from step (1)., Some observations will appear several times, and others will not appear at all. Compute the regression using this data set, and save the values of the estimate(s) (coefficients, linear combinations of coefficients, root mean square error) of interest.
+
+(3) Repeat steps (1) and (2) a large number of times, say $B$.
+
+(4) Obtain a $100 (1-\alpha)$% confidence interval for each estimate using the $\alpha/2$ and $1-\alpha/2$ quantiles of the bootstrap sample.
+
+To illustrate, we will fit a simple linear regression model for quarterly medical expenses as a function of BMI (body mass index) using the Wisconsin Sleep Cohort data. 
+
+```{r slr, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC GLMSELECT DATA=Cost;
+  MODEL Expense = BMI / SELECTION=NONE;
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+RUN;
+ODS SELECT ALL;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Resid / LINEATTRS=(COLOR=Cx1b9e77);   
+RUN;
+
+DATA Fitted;
+  SET Fitted;
+
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77);   
+  REG X=Pred Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+Based on the normal scores plot, the normality assumption clearly does not hold, and we may be concerned that the sample size is not sufficiently large to obtain accurate inferences using standard formulas.
+
+For illustration, we will use the case resampling bootstrap to obtain confidence intervals for mean quarterly medical expenses for BMI 20, 25, 30 and 35 and the effect of a 5 $kg/m^2$ increase in BMI.  We switch from PROC GLMSELECT to PROC GLIMMIX, because ESTIMATE statements can be used directly in PROC GLIMMIX, but not in PROC GLMSELECT.
+
+```{r estimates1, engine="sashtml5", engine.path=saspath}
+/* 1. Compute the regression for the original data */
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Cost;
+	ODS SELECT NONE;
+	MODEL Expense = BMI / DIST=NORMAL LINK=IDENTITY;
+		ESTIMATE "BMI20" Intercept 1 BMI 20;
+		ESTIMATE "BMI25" Intercept 1 BMI 25;
+		ESTIMATE "BMI30" Intercept 1 BMI 30;
+		ESTIMATE "BMI35" Intercept 1 BMI 35;
+		ESTIMATE "DeltaBMI5" BMI 5;
+	ODS OUTPUT Estimates=E (KEEP= Label Estimate);
+RUN;
+
+PROC TRANSPOSE DATA=E OUT=Et (DROP=_Name_);
+	VAR Estimate;
+	ID Label;
+RUN;
+ODS SELECT ALL;
+
+TITLE "Sample Estimates";
+PROC PRINT DATA=Et NOOBS;
+RUN;
+TITLE;
+```
+
+The sample estimates are $\$127.23$ for mean expenses at BMI 20, $\$140.52$ for mean expenses at BMI 25, $\$153.81$ for mean expenses at BMI 30, $\$167.09$ for mean expenses at BMI 25, and $\$13.29$ for the mean difference for a 5 $kg/m^2$ increase in BMI.
+
+## %ANALYZE Macro
+
+As before, the %ANALYZE macro is basically the same code used for the analysis of the observed sample, replacing the input dataset with the &Data macro variable, the output dataset with the &OUT macro variable. The DROP statement is used to omit some unimportant variables from the output dataset. Since PROC GLIMMIX does not have the NOPRINT option, ODS SELECT NONE is used to suppress the printing of the analysis results for each bootstrap sample. (You really don't want to see the output for thousands of analyses.)  The inclusion of the &BYSTMT macro allows the %BOOT macro to use a BY statement to more efficiently implement the bootstrap analysis. 
+
+```{r analyze2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+%MACRO Analyze(Data= ,Out= );
+	ODS SELECT NONE;
+	PROC GLIMMIX DATA=&Data;
+    %BYSTMT;
+		MODEL Expense = BMI / DIST=NORMAL LINK=IDENTITY;
+		ESTIMATE "BMI20" Intercept 1 BMI 20;
+		ESTIMATE "BMI25" Intercept 1 BMI 25;
+		ESTIMATE "BMI30" Intercept 1 BMI 30;
+		ESTIMATE "BMI35" Intercept 1 BMI 35;
+		ESTIMATE "DeltaBMI5" BMI 5;
+		ODS OUTPUT Estimates=E;
+	RUN;
+
+	PROC TRANSPOSE DATA=E OUT=&Out (DROP=_Name_);
+		%BYSTMT;
+		VAR Estimate;
+		ID Label;
+	RUN;
+	ODS SELECT ALL;
+%MEND;
+```
+
+## Bootstrap Distributions and BCa CIs
+
+The following SAS code uses the %BOOT macro to generate 10,000 bootstrap samples.  The bootstrap distributions of the parameters are stored in the BootDist dataset.  Basic descriptive statistics about the bootstrap distributions are stored in the BootStat dataset. (The bootstrap samples themselves are stored in the BootData dataset.)  It is important to change the SEED value for each new analysis.  If you use the same SEED value, you will always get the same sequence of *pseudo-random numbers*, which isn't very random.
+
+```{r boot3, engine="sashtml5", engine.path=saspath}
+TITLE 'Bootstrap Analysis of Regression';
+%BOOT(DATA=Cost,       /* data set that contains the original data */
+      SAMPLES=10000,      /* number of bootstrap samples */
+      RANDOM=25012022,      /* random number seed for resampling */
+      CHART=0,           /* do not display the old PROC CHART histograms */
+      STAT=BMI20 BMI25 BMI30 BMI35 DeltaBMI5,     /* list of output variables to analyze (default=_NUMERIC_) */
+      ALPHA=0.03125,        /* significance level for CI (default=0.05) */
+      PRINT=0);          /* print descriptive stats (default=1)*/
+
+TITLE "Bootstrap Distribution for Mean Expenses at BMI 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM BMI20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Mean Expenses at BMI 25";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM BMI25;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Mean Expenses at BMI 30";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM BMI30;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Mean Expenses at BMI 35";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM BMI35;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Effect of 5 kg/m^2 Difference in BMI";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM DeltaBMI5;
+RUN;
+TITLE;
+
+%BOOTCI(BCa, ALPHA=0.03125, PRINT=0);       /* creates BootCI data set for BCa CI */
+
+TITLE '96.875% Bias-Adjusted and Corrected Bootstrap Confidence Intervals';
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Name;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+
+The estimated  mean quarterly medical expenses are $(\$102.38,\$158.86)$ for BMI 20, $(\$124.42,\$161.70)$ for BMI 25, $(\$139.71,\$170.84)$ for BMI 30 and $(\$147.45,\$192.43)$ for BMI 35. For two populations that differ by $+5 kg/m^2$ in BMI, mean quarterly medical expenses are $(\$0.78,\$26.74)$ dollars. 
+
+## Comparison with Standard Inference
+
+These confidence intervals are fairly similar to the confidence intervals obtained using standard methods and the histograms of the bootstrap distributions are roughly bell-shaped. These observations suggest that the sample size is sufficiently large that the approximate normality of the sampling distribution based on the Central Limit Theorem is reasonably accurate.
+
+```{r standard, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC GLMSELECT DATA=Cost;
+  MODEL Expense = BMI / SELECTION=NONE;
+  STORE SLR;
+RUN;
+
+PROC PLM RESTORE=SLR;
+	ESTIMATE "BMI20" Intercept 1 BMI 20 / CL ALPHA=0.03125;
+	ESTIMATE "BMI25" Intercept 1 BMI 25 / CL ALPHA=0.03125;
+	ESTIMATE "BMI30" Intercept 1 BMI 30 / CL ALPHA=0.03125;
+	ESTIMATE "BMI35" Intercept 1 BMI 35 / CL ALPHA=0.03125;
+	ESTIMATE "DeltaBMI5" BMI 5 / CL ALPHA=0.03125;
+	ODS OUTPUT Estimates=E;
+RUN;
+ODS SELECT ALL;
+
+TITLE "Wald Confidence Intervals";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+## Residual Bootstrap
+
+An alternative to the case resampling bootstrap is the *residual bootstrap* which resamples the residuals from the initial model instead of resampling the joint distribution of the response and the predictors. The residual bootstrap assumes that the linear mean function is correct and that variance is constant.  If those assumptions are correct, this resampling method can be more efficient than case resampling.
+
+
+# Example: Nonlinear Functions of Parameters
+
+The bootstrap is particularly useful for obtaining confidence intervals for nonlinear functions of the parameters, where the standard formulas are unavailable.  To illustrate, we will revisit the quadratic regression model for serum total cholesterol as a function of age using the NHANES data:
+$$\mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2$$
+In particular, we will attempt to estimate the age for which mean cholesterol levels are highest. If $\beta_2 < 0$, the quadratic function takes on its maximum value at $x_{max} = \frac{-\beta_1}{2\beta_2}$. We can use the case resampling bootstrap to find a confidence interval for $x_{max}$.
+
+```{r quadratic, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Cholesterol;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+RUN;
+
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Cholesterol;
+	EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+    MODEL TotChol = AgePoly / DIST=NORMAL LINK=IDENTITY;
+    ESTIMATE "b1" AgePoly 1 0;
+    ESTIMATE "b2" AgePoly 0 1;
+    ODS OUTPUT Estimates=E;
+RUN;
+
+PROC TRANSPOSE DATA=E OUT=Et (DROP=_Name_);
+	VAR Estimate;
+	ID Label;
+RUN;
+
+DATA Et;
+	SET Et;
+
+	Age_Max_Chol = -b1/(2*b2);
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=Et NOOBS;
+RUN;
+```
+
+The point estimate for the age with the highest mean cholesterol is 54.5 years of age.
+
+## %ANALYZE Macro
+
+As before, the %ANALYZE macro is basically the same code used for the analysis of the observed sample, replacing the input dataset with the &Data macro variable, the output dataset with the &OUT macro variable. The DROP statement is used to omit some unimportant variables from the output dataset. Since PROC GLIMMIX does not have the NOPRINT option, ODS SELECT NONE is used to suppress the printing of the analysis results for each bootstrap sample. (You really don't want to see the output for thousands of analyses.)  The inclusion of the &BYSTMT macro allows the %BOOT macro to use a BY statement to more efficiently implement the bootstrap analysis.
+
+```{r analyze3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+%MACRO Analyze(Data= ,Out= );
+	ODS SELECT NONE;
+	PROC GLIMMIX DATA=&Data;
+		%BYSTMT;
+		EFFECT AgePoly = POLYNOMIAL(Age / DEGREE=2);
+    MODEL TotChol = AgePoly / DIST=NORMAL LINK=IDENTITY;
+    ESTIMATE "b1" AgePoly 1 0;
+    ESTIMATE "b2" AgePoly 0 1;
+    ODS OUTPUT Estimates=E;
+	RUN;
+
+	PROC TRANSPOSE DATA=E OUT=&Out (DROP=_Name_);
+		%BYSTMT;
+		VAR Estimate;
+		ID Label;
+	RUN;
+
+	DATA &Out;
+ 		SET &Out;
+    %BYSTMT;
+
+		Age_Max_Chol = -b1/(2*b2);
+		DROP b1 b2;
+	RUN;
+	ODS SELECT ALL;
+%MEND;
+```
+
+## Bootstrap Distribution and BCa CI
+
+The following SAS code uses the %BOOT macro to generate 10,000 bootstrap samples.  The bootstrap distributions of the parameters are stored in the BootDist dataset.  Basic descriptive statistics about the bootstrap distribution are stored in the BootStat dataset. (The bootstrap samples themselves are stored in the BootData dataset.)
+
+```{r boot4, engine="sashtml5", engine.path=saspath}
+TITLE 'Bootstrap Analysis of Regression';
+%BOOT(DATA=Cholesterol,       /* data set that contains the original data */
+      SAMPLES=10000,      /* number of bootstrap samples */
+      RANDOM=28081970,      /* random number seed for resampling */
+      CHART=0,           /* do not display the old PROC CHART histograms */
+      STAT=Age_Max_Chol,     /* list of output variables to analyze (default=_NUMERIC_) */
+      ALPHA=0.03125,        /* significance level for CI (default=0.05) */
+      PRINT=0);          /* print descriptive stats (default=1)*/
+
+TITLE "Bootstrap Distribution for Age with Maximum Mean Cholesterol";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age_Max_Chol;
+RUN;
+TITLE;
+
+%BOOTCI(BCa, ALPHA=0.03125, PRINT=0);       /* creates BootCI data set for BCa CI */
+
+TITLE 'Bias-Adjusted and Corrected Bootstrap 96.875% Confidence Intervals';
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Name;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+The estimated age with the highest average serum cholesterol is $(53.4,55.8)$ years.
+

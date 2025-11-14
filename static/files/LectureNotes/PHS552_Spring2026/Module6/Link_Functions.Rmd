@@ -1,0 +1,667 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Link Functions for Binary Data Regression
+
+To this point, we have only considered binary regression models using the *logit link* function. A logistic regression model specifies the relationship between the log odds and the covariate(s) in the regression model.  It implies that comparisons between two populations with differing values of the covariate(s) are best expressed in terms of (log) odds ratios.  Many other choices for the link function are possible. The chosen link function implicitly defines a preferred measure of effects, and it implicitly defines the concepts of linearity (for quantitative predictors) and additivity for two (or more) predictors. Of particular note, there is at most one link function for which the effect of a quantitative covariate is truly linear (unless the quantitative covariate does not affect the outcome at all), and there is at most one link function for which the effects of two (or more) covariates are additive (unless one or more of the covariates do not affect the outcome at all).
+
+To illustrate binary regression models with different link functions, we will develop a series of binary regression models (saturated and additive) for obesity as a function of gender and non-white race. Note that all of the saturated models are fundamentally equivalent to each other (the fitted values for the four combinations of gender and non-white race are identical); they only differ in how they quantify the comparisons between covariate combinations.
+
+As before, we denote the obesity outcome for subject $i$ by $y_i$, the gender for subject $i$ by $x_{1i}$, and the race for subject $i$ by $x_{2i}$. 
+
+Our distributional assumption is
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} $$
+
+# Logistic (Logit) Regression
+
+The saturated logistic regression model 
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+and the additive logistic regression model
+$$ \mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+rely on the *logit link*, the function
+$$ \mbox{logit}(p) = \log\left(\frac{p}{1-p}\right) $$
+to map the probability scale $[0,1]$ to the whole real line $(-\infty,\infty)$. It follows that any value of the linear predictor $\eta$ will generate a valid probability
+$$ p = \mbox{logit}^{-1}(\eta) = \frac{e^\eta}{1+ e^\eta} = \frac{1}{1+e^{-\eta}} $$
+Coefficients from the logistic regression model are interpretable as log odds, log odds ratios or differences in log odds ratios.
+
+# Alternative Link Functions (Proper)
+
+Many other functions will also map the probability scale $[0,1]$ to the whole real line. In fact, the *inverse* of any *continuous cumulative distribution function (cdf)* can be used for the link. 
+
+The standard normal cdf $\Phi$ is a common choice ($\Phi(z) = P(Z<z)$ where $Z \sim N(0,1)$) and yields the *probit* regression model. The *probit function* is the inverse of the standard normal cdf, the quantile function of the standard normal distribution or the $Z$-score corresponding to $p$
+$$ \mbox{probit}(p) = \Phi^{-1}(p) $$ 
+
+The extreme value distribution with cdf $F(x) = 1 - e^{-e^x}$  is another common choice. The *complementary log-log function* is the inverse of the extreme value cdf
+$$ \log\{-\log(1-p)\} $$
+## Probit Regression
+
+The saturated probit regression model 
+$$ \mbox{probit}\left\{p_i\right\} = = \Phi^{-1}(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+and the additive probit regression model
+$$ \mbox{probit}\left\{p_i\right\} = = \Phi^{-1}(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+rely on the *probit link* the function
+$$ \mbox{probit}\left\{p_i\right\} = = \Phi^{-1}(p_i) $$
+to map the probability scale $[0,1]$ to the whole real line $(-\infty,\infty)$. It follows that any value of the linear predictor $\eta$ will generate a valid probability
+$$ p =\Phi(\eta) $$
+
+
+Coefficients from the probit regression model have an indirect interpretation as latent mean differences. Suppose that $Y^\star$ is an (unobserved or *latent*) continuous random variable and $Y$ is an observed binary variable based on $Y^\star$.
+$$
+\begin{eqnarray*}
+Y = 1 & \mbox{ if } & Y^\star > 0 \\
+Y = 0 & \mbox{ if } & Y^\star < 0 
+\end{eqnarray*}
+$$
+The (unobserved) continuous random variable $Y^\star$ represents a *latent* continuous health status. $Y$ is an indicator that $Y^\star$ exceeds a {\em threshold}. A regression model for the mean of $Y^\star$
+$$ Y^\star = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k + \epsilon_i, ~\epsilon_i \sim N(0, 1) $$
+yields the *probit regression model* for $Y$
+$$ \mbox{probit}(p) = \Phi^{-1}(p) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k $$
+Setting the threshold to 0 and the variance of $\epsilon_i$ to 1 is required for unique identification (estimation) of the model. Other values could be used, but the model fit (and meaningful inferences) would be unchanged.
+
+The typical regression coefficient from a probit regression model $\beta_j$ is interpreted as the increase in the mean of the latent variable $Y^\star$ (in standard deviation units) associated with a 1-unit increase in the covariate $x_j$, adjusting for the other covariates in the model. In other words, the regression coefficients from the probit regression model have the same interpretation as the regression coefficients in traditional linear regression models. Interpretation of the coefficients in probit regression in terms of the probability of the binary outcome is not straightforward. The change in the probability is dependent both on the values of the other predictors and the starting value of the predictor of interest, but the direction of the coefficient is readily interpretable: A positive coefficient means that an increase in the predictor is associated with an increase in the probability of an event; a negative coefficient means that a decrease in the predictor is associated with an increase in the probability of an event; and a zero coefficient means that the predictor is not associated with the probability. 
+
+In practice, one cannot meaningfully distinguish between the logit model and the probit model. In fact, the regression coefficients from the logit model will be approximately 1.6 times the regression coefficients from the probit model.  The main reason for choosing between the two models is the preferred interpretations of the coefficients (log odds ratios or latent mean differences). We will revisit the probit model when we consider regression models for ordinal outcomes where latent variable interpretation of these models is more relevant.
+
+## Complementary Log-Log Regression
+
+The saturated complementary log-log regression model 
+$$ \log\{-\log(1-p_i)\} = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+and the additive complementary log-log regression model
+$$ \log\{-\log(1-p_i)\} =  \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+rely on the *complemenrary log-log link* 
+$$\log\{-\log(1-p)\}$$
+to map the probability scale $[0,1]$ to the whole real line $(-\infty,\infty)$. It follows that any value of $\eta$ will generate a valid probability
+$$ p = 1-e^{-e^\eta} $$
+Coefficients from the complementary log-log regression model have a direct interpretation as log hazard ratios. The complementary log-log regression model is primarily useful for the analysis of interval-censored time-to-event data (or survival analysis).  We will revisit the complementary log-log model in the survival analysis section of the course.
+
+# Alternative Link Functions (Improper)
+
+It is not strictly necessary to use a link function that maps $[0,1]$ to $(-\infty,\infty)$. However, such models can potentially yield fitted probabilities outside of the $[0,1]$ range. If so, the results from such models will be meaningless. Two commonly used link functions of this type are the *log link* and the *identity link*.
+
+## Log-Linear Regression
+
+The saturated log-linear regression model 
+$$ \log(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+and the additive log-linear regression model
+$$ \log(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+use the *log link*
+$$ \log(p) $$
+to map the probability scale from $[0,1]$ to $(-\infty,0]$.
+It follows that values of $\eta \leq 0$ will generate valid probabilities
+$$ p = e^\eta $$
+Coefficients from the log-linear regression model have a direct interpretation in terms of log relative risks. In general, the logistic model should be preferred over the log-linear model. The two models are virtually identical if the log-linear model is a sensible choice (outcomes are rare).
+
+## Linear Probability Model 
+
+The saturated linear probability model 
+$$ \log(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+and the additive linear probability model
+$$ \log(p_i) = \eta_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+use the *identity link*
+$$ \mbox{identity}(p) = p $$
+It follows that values of $0 \leq \eta \leq 1$ will generate valid probabilities
+$$ p = \eta $$
+Coefficients from the linear probability model have a direct interpretation in terms of differences in probabilities (excess risk). The linear probability model is mostly useful for $p$ near $0.5$, where problems with fitted values outside the valid range are likely to be avoided.
+
+# Model Choice: Probit vs Logistic vs Linear Probability
+
+Probit regression coefficients maintain an interpretation that more closely matches linear regression models for continuous outcomes. In most cases, the data will not be able to distinguish logistic and probit models. In fact, the logistic coefficients will be approximately 1.6 times the probit coefficients.
+
+Logistic regression coefficients are directly interpretable as log odds ratios. For rare events, the logistic coefficients are approximately log risk ratios. In this situation, log-linear models could be used, if desired.
+
+For rare events, the logistic model is a *multiplicative* model for event *risk* (relative risk). It is always a multiplicative model for the *odds*.
+
+The linear probability model is an *additive* model for event risk (excess risk). The linear probability model is difficult to use for rare events as it will often yield fitted probabilities outside of the $[0,1]$ range. If adjusted risk differences are desired, estimates can be calculated from logistic or probit regression models.  The risk difference will depend on the starting level of the predictor of interest.
+
+Retrospective (case-control) sampling is ignorable for the estimation of log odds ratios using logistic regression.  It is not ignorable for any other binary regression model.
+
+For most applications, the logistic model is the best choice.
+
+# Alternative Link Functions in SAS
+
+The probit model can be fit using PROC LOGISTIC (use LINK=PROBIT instead of the default LINK=LOGIT).  All of the link functions can be fit using PROC GLIMMIX (use DIST=BINARY and LINK=LOGIT or LINK=PROBIT or LINK=CLOGLOG or LINK=LOG or LINK=IDENTITY).
+
+# Linear Probability Model for Obesity as a Function of Gender and Race (and Their Interaction)
+
+To illustrate the use of an alternative link function, we will work through the analysis using the identity link (linear probability model) instead of the logit link (logistic model).
+
+The saturated linear probability model 
+$$ p_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white}) $$
+In this formulation of the model, 
+$$\begin{eqnarray*}
+p(\mbox{white male}) & = & \beta_0 \\
+p(\mbox{white female}) & = & \beta_0 + \beta_1 \\
+p(\mbox{non-white male}) & = & \beta_0 + \beta_2 \\
+p(\mbox{non-white female}) & = & \beta_0 + \beta_1 + \beta_2 + \beta_3 \\
+\end{eqnarray*}$$
+
+The intercept $\beta_0$ is the prevalence of obesity in white males, $\beta_1$ is the risk difference (difference in prevalence) comparing white females to white males (or the simple effect of gender in whites), $\beta_2$ is the risk difference (difference in prevalence) comparing non-white males to white males (or the simple effect of race in males), and $\beta_3$ is the interaction parameter.  
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+
+  IF VVALUE(Race) = "White" THEN NonWhite = 0;
+  ELSE IF VVALUE(Race) = "Black" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Mexican" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Hispanic" THEN NonWhite = 1;
+  ELSE IF VVALUE(Race) = "Other" THEN NonWhite = 1;
+    
+  FORMAT NonWhite YesNoF.;
+RUN;
+
+PROC FREQ DATA=Ron;
+  ODS SELECT CrossTabFreqs;
+	TABLE Gender*NonWhite*Obese / NOPERCENT NOROW NOCOL MISSING;
+RUN;
+```
+
+## Linear Probability Model Estimates (Explicit Formulas)
+
+The maximum likelihood estimates of regression coefficients are easily found from the sample proportions in each group.
+
+$\hat{\beta}_0 = 863/2377 = 0.3631$ (the sample prevalence for white males), 
+
+$\hat{\beta}_1 =  810/2472 - 863/2377 = -0.0354$ (the difference between the sample prevalence for white females and the sample prevalence for white males), 
+
+$\hat{\beta}_2 = 418/1175 - 863/2377 = -0.0073$ (the difference between the sample prevalence for non-white males and the sample prevalence for white males), and
+
+$\hat{\beta}_3 = 501/1211 - 810/2472 - 418/1775 + 863/2377 = 0.0934$. 
+
+## Checking the Modeling Assumptions
+
+Before proceeding to inference, we need to evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which still automatically holds for a *saturated* model, a model with one parameter for every unique combination of covariates) and independence (which cannot be evaluated based solely on the observed data).
+ 
+## Standard Errors for Regression Coefficients (Explicit Formulas)
+
+Using the formula for the (approximate) standard error for the sample prevalence $p$ 
+$$\mbox{SE}\left(\hat{p}\right) = \sqrt{\frac{p(1-p)}{n}}$$
+one can easily find the standard errors for the regression intercept and slopes (replacing the unknown proportions with their point estimates):
+$$\mbox{SE}\left(\hat{\beta}_0\right) = \sqrt{\frac{863/2377 \cdot 1514/2377}{2377}} = 0.0099$$
+
+$$\mbox{SE}\left(\hat{\beta}_1\right) = \sqrt{\frac{810/2472 \cdot 1662/2472}{2472}+\frac{863/2377 \cdot 1514/2377}{2377}} = 0.0136$$
+
+$$\mbox{SE}\left(\hat{\beta}_2\right) = \sqrt{\frac{418/1175 \cdot 757/1175}{1175}+\frac{863/2377 \cdot 1514/2377}{2377}} = 0.0171$$
+$$\mbox{SE}\left(\hat{\beta}_3\right) = \sqrt{\frac{501/1211 \cdot 710/1211}{1211}+\frac{810/2472 \cdot 1662/2472}{2472}+\frac{418/1175 \cdot 757/1175}{1175}+\frac{863/2377 \cdot 1514/2377}{2377}} = 0.0241$$
+
+## Linear Probability Model Estimates (SAS)
+
+Typically, we would find these estimates using PROC GLIMMIX in SAS. PROC GLIMMIX uses the PARAM=GLM (overparameterized) specification for CLASS variables. Changing the default reference category for the CLASS variables interacts with the non-positional syntax in undesirable ways. 
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Ron ORDER=INTERNAL;
+  CLASS Gender NonWhite;
+  MODEL Obese(Event="Yes") = Gender NonWhite Gender*NonWhite / DIST=BINARY LINK=IDENTITY S;
+
+  STORE LinearProb;
+RUN;
+ODS SELECT ALL;
+```
+
+## Simple Effects
+
+ESTIMATE statements can be used to obtain the *simple effects* of gender within each racial group (using non-positional syntax).  Because Gender precedes NonWhite in the CLASS statement, the levels of the interaction term are indexed by Gender followed by Race.  If NonWhite preceded Gender in the CLASS statement, the levels of the interaction term would be indexed by Race followed by Gender.
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearProb;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Female v Male for White" Gender [1, 2] [-1, 1] 
+                Gender*NonWhite [1, 2 1] [-1, 1 1] / CL  ALPHA=0.03125;
+    ESTIMATE "Female v Male for NonWhite" Gender [1, 2] [-1, 1] 
+                Gender*NonWhite [1, 2 2] [-1, 1 2] / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label Lower Estimate Upper;
+    LABEL Label='00'x
+        Lower="Lower CL"
+        Estimate="Estimate"
+        Upper="Upper CL";
+    TITLE "Risk Difference for Gender by Race";
+RUN;
+TITLE;
+```
+
+The estimated risk difference for obesity comparing females to males is $(-0.065,-0.006)$ for whites and $(0.015,0.101)$ for non-whites.
+
+ESTIMATE statements can be used to obtain the *simple effects* of race within each gender.
+
+
+```{r example10, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearProb;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "NonWhite v White for Male" NonWhite [1, 2] [-1, 1] 
+                  Gender*NonWhite [1, 1 2] [-1, 1 1] / CL ALPHA=0.03125;
+  ESTIMATE "NonWhite v White for Female" NonWhite [1, 2] [-1, 1] 
+                  Gender*NonWhite [1, 2 2] [-1, 2 1] / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x
+      Lower="Lower CL"
+      Estimate="Estimate"
+      Upper="Upper CL";
+  TITLE "Risk Difference for Race by Gender";
+RUN;
+TITLE;
+```
+
+The estimated risk difference for obesity comparing non-whites to whites is $(-0.044,0.030)$ for males and $(0.049,0.123)$ for females.
+
+## Likelihood Ratio Tests (Overall and Interaction)
+
+Our (full) linear probability model is 
+$$ p_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) + \\ \beta_3 \textbf{1}(x_{1i} = \mbox{female}) \cdot \textbf{1}(x_{2i} = \mbox{non-white})$$
+
+Three potential simplifications of our full model are of scientific interest. The first potential simplification removes the interaction term from the model, resulting in an additive model for the effects of gender and race. (We will discuss the additive model in much greater detail shortly.)
+
+$$ p_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+The likelihood ratio test comparing the additive model with the full model is the test for interaction between gender and race in their effects on the log odds of obesity.
+
+
+The second potential simplification removes both terms involving gender from the model, resulting in a model with a single binary predictor (race). 
+
+$$p_i = \beta_0 + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+The likelihood ratio test comparing the race only model with the full model is the overall test for gender.
+
+The third potential simplification removes both terms involving race from the model, resulting in a model with a single binary predictor (gender). 
+
+$$ p_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) $$
+The likelihood ratio test comparing the gender only model with the full model is the overall test for race.
+
+```{r lrtest2, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Ron;
+  CLASS Gender NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = Gender NonWhite Gender*NonWhite / DIST=BINARY LINK=IDENTITY; 
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 RENAME=Value=MinusTwoLogLike);
+  
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET  O(FIRSTOBS=2 OBS=2 RENAME=Value=DF);
+  
+  KEEP DF;
+RUN;
+
+DATA Full;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Ron;
+  CLASS Gender NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = Gender NonWhite / DIST=BINARY LINK=IDENTITY; 
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 RENAME=Value=MinusTwoLogLike);
+  
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET  O(FIRSTOBS=2 OBS=2 RENAME=Value=DF);
+  
+  KEEP DF;
+RUN;
+
+DATA Additive;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Ron;
+  CLASS Gender NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = Gender / DIST=BINARY LINK=IDENTITY; 
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 RENAME=Value=MinusTwoLogLike);
+  
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET  O(FIRSTOBS=2 OBS=2 RENAME=Value=DF);
+  
+  KEEP DF;
+RUN;
+
+DATA GenderOnly;
+  MERGE F O;
+RUN;
+
+PROC GLIMMIX DATA=Ron;
+  CLASS Gender NonWhite;
+    
+  MODEL Obese(EVENT="Yes") = NonWhite / DIST=BINARY LINK=IDENTITY; 
+  ODS OUTPUT FitStatistics=F OptInfo=O;
+RUN;
+
+DATA F;
+  SET F(OBS=1 RENAME=Value=MinusTwoLogLike);
+  
+  KEEP MinusTwoLogLike;
+RUN;
+
+DATA O;
+  SET  O(FIRSTOBS=2 OBS=2 RENAME=Value=DF);
+  
+  KEEP DF;
+RUN;
+
+DATA RaceOnly;
+  MERGE F O;
+RUN;
+
+DATA Full;
+  SET Full;
+  
+  RENAME MinusTwoLogLike=MinusTwoLogLike_Full DF=DF_Full;
+RUN;
+
+DATA Additive;
+  LENGTH Model $30 Test $30;
+  SET Additive;
+    
+  Model = "Additive";
+  Test = "Interaction";
+    
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA GenderOnly;
+  LENGTH Model $30 Test $30;
+  SET GenderOnly;
+    
+  Model = "Gender Only";
+  Test = "Race Overall";
+    
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA RaceOnly;
+  LENGTH Model $30 Test $30;
+  SET RaceOnly;
+    
+  Model = "Race Only";
+  Test = "Gender Overall";
+    
+  KEEP Model Test MinusTwoLogLike DF;
+RUN;
+
+DATA LRTests;
+  LENGTH Model $30 Test $30;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Additive RaceOnly GenderOnly;
+    
+  Chisq = MinusTwoLogLike-MinusTwoLogLike_Full;
+  DF = DF_Full - DF;
+  ProbChiSq = EXP(LOGSDF("CHISQUARE",Chisq,DF));
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test DF ChiSq ProbChiSq sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an interaction between race and gender in their effects on the log odds of obesity. The $p$-value is $0.0001$, and the $s$-value is $13.1$.
+
+There is strong evidence that gender is associated with the prevalence of obesity.  The $p$-value is $0.0005$, and the $s$-value is $11.0$.
+
+There is also strong evidence that race is associated with the prevalence of obesity.  The $p$-value is $0.000002$, and the $s$-value is $18.9$.
+
+## Estimated Probabilities
+
+ESTIMATE statements can be used to obtain the prevalence of obesity for each combination of gender and race.
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearProb;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "White Male"  Intercept 1 Nonwhite [1, 1] Gender [1, 1] 
+                          Gender*NonWhite [1, 1 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "White Female" Intercept 1 Nonwhite [1, 1] 
+                          Gender [1, 2] Gender*NonWhite [1, 2 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Male" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 1] Gender*NonWhite [1, 1 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Female" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 2] Gender*NonWhite [1, 2 2]/ CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerMu Mu UpperMu;
+  LABEL Label='00'x
+      Mu="Estimate"
+      LowerMu="Lower CL"
+      UpperMu="Upper CL";
+  TITLE "Prevalence of Obesity (Interaction)";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity is $(0.34,0.38)$ for white males, $(0.31,0.35)$ for white females, $(0.33,0.39)$for non-white males and $(0.38,0.44)$ for non-white females.
+
+## Interaction Plot
+
+Plots of the estimated prevalence of obesity by race and gender can be obtained using PROC SGPLOT.  The first plot emphasizes the comparisons between males and females within each race, while the second plot emphasizes the comparisons between whites and non-whites within each gender.
+
+```{r interact4, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+DATA E;
+  SET E;
+
+  Gender = SCAN(Label,2," ");
+  Race = SCAN(Label,1," ");
+RUN;
+
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Race;
+  SCATTER Y=Gender X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  COLAXIS GRID LABEL="Probability";  
+  ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+           
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Gender;
+  SCATTER Y=Race X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+  REFLINE 1 / AXIS=X;
+  COLAXIS GRID LABEL="Probability";  
+  ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+```
+
+# Linear Probability Model for Obesity as a Function of Race and Gender (Additive)
+
+The additive linear probability model 
+$$ p_i = \beta_0 + \beta_1 \textbf{1}(x_{1i} = \mbox{female}) + \beta_2 \textbf{1}(x_{2i} = \mbox{non-white}) $$
+In this formulation of the model, 
+$$\begin{eqnarray*}
+p(\mbox{white male}) & = & \beta_0 \\
+p(\mbox{white female}) & = & \beta_0 + \beta_1 \\
+p(\mbox{non-white male}) & = & \beta_0 + \beta_2 \\
+p(\mbox{non-white female}) & = & \beta_0 + \beta_1 + \beta_2  \\
+\end{eqnarray*}$$
+
+The intercept $\beta_0$ is the prevalence (risk) for obesity in white males, $\beta_1$ is the risk difference comparing females to males (of the same race) (or the main effect of gender), and $\beta_2$ is the risk difference comparing non-whites to whites (of the same gender) (or the main effect of race).
+
+## Logistic Regression Estimate (SAS)
+
+There are no simple formulas for the maximum likelihood estimates of the parameters of the additive regression model. Typically, we would find the estimates using PROC LOGISTIC.
+
+```{r additive1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC GLIMMIX DATA=Ron ORDER=INTERNAL;
+  CLASS Gender NonWhite;
+  MODEL Obese(Event="Yes") = Gender NonWhite / DIST=BINARY LINK=IDENTITY S;
+
+  STORE LinearProbAdditive;
+RUN;
+ODS SELECT ALL;
+```
+
+## Checking the Modeling Assumptions
+
+Before proceeding to inference, we need to evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which is equivalent to the assumption of *no interaction* or *additivity*) and independence (which cannot be evaluated based solely on the observed data).  Given the prior results for the interaction test, the correct structural model assumption does not hold, and we would not normally proceed with the additive model.  However, in this case, we will proceed with the additive model to illustrate how to work with an additive model.
+
+## Main Effects
+
+ESTIMATE statements can be used to find the main effects of race and gender.
+
+```{r additive2, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearProbAdditive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "NonWhite v White" NonWhite [1, 2] [-1, 1] / CL ALPHA=0.03125;
+  ESTIMATE "Female v Male" Gender [1, 2] [-1, 1] / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label Lower Estimate Upper;
+    LABEL Label='00'x
+        Lower="Lower CL"
+        Estimate="Estimate"
+        Upper="Upper CL";
+    TITLE "Main Effects (Risk Differences)";
+RUN;
+TITLE;
+```
+
+The estimated risk difference comparing non-whites to whites adjusted for gender is $(0.014,0.066)$.  The estimated risk difference comparing females to males adjusted for race is $(-0.030,0.019)$.  
+
+## Estimated Probabilities
+
+ESTIMATE statements can be used to find the prevalence of obesity for each combination of gender and race.
+
+```{r additive3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=LinearProbAdditive;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "White Male"  Intercept 1 Nonwhite [1, 1] 
+                          Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "White Female" Intercept 1 Nonwhite [1, 1] 
+                          Gender [1, 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Male" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "NonWhite Female" Intercept 1 Nonwhite [1, 2] 
+                          Gender [1, 2] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerMu Mu UpperMu;
+  LABEL Label='00'x
+      Mu="Estimate"
+      LowerMu="Lower CL"
+      UpperMu="Upper CL";
+  TITLE "Prevalence of Obesity (Additive)";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity (from the additive model) is $(0.33,0.37)$ for white males, $(0.32,0.36)$ for white females, $(0.36,0.41)$ for non-white males and $(0.36,0.41)$ for non-white females.
+
+
+## (Interaction) Plot
+
+Plots of the estimated prevalence of obesity by race and gender can be obtained using PROC SGPLOT.  The first plot emphasizes the comparisons between males and females within each race, while the second plaot emphasizes the comparisons between whites and non-whites within each gender.
+
+```{r additive4, engine="sashtml5", engine.path=saspath, collectcode=FALSE, error=TRUE}
+DATA E;
+  SET E;
+
+  Gender = SCAN(Label,2," ");
+  Race = SCAN(Label,1," ");
+RUN;
+
+
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Race;
+  SCATTER Y=Gender X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+           
+PROC SGPANEL DATA=E NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  PANELBY Gender;
+  SCATTER Y=Race X=Mu / XERRORLOWER=LowerMu XERRORUPPER=UpperMu
+          MARKERATTRS=(SYMBOL=Plus COLOR=Cx1b9e77) 
+          ERRORBARATTRS=(THICKNESS=2  COLOR=Cx1b9e77) NOERRORCAPS;
+ REFLINE 1 / AXIS=X;
+ COLAXIS GRID LABEL="Probability";  
+ ROWAXIS GRID DISPLAY=(NOLABEL) DISCRETEORDER=DATA REVERSE OFFSETMIN=0.33 OFFSETMAX=0.33;
+RUN;
+```
+
+
+
+

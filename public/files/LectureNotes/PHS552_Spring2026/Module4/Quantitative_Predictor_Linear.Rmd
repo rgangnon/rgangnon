@@ -1,0 +1,433 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Simple Logistic Regression
+
+With a quantitative (or ordinal) predictor, the simplest possible relationship between the log odds function $\log{\frac{p(x)}{1-p(x)}}$ and the predictor $x$ is a *simple logistic regression*
+$$\log{\frac{p(x)}{1-p(x)}} = \beta_0 + \beta_1 x$$
+The parameters of the simple logistic regression model are easily interpretable.  The intercept $\beta_0 = \log{\frac{p(0)}{1-p(0)}}$ is the log odds of the outcome when the predictor $x=0$. The slope $\beta_1$ is the difference in log odds (or log odds ratio) between populations differing by one unit in $x$, e.g. $\beta_1 = \log{\frac{p(x+1)}{1-p(x+1)}} - \log{\frac{p(x)}{1-p(x)}}$ for all possible $x$. The *assumption* of a linear relationship allows us to express the difference in log odds between many groups using a single quantity. If the assumption is true, estimation of log odds (and log odds ratios) using the simple logistic regression model will be *efficient* as we can pool information from all values of $x$ rather than computing separate differences for each pair of groups. If the difference in log oods for a (one-unit) change in the predictor is not constant (the typical situation), it is necessary to fit a more flexible model structure, e.g. a natural cubic spline, instead of a simple logistic regression.
+
+To illustrate a linear regression model, we will construct a logistic regression model for obesity as a function of age for the US population age 40-60.
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the age for subject $i$ by $x_i$. 
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 x$$
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES;
+
+  IF Age >= 40;
+  IF Age <= 60;
+RUN;
+
+DATA AllAges;
+  DO Age = 40 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+  CLASS Age;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;
+
+  STORE Categorical;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;    
+  
+  OUTPUT OUT=Tmp RESCHI=Residual PREDICTED=Fitted; 
+    
+  STORE Linear;
+RUN;
+
+PROC PLM RESTORE=Categorical;
+    SCORE DATA=AllAges OUT=FItted1 Predicted=Categorical / ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=Linear;
+    SCORE DATA=AllAges OUT=Fitted2 Predicted=Linear / ALPHA=0.03125;
+RUN;
+
+DATA Fitted;
+  MERGE Fitted1 Fitted2;
+  BY Age;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+  SERIES X=Age Y=Categorical / LINEATTRS=(PATTERN=Solid) LEGENDLABEL="Age (Categorical)";
+  SERIES X=Age Y=Linear / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid) LEGENDLABEL="Age (Linear)";
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+# Assessing Adequacy of Modeling Assumptions
+
+Before proceeding to inference, we should evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model and independence (which cannot be evaluated based on the observed data).  Potential violations of the correct structural model assumption can be assessed formally by fitting higher-order polynomials or informally using plots of the Pearson residuals $r_i = \frac{y_i - \hat{p}_i}{\sqrt{\hat{p}_i(1-\hat{p}_i)}}$ against the predictor variable $x_i$. In binary regression, it is essential to add a *scatterplot smoother* as a *plot enhancement* to identify any structural problems with the model.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=Age Y=Residual / DEGREE=2 JITTER; 
+  REFLINE 0 / AXIS=Y;
+RUN;
+```
+
+The lack of any clear pattern in this plot suggests that the correct structural model assumption is not violated, e.g. the relationship between the log odds of obesity and age is roughly linear over this age range.
+
+We can more formally test for the adequacy of the linearity assumption using a Wald (or likelihood ratio) test for the squared term in a quadratic regression model.
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Ron;
+    ODS OUTPUT Contrasts=C;
+    EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=2);
+    MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+    
+    ESTIMATE "Linearity" AgePoly 0 1 / JOINT;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+    SET C;
+    
+    sValue = -LOG(ProbChisq)/LOG(2);
+    
+    FORMAT sValue 6.2;
+RUN;
+
+PROC PRINT DATA=C NOOBS LABEL;
+    VAR Label NumDF ChiSq ProbChiSq sValue;
+    TITLE "Wald Tests";
+RUN;
+TITLE;
+```
+
+The $p$-value for the test of the linearity assumption is $0.11$, and the $s$-value is $3.2$.
+
+# Regression Coefficient Estimates (SAS)
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Linear;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Intercept" Intercept 1 Age 0 / CL ALPHA=0.03125;
+    ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label Lower Estimate Upper;
+    LABEL Label='00'x
+        Estimate="Estimate"
+        Lower="Lower CL"
+        Upper="Upper CL";
+    TITLE "Regression Coefficients";
+RUN;
+TITLE;
+```
+
+The estimated regression intercept is fundamentally uninterpretable; it is literally the log odds for age 0. (Since our analysis is restricted to subjects age 40-60, this estimate is huge extrapolation.) The estimated regression slope $(-0.0080,0.0201)$, e.g. for an increase in age of 1 year (more precisely, for two populations that differ by 1 year of age), the log odds of obesity could decrease by 0.0080 or increase by 0.0201. 
+
+
+# Centering and Scaling for Interpretability
+
+Interpretability of the simple logistic regression model can often be improved by centering and scaling the predictor variable.  Centering sets the zero point at a plausible value within the range of the predictor variable $x$.  Scaling sets the default (one unit) change in the predictor variable $x$ to a clinically meaningful amount.  If the original units of $x$ are too small, the regression slope will be very small, even if the effect for clinically meaningful changes in $x$ is quite substantial.  Alternatively, if the units of $x$ are too large (possibly even much greater than the observed range of $x$), the regression slope will potentially greatly overstate the relative impact of $x$ on the mean outcome.
+
+The centered and scaled version of the simple logistic regression model is
+$$\log{\frac{p(x)}{1-p(x)}} = \gamma_0 + \gamma_1 \left(\frac{x-x_0}{\delta}\right) $$
+In terms of the parameters of our original model, $\gamma_0 = \beta_0 + \beta_1 x_0$ and $\gamma_1 = \beta_1 \delta$.  Centering and scaling does not change the results in any substantive way.  It simply facilitates direct interpretation of the regression coefficients.  Typically, we will accomplish the same transformations using ESTIMATE statements with the original model.
+
+For illustration, we will refit our simple logistic regression model centering age at 50 years and scaling by 10 years.
+
+```{r example16, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Tmp;
+  SET Ron;
+  
+  Age = (Age-50)/10;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Tmp;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;
+
+  STORE Linear2;
+RUN;
+
+PROC PLM RESTORE=Linear2;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Intercept" Intercept 1 Age 0 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x
+    Estimate="Estimate"
+    Lower="Lower CL"
+    Upper="Upper CL";
+  TITLE "Regression Coefficients";
+RUN;
+TITLE;
+```
+
+The regression intercept is the log odds for age 50, which is estimated to be $(-0.61-0.44)$. The estimated regression slope is $(-0.080,0.201)$ e.g. for an increase in age of 10 years (more precisely, for two populations that differ by 10 years of age), the log odds of obesity could decrease by 0.073 or increase by 0.209.
+
+# Estimates of Probabilties
+
+Returning to the original simple logistic regression model, using ESTIMATE statements, one can easily obtain estimates of the prevalence of obesity at any age using positional syntax. 
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Linear;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Age 40" Intercept 1 Age 40 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 50" Intercept 1 Age 50 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 60" Intercept 1 Age 60 / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerMu Mu UpperMu;
+  LABEL Label='00'x
+      Mu="Estimate"
+      LowerMu="Lower CL"
+      UpperMu="Upper CL";
+  TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity is $(0.321,0.395)$ for 40 year olds, $(0.352,0.391)$ for 50 year olds and $(0.347,0.426)$ for 60 year olds.
+
+# Estimates of Odds Ratios
+
+Next, we present estimates of the odds ratios for 1-year, 5-year and 10-year differences in age. For the simple logistic regression model, we need not specify two ages to compare, only the difference in ages.  The same odds ratio applies to all age differences of the same number of years.
+
+```{r example8, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Linear;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "1-Year Age Diff" Age 1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "5-Year Age Diff" Age 5 / CL EXP ALPHA=0.03125;
+  ESTIMATE "10-Year Age Diff" Age 10 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+    LowerExp="Lower CL"
+    ExpEstimate="Estimate"
+    UpperExp="Upper CL";
+  TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity is $(0.992,1.020)$ for a 1-year difference in ages, $(0.961,1.106)$ for a 5-year difference in ages and $(0.923,1.222)$ for a 10-year age difference.  (Note that $0.9607 = 0.9920^5$ and $1.1057 = 1.0203^5$.)  In practice, we would only present one of these three estimates.
+
+# Plotting the Estimated Regression Function
+
+Using the SCORE statement in PROC PLM, we can obtain the estimated log odds for obesity for each age between 20 and 80 (the age range included in the NHANES dataset). Using PROC SGPLOT, we can plot the entire regression function.
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Linear;
+  SCORE DATA=AllAges OUT=Fitted Predicted LCLM UCLM;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cx1b9e77 TRANSPARENCY=0.7);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cx1b9e77) TRANSPARENCY=0.9;
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+TITLE;
+```
+
+# Linearity is the Exception, Not the Rule
+
+There are rare occasions when one expects a relationship to be linear. In the vast majority of studies, there is every reason to believe that all relationships involving quantitative predictors are nonlinear. In these cases, the only reason to represent predictors as linearly in the model is insufficient information in the sample (either the sample size is too small or the range of the predictor variable is too narrow) to reliably fit a nonlinear relationship.
+
+# Recommended Practice
+
+In practice, we would typically allow for some degree of non-linearity by using natural cubic splines (or other approaches) unless there is strong theoretical or empirical evidence (from previous studies) for linear effects.  In most cases, one would only use the model with a linear effect as a *supplement* to the primary analysis that allows for potential non-linearity in cases in which the estimated effects of the covariate are broadly consistent with a linear effect.  An example of the typical code follows.
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  EFFECT AgeCS=SPLINE(Age / NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+  MODEL Obese(Event="Yes") = AgeCS / LINK=LOGIT;    
+  
+  OUTPUT OUT=Tmp RESCHI=Residual PREDICTED=Fitted; 
+    
+  STORE Age_2df;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r example14, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Age NCS w/ 2 df";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT ResponseProfile FitStatistics;
+
+  EFFECT AgeCS=SPLINE(Age / NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+  MODEL Obese(Event="Yes") = AgeCS / LINK=LOGIT;    
+RUN;
+TITLE;
+
+TITLE "Age NCS w/ 3 df";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  EFFECT AgeCS=SPLINE(Age / NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 KNOTMETHOD=PERCENTILELIST(5 35 65 95) DETAILS);
+  MODEL Obese(Event="Yes") = AgeCS / LINK=LOGIT;    
+RUN;
+TITLE;
+```
+
+```{r calc1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    BIC_2df = 3720.510 + LOG(1047)*3;
+    BIC_3df = 3720.284 + LOG(1047)*4;
+
+    Delta_BIC = BIC_2df - BIC_3df;
+
+    KEEP BIC_2df BIC_3df Delta_BIC;   
+RUN;
+
+TITLE "BIC Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+
+```{r example18, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Reduced Model (Age Linear)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;    
+RUN;
+TITLE;
+
+TITLE "Full Model (Age NCS)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+  EFFECT AgeCS=SPLINE(Age / NATURALCUBIC BASIS=TPF(NOINT) DEGREE=3 KNOTMETHOD=PERCENTILELIST(10 50 90) DETAILS);
+  MODEL Obese(Event="Yes") = AgeCS / LINK=LOGIT;    
+RUN;
+TITLE;
+```
+
+
+```{r calc2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 3722.249;
+    Minus2LL1 = 3720.510;
+
+    df0 = 1;
+    df1 = 2;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+```{r example20, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Age_2df;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 45 v 40" AgeCS [1, 45] [-1, 40] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 50 v 45" AgeCS [1, 50] [-1, 45] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 55 v 50" AgeCS [1, 55] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 60 v 55" AgeCS [1, 60] [-1, 55] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+```{r example21, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;    
+  
+  OUTPUT OUT=Tmp RESCHI=Residual PREDICTED=Fitted; 
+    
+  STORE Age_Linear;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r example22, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Age_Linear;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age per 5 Years" Age 5 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```

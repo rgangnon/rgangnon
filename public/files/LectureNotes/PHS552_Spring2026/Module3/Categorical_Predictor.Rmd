@@ -1,0 +1,902 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Categorical Predictor
+
+We will now focus on categorical variables or *factors* with three or more levels. *Ordinal* categorical variables have levels which can be naturally ordered. Education (8th Grade or Lower, 9-11th Grade, High School Grad, Some College, College Grad) is an example of an ordinal variable. *Nominal* categorical variables are non-quantitative, non-ordinal variables (category labels without a natural ordering). Race (White, Black, Mexican, Hispanic, Other) is an example of a nominal variable. For a nominal variable, any assignment of numerical labels to the categories to the categories would be arbitrary, substantively meaningless and could not be used in a regression model. 
+
+# Logistic Regression Model
+
+To illustrate a regression model with a nominal predictor variable, we will develop a logistic regression model for obesity as a function of race for the US population. 
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the race for subject $i$ by $x_i$. The probability (prevalence) of obesity, $p_i = p(x_i)$, takes on five values, $p(\mbox{White})$, $p(\mbox{Black})$, $p(\mbox{Mexican})$, $p(\mbox{Hispanic})$, and $p(\mbox{Other})$.
+
+In modeling with a categorical predictor, we typically express the regression function in terms of *indicator (or dummy) variables*. In our example, we would define five indicator variables, one for each race: $\textbf{1}(x_i = \mbox{White})$, $\textbf{1}(x_i = \mbox{Black})$, $\textbf{1}(x_i = \mbox{Mexican})$, $\textbf{1}(x_i = \mbox{Hispanic})$ and $\textbf{1}(x_i = \mbox{other})$ where the *indicator function* $\textbf{1}(A)$ takes value 1 if $A$ is true and value 0 if $A$ is false. (Dummy variables could alternatively be defined using two different values, -1 and 1 or 1 and 2 instead of 0 and 1. From a technical point of view, the important point is that each variable takes on only two possible values.)  
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{White}) + \beta_2 \textbf{1}(x_i = \mbox{Black}) + \beta_3 \textbf{1}(x_i = \mbox{Mexican}) + \\ \beta_4 \textbf{1}(x_i = \mbox{Hispanic}) + \beta_5 \textbf{1}(x_i = \mbox{Other})$$
+
+This model is overparameterized because it uses six parameters &mdash; $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4, \beta_5$ &mdash; to represent the five probabilities &mdash; $p(\mbox{White})$, $p(\mbox{Black})$, $p(\mbox{Mexican})$, $p(\mbox{Hispanic})$, and $p(\mbox{other})$. Equivalently, the sum of the five indicator variables is always equal to 1 for each subject. 
+
+We can *solve* this problem by dropping one of the dummy variables or equivalently setting its regression coefficient to 0. The choice of dropped dummy variable (or baseline category) changes the interpretation of the regression coefficients, but it does not change the model in any substantive way. If you ask a meaningful question, you will get the same answer regardless of which baseline category you use.
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+DATA Ron;
+  SET NHANES.NHANES;
+
+  RENAME Race1=Race;
+RUN;
+ 
+PROC FREQ DATA=Ron;
+  ODS SELECT CrossTabFreqs;
+	TABLE Race*Obese / NOPERCENT NOROW NOCOL MISSING;
+RUN;
+```
+
+For illustration, we will drop the dummy variable for White, expressing the regression function as
+$$\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_2 \textbf{1}(x_i = \mbox{Black}) + \beta_3 \textbf{1}(x_i = \mbox{Mexican}) + \beta_4 \textbf{1}(x_i = \mbox{Hispanic}) + \beta_5 \textbf{1}(x_i = \mbox{Other})$$
+It follows that 
+$$\begin{eqnarray*}
+\mbox{logit}\left\{p(\mbox{White})\right\} & = & \beta_0 \\
+\mbox{logit}\left\{p(\mbox{Black})\right\} & = & \beta_0 + \beta_2 \\
+\mbox{logit}\left\{p(\mbox{Mexican})\right\} & = & \beta_0 + \beta_3 \\
+\mbox{logit}\left\{p(\mbox{Hispanic})\right\} & = & \beta_0 + \beta_4 \\
+\mbox{logit}\left\{p(\mbox{Other})\right\} & = & \beta_0 + \beta_5 \\
+\end{eqnarray*}$$
+so the intercept $\beta_0$ is the log odds for obesity in Whites (the baseline or reference category), $\beta_2$ is the log odds ratio (difference in log odds) comparing Blacks to Whites, $\beta_3$ is the log odds ratio (difference in log odds) comparing Mexicans to Whites, $\beta_4$ is the log odds ratio (difference in log odds) comparing Hispanics to Whites, and $\beta_5$ is the log odds ratio (difference in log odds) comparing Other races to Whites. 
+
+# Logistic Regression Estimates (Explicit Formulas)
+
+The maximum likelihood estimates of regression coefficients are easily found from the sample odds in each group.
+
+$\hat{\beta}_0 = \log{1673/3176} = -0.6410$ (the sample log odds for Whites), 
+
+$\422hat{\beta}_2 = \log{399/} - \log{1673/3176} = 0.5850$ (the difference between the sample log odds for Blacks and the sample log odds for Whites), 
+
+$\hat{\beta}_3 = \log{249/374} - \log{1673/3176} = 0.2948$ (the difference between the sample log odds for Mexicans and the sample log odds for Whites), 
+
+$\hat{\beta}_4 = \log{149/267} - \log{1673/3176} = 0.0577$ (the difference between the sample log odds for Hispanics and the sample log odds for Whites), and 
+
+$\hat{\beta}_5 = \log{122/426} - \log{1673/3176} = -0.6094$ (the difference between the sample log odds for Other races and the sample log odds for whites). 
+
+Before proceeding to inference, we should evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model (which automatically holds for a single categorical predictor) and independence (which cannot be evaluated based on the observed data).
+
+The standard error for a sample proportion $\hat{p} = \frac{y}{n}$ is given by the formula $$\mbox{SE}(\hat{p}) = \sqrt{\frac{p(1-p)}{n}}$$
+while the (approximate) standard error for the sample log odds $\log{\frac{p}{1-p}}$ is given by the formula 
+$$\mbox{SE}\left(\log{\frac{\hat{p}}{1-\hat{p}}}\right) = \sqrt{\frac{1}{np}+\frac{1}{n(1-p)}}$$
+From these formulas, one can easily find the standard errors for the regression intercept and slopes (replacing the unknown proportions with their point estimates):
+$$\mbox{SE}\left(\hat{\beta}_0\right) = \sqrt{\frac{1}{1673}+\frac{1}{3176}} = 0.0302$$
+
+$$\mbox{SE}\left(\hat{\beta}_2\right) = \sqrt{\frac{1}{399}+\frac{1}{422}+\frac{1}{1673}+\frac{1}{3176}} = 0.0761$$
+
+$$\mbox{SE}\left(\hat{\beta}_3\right) = \sqrt{\frac{1}{249}+\frac{1}{352}+\frac{1}{1673}+\frac{1}{3176}} = 0.0881$$
+
+$$\mbox{SE}\left(\hat{\beta}_4\right) = \sqrt{\frac{1}{149}+\frac{1}{267}+\frac{1}{1673}+\frac{1}{3176}} = 0.1066$$
+
+$$\mbox{SE}\left(\hat{\beta}_5\right) = \sqrt{\frac{1}{122}+\frac{1}{426}+\frac{1}{1673}+\frac{1}{3176}} = 0.1070$$
+
+Wald confidence intervals are obtained using the usual formulas
+$$\hat{\beta}_0 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_0\right)$$
+$$\hat{\beta}_2 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_2\right)$$
+$$\hat{\beta}_3 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_3\right)$$
+$$\hat{\beta}_4 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_4\right)$$
+and
+$$\hat{\beta}_5 \pm z_{\alpha/2} \mbox{SE}\left(\hat{\beta}_5\right)$$
+
+# Logistic Regression Estimates (SAS)
+
+Estimates of the regression parameters, their estimated standard errors and Wald confidence intervals can be found using PROC LOGISTIC in SAS. Most computer programs allow the user to use a categorical variable without manually computing the dummy variables. In SAS, dummy variables are creating using the CLASS statement.  The PARAM=GLM option in the CLASS statement uses the overparameterized version of the model, setting the coefficient for the reference category to 0.
+
+```{r example2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  STORE Overparam;
+  ODS SELECT ParameterEstimates CLParmWald;
+  CLASS Race(REF="White") / PARAM=GLM ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+```
+
+The PARAM=REF option in the CLASS statement explicitly drops the dummy variable for the reference category.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+  STORE WhiteRef;
+  ODS SELECT ParameterEstimates CLParmWald;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT CLPARM=WALD ALPHA=0.03125;
+RUN;
+```
+
+Profile likelihood confidence intervals for the regression coefficients can be obtained using the CLPARM=PL option.
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC LOGISTIC DATA=Ron;
+    ODS SELECT CLParmPL;
+    CLASS Race(REF="White") / PARAM=GLM ORDER=INTERNAL;
+    MODEL Obese(Event="Yes") = Race / LINK=LOGIT CLPARM=PL ALPHA=0.03125;
+RUN;
+```
+
+# Estimates of Probabilties
+
+More generally, ESTIMATE statements can be used to obtain Wald confidence intervals (which should always be calculated on the log odds scale) for linear functions of the regression coefficients. For reporting, the confidence intervals on the log odds scale should be transformed to obtain confidence intervals for the corresponding probabilities (for specific groups).  The following code calculates the estimated prevalence of obesity for each race based on the GLM parameterization.  The ILINK option in the ESTIMATE statement is used to obtain the confidence interval on the probability scale (rather than the log odds scale). 
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Overparam;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "White" Intercept 1 Race 0 0 0 0 1 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Black" Intercept 1 Race 1 0 0 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Mexican" Intercept 1 Race 0 1 0 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Hispanic" Intercept 1 Race 0 0 1 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Other" Intercept 1 Race 0 0 0 1 0 / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (Overparameterized)";
+RUN;
+TITLE;
+```
+
+The following code calculates the estimated prevalence of obesity for each race based on the REF parameterization. 
+
+```{r example6, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WhiteRef;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "White" Intercept 1 Race 0 0 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Black" Intercept 1 Race 1 0 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Mexican" Intercept 1 Race 0 1 0 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Hispanic" Intercept 1 Race 0 0 1 0 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Other" Intercept 1 Race 0 0 0 1 / CL ILINK ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (White Reference)";
+RUN;
+TITLE;
+```
+
+The following code calculates the estimated prevalence of obesity for each race using non-positional syntax. (Note that the non-positional syntax does not work properly if you specify the reference category with the GLM parameterization.)
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WhiteRef;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "White" Intercept 1 Race [1, 1] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Black" Intercept 1 Race [1, 2] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Mexican" Intercept 1 Race [1, 3] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Hispanic" Intercept 1 Race [1, 4] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Other" Intercept 1 Race [1, 5] / CL ILINK ALPHA=0.03125;
+RUN; 
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity (White Ref, Non-Positional)";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity is $(0.330,0.360)$ for Whites, $(0.449,0.524)$ for Blacks, $(0.372,0.458)$ for Mexicans, $(0.309,0.410)$ for Hispanics, and $(0.187,0.263)$ for Other races.
+
+# Estimates of Odds Ratios
+
+Similarly, ESTIMATE statements can be used to obtain Wald confidence intervals (which should always be calculated on the log odds scale) for odds ratios (for comparisons between two specific groups).  The following code calculates the estimated odds ratios between each pair of races based on the GLM parameterization.  The EXP option in the ESTIMATE statement is used to obtain the confidence interval on the odds ratio scale (rather than the log odds ratio scale).
+
+```{r example8, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Overparam;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Black v. White" Race 1 0 0 0 -1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. White" Race 0 1 0 0 -1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. White" Race 0 0 1 0 -1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. White" Race 0 0 0 1 -1 / CL EXP ALPHA=0.03125;
+
+  ESTIMATE "White v. Black" Race -1 0 0 0 1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. Black" Race -1 1 0 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. Black" Race -1 0 1 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. Black" Race -1 0 0 1 0 / CL EXP ALPHA=0.03125;
+
+  ESTIMATE "White v. Mexican" Race 0 -1 0 0 1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Black v. Mexican" Race 1 -1 0 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. Mexican" Race 0 -1 1 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. Mexican" Race 0 -1 0 1 0 / CL EXP ALPHA=0.03125;
+
+  ESTIMATE "White v. Hispanic" Race 0 0 -1 0 1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Black v. Hispanic" Race 1 0 -1 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. Hispanic" Race 0 1 -1 0 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. Hispanic" Race 0 0 -1 1 0 / CL EXP ALPHA=0.03125;
+
+  ESTIMATE "White v. Other" Race 0 0 0 -1 1 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Black v. Other" Race 1 0 0 -1 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. Other" Race 0 1 0 -1 0 / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. Other" Race 0 0 1 -1 0 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (Overparameterized)";
+RUN;
+TITLE;
+```
+
+The following code calculates the estimated odds ratios based on the REF parameterization. For brevity, only unique comparisons are presented (e.g., black v. white, but not white v. black).
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WhiteRef;
+  ODS OUTPUT Estimates=E;
+    
+    ESTIMATE "Black v. White" Race 1 0 0 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Mexican v. White" Race 0 1 0 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Hispanic v. White" Race 0 0 1 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Other v. White" Race 0 0 0 1 / CL EXP ALPHA=0.03125;
+
+*    ESTIMATE "White v. Black" Race -1 0 0 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Mexican v. Black" Race -1 1 0 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Hispanic v. Black" Race -1 0 1 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Other v. Black" Race -1 0 0 1 / CL EXP ALPHA=0.03125;
+
+*    ESTIMATE "White v. Mexican" Race 0 -1 0 0 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Black v. Mexican" Race 1 -1 0 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Hispanic v. Mexican" Race 0 -1 1 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Other v. Mexican" Race 0 -1 0 1 / CL EXP ALPHA=0.03125;
+
+*    ESTIMATE "White v. Hispanic" Race 0 0 -1 0 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Black v. Hispanic" Race 1 0 -1 0 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Mexican v. Hispanic" Race 0 1 -1 0 / CL EXP ALPHA=0.03125;
+    ESTIMATE "Other v. Hispanic" Race 0 0 -1 1 / CL EXP ALPHA=0.03125;
+
+*    ESTIMATE "White v. Other" Race 0 0 0 -1 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Black v. Other" Race 1 0 0 -1 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Mexican v. Other" Race 0 1 0 -1 / CL EXP ALPHA=0.03125;
+*    ESTIMATE "Hispanic v. Other" Race 0 0 1 -1 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (White Ref)";
+RUN;
+TITLE;
+```
+
+The following code calculates the estimated odds ratios using non-positional syntax. For brevity, only comparisons with the reference category (white) are presented. 
+
+```{r example10, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WhiteRef;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Black v. White" Race [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. White" Race [1, 3] [-1, 1]  / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. White" Race [1, 4] [-1, 1]  / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. White" Race [1, 5] [-1, 1]  / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Black" Race [1, 1] [-1, 2]  / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Black" Race [1, 3] [-1, 2] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Black" Race [1, 4] [-1, 2] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Black" Race [1, 5] [-1, 2] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Mexican" Race [1, 1] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Mexican" Race [1, 2] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Mexican" Race [1, 4] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Mexican" Race [1, 5] [-1, 3] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Hispanic" Race [1, 1] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Hispanic" Race [1, 2] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Hispanic" Race [1, 3] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Hispanic" Race [1, 5] [-1, 4] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Other" Race [1, 1] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Other" Race [1, 2] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Other" Race [1, 3] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Other" Race [1, 4] [-1, 5]/ CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio (White Ref, Non-Positional)";
+RUN;
+TITLE;
+```
+
+# Overall (Likelihood Ratio) Test
+
+Hypothesis tests are more useful for complicated questions of model structure involving multiple parameters rather than questions regarding individual parameters of interest, where confidence intervals (ranges of plausible values of the parameter) are more useful. In the context of a single categorical predictor variable, the most important potential simplification, which is relevant in almost every problem, is whether the model with only an intercept $\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0$, which specifies that there is no relationship between the (probability of the) outcome and the categorical predictor. This model is the null model. It is the special case of our logistic regression model with $\beta_1 = \beta_2 = \beta_3 = \beta_4 = \beta_5 (= 0)$. Equivalently, it is the special case of our model with $\beta_2 - \beta_1 = 0$, $\beta_3 - \beta_1 = 0$, $\beta_4 - \beta_1 = 0$, and $\beta_5 - \beta_1 = 0$.
+
+The *overall test* for race is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{White}) + \beta_2 \textbf{1}(x_i = \mbox{Black}) + \beta_3 \textbf{1}(x_i = \mbox{Mexican}) \\
+& & + \beta_4 \textbf{1}(x_i = \mbox{Hispanic}) + \beta_5 \textbf{1}(x_i = \mbox{Other}) \\
+\end{eqnarray*}$$
+
+The likelihood ratio test of this hypothesis can be obtained by fitting the two models and manually calculating the difference in $-2 \log{L}$, $-2 \log{\mbox{LR}} = -2 \{ \log{L_{\mbox{Null}}} - \log{L_{\mbox{Full}}}\}$. 
+
+```{r overall, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+    ODS OUTPUT FitStatistics=Null;
+    MODEL Obese(Event="Yes") = / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+    ODS OUTPUT FitStatistics=Full;
+    CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+    MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Null;
+  SET Null (RENAME=(InterceptAndCovariates=Minus2LogL));
+
+  KEEP Minus2LogL;
+RUN;
+
+DATA Full;
+  SET Full (RENAME=(InterceptAndCovariates=Minus2LogL));
+
+  IF Rowid="M2LOGL";
+
+  KEEP Minus2LogL;
+RUN;
+
+TITLE "Null Model";
+PROC PRINT DATA=Null NOOBS;
+RUN;
+TITLE;
+
+TITLE "Full Model";
+PROC PRINT DATA=Full NOOBS;
+RUN;
+TITLE;
+```
+
+Under the null hypothesis, the likelihood ratio test statistic follows a chi-square distribution with $4 = 5-1$ degrees of freedom. The degrees of freedom is the difference between the number of parameters in the full model $5$ and the number of parameters in the null model $1$.  The likelihood ratio test statistic is $111.05 = 9440.367-9325.312$, the $p$-value is $6.1 \times 10^{-24} \approx 0$, and the $s$-value is $77.1$. 
+
+By default, PROC LOGISTIC in SAS calculates the overall likelihood ratio test statistic and $p$-value. (By default, it also calculates the Wald and score versions of the overall test, which should be ignored.)
+
+```{r example11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+    ODS OUTPUT GlobalTests=G;
+    CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+    MODEL Obese(Event="Yes") = Race / LINK=LOGIT;    
+RUN;
+ODS SELECT ALL;
+
+DATA LRTests;
+  RETAIN Test df ChiSq ProbChiSq sValue;
+  SET G;
+
+  IF Test="Likelihood Ratio";
+  
+  sValue = -LOG(ProbChiSq)/LOG(2);
+  Test="Overall";
+
+  KEEP Test df ChiSq ProbChiSq sValue;
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ProbChiSq ;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+# Partial (Likelihood Ratio) Tests
+
+Other potential model simplifications of interest depend on the underlying application. One hypothesis (potential model simplification) of interest might ask whether the non-white races could be combined. This hypothesis implies a special case of our logistic regression model with $\beta_2 = \beta_3 = \beta_4 = \beta_5$, or equivalently $\beta_2 - \beta_3 = 0$, $\beta_2 - \beta_4 = 0$, and $\beta_2 - \beta_5 = 0$. 
+
+The *partial test* for differences between non-white races is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{White}) + \beta_2 \textbf{1}(x_i = \mbox{NonWhite}) \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 \textbf{1}(x_i = \mbox{White}) + \beta_2 \textbf{1}(x_i = \mbox{Black}) + \beta_3 \textbf{1}(x_i = \mbox{Mexican}) \\
+& & + \beta_4 \textbf{1}(x_i = \mbox{Hispanic}) + \beta_5 \textbf{1}(x_i = \mbox{Other}) \\
+\end{eqnarray*}$$
+where $$\textbf{1}(x_i = \mbox{NonWhite}) = \textbf{1}(x_i = \mbox{Black}) + \textbf{1}(x_i = \mbox{Mexican}) + \beta_4 \textbf{1}(x_i = \mbox{Hispanic}) + \textbf{1}(x_i = \mbox{Other}) = 1 - \textbf{1}(x_i = \mbox{White})$$
+
+The likelihood ratio test of this hypothesis can be obtained by fitting the two models and manually calculating the difference in $-2 \log{L}$, $\lambda_{\mbox{LR}} = -2 \{ \log{L_{\mbox{Reduced}}} - \log{L_{\mbox{Full}}}\}$. 
+
+```{r example12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Ron;
+  SET Ron;
+    
+  IF VVALUE(Race)="White" THEN NonWhite=0;
+  ELSE IF VVALUE(Race)="Black" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Mexican" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Hispanic" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Other" THEN NonWhite=1;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT FitStatistics=Reduced;
+  CLASS NonWhite(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT FitStatistics=Full;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  SET Reduced (RENAME=(InterceptAndCovariates=Minus2LogL));
+
+  IF Rowid="M2LOGL";
+
+  KEEP Minus2LogL;
+RUN;
+
+DATA Full;
+  SET Full (RENAME=(InterceptAndCovariates=Minus2LogL));
+
+  IF Rowid="M2LOGL";
+
+  KEEP Minus2LogL;
+RUN;
+
+TITLE "Reduced Model";
+PROC PRINT DATA=Reduced NOOBS;
+RUN;
+TITLE;
+
+TITLE "Full Model";
+PROC PRINT DATA=Full NOOBS;
+RUN;
+TITLE;
+```
+
+Under the null hypothesis, the likelihood ratio test statistic follows a chi-square distribution with $3 = 5-2$ degrees of freedom. The degrees of freedom is the difference between the number of parameters in the full model $5$ and the number of parameters in the reduced model 2$.  The likelihood ratio test statistic is $103.90 = 9429.215-9325.312$, the $p$-value is $2.2 \times 10^{-22} \approx 0$, and the $s$-value is $71.9$. 
+
+Partial likelihood ratio test statistics are not calculated by PROC LOGISTIC. Instead, partial likelihood ratio tests can be calculated using the overall likelihood ratio test statistics from the reduced and full models.
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  CLASS NonWhite(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Non-White Differences";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+    IF _N_ = 1 THEN SET Full;
+    SET Reduced;
+    
+    Chisq = Minus2LogLR_Full-Minus2LogLR;
+    df = nPars_Full - nPars;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+The following SAS code calculates several partial likelihood ratio tests. In addition to the overall test and the partial test for differences between the non-White racial groups, it calculates the partial tests for (1) differences in the prevalence of obesity between Mexican, Hispanic and Other and (2) differences in the prevalence of obesity between Mexican and Hispanic.
+
+```{r example14, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Ron;
+  SET Ron;
+  
+  IF VVALUE(Race)="White" THEN WBO=0;
+  ELSE IF VVALUE(Race)="Black" THEN WBO=1;
+  ELSE IF VVALUE(Race)="Mexican" THEN WBO=2;
+  ELSE IF VVALUE(Race)="Hispanic" THEN WBO=2;
+  ELSE IF VVALUE(Race)="Other" THEN WBO=2;
+
+  IF VVALUE(Race)="White" THEN WBHO=0;
+  ELSE IF VVALUE(Race)="Black" THEN WBHO=1;
+  ELSE IF VVALUE(Race)="Mexican" THEN WBHO=2;
+  ELSE IF VVALUE(Race)="Hispanic" THEN WBHO=2;
+  ELSE IF VVALUE(Race)="Other" THEN WBHO=3;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=NonWhite;
+  CLASS NonWhite(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=WBO;
+  CLASS WBO(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = WBO / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=WBHO;
+  CLASS WBHO(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = WBHO / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+
+DATA Null;
+  LENGTH Test $40;
+  RETAIN Test nPars Minus2LogLR;
+
+  Test="Racial Differences";
+  nPars = 1;
+  Minus2LogLR = 0;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA NonWhite;
+  LENGTH Test $40;
+  RETAIN Test nPars Minus2LogLR;
+  SET NonWhite (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Non-White Differences";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA WBO;
+  LENGTH Test $40;
+  RETAIN Test nPars Minus2LogLR;
+  SET WBO (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Mexican, Hispanic, Other Differences";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA WBHO;
+  LENGTH Test $40;
+  RETAIN Test nPars Minus2LogLR;
+  SET WBHO (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Mexican, Hispanic Differences";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+ 
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Null NonWhite WBO WBHO;
+    
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Tests";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ProbChiSq BEST8.;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+While there is overwhelming evidence for differences in prevalence of obesity between the racial groups $(s=77.1)$, the non-White racial groups $(s=71.9)$ and the Mexican, Hispanic and Other racial groups $(s=36.6)$, there is only weak evidence for differences in the prevalence of obesity between the Mexican and Hispanic groups $(s=3.8)$. While it is tempting to treat the lack of evidence (*insignificant $p$-value*) for a difference in prevalence between the two groups as (strong) evidence for a lack of difference in prevalence between the two groups, examination of the confidence (compatibility) interval for the odds ratio for Hispanic v. Mexican $(0.59,1.05)$ shows that we cannot rule out substantially lower $(41\%)$ odds of obesity in Hispanics. In other words, failing to reject the null hypothesis does not prove that the null hypothesis holds either exactly or even approximately.
+
+# Recommended Practice
+
+In these lecture notes, we've illustrated many of the (equivalent) options for parameterizing and interacting with (logistic) regression models with a single categorical predictor variable.  In practice, we would recommend the reference parameterization (PARAM=REF) with your choice of reference level (there is no right or wrong choice for a reference level) and interacting with the model primarily using PROC PLM with the non-positional syntax. Where appropriate, you should calculate (partial) likelihood ratio tests by hand.  An example of the typical code follows.
+
+```{r example15, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+DATA Ron;
+  SET NHANES.NHANES;
+
+  RENAME Race1=Race;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  STORE WhiteRef;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r example16, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=WhiteRef;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Black v. White" Race [1, 2] [-1, 1] / CL EXP ALPHA=0.03125;
+  ESTIMATE "Mexican v. White" Race [1, 3] [-1, 1]  / CL EXP ALPHA=0.03125;
+  ESTIMATE "Hispanic v. White" Race [1, 4] [-1, 1]  / CL EXP ALPHA=0.03125;
+  ESTIMATE "Other v. White" Race [1, 5] [-1, 1]  / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Black" Race [1, 1] [-1, 2]  / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Black" Race [1, 3] [-1, 2] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Black" Race [1, 4] [-1, 2] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Black" Race [1, 5] [-1, 2] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Mexican" Race [1, 1] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Mexican" Race [1, 2] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Mexican" Race [1, 4] [-1, 3] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Mexican" Race [1, 5] [-1, 3] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Hispanic" Race [1, 1] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Hispanic" Race [1, 2] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Hispanic" Race [1, 3] [-1, 4] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Other v. Hispanic" Race [1, 5] [-1, 4] / CL EXP ALPHA=0.03125;
+
+*  ESTIMATE "White v. Other" Race [1, 1] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Black v. Other" Race [1, 2] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Mexican v. Other" Race [1, 3] [-1, 5] / CL EXP ALPHA=0.03125;
+*  ESTIMATE "Hispanic v. Other" Race [1, 4] [-1, 5]/ CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+If (partial) likelihood ratio tests are required, you should fit the relevant models to get the log-likelihoods and calculate the test statistics (and $p$-values) by hand.
+
+```{r example18, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Ron;
+  SET Ron;
+    
+  IF VVALUE(Race)="White" THEN NonWhite=0;
+  ELSE IF VVALUE(Race)="Black" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Mexican" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Hispanic" THEN NonWhite=1;
+  ELSE IF VVALUE(Race)="Other" THEN NonWhite=1;
+RUN;
+
+TITLE "Reduced Model (Intercept Only)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+  MODEL Obese(Event="Yes") = / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Reduced Model (NonWhite)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+  CLASS NonWhite(REF="0") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = NonWhite / LINK=LOGIT;
+RUN;
+TITLE;
+
+TITLE "Full Model (Race)";
+PROC LOGISTIC DATA=Ron;
+  ODS SELECT FitStatistics;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT;
+RUN;
+TITLE;
+```
+
+
+```{r calc, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+    Minus2LL0 = 9440.367;
+    Minus2LL1 = 9325.312;
+
+    df0 = 1;
+    df1 = 5;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+
+DATA Calculator;
+    Minus2LL0 = 9429.215;
+    Minus2LL1 = 9325.312;
+
+    df0 = 2;
+    df1 = 5;
+
+    Chisq = Minus2LL0 - Minus2LL1;    
+    df = df1 - df0;
+    ProbChiSq = SDF("CHISQURE",Chisq,df);
+    sValue = -LOG(ProbChiSq)/LOG(2);
+    
+    KEEP Chisq df ProbChiSq sValue;   
+RUN;
+
+TITLE "Chi-Square Calculator";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;
+```
+
+The overall likelihood ratio test statistic for any *effect* of race is $111.05 = 9440.367-9325.312$ on 4 df, the $p$-value is $6.1 \times 10^{-24} \approx 0$, and the $s$-value is $77.1$.  
+
+The (partial) likelihood ratio test statistic for any differences in prevalence between the non-White racial groups $103.90 =
+9429.215-9325.312$ on 3 df, the $p$-value is $2.2 \times 10^{-22} \approx 0$, and the $s$-value is $71.9$.  
+
+If profile likelihood intervals are required for the odds ratio(or prevalence), which is rare, you would obtain them directly from PROC LOGISTIC, possibly running the model multiple times with different reference categories.  
+
+```{r example17, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT CLParmPL=E;
+  CLASS Race(REF="White") / PARAM=REF ORDER=INTERNAL;
+  MODEL Obese(Event="Yes") = Race / LINK=LOGIT CLPARM=PL ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  WHERE Parameter="Race";
+  Label = CAT(ClassVal0," v ","White"); 
+
+  ExpEstimate= EXP(Estimate);
+  LowerExp = EXP(LowerCL);
+  UpperExp = EXP(UpperCL);
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;  
+*/
+```
+
+
+

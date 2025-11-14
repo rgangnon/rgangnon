@@ -1,0 +1,625 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+
+# Misspecified Variances
+
+There are many possible WLS (weighted least squares) estimators, $\hat{\beta}_W = (X^T W X)^{-1} X^T W Y$, of the regression coefficients $\beta$, one for every possible specification of the weight matrix $W$.  If the structural form of the regression model is correct $$\mbox{E}(Y|X) = X \beta$$ then WLS produces an unbiased estimator of $\beta$ for any choice of $W$ 
+$$\mbox{E}(\hat{\beta}_W | X) = \beta $$
+However, if the variance is misspecified
+$$V = \mbox{Var}(Y|X) \not= \sigma^2 W^{-1}$$
+then the variance of the WLS estimator is
+$$\mbox{Var}(\hat{\beta}_W|X) = (X^T W X)^{-1} (X^T W V W X) (X^T W X)$$
+If $V = \sigma^2 W^{-1}$ (the variance is correctly specified), the above equation reduces to the usual formula
+$$\mbox{Var}(\hat{\beta}_W|X) = \sigma^2 (X^T W X)^{-1}$$
+In the context of potential misspecification of the variance, this estimator is sometimes called the *model-based variance estimator*. 
+
+For the typical case of ordinary least squares (rather than weighted least squares), the correct variance of the OLS estimator with potentially misspecified variance is
+$$\mbox{Var}(\hat{\beta}_O|X) = (X^T X)^{-1} (X^T V X) (X^T X)$$
+and the model-based variance estimator is
+$$\mbox{Var}(\hat{\beta}_O|X) = \sigma^2 (X^T X)^{-1}$$
+
+# Robust Standard Errors
+
+Estimation of $\mbox{Var}(\hat{\beta}_O)$ or $\mbox{Var}(\hat{\beta}_W)$ requires an estimator of $\mbox{Var}(Y|X) = V$. If the variance is correctly specified, we simply need to estimate $\sigma^2$, the single (unknown) variance parameter. If we do not assume that the variance is correctly specified (and we are unwilling to make any alternative assumptions), the natural estimator of $\mbox{Var}(Y_i|X)$, the $i^{th}$ diagonal element of $V$ is $r_i^2$, where $r_i = y_i - x_i \hat{\beta}$ is the $i^{th}$ residual. Although these estimators are individually quite poor (each being mostly based on a single observation), theoretical work by a number of authors has shown that 
+$$\hat{\mbox{Var}}(\hat{\beta}_O|X) = (X^T X)^{-1} (X^T \hat{V} X) (X^T X)$$
+where $$\hat{V} = \begin{pmatrix}
+    r_1^2 & 0 & 0 & \ldots & 0 \\
+    0 & r_2^2 & 0 & \ldots & 0 \\
+    0 & 0 & r_3^2 & \ldots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & 0\\
+    0 & 0 & 0 & \ldots & r_N^2 \\
+    \end{pmatrix}
+    $$
+is a consistent estimator of $\hat{\mbox{Var}}(\hat{\beta}_O|X)$. (Many authors have proposed replacements for $\hat{V}$ in the previous formula, but, in practice, these refinements make little difference.) An estimator of this type is often called a *sandwich variance estimator*. Standard errors obtained from these formulas are called *heteroskedasticity-consistent standard errors* or *robust standard errors*.
+
+Confidence intervals for linear combinations of the regression parameters are obtained using the same formulas used previously, simply using the *robust standard error* in place of the *model-based standard error*. (Technically, standard normal quantiles should always be used in place of the $t$ quantile as the justification for the sandwich variance estimator requires large sample size.)
+
+For general hypothesis tests of the null hypothesis $H_0: L \beta = c$ versus the alternative hypothesis $H_1: L \beta \not= c$ (where $L$ includes $q$ non-redundant constraints on the model), the Wald chi-square test statistic given by
+
+$$\chi^2 = (L \hat{\beta}_O - c)^T (L \hat{V}^{-1} L^T)^{-1}) (L \hat{\beta}_O - c), \hat{V} = \hat{\mbox{Var}}(\hat{\beta}_O|X)$$
+is compared to the chi-square distribution with $q$ df.  When the model-based estimator of $V$ is used, this formula is mathematically equivalent to the $F$-statistic used previously for these types of tests.
+
+# Example: Simple Linear Regression of Blood Pressure on Age
+
+To illustrate the use of robust standard errors, we will revisit our two applications of weighted least squares.  Instead of explicitly accounting for the non-constant variance, we will instead use ordinary least squares and obtain valid inferences using robust standard errors in place of the model-based standard errors.
+
+First, we reconsider the simple linear regression of diastolic blood pressure on age in a sample of 54 adult women.
+
+```{r ols, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+OPTIONS NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+FILENAME BloodP URL "http://users.stat.ufl.edu/~rrandles/sta4210/Rclassnotes/data/textdatasets/KutnerData/Chapter%2011%20Data%20Sets/CH11TA01.txt";
+
+DATA BloodPressure;
+  INFILE BloodP;
+
+	INPUT Age DBP;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BloodPressure;
+	MODEL DBP = Age / SELECTION=NONE;
+  OUTPUT OUT=Tmp R=Resid P=Yhat;
+  STORE OLS;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+  Abs_Resid = ABS(resid);
+	Resid_Sq = Resid**2;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+
+```{r diagnostics1, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+As noted before, the error variance is clearly increasing with the mean.  Instead of altering the model to accomodate the non-constant variance, we will instead simply use robust standard errors to obtain valid standard errors. To obtain the robust standard errors, we will use PROC GLIMMIX instead of PROC GLMSELECT.
+
+In PROC GLIMMIX, one adds the option EMPIRICAL=DF to the PROC GLIMMIX statement.
+
+```{r rse1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=BloodPressure EMPIRICAL=DF;
+	MODEL DBP = Age / DIST=NORMAL LINK=IDENTITY;
+  STORE Robust;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+## Estimated Intercept and Slope
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Ordinary Least Squares (OLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label StdErr;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 StdErr 6.3;
+RUN;
+```
+
+```{r inference2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust;
+  ESTIMATE "Intercept" Intercept 1 / CL ALPHA=0.03125;
+  ESTIMATE "Slope" Age 1 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Robust Standard Errors";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label StdErr;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 StdErr 6.3;
+RUN;
+TITLE;
+```
+
+The robust-based standard error for the estimated intercept is $3.271$ (smaller than the model-based standard error of $3.994$). whi;le the robust standard error of the estimated slope is $0.097$ (virtually identical to the model-based standard error). 
+
+Using robust standard errors, the estimated intercept is $(48.915,63.399)$, and the estimated slope is $(0.365,0.795)$, while, if we use the incorrect model-based standard errors, the estimated intercept is $(47.316,64.998)$, and the estimated slope is $(0.365,0.795)$. 
+
+## Estimated Means
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Ordinary Least Squares (OLS)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust;
+  ESTIMATE "Mean at Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Mean at Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Robust Standard Errors";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+Using robust standard errors, the estimated mean diastolic blood pressure is $(64.5,71.1)$ for age 20, $(76.8,81.9)$ for age 40, and $(84.7,97.2)$ for age 60. Using the incorrect model-based standard errors, the compatability intervals are $(62.9,72.6)$ for age 20 (wider), $(76.9,81.8)$ for age 40 (same), and $(85.9,96.0)$ for age 60 (narrower). Using the incorrect model-based standard errors results in intervals that are too wide for younger ages and too narrow for older ages.
+
+## Fitted Regression Line
+
+```{r inference5, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 60 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET BloodPressure Score(IN=S);
+
+  Score = S;
+RUN;
+
+TITLE "Robust Standard Errors";
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cx1b9e77 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  SCATTER X=Age Y=DBP / MARKERATTRS=(SYMBOL=CircleFilled COLOR=Cx1b9e77);
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cx1b9e77 TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cx1b9e77);
+RUN;
+TITLE;
+```
+
+# Example: Total Cholesterol and Age (Aggregated)
+
+Next, we revisit the analysis of the NHANES data on the relationship between total cholesterol and age (using a natural cubic spline) with aggregate age-specific data. Instead of using weighted least squares, we will instead use ordinary least squares with robust standard errors.
+
+```{r grouped1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+RUN;
+
+PROC MEANS DATA=Analysis NOPRINT;
+  CLASS Age;
+  VAR TotChol;
+  OUTPUT OUT=Analysis_Agg N=N MEAN=TotChol;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Analysis_Agg EMPIRICAL=DF;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / DIST=NORMAL LINK=IDENTITY;
+
+  STORE Robust_Aggregated;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r grouped2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust_Aggregated;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means with Robust Standard Errors (Aggregated Data)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+```{r grouped3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust_Aggregated;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences with Robust Standard Errors (Aggregated Data)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+Note that the formulation of Wald tests with robust standard errors is straightforward, while likelihood ratio (or ANOVA) tests are more complicated.
+
+```{r grouped4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Robust_Aggregated;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald) with Robust Standard Errors (Aggregated Data)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+There is strong evidence that age is associated ($s \approx 69$) with mean total cholesterol in a non-linear fashion ($s \approx 59$). The estimated mean serum cholesterol levels are 4.940-5.081 mmol/L for 35 year olds, 5.205-5.338 mmol/L for 45 year olds (0.182-0.340 mmol/L greater than 35 year olds), 5.285-5.413 mmol/L for 55 year olds (0.236-0.442 mmol/L greater than 35 year olds and 0.005-0.150 mmol/L greater than 45 year olds) and 5.132-5.324 mmol/L for 65 year olds (0.109-0.327 mmol/L greater than 35 year olds, 0.179 mmol/L lower to 0.092 mmol/L greater than 45 year olds, and 0.033-0.209 mmol/L lower than 55 year olds).
+
+## Comparison with Model-Based Standard Errors
+
+By comparison, the (inconsistent) model-based standard errors are typically too small (confidence intervals too narrow) with the exception of mean serum cholesterol at age 45, mean serum cholesterol at age 55 and the difference in mean serum cholesterol between age 55 and age 45.
+
+```{r ols2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis_Agg;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+
+  STORE OLS_Aggregated;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r grouped5, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS_Aggregated;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means with Ordinary Least Squares (Aggregated Data)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+```{r grouped6, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS_Aggregated;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences with Ordinary Least Squares (Aggregated Data)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r grouped7, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=OLS_Aggregated;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald) with Ordinary Least Squares (Aggregated Data)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+## Comparison with Weighted Least Squares with Model-Based Standard Errors
+
+Note that, in this example, the robust standard errors using the inefficient OLS estimator are similar to the model-based (or robust) standard errors using the efficient WLS estimator. Differences between the model-based standard errors and the robust standard errors can be viewed as a crude diagnostic for problems with the correct variance function assumption.
+
+```{r wls, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis_Agg;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+  WEIGHT N;
+
+  STORE AggregatedModel;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r wls2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means with Weighted Least Squares (Model-Based Standard Errors)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r wls3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences with Weighted Least Squares (Model-Based Standard Errors)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+```{r wls4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=AggregatedModel;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald) with Weighted Least Squares (Model-Based Standard Errors)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+## Comparison with Weighted Least Squares with Robust Standard Errors (Doubly Robust)
+
+```{r double, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLIMMIX DATA=Analysis_Agg EMPIRICAL=DF;
+  EFFECT AgeCS = Spline(Age /
+          NATURALCUBIC BASIS=TPF(NOINT)
+          KNOTMETHOD=EQUAL(5));
+
+  MODEL TotChol = AgeCS / DIST=NORMAL LINK=IDENTITY;
+  WEIGHT N;
+
+  STORE DoubleRobust;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r double2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=DoubleRobust;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Means with Weighted Least Squares (Robust Standard Errors)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r double3, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=DoubleRobust;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Estimated Mean Differences with Weighted Least Squares (Robust Standard Errors)";
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+TITLE;
+```
+
+```{r double4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=DoubleRobust;
+  ESTIMATE "Age Overall" AgeCS 1 0 0 0,
+                         AgeCS 0 1 0 0,
+                         AgeCS 0 0 1 0,
+                         AgeCS 0 0 0 1 / JOINT CHISQ;
+  ESTIMATE "Age Linear" AgeCS 0 1 0 0,
+                        AgeCS 0 0 1 0,
+                        AgeCS 0 0 0 1 / JOINT CHISQ;
+  ODS OUTPUT Contrasts=C;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA C;
+  SET C;
+
+  sValue = -LOG(ProbF)/LOG(2);
+RUN;
+
+TITLE "F-Tests (Wald) with Weighted Least Squares (Robust Standard Errors)";
+PROC PRINT DATA=C NOOBS LABEL;
+  VAR Label NumDF DenDF FValue ProbF sValue;
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+# Limitations of Robust Standard Errors 
+
+In some fields, robust standard errors are routinely used, often without comment, instead of model-based standard errors. However, differences between robust and model-based standard errors necessarily indicate serious problems with one or more of the underlying assumptions of the proposed statistical model that may seriously limit the applicability and relevance of the reported findings. See the article by King and Roberts (2015) for an excellent discussion of the limitations of robust standard errors as a solution to mis-specification of the variance function.

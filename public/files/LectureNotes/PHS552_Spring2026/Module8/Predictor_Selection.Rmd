@@ -1,0 +1,1564 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Regression Modeling Strategy (Simple Form)
+
+1. Decide **how many** degrees of freedom can be spent on the model.
+2. Decide **where** to spend the available degrees of freedom.
+3. **Spend them.**
+4. **Don't reconsider**, especially if inference is needed.
+
+# Developing Models for Prediction
+
+1. **Identify or collect relevant data:**
+    * Assemble as much accurate, pertinent data as possible, with wide distributions for the predictor variables.
+    
+2. **Identify predictor variables:**
+    * Formulate good hypotheses that lead to specifications of relevant candidate predictors and possible interactions.
+    * Don't use the outcome $Y$ (formally or informally) to select the list of candidate predictors.
+   
+3. **Missing outcome variable:**
+    * If there are missing $Y$ values on a small fraction of subjects but $Y$ can be reliably substituted by a surrogate response, use the surrogate to replace the missing values.
+    * Characterize tendencies for $Y$ to be missing.
+    * Depending on the model used, even the information on $X$ for observations with missing $Y$ can be used to improve the precision of $\hat{\beta}$, so multiple imputation of $Y$ can sometimes be effective.    
+    * Otherwise, discard observations with missing $Y$.
+
+4. **Missing predictor variables:**
+    * Impute missing $X$ values if the fraction of missing $X$'s is not tiny.
+    * Characterize observations that had to be discarded.
+    * In most cases, multiply impute missing $X$'s based on other $X$'s and $Y$ and other available information about the missing data mechanism.
+    
+5. **Specify predictor complexity:**
+    * For each predictor, specify the complexity (or degree of nonlinearity) that should be allowed.
+    * When prior knowledge does not indicate that a predictor has a linear effect, specify the number of degrees of freedom that should be devoted to the predictor.
+    * The *df* can be larger when the predictor is though to be more important in predicting $Y$ or when the sample size is large.
+  
+6. **Data reduction:**
+    * If the number of terms fitted or tested in the modeling process is too large relative to the sample size, use data reduction (ignoring $Y$) until the number of free variables needing regression coefficients is tolerable.
+    * Use the $n/15$ or $n/20$ observations per regression coefficient rule as a guide.
+    * Alternatively, use penalized estimation with the entire set of variables.
+    
+7. **Use the entire sample:**
+    * Use the entire sample in model development as data are too precious to waste.
+    * If steps listed below are too difficult to repeat for bootstrap or cross-validation samples, hold out a test sample from all model development steps that follow.
+   
+8. **Perform structured tests:**
+    * When you can test for model complexity in a very structured way, you may be able to simplify the model without a great need to penalize the final model for having made the initial look.
+    * For example, it can be advisable to test an entire group of variables and to either delect or retain the entire group for further modeling based on a single $p$-value (especially if the $p$-value is not between 0.005 and 0.2).
+    * Another example of structured testing to simplify the *initial* model is varying the complexity of all quantitative predictors $k$ from 1 (linear) to 2 to 3 to $\ldots$, choosing the value of $k$ that optimizes adjusted $R^2$ or AIC.
+  
+9. **Check linearity assumptions:**
+    * Make transformation of $X$'s as needed.
+    * Any examination of the response that might result in simplifying the model needs to be accounted for in computing confidence intervals.
+    * It may be preferable to retain the complexity that was pre-specified in Step 5 regardless of the results of assessments of non-linearity.
+  
+10. **Check additivity assumptions:**
+    * Test all pre-specified interaction terms using a global test.
+    * If the global test for additivity is significant *or equivocal*, all pre-specified interactions should be retained in the model.
+    * If the test is decisive ($p > 0.3$), all interaction terms can be omitted, and there is likely no need to repeat this pooled test for each resample during model validation.
+   
+11. **Check for influential observations.**
+
+12. **Check distributional assumptions:**
+    * Choose a different model if needed.
+  
+13. **Perform a limited backwards step-down variable selection:**
+    * Only if parsimony is more important than accuracy.
+    * The cost of aggresive variable selection is that the variable selection algorithm must be included in a resampling procedure to properly validate the model or to compute confidence intervals.
+   
+14. **This is the *final model*.**
+
+15. **Interpret the model:**
+    * Examine predicted values and/or differences in predicted values (using appropriate hypothesis tests and confidence intervals) without trying to interpret the individual regression coefficients.
+    * For collinear predictors, obtain pooled tests of association so that competition among variables will not give misleading impressions of overall significance.
+
+16. **Validate the final model:**
+    * Use bootstrapping or cross-validation to quantify calibration and discrimination ability.
+    * Steps 9-13 must be repeated, at least approximately, for each resample.
+    * For example, if age was transformed when building the final model and the transformation was suggested by using a fit including age and $\mbox{age}^2$, each bootstrap replication should include both age variables with a possible step-down from the quadratic to the linear model based on automatic significance testing at each step.
+  
+17. **Shrink parameter estimates:**
+    * If there is over-fitting but no further data reduction is desired and shrinkage was not built into the estimation process.
+  
+18. **Account for imputation of missing values:**
+    * When missing values were imputed, adjust the final variance-covariance matrix for imputation whereever possible (using the bootstrap or multiple imputation).
+    * This may affect some of the previous results.
+  
+19. **If feasible, account for the entire modeling strategy:**
+    * When all steps of the modeling strategy can be automated, consider using Faraway's method to penalize for the randomness inherent in the entire modeling process (all previous steps).
+  
+20. **Simplify the final model:**
+    * Develop simplifications of the final model by approximating to any desired degree of accuracy.
+
+# Developing Models for Effect Estimation and Testing
+
+1. **Less need for parsimony:**
+    * There is less potential gain using a parsimonious model for effect estimation than for prediction.
+    * Leaving insignificant predictors in the model increases the likelihood that the confidence interval for the effect of interest has the stated coverage.
+    * A full model fit, including insignificant variables, will result in more accurate *p*-values for the variables of interest.
+    * The variance of predictions is increased by the presence of unimportant variables, as predictions are still conditional on the particular values of these variables.
+    * In contrast, when differences are of interest (effect estimation), the terms related to other variables cancel out and do not inflate the variance. 
+
+2. **Careful consideration of interactions still needed:**
+    * If a predictor whose effects are of interest is allowed to interact with one or more other predictors, effect estimation must be conditional on the other predictors and hence have higher variance.
+    * If one or more predictors interact with a variable of interest, either separate hypothesis tests are carried out over levels of the interacting factors or a combined *main effects + interaction* test is performed.
+    * For example, a well-defined test is whether treatment is effective for *any* racial group. 
+
+3. **If the predictor of interest is the only variable with a substantial number of missing values, multiple imputation is less valuable:**
+    * In some cases, multiple imputation will increase effective sample size (if other variables are predictive of the predictor of interest), but in others there will be little gain.
+    * Imputation is only useful if it corrects for a substantial bias due to exclusion of nonrandomly missing data. 
+
+4. **Don't limit degrees of freedom devoted to the predictor of interest:**
+    * You should not be concerned about conserving degrees of freedom devoted to the predictor of interest.
+    * The complexity allowed for this variable should be based on your prior knowledge.
+    * Potential compromises should focus on the bias-variance trade-off. 
+
+5. **Don't shrink estimates for the parameter of interest**
+
+6. **Model validation is not necessary:**
+    * Can be used to quantify the degree of over-fitting.
+    * Could identify overadjustment for confounding. 
+
+# (Short) Guide to Model Fitting for Effect Estimation
+
+1. Identify scientific question
+    * Outcome variable
+    * Primary exposure(s) of interest
+
+2. Identify other variables of interest
+    * Confounders
+    * Effect modifiers
+    * Mediators
+
+3. Specify an initial model
+    * Allow for non-linear effects of quantitative predictors
+    * Allow for *known or suspected* interactions of confounders
+    * Allow for *known* interactions with primary predictor of interest
+
+4. Check model assumptions
+    * Residual plots vs. fitted values and individual predictors
+    * Normal scores plots of residuals
+
+5. If model assumptions are not met, consider modifications
+    * Add terms to model to address structural issues
+    * Outcome transformations for normality and/or constant variance
+    * Explicit models for non-constant variance (weighted least squares or generalized linear models)
+
+6. Repeat Steps 4-5 until you are satisfied with the model fit
+
+7. If desired, investigate simplifications (expansions) of the confounder model
+    * Ask omnibus questions (all interaction terms, all non-linear terms)
+
+8. If appropriate, consider *potential* interactions with the primary exposure(s) of interest
+    * Test for *potential* interactions; if decisive, *consider* simplifying to the additive model
+
+9. Interpret findings for the primary exposure(s)
+    * Test for overall effect
+    * Test for linearity for quantitative/ordinal variables
+    * Obtain estimates/CIs for meaningful comparisons of exposure levels, within levels of the other factor(s) if interactions are present.
+    * If appropriate, consider simplification to additive mode; serves as a supplement to previous estimates, not replacement
+    * If appropriate, consider simplification to linear effect; serves as a supplement to previous estimates, not replacement
+
+# Example: Obesity and Smoking in NHANES
+
+## Step 1. Identify scientific question
+
+My objective is to identify differences in the prevalence of obesity between smokers and non-smokers in the US adult (age 18-79) population.
+
+The outcome variable is an indicator variable for obesity (body mass index greater than 30). The primary exposure of interest is smoking status, a dichotomous variable with 2 levels (ever smoker and never smoker). 
+
+## Step 2. Identify other variables of interest
+
+Potential confounding variables include age, gender, race, marital status, education, and income. 
+
+On average, smokers are older, poorer and less educated than non-smokers. They are disproportionately male, White, and divorced, living with partner or widowed.
+
+```{r table1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Table1;
+  SET NHANES.NHANES (RENAME=(Race1=Race Smoke100=Smoke HHIncomeMid=Income));
+RUN;
+
+PROC MEANS DATA=Table1 N MEAN STDDEV;
+    CLASS Smoke;
+    VAR Age Income;
+RUN;
+
+PROC FREQ DATA=Table1;
+    TABLES Smoke*(Gender Race MaritalStatus Education) / NOCOL NOPERCENT MISSPRINT;
+RUN;
+```
+
+
+## Step 3. Specify an initial model
+
+Our initial logistic regression model will include two binary predictors (smoking and gender), three categorical predictors (race, marital status and education) and two quantitative predictors (age and income).
+
+For analysis, we assign a value of \$150,000 to subjects with incomes greater than \$100,000, implicitly treating the category as if it were \$100,000-199,999. 
+
+We will model the quantitative predictors (age and income) using a natural cubic splines with 4 df (5 knots), placing the knots at the recommended percentiles.
+
+An additive model requires 1 df for smoking, 1 df for gender, 4 df for race, 4 df for age, 4 df for education, 5 df for marital status and 4 df for income for a total of 23 df.  Based on our effective sample size of 2592, we could fit a model with up to $173 \approx 2592/15$ df.
+
+Among the confounding variables, a two-way interaction between gender and race seems plausible; the required terms will use an additional $4$ df.
+
+No other interaction terms will be included in our initial model.
+
+```{r initial1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA Analysis;
+  SET Table1;
+
+  IF Income = 100000 THEN Income = 150000;
+RUN;
+
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Analysis;
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+
+  STORE InitialModel;
+RUN;
+ODS SELECT ALL;
+```
+
+## Step 4. Check model assumptions
+
+We cannot directly assess the independence assumption.  Given the design of NHANES, there is no reason to suspect any issues with the validity of this assumption.
+
+Although we can assess the adequacy of the correct structural model assumption by examining plots of the residuals against the various predictor variables, either individually or in combination, we can more easily investigate the potential need to use additional interaction terms and/or additional df to capture the effects of age and/or income more formally using information criteria (AIC or BIC).  I would typically use BIC when potential expansions of the model are under consideration.  For the moment, we restrict attention to potential interactions between the adjustment variables.
+
+```{r ic, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Initial Model";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Gender*Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS Gender*AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Initial Model + Gender*Marital Status";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Gender*MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Gender*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Gender*Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Gender*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;      
+      
+TITLE "Initial Model + Race*Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS Race*AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Initial Model + Race*Marital Status";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Race*MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Race*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Race*Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Race*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Race*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;  
+      
+TITLE "Initial Model + Age*MaritalStatus";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus MaritalStatus*AgeCS Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Initial Model + Age*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Education*AgeCS IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + Age*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS AgeCS*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Initial Model + MaritalStatus*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education MaritalStatus*Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Initial Model + MaritalStatus*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS MaritalStatus*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;   
+      
+TITLE "Initial Model + Education*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Education*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;         
+      
+TITLE "Initial Model + 1df for Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;  
+      
+TITLE "Initial Model + 1df for Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=EQUAL(6));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+```
+      
+```{r calc1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  LENGTH Model $50;
+
+  Model = "Initial";
+  BIC_Initial = 9103.054 + LOG(2592)*28;
+  BIC_Model = BIC_Initial;
+  Delta_BIC = BIC_Model-BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+G*A";
+  BIC_Model = 9099.052 + LOG(2592)*32;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+G*M";
+  BIC_Model = 9084.743 + LOG(2592)*33;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+G*E";
+  BIC_Model = 9082.158 + LOG(2592)*32;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+G*I";
+  BIC_Model = 9055.748 + LOG(2592)*32;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+R*A";
+  BIC_Model = 9065.554 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+R*M";
+  BIC_Model = 9076.742 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+R*E";
+  BIC_Model = 9070.643 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+R*I";
+  BIC_Model = 9072.326 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+A*M";
+  BIC_Model = 9047.523 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+A*E";
+  BIC_Model = 9080.095 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+A*I";
+  BIC_Model = 9058.065 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+M*E";
+  BIC_Model = 9077.707 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+M*I";
+  BIC_Model = 9071.395 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+E*I";
+  BIC_Model = 9084.157 + LOG(2592)*44;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+Age5df";
+  BIC_Model = 9101.546 + LOG(2592)*29;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  Model = "Initial+Income5df";
+  BIC_Model = 9092.273 + LOG(2592)*29;
+  Delta_BIC = BIC_Model - BIC_Initial;
+  OUTPUT;
+
+  KEEP Model BIC_Model Delta_BIC;   
+RUN;
+
+TITLE "BIC Values";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;      
+```
+
+## Step 5. If assumptions are not met, consider modifications
+
+Based on BIC, there is strong evidence that the model should include an interaction between gender and income.
+
+```{r revised1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Analysis;
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+
+  STORE RevisedModel;
+RUN;
+ODS SELECT ALL;
+```
+
+## Step 6. Repeat Steps 4-5 until you are satisfied with the model fit.
+
+```{r ic2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Revised Model";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Gender*Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS Gender*AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Revised Model + Gender*Marital Status";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Gender*MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Gender*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Gender*Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Race*Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS Race*AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Revised Model + Race*Marital Status";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Race*MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Race*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Race*Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Race*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Race*IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;  
+      
+TITLE "Revised Model + Age*MaritalStatus";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus MaritalStatus*AgeCS Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Revised Model + Age*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education Education*AgeCS IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + Age*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS AgeCS*IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + MaritalStatus*Education";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education MaritalStatus*Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Revised Model + MaritalStatus*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS MaritalStatus*IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;   
+      
+TITLE "Revised Model + Education*Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Education*IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;         
+      
+TITLE "Revised Model + 1df for Age";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;  
+      
+TITLE "Revised Model + 1df for Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=EQUAL(6));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+```
+      
+```{r calc2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  LENGTH Model $50;
+
+  Model = "Revised";
+  BIC_Revised = 9055.748 + LOG(2592)*32;
+  BIC_Model = BIC_Revised;
+  Delta_BIC = BIC_Model-BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+G*A";
+  BIC_Model = 9050.817 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+G*M";
+  BIC_Model = 9043.757 + LOG(2592)*37;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+G*E";
+  BIC_Model = 9035.771 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+R*A";
+  BIC_Model = 9019.177 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+R*M";
+  BIC_Model = 9031.236 + LOG(2592)*52;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+R*E";
+  BIC_Model = 9024.217 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+R*I";
+  BIC_Model = 9027.116 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+A*M";
+  BIC_Model = 8995.399 + LOG(2592)*52;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+A*E";
+  BIC_Model = 9033.559 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+A*I";
+  BIC_Model = 9012.999 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+M*E";
+  BIC_Model = 9030.478 + LOG(2592)*52;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+M*I";
+  BIC_Model = 9028.350 + LOG(2592)*52;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+E*I";
+  BIC_Model = 9036.413 + LOG(2592)*48;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+Age5df";
+  BIC_Model = 9054.072 + LOG(2592)*33;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+Income5df";
+  BIC_Model = 9043.286 + LOG(2592)*37;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  KEEP Model BIC_Model Delta_BIC;   
+RUN;
+
+TITLE "BIC Values";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;      
+```
+
+Based on BIC, there are no concerns about the adequacy of the revised model.
+
+## Step 7. If desired, investigate simplifications of the model
+
+We will use AIC to evaluate two potential simplifications of the model: (1) removing the non-linear terms for both age and income and (2) removing the interaction term between gender and race. (Given the addition of the interaction term between gender and income in prior steps, there is no value in revisiting that question here.)
+
+```{r ic3, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Revised Model";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model with Linear Age & Income";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      Age MaritalStatus Education Income Gender*Income / LINK=LOGIT;
+RUN;
+TITLE; 
+      
+TITLE "Revised Model - G*R";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;      
+```
+
+```{r calc3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  LENGTH Model $50;
+
+  Model = "Revised";
+  AIC_Revised = 9055.748 + 2*32;
+  AIC_Model = AIC_Revised;
+  Delta_AIC = AIC_Model-AIC_Revised;
+  OUTPUT;
+
+  Model = "Revised-NonLinear Age & Income";
+  AIC_Model = 9141.328 + 2*23;
+  Delta_AIC = AIC_Model - AIC_Revised;
+  OUTPUT;
+
+  Model = "Revised-G*R";
+  AIC_Model = 9087.281 + 2*28;
+  Delta_AIC = AIC_Model - AIC_Revised;
+  OUTPUT;
+
+  KEEP Model AIC_Model Delta_AIC;   
+RUN;
+
+TITLE "AIC Values";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;      
+```
+
+Given the strong support for non-linear $(\Delta\mbox{AIC} \approx 68)$ and interaction $(\Delta\mbox{AIC} \approx 24)$ effects, we will retain our initial model.
+
+## 8. If appropriate, consider potential interactions with the primary exposure of interest
+
+We now consider additional potential interactions with smoking status, our primary exposure of interest. To minimize the potential for spurious findings, we will use BIC to evaluate models with a single two-way interaction between smoking status and each of the adjustment variables.
+
+```{r ic4, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Revised Model";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + S*G";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race Smoke*Gender
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + S*R";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS Smoke*Race / LINK=LOGIT;
+RUN;
+TITLE;
+            
+TITLE "Revised Model + S*A";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS Smoke*AgeCS / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + S*M";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS Smoke*MaritalStatus / LINK=LOGIT;
+RUN;
+TITLE;
+      
+TITLE "Revised Model + S*E";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS Smoke*Education / LINK=LOGIT;
+RUN;
+TITLE;      
+
+TITLE "Revised Model + S*I";
+PROC LOGISTIC DATA=Analysis;
+  ODS SELECT FitStatistics;
+
+	CLASS MaritalStatus Gender Race Education Smoke / ORDER=INTERNAL;
+  EFFECT AgeCS=SPLINE(Age /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+  EFFECT IncomeCS=SPLINE(Income /
+      NATURALCUBIC BASIS=TPF(NOINT) KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL Obese(EVENT="Yes") = Smoke
+      Gender Race Gender*Race 
+      AgeCS MaritalStatus Education IncomeCS Gender*IncomeCS Smoke*IncomeCS / LINK=LOGIT;
+RUN;
+TITLE;            
+```
+      
+```{r calc4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Calculator;
+  LENGTH Model $50;
+
+  Model = "Revised";
+  BIC_Revised = 9055.748 + LOG(2592)*32;
+  BIC_Model = BIC_Revised;
+  Delta_BIC = BIC_Model-BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*G";
+  BIC_Model = 9054.955 + LOG(2592)*33;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*R";
+  BIC_Model = 9049.455 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*A";
+  BIC_Model = 9047.947 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*M";
+  BIC_Model = 9052.056 + LOG(2592)*37;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*E";
+  BIC_Model = 9047.468 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  Model = "Revised+S*I";
+  BIC_Model = 9034.966 + LOG(2592)*36;
+  Delta_BIC = BIC_Model - BIC_Revised;
+  OUTPUT;
+
+  KEEP Model BIC_Model Delta_BIC;   
+RUN;
+
+TITLE "BIC Values";
+PROC PRINT DATA=Calculator NOOBS;
+RUN;
+TITLE;      
+```
+
+Based on BIC, there is little support for including any of the interaction terms with smoking status, so we will retain our revised model.
+
+## Step 9. Interpret findings for the primary exposure
+
+In the absence of interactions of smoking with the other variables, there is a single comparison of interest, the adjusted odds ratio for obesity comparing smokers to non-smokers.
+
+```{r oddsratio, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "Smokers v Non-Smokers" Smoke [1, 2] [-1, 1] / EXP CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Smokers v Non-Smokers (Adjusted)";
+RUN;
+TITLE;
+```
+
+After adjustment for gender, race, age, education, income, and marital status, the odds ratio for obesity comparing smokers with non-smokers is $(0.74,0.93)$, e.g. smokers have a lower prevalence of obesity than non-smokers.
+
+It is common to present the unadjusted estimate to see the impact, if any, of the adjustment for confounders.
+
+```{r unadjusted, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Analysis;
+	CLASS Smoke / ORDER=INTERNAL;
+  MODEL Obese(EVENT="Yes") = Smoke / LINK=LOGIT;
+
+  STORE UnadjustedModel;
+RUN;
+
+PROC PLM RESTORE=UnadjustedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "Smokers v Non-Smokers" Smoke [1, 2] [-1, 1] / EXP CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Smokers v Non-Smokers (Unadjusted)";
+RUN;
+TITLE;
+```
+
+The unadjusted odds ratio for obesity comparing smokers with non-smokers is $(0.80,0.99)$.  
+
+## Optional: Present estimates for adjustment variables/confounders
+
+### Age
+
+```{r age, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "20 v 50" AgeCS [1, 20] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "30 v 50" AgeCS [1, 30] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "40 v 50" AgeCS [1, 40] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "50 v 50" AgeCS [1, 50] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "60 v 50" AgeCS [1, 60] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "70 v 50" AgeCS [1, 70] [-1, 50] / EXP CL ALPHA=0.03125;
+  ESTIMATE "80 v 50" AgeCS [1, 80] [-1, 50] / EXP CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Age (Adjusted)";
+RUN;
+TITLE;
+```
+
+### Income (by Gender)
+
+```{r income, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "$15,000 v $50,000, Female" IncomeCS [1, 15000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 15000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$30,000 v $50,000, Female" IncomeCS [1, 30000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 30000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$40,000 v $50,000, Female" IncomeCS [1, 40000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 40000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$50,000 v $50,000, Female" IncomeCS [1, 50000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 50000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$60,000 v $50,000, Female" IncomeCS [1, 60000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 60000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$70,000 v $50,000, Female" IncomeCS [1, 70000] [-1, 50000] 
+            Gender*IncomeCS [1, 1 70000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$90,000 v $50,000, Female" IncomeCS [1, 87500] [-1, 50000] 
+            Gender*IncomeCS [1, 1 90000] [-1, 1 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$15,000 v $50,000, Male" IncomeCS [1, 15000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 15000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$30,000 v $50,000, Male" IncomeCS [1, 30000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 30000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$40,000 v $50,000, Male" IncomeCS [1, 40000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 40000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$50,000 v $50,000, Male" IncomeCS [1, 50000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 50000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$60,000 v $50,000, Male" IncomeCS [1, 60000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 60000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$70,000 v $50,000, Male" IncomeCS [1, 70000] [-1, 50000] 
+            Gender*IncomeCS [1, 2 70000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+  ESTIMATE "$90,000 v $50,000, Male" IncomeCS [1, 87500] [-1, 50000] 
+            Gender*IncomeCS [1, 2 90000] [-1, 2 50000] / EXP CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Income (Adjusted)";
+RUN;
+TITLE;      
+```
+
+### Martial Status
+
+```{r marital, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "Married v Married" MaritalStatus [1, 1] [-1, 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Never Married v Married" MaritalStatus [1, 2] [-1, 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Divorced v Married" MaritalStatus [1, 3] [-1, 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Live with Partner v Married" MaritalStatus [1, 4] [-1, 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Widowed v Married" MaritalStatus [1, 5] [-1, 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Separated v Married" MaritalStatus [1, 6] [-1, 1] / EXP CL ALPHA=0.03125; 
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Marital Status (Adjusted)";
+RUN;
+TITLE;      
+```
+
+### Gender (by Race and Income)
+
+```{r gender, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "Female v Male, White, $75,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 1] [-1, 1 1] 
+      Gender*IncomeCS [1, 2 75000] [-1, 1 75000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Black, $75,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 2] [-1, 1 2] 
+      Gender*IncomeCS [1, 2 75000] [-1, 1 75000]/ EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Mexican, $75,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 3] [-1, 1 3] 
+      Gender*IncomeCS [1, 2 75000] [-1, 1 75000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Hispanic, $75,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 4] [-1, 1 4] 
+      Gender*IncomeCS [1, 2 75000] [-1, 1 75000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Other, $75,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 5] [-1, 1 5] 
+      Gender*IncomeCS [1, 2 75000] [-1, 1 75000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, White, $25,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 1] [-1, 1 1] 
+      Gender*IncomeCS [1, 2 25000] [-1, 1 25000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Black, $25,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 2] [-1, 1 2] 
+      Gender*IncomeCS [1, 2 25000] [-1, 1 25000]/ EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Mexican, $25,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 3] [-1, 1 3] 
+      Gender*IncomeCS [1, 2 25000] [-1, 1 25000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Hispanic, $25,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 4] [-1, 1 4] 
+      Gender*IncomeCS [1, 2 25000] [-1, 1 25000] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Female v Male, Other, $25,000" Gender [1, 2] [-1, 1] 
+      Gender*Race [1, 2 5] [-1, 1 5] 
+      Gender*IncomeCS [1, 2 25000] [-1, 1 25000] / EXP CL ALPHA=0.03125; 
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Gender by Race (Adjusted)";
+RUN;
+TITLE;      
+```
+
+### Race by Gender
+
+```{r race, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=InitialModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "White v White, Male" Race [1, 1] [-1, 1] 
+      Gender*Race [1, 1 1] [-1, 1 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Black v White, Male" Race [1, 2] [-1, 1] 
+      Gender*Race [1, 1 2] [-1, 1 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Mexican v White, Male" Race [1, 3] [-1, 1] 
+      Gender*Race [1, 1 3] [-1, 1 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Hispanic v White, Male" Race [1, 4] [-1, 1] 
+      Gender*Race [1, 1 4] [-1, 1 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Other v White, Male" Race [1, 5] [-1, 1] 
+      Gender*Race [1, 1 5] [-1, 1 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "White v White, Female" Race [1, 1] [-1, 1] 
+      Gender*Race [1, 2 1] [-1, 2 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Black v White, Female" Race [1, 2] [-1, 1] 
+      Gender*Race [1, 2 2] [-1, 2 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Mexican v White, Female" Race [1, 3] [-1, 1] 
+      Gender*Race [1, 2 3] [-1, 2 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Hispanic v White, Female" Race [1, 4] [-1, 1] 
+      Gender*Race [1, 2 4] [-1, 2 1] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Other v White, Female" Race [1, 5] [-1, 1] 
+      Gender*Race [1, 2 5] [-1, 2 1] / EXP CL ALPHA=0.03125; 
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Race by Gender (Adjusted)";
+RUN;
+TITLE;      
+```
+
+### Education
+
+```{r education, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=InitialModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "8th Grade or Lower v High School Grad" Education [1, 1] [-1, 3] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "9-11th Grade v High School Grad" Education [1, 2] [-1, 3] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "High School Grad v High School Grad" Education [1, 3] [-1, 3] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "Some College v High School Grad" Education [1, 4] [-1, 3] / EXP CL ALPHA=0.03125; 
+  ESTIMATE "College Grad v High School Grad" Education [1, 5] [-1, 3] / EXP CL ALPHA=0.03125; 
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp;
+  LABEL Label='00'x
+      LowerExp="Lower CL"
+      ExpEstimate="Estimate"
+      UpperExp="Upper CL";
+  TITLE "Obesity Odds Ratios for Education (Adjusted)";
+RUN;
+TITLE;      
+```
+
+## Optional: Prevalence estimates
+
+Prevalence estimates can be obtained for any population defined by specified values for all of the predictor variables.  To illustrate, we will obtain the prevalence estimate for the subset of the US population like me (age 54 years, income \$100,000+, White, male, college grad, live with partner, non-smoker).
+
+```{r prevalence, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=RevisedModel;
+  ODS OUTPUT Estimates=E;
+  ESTIMATE "People like Ron" Intercept 1 AgeCS [1, 54] IncomeCS [1, 150000]
+    Gender [1, 2] Race [1, 1] Gender*Race [1, 2 1]
+    MAritalStatus [1, 4] Education [1, 5] Smoke [1, 1] Gender*IncomeCS [1, 2 150000] / ILINK CL ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerMu Mu UpperMu;
+  LABEL Label='00'x
+      Mu="Estimate"
+      LowerMu="Lower CL"
+      UpperMu="Upper CL";
+  TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+The estimated prevalence of obesity for people like me is $(0.15,0.25)$.

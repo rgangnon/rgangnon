@@ -1,0 +1,550 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Transformations of the Outcome
+
+Transformation of the outcome variable is often useful for (1) stabilizing the variance of the errors (residuals) and (2) reducing the skewness of the error (residual) distribution (improved normality).
+
+Most uses of transformation in linear regression models will follow the following two empirical rules.
+
+**The log rule** If the values of a variable range over more than one order of magnitude and the variable is strictly positive, then replacing the variable by its logarithm is likely to be useful.
+
+**The range rule** If the range of a variable is considerably less than one order of magnitude, then any transformation of the variable is unlikely to be helpful.
+
+# Variance-Stabilizing Transformations
+
+Suppose the outcome variable is strictly positive and $\mbox{Var}(Y|X) = g(\mu_{Y|X})$, where $g$ is a strictly increasing function.  For example, if $Y|X$ follows a Poisson distribution, then $g(\mu_{Y|X}) = \mu_{Y|X}$, since, for Poisson random variables, the variance is equal to the mean. One approach is to transform the outcome variable so that the outcome variable has approximately constant variance. (An alternative approach to this problem, *generalized linear models*, will be discussed later in the course.) The following list gives the most common variance stabilizing transformations:
+
+(1) The *square root* transformation $\sqrt{Y}$ is used when $\mbox{Var}(Y) \propto \mu$ as for count data following a Poisson distribution. $\sqrt{Y} + \sqrt{Y+1}$ can be used if many of the counts are small.
+
+(2) The *logarithmic* transformation $\log{Y}$ is used when $\mbox{Var}(Y) \propto \mu^2$. In this case, the errors behave like a percentage of the response rather than an absolute amount.
+
+(3) The *reciprocal* (or *inverse*) transformation $1/Y$ is used when $\mbox{Var}(Y) \propto \mu^4$. It can be appropriate when responses are mostly close to 0, but occasional large values occur.
+
+(4) The *arcsine square root* transformation $\sin^{-1}{\sqrt{Y}}$ is used when $Y$ is a proportion between 0 and 1. It can be used more generally if $Y$ has a limited range by first transforming $Y$ to the range $(0,1)$ and then applying the transformation.
+
+The square root, logarithm and reciprocal transformations are appropriate when the variance increases with the response, but each one is more severe than the one before it. The square root transformation is relatively mild and is most appropriate for count (Poisson) data. The logarithm is the most commonly used (and easily interpreted) transformation; the base of the logarithm does not matter. It is appropriate when errors are better expressed as a percentage of the response rather than an absolute amount.
+
+The reciprocal (or inverse) transformation is often applied when the response is time until an event. This transformation converts times per event into events per unit time; often the transformed outcomes may be multiplied by a constant (rescaled) to avoid very small numbers. Rates often provide a natural measurement scale.
+
+Transforming away nonconstant variance can introduce nonlinearity into the mean function and complicate interpretation, so this option must be used with care.
+
+# Power (Box-Cox) Transformations
+
+A *transformation family* is a collection of transformations that are indexed by one (or a few) parameter(s) that the analyst can select. The most commonly used family is the *power family*, defined for a strictly positive variable $Y$ by $Y^\lambda$. This family includes the square root $\lambda=1/2$ and cube root $\lambda=1/3$ transformations, the inverse $\lambda=-1$ and the identity (untransformed) $\lambda=1$. By convention, $\lambda=0$ is defined to the logarithm transformation. 
+
+The *Box-Cox method* for selecting a transformation uses a slightly more complicated version of the power family called the *modified power family* $\psi_\lambda(Y)$
+$$
+\begin{eqnarray}
+\mbox{gm}(Y)^{1-\lambda} \frac{Y^\lambda-1}{\lambda} & ~~~~\mbox{if} & k \not= 0 \\
+\mbox{gm}(Y) \log{Y} & ~~~~\mbox{if} & \lambda = 0 \\
+\end{eqnarray}
+$$
+where $\mbox{gm}(Y) = \exp\left(\sum{\log{y_i}}/n\right)$ is the *geometric mean* of $Y$. Suppose the assumptions of the linear regression model hold for some choice of $\lambda$. If $\lambda$ were known, we could just fit the regression model using ordinary least squares, because the transformed variable is completely specified. Write the residual sum of squares from this regression as $\mbox{RSS}(\lambda)$. The modified power family ensures that the units of the transformed outcome are roughly the same for all values of $k$, and so the $\mbox{RSS}(\lambda)$ are in the same units. We estimate $k$ to be the value of the transformation parameter that minimizes $\mbox{RSS}(\lambda)$.  From a practical point of view, $\lambda$ is typically selected from a limited set of (relatively interpretable) options $\lambda \in [-1, -1/2, 0, 1/2, 1]$.
+
+The Box-Cox method is transforming for *normality*; $\lambda$ is chosen to make the residuals from the regression of $Y^\lambda$ on $X$ as close to normally distributed as possible. *As close to normal as possible* need not be very close to normal, and so graphical checks are still necessary after selecting a transformation.
+
+The biggest challenge with transformed outcomes is the difficulty of interpreting the results on the transformed scale.
+
+# Transformation of Non-Positive Variables
+
+The central idea is to use the methods discussed previously, using a family of transformations that permits $Y$ to be non-positive. The obvious approach is to add a constant $c$ so that $Y+c$ is guaranteed to be positive, and then use the power family $(Y+c)^\lambda$. The difficulty is that the results can be very sensitive to the choice of the constant $c$.  In principle, the power $\lambda$ and the constant $c$ can be estimated simultaneously; however, in practice, estimates of the constant $c$ are highly variable and unreliable.
+
+# Transformations of the Predictors
+
+The following two empirical rules explain most sensible transformations of predictors in regression models. 
+
+**The log rule** If the values of a variable range over more than one order of magnitude and the variable is strictly positive, then replacing the variable by its logarithm is likely to be useful.
+
+**The range rule** If the range of a variable is considerably less than one order of magnitude, then any transformation of the variable is unlikely to be helpful.
+
+In most other situations, the use of natural cubic splines (or other approaches allowing for nonlinearity in the mean structure) will obviate the need for transformations of the predictor variables.
+
+# Example: Box-Cox Method for Simple Linear Regression of Blood Pressure on Age
+
+To illustrate the use of the Box-Cox method for selecting an outcome transformation, we will revisit the data on the relationship between diastolic blood pressure and age in adult women.
+
+```{r ols, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+OPTIONS NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+FILENAME BloodP URL "http://users.stat.ufl.edu/~rrandles/sta4210/Rclassnotes/data/textdatasets/KutnerData/Chapter%2011%20Data%20Sets/CH11TA01.txt";
+
+DATA BloodPressure;
+  INFILE BloodP;
+
+	INPUT Age DBP;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=BloodPressure;
+	MODEL DBP = Age / SELECTION=NONE;
+  OUTPUT OUT=Tmp R=Resid P=Yhat;
+  STORE OLS;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+*  Abs_Resid = ABS(resid);
+*  Resid_Sq = Resid**2;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r diagnostics1, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+## Identifying *Optimal* Transformation
+
+As noted previously, the error variance clearly increases with the mean. Instead of using weighted least squares, we will use the Box-Cox method to identify an optimal transformation of the outcome variable. In SAS, PROC TRANSREG can be used to find the optimal transformation of the outcome in the power (Box-Cox) family. By default, PROC TRANSREG will consider parameter values $\lambda \in [-3, -2.75, -2.5, \ldots, -0.5, -0.25, 0, 0.25, 0.5, \ldots, 2.5, 2.75, 3]$. Here, we use a wider and finer grid of potential values for $\lambda$. 
+
+```{r boxcox1, engine="sashtml5", engine.path=saspath}
+PROC TRANSREG DATA=BloodPressure;
+	MODEL BOXCOX(DBP / LAMBDA = -5 to 5 BY 0.1) = IDENTITY(Age);
+RUN;
+```
+
+The optimal value of $\lambda$ is -2.1 (although the confidence interval is quite wide). 
+
+## Fitting Transformed Model
+
+In place of the optimal value of $\lambda$, the nearest round value is often used because it is *more interpretable*. Here, we will round $-2.1$ to $2$ and use $1/Y^2$ ($\lambda = -2$, or the inverse square transformation) for the blood pressure outcome in our linear regression model.
+
+
+```{r transformed1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA TransBP;
+    SET BloodPressure;
+
+    DBP_Inv_Sq = 1/DBP**2;
+RUN;
+
+ODS SELECT NONE;
+PROC GLMSELECT DATA=TransBP;
+    MODEL DBP_Inv_Sq = Age / SELECTION=NONE;
+    OUTPUT OUT=Tmp R=Resid P=Yhat;
+    STORE TransformedModel;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+*  Abs_Resid = ABS(resid);
+*  Resid_Sq = Resid**2;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r diagnostics2, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The residual plots look satisfactory.  There are no obvious concerns with any of our modeling assumptions: (1) correct mean structure, (2) independence, (3) constant variance or (4) normality.  
+
+## Challenges in Interpretation
+
+Estimates of the intercept and slope are easily obtained using ESTIMATE statements. 
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=TransformedModel;
+  ESTIMATE "Intercept (Age 40)" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Slope (per 10 Years)" Age 10 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA E;
+  SET E;
+
+  sValue = -LOG(ProbT)/LOG(2);
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper ProbT sValue;
+  LABEL Label='00'x;
+  FORMAT ProbT;
+RUN;
+```
+
+
+The major challenge is interpretation of the model parameters. The slope represents the change in the mean inverse squared diastolic blood pressure associated with a (+)10-year difference in age.  The hypothesis test for the slope has the usual interpretation, because, if age has no effect on inverse squared diastolic blood pressure, age also has no effect on diastolic blood pressure, and vice versa.  So, we can say that there is very strong evidence that age has an effect on diastolic blood pressure $(p \approx 0, s=23.7)$. 
+
+Unfortunately, it is extremely difficult, if not impossible, to interpret the regression coefficients. Technically, the interpretation of the slope is that the change in the mean inverse squared diastolic blood pressure associated with a (+)10-year difference in age is $(-0.00003,-0.00001)$. So, the mean inverse squared diastolic blood pressure decreases as age increases. Since decreases in inverse squared diastolic blood pressure correspond to increases in diastolic blood pressure, this means that diastolic blood pressure increases with (increasing) age, but it is not clear how to interpret the numerical values. Is the lower (upper) confidence limit $-0.00003$ $(-0.00001)$ a large difference or a small difference?  
+
+## Back-Transformation of Estimated Means: Estimated Medians on the Original Scale
+
+If, after transformation, the (transformed) outcome is approximately normal (the intended goal of the Box-Cox transformation), mean outcomes on the transformed scale are also median outcomes on the transformed scale (the mean and median are identical for symmetric distributions such as the normal distribution. Unlike means, medians are invariant under monotonic transformations. (If the ordering of the values does not change, the middle value does not change.) 
+
+So, if we transform an interval (or point) estimate for the mean outcome on the transformed scale (for specific covariate values) back to the original scale, we obtain an interval (or point) estimates for the median outcome on the original scale.
+
+```{r inference2, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=TransformedModel;
+	ESTIMATE "Median Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Median Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Median Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  Median_DBP = 1/SQRT(Estimate);
+  Lower_DBP = 1/SQRT(Upper);
+  Upper_DBP = 1/SQRT(Lower);
+
+  KEEP Label Lower_DBP Median_DBP Upper_DBP;
+RUN;
+
+PROC PRINT DATA=E NOOBS;
+  VAR Label Lower_DBP Median_DBP Upper_DBP;
+RUN;
+```
+
+Estimated median diastolic blood pressure is $(65.9,71.8)$ mmHg at age 20, $(75.4,79.7)$ mmHg at age 40, and $(84.6,99.0)$ mmHg at age 60. 
+
+## Interval Estimates of Differences in Medians on the Original Scale Using the Bootstrap
+
+It is more challenging to estimate covariate effects (differences) on a meaningful scale.  One fairly straightforward approach is to use the bootstrap to obtain estimated differences in median diastolic blood pressure on the original scale.
+
+```{r analyze1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+*%INCLUDE "~/my_shared_file_links/u48718377/Macros/jackboot.sas";
+%INCLUDE "../../SAS_Macros/jackboot.sas";
+
+%MACRO Analyze(Data= ,Out= );
+	ODS SELECT NONE;
+	PROC GLIMMIX DATA=&Data;
+    %BYSTMT;
+		MODEL DBP_Inv_Sq = Age / DIST=NORMAL LINK=IDENTITY;
+	  ESTIMATE "Age20" Intercept 1 Age 20;
+    ESTIMATE "Age40" Intercept 1 Age 40;
+    ESTIMATE "Age60" Intercept 1 Age 60;
+    ODS OUTPUT Estimates=E;
+  RUN;
+  
+  DATA E;
+    SET E;
+		%BYSTMT;
+
+    Estimate = 1/SQRT(Estimate);
+  RUN;
+
+	PROC TRANSPOSE DATA=E OUT=&Out (DROP=_Name_);
+		%BYSTMT;
+		VAR Estimate;
+		ID Label;
+	RUN;
+
+	DATA &Out;
+ 		SET &Out;
+    %BYSTMT;
+	
+		Diff_40_20 = Age40-Age20;
+		Diff_60_20 = Age60-Age20;
+		Diff_60_40 = Age60-Age40;
+	RUN;
+	ODS SELECT ALL;
+%MEND;
+```
+
+```{r boot1, engine="sashtml5", engine.path=saspath, error=TRUE}
+TITLE 'Bootstrap Analysis of Regression';
+%BOOT(DATA=TransBP,       /* data set that contains the original data */
+      SAMPLES=10000,      /* number of bootstrap samples */
+      RANDOM=1167121,      /* random number seed for resampling */
+      CHART=0,           /* do not display the old PROC CHART histograms */
+      STAT=Age20 Age40 Age60 Diff_40_20 Diff_60_20 Diff_60_40,     /* list of output variables to analyze (default=_NUMERIC_) */
+      ALPHA=0.03125,        /* significance level for CI (default=0.05) */
+      PRINT=0);          /* print descriptive stats (default=1)*/
+
+TITLE "Bootstrap Distribution for Median DBP at Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Median DBP at Age 40";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age40;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Median DBP at Age 60";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age60;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 40 v Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_40_20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 60 v Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_60_20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 60 v Age 40";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_60_40;
+RUN;
+TITLE;
+
+%BOOTCI(BCa, ALPHA=0.03125, PRINT=0);       /* creates BootCI data set for BCa CI */
+
+TITLE '96.875% Bias-Adjusted and Corrected Bootstrap Confidence Intervals';
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Name;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+Using the bootstrap, estimated median diastolic blood pressure is $(66.3,71.2)$ mmHg at age 20, $(75.4,79.6)$ mmHg at age 40, and $(84.1,99.1)$ mmHg at age 60. 
+
+Median diastolic blood pressure is $(6.0,11.4)$ mmHg higher at age 40 than age 20, $(7.9,20.4)$ mmHg higher at age 60 than age 40, and $(13.9,31.8)$ mmHg higher at age 60 than age 20.
+
+# Interpretable Transformations
+
+Differences in means on the transformed scale are really only readily interpretable with the identity (e.g. no) transformation (mean differences) or the log transformation (log ratios of geometric means/medians), The remaining, so-called interpretable transformations (square roots, squares, reciprocals) are simply functions with which we are familiar.  In terms of modeling and interpretation, using the *interpretable* transformation $1/Y^2$ has no advantages over the *optimal* transformation $1/Y^{2.1}$.
+
+For your reference, we will rerun the previous analyses using the optimal transformation.
+
+```{r transformed2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA TransBP;
+    SET BloodPressure;
+
+    DBP_Inv_Sq = 1/DBP**2.1;
+RUN;
+
+ODS SELECT NONE;
+PROC GLMSELECT DATA=TransBP;
+    MODEL DBP_Inv_Sq = Age / SELECTION=NONE;
+    OUTPUT OUT=Tmp R=Resid P=Yhat;
+    STORE TransformedModel;
+RUN;
+
+DATA Tmp;
+  SET Tmp;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+*  Abs_Resid = ABS(resid);
+*  Resid_Sq = Resid**2;
+RUN;
+ODS SELECT ALL;
+```
+
+```{r diagnostics3, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  LOESS X=Yhat Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid);
+  REG X=Yhat Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR=Cxd95f02 PATTERN=Solid);
+RUN;
+
+PROC UNIVARIATE DATA=Tmp NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+```{r inference3, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=TransformedModel;
+  ESTIMATE "Intercept (Age 40)" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Slope (per 10 Years)" Age 10 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA E;
+  SET E;
+
+  sValue = -LOG(ProbT)/LOG(2);
+RUN;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper ProbT sValue;
+  LABEL Label='00'x;
+  FORMAT ProbT;
+RUN;
+```
+
+```{r inference4, engine="sashtml5", engine.path=saspath}
+ODS SELECT NONE;
+PROC PLM RESTORE=TransformedModel;
+	ESTIMATE "Median Age 20" Intercept 1 Age 20 / CL ALPHA=0.03125;
+  ESTIMATE "Median Age 40" Intercept 1 Age 40 / CL ALPHA=0.03125;
+  ESTIMATE "Median Age 60" Intercept 1 Age 60 / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS SELECT ALL;
+
+DATA E;
+  SET E;
+
+  Median_DBP = 1/Estimate**(1/2.1);
+  Lower_DBP = 1/Upper**(1/2.1);
+  Upper_DBP = 1/Lower**(1/2.1);
+
+  KEEP Label Lower_DBP Median_DBP Upper_DBP;
+RUN;
+
+PROC PRINT DATA=E NOOBS;
+  VAR Label Lower_DBP Median_DBP Upper_DBP;
+RUN;
+```
+
+```{r analyze2, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+*%INCLUDE "~/my_shared_file_links/u48718377/Macros/jackboot.sas";
+%INCLUDE "../../SAS_Macros/jackboot.sas";
+
+%MACRO Analyze(Data= ,Out= );
+	ODS SELECT NONE;
+	PROC GLIMMIX DATA=&Data;
+    %BYSTMT;
+		MODEL DBP_Inv_Sq = Age / DIST=NORMAL LINK=IDENTITY;
+	  ESTIMATE "Age20" Intercept 1 Age 20;
+    ESTIMATE "Age40" Intercept 1 Age 40;
+    ESTIMATE "Age60" Intercept 1 Age 60;
+    ODS OUTPUT Estimates=E;
+  RUN;
+  
+  DATA E;
+    SET E;
+		%BYSTMT;
+
+    Estimate = 1/Estimate**(1/2.1);
+  RUN;
+
+	PROC TRANSPOSE DATA=E OUT=&Out (DROP=_Name_);
+		%BYSTMT;
+		VAR Estimate;
+		ID Label;
+	RUN;
+
+	DATA &Out;
+ 		SET &Out;
+    %BYSTMT;
+	
+		Diff_40_20 = Age40-Age20;
+		Diff_60_20 = Age60-Age20;
+		Diff_60_40 = Age60-Age40;
+	RUN;
+	ODS SELECT ALL;
+%MEND;
+```
+
+```{r boot2, engine="sashtml5", engine.path=saspath, error=TRUE}
+TITLE 'Bootstrap Analysis of Regression';
+%BOOT(DATA=TransBP,       /* data set that contains the original data */
+      SAMPLES=10000,      /* number of bootstrap samples */
+      RANDOM=1167121,      /* random number seed for resampling */
+      CHART=0,           /* do not display the old PROC CHART histograms */
+      STAT=Age20 Age40 Age60 Diff_40_20 Diff_60_20 Diff_60_40,     /* list of output variables to analyze (default=_NUMERIC_) */
+      ALPHA=0.03125,        /* significance level for CI (default=0.05) */
+      PRINT=0);          /* print descriptive stats (default=1)*/
+
+TITLE "Bootstrap Distribution for Median DBP at Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Median DBP at Age 40";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age40;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Median DBP at Age 60";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Age60;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 40 v Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_40_20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 60 v Age 20";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_60_20;
+RUN;
+TITLE;
+
+TITLE "Bootstrap Distribution for Difference in Median Expenses at Age 60 v Age 40";
+PROC SGPLOT DATA=BootDist;      /* <== this data set contains the bootstrap distribution */
+  HISTOGRAM Diff_60_40;
+RUN;
+TITLE;
+
+%BOOTCI(BCa, ALPHA=0.03125, PRINT=0);       /* creates BootCI data set for BCa CI */
+
+TITLE '96.875% Bias-Adjusted and Corrected Bootstrap Confidence Intervals';
+PROC PRINT DATA=BootCI NOOBS LABEL;
+   ID Name;
+   VAR ALCL Value AUCL;
+RUN;
+```
+
+# Accounting for Selection of the Transformation Based on the Data
+
+Technically, the validity of our inferences (hypothesis tests, confidence intervals) relies on an (incorrect) assumption that the transformation of the outcome was not pre-specified (e.g. not estimated using the observed data).  In principle, we could (and probably should) use the bootstrap to account for the additional uncertainty due to the data-driven selection of the outcome transformation.  At a minimum, one should clearly disclose whether the transformation was pre-specified or data-driven. More importantly, one should make decisions regarding transformations (and other potential corrective actions) before looking at the inferential results. Don't attempt to use a transformation to turn non-significant findings into significant findings.

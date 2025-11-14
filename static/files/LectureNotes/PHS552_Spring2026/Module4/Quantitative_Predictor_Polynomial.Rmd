@@ -1,0 +1,686 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Quantitative Predictor
+
+We will now focus on *quantitative* predictor variables. A quantitative variable is naturally measured as a number on which meaningful arithmetic operations (addition, subtraction, $\ldots$) can be performed. Thus, it is meaningful to talk about a *one-unit increase* in the variable. For a *continuous* quantitative variable, it is meaningful to talk about *arbitrarily small increases* (e.g., a 0.3-unit increase) in the variable. For a *discrete* quantitative variable, it is only meaningful to talk about *whole-number increases* in the variable. 
+
+In principle, one could use a quantitative predictor variable as a categorical predictor variable with a very large number of levels.  Typically, for a logistic regression model with a quantitative predictor variable, it is more reasonable to assume that the log odds function $\log{\frac{p}{1-p}}$ is a *smooth* function. We will eventually consider two options for incorporating a quantitative predictor into a regression model as a smooth function: (1) *polynomial regression* and (2) *(natural) cubic spline regression* (recommended). For now, we will focus on polynomial regression.
+
+# Polynomial Regression
+
+A polynomial logistic regression function of degree $k$ is given by
+$$\log{\frac{p(x)}{1-p(x)}} = \beta_0 + \beta_1 x + \beta_2 x^2 + \ldots + \beta_k x^k$$
+The following names are used for polynomial functions according to their degree: linear $k=1$, quadratic $k=2$, cubic $k=3$, quartic $k=4$, quintic $k=5$.  
+It can be advisable to center and scale $x$ for interpretability (ease of use) and numerical stability of the estimates, yielding the equivalent model
+$$\log{\frac{p(x)}{1-p(x)}} = \gamma_0 + \gamma_1 \left(\frac{x-x_0}{\delta}\right) + \gamma_2 \left(\frac{x-x_0}{\delta}\right)^2 + \ldots + \gamma_k \left(\frac{x-x_0}{\delta}\right)^k$$
+
+The degree $k$ of a polynomial model should be kept as low as possible. Higher order polynomials ($k>4$) can be very difficult to interpret and should generally be avoided unless they can be justified for scientific reasons. Extrapolation, which is always problematic, is particularly hazardous with polynomial models. The higher the order of the polynomial, the greater the hazard. 
+
+The *hierarchy principle* mandates that, if a higher order term ($x^k$ in this case) is included in a model, all lower order terms $(x^0 = 1, x^1 = x, x^2, \ldots, x^{k-1})$ must also be included in the model. The rationale for the hierarchy principle is that assessment of the importance of (some or all of the) lower terms depends on the (arbitrary) choice of the centering value for the predictor $x$.
+
+For a polynomial regression model of degree $k$, the overall test for the covariate $x$ $(H_0: \beta_1 = \beta_2 = \ldots = \beta_k = 0)$ and the partial test for linearity $(H_0: \beta_2 = \beta_3 = \ldots = \beta_k = 0)$ are interesting. It is also possible to perform a *partial test* of a lower-order polynomial of degree $k_0 \geq 2$ against a higher-order polynomial of degree $k_1 > k_0$. This test is primarily useful as a formal assessment of the adequacy of the correct structural model assumption for the lower-order polynomial; it would seldom be of direct scientific interest.
+
+To illustrate a polynomial regression model, we will construct a logistic regression model for obesity as a function of age for the US adult (ages 20-80) population. We will use a $4^{th}$ degree (quartic) polynomial.
+
+We denote the obesity outcome for subject $i$ by $y_i$ and the age for subject $i$ by $x_i$. 
+
+Our logistic regression model is 
+$$ y_i \sim \mbox{Bernoulli}\left\{p_i\right\} \\
+\mbox{logit}\left\{p_i\right\} = \log{\left\{\frac{p_i}{1-p_i}\right\}} = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3 x_i^3 + \beta_4 x_i^4$$
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+
+PROC MEANS DATA=Ron;
+  VAR Age;
+RUN;
+
+DATA Tmp;
+  SET Ron;
+        
+  Age2 = Age**2;
+  Age3 = Age**3;
+  Age4 = Age**4;
+RUN;
+
+DATA AllAges;
+  DO Age = 20 TO 80 BY 1;
+    Age2 = Age**2;
+    Age3 = Age**3;
+    Age4 = Age**4;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC LOGISTIC DATA=Tmp;
+  CLASS Age;
+  MODEL Obese(Event="Yes") = Age / LINK=LOGIT;
+
+  STORE Categorical;
+RUN;
+
+PROC LOGISTIC DATA=Tmp;
+  MODEL Obese(Event="Yes") = Age Age2 Age3 Age4 / LINK=LOGIT;
+
+  STORE Quartic;
+RUN;
+
+PROC PLM RESTORE=Categorical;
+    SCORE DATA=AllAges OUT=FItted1 Predicted=Categorical / ALPHA=0.03125;
+RUN;
+
+PROC PLM RESTORE=Quartic;
+    SCORE DATA=AllAges OUT=Fitted2 Predicted=Quartic / ALPHA=0.03125;
+RUN;
+
+DATA Fitted;
+  MERGE Fitted1 Fitted2;
+  BY Age;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+  SERIES X=Age Y=Categorical / LINEATTRS=(PATTERn=Solid) LEGENDLABEL="Age (Categorical)";
+  SERIES X=Age Y=Quartic / LINEATTRS=(COLOR=Cx1b9e77 PATTERn=Solid) LEGENDLABEL="Age (QUartic Polynomial)";
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+The EFFECT statement in PROC LOGISTIC allows us to specify a polynomial regression function in a more concise and user-friendly fashion.
+
+```{r example2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=4);
+  MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+    
+  OUTPUT OUT=Tmp RESCHI=Residual PREDICTED=Fitted; 
+    
+  STORE Quartic;
+RUN;
+
+DATA AllAges;
+  DO Age = 18 TO 80 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+PROC PLM RESTORE=Quartic;
+  SCORE DATA=AllAges OUT=Fitted2 Predicted=Quartic;
+RUN;
+
+DATA Fitted;
+  MERGE Fitted1 Fitted2;
+  BY Age;
+RUN;
+ODS SELECT ALL;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+  SERIES X=Age Y=Categorical / LINEATTRS=(PATTERN=Solid) LEGENDLABEL="Age (Categorical)";
+  SERIES X=Age Y=QUartic / LINEATTRS=(COLOR=Cx1b9e77 PATTERN=Solid) LEGENDLABEL="Age (Quartic Polynomial)";
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+# Assessing Adequacy of Modeling Assumptions
+
+Before proceeding to inference, we should evaluate the adequacy of the modeling assumptions. In this case, the only assumptions are correct structural model and independence (which cannot be evaluated based on the observed data).  Potential violations of the correct structural model assumption can be assessed formally by fitting higher-order polynomials or informally using plots of the Pearson residuals $r_i = \frac{y_i - \hat{p}_i}{\sqrt{\hat{p}_i(1-\hat{p}_i)}}$ against the predictor variable $x_i$. In binary regression, it is essential to add a *scatterplot smoother* as a *plot enhancement* to identify any structural problems with the model.
+
+```{r example3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC SGPLOT DATA=Tmp;
+  LOESS X=Age Y=Residual / DEGREE=2 JITTER; 
+  REFLINE 0 / AXIS=Y;
+RUN;
+```
+
+The lack of any clear pattern in this plot suggests that the correct structural model assumption is not violated.
+
+# Regression Coefficient Estimates (SAS)
+
+Estimates of the regression parameters and their estimated standard errors are easily obtained in SAS.  For the most part, the regression coefficients of a polynomial regression model lack a clear and meaningful interpretation.  The intercept $\beta_0$ is an exception as it technically represents the log odds for a subject aged 0 years (an infant).  However, our dataset is restricted to adults ages 20-80; any estimate of the log odds for an infant represents a gross extrapolation from the observed data.
+
+```{r coefs, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC PLM RESTORE=Quartic;
+  ODS SELECT ParameterEstimates;
+  SHOW Parms;
+RUN;
+```
+
+# Estimates of Probabilties
+
+Using ESTIMATE statements, one can specify desired estimates using positional syntax.  For example, the log odds for obesity at age 40 is given by $$\beta_0 + 40 \beta_1 + 40^2 \beta_2 + 40^3 \beta_3 + 40^4  \beta_4$$ or $$\beta_0 + 40 \beta_1 + 1600 \beta_2 + 64,000 \beta_3 + 2,560,000 \beta_4$$
+the log odds for obesity at age 50 is given by $$\beta_0 + 50 \beta_1 + 50^2 \beta_2 + 50^3 \beta_3 + 50^4  \beta_4$$ or $$\beta_0 + 50 \beta_1 + 2500 \beta_2 + 125,000 \beta_3 + 6,250,000 \beta_4$$
+and the log odds for obesity at age 60 is given by $$\beta_0 + 60 \beta_1 + 60^2 \beta_2 + 60^3 \beta_3 + 60^4  \beta_4$$ or  $$\beta_0 + 60 \beta_1 + 3600 \beta_2 + 216,000 \beta_3 + 12,960,000 \beta_4$$
+
+
+```{r example4, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC PLM RESTORE=Quartic;
+  ODS OUTPUT Estimates=E;
+    
+  ESTIMATE "Age 40" Intercept 1 AgePoly 40 1600 64000 2560000 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 50" Intercept 1 AgePoly 50 2500 125000 6250000 / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 60" Intercept 1 AgePoly 60 3600 216000 12960000 / CL ILINK ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+Using ESTIMATE statements, one can more easily specify desired estimates using non-positional syntax. Using non-positional syntax, SAS will calculate all of the polynomial terms required to estimate the log odds for a given age automatically.
+
+```{r example5, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC PLM RESTORE=Quartic;
+  ODS OUTPUT Estimates=E;
+
+  ESTIMATE "Age 30" Intercept 1 AgePoly [1, 30] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 40" Intercept 1 AgePoly [1, 40] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 50" Intercept 1 AgePoly [1, 50] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 60" Intercept 1 AgePoly [1, 60] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 70" Intercept 1 AgePoly [1, 70] / CL ILINK ALPHA=0.03125;
+  ESTIMATE "Age 80" Intercept 1 AgePoly [1, 80] / CL ILINK ALPHA=0.03125;
+RUN;
+ODS SELECT ALL;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerMu Mu UpperMu;
+    LABEL Label='00'x
+        Mu="Estimate"
+        LowerMu="Lower CL"
+        UpperMu="Upper CL";
+    TITLE "Prevalence of Obesity";
+RUN;
+TITLE;
+```
+
+
+The estimated prevalence of obesity is $(0.341,0.390)$ for 30 year olds, $(0.353,0.393)$ for 40 year olds, $(0.345,0.388)$ for 50 year olds, $(0.367,0.414)$ for 60 year olds, $(0.371,0.435)$ for 70 year olds and $(0.229,0.319)$ for 80 year olds.
+
+# Estimates of Odds Ratios
+
+Using positional syntax, we can also obtain estimates for log odds ratios comparing two different ages.  For example, the log odds ratio for obesity comparing age 40 to age 50 is given by $$\beta_0 + 40 \beta_1 + 40^2 \beta_2 + 40^3 \beta_3 + 40^4  \beta_4- (\beta_0 + 50 \beta_1 + 50^2 \beta_2 + 50^3 \beta_3 + 50^4  \beta_4) =  0 \beta_0 + (-10) \beta_1 + (-900) \beta_2 + (-61,000) \beta_3 + (-3,690,000)  \beta_4$$
+
+```{r ors, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Quartic;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 40 v 50" Intercept 0 AgePoly -10 -900 -61000 -3690000 / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+Using non-positional syntax, we can also easily estimate log odds ratio for comparisons between two ages.  First, we present a series of comparisons of ages 30, 40, 60, 70 and 80 with age 50, essentially using age 50 as a common reference point. 
+
+```{r example16, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Quartic;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 30 v 50" AgePoly [1, 30] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 40 v 50" AgePoly [1, 40] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 60 v 50" AgePoly [1, 60] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 70 v 50" AgePoly [1, 70] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 80 v 50" AgePoly [1, 80] [-1, 50] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity is $(0.85,1.16)$ for 30 year olds vs. 50 year olds, $(0.95,1.12)$ for 40 year olds vs. 50 year olds, $(1.01,1.22)$ for 60 year olds vs. 50 year olds, $(0.98,1.40)$ for 70 year olds vs. 50 year olds and $(0.51,0.82)$ for 80 year olds vs. 50 year olds.
+
+Next, we present a series of comparisons between ages one decade apart (40 v. 30, 50 v. 40, 60 v. 50, 70 v. 60, 80 v. 70).  Direct comparisons of these estimates are more meaningful as they represent the *effect* of identical increases in age (10 years) from a variety of different starting points.
+
+```{r example7, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Quartic;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 40 v 30" AgePoly [1, 40] [-1, 30] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 50 v 40" AgePoly [1, 50] [-1, 40] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 60 v 50" AgePoly [1, 60] [-1, 50] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 70 v 60" AgePoly [1, 70] [-1, 60] / CL EXP ALPHA=0.03125;
+    ESTIMATE "Age 80 v 70" AgePoly [1, 80] [-1, 70] / CL EXP ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+    VAR Label LowerExp ExpEstimate UpperExp;
+    LABEL Label='00'x
+        LowerExp="Lower CL"
+        ExpEstimate="Estimate"
+        UpperExp="Upper CL";
+    TITLE "Odds Ratio";
+RUN;
+TITLE;
+```
+
+The estimated odds ratio for obesity is $(0.94,1.13)$ for 40 year olds vs. 30 year olds, $(0.89,1.06)$ for 50 year olds vs. 40 year olds, $(1.02,1.22)$ for 60 year olds vs. 50 year olds, $(0.94,1.17)$ for 70 year olds vs. 60 year olds and $(0.43,0.72)$ for 80 year olds vs. 70 year olds.
+
+# Overall Test
+
+Comparisons of the log odds of obesity at two different ages are most naturally assessed using confidence (compatibility) intervals rather than hypothesis tests, because the connection between the odds ratio and the (relative) prevalence in the two groups is relatively straightforward.  The global null hypothesis of no *effect* of age on the log odds of obesity, e.g. the log odds of obesity is the same for all ages, can be tested using a likelihood ratio test. 
+
+The *overall test* for age is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3 x_i^3 + \beta_4 x_i^4 \\
+\end{eqnarray*}$$
+
+By default, PROC LOGISTIC in SAS calculates the overall likelihood ratio test statistic and $p$-value. (By default, it also calculates the Wald and score versions of the overall test, which should be ignored.)  Under the null hypothesis, the likelihood ratio test statistic follows a chi-squared distribution with $4$ df. (More generally, for a polynomial of degree $k$, it follows a chi-square distribution with $k$ df.)
+
+```{r overall, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=G;
+  EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=4);
+  MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA LRTests;
+  RETAIN Test df ChiSq ProbChiSq sValue;
+  SET G;
+
+  IF Test="Likelihood Ratio";
+  
+  sValue = -LOG(ProbChiSq)/LOG(2);
+  Test="Age Overall";
+
+  KEEP Test df ChiSq ProbChiSq sValue;
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+  VAR Test DF ChiSq ProbChiSq sValue; 
+
+  LABEL ProbChiSq="p-value"
+    sValue="s-value";
+    
+  FORMAT sValue 6.2;
+  FORMAT ProbChiSq ;
+  FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an effect of age on the prevalence (log odds) of obesity.  The $p$-value is $\approx 0$, and the $s$-value is $34.7$.
+
+# Test of Linear Effect of Age on Log Odds of Obesity
+
+Another question of potential interest is whether the odds ratio for a fixed difference in ages is the same for two different starting ages. For example, is the odds ratio for 40 year olds vs. 30 year olds (a 10 year age difference) the same as the odds ratio for 50 year olds vs. 40 year olds (also a 10 year age difference)?  While it is possible to assess this hypothesis using the confidence (compatability) interval for the difference in log odds ratios (or ratio of odds ratios), it is difficult to interpret the magnitudes of these differences in differences, so $p$-values are more useful for these types of single parameter questions. 
+
+```{r dlor, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Quartic;
+    ODS OUTPUT Estimates=E;
+
+    ESTIMATE "Age 50 v 40 v Age 40 v 30" AgePoly [1, 50] [-2, 40] [1, 30] / CL EXP ALPHA=0.03125;
+RUN;
+
+DATA E;
+  SET E;
+
+  sValue = -LOG(Probz)/LOG(2);
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label LowerExp ExpEstimate UpperExp Probz sValue;
+  LABEL Label='00'x
+    LowerExp="Lower CL"
+    ExpEstimate="Estimate"
+    UpperExp="Upper CL"
+    Probz="p-value"
+    sValue="s-value";
+  
+  FORMAT sValue 6.2;
+  FORMAT Probz ;
+
+  TITLE "Ratio of Odds Ratios";
+RUN;
+TITLE;
+```
+
+There is weak evidence of a difference between the odds ratio for 50 v. 40 and the odds ratio for 40 v. 30.  The $p$-value is $0.31$, and the $s$-value is $3.0$.
+
+The null hypothesis of a *linear effect* of age on the log odds of obesity, e.g the log odds ratio is the same for every difference in age of the same amount regardless of starting age, can be tested using using a likelihood ratio test. 
+
+The *test of linear effect* for age is the test of the hypotheses
+$$\begin{eqnarray*}
+H_0: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x_i \\
+H_1: \mbox{logit}\left\{p_i\right\} & = & \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3 x_i^3 + \beta_4 x_i^4 \\
+\end{eqnarray*}$$
+
+Under the null hypothesis, the likelihood ratio test statistic follows a chi-squared distribution with $3$ df. (More generally, for a polynomial of degree $k$, it follows a chi-square distribution with $k-1$ df.)
+
+
+```{r example9, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Reduced;
+  EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=1);
+  MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+RUN;
+
+PROC LOGISTIC DATA=Ron;
+  ODS OUTPUT GlobalTests=Full;
+  EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=4);
+  MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+RUN;
+ODS SELECT ALL;
+
+DATA Reduced;
+  LENGTH Test $30;
+  RETAIN Test nPars Minus2LogLR;
+  SET Reduced (RENAME=(ChiSq=Minus2LogLR));
+
+  IF Test="Likelihood Ratio";
+  
+  Test="Age Linear";
+  nPars = df + 1;
+
+  KEEP Test nPars Minus2LogLR;
+RUN;
+
+DATA Full;
+  RETAIN nPars_Full Minus2LogLR_Full;
+  SET Full (RENAME=(ChiSq=Minus2LogLR_Full));
+
+  IF Test="Likelihood Ratio";
+  nPars_Full = df + 1;
+
+  KEEP nPars_Full Minus2LogLR_Full;
+RUN;
+
+DATA LRTests;
+  IF _N_ = 1 THEN SET Full;
+  SET Reduced;
+  
+  Chisq = Minus2LogLR_Full-Minus2LogLR;
+  df = nPars_Full - nPars;
+  ProbChiSq = SDF("CHISQURE",Chisq,df);
+  sValue = -LOG(ProbChiSq)/LOG(2);
+    
+  KEEP Test df ChiSq ProbChiSq sValue;    
+RUN;
+
+TITLE "Likelihood Ratio Test";
+PROC PRINT DATA=LRTests NOOBS;
+    VAR Test DF ChiSq ProbChiSq sValue;  
+
+    FORMAT sValue 6.2;
+    FORMAT ChiSq 6.2;
+RUN;
+TITLE;
+```
+
+There is very strong evidence of an non-linear effect of age on the log odds of obesity.  The $p$-value is $\approx 0$, and the $s$-value is $33.5$.
+
+# Plotting the Estimated Regression Function
+
+Using the SCORE statement in PROC PLM, we can obtain the estimated log odds for obesity for each age between 18 and 79 (the age range for adults included in the NHANES dataset). Using PROC SGPLOT, we can plot the entire regression function.
+
+```{r example11, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA AllAges;
+    DO Age = 20 TO 80 BY 1;
+        OUTPUT;
+    END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Quartic;
+    SCORE DATA=AllAges OUT=Fitted Predicted LCLM UCLM / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC SGPLOT DATA=Fitted NOAUTOLEGEND;
+    BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Cx1b9e77 TRANSPARENCY=0.7);
+    SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Cx1b9e77) TRANSPARENCY=0.9;
+    YAXIS LABEL="Logit (Log Odds) of Obesity";
+RUN;
+```
+
+# Model Selection
+
+## Leave-one-out cross-validation (CV)
+
+Given a dataset with $N$ observations, apply your modeling procedure(s) to each subset of $N-1$ observations and use the model(s) to predict the observation that is left out. Summarize the results using a sensible measure of predictive accuracy; the log-likelihood function is an obvious choice.  Fitting the model $N$ times can be computationally prohibitive. Leave-one-out CV may not work well, because the changes to the fit are too small.
+
+## Leave-$V$-out cross-validation (CV)
+
+Partition the dataset into $V$ subsets of (roughly) equal size. Apply your modeling procedure(s) to each conglomeration of $V-1$ subsets and use the model(s) to predict the observations for the remaining subset that was not used to fit the model. Summarize the results using a sensible measure of predictive accuracy; the log-likelihood function is an obvious choice. By far, the most common choice is $V=10$.  10-fold CV is sensitive to the partition chosen, so people often average over several partitions. 
+
+## Aikaike's information criterion (AIC)
+
+Aikaike introduced *an information criterion (AIC)* for quantifying model adequacy; it is now typically called *Aikaike's information criterion (AIC)*. AIC has a very simple formula
+$$\mbox{AIC} = -2 \log{L} + 2 K$$
+where $\log{L}$ is the maximum value of the log-likelihood function under the specified model and $K$ is the number of estimated parameters.  
+
+The absolute magnitude of the AIC values is meaningless, only the relative values, specifically the AIC differences ($\Delta_i = \mbox{AIC}_i - \mbox{AIC}_{min}$), matter.  The larger the value of $\Delta_i$, the less plausible it is that model $i$ is the best model, given the observed data.  Rough rules of thumb suggest *substantial* support for model $i$ if $0 \leq \Delta_i \leq 2$, *considerably less* support for model $i$ if $4 \leq \Delta_i \leq 7$, and *essentially no* support for model $i$ if $\Delta_i > 10$.
+
+AIC differences can be converted to (approximate) likelihood (ratio) for model $i$ (compared to the best model) using the formula $$L_i = e^{-\frac{1}{2} \Delta_i}$$
+
+AIC is asymptotically equivalent to leave-one-out CV using deviance ($-2 \log{L}$) as the loss function. AIC tends to *overfit*, typically choosing a model at least as large as the *true model*. 
+
+## Schwarz's criterion (SC, SBC, BIC)
+
+Schwarz's criterion (SC), also called Schwarz's Bayesian criterion (SBC) or Bayesian information criterion (BIC), replaces $K$ by $\log{N}$ for a suitable definition of $N$, the effective sample size of the dataset. For binary regression, the most appropriate choice for $N$ is the minimum of the number of events and the number of non-events. (By default, the BIC values reported by PROC LOGISTIC use the total number of observations as the effective sample size.) Schwarz derived the formula for BIC as an asymptotic approximation to the Bayes factor (marginal likelihood) for the model using a diffuse prior for model parameters. 
+
+The absolute magnitude of the BIC values is meaningless, only the relative values, specifically the BIC differences ($\Delta_i = \mbox{BIC}_i - \mbox{BIC}_{min}$), matter.  The larger the value of $\Delta_i$, the less plausible it is that model $i$ is the best model, given the observed data.  Rough rules of thumb suggest *weak* evidence against model $i$ if $0 \leq \Delta_i \leq 2$, *positive* evidence against model $i$ if $2 < \Delta_i \leq 6$, *strong* evidence against model $i$ if $6 < \Delta_i \leq 10$ and *very strong* evidence against model $i$ if $\Delta_i > 10$.
+
+For illustration, we will evaluate AIC and BIC for polynomial models with degrees ranging from 2 (quadratic) to 7.
+
+```{r effN, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC FREQ DATA=Ron;
+  ODS SELECT OneWayFreqs;
+	TABLE Obese / NOPERCENT NOCUM MISSING;
+RUN;
+```
+
+Our effective sample size is $N=2592$.
+
+
+```{r example12, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC FREQ DATA=Ron;
+  ODS SELECT OneWayFreqs;
+	TABLE Obese / NOPERCENT NOCUM MISSING;
+RUN;
+
+%MACRO SelectPolynomialOrder;
+  %DO k = 2 %TO 7;
+    ODS EXCLUDE ALL;
+    PROC LOGISTIC DATA=Ron;
+      ODS OUTPUT ScoreFitStat=S&k;
+      EFFECT AgePoly=POLYNOMIAL(Age / DEGREE=&k);
+      MODEL Obese(Event="Yes") = AgePoly / LINK=LOGIT;
+    
+      SCORE DATA=Ron FITSTAT;
+    
+      STORE Poly&k;
+    RUN;
+    ODS EXCLUDE NONE;
+        
+    DATA S&k;
+      SET S&k;
+            
+      k = &k;
+      KEEP k LogLike;
+    RUN;
+        
+    PROC PLM RESTORE=Poly&k NOINFO;
+      SCORE DATA=AllAges OUT=Fitted&k 
+        LCLM=Lower_Logit 
+        UCLM=Upper_Logit / ALPHA=0.03125;
+    RUN;        
+
+    DATA Fitted&k;
+      SET Fitted&k;
+            
+      k = &k;
+    RUN;
+ 
+
+    %IF &k = 2 %THEN %DO;
+      DATA ModelComparison;
+        SET S&k;
+      RUN;
+            
+      DATA PolynomialFits;
+        SET Fitted&k;
+      RUN;
+    %END;
+    %ELSE %DO;
+      PROC APPEND BASE=ModelComparison DATA=S&k FORCE;
+      RUN;
+
+      PROC APPEND BASE=PolynomialFits DATA=Fitted&k FORCE;
+      RUN;
+    %END;
+  %END;
+%MEND SelectPolynomialOrder;
+
+%SelectPolynomialOrder;
+
+DATA ModelComparison;
+	SET ModelComparison;
+	
+	AIC = -2*LogLike+2*(k+1);
+  BIC = -2*LogLike+LOG(2592)*(k+1);
+RUN;
+
+PROC MEANS DATA=ModelComparison MIN NOPRINT;
+  VAR AIC BIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparison;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparison;
+    
+  Delta_AIC = AIC-AIC_Min;
+  Delta_BIC = BIC-BIC_Min;
+   
+  LR_AIC = EXP(1/2*Delta_AIC);
+  LR_BIC = EXP(1/2*Delta_BIC);
+    
+  KEEP k LogLike AIC BIC Delta_AIC Delta_BIC LR_AIC LR_BIC;
+RUN;
+
+TITLE "Akaike's information criterion";
+PROC PRINT DATA=ModelComparison NOOBS;
+	VAR k LogLike AIC Delta_AIC LR_AIC;
+    
+  FORMAT LogLike AIC Delta_AIC 10.1;
+  FORMAT LR_AIC 10.2;
+RUN;
+TITLE;
+```
+
+Based on AIC, the best model is the $4^{th}$ degree polynomial. There is strong evidence against the quadratic and cubic polynomials.  Even if there were strong evidence in favor of the simpler models, we would not typically reduce the degree of the polynomial, because valid statistical inference (standard errors, confidence/compatability intervals) after model selection is very challenging. 
+
+
+```{r example13, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+TITLE "Schwarz's criterion";
+PROC PRINT DATA=ModelComparison NOOBS;
+	VAR k LogLike BIC Delta_BIC LR_BIC;
+    
+    FORMAT LogLike BIC Delta_BIC 10.1;
+    FORMAT LR_BIC 10.2;
+RUN;
+TITLE;
+```
+
+Based on BIC, the best model is the quartic ($4^{th}$ degree) polynomial fits, although there is relatively little evidence against the simpler quadratic model. Even if there were strong evidence in favor of the simpler models, we would not typically reduce the degree of the polynomial, because valid statistical inference (standard errors, confidence/compatability intervals) after model selection is very challenging. 
+
+The estimated regression functions (log odds of obesity as a function of age) from the pre-specified, AIC-optimal and BIC-optimal quartic polynomial model and the quadratic polynomial can be plotted using PROC SGPLOT.
+
+```{r example14, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC SGPLOT DATA=PolynomialFits;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  BAND X=Age Lower=Lower_Logit Upper=Upper_Logit /
+      GROUP=k TRANSPARENCY=0.7;
+  YAXIS LABEL="Logit (Log Odds) of Obesity";
+  WHERE k = 2 OR k = 4;
+RUN;
+```
+
+Alternatively, the estimated prevalence of obesity from from the pre-specified, AIC-optimal and BIC-optimal quartic polynomial model and the quadratic polynomial can also be plotted using PROC SGPLOT.
+
+```{r example15, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+DATA Tmp;
+  SET PolynomialFits;
+    
+  Lower_Prob = 1/(1+EXP(-Lower_Logit));
+  Upper_Prob = 1/(1+EXP(-Upper_Logit));
+RUN;
+
+PROC SGPLOT DATA=Tmp;
+  STYLEATTRS DATACOLORS=(Cx1b9e77 Cxd95f02 Cx7570b3 Cxe7298a Cx66a61e Cxe6ab02 Cxa6761d Cx666666);
+  BAND X=Age Lower=Lower_Prob Upper=Upper_Prob /
+     GROUP=k TRANSPARENCY=0.7;
+  YAXIS LABEL="Prevalence of Obesity";
+  WHERE k = 2 OR k = 4;
+RUN;
+```
+
+# Undesirable Properties of Polynomials
+
+Polynomials have some undesirable properties: (1) undesirable peaks and valleys, (2) the fit in one region can be greatly affected by data in other regions, and (3) inadequate fit for many functional forms (logarithmic or threshold effects).

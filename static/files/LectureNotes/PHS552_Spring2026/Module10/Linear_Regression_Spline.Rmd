@@ -1,0 +1,874 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Using a Natural Cubic Spline in Place of the Quadratic Polynomial
+
+For simplicity, we have introduced linear models for quantitative outcomes using a quadratic polynomial to represent the effect of a single quantitative predictor.  In practice, we would typically use a natural cubic spline instead of a polynomial.  
+
+Using the EFFECT statement and non-positional syntax, it is straightforward to modify our code to use a natural cubic spline with 4 df in place of the quadratic polynomial.
+
+# Initial Fit and Diagnostic Plots
+
+First, plot the residuals vs the predicted values.
+
+```{r spline1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES (RENAME=(Race1=Race));
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=F;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+    
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+  STORE SplineModel;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+
+```{r fitted1, engine="sashtml5", engine.path=saspath}
+PROC PRINT DATA=Fitted (OBS=10);
+  VAR Age TotChol Pred Resid;
+  FORMAT Pred 6.2 Resid 6.2;
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+```
+
+Plot the square root of the absolute value of the residuals vs the fitted values.
+
+
+```{r diagnostics1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA Fitted;
+  SET Fitted;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=pred Y=sqrt_abs_resid; 
+  REG X=Pred Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="green");
+RUN;
+```
+
+Plot the residuals and square root of the absolute value of the residuals against each predictor variable.
+
+
+
+```{r diagnostics2, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Age Y=Sqrt_Abs_Resid; 
+  REG X=Age Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="green");
+RUN;
+```
+
+Examine a normal scores plot for the residuals.
+
+```{r diagnostics3, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+# Formal Model Comparisons (AIC/BIC)
+
+AIC or BIC can be used to compare different model specifications.  
+
+The following SAS code calculates AIC for models using natural cubic splines with 2-6 df and our original quadratic model.
+
+```{r aic, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=Quadratic;
+  EFFECT AgeCS = Polynomial(Age / DEGREE=2);
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA Quadratic;
+  LENGTH Model $30;
+  SET Quadratic;
+
+  IF Label1="AIC";
+  Model = "Quadratic";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF2;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(10 50 90));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF2;
+  LENGTH Model $30;
+  SET DF2;
+
+  IF Label1="AIC";
+  Model = "2 df";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF3;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF3;
+  LENGTH Model $30;
+  SET DF3;
+
+  IF Label1="AIC";
+  Model = "3 df";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF4;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF4;
+  LENGTH Model $30;
+  SET DF4;
+
+  IF Label1="AIC";
+  Model = "4 df";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF5;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF5;
+  LENGTH Model $30;
+  SET DF5;
+
+  IF Label1="AIC";
+  Model = "5 df";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF6;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(2.5 18.33 34.17 50 65.83 81.67 97.5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF6;
+  LENGTH Model $30;
+  SET DF6;
+
+  IF Label1="AIC";
+  Model = "6 df";
+  AIC = nValue1;
+  KEEP Model AIC;
+RUN;
+
+DATA ModelComparisons;
+  SET Quadratic DF2 DF3 DF4 DF5 DF6;
+RUN;
+
+PROC MEANS DATA=ModelComparisons MAX NOPRINT;
+  VAR AIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparisons;
+
+  AIC = AIC - AIC_Min;
+
+  KEEP Model AIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (AIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model AIC;
+
+  FORMAT AIC 6.1;
+RUN;
+TITLE;
+```
+
+Based on AIC, the optimal model is the natural cubic spline with 3 df. 
+
+The following SAS code calculates BIC for models using natural cubic splines with 2-6 df.
+
+```{r bic, engine="sashtml5", engine.path=saspath, error=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=Quadratic;
+  EFFECT AgeCS = Polynomial(Age / DEGREE=2);
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA Quadratic;
+  LENGTH Model $30;
+  SET Quadratic;
+
+  IF Label1="SBC";
+  Model = "Quadratic";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF2;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(10 50 90));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF2;
+  LENGTH Model $30;
+  SET DF2;
+
+  IF Label1="SBC";
+  Model = "2 df";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF3;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 35 65 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF3;
+  LENGTH Model $30;
+  SET DF3;
+
+  IF Label1="SBC";
+  Model = "3 df";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF4;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF4;
+  LENGTH Model $30;
+  SET DF4;
+
+  IF Label1="SBC";
+  Model = "4 df";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF5;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF5;
+  LENGTH Model $30;
+  SET DF5;
+
+  IF Label1="SBC";
+  Model = "5 df";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  ODS OUTPUT FitStatistics=DF6;
+  EFFECT AgeCS = Spline(Age /
+                NATURALCUBIC BASIS=TPF(NOINT)
+                KNOTMETHOD=PERCENTILELIST(2.5 18.33 34.17 50 65.83 81.67 97.5));
+
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+RUN;
+
+DATA DF6;
+  LENGTH Model $30;
+  SET DF6;
+
+  IF Label1="SBC";
+  Model = "6 df";
+  BIC = nValue1;
+  KEEP Model BIC;
+RUN;
+
+DATA ModelComparisons;
+  SET Quadratic DF2 DF3 DF4 DF5 DF6;
+RUN;
+
+PROC MEANS DATA=ModelComparisons MAX NOPRINT;
+  VAR BIC;
+  OUTPUT OUT=MinIC MIN= / AUTONAME;
+RUN;
+
+DATA ModelComparisons;
+  IF _N_=1 THEN SET MinIC;
+  SET ModelComparisons;
+
+  BIC = BIC - BIC_Min;
+
+  KEEP Model BIC;
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "Model Comparisons (BIC)";
+PROC PRINT DATA=ModelComparisons NOOBS;
+  VAR Model BIC;
+
+  FORMAT BIC 6.1;
+RUN;
+TITLE;
+```
+
+Based on BIC, the optimal model is the natural cubic spline with 2 df, which fits decisively better than the natural cubic spline with 4 df.
+
+Note that we would not generally simplify our model based on these types of comparisons.
+
+# Inference
+
+Given a satisfactory model, we can obtain compatability intervals for means and differences in means using ESTIMATE statements.
+
+```{r inference1, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SplineModel;
+  ESTIMATE "Age 35" Intercept 1 AgeCS [1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 45" Intercept 1 AgeCS [1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55" Intercept 1 AgeCS [1, 55] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65" Intercept 1 AgeCS [1, 65] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SplineModel;
+  ESTIMATE "Age 45 v 35" AgeCS [1, 45] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35" AgeCS [1, 55] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 45" AgeCS [1, 55] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35" AgeCS [1, 65] [-1, 35] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 45" AgeCS [1, 65] [-1, 45] / CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 55" AgeCS [1, 65] [-1, 55] / CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```
+
+The estimated mean serum cholesterol levels are $(4.947,5.061)$ mmol/L for 35 year olds, $(5.224,5.333)$ mmol/L for 45 year olds, $(0.199,0.350)$ mmol/L greater than 35 year olds; $(5.303,5.395)$ mmol/L for 55 year olds, $(0.269,0.421)$ mmol/L greater than 35 year olds and $(0.014,0.128)$ mmol/L greater than 45 year olds; and $(5.171,5.284)$ mmol/L for 65 year olds, $(0.146,0.300)$ mmol/L greater than 35 year olds, 0.141 mmol/L lower to 0.039 mmol/L greater than 45 year olds, and $(0.080,0.164)$ mmol/L lower than 55 year olds. 
+
+We can perform F-tests for the overall age effect and for linearity of the age effect.
+
+```{r inference2, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgeCS = Spline(Age / 
+          NATURALCUBIC BASIS=TPF(NOINT) 
+          KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = AgeCS / SELECTION=NONE;
+  ODS OUTPUT ANOVA=Full;
+RUN;
+
+DATA Full (KEEP=SS DF RENAME=(SS=SS_Full DF=DF_Full));
+  SET Full;
+  WHERE Source="Error";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgeCS = Spline(Age / 
+          NATURALCUBIC BASIS=TPF(NOINT) 
+          KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Age / SELECTION=NONE;
+  ODS OUTPUT ANOVA=Linear;
+RUN;
+
+DATA Linear (KEEP=Test DF SS);
+  SET Linear;
+  WHERE Source="Error";
+
+  Test="Non-Linear Age";
+RUN;
+
+PROC GLMSELECT DATA=Analysis;
+  EFFECT AgeCS = Spline(Age / 
+          NATURALCUBIC BASIS=TPF(NOINT) 
+          KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = / SELECTION=NONE;
+  ODS OUTPUT ANOVA=Null;
+RUN;
+
+DATA Null (KEEP=Test DF SS);
+  SET Null;
+  WHERE Source="Error";
+
+  Test="Overall Age";
+RUN;
+
+DATA FTests;
+  LENGTH Test $50;
+
+  IF _N_ = 1 THEN SET Full;
+  SET Linear Null;
+
+  SS = SS-SS_Full;
+  DF = DF-DF_Full;
+  MS = SS/DF;
+  MS_Full = SS_Full/DF_Full;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+  FORMAT ProbF PVALUE6.4;
+RUN;
+TITLE;
+```
+# Prediction
+
+The following graphic and table display prediction intervals (lighter red, LCL-UCL) for (individual) total cholesterol by age and confidence intervals (darker red, LCLM-UCLM) for the mean total cholesterol by age.
+
+```{r prediction, engine="sashtml5", engine.path=saspath}
+DATA Score;
+  DO Age = 20 TO 80 BY 1;
+    OUTPUT;
+  END;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=SplineModel;
+  SCORE DATA=Score OUT=Score Predicted LCLM UCLM LCL UCL / ALPHA=0.03125;
+RUN;
+ODS EXCLUDE NONE;
+
+DATA All;
+  SET Analysis Score(IN=S);
+    
+  Score = S;
+RUN;
+
+PROC SGPLOT DATA=All NOAUTOLEGEND;
+  SCATTER X=Age Y=TotChol / MARKERATTRS=(SYMBOL=CircleFilled COLOR=LightBlue);
+  BAND X=Age Lower=LCL Upper=UCL / FILLATTRS=(COLOR=Red TRANSPARENCY=0.8);    
+  BAND X=Age Lower=LCLM Upper=UCLM / FILLATTRS=(COLOR=Red TRANSPARENCY=0.6);
+  SERIES X=Age Y=Predicted / LINEATTRS=(COLOR=Red);
+RUN;
+
+PROC PRINT DATA=All NOOBS;
+  VAR Age Predicted LCL UCL LCLM UCLM;
+  WHERE Score = 1;
+RUN;
+```
+
+# Recommended Practice
+
+To illustrate the recommended practice for linear regression, we will consider a linear regression model for total cholesterol as a function of age and gender.
+
+```{r practice1, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+ODS GRAPHICS / LOESSMAXOBS=20000;
+
+DATA Analysis;
+  SET NHANES.NHANES;
+RUN;
+
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS / SELECTION=NONE;
+    
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+  STORE Initial;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+To assess the correct structural model assumption, we can examine plots of the residuals against the predictor variables.  In this case, we could look at plots of the residuals against age, either overall or by gender.  We can supplement these plots with formal model comparisons using BIC.
+
+
+```{r practice2, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+
+TITLE "Female";
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");
+  WHERE GENDER = 1;
+RUN;
+TITLE;
+
+TITLE "Male";
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");
+  WHERE GENDER = 2;
+RUN;
+TITLE;
+```
+
+```{r practice3, engine="sashtml5", engine.path=saspath, error=TRUE}
+TITLE "Initial";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT FitStatistics;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+
+TITLE "Initial + G*A";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT FitStatistics;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS Gender*AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+
+TITLE "Initial + 1df for Age";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT FitStatistics;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+    
+  MODEL TotChol = Gender AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+```
+
+Based on BIC, the model with the interaction term fits decisively better.
+
+```{r practice4, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+ODS EXCLUDE ALL;
+PROC GLMSELECT DATA=Analysis;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS Gender*AgeCS / SELECTION=NONE;
+    
+  OUTPUT OUT=Fitted P=Pred R=Resid;
+  STORE Revised;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+To assess the correct structural model assumption, we can again examine plots of the residuals against the predictor variables.  In this case, we could look at plots of the residuals against age, either overall or by gender.  We can supplement these plots with formal model comparisons using BIC.
+
+
+```{r practice5, engine="sashtml5", engine.path=saspath}
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");   
+RUN;
+
+TITLE "Female";
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");
+  WHERE GENDER = 1;
+RUN;
+TITLE;
+
+TITLE "Male";
+PROC SGPLOT DATA=Fitted;
+	REFLINE 0 / AXIS=Y;
+  LOESS X=Age Y=Resid / LINEATTRS=(COLOR="Red");
+  WHERE GENDER = 2;
+RUN;
+TITLE;
+```
+
+```{r practice6, engine="sashtml5", engine.path=saspath, error=TRUE}
+TITLE "Revised";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT FitStatistics;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS Gender*AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+
+TITLE "Revised + 1df for Age";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT FitStatistics;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 23 41 59 77 95));
+    
+  MODEL TotChol = Gender AgeCS Gender*AgeCS / SELECTION=NONE;
+RUN;
+TITLE;
+```
+
+There do not appear to be concerns about the adequacy of the correct structural model assumption for the revised model.
+
+The independence assumption cannot be assessed without knowledge of a putative source of dependence.
+
+The constant (correct) variance assumption can be assessed with a plot of the square root of the absolute values of the residuals against the fitted values.
+
+```{r practice7, engine="sashtml5", engine.path=saspath, collectcode=TRUE}
+DATA Fitted;
+  SET Fitted;
+    
+  Sqrt_Abs_Resid = SQRT(ABS(Resid));
+RUN;
+
+PROC SGPLOT DATA=Fitted;
+  LOESS X=Pred Y=Sqrt_Abs_Resid / LINEATTRS=(COLOR="Red");
+  REG X=Pred Y=Sqrt_Abs_Resid / NOMARKERS LINEATTRS=(COLOR="Purple");
+RUN;
+```
+
+There are no concerns with the adequacy of the constant variance assumption.
+
+The normality assumption can be assessed with a normal scores plot of the residuals.
+
+```{r practice8, engine="sashtml5", engine.path=saspath}
+PROC UNIVARIATE DATA=Fitted NOPRINT;
+  QQPLOT Resid / NORMAL(MU=EST SIGMA=EST);
+RUN;
+```
+
+The distribution of the residuals is right skewed (not normal), but, given the large sample size and our lack of interest in individual level prediction, the violation of the normality assumption is not problematic.
+
+We can perform F-tests for the the interaction, the overall age effect, and non-linearity of the age effect.
+
+```{r practice9, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+TITLE "Revised Model";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT ANOVA;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS Gender*AgeCS / SELECTION=NONE;
+RUN;
+
+TITLE "Additive Model";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT ANOVA;
+  CLASS Gender;
+  EFFECT AgeCS = Spline(Age / 
+                NATURALCUBIC BASIS=TPF(NOINT) 
+                KNOTMETHOD=PERCENTILELIST(5 27.5 50 72.5 95));
+    
+  MODEL TotChol = Gender AgeCS / SELECTION=NONE;
+RUN;
+
+TITLE "Linear Age";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT ANOVA;
+  CLASS Gender;
+
+  MODEL TotChol = Gender Age Gender*Age / SELECTION=NONE;
+RUN;
+
+
+TITLE "No Age";
+PROC GLMSELECT DATA=Analysis;
+  ODS SELECT ANOVA;
+  CLASS Gender;
+
+  MODEL TotChol = Gender / SELECTION=NONE;
+RUN;
+ODS EXCLUDE NONE;
+```
+
+```{r practice10, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+DATA FTests;
+  LENGTH Test $50;
+
+  SS_Full = 7439.94539;
+  DF_Full = 7225;
+  MS_Full = SS_Full/DF_Full;
+
+  Test = "G*A";
+  SS_Reduced = 7616.12533;
+  DF_Reduced = 7229;
+  OUTPUT;
+
+  Test = "Non-Linear Age";
+  SS_Reduced = 7852.85446;
+  DF_Reduced = 7231;
+  OUTPUT;
+
+  Test = "Age Overall";
+  SS_Reduced = 8129.36721;
+  DF_Reduced = 7233;
+  OUTPUT;
+RUN;
+
+DATA FTests;
+  SET FTests;
+
+  SS = SS_Reduced - SS_Full;
+  DF = DF_Reduced - DF_Full;
+  MS = SS/DF;
+  F = MS/MS_Full;
+  ProbF = EXP(LOGSDF("F",F,DF,DF_Full));
+  sValue = -LOG(ProbF)/LOG(2);
+    
+  KEEP Test DF MS F ProbF sValue;    
+RUN;
+ODS EXCLUDE NONE;
+
+TITLE "F-Tests";
+PROC PRINT DATA=FTests NOOBS;
+  VAR Test DF MS F ProbF sValue;  
+
+  FORMAT sValue 6.2;
+RUN;
+TITLE;
+```
+
+There is overwhelming evidence for effects of age that are non-linear and vary by gender.
+
+Estimated mean difference in total cholesterol between age can be obtained using ESTIMATE statements.
+
+```{r practice11, engine="sashtml5", engine.path=saspath}
+ODS EXCLUDE ALL;
+PROC PLM RESTORE=Revised;
+  ESTIMATE "Age 45 v 35, Female" AgeCS [1, 45] [-1, 35] Gender*AgeCS [1, 1 45] [-1, 1 35]/ CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35, Female" AgeCS [1, 55] [-1, 35] Gender*AgeCS [1, 1 55] [-1, 1 35]/ CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35, Female" AgeCS [1, 65] [-1, 35] Gender*AgeCS [1, 1 65] [-1, 1 35]/ CL ALPHA=0.03125;
+ ESTIMATE "Age 45 v 35, Male" AgeCS [1, 45] [-1, 35] Gender*AgeCS [1, 2 45] [-1, 2 35]/ CL ALPHA=0.03125;
+  ESTIMATE "Age 55 v 35, Male" AgeCS [1, 55] [-1, 35] Gender*AgeCS [1, 2 55] [-1, 2 35]/ CL ALPHA=0.03125;
+  ESTIMATE "Age 65 v 35, Male" AgeCS [1, 65] [-1, 35] Gender*AgeCS [1, 2 65] [-1, 2 35]/ CL ALPHA=0.03125;
+  ODS OUTPUT Estimates=E;
+RUN;
+ODS EXCLUDE NONE;
+
+PROC PRINT DATA=E NOOBS LABEL;
+  VAR Label Lower Estimate Upper;
+  LABEL Label='00'x;
+  FORMAT Estimate 6.3 Lower 6.3 Upper 6.3;
+RUN;
+```

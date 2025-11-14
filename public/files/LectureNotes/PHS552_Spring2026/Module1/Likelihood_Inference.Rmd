@@ -1,0 +1,276 @@
+---
+output: 
+  rmdformats::html_clean:
+#  html_document:
+#    theme: readable
+#    toc: true
+#    toc_float: 
+#      collapsed: false
+#      smooth_scroll: false 
+    thumbnails: false 
+---
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE,
+                      comment=FALSE)
+require(SASmarkdown)
+
+saspath <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+#saspath <- "sas"
+```
+
+# Motivating Example: Prevalence of Obesity
+
+The National Health and Nutrition Examination Study (NHANES) uses a complex survery design to draw inferences to the *non-institutionalized civilian resident population of the United States*. NHANES oversamples certain subpopulations including racial minorities. Naive analyses of the raw NHANES data can be misleading. For example, the proportions of people in each racial group in the NHANES sample are substantially different than the proportions of people in each racial group in the US population. For educational purposes, a group of statisticians used resampling to create a version of the NHANES dataset that can be treated as a simple random sample of the US population. We will use the adult (age $\geq 20$) subset of these data. *This dataset is not suitable for research purposes. For research purposes, you should download the original data from the NHANES dataset and follow the analysis instructions there.*
+
+To motivate the use of binary regression models, we will focus on estimating the prevalence of obesity, defined as a body mass index (BMI) greater than 30, for specific subgroup of the US population.  The subgroup of interest is *people like me*, defined based on seven variables measured in NHANES (age, gender, race, education, marital status, income, and smoking).  For now, we will consider the prevalence of obesity for the entire US population. In the future, we will use binary regression models to better inform our estimate of the prevalence of obesity for this subpopulation using more of the available data and to compare the prevalence of obesity across subpopulations.
+
+
+```{r example1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+LIBNAME NHANES "../../../BMI552_Datasets/NHANES_May2023/";
+*LIBNAME NHANES "~/my_shared_file_links/u48718377/NHANES";
+OPTIONS FMTSEARCH=(NHANES.formats_NHANES work) NODATE NONUMBER;
+TITLE1; TITLE2;
+ODS NOPROCTITLE;
+
+DATA Ron;
+  SET NHANES.NHANES;
+RUN;
+```
+
+```{r example2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+PROC FREQ DATA=Ron;
+	ODS SELECT OneWayFreqs;
+	TABLES Obese;
+RUN;
+```
+
+Of the $N=7,235$ subjects in the NHANES sample, $y=\sum\limits_{i=1}^N{y_i} = 2,592$ are obese, where $y_1, y_2, \ldots, y_n$ are indicator variables for obesity (1 if obese, 0 if not obese) for each of the $N$ subjects.
+
+# The Likelihood (Function)
+
+The *likelihood (function)* associated with a set of observations of an outcome $y_1, y_2, \ldots, y_n$ is the joint probability (or probability density) of observing all of the outcomes in the sample under the assumed model for the outcomes viewed as a function of one or more unknown parameters.  For a set of *independent* observations, the likelihood is just the product of their respective likelihoods under the assumed model.  The likelihood is interpreted as a measure of the support provided by the data for a particular parameter value (or set of parameter values).  The likelihood provides us with a measure of *relative* preferences for various parameter values; the absolute value of the likelihood function is not meaningful, only ratios of likelihoods are meaningful.  The likelihood function is only meaningful up to a multiplicative constant; it is customary to normalize the likelihood to have a maximum value of 1, e.g. divide the function by its maximum.
+
+For the one-sample Bernoulli model
+$$ y_i \sim \mbox{Bernoulli}\left\{p\right\}, i = 1, 2, \ldots, N$$
+the likelihood is obtained by multiplying the likelihood for each observation
+$$ L(p) = \prod_{i=1}^N{p^{y_i} \left(1-p\right)^{(1-y_i)}} = p^{\sum{y_i}} (1-p)^{\sum{(1-y_i)}}$$.
+An equivalent likelihood can be found using the binomial model
+$$ y = \sum_{i=1}^N{y_i} \sim \mbox{Binomial}(N,p) $$
+$$ L(p) = {N \choose y} p^y (1-p)^{(N-y)} $$
+
+Note that, in both cases, the relative likelihood is the same
+$$\frac{L(p)}{L(p_0)} = \frac{p^y (1-p)^{(N-y)}}{p_0^y (1-p_0)^{(N-y)}}$$
+In practice, for numerical stability, most computations are done using the logarithm of the likelihood (*log likelihood*) instead of the likelihood itself 
+$$\log{L(p)} = y \log{p} + (N-y) \log{1-p} = y \log{\frac{p}{1-p}} + N \log{1-p}$$
+Most statistical theory uses the natural logarithm (base $e$) of the likelihood function.  For interpretation, other logarithms (base 2 or base 10) can be more intuitive. 
+
+Here is a plot of the log (base 2) likelihood for our example.
+
+```{r plot1, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+DATA Likelihood;
+  DO p = 0.0001 TO 0.9999 BY 0.00001;
+		LL = LOGPDF("Binomial",2592,p,7235)-LOGPDF("Binomial",2592,2592/7235,7235);
+		LL_Wald = LOGPDF("Normal",2592/7235,p,sqrt(1/7235*2592/7235*4643/7235))-LOGPDF("Normal",2592/7235,2592/7235,sqrt(1/7235*2592/7235*4643/7235));
+		LL_Logit = LOGPDF("Normal",LOG(2592/4643),LOG(p/(1-p)),sqrt(1/2592+1/4643))-LOGPDF("Normal",LOG(2592/4643),LOG(2592/4643),sqrt(1/2592+1/4643));
+
+		LL = LL/LOG(2);
+		LL_Wald = LL_Wald/LOG(2);
+		LL_Logit = LL_Logit/LOG(2);
+		OUTPUT;
+  END;
+RUN;
+
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+*	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+*	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+```
+
+# The Maximum Likelihood Estimate
+
+The maximum value of the (log) likelihood occurs at $\hat{p} = \frac{y}{N}$, the sample proportion, which is the *maximum likelihood estimate* of the population proportion $p$.  There is a serious tendency to overstate the importance of the maximum likelihood estimate; the *entire* likelihood, not its maximizer, is the information about the unknown parameter in the sample.
+
+The maximum likelihood estimate is $\hat{p} = 2592/7235 = 0.3583$ (the vertical line in the following plot).
+
+```{r plot2, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+*	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+*	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	REFLINE 0.3583 / AXIS=X;
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+```
+
+# Likelihood (Ratio) Interval
+
+A *likelihood interval (estimate)* for the unknown parameter is defined as the set of parameter values with sufficiently high likelihood
+$$\{p : \frac{L(p)}{L(\hat{p})} > c = \frac{1}{K}\}$$ for some cutoff point $c = \frac{1}{K}$.  In pure likelihood inference, it is not clear how to choose the cutoff value $c$ (or $K$).  In our example, the likelihood interval for $p$ at $c = 2^{-3} = 1/8$ (or $K=8$) is $(0.3468,0.3698)$. Typically, there is not a closed form solution for the likelihood interval, but it can usually be found using numerical methods or a simple grid search.
+
+```{r plot3, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+*	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+*	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	REFLINE -3;
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+
+ODS NOPROCTITLE;
+PROC MEANS DATA=Likelihood MIN MAX;
+	VAR p;
+	WHERE LL >= -3;
+RUN;
+```
+
+# Calibration of Likelihood Intervals
+
+The primary weakness of pure likelihood inference is the lack of an externally validated way to select the cutoff $c$ (or $K$).  Traditional (frequentist) statistical theory calibrates the likelihood using large-sample statistical theory.  For the one-sample binomial (and many other distributions), the sampling distribution of Wilk's likelihood ratio statistic $W$ approximately follows a chi-square distribition with 1 degree of freedom
+$$W \equiv 2 \log{\frac{L(\hat{p})}{L(p)}} \sim \chi^2_1$$
+It follows that the approximate coverage probability (confidence level) for a likelihood interval for $p$ at cutoff $c$ is $P\left(\chi^2_1 > -2 \log{c}\right)$.  Alternatively, if we choose the cutoff 
+$$c = \exp\left\{-\frac{1}{2} \chi^2_{1,1-\alpha}\right\}$$ 
+the likelihood interval is a $100(1-\alpha)\%$ confidence interval.
+
+In our example, $c=1/8$ corresponds to $\alpha=0.04141671$. So, we can find the likelihood interval for $p$ at $c=1/8$ by requesting the likelihood ratio (LR) interval for $\alpha=0.04141671$ in SAS.
+
+```{r intervals, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS NOPROCTITLE;
+PROC FREQ DATA=Ron;
+	ODS SELECT BinomialCLs;
+	TABLES Obese / BINOMIAL(LR LEVEL="Yes") ALPHA=0.04141671;
+RUN;
+```
+
+# $S$-values or Suprisals
+
+The Shannon transform of the $P$-value, also known as the surprisal or $S$-value, $s = -\log{p}$, provides a measure of the information supplied by a testing procedure against compatability of the data with the entire set of analysis assumptions. It can be easily calibrated against simple physical experiments like coin tossing.  We typically express the $S$-value on the log-base-2 scale, where the units of measurement are *bits*. One bit of information is the amount of information provided by seeing heads on one toss on a coin against the hypothesis that the coin is fair vs. biased for heads. The total information against fairness provided by observing $k$ heads in a row is $k$ bits. 
+
+We can use suprisals to select the cutoff $c$ or confidence level $1-\alpha$.  Setting $\alpha = 2^{-k}$ above, the likelihood interval can be interpreted as a compatability interval for the parameter, e.g. the interval of values of a parameter that are *highly compatable* with the data, in the sense of having less than $k$ bits of information against it.  Translations between likelihood ratios, $P$-values and $S$-values are provided on the course website.
+
+# Wald (Quadratic) Approximation to the Likelihood
+
+Likelihood inference is computationally intensive. It typically requires evaluations of the likelihood at a large number of different parameter values.  In many settings, a quadratic approximation to the likelihood works fairly well (for most practical purposes, Central Limit Theorems identify situations in which a quadratic approximation to the likelihood is adequate).  The Wald approximation to the likelihood is based on a quadratic approximation to the likelihood at the maximum likelihood estimate.
+
+For the binomial example, the Wald approximation to the likelihood is given by
+$$\log{\frac{L(p)}{L(\hat{p})}} \approx -\frac{1}{2} \frac{1}{\frac{\hat{p}(1-\hat{p})}{N}} (p-\hat{p})^2$$
+
+Using the Wald approximation to the likelihood, the approximate likelihood ratio interval (or Wald confidence interval) can be found using the formula
+$$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+where $z_{alpha/2}$ is the $1-\alpha/2$ quantile of the standard normal distribution. 
+
+In our example, a 96.875\% (corresponding to $s=5$) CI for $p$ is $(0.3461,0.3704)$ based on the Wald approximation to the likelihood and $(0.3462,0.3705)$ based on the likelihood.
+
+```{r Wald, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+*	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	REFLINE -3.346458247;
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+
+ODS NOPROCTITLE;
+PROC MEANS DATA=Likelihood MIN MAX;
+	VAR p;
+	WHERE LL_Wald > -3.346458247;
+RUN;
+
+ODS NOPROCTITLE;
+PROC FREQ DATA=Ron;
+	ODS SELECT BinomialCLs;
+	TABLES Obese / BINOMIAL(LR WALD LEVEL="Yes") ALPHA=0.03125;
+RUN;
+```
+
+# Improving the Quadratic Approximation
+
+Transformations of the parameter can improve the adequacy of the quadratic approximation to the likelihood. For binomial problems, the log odds (or logit) transformation, $\log{\frac{p}{1-p}}$, is frequently used.
+
+Using the Wald approximation to the likelihood on the logit scale, (approximate) likelihood intervals can be found using the formula
+$$\log{\frac{\hat{p}}{1-\hat{p}}} \pm z_{\alpha/2} \sqrt{\frac{1}{N \hat{p}}+\frac{1}{N(1-\hat{p})}}$$
+where $z_{alpha/2}$ is the $1-\alpha/2$ quantile of the standard normal distribution. 
+
+In our example, the 96.875\% Wald CI for $p$ using the logit scale is $(0.3462,0.3705)$. With smaller sample sizes, the Wald CI using the logit scale will be much closer to the likelihood ratio interval than Wald CI using the probability scale.
+
+```{r logit, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+*	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	REFLINE -3.346458247;
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+
+ODS NOPROCTITLE;
+PROC MEANS DATA=Likelihood MIN MAX;
+	VAR p;
+	WHERE LL_Logit >= -3.346458247;
+RUN;
+
+ODS NOPROCTITLE;
+PROC FREQ DATA=Ron;
+	ODS SELECT BinomialCLs;
+	TABLES Obese / BINOMIAL(LR LOGIT LEVEL="Yes") ALPHA=0.03125;
+RUN;
+```
+
+# The Score Test/Interval
+
+The score test is based on the slope of the log-likelihood function as a function of the parameter at the hypothesized value of the parameter. If the hypothesized value of the parameter is correct, the score (slope of the log-likelihood) should be close to 0, because changing the parameter will not increase the log-likelihood very much. 
+
+For the one-sample binomial problem, the score (Wilson) confidence interval are based on inverting the normal approximation test for $H_0: p = p_0$ using the null proportion in the standard error (instead of the estimated proportion used for the Wald tests). A closed-form solution for the score confidence interval is
+$$\frac{\hat{p} + \frac{z_{\alpha/2}^2}{2n} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1+\frac{z_{\alpha/2}^2}{n}}$$
+
+In our example, the 96.875\% Wilson (score) CI for $p$ is $(0.3462,0.3705)$, which is very similar to the likelihood ratio interval $(0.3462,0.3705)$.
+
+```{r score, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE, echo=FALSE}
+PROC SGPLOT DATA=Likelihood;
+	SERIES X=p Y=LL / LINEATTRS=(COLOR="Blue" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="True Likelihood";
+	SERIES X=p Y=LL_Wald / LINEATTRS=(COLOR="Red" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Probability Scale)";
+	SERIES X=p Y=LL_Logit / LINEATTRS=(COLOR="Orange" THICKNESS=2 PATTERN=Solid) LEGENDLABEL="Wald Approximation (Logit Scale)";
+	XAXIS LABEL="p" VALUES=(0.30 TO 0.40 BY 0.005) VALUESHINT;
+	YAXIS LABEL="Log (Base 2) Likelihood" VALUES=(-10 TO 0 BY 1) REFTICKS;
+	WHERE LL > -10;
+RUN;
+
+ODS NOPROCTITLE;
+PROC FREQ DATA=Ron;
+	ODS SELECT BinomialCLs;
+	TABLES Obese / BINOMIAL(LR LOGIT WALD WILSON LEVEL="Yes") ALPHA=0.03125;
+RUN;
+```
+
+# Comparison of Binomial CIs using a Smaller Sample
+
+In large samples, there is little difference between the four CIs for the binomial proportion. To illustrate the differences between the four CIs more clearly, we calculate CIs for the prevalence of obesity using a random subsample of 100 subjects from the NHANES dataset. Using this subset,  the 96.875\% likelihood ratio CI is $(0.2350,0.4354)$. The Wald interval of the logit scale $(0.2375,0.4378)$ and the Wilson (score) interval $(0.2382,0.4313)$ are closer to the likelihood ratio interval than the Wald interval on the probability scale $(0.2287,0.4313)$.
+
+
+```{r sample, engine="sashtml5", engine.path=saspath, collectcode=TRUE, error=TRUE}
+ODS SELECT NONE;
+PROC SURVEYSELECT DATA=Ron METHOD=srs N=100 SEED=20201229 OUT=SampleRon;
+RUN;
+ODS SELECT ALL;
+
+ODS NOPROCTITLE;
+PROC FREQ DATA=SampleRon;
+	ODS SELECT BinomialCLs;
+	TABLES Obese / BINOMIAL(LR LOGIT WALD WILSON LEVEL="Yes") ALPHA=0.03125;
+RUN;
+```
+
+# Which Test/CI to Use
+
+All else being equal, the **likelihood ratio test** is the best approach for hypothesis testing.  The major downside of the likelihood ratio test is the need to estimate multiple models (one for every hypothesis being tested), but, with modern computing, this is usually not a serious concern. For confidence intervals, the simpler Wald intervals are often used instead of profile likelihood confidence intervals, because of the computational challenges (many model fits required) in finding the profile likelihood confidence intervals and the similarity of the two intervals in the vast majority of situations.  The score test is most useful for screening omitted variables (model checking) when the number of candidate predictor variables is large.  In most situations, score confidence intervals require just as much computational effort as the preferred likelihood ratio intervals.  The Wilson interval for the binomial proportion is the rare exception.
