@@ -1,0 +1,4680 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://odamid-usw2.oda.sas.com/SASStudio/sasexec/submissions/833da084-dad1-4369-bc2a-420de05a9038/results -->
+<html class="ods_833da084-dad1-4369-bc2a-420de05a9038" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="SAS 9.4" name="generator">
+<title>Results: NHANES_Import.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c section > table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c section > pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c div > table,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c div > pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c article > table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c article > pre,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j section > table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j section > pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j div > table,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j div > pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j article > table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j article > pre,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c p.note, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c p.fatal,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j p.note, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j p.fatal,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body.c > table.layoutcontainer, .ods_833da084-dad1-4369-bc2a-420de05a9038 .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l p.note,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.l p.fatal { margin-left: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c p.note,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r p.note,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r table, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r pre, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r p.note,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion.r p.fatal { margin-right: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 article, .ods_833da084-dad1-4369-bc2a-420de05a9038 aside, .ods_833da084-dad1-4369-bc2a-420de05a9038 details, .ods_833da084-dad1-4369-bc2a-420de05a9038 figcaption, .ods_833da084-dad1-4369-bc2a-420de05a9038 figure, .ods_833da084-dad1-4369-bc2a-420de05a9038 footer, .ods_833da084-dad1-4369-bc2a-420de05a9038 header, .ods_833da084-dad1-4369-bc2a-420de05a9038 hgroup, .ods_833da084-dad1-4369-bc2a-420de05a9038 nav, .ods_833da084-dad1-4369-bc2a-420de05a9038 section { display: block }
+html.ods_833da084-dad1-4369-bc2a-420de05a9038 { font-size: 100% }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 ul, .ods_833da084-dad1-4369-bc2a-420de05a9038 ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 dd { margin: 0 0 0 40px }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 nav ul, .ods_833da084-dad1-4369-bc2a-420de05a9038 nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 img { border: 0; vertical-align: middle }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 svg:not(:root) { overflow: hidden }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 figure { margin: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 table { border-collapse: collapse; border-spacing: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 p { margin-top: 0; text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h1.heading1 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h2.heading2 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h3.heading3 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h4.heading4 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h5.heading5 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 h6.heading6 { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 span { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 table { margin-bottom: 1em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 td, .ods_833da084-dad1-4369-bc2a-420de05a9038 th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 td[class$="fixed"], .ods_833da084-dad1-4369-bc2a-420de05a9038 th[class$="fixed"] { white-space: pre }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 section, .ods_833da084-dad1-4369-bc2a-420de05a9038 article { padding-top: 1px; padding-bottom: 8px }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .stacked-value { text-align: left; display: block }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .stacked-cell > .stacked-value, .ods_833da084-dad1-4369-bc2a-420de05a9038 td.data > td.data, .ods_833da084-dad1-4369-bc2a-420de05a9038 th.data > td.data, .ods_833da084-dad1-4369-bc2a-420de05a9038 th.data > th.data, .ods_833da084-dad1-4369-bc2a-420de05a9038 td.data > th.data, .ods_833da084-dad1-4369-bc2a-420de05a9038 th.header > th.header { border: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .stacked-cell > div.data { border-width: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > p { margin: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .batch { display: table }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .toc { display: none }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .proc_note_group, .ods_833da084-dad1-4369-bc2a-420de05a9038 .proc_title_group { margin-bottom: 1em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 p.proctitle { margin: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 p.note, .ods_833da084-dad1-4369-bc2a-420de05a9038 p.warning, .ods_833da084-dad1-4369-bc2a-420de05a9038 p.error, .ods_833da084-dad1-4369-bc2a-420de05a9038 p.fatal { display: table }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notebanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .warnbanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .errorbanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalbanner,
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notecontent, .ods_833da084-dad1-4369-bc2a-420de05a9038 .warncontent, .ods_833da084-dad1-4369-bc2a-420de05a9038 .errorcontent, .ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notebanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .warnbanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .errorbanner, .ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalbanner { padding-right: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body > div > ol li { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .c { text-align: center }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .r { text-align: right }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .l { text-align: left }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .j { text-align: justify }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .d { text-align: right }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .b { vertical-align: bottom }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .m { vertical-align: middle }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .t { vertical-align: top }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 a:active { color: #800080 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .batch > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .batch > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .batch { border: hidden; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > colgroup > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > colgroup, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > * > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer > tfoot { border: none; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .cell, .ods_833da084-dad1-4369-bc2a-420de05a9038 .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .contentfolder, .ods_833da084-dad1-4369-bc2a-420de05a9038 .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .contentproclabel, .ods_833da084-dad1-4369-bc2a-420de05a9038 .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .data, .ods_833da084-dad1-4369-bc2a-420de05a9038 .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .graph > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .graph > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .graph { border: hidden; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .heading1, .ods_833da084-dad1-4369-bc2a-420de05a9038 .heading2, .ods_833da084-dad1-4369-bc2a-420de05a9038 .heading3, .ods_833da084-dad1-4369-bc2a-420de05a9038 .heading4, .ods_833da084-dad1-4369-bc2a-420de05a9038 .heading5, .ods_833da084-dad1-4369-bc2a-420de05a9038 .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .indexaction, .ods_833da084-dad1-4369-bc2a-420de05a9038 .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutcontainer, .ods_833da084-dad1-4369-bc2a-420de05a9038 .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 a:link { color: #0000ff }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .list3, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list4, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list5, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list6, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list7, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list8, .ods_833da084-dad1-4369-bc2a-420de05a9038 .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem3, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem4, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem5, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem6, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem7, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem8, .ods_833da084-dad1-4369-bc2a-420de05a9038 .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .output > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .output > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .output { border: hidden; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pagesproclabel, .ods_833da084-dad1-4369-bc2a-420de05a9038 .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > colgroup > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > colgroup, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > * > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip > tfoot { border: none; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter10, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter2, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter3, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter4, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter5, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter6, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter7, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter8, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle10, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle2, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle3, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle4, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle5, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle6, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle7, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle8, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > colgroup > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > colgroup, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > * > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer > tfoot { border: none; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .table > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .table > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .table { border: hidden; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > colgroup > col, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > colgroup, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > * > tr, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > thead, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > tbody, .ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer > tfoot { border: none; }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 a:visited { color: #800080 }
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_833da084-dad1-4369-bc2a-420de05a9038 .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_833da084-dad1-4369-bc2a-420de05a9038" class="c body">
+<h1 class="body toc">Results: NHANES_Import.sas</h1>
+<section data-name="Contents" data-sec-type="proc">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">NHANES.NHANES</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">NHANES.NHANES</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">7235</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">51</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">11/25/2025 13:24:25</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">408</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">11/25/2025 13:24:25</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX1" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">23</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">295</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/home/u48718377/my_shared_file_links/u48718377/NHANES_09-12/nhanes.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M8</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">85377571</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u48718377</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">3MB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">3145728</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX2" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">Age</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Age (yrs)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">38</th>
+<td class="data">Alcohol12Plus</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">51</th>
+<td class="data">Alcohol12PlusYr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Consumed 12+ Alcoholic Drinks in 1 Year</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">39</th>
+<td class="data">AlcoholDay</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Average Number of Alcoholic Drinks Consumed on Days Participant Drank</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">40</th>
+<td class="data">AlcoholYear</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Days Drank Alcoholic Beverages in Past Year</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="data">BMI</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Body Mass Index (kg/m^2)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="data">BMI_WHO</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BMI_WHOF.</td>
+<td class="data">BMI Category</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">20</th>
+<td class="data">BPDiaAve</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Diastolic Blood Pressure (mmHg)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="data">BPSysAve</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Systolic Blood Pressure (mmHg)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">37</th>
+<td class="data">CompHrsDay</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">HRSDAYF.</td>
+<td class="data">Number of Hours per Day Used Computer or Gaming Device in Last 30 Days</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">27</th>
+<td class="data">DaysMentHlthBad</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Self-Reported Days Mental Health Not Good in Past 30 Days</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">26</th>
+<td class="data">DaysPhysHlthBad</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Self-Reported Days Physical Health Not Good in Past 30 Days</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">29</th>
+<td class="data">Depressed</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DEPRESSEDF.</td>
+<td class="data">Self-Reported Days Felt Down or Depressed or Hopeless</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">24</th>
+<td class="data">Diabetes</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Told Had Diabetes</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">22</th>
+<td class="data">DirectChol</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Direct HDL Cholesterol (mmol/L)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">Education</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">EDUCATIONF.</td>
+<td class="data">Educational Level</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">Gender</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">GENDERF.</td>
+<td class="data">Gender (Biological Sex)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">HHIncome</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">HHINCOMEF.</td>
+<td class="data">Household Income (Cat)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">HHIncomeMid</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Household Income (Midpoint of Category)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">45</th>
+<td class="data">HardDrugs</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Used Cocaine, Crack, Heroin or Methamphetamine</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25</th>
+<td class="data">HealthGen</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Self-Reported Rating of Health</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="data">Height</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Height (cm)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">HomeOwn</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">HOMEOWNF.</td>
+<td class="data">Home Ownership</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">HomeRooms</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Rooms in Home (13=13+)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">28</th>
+<td class="data">LittleInterest</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DEPRESSEDF.</td>
+<td class="data">Self-Reported Days Little Interest in Doing Things</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">43</th>
+<td class="data">Marijuana</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Used Marijuana</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">MaritalStatus</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">MARITALSTATUSF.</td>
+<td class="data">Marital Status</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="data">Obese</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Obese (BMI &gt; 30)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">34</th>
+<td class="data">PhysActive</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Any Moderate to Vigorous Physical Activity</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">35</th>
+<td class="data">PhysActiveDays</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Days of Moderate-to-Vigorous Physical Activity in Typical Week</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">Poverty</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Ratio of Household Income to Poverty Level</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="data">Pulse</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Pulse Rate (beats/min)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">Race1</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">RACE1F.</td>
+<td class="data">Self-Reported Race/Ethnicity (Asian=Other)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">Race3</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">RACE3F.</td>
+<td class="data">Self-Reported Race/Ethnicity</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">44</th>
+<td class="data">RegularMarij</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Used Marijuana Regularly (At Least Once a Month for At Least One Year)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">49</th>
+<td class="data">SameSex</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Had Sex with Same Sex Partner</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">46</th>
+<td class="data">SexEver</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Had Vaginal, Anal or Oral Sex</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">48</th>
+<td class="data">SexNumPartYear</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Opposite Sex Partners (Last Year)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">47</th>
+<td class="data">SexNumPartnLife</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Opposite Sex Partners (Lifetime)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">50</th>
+<td class="data">SexOrientation</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">SEXORIENTATIONF.</td>
+<td class="data">Self-Reported Sexual Orientation</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">32</th>
+<td class="data">SleepHrsNight</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Self-Reported Usual Hours of Sleep on Weekday/Workday</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">33</th>
+<td class="data">SleepTrouble</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Ever Told Had Trouble Sleeping</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">42</th>
+<td class="data">Smoke100</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Smoked At Least 100 Cigarettes in Lifetime</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">41</th>
+<td class="data">SmokeNow</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">YESNOF.</td>
+<td class="data">Currently Smoke Cigarettes Regularly</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">36</th>
+<td class="data">TVHrsDay</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">HRSDAYF.</td>
+<td class="data">Number of Hours per Day Watched TV in Last 30 Days</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">21</th>
+<td class="data">Testosterone</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Testosterone (ng/dL)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">23</th>
+<td class="data">TotChol</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Total Cholesterol (mmol/L)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="data">Weight</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Weight (kg)</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">Work</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">WORKF.</td>
+<td class="data">Employment Status</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">31</th>
+<td class="data">nBabies</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Live Births</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">30</th>
+<td class="data">nPregnancies</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&nbsp;</td>
+<td class="data">Number of Pregnancies</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Descriptive Statistics for Quantitative Variables</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col><col></colgroup><colgroup><col><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Label</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Median</th>
+<th class="r b header" scope="col">Lower Quartile</th>
+<th class="r b header" scope="col">Upper Quartile</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="data">
+<div class="stacked-cell">
+<div>Age</div>
+<div>HHIncomeMid</div>
+<div>Poverty</div>
+<div>HomeRooms</div>
+<div>Weight</div>
+<div>Height</div>
+<div>BMI</div>
+<div>Pulse</div>
+<div>BPSysAve</div>
+<div>BPDiaAve</div>
+<div>Testosterone</div>
+<div>DirectChol</div>
+<div>TotChol</div>
+<div>DaysPhysHlthBad</div>
+<div>DaysMentHlthBad</div>
+<div>nPregnancies</div>
+<div>nBabies</div>
+<div>SleepHrsNight</div>
+<div>PhysActiveDays</div>
+<div>AlcoholDay</div>
+<div>AlcoholYear</div>
+<div>SexNumPartnLife</div>
+<div>SexNumPartYear</div>
+</div>
+</th>
+<th class="data">
+<div class="stacked-cell">
+<div>Age (yrs)</div>
+<div>Household Income (Midpoint of Category)</div>
+<div>Ratio of Household Income to Poverty Level</div>
+<div>Number of Rooms in Home (13=13+)</div>
+<div>Weight (kg)</div>
+<div>Height (cm)</div>
+<div>Body Mass Index (kg/m^2)</div>
+<div>Pulse Rate (beats/min)</div>
+<div>Systolic Blood Pressure (mmHg)</div>
+<div>Diastolic Blood Pressure (mmHg)</div>
+<div>Testosterone (ng/dL)</div>
+<div>Direct HDL Cholesterol (mmol/L)</div>
+<div>Total Cholesterol (mmol/L)</div>
+<div>Self-Reported Days Physical Health Not Good in Past 30 Days</div>
+<div>Self-Reported Days Mental Health Not Good in Past 30 Days</div>
+<div>Number of Pregnancies</div>
+<div>Number of Live Births</div>
+<div>Self-Reported Usual Hours of Sleep on Weekday/Workday</div>
+<div>Number of Days of Moderate-to-Vigorous Physical Activity in Typical Week</div>
+<div>Average Number of Alcoholic Drinks Consumed on Days Participant Drank</div>
+<div>Number of Days Drank Alcoholic Beverages in Past Year</div>
+<div>Number of Opposite Sex Partners (Lifetime)</div>
+<div>Number of Opposite Sex Partners (Last Year)</div>
+</div>
+</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+<div class="r">7235</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">47.1712509</div>
+<div class="r">58238.42</div>
+<div class="r">2.9542557</div>
+<div class="r">6.1440221</div>
+<div class="r">82.2170836</div>
+<div class="r">168.8294955</div>
+<div class="r">28.7554388</div>
+<div class="r">72.4912232</div>
+<div class="r">120.9462336</div>
+<div class="r">70.2769869</div>
+<div class="r">259.3281686</div>
+<div class="r">1.3679737</div>
+<div class="r">5.0716158</div>
+<div class="r">3.4979959</div>
+<div class="r">4.2345543</div>
+<div class="r">1.2346925</div>
+<div class="r">0.9402903</div>
+<div class="r">6.8881824</div>
+<div class="r">3.7187284</div>
+<div class="r">2.5328265</div>
+<div class="r">71.4890117</div>
+<div class="r">17.8277816</div>
+<div class="r">1.2793366</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">16.9493497</div>
+<div class="r">32915.51</div>
+<div class="r">1.6709999</div>
+<div class="r">2.2593745</div>
+<div class="r">21.2080448</div>
+<div class="r">10.0929947</div>
+<div class="r">6.6488459</div>
+<div class="r">11.9203547</div>
+<div class="r">17.0953193</div>
+<div class="r">12.4390520</div>
+<div class="r">241.7633298</div>
+<div class="r">0.4163475</div>
+<div class="r">1.0600812</div>
+<div class="r">7.7181366</div>
+<div class="r">8.0522293</div>
+<div class="r">1.8610679</div>
+<div class="r">1.4169579</div>
+<div class="r">1.3366518</div>
+<div class="r">1.7836621</div>
+<div class="r">2.9683836</div>
+<div class="r">102.6857070</div>
+<div class="r">66.3797911</div>
+<div class="r">2.2980940</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">46.0000000</div>
+<div class="r">50000.00</div>
+<div class="r">2.9500000</div>
+<div class="r">6.0000000</div>
+<div class="r">79.5000000</div>
+<div class="r">168.7000000</div>
+<div class="r">27.7500000</div>
+<div class="r">72.0000000</div>
+<div class="r">119.0000000</div>
+<div class="r">71.0000000</div>
+<div class="r">248.8400000</div>
+<div class="r">1.2900000</div>
+<div class="r">4.9900000</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">7.0000000</div>
+<div class="r">3.0000000</div>
+<div class="r">2.0000000</div>
+<div class="r">24.0000000</div>
+<div class="r">6.0000000</div>
+<div class="r">1.0000000</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">33.0000000</div>
+<div class="r">30000.00</div>
+<div class="r">1.3600000</div>
+<div class="r">4.0000000</div>
+<div class="r">67.1000000</div>
+<div class="r">161.5000000</div>
+<div class="r">24.1000000</div>
+<div class="r">64.0000000</div>
+<div class="r">110.0000000</div>
+<div class="r">64.0000000</div>
+<div class="r">20.9700000</div>
+<div class="r">1.0600000</div>
+<div class="r">4.2900000</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">6.0000000</div>
+<div class="r">2.0000000</div>
+<div class="r">1.0000000</div>
+<div class="r">0</div>
+<div class="r">3.0000000</div>
+<div class="r">1.0000000</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">60.0000000</div>
+<div class="r">100000.00</div>
+<div class="r">5.0000000</div>
+<div class="r">7.0000000</div>
+<div class="r">94.1000000</div>
+<div class="r">176.1000000</div>
+<div class="r">32.2000000</div>
+<div class="r">80.0000000</div>
+<div class="r">129.0000000</div>
+<div class="r">78.0000000</div>
+<div class="r">429.2900000</div>
+<div class="r">1.6000000</div>
+<div class="r">5.7200000</div>
+<div class="r">3.0000000</div>
+<div class="r">4.0000000</div>
+<div class="r">2.0000000</div>
+<div class="r">2.0000000</div>
+<div class="r">8.0000000</div>
+<div class="r">5.0000000</div>
+<div class="r">3.0000000</div>
+<div class="r">104.0000000</div>
+<div class="r">15.0000000</div>
+<div class="r">1.0000000</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">20.0000000</div>
+<div class="r">2500.00</div>
+<div class="r">0</div>
+<div class="r">1.0000000</div>
+<div class="r">37.0000000</div>
+<div class="r">134.5000000</div>
+<div class="r">15.0200000</div>
+<div class="r">40.0000000</div>
+<div class="r">78.0000000</div>
+<div class="r">0</div>
+<div class="r">0.2500000</div>
+<div class="r">0.3900000</div>
+<div class="r">1.5300000</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">2.0000000</div>
+<div class="r">1.0000000</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+<div class="r">0</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">80.0000000</div>
+<div class="r">100000.00</div>
+<div class="r">5.0000000</div>
+<div class="r">13.0000000</div>
+<div class="r">230.7000000</div>
+<div class="r">200.4000000</div>
+<div class="r">81.2500000</div>
+<div class="r">136.0000000</div>
+<div class="r">226.0000000</div>
+<div class="r">116.0000000</div>
+<div class="r">1795.60</div>
+<div class="r">4.0300000</div>
+<div class="r">13.6500000</div>
+<div class="r">30.0000000</div>
+<div class="r">30.0000000</div>
+<div class="r">32.0000000</div>
+<div class="r">12.0000000</div>
+<div class="r">12.0000000</div>
+<div class="r">7.0000000</div>
+<div class="r">82.0000000</div>
+<div class="r">364.0000000</div>
+<div class="r">2000.00</div>
+<div class="r">69.0000000</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX4" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Frequency Tables for Categorical Variables, Formatted</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table Gender</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Gender (Biological Sex)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Gender</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">Male</th>
+<td class="r data">3552</td>
+<td class="r data">49.09</td>
+<td class="r data">3552</td>
+<td class="r data">49.09</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Female</th>
+<td class="r data">3683</td>
+<td class="r data">50.91</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX5">
+<h1 class="contentfolder toc">Table Race1</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Race/Ethnicity (Asian=Other)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Race1</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">White</th>
+<td class="r data">4849</td>
+<td class="r data">67.02</td>
+<td class="r data">4849</td>
+<td class="r data">67.02</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Black</th>
+<td class="r data">821</td>
+<td class="r data">11.35</td>
+<td class="r data">5670</td>
+<td class="r data">78.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Mexican</th>
+<td class="r data">601</td>
+<td class="r data">8.31</td>
+<td class="r data">6271</td>
+<td class="r data">86.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Hispanic</th>
+<td class="r data">416</td>
+<td class="r data">5.75</td>
+<td class="r data">6687</td>
+<td class="r data">92.43</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Other</th>
+<td class="r data">548</td>
+<td class="r data">7.57</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX6">
+<h1 class="contentfolder toc">Table Race3</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Race/Ethnicity</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Race3</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">White</th>
+<td class="r data">5115</td>
+<td class="r data">70.70</td>
+<td class="r data">5115</td>
+<td class="r data">70.70</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Black</th>
+<td class="r data">641</td>
+<td class="r data">8.86</td>
+<td class="r data">5756</td>
+<td class="r data">79.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Mexican</th>
+<td class="r data">621</td>
+<td class="r data">8.58</td>
+<td class="r data">6377</td>
+<td class="r data">88.14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Hispanic</th>
+<td class="r data">344</td>
+<td class="r data">4.75</td>
+<td class="r data">6721</td>
+<td class="r data">92.90</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Asian</th>
+<td class="r data">324</td>
+<td class="r data">4.48</td>
+<td class="r data">7045</td>
+<td class="r data">97.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Other</th>
+<td class="r data">190</td>
+<td class="r data">2.63</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX7">
+<h1 class="contentfolder toc">Table Education</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Educational Level</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Education</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">8th Grade or Lower</th>
+<td class="r data">452</td>
+<td class="r data">6.25</td>
+<td class="r data">452</td>
+<td class="r data">6.25</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9-11th Grade</th>
+<td class="r data">889</td>
+<td class="r data">12.29</td>
+<td class="r data">1341</td>
+<td class="r data">18.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">High School Grad</th>
+<td class="r data">1521</td>
+<td class="r data">21.02</td>
+<td class="r data">2862</td>
+<td class="r data">39.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Some College</th>
+<td class="r data">2272</td>
+<td class="r data">31.40</td>
+<td class="r data">5134</td>
+<td class="r data">70.96</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">College Grad</th>
+<td class="r data">2101</td>
+<td class="r data">29.04</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX8">
+<h1 class="contentfolder toc">Table MaritalStatus</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Marital Status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">MaritalStatus</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">Married</th>
+<td class="r data">3948</td>
+<td class="r data">54.57</td>
+<td class="r data">3948</td>
+<td class="r data">54.57</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Never Married</th>
+<td class="r data">1381</td>
+<td class="r data">19.09</td>
+<td class="r data">5329</td>
+<td class="r data">73.66</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Divorced</th>
+<td class="r data">707</td>
+<td class="r data">9.77</td>
+<td class="r data">6036</td>
+<td class="r data">83.43</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Live with Partner</th>
+<td class="r data">560</td>
+<td class="r data">7.74</td>
+<td class="r data">6596</td>
+<td class="r data">91.17</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Widowed</th>
+<td class="r data">456</td>
+<td class="r data">6.30</td>
+<td class="r data">7052</td>
+<td class="r data">97.47</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Separated</th>
+<td class="r data">183</td>
+<td class="r data">2.53</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX9">
+<h1 class="contentfolder toc">Table HHIncome</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Household Income (Cat)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HHIncome</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">$0-4,999</th>
+<td class="r data">139</td>
+<td class="r data">1.92</td>
+<td class="r data">139</td>
+<td class="r data">1.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$5,000-9,999</th>
+<td class="r data">182</td>
+<td class="r data">2.52</td>
+<td class="r data">321</td>
+<td class="r data">4.44</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$10,000-14,999</th>
+<td class="r data">436</td>
+<td class="r data">6.03</td>
+<td class="r data">757</td>
+<td class="r data">10.46</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$15,000-19,999</th>
+<td class="r data">388</td>
+<td class="r data">5.36</td>
+<td class="r data">1145</td>
+<td class="r data">15.83</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$20,000-24,999</th>
+<td class="r data">443</td>
+<td class="r data">6.12</td>
+<td class="r data">1588</td>
+<td class="r data">21.95</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$25,000-34,999</th>
+<td class="r data">740</td>
+<td class="r data">10.23</td>
+<td class="r data">2328</td>
+<td class="r data">32.18</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$35,000-44,999</th>
+<td class="r data">684</td>
+<td class="r data">9.45</td>
+<td class="r data">3012</td>
+<td class="r data">41.63</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$45,000-54,999</th>
+<td class="r data">609</td>
+<td class="r data">8.42</td>
+<td class="r data">3621</td>
+<td class="r data">50.05</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$55,000-64,999</th>
+<td class="r data">487</td>
+<td class="r data">6.73</td>
+<td class="r data">4108</td>
+<td class="r data">56.78</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$65,000-74,999</th>
+<td class="r data">459</td>
+<td class="r data">6.34</td>
+<td class="r data">4567</td>
+<td class="r data">63.12</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$75,000-99,999</th>
+<td class="r data">858</td>
+<td class="r data">11.86</td>
+<td class="r data">5425</td>
+<td class="r data">74.98</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">$100,000+</th>
+<td class="r data">1810</td>
+<td class="r data">25.02</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX10">
+<h1 class="contentfolder toc">Table Work</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Employment Status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Work</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">Working</th>
+<td class="r data">4433</td>
+<td class="r data">61.27</td>
+<td class="r data">4433</td>
+<td class="r data">61.27</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Looking</th>
+<td class="r data">264</td>
+<td class="r data">3.65</td>
+<td class="r data">4697</td>
+<td class="r data">64.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Not Working</th>
+<td class="r data">2538</td>
+<td class="r data">35.08</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX11">
+<h1 class="contentfolder toc">Table HomeOwn</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Home Ownership</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HomeOwn</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">Own</th>
+<td class="r data">4813</td>
+<td class="r data">66.52</td>
+<td class="r data">4813</td>
+<td class="r data">66.52</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Rent</th>
+<td class="r data">2254</td>
+<td class="r data">31.15</td>
+<td class="r data">7067</td>
+<td class="r data">97.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Other</th>
+<td class="r data">168</td>
+<td class="r data">2.32</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX12">
+<h1 class="contentfolder toc">Table BMI_WHO</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">BMI Category</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">BMI_WHO</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">12.0-18.4</th>
+<td class="r data">125</td>
+<td class="r data">1.73</td>
+<td class="r data">125</td>
+<td class="r data">1.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18.5-24.9</th>
+<td class="r data">2090</td>
+<td class="r data">28.89</td>
+<td class="r data">2215</td>
+<td class="r data">30.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25.0-29.9</th>
+<td class="r data">2421</td>
+<td class="r data">33.46</td>
+<td class="r data">4636</td>
+<td class="r data">64.08</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">30.0+</th>
+<td class="r data">2599</td>
+<td class="r data">35.92</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX13">
+<h1 class="contentfolder toc">Table Obese</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Obese (BMI &gt; 30)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Obese</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">4643</td>
+<td class="r data">64.17</td>
+<td class="r data">4643</td>
+<td class="r data">64.17</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">2592</td>
+<td class="r data">35.83</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX14">
+<h1 class="contentfolder toc">Table Diabetes</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Told Had Diabetes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Diabetes</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">6492</td>
+<td class="r data">89.73</td>
+<td class="r data">6492</td>
+<td class="r data">89.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">743</td>
+<td class="r data">10.27</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX15">
+<h1 class="contentfolder toc">Table HealthGen</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Rating of Health</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HealthGen</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">782</td>
+<td class="r data">10.81</td>
+<td class="r data">782</td>
+<td class="r data">10.81</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">2303</td>
+<td class="r data">31.83</td>
+<td class="r data">3085</td>
+<td class="r data">42.64</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">2930</td>
+<td class="r data">40.50</td>
+<td class="r data">6015</td>
+<td class="r data">83.14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">1030</td>
+<td class="r data">14.24</td>
+<td class="r data">7045</td>
+<td class="r data">97.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">190</td>
+<td class="r data">2.63</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX16">
+<h1 class="contentfolder toc">Table LittleInterest</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Days Little Interest in Doing Things</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">LittleInterest</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">None</th>
+<td class="r data">5542</td>
+<td class="r data">76.60</td>
+<td class="r data">5542</td>
+<td class="r data">76.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Several</th>
+<td class="r data">1220</td>
+<td class="r data">16.86</td>
+<td class="r data">6762</td>
+<td class="r data">93.46</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Most</th>
+<td class="r data">473</td>
+<td class="r data">6.54</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX17">
+<h1 class="contentfolder toc">Table Depressed</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Days Felt Down or Depressed or Hopeless</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Depressed</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">None</th>
+<td class="r data">5651</td>
+<td class="r data">78.11</td>
+<td class="r data">5651</td>
+<td class="r data">78.11</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Several</th>
+<td class="r data">1114</td>
+<td class="r data">15.40</td>
+<td class="r data">6765</td>
+<td class="r data">93.50</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Most</th>
+<td class="r data">470</td>
+<td class="r data">6.50</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX18">
+<h1 class="contentfolder toc">Table SleepTrouble</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Told Had Trouble Sleeping</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SleepTrouble</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">5325</td>
+<td class="r data">73.60</td>
+<td class="r data">5325</td>
+<td class="r data">73.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">1910</td>
+<td class="r data">26.40</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX19">
+<h1 class="contentfolder toc">Table PhysActive</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Any Moderate to Vigorous Physical Activity</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">PhysActive</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">3439</td>
+<td class="r data">47.53</td>
+<td class="r data">3439</td>
+<td class="r data">47.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3796</td>
+<td class="r data">52.47</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX20">
+<h1 class="contentfolder toc">Table TVHrsDay</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Number of Hours per Day Watched TV in Last 30 Days</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">TVHrsDay</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">116</td>
+<td class="r data">1.60</td>
+<td class="r data">116</td>
+<td class="r data">1.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">0-1</th>
+<td class="r data">911</td>
+<td class="r data">12.59</td>
+<td class="r data">1027</td>
+<td class="r data">14.19</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1262</td>
+<td class="r data">17.44</td>
+<td class="r data">2289</td>
+<td class="r data">31.64</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1807</td>
+<td class="r data">24.98</td>
+<td class="r data">4096</td>
+<td class="r data">56.61</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">1155</td>
+<td class="r data">15.96</td>
+<td class="r data">5251</td>
+<td class="r data">72.58</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">919</td>
+<td class="r data">12.70</td>
+<td class="r data">6170</td>
+<td class="r data">85.28</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">&gt;4</th>
+<td class="r data">1065</td>
+<td class="r data">14.72</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX21">
+<h1 class="contentfolder toc">Table CompHrsDay</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Number of Hours per Day Used Computer or Gaming Device in Last 30 Days</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">CompHrsDay</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">1555</td>
+<td class="r data">21.49</td>
+<td class="r data">1555</td>
+<td class="r data">21.49</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">0-1</th>
+<td class="r data">1995</td>
+<td class="r data">27.57</td>
+<td class="r data">3550</td>
+<td class="r data">49.07</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1634</td>
+<td class="r data">22.58</td>
+<td class="r data">5184</td>
+<td class="r data">71.65</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">875</td>
+<td class="r data">12.09</td>
+<td class="r data">6059</td>
+<td class="r data">83.75</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">353</td>
+<td class="r data">4.88</td>
+<td class="r data">6412</td>
+<td class="r data">88.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">383</td>
+<td class="r data">5.29</td>
+<td class="r data">6795</td>
+<td class="r data">93.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">&gt;4</th>
+<td class="r data">440</td>
+<td class="r data">6.08</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX22">
+<h1 class="contentfolder toc">Table Alcohol12Plus</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">Alcohol12Plus</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">1368</td>
+<td class="r data">18.91</td>
+<td class="r data">1368</td>
+<td class="r data">18.91</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5867</td>
+<td class="r data">81.09</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX23">
+<h1 class="contentfolder toc">Table SmokeNow</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Currently Smoke Cigarettes Regularly</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SmokeNow</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">3654</td>
+<td class="r data">50.50</td>
+<td class="r data">3654</td>
+<td class="r data">50.50</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">3581</td>
+<td class="r data">49.50</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX24">
+<h1 class="contentfolder toc">Table Smoke100</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Smoked At Least 100 Cigarettes in Lifetime</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Smoke100</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">4024</td>
+<td class="r data">55.62</td>
+<td class="r data">4024</td>
+<td class="r data">55.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">3211</td>
+<td class="r data">44.38</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX25">
+<h1 class="contentfolder toc">Table Marijuana</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Marijuana</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Marijuana</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">2457</td>
+<td class="r data">33.96</td>
+<td class="r data">2457</td>
+<td class="r data">33.96</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">4778</td>
+<td class="r data">66.04</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX26">
+<h1 class="contentfolder toc">Table RegularMarij</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Marijuana Regularly (At Least Once a Month for At Least One Year)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">RegularMarij</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">4698</td>
+<td class="r data">64.93</td>
+<td class="r data">4698</td>
+<td class="r data">64.93</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">2537</td>
+<td class="r data">35.07</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX27">
+<h1 class="contentfolder toc">Table HardDrugs</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Cocaine, Crack, Heroin or Methamphetamine</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HardDrugs</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">5600</td>
+<td class="r data">77.40</td>
+<td class="r data">5600</td>
+<td class="r data">77.40</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">1635</td>
+<td class="r data">22.60</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX28">
+<h1 class="contentfolder toc">Table SexEver</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Had Vaginal, Anal or Oral Sex</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SexEver</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">189</td>
+<td class="r data">2.61</td>
+<td class="r data">189</td>
+<td class="r data">2.61</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">7046</td>
+<td class="r data">97.39</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX29">
+<h1 class="contentfolder toc">Table SameSex</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Had Sex with Same Sex Partner</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SameSex</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">No</th>
+<td class="r data">6654</td>
+<td class="r data">91.97</td>
+<td class="r data">6654</td>
+<td class="r data">91.97</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Yes</th>
+<td class="r data">581</td>
+<td class="r data">8.03</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX30">
+<h1 class="contentfolder toc">Table SexOrientation</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Sexual Orientation</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SexOrientation</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">Heterosexual</th>
+<td class="r data">6866</td>
+<td class="r data">94.90</td>
+<td class="r data">6866</td>
+<td class="r data">94.90</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Homosexual</th>
+<td class="r data">195</td>
+<td class="r data">2.70</td>
+<td class="r data">7061</td>
+<td class="r data">97.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Bisexual</th>
+<td class="r data">174</td>
+<td class="r data">2.40</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX31" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Frequency Tables for Categorical Variables, Unformatted</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table Gender</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Gender (Biological Sex)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Gender</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3552</td>
+<td class="r data">49.09</td>
+<td class="r data">3552</td>
+<td class="r data">49.09</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">3683</td>
+<td class="r data">50.91</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX32">
+<h1 class="contentfolder toc">Table Race1</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Race/Ethnicity (Asian=Other)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Race1</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">4849</td>
+<td class="r data">67.02</td>
+<td class="r data">4849</td>
+<td class="r data">67.02</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">821</td>
+<td class="r data">11.35</td>
+<td class="r data">5670</td>
+<td class="r data">78.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">601</td>
+<td class="r data">8.31</td>
+<td class="r data">6271</td>
+<td class="r data">86.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">416</td>
+<td class="r data">5.75</td>
+<td class="r data">6687</td>
+<td class="r data">92.43</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">548</td>
+<td class="r data">7.57</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX33">
+<h1 class="contentfolder toc">Table Race3</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Race/Ethnicity</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Race3</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5115</td>
+<td class="r data">70.70</td>
+<td class="r data">5115</td>
+<td class="r data">70.70</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">641</td>
+<td class="r data">8.86</td>
+<td class="r data">5756</td>
+<td class="r data">79.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">621</td>
+<td class="r data">8.58</td>
+<td class="r data">6377</td>
+<td class="r data">88.14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">344</td>
+<td class="r data">4.75</td>
+<td class="r data">6721</td>
+<td class="r data">92.90</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">324</td>
+<td class="r data">4.48</td>
+<td class="r data">7045</td>
+<td class="r data">97.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">190</td>
+<td class="r data">2.63</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX34">
+<h1 class="contentfolder toc">Table Education</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Educational Level</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Education</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">452</td>
+<td class="r data">6.25</td>
+<td class="r data">452</td>
+<td class="r data">6.25</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">889</td>
+<td class="r data">12.29</td>
+<td class="r data">1341</td>
+<td class="r data">18.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">1521</td>
+<td class="r data">21.02</td>
+<td class="r data">2862</td>
+<td class="r data">39.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">2272</td>
+<td class="r data">31.40</td>
+<td class="r data">5134</td>
+<td class="r data">70.96</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">2101</td>
+<td class="r data">29.04</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX35">
+<h1 class="contentfolder toc">Table MaritalStatus</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Marital Status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">MaritalStatus</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3948</td>
+<td class="r data">54.57</td>
+<td class="r data">3948</td>
+<td class="r data">54.57</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1381</td>
+<td class="r data">19.09</td>
+<td class="r data">5329</td>
+<td class="r data">73.66</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">707</td>
+<td class="r data">9.77</td>
+<td class="r data">6036</td>
+<td class="r data">83.43</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">560</td>
+<td class="r data">7.74</td>
+<td class="r data">6596</td>
+<td class="r data">91.17</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">456</td>
+<td class="r data">6.30</td>
+<td class="r data">7052</td>
+<td class="r data">97.47</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">183</td>
+<td class="r data">2.53</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX36">
+<h1 class="contentfolder toc">Table HHIncome</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Household Income (Cat)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HHIncome</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">139</td>
+<td class="r data">1.92</td>
+<td class="r data">139</td>
+<td class="r data">1.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">182</td>
+<td class="r data">2.52</td>
+<td class="r data">321</td>
+<td class="r data">4.44</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">436</td>
+<td class="r data">6.03</td>
+<td class="r data">757</td>
+<td class="r data">10.46</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">388</td>
+<td class="r data">5.36</td>
+<td class="r data">1145</td>
+<td class="r data">15.83</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">443</td>
+<td class="r data">6.12</td>
+<td class="r data">1588</td>
+<td class="r data">21.95</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">740</td>
+<td class="r data">10.23</td>
+<td class="r data">2328</td>
+<td class="r data">32.18</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">684</td>
+<td class="r data">9.45</td>
+<td class="r data">3012</td>
+<td class="r data">41.63</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="r data">609</td>
+<td class="r data">8.42</td>
+<td class="r data">3621</td>
+<td class="r data">50.05</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="r data">487</td>
+<td class="r data">6.73</td>
+<td class="r data">4108</td>
+<td class="r data">56.78</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="r data">459</td>
+<td class="r data">6.34</td>
+<td class="r data">4567</td>
+<td class="r data">63.12</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="r data">858</td>
+<td class="r data">11.86</td>
+<td class="r data">5425</td>
+<td class="r data">74.98</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="r data">1810</td>
+<td class="r data">25.02</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX37">
+<h1 class="contentfolder toc">Table Work</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Employment Status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Work</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">4433</td>
+<td class="r data">61.27</td>
+<td class="r data">4433</td>
+<td class="r data">61.27</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">264</td>
+<td class="r data">3.65</td>
+<td class="r data">4697</td>
+<td class="r data">64.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">2538</td>
+<td class="r data">35.08</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX38">
+<h1 class="contentfolder toc">Table HomeOwn</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Home Ownership</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HomeOwn</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">4813</td>
+<td class="r data">66.52</td>
+<td class="r data">4813</td>
+<td class="r data">66.52</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">2254</td>
+<td class="r data">31.15</td>
+<td class="r data">7067</td>
+<td class="r data">97.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">168</td>
+<td class="r data">2.32</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX39">
+<h1 class="contentfolder toc">Table BMI_WHO</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">BMI Category</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">BMI_WHO</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">125</td>
+<td class="r data">1.73</td>
+<td class="r data">125</td>
+<td class="r data">1.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">2090</td>
+<td class="r data">28.89</td>
+<td class="r data">2215</td>
+<td class="r data">30.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">2421</td>
+<td class="r data">33.46</td>
+<td class="r data">4636</td>
+<td class="r data">64.08</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">2599</td>
+<td class="r data">35.92</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX40">
+<h1 class="contentfolder toc">Table Obese</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Obese (BMI &gt; 30)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Obese</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">4643</td>
+<td class="r data">64.17</td>
+<td class="r data">4643</td>
+<td class="r data">64.17</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">2592</td>
+<td class="r data">35.83</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX41">
+<h1 class="contentfolder toc">Table Diabetes</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Told Had Diabetes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Diabetes</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">6492</td>
+<td class="r data">89.73</td>
+<td class="r data">6492</td>
+<td class="r data">89.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">743</td>
+<td class="r data">10.27</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX42">
+<h1 class="contentfolder toc">Table HealthGen</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Rating of Health</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HealthGen</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">782</td>
+<td class="r data">10.81</td>
+<td class="r data">782</td>
+<td class="r data">10.81</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">2303</td>
+<td class="r data">31.83</td>
+<td class="r data">3085</td>
+<td class="r data">42.64</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">2930</td>
+<td class="r data">40.50</td>
+<td class="r data">6015</td>
+<td class="r data">83.14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">1030</td>
+<td class="r data">14.24</td>
+<td class="r data">7045</td>
+<td class="r data">97.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">190</td>
+<td class="r data">2.63</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX43">
+<h1 class="contentfolder toc">Table LittleInterest</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Days Little Interest in Doing Things</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">LittleInterest</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5542</td>
+<td class="r data">76.60</td>
+<td class="r data">5542</td>
+<td class="r data">76.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1220</td>
+<td class="r data">16.86</td>
+<td class="r data">6762</td>
+<td class="r data">93.46</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">473</td>
+<td class="r data">6.54</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX44">
+<h1 class="contentfolder toc">Table Depressed</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Days Felt Down or Depressed or Hopeless</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Depressed</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5651</td>
+<td class="r data">78.11</td>
+<td class="r data">5651</td>
+<td class="r data">78.11</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1114</td>
+<td class="r data">15.40</td>
+<td class="r data">6765</td>
+<td class="r data">93.50</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">470</td>
+<td class="r data">6.50</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX45">
+<h1 class="contentfolder toc">Table SleepTrouble</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Told Had Trouble Sleeping</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SleepTrouble</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">5325</td>
+<td class="r data">73.60</td>
+<td class="r data">5325</td>
+<td class="r data">73.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1910</td>
+<td class="r data">26.40</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX46">
+<h1 class="contentfolder toc">Table PhysActive</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Any Moderate to Vigorous Physical Activity</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">PhysActive</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">3439</td>
+<td class="r data">47.53</td>
+<td class="r data">3439</td>
+<td class="r data">47.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3796</td>
+<td class="r data">52.47</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX47">
+<h1 class="contentfolder toc">Table TVHrsDay</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Number of Hours per Day Watched TV in Last 30 Days</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">TVHrsDay</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">116</td>
+<td class="r data">1.60</td>
+<td class="r data">116</td>
+<td class="r data">1.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">911</td>
+<td class="r data">12.59</td>
+<td class="r data">1027</td>
+<td class="r data">14.19</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">1262</td>
+<td class="r data">17.44</td>
+<td class="r data">2289</td>
+<td class="r data">31.64</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">1807</td>
+<td class="r data">24.98</td>
+<td class="r data">4096</td>
+<td class="r data">56.61</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">1155</td>
+<td class="r data">15.96</td>
+<td class="r data">5251</td>
+<td class="r data">72.58</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">919</td>
+<td class="r data">12.70</td>
+<td class="r data">6170</td>
+<td class="r data">85.28</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">1065</td>
+<td class="r data">14.72</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX48">
+<h1 class="contentfolder toc">Table CompHrsDay</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Number of Hours per Day Used Computer or Gaming Device in Last 30 Days</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">CompHrsDay</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1555</td>
+<td class="r data">21.49</td>
+<td class="r data">1555</td>
+<td class="r data">21.49</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1995</td>
+<td class="r data">27.57</td>
+<td class="r data">3550</td>
+<td class="r data">49.07</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">1634</td>
+<td class="r data">22.58</td>
+<td class="r data">5184</td>
+<td class="r data">71.65</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">875</td>
+<td class="r data">12.09</td>
+<td class="r data">6059</td>
+<td class="r data">83.75</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">353</td>
+<td class="r data">4.88</td>
+<td class="r data">6412</td>
+<td class="r data">88.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">383</td>
+<td class="r data">5.29</td>
+<td class="r data">6795</td>
+<td class="r data">93.92</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">440</td>
+<td class="r data">6.08</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX49">
+<h1 class="contentfolder toc">Table Alcohol12Plus</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">Alcohol12Plus</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">1368</td>
+<td class="r data">18.91</td>
+<td class="r data">1368</td>
+<td class="r data">18.91</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">5867</td>
+<td class="r data">81.09</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX50">
+<h1 class="contentfolder toc">Table SmokeNow</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Currently Smoke Cigarettes Regularly</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SmokeNow</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">3654</td>
+<td class="r data">50.50</td>
+<td class="r data">3654</td>
+<td class="r data">50.50</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3581</td>
+<td class="r data">49.50</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX51">
+<h1 class="contentfolder toc">Table Smoke100</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Smoked At Least 100 Cigarettes in Lifetime</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Smoke100</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">4024</td>
+<td class="r data">55.62</td>
+<td class="r data">4024</td>
+<td class="r data">55.62</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">3211</td>
+<td class="r data">44.38</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX52">
+<h1 class="contentfolder toc">Table Marijuana</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Marijuana</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Marijuana</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">2457</td>
+<td class="r data">33.96</td>
+<td class="r data">2457</td>
+<td class="r data">33.96</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">4778</td>
+<td class="r data">66.04</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX53">
+<h1 class="contentfolder toc">Table RegularMarij</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Marijuana Regularly (At Least Once a Month for At Least One Year)</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">RegularMarij</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">4698</td>
+<td class="r data">64.93</td>
+<td class="r data">4698</td>
+<td class="r data">64.93</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">2537</td>
+<td class="r data">35.07</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX54">
+<h1 class="contentfolder toc">Table HardDrugs</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Used Cocaine, Crack, Heroin or Methamphetamine</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HardDrugs</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">5600</td>
+<td class="r data">77.40</td>
+<td class="r data">5600</td>
+<td class="r data">77.40</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1635</td>
+<td class="r data">22.60</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX55">
+<h1 class="contentfolder toc">Table SexEver</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Had Vaginal, Anal or Oral Sex</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SexEver</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">189</td>
+<td class="r data">2.61</td>
+<td class="r data">189</td>
+<td class="r data">2.61</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">7046</td>
+<td class="r data">97.39</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX56">
+<h1 class="contentfolder toc">Table SameSex</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ever Had Sex with Same Sex Partner</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SameSex</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">6654</td>
+<td class="r data">91.97</td>
+<td class="r data">6654</td>
+<td class="r data">91.97</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">581</td>
+<td class="r data">8.03</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX57">
+<h1 class="contentfolder toc">Table SexOrientation</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Self-Reported Sexual Orientation</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">SexOrientation</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">6866</td>
+<td class="r data">94.90</td>
+<td class="r data">6866</td>
+<td class="r data">94.90</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">195</td>
+<td class="r data">2.70</td>
+<td class="r data">7061</td>
+<td class="r data">97.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">174</td>
+<td class="r data">2.40</td>
+<td class="r data">7235</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+</div>
+
+
+</body></html>
