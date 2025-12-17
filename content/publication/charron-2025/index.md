@@ -9,7 +9,7 @@ featured: false
 publication: "*Journal of Planning Education and Research*"
 publication_short: "*J Plan Edu Res*"
 url_pdf: charron-2025.pdf
-doi:  10.1177/0739456X2513562
+doi:  https://doi.org/10.1177/0739456X251356247
 projects: 
 ---
 
