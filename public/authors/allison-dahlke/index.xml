@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Allison Dahlke | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/allison-dahlke/</link>
+      <atom:link href="https://rgangnon.org/authors/allison-dahlke/index.xml" rel="self" type="application/rss+xml" />
+    <description>Allison Dahlke</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Allison Dahlke</title>
+      <link>https://rgangnon.org/authors/allison-dahlke/</link>
+    </image>
+    
+    <item>
+      <title>Application of the Population Health Institute Model of Health for Identifying Cancer Catchment Area Priorities</title>
+      <link>https://rgangnon.org/publication/trenthamdietz-2026/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/trenthamdietz-2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
