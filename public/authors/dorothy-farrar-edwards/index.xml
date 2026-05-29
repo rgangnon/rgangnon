@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dorothy Farrar Edwards | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/dorothy-farrar-edwards/</link>
+      <atom:link href="https://rgangnon.org/authors/dorothy-farrar-edwards/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dorothy Farrar Edwards</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 29 May 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Dorothy Farrar Edwards</title>
+      <link>https://rgangnon.org/authors/dorothy-farrar-edwards/</link>
+    </image>
+    
+    <item>
+      <title>Long COVID risk by pre-infection symptoms and functional status: A retrospective cohort study of data from the All of Us Research Program</title>
+      <link>https://rgangnon.org/publication/kehl-floberg-2026/</link>
+      <pubDate>Fri, 29 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/kehl-floberg-2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

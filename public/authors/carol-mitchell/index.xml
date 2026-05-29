@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carol Mitchell | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/carol-mitchell/</link>
+      <atom:link href="https://rgangnon.org/authors/carol-mitchell/index.xml" rel="self" type="application/rss+xml" />
+    <description>Carol Mitchell</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 07 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Carol Mitchell</title>
+      <link>https://rgangnon.org/authors/carol-mitchell/</link>
+    </image>
+    
+    <item>
+      <title>Carotid artery ultrasound grayscale median and incident dementia: The Multi-Ethnic Study of Atherosclerosis (MESA)</title>
+      <link>https://rgangnon.org/publication/tattersall-2026/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/tattersall-2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

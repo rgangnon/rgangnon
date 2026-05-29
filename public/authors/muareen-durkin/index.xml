@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Muareen Durkin | Ronald Gangnon</title>
+    <link>https://rgangnon.org/authors/muareen-durkin/</link>
+      <atom:link href="https://rgangnon.org/authors/muareen-durkin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Muareen Durkin</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Muareen Durkin</title>
+      <link>https://rgangnon.org/authors/muareen-durkin/</link>
+    </image>
+    
+    <item>
+      <title>The Association Between Motor and Social Skills in Young Autistic Children Enrolled in the Study to Explore Early Development</title>
+      <link>https://rgangnon.org/publication/pokoski-2026/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://rgangnon.org/publication/pokoski-2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
